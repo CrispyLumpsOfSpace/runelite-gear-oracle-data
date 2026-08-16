@@ -1,0 +1,29 @@
+{
+  "name": "Giant Mole — optimizer over a small melee bank",
+
+  "player": {
+    "meleePotion": "SUPER_COMBAT",
+    "meleePrayer": "PIETY",
+    "meleeStance": "AGGRESSIVE"
+  },
+
+  "target": {
+    "name": "Giant Mole",
+    "combatLevel": 230,
+    "hitpoints": 200,
+    "defenceLevel": 200,
+    "defStab": 60, "defSlash": 0, "defCrush": 100, "defMagic": 80, "defRange": 60
+  },
+
+  "bank": [
+    "Torva full helm", "Inquisitor's great helm",
+    "Torva platebody", "Inquisitor's hauberk",
+    "Torva platelegs", "Inquisitor's plateskirt",
+    "Infernal cape", "Amulet of rancour", "Avernic defender",
+    "Ferocious gloves", "Avernic treads (max)", "Ultor ring", "Rada's blessing 4",
+    "Osmumten's fang", "Inquisitor's mace"
+  ],
+
+  "styles": ["MELEE_STAB", "MELEE_SLASH", "MELEE_CRUSH"],
+  "searchDepth": "HIGH"
+}

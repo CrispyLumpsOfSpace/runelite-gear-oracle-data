@@ -1,0 +1,16 @@
+The files in this directory derive from the Old School RuneScape Wiki
+(https://oldschool.runescape.wiki/), retrieved through its api.php Bucket API,
+and are redistributed under the Creative Commons Attribution-NonCommercial-
+ShareAlike 3.0 Unported licence (CC BY-NC-SA 3.0). The full legal code is in
+../data/LICENSE; https://creativecommons.org/licenses/by-nc-sa/3.0/ is the
+canonical copy. The files are adaptations (selections and reshapings) of wiki
+infobox data, not verbatim wiki pages.
+
+Exception: adversarial-corpus.json is original test data authored for the Gear
+Oracle plugin — its item stats are constructed for each scenario's purpose, not
+transcribed from the wiki — and is licensed under the MIT licence in
+../tools/LICENSE.
+
+catalogs/big-bank-items.json joins an item-id list exported from a player's own
+game client to wiki equipment stats; the wiki-derived stats are CC BY-NC-SA 3.0
+as above.

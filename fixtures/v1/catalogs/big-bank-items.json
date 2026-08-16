@@ -1,0 +1,1724 @@
+{
+ "_meta": {
+  "description": "A real mid-game ironman bank snapshot (item names/ids and wiki equipment stats) committed as the realistic-scale CI bench fixture: ~10x the ci scenario catalog, so the depth caps and pool trimming actually bite.",
+  "source": "plugin ownership tracker ids joined to the OSRS Wiki Bucket API (infobox_item + infobox_bonuses) by tools/export_owned_bank.py",
+  "items": 281
+ },
+ "10th squad sigil": {
+  "id": 4035,
+  "slot": "AMULET"
+ },
+ "Abyssal lantern (redwood logs)": {
+  "id": 26848,
+  "slot": "SHIELD"
+ },
+ "Adamant 2h sword": {
+  "id": 1317,
+  "slot": "WEAPON",
+  "astab": -4,
+  "aslash": 43,
+  "acrush": 30,
+  "amagic": -4,
+  "str": 44,
+  "aspeed": 7,
+  "twoHanded": true
+ },
+ "Adamant arrow": {
+  "id": 890,
+  "slot": "AMMO",
+  "rstr": 31
+ },
+ "Adamant arrow(p++)": {
+  "id": 5626,
+  "slot": "AMMO",
+  "rstr": 31
+ },
+ "Adamant dagger": {
+  "id": 1211,
+  "slot": "WEAPON",
+  "astab": 15,
+  "aslash": 8,
+  "acrush": -4,
+  "amagic": 1,
+  "str": 14,
+  "aspeed": 4
+ },
+ "Adamant pickaxe": {
+  "id": 1271,
+  "slot": "WEAPON",
+  "astab": 17,
+  "aslash": -2,
+  "acrush": 15,
+  "str": 19,
+  "aspeed": 5
+ },
+ "Adamant platebody": {
+  "id": 1123,
+  "slot": "BODY",
+  "amagic": -30,
+  "arange": -15
+ },
+ "Adamant spear": {
+  "id": 1245,
+  "slot": "WEAPON",
+  "astab": 24,
+  "aslash": 24,
+  "acrush": 24,
+  "str": 28,
+  "aspeed": 4,
+  "twoHanded": true
+ },
+ "Amulet of glory": {
+  "id": 1704,
+  "slot": "AMULET",
+  "astab": 10,
+  "aslash": 10,
+  "acrush": 10,
+  "amagic": 10,
+  "arange": 10,
+  "str": 6,
+  "prayer": 3
+ },
+ "Amulet of glory(1)": {
+  "id": 1706,
+  "slot": "AMULET",
+  "astab": 10,
+  "aslash": 10,
+  "acrush": 10,
+  "amagic": 10,
+  "arange": 10,
+  "str": 6,
+  "prayer": 3
+ },
+ "Amulet of glory(2)": {
+  "id": 1708,
+  "slot": "AMULET",
+  "astab": 10,
+  "aslash": 10,
+  "acrush": 10,
+  "amagic": 10,
+  "arange": 10,
+  "str": 6,
+  "prayer": 3
+ },
+ "Amulet of glory(3)": {
+  "id": 1710,
+  "slot": "AMULET",
+  "astab": 10,
+  "aslash": 10,
+  "acrush": 10,
+  "amagic": 10,
+  "arange": 10,
+  "str": 6,
+  "prayer": 3
+ },
+ "Amulet of glory(4)": {
+  "id": 1712,
+  "slot": "AMULET",
+  "astab": 10,
+  "aslash": 10,
+  "acrush": 10,
+  "amagic": 10,
+  "arange": 10,
+  "str": 6,
+  "prayer": 3
+ },
+ "Amulet of power": {
+  "id": 1731,
+  "slot": "AMULET",
+  "astab": 6,
+  "aslash": 6,
+  "acrush": 6,
+  "amagic": 6,
+  "arange": 6,
+  "str": 6,
+  "prayer": 1
+ },
+ "Amulet of strength": {
+  "id": 1725,
+  "slot": "AMULET",
+  "str": 10
+ },
+ "Amulet of the eye": {
+  "id": 26914,
+  "slot": "AMULET"
+ },
+ "Ancient mace": {
+  "id": 11061,
+  "slot": "WEAPON",
+  "astab": 10,
+  "aslash": -2,
+  "acrush": 16,
+  "str": 14,
+  "prayer": 3,
+  "aspeed": 5
+ },
+ "Anti-dragon shield": {
+  "id": 1540,
+  "slot": "SHIELD"
+ },
+ "Archer helm": {
+  "id": 3749,
+  "slot": "HEAD",
+  "astab": -5,
+  "aslash": -5,
+  "acrush": -5,
+  "amagic": -5,
+  "arange": 6
+ },
+ "Arclight": {
+  "id": 19675,
+  "slot": "WEAPON",
+  "astab": 10,
+  "aslash": 38,
+  "str": 8,
+  "aspeed": 4
+ },
+ "Ardougne cloak 3": {
+  "id": 13123,
+  "slot": "CAPE",
+  "astab": 5,
+  "amagic": 5,
+  "prayer": 5
+ },
+ "Atlatl dart": {
+  "id": 28991,
+  "slot": "AMMO"
+ },
+ "Ava's accumulator": {
+  "id": 10499,
+  "slot": "CAPE",
+  "arange": 4
+ },
+ "Ava's attractor": {
+  "id": 10498,
+  "slot": "CAPE",
+  "arange": 2
+ },
+ "Bandos robe legs": {
+  "id": 12267,
+  "slot": "LEGS",
+  "amagic": 4,
+  "prayer": 5
+ },
+ "Barrelchest anchor": {
+  "id": 10888,
+  "slot": "WEAPON",
+  "astab": -2,
+  "aslash": 10,
+  "acrush": 92,
+  "str": 100,
+  "aspeed": 6,
+  "twoHanded": true
+ },
+ "Barrows gloves": {
+  "id": 7462,
+  "slot": "GLOVES",
+  "astab": 12,
+  "aslash": 12,
+  "acrush": 12,
+  "amagic": 6,
+  "arange": 12,
+  "str": 12
+ },
+ "Berserker ring (i)": {
+  "id": 11773,
+  "slot": "RING",
+  "str": 8
+ },
+ "Binding necklace": {
+  "id": 5521,
+  "slot": "AMULET"
+ },
+ "Black d'hide body": {
+  "id": 2503,
+  "slot": "BODY",
+  "amagic": -15,
+  "arange": 30
+ },
+ "Black d'hide chaps": {
+  "id": 2497,
+  "slot": "LEGS",
+  "amagic": -10,
+  "arange": 17
+ },
+ "Black d'hide vambraces": {
+  "id": 2491,
+  "slot": "GLOVES",
+  "amagic": -10,
+  "arange": 11
+ },
+ "Black mace": {
+  "id": 1426,
+  "slot": "WEAPON",
+  "astab": 8,
+  "aslash": -2,
+  "acrush": 16,
+  "str": 13,
+  "prayer": 2,
+  "aspeed": 4
+ },
+ "Black pickaxe": {
+  "id": 12297,
+  "slot": "WEAPON",
+  "astab": 10,
+  "aslash": -2,
+  "acrush": 8,
+  "str": 11,
+  "aspeed": 5
+ },
+ "Blisterwood flail": {
+  "id": 24699,
+  "slot": "WEAPON",
+  "astab": 30,
+  "aslash": 44,
+  "acrush": 68,
+  "amagic": 8,
+  "str": 46,
+  "prayer": 5,
+  "aspeed": 5
+ },
+ "Blood moon chestplate": {
+  "id": 29043,
+  "slot": "BODY",
+  "amagic": -15,
+  "arange": -10,
+  "str": 4
+ },
+ "Blood moon helm": {
+  "id": 29047,
+  "slot": "HEAD",
+  "amagic": -6,
+  "arange": -2,
+  "str": 4
+ },
+ "Blood moon tassets": {
+  "id": 29045,
+  "slot": "LEGS",
+  "amagic": -21,
+  "arange": -7,
+  "str": 2
+ },
+ "Blue d'hide body": {
+  "id": 2499,
+  "slot": "BODY",
+  "amagic": -15,
+  "arange": 20
+ },
+ "Blue d'hide vambraces": {
+  "id": 2487,
+  "slot": "GLOVES",
+  "amagic": -10,
+  "arange": 9
+ },
+ "Blue moon chestplate": {
+  "id": 29037,
+  "slot": "BODY",
+  "amagic": 30,
+  "str": 2,
+  "mdmg": 1.0
+ },
+ "Blue moon helm": {
+  "id": 29041,
+  "slot": "HEAD",
+  "amagic": 6,
+  "str": 3,
+  "mdmg": 1.0
+ },
+ "Blue moon spear": {
+  "id": 28988,
+  "slot": "WEAPON",
+  "astab": 70,
+  "aslash": 62,
+  "acrush": 62,
+  "amagic": 30,
+  "str": 71,
+  "aspeed": 5,
+  "mdmg": 5.0,
+  "twoHanded": true
+ },
+ "Blue moon tassets": {
+  "id": 29039,
+  "slot": "LEGS",
+  "amagic": 22,
+  "str": 1,
+  "mdmg": 1.0
+ },
+ "Bone bolts": {
+  "id": 8882,
+  "slot": "AMMO",
+  "rstr": 49
+ },
+ "Bone spear": {
+  "id": 5016,
+  "slot": "WEAPON",
+  "astab": 11,
+  "aslash": 11,
+  "acrush": 11,
+  "str": 13,
+  "aspeed": 6
+ },
+ "Bonesack": {
+  "id": 7918,
+  "slot": "CAPE"
+ },
+ "Book of the Dead": {
+  "id": 25818,
+  "slot": "SHIELD",
+  "amagic": 6,
+  "prayer": 3
+ },
+ "Boots of stone": {
+  "id": 23037,
+  "slot": "BOOTS"
+ },
+ "Boots of the eye": {
+  "id": 26856,
+  "slot": "BOOTS"
+ },
+ "Bracelet of ethereum": {
+  "id": 21816,
+  "slot": "GLOVES"
+ },
+ "Bracelet of ethereum (uncharged)": {
+  "id": 21817,
+  "slot": "GLOVES"
+ },
+ "Bracelet of slaughter": {
+  "id": 21183,
+  "slot": "GLOVES"
+ },
+ "Bronze pickaxe": {
+  "id": 1265,
+  "slot": "WEAPON",
+  "astab": 4,
+  "aslash": -2,
+  "acrush": 2,
+  "str": 5,
+  "aspeed": 5
+ },
+ "Bronze sq shield": {
+  "id": 1173,
+  "slot": "SHIELD",
+  "amagic": -6
+ },
+ "Bruma torch": {
+  "id": 20720,
+  "slot": "WEAPON",
+  "aspeed": 4
+ },
+ "Burning amulet(1)": {
+  "id": 21175,
+  "slot": "AMULET"
+ },
+ "Burning amulet(2)": {
+  "id": 21173,
+  "slot": "AMULET"
+ },
+ "Burning amulet(5)": {
+  "id": 21166,
+  "slot": "AMULET"
+ },
+ "Butler's uniform": {
+  "id": 29916,
+  "slot": "BODY"
+ },
+ "Butterfly net": {
+  "id": 10010,
+  "slot": "WEAPON",
+  "aspeed": 4
+ },
+ "Camulet": {
+  "id": 6707,
+  "slot": "AMULET"
+ },
+ "Chinchompa": {
+  "id": 10033,
+  "slot": "WEAPON",
+  "arange": 45,
+  "aspeed": 4
+ },
+ "Chompy bird hat": {
+  "id": 2978,
+  "slot": "HEAD"
+ },
+ "Chronicle": {
+  "id": 13660,
+  "slot": "SHIELD"
+ },
+ "Circlet of water (uncharged)": {
+  "id": 26967,
+  "slot": "HEAD"
+ },
+ "Climbing boots": {
+  "id": 3105,
+  "slot": "BOOTS",
+  "str": 2
+ },
+ "Coif": {
+  "id": 1169,
+  "slot": "HEAD",
+  "amagic": -1,
+  "arange": 2
+ },
+ "Combat bracelet(4)": {
+  "id": 11118,
+  "slot": "GLOVES",
+  "astab": 7,
+  "aslash": 7,
+  "acrush": 7,
+  "amagic": 3,
+  "arange": 7,
+  "str": 6
+ },
+ "Cowbell amulet": {
+  "id": 33104,
+  "slot": "AMULET"
+ },
+ "Crystal shield": {
+  "id": 23991,
+  "slot": "SHIELD",
+  "amagic": -10,
+  "arange": -10
+ },
+ "Desert amulet 3": {
+  "id": 13135,
+  "slot": "AMULET"
+ },
+ "Desert robe": {
+  "id": 1835,
+  "slot": "LEGS"
+ },
+ "Desert shirt": {
+  "id": 1833,
+  "slot": "BODY"
+ },
+ "Diamond bolts (e)": {
+  "id": 9243,
+  "slot": "AMMO",
+  "rstr": 105
+ },
+ "Diamond ring": {
+  "id": 1643,
+  "slot": "RING"
+ },
+ "Digsite pendant (1)": {
+  "id": 11190,
+  "slot": "AMULET"
+ },
+ "Digsite pendant (4)": {
+  "id": 11193,
+  "slot": "AMULET"
+ },
+ "Diving apparatus": {
+  "id": 7535,
+  "slot": "CAPE"
+ },
+ "Dodgy necklace": {
+  "id": 21143,
+  "slot": "AMULET"
+ },
+ "Dorgeshuun crossbow": {
+  "id": 8880,
+  "slot": "WEAPON",
+  "arange": 42,
+  "aspeed": 5
+ },
+ "Dragon arrow": {
+  "id": 11212,
+  "slot": "AMMO",
+  "rstr": 60
+ },
+ "Dragon dagger(p++)": {
+  "id": 5698,
+  "slot": "WEAPON",
+  "astab": 40,
+  "aslash": 25,
+  "acrush": -4,
+  "amagic": 1,
+  "str": 40,
+  "aspeed": 4
+ },
+ "Dragon defender": {
+  "id": 12954,
+  "slot": "SHIELD",
+  "astab": 25,
+  "aslash": 24,
+  "acrush": 23,
+  "amagic": -3,
+  "arange": -2,
+  "str": 6
+ },
+ "Dragon felling axe": {
+  "id": 28217,
+  "slot": "WEAPON",
+  "astab": -3,
+  "aslash": 60,
+  "acrush": 51,
+  "str": 67,
+  "aspeed": 7,
+  "twoHanded": true
+ },
+ "Dragon pickaxe": {
+  "id": 11920,
+  "slot": "WEAPON",
+  "astab": 38,
+  "aslash": -2,
+  "acrush": 32,
+  "str": 42,
+  "aspeed": 5
+ },
+ "Dragon platelegs": {
+  "id": 4087,
+  "slot": "LEGS",
+  "amagic": -21,
+  "arange": -11
+ },
+ "Dragon scimitar": {
+  "id": 4587,
+  "slot": "WEAPON",
+  "astab": 8,
+  "aslash": 67,
+  "acrush": -2,
+  "str": 66,
+  "aspeed": 4
+ },
+ "Dragon spear": {
+  "id": 1249,
+  "slot": "WEAPON",
+  "astab": 55,
+  "aslash": 55,
+  "acrush": 55,
+  "str": 60,
+  "aspeed": 4,
+  "twoHanded": true
+ },
+ "Dragon sq shield": {
+  "id": 1187,
+  "slot": "SHIELD",
+  "amagic": -6
+ },
+ "Drakan's medallion": {
+  "id": 22400,
+  "slot": "AMULET"
+ },
+ "Dramen staff": {
+  "id": 772,
+  "slot": "WEAPON",
+  "astab": -1,
+  "aslash": -1,
+  "acrush": 10,
+  "amagic": 10,
+  "str": 10,
+  "aspeed": 4
+ },
+ "Dual macuahuitl": {
+  "id": 28997,
+  "slot": "WEAPON",
+  "astab": 115,
+  "aslash": -4,
+  "acrush": 121,
+  "amagic": -4,
+  "str": 81,
+  "aspeed": 4,
+  "twoHanded": true
+ },
+ "Eclipse atlatl": {
+  "id": 29000,
+  "slot": "WEAPON",
+  "arange": 87,
+  "str": 40,
+  "aspeed": 4,
+  "twoHanded": true
+ },
+ "Elemental shield": {
+  "id": 2890,
+  "slot": "SHIELD"
+ },
+ "Emerald necklace": {
+  "id": 1658,
+  "slot": "AMULET"
+ },
+ "Emerald ring": {
+  "id": 1639,
+  "slot": "RING"
+ },
+ "Enchanted emerald sickle (b)": {
+  "id": 22435,
+  "slot": "WEAPON",
+  "str": 3,
+  "prayer": 5,
+  "aspeed": 5
+ },
+ "Enchanted lyre(3)": {
+  "id": 6126,
+  "slot": "WEAPON",
+  "aspeed": 4
+ },
+ "Excalibur": {
+  "id": 35,
+  "slot": "WEAPON",
+  "astab": 20,
+  "aslash": 29,
+  "acrush": -2,
+  "str": 25,
+  "aspeed": 5
+ },
+ "Expeditious bracelet": {
+  "id": 21177,
+  "slot": "GLOVES"
+ },
+ "Explorer's ring 2": {
+  "id": 13126,
+  "slot": "RING",
+  "prayer": 1
+ },
+ "Falador shield 1": {
+  "id": 13117,
+  "slot": "SHIELD",
+  "amagic": -8,
+  "arange": -2,
+  "prayer": 1
+ },
+ "Farseer helm": {
+  "id": 3755,
+  "slot": "HEAD",
+  "astab": -5,
+  "aslash": -5,
+  "acrush": -5,
+  "amagic": 6,
+  "arange": -5
+ },
+ "Fighter torso": {
+  "id": 10551,
+  "slot": "BODY",
+  "amagic": -40,
+  "str": 4
+ },
+ "Fire cape": {
+  "id": 6570,
+  "slot": "CAPE",
+  "astab": 1,
+  "aslash": 1,
+  "acrush": 1,
+  "amagic": 1,
+  "arange": 1,
+  "str": 4,
+  "prayer": 2
+ },
+ "Fire tiara": {
+  "id": 5537,
+  "slot": "HEAD"
+ },
+ "Fishbowl helmet": {
+  "id": 7534,
+  "slot": "HEAD"
+ },
+ "Fixed device": {
+  "id": 6082,
+  "slot": "WEAPON",
+  "aspeed": 4,
+  "twoHanded": true
+ },
+ "Fletching knife": {
+  "id": 31043,
+  "slot": "SHIELD"
+ },
+ "Forestry kit": {
+  "id": 28136,
+  "slot": "CAPE"
+ },
+ "Fremennik blade": {
+  "id": 3757,
+  "slot": "WEAPON",
+  "astab": 6,
+  "aslash": 29,
+  "acrush": -2,
+  "str": 28,
+  "aspeed": 4
+ },
+ "Fremennik sea boots 1": {
+  "id": 13129,
+  "slot": "BOOTS",
+  "amagic": -3,
+  "arange": -1
+ },
+ "Fremennik shield": {
+  "id": 3758,
+  "slot": "SHIELD",
+  "amagic": -8,
+  "arange": -2
+ },
+ "Games necklace(1)": {
+  "id": 3867,
+  "slot": "AMULET"
+ },
+ "Games necklace(2)": {
+  "id": 3865,
+  "slot": "AMULET"
+ },
+ "Games necklace(3)": {
+  "id": 3863,
+  "slot": "AMULET"
+ },
+ "Games necklace(4)": {
+  "id": 3861,
+  "slot": "AMULET"
+ },
+ "Games necklace(5)": {
+  "id": 3859,
+  "slot": "AMULET"
+ },
+ "Games necklace(6)": {
+  "id": 3857,
+  "slot": "AMULET"
+ },
+ "Games necklace(7)": {
+  "id": 3855,
+  "slot": "AMULET"
+ },
+ "Games necklace(8)": {
+  "id": 3853,
+  "slot": "AMULET"
+ },
+ "Ghommal's hilt 1": {
+  "id": 25926,
+  "slot": "SHIELD"
+ },
+ "Ghommal's hilt 2": {
+  "id": 25928,
+  "slot": "SHIELD"
+ },
+ "Ghostspeak amulet": {
+  "id": 552,
+  "slot": "AMULET"
+ },
+ "Giantsoul amulet": {
+  "id": 30638,
+  "slot": "AMULET"
+ },
+ "Giantsoul amulet (uncharged)": {
+  "id": 30637,
+  "slot": "AMULET"
+ },
+ "Glacial temotli": {
+  "id": 29889,
+  "slot": "WEAPON",
+  "astab": 11,
+  "acrush": 72,
+  "str": 64,
+  "prayer": 2,
+  "aspeed": 4,
+  "twoHanded": true
+ },
+ "Gnome amulet": {
+  "id": 589,
+  "slot": "AMULET"
+ },
+ "Gold ring": {
+  "id": 1635,
+  "slot": "RING"
+ },
+ "Goldsmith gauntlets": {
+  "id": 776,
+  "slot": "GLOVES",
+  "astab": 2,
+  "aslash": 2,
+  "acrush": 2,
+  "str": 2
+ },
+ "Gorilla greegree": {
+  "id": 4026,
+  "slot": "WEAPON",
+  "aspeed": -1
+ },
+ "Guthix staff": {
+  "id": 2416,
+  "slot": "WEAPON",
+  "astab": -1,
+  "aslash": -1,
+  "acrush": 6,
+  "amagic": 6,
+  "str": 2,
+  "aspeed": 4
+ },
+ "Harralander tar": {
+  "id": 10145,
+  "slot": "AMMO",
+  "rstr": 49
+ },
+ "Hat of the eye": {
+  "id": 26850,
+  "slot": "HEAD"
+ },
+ "Helm of neitiznot": {
+  "id": 10828,
+  "slot": "HEAD",
+  "str": 3,
+  "prayer": 3
+ },
+ "Holy sandals": {
+  "id": 12598,
+  "slot": "BOOTS",
+  "prayer": 3
+ },
+ "Holy symbol": {
+  "id": 1718,
+  "slot": "AMULET",
+  "prayer": 8
+ },
+ "Iban's staff (u)": {
+  "id": 12658,
+  "slot": "WEAPON",
+  "astab": 10,
+  "aslash": -1,
+  "acrush": 40,
+  "amagic": 10,
+  "str": 50,
+  "aspeed": 5
+ },
+ "Ice gloves": {
+  "id": 1580,
+  "slot": "GLOVES"
+ },
+ "Imbued Saradomin cape": {
+  "id": 21791,
+  "slot": "CAPE",
+  "amagic": 15,
+  "mdmg": 2.0
+ },
+ "Imcando hammer (off-hand)": {
+  "id": 29775,
+  "slot": "SHIELD"
+ },
+ "Insulated boots": {
+  "id": 7159,
+  "slot": "BOOTS"
+ },
+ "Jade machete": {
+  "id": 6315,
+  "slot": "WEAPON",
+  "aslash": 11,
+  "acrush": -2,
+  "str": 6,
+  "aspeed": 4
+ },
+ "Kandarin headgear 3": {
+  "id": 13139,
+  "slot": "HEAD",
+  "amagic": -3,
+  "arange": -1
+ },
+ "Karamja gloves 3": {
+  "id": 11140,
+  "slot": "GLOVES",
+  "astab": 1,
+  "aslash": 1,
+  "acrush": 1,
+  "amagic": 1,
+  "arange": 1,
+  "str": 1
+ },
+ "Karamjan monkey greegree": {
+  "id": 4031,
+  "slot": "WEAPON",
+  "aspeed": -1
+ },
+ "Keris": {
+  "id": 10581,
+  "slot": "WEAPON",
+  "astab": 40,
+  "aslash": 20,
+  "acrush": -10,
+  "amagic": 2,
+  "str": 30,
+  "prayer": 2,
+  "aspeed": 4
+ },
+ "Keris partisan": {
+  "id": 25979,
+  "slot": "WEAPON",
+  "astab": 58,
+  "aslash": -2,
+  "acrush": 57,
+  "amagic": 2,
+  "str": 45,
+  "prayer": 3,
+  "aspeed": 4
+ },
+ "Lava battlestaff": {
+  "id": 3053,
+  "slot": "WEAPON",
+  "astab": 7,
+  "aslash": -1,
+  "acrush": 28,
+  "amagic": 12,
+  "str": 35,
+  "aspeed": 5
+ },
+ "Leaf-bladed sword": {
+  "id": 11902,
+  "slot": "WEAPON",
+  "astab": 67,
+  "aslash": 62,
+  "str": 50,
+  "aspeed": 4
+ },
+ "Leather boots": {
+  "id": 1061,
+  "slot": "BOOTS"
+ },
+ "Leather gloves": {
+  "id": 1059,
+  "slot": "GLOVES"
+ },
+ "Lederhosen top": {
+  "id": 6180,
+  "slot": "BODY"
+ },
+ "M'speak amulet": {
+  "id": 4021,
+  "slot": "AMULET"
+ },
+ "Machete": {
+  "id": 975,
+  "slot": "WEAPON",
+  "aslash": 6,
+  "acrush": -2,
+  "str": 5,
+  "aspeed": 5
+ },
+ "Magic longbow": {
+  "id": 859,
+  "slot": "WEAPON",
+  "arange": 69,
+  "aspeed": 6,
+  "twoHanded": true
+ },
+ "Magic secateurs": {
+  "id": 7409,
+  "slot": "WEAPON",
+  "astab": 7,
+  "aslash": 9,
+  "acrush": -5,
+  "amagic": 1,
+  "str": 1,
+  "aspeed": 5
+ },
+ "Magic shortbow": {
+  "id": 861,
+  "slot": "WEAPON",
+  "arange": 69,
+  "aspeed": 4,
+  "twoHanded": true
+ },
+ "Magic shortbow (i)": {
+  "id": 12788,
+  "slot": "WEAPON",
+  "arange": 75,
+  "aspeed": 4,
+  "twoHanded": true
+ },
+ "Maple longbow": {
+  "id": 851,
+  "slot": "WEAPON",
+  "arange": 29,
+  "aspeed": 6,
+  "twoHanded": true
+ },
+ "Mirror shield": {
+  "id": 4156,
+  "slot": "SHIELD"
+ },
+ "Mith grapple": {
+  "id": 9419,
+  "slot": "AMMO"
+ },
+ "Mithril 2h sword": {
+  "id": 1315,
+  "slot": "WEAPON",
+  "astab": -4,
+  "aslash": 30,
+  "acrush": 24,
+  "amagic": -4,
+  "str": 31,
+  "aspeed": 7,
+  "twoHanded": true
+ },
+ "Mithril arrow": {
+  "id": 888,
+  "slot": "AMMO",
+  "rstr": 22
+ },
+ "Mithril battleaxe": {
+  "id": 1369,
+  "slot": "WEAPON",
+  "astab": -2,
+  "aslash": 22,
+  "acrush": 17,
+  "str": 29,
+  "aspeed": 6
+ },
+ "Mithril boots": {
+  "id": 4127,
+  "slot": "BOOTS",
+  "amagic": -3,
+  "arange": -1
+ },
+ "Mithril claws": {
+  "id": 3099,
+  "slot": "WEAPON",
+  "astab": 11,
+  "aslash": 16,
+  "acrush": -4,
+  "str": 17,
+  "aspeed": 4,
+  "twoHanded": true
+ },
+ "Mithril dagger": {
+  "id": 1209,
+  "slot": "WEAPON",
+  "astab": 11,
+  "aslash": 5,
+  "acrush": -4,
+  "amagic": 1,
+  "str": 10,
+  "aspeed": 4
+ },
+ "Mithril full helm": {
+  "id": 1159,
+  "slot": "HEAD",
+  "amagic": -6,
+  "arange": -3
+ },
+ "Mixed hide boots": {
+  "id": 29286,
+  "slot": "BOOTS",
+  "amagic": -10,
+  "arange": 5,
+  "str": 2
+ },
+ "Mixed hide legs": {
+  "id": 29283,
+  "slot": "LEGS",
+  "astab": 3,
+  "aslash": -1,
+  "acrush": -2,
+  "amagic": -10,
+  "arange": 14
+ },
+ "Mixed hide top": {
+  "id": 29280,
+  "slot": "BODY",
+  "astab": 4,
+  "aslash": -2,
+  "acrush": -3,
+  "amagic": -15,
+  "arange": 27,
+  "str": 2
+ },
+ "Monk's robe": {
+  "id": 542,
+  "slot": "LEGS",
+  "prayer": 5
+ },
+ "Monk's robe top": {
+  "id": 544,
+  "slot": "BODY",
+  "prayer": 6
+ },
+ "Morytania legs 1": {
+  "id": 13112,
+  "slot": "LEGS",
+  "amagic": -21,
+  "arange": -7
+ },
+ "Mystic earth staff": {
+  "id": 1407,
+  "slot": "WEAPON",
+  "astab": 10,
+  "aslash": -1,
+  "acrush": 40,
+  "amagic": 14,
+  "str": 50,
+  "aspeed": 5
+ },
+ "Mystic hat": {
+  "id": 4089,
+  "slot": "HEAD",
+  "amagic": 4
+ },
+ "Mythical cape": {
+  "id": 22114,
+  "slot": "CAPE",
+  "acrush": 6,
+  "str": 1,
+  "prayer": 1
+ },
+ "Neitiznot shield": {
+  "id": 10826,
+  "slot": "SHIELD",
+  "amagic": -10,
+  "arange": -10
+ },
+ "Ninja monkey greegree": {
+  "id": 4024,
+  "slot": "WEAPON",
+  "aspeed": -1
+ },
+ "Noose wand": {
+  "id": 10150,
+  "slot": "WEAPON",
+  "aspeed": 4
+ },
+ "Oak shortbow": {
+  "id": 843,
+  "slot": "WEAPON",
+  "arange": 14,
+  "aspeed": 4,
+  "twoHanded": true
+ },
+ "Ogre arrow": {
+  "id": 2866,
+  "slot": "AMMO",
+  "rstr": 22
+ },
+ "Ogre bow": {
+  "id": 2883,
+  "slot": "WEAPON",
+  "arange": 38,
+  "aspeed": 8,
+  "twoHanded": true
+ },
+ "Open log basket": {
+  "id": 28142,
+  "slot": "CAPE"
+ },
+ "Pendant of ates": {
+  "id": 29893,
+  "slot": "AMULET",
+  "prayer": 2
+ },
+ "Pointed blood'n'tar snelm": {
+  "id": 3339,
+  "slot": "HEAD",
+  "amagic": -3,
+  "arange": -1
+ },
+ "Proselyte cuisse": {
+  "id": 9676,
+  "slot": "LEGS",
+  "amagic": -21,
+  "arange": -11,
+  "prayer": 6
+ },
+ "Proselyte hauberk": {
+  "id": 9674,
+  "slot": "BODY",
+  "amagic": -30,
+  "arange": -15,
+  "prayer": 8
+ },
+ "Proselyte sallet": {
+  "id": 9672,
+  "slot": "HEAD",
+  "amagic": -6,
+  "arange": -3,
+  "prayer": 4
+ },
+ "Purple goblin mail": {
+  "id": 9058,
+  "slot": "BODY"
+ },
+ "Pyromancer boots": {
+  "id": 20710,
+  "slot": "BOOTS"
+ },
+ "Pyromancer garb": {
+  "id": 20704,
+  "slot": "BODY"
+ },
+ "Pyromancer hood": {
+  "id": 20708,
+  "slot": "HEAD"
+ },
+ "Pyromancer robe": {
+  "id": 20706,
+  "slot": "LEGS"
+ },
+ "Rada's blessing 2": {
+  "id": 22943,
+  "slot": "AMMO",
+  "prayer": 1
+ },
+ "Ram skull helm": {
+  "id": 7917,
+  "slot": "HEAD",
+  "arange": -2
+ },
+ "Ranger boots": {
+  "id": 2577,
+  "slot": "BOOTS",
+  "amagic": -10,
+  "arange": 8
+ },
+ "Red chinchompa": {
+  "id": 10034,
+  "slot": "WEAPON",
+  "arange": 70,
+  "rstr": 15,
+  "aspeed": 4
+ },
+ "Red d'hide chaps": {
+  "id": 2495,
+  "slot": "LEGS",
+  "amagic": -10,
+  "arange": 14
+ },
+ "Ring of charos(a)": {
+  "id": 6465,
+  "slot": "RING"
+ },
+ "Ring of dueling(2)": {
+  "id": 2564,
+  "slot": "RING"
+ },
+ "Ring of dueling(3)": {
+  "id": 2562,
+  "slot": "RING"
+ },
+ "Ring of dueling(4)": {
+  "id": 2560,
+  "slot": "RING"
+ },
+ "Ring of dueling(6)": {
+  "id": 2556,
+  "slot": "RING"
+ },
+ "Ring of dueling(8)": {
+  "id": 2552,
+  "slot": "RING"
+ },
+ "Ring of life": {
+  "id": 2570,
+  "slot": "RING"
+ },
+ "Ring of recoil": {
+  "id": 2550,
+  "slot": "RING"
+ },
+ "Ring of visibility": {
+  "id": 4657,
+  "slot": "RING"
+ },
+ "Ring of wealth (1)": {
+  "id": 11988,
+  "slot": "RING"
+ },
+ "Ring of wealth (3)": {
+  "id": 11984,
+  "slot": "RING"
+ },
+ "Ring of wealth (4)": {
+  "id": 11982,
+  "slot": "RING"
+ },
+ "Ring of wealth (5)": {
+  "id": 11980,
+  "slot": "RING"
+ },
+ "Robe bottoms of the eye": {
+  "id": 26854,
+  "slot": "LEGS"
+ },
+ "Robe top of the eye": {
+  "id": 26852,
+  "slot": "BODY"
+ },
+ "Rock-shell plate": {
+  "id": 6129,
+  "slot": "BODY",
+  "amagic": -30,
+  "arange": -10
+ },
+ "Rogue boots": {
+  "id": 5557,
+  "slot": "BOOTS"
+ },
+ "Rogue gloves": {
+  "id": 5556,
+  "slot": "GLOVES"
+ },
+ "Rogue mask": {
+  "id": 5554,
+  "slot": "HEAD"
+ },
+ "Rogue top": {
+  "id": 5553,
+  "slot": "BODY"
+ },
+ "Rogue trousers": {
+  "id": 5555,
+  "slot": "LEGS"
+ },
+ "Ruby bolts (e)": {
+  "id": 9242,
+  "slot": "AMMO",
+  "rstr": 103
+ },
+ "Ruby ring": {
+  "id": 1641,
+  "slot": "RING"
+ },
+ "Rune arrow": {
+  "id": 892,
+  "slot": "AMMO",
+  "rstr": 49
+ },
+ "Rune crossbow": {
+  "id": 9185,
+  "slot": "WEAPON",
+  "arange": 90,
+  "aspeed": 6
+ },
+ "Rune dart": {
+  "id": 811,
+  "slot": "WEAPON",
+  "rstr": 26,
+  "aspeed": 3
+ },
+ "Rune defender": {
+  "id": 8850,
+  "slot": "SHIELD",
+  "astab": 20,
+  "aslash": 19,
+  "acrush": 18,
+  "amagic": -3,
+  "arange": -2,
+  "str": 5
+ },
+ "Rune full helm": {
+  "id": 1163,
+  "slot": "HEAD",
+  "amagic": -6,
+  "arange": -3
+ },
+ "Rune gloves": {
+  "id": 7460,
+  "slot": "GLOVES",
+  "astab": 8,
+  "aslash": 8,
+  "acrush": 8,
+  "amagic": 4,
+  "arange": 8,
+  "str": 8
+ },
+ "Rune javelin": {
+  "id": 830,
+  "slot": "AMMO",
+  "rstr": 124
+ },
+ "Rune knife": {
+  "id": 868,
+  "slot": "WEAPON",
+  "arange": 25,
+  "rstr": 24,
+  "aspeed": 3
+ },
+ "Rune pickaxe": {
+  "id": 1275,
+  "slot": "WEAPON",
+  "astab": 26,
+  "aslash": -2,
+  "acrush": 24,
+  "str": 29,
+  "aspeed": 5
+ },
+ "Rune platelegs": {
+  "id": 1079,
+  "slot": "LEGS",
+  "amagic": -21,
+  "arange": -11
+ },
+ "Salve amulet (e)": {
+  "id": 10588,
+  "slot": "AMULET",
+  "prayer": 3
+ },
+ "Sapphire bolts": {
+  "id": 9337,
+  "slot": "AMMO",
+  "rstr": 83
+ },
+ "Sapphire necklace": {
+  "id": 1656,
+  "slot": "AMULET"
+ },
+ "Sapphire ring": {
+  "id": 1637,
+  "slot": "RING"
+ },
+ "Saradomin staff": {
+  "id": 2415,
+  "slot": "WEAPON",
+  "astab": -1,
+  "aslash": -1,
+  "acrush": 6,
+  "amagic": 6,
+  "str": 2,
+  "aspeed": 4
+ },
+ "Seal of passage": {
+  "id": 9083,
+  "slot": "AMULET"
+ },
+ "Silver sickle (b)": {
+  "id": 2963,
+  "slot": "WEAPON",
+  "str": 1,
+  "prayer": 5,
+  "aspeed": 5
+ },
+ "Skills necklace": {
+  "id": 11113,
+  "slot": "AMULET"
+ },
+ "Skills necklace(1)": {
+  "id": 11111,
+  "slot": "AMULET"
+ },
+ "Skills necklace(3)": {
+  "id": 11107,
+  "slot": "AMULET"
+ },
+ "Skills necklace(4)": {
+  "id": 11105,
+  "slot": "AMULET"
+ },
+ "Skull sceptre": {
+  "id": 9013,
+  "slot": "WEAPON",
+  "aslash": -1,
+  "acrush": 7,
+  "amagic": 10,
+  "str": 3,
+  "aspeed": 5
+ },
+ "Slayer gloves": {
+  "id": 6720,
+  "slot": "GLOVES"
+ },
+ "Slayer helmet (i)": {
+  "id": 26674,
+  "slot": "HEAD",
+  "amagic": 3,
+  "arange": 3
+ },
+ "Slayer ring (3)": {
+  "id": 11871,
+  "slot": "RING"
+ },
+ "Slayer ring (4)": {
+  "id": 11870,
+  "slot": "RING"
+ },
+ "Slayer ring (6)": {
+  "id": 11868,
+  "slot": "RING"
+ },
+ "Slayer's staff (e)": {
+  "id": 21255,
+  "slot": "WEAPON",
+  "astab": 7,
+  "aslash": -1,
+  "acrush": 25,
+  "amagic": 12,
+  "str": 35,
+  "aspeed": 4
+ },
+ "Staff of air": {
+  "id": 1381,
+  "slot": "WEAPON",
+  "aslash": -1,
+  "acrush": 7,
+  "amagic": 10,
+  "str": 3,
+  "aspeed": 5
+ },
+ "Staff of fire": {
+  "id": 1387,
+  "slot": "WEAPON",
+  "astab": 3,
+  "aslash": -1,
+  "acrush": 9,
+  "amagic": 10,
+  "str": 6,
+  "aspeed": 5
+ },
+ "Staff of water": {
+  "id": 1383,
+  "slot": "WEAPON",
+  "aslash": -1,
+  "acrush": 7,
+  "amagic": 10,
+  "str": 3,
+  "aspeed": 5
+ },
+ "Steel arrow": {
+  "id": 886,
+  "slot": "AMMO",
+  "rstr": 16
+ },
+ "Steel warhammer": {
+  "id": 1339,
+  "slot": "WEAPON",
+  "astab": -4,
+  "aslash": -4,
+  "acrush": 18,
+  "amagic": -4,
+  "str": 18,
+  "aspeed": 6
+ },
+ "Sulphur blades": {
+  "id": 29084,
+  "slot": "WEAPON",
+  "astab": 11,
+  "aslash": 72,
+  "str": 64,
+  "aspeed": 4,
+  "twoHanded": true
+ },
+ "Tortugan shield": {
+  "id": 31398,
+  "slot": "CAPE"
+ },
+ "Unholy blessing": {
+  "id": 20223,
+  "slot": "AMMO",
+  "prayer": 1
+ },
+ "Varrock armour 3": {
+  "id": 13106,
+  "slot": "BODY",
+  "amagic": -30,
+  "arange": -10
+ },
+ "Vyre noble legs": {
+  "id": 24678,
+  "slot": "LEGS"
+ },
+ "Vyre noble shoes": {
+  "id": 24680,
+  "slot": "BOOTS"
+ },
+ "Vyre noble top": {
+  "id": 24676,
+  "slot": "BODY"
+ },
+ "War blessing": {
+  "id": 20232,
+  "slot": "AMMO",
+  "prayer": 1
+ },
+ "Warm gloves": {
+  "id": 20712,
+  "slot": "GLOVES"
+ },
+ "Warrior ring": {
+  "id": 6735,
+  "slot": "RING",
+  "aslash": 4
+ },
+ "Western banner 1": {
+  "id": 13141,
+  "slot": "WEAPON",
+  "astab": 12,
+  "aslash": 12,
+  "acrush": 12,
+  "str": 12,
+  "aspeed": 5
+ },
+ "Wilderness sword 2": {
+  "id": 13109,
+  "slot": "WEAPON",
+  "astab": 11,
+  "aslash": 8,
+  "acrush": -2,
+  "str": 12,
+  "aspeed": 4
+ },
+ "Willow blackjack": {
+  "id": 4600,
+  "slot": "WEAPON",
+  "str": 8,
+  "aspeed": 4
+ },
+ "Wizard boots": {
+  "id": 2579,
+  "slot": "BOOTS",
+  "amagic": 4
+ },
+ "Wolf cloak": {
+  "id": 23410,
+  "slot": "CAPE"
+ },
+ "Wolfbane": {
+  "id": 2952,
+  "slot": "WEAPON",
+  "astab": 11,
+  "aslash": 5,
+  "acrush": -4,
+  "amagic": 1,
+  "str": 10,
+  "prayer": 5,
+  "aspeed": 4
+ },
+ "Xeric's talisman (inert)": {
+  "id": 13392,
+  "slot": "AMULET",
+  "amagic": 2
+ },
+ "Yak-hide armour": {
+  "id": 10824,
+  "slot": "LEGS",
+  "amagic": -5,
+  "arange": 10
+ },
+ "Yew longbow": {
+  "id": 855,
+  "slot": "WEAPON",
+  "arange": 47,
+  "aspeed": 6,
+  "twoHanded": true
+ },
+ "Zamorak monk top": {
+  "id": 1035,
+  "slot": "BODY",
+  "amagic": 2,
+  "prayer": 3
+ },
+ "Zamorak staff": {
+  "id": 2417,
+  "slot": "WEAPON",
+  "astab": -1,
+  "aslash": -1,
+  "acrush": 6,
+  "amagic": 6,
+  "str": 2,
+  "aspeed": 4
+ },
+ "Zombie axe": {
+  "id": 28810,
+  "slot": "WEAPON",
+  "astab": -3,
+  "aslash": 105,
+  "acrush": 90,
+  "str": 107,
+  "aspeed": 5
+ },
+ "Zombie monkey greegree": {
+  "id": 4029,
+  "slot": "WEAPON",
+  "aspeed": -1
+ }
+}

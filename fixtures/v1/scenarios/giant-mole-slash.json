@@ -1,0 +1,34 @@
+{
+  "name": "Giant Mole — Scythe of vitur (slash reconciliation case)",
+
+  "player": {
+    "meleePotion": "SUPER_COMBAT",
+    "meleePrayer": "PIETY",
+    "meleeStance": "AGGRESSIVE"
+  },
+
+  "target": {
+    "name": "Giant Mole",
+    "combatLevel": 230,
+    "hitpoints": 200,
+    "defenceLevel": 200,
+    "magicLevel": 200,
+    "size": 3,
+    "defStab": 60, "defSlash": 80, "defCrush": 100, "defMagic": 80, "defRange": 60
+  },
+
+  "loadout": {
+    "HEAD":   "Oathplate helm",
+    "CAPE":   "Infernal cape",
+    "AMULET": "Amulet of rancour",
+    "WEAPON": "Scythe of vitur",
+    "BODY":   "Oathplate chest",
+    "LEGS":   "Oathplate legs",
+    "GLOVES": "Ferocious gloves",
+    "BOOTS":  "Avernic treads (max)",
+    "RING":   "Bellator ring",
+    "AMMO":   "Rada's blessing 4"
+  },
+
+  "styles": ["MELEE_SLASH"]
+}

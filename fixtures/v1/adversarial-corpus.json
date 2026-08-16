@@ -1,0 +1,3178 @@
+{
+ "_comment": [
+  "The Tier-2 mechanic-adversarial corpus (docs/QUALITY-BENCH.md section 4): per mechanic,",
+  "a monster that triggers it, a SMALL bank holding the mechanic's key item(s) plus",
+  "better-on-paper distractors, and intent expectations. AdversarialCorpusTest runs each",
+  "entry through BOTH the optimizer (VERY_HIGH) and the reference-exhaustive truth oracle",
+  "and asserts they agree exactly (truth-regret 0), so any algorithmic change that breaks",
+  "a mechanic's reachability fails the BUILD, naming the mechanic. Banks stay tiny so the",
+  "exhaustive side costs milliseconds; the test enforces a combination budget per entry.",
+  "Item stats are authored for the scenario's purpose (hostile pools), not transcribed",
+  "from game data -- the engine values whatever it is handed; what these entries pin is",
+  "that the SEARCH reaches the same answer exhaustive enumeration does."
+ ],
+ "entries": [
+  {
+   "name": "kurask-leafy-bane",
+   "mechanics": [
+    "LeafyBaneImmunity",
+    "LeafyBaneDamage"
+   ],
+   "monster": "Kurask",
+   "items": [
+    {
+     "name": "Test leaf-bladed battleaxe",
+     "slot": "WEAPON",
+     "aslash": 72,
+     "str": 92,
+     "aspeed": 5,
+     "specialType": "LEAF_BLADED_BATTLEAXE"
+    },
+    {
+     "name": "Test big slash sword",
+     "slot": "WEAPON",
+     "aslash": 120,
+     "str": 130,
+     "aspeed": 4
+    },
+    {
+     "name": "Test plate",
+     "slot": "BODY",
+     "astab": -5,
+     "aslash": 0,
+     "str": 4
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_SLASH": "Test leaf-bladed battleaxe"
+   }
+  },
+  {
+   "name": "vyrewatch-blisterwood",
+   "mechanics": [
+    "VampyreBaneImmunity",
+    "VampyreBaneDamage"
+   ],
+   "monster": "Vyrewatch",
+   "items": [
+    {
+     "name": "Test blisterwood flail",
+     "slot": "WEAPON",
+     "acrush": 60,
+     "str": 65,
+     "aspeed": 4,
+     "specialType": "BLISTERWOOD_FLAIL"
+    },
+    {
+     "name": "Test big crush maul",
+     "slot": "WEAPON",
+     "acrush": 140,
+     "str": 150,
+     "aspeed": 5
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_CRUSH": "Test blisterwood flail"
+   }
+  },
+  {
+   "name": "kalphite-keris",
+   "mechanics": [
+    "KerisMechanics",
+    "KalphiteBaneDamage"
+   ],
+   "monster": "Kalphite Soldier",
+   "items": [
+    {
+     "name": "Test keris",
+     "slot": "WEAPON",
+     "astab": 70,
+     "str": 60,
+     "aspeed": 4,
+     "specialType": "KERIS"
+    },
+    {
+     "name": "Test stab sword",
+     "slot": "WEAPON",
+     "astab": 75,
+     "str": 64,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_STAB": "Test keris"
+   }
+  },
+  {
+   "name": "dharok-low-hp",
+   "mechanics": [
+    "DharokSetBonus"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test dharok helm",
+     "slot": "HEAD",
+     "aslash": 0,
+     "specialType": "DHAROK_HELM"
+    },
+    {
+     "name": "Test dharok body",
+     "slot": "BODY",
+     "aslash": 0,
+     "specialType": "DHAROK_BODY"
+    },
+    {
+     "name": "Test dharok legs",
+     "slot": "LEGS",
+     "aslash": 0,
+     "specialType": "DHAROK_LEGS"
+    },
+    {
+     "name": "Test dharok greataxe",
+     "slot": "WEAPON",
+     "aslash": 110,
+     "str": 105,
+     "aspeed": 5,
+     "specialType": "DHAROK_AXE"
+    },
+    {
+     "name": "Test big slash blade",
+     "slot": "WEAPON",
+     "aslash": 118,
+     "str": 112,
+     "aspeed": 5
+    },
+    {
+     "name": "Test strength helm",
+     "slot": "HEAD",
+     "aslash": 5,
+     "str": 3
+    },
+    {
+     "name": "Test strength body",
+     "slot": "BODY",
+     "aslash": 5,
+     "str": 3
+    },
+    {
+     "name": "Test strength legs",
+     "slot": "LEGS",
+     "aslash": 5,
+     "str": 3
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_SLASH": "Test dharok greataxe"
+   },
+   "player": {
+    "currentHitpoints": 1
+   }
+  },
+  {
+   "name": "inquisitor-crush-set",
+   "mechanics": [
+    "InquisitorSet"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test inquisitor helm",
+     "slot": "HEAD",
+     "acrush": 5,
+     "str": 4,
+     "specialType": "INQUISITOR_HELM"
+    },
+    {
+     "name": "Test inquisitor body",
+     "slot": "BODY",
+     "acrush": 5,
+     "str": 6,
+     "specialType": "INQUISITOR_BODY"
+    },
+    {
+     "name": "Test inquisitor legs",
+     "slot": "LEGS",
+     "acrush": 5,
+     "str": 5,
+     "specialType": "INQUISITOR_LEGS"
+    },
+    {
+     "name": "Test crush mace",
+     "slot": "WEAPON",
+     "acrush": 95,
+     "str": 90,
+     "aspeed": 4
+    },
+    {
+     "name": "Test raw helm",
+     "slot": "HEAD",
+     "acrush": 6,
+     "str": 5
+    },
+    {
+     "name": "Test raw body",
+     "slot": "BODY",
+     "acrush": 6,
+     "str": 7
+    },
+    {
+     "name": "Test raw legs",
+     "slot": "LEGS",
+     "acrush": 6,
+     "str": 6
+    }
+   ]
+  },
+  {
+   "name": "obsidian-berserker",
+   "mechanics": [
+    "ObsidianSet"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test obsidian helm",
+     "slot": "HEAD",
+     "aslash": 3,
+     "str": 3,
+     "specialType": "OBSIDIAN_HELM"
+    },
+    {
+     "name": "Test obsidian body",
+     "slot": "BODY",
+     "aslash": 3,
+     "str": 5,
+     "specialType": "OBSIDIAN_BODY"
+    },
+    {
+     "name": "Test obsidian legs",
+     "slot": "LEGS",
+     "aslash": 3,
+     "str": 4,
+     "specialType": "OBSIDIAN_LEGS"
+    },
+    {
+     "name": "Test obsidian sword",
+     "slot": "WEAPON",
+     "aslash": 75,
+     "str": 70,
+     "aspeed": 4,
+     "specialType": "OBSIDIAN_WEAPON"
+    },
+    {
+     "name": "Test berserker necklace",
+     "slot": "AMULET",
+     "str": 3,
+     "specialType": "BERSERKER_NECKLACE"
+    },
+    {
+     "name": "Test raw amulet",
+     "slot": "AMULET",
+     "aslash": 10,
+     "str": 8
+    },
+    {
+     "name": "Test raw helm 2",
+     "slot": "HEAD",
+     "aslash": 5,
+     "str": 4
+    },
+    {
+     "name": "Test raw body 2",
+     "slot": "BODY",
+     "aslash": 5,
+     "str": 6
+    }
+   ]
+  },
+  {
+   "name": "twisted-bow-high-magic",
+   "mechanics": [
+    "TwistedBow"
+   ],
+   "monster": "Zulrah",
+   "items": [
+    {
+     "name": "Test twisted bow",
+     "slot": "WEAPON",
+     "arange": 70,
+     "aspeed": 5,
+     "specialType": "TWISTED_BOW"
+    },
+    {
+     "name": "Test heavy crossbow",
+     "slot": "WEAPON",
+     "arange": 110,
+     "aspeed": 5
+    },
+    {
+     "name": "Test dragon arrow",
+     "slot": "AMMO",
+     "arange": 15,
+     "rstr": 60
+    },
+    {
+     "name": "Test heavy bolt",
+     "slot": "AMMO",
+     "arange": 16,
+     "rstr": 122
+    }
+   ],
+   "expectInWinner": {
+    "RANGED": "Test twisted bow"
+   }
+  },
+  {
+   "name": "tumeken-shadow-triple",
+   "mechanics": [
+    "TumekenShadowFormula"
+   ],
+   "monster": "Zulrah",
+   "items": [
+    {
+     "name": "Test tumeken shadow",
+     "slot": "WEAPON",
+     "amagic": 35,
+     "mdmg": 5.0,
+     "aspeed": 5,
+     "isTwoHanded": true,
+     "specialType": "TUMEKEN_SHADOW"
+    },
+    {
+     "name": "Test big staff",
+     "slot": "WEAPON",
+     "amagic": 70,
+     "mdmg": 10.0,
+     "aspeed": 4
+    },
+    {
+     "name": "Test magic hat",
+     "slot": "HEAD",
+     "amagic": 8,
+     "mdmg": 2.0
+    }
+   ],
+   "expectInWinner": {
+    "MAGIC": "Test tumeken shadow"
+   }
+  },
+  {
+   "name": "eclipse-atlatl-melee-str",
+   "mechanics": [
+    "EclipseAtlatlFormula"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test eclipse atlatl",
+     "slot": "WEAPON",
+     "arange": 87,
+     "aspeed": 4,
+     "specialType": "ECLIPSE_ATLATL",
+     "str": 40
+    },
+    {
+     "name": "Test thrown knife",
+     "slot": "WEAPON",
+     "arange": 70,
+     "rstr": 45,
+     "aspeed": 4
+    },
+    {
+     "name": "Test str body",
+     "slot": "BODY",
+     "str": 12,
+     "arange": -5
+    },
+    {
+     "name": "Test range body",
+     "slot": "BODY",
+     "arange": 12,
+     "rstr": 3
+    },
+    {
+     "name": "Atlatl dart",
+     "slot": "AMMO"
+    }
+   ],
+   "expectInWinner": {
+    "RANGED": "Test eclipse atlatl"
+   }
+  },
+  {
+   "name": "ruby-bolts-high-hp",
+   "mechanics": [
+    "EnchantedBoltProcs"
+   ],
+   "monster": "Vorkath",
+   "items": [
+    {
+     "name": "Test rune crossbow",
+     "slot": "WEAPON",
+     "arange": 90,
+     "aspeed": 6
+    },
+    {
+     "name": "Test ruby bolts",
+     "slot": "AMMO",
+     "rstr": 60,
+     "specialType": "RUBY_BOLTS"
+    },
+    {
+     "name": "Test heavy bolts",
+     "slot": "AMMO",
+     "rstr": 115
+    }
+   ],
+   "expectInWinner": {
+    "RANGED": "Test ruby bolts"
+   }
+  },
+  {
+   "name": "dragon-hunter-lance",
+   "mechanics": [
+    "DragonHunterWeapons"
+   ],
+   "monster": "Vorkath",
+   "items": [
+    {
+     "name": "Test dragon hunter lance",
+     "slot": "WEAPON",
+     "astab": 85,
+     "str": 70,
+     "aspeed": 4,
+     "specialType": "DRAGON_HUNTER_LANCE"
+    },
+    {
+     "name": "Test stab sword 2",
+     "slot": "WEAPON",
+     "astab": 100,
+     "str": 82,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_STAB": "Test dragon hunter lance"
+   }
+  },
+  {
+   "name": "kraken-melee-immune",
+   "mechanics": [
+    "KrakenImmunity",
+    "KrakenRangedResistance"
+   ],
+   "monster": "Kraken",
+   "items": [
+    {
+     "name": "Test big slash sword 2",
+     "slot": "WEAPON",
+     "aslash": 140,
+     "str": 150,
+     "aspeed": 4
+    },
+    {
+     "name": "Test magic staff",
+     "slot": "WEAPON",
+     "amagic": 40,
+     "mdmg": 5.0,
+     "aspeed": 4
+    },
+    {
+     "name": "Test short bow",
+     "slot": "WEAPON",
+     "arange": 60,
+     "aspeed": 4
+    },
+    {
+     "name": "Test iron arrow",
+     "slot": "AMMO",
+     "rstr": 10
+    }
+   ],
+   "expectStyleAbsent": [
+    "MELEE_STAB",
+    "MELEE_SLASH",
+    "MELEE_CRUSH"
+   ]
+  },
+  {
+   "name": "salve-on-undead",
+   "mechanics": [
+    "SlayerSalveModifier"
+   ],
+   "monster": "Zombie",
+   "items": [
+    {
+     "name": "Test slash sword 3",
+     "slot": "WEAPON",
+     "aslash": 80,
+     "str": 78,
+     "aspeed": 4
+    },
+    {
+     "name": "Test salve amulet",
+     "slot": "AMULET",
+     "specialType": "SALVE_AMULET_E"
+    },
+    {
+     "name": "Test power amulet",
+     "slot": "AMULET",
+     "aslash": 10,
+     "str": 8
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_SLASH": "Test salve amulet"
+   }
+  },
+  {
+   "name": "zogre-comp-ogre-brutal",
+   "mechanics": [
+    "ZogreResistance",
+    "OgreBowFormula"
+   ],
+   "monster": "Zogre",
+   "items": [
+    {
+     "name": "Comp ogre bow",
+     "slot": "WEAPON",
+     "arange": 60,
+     "aspeed": 5,
+     "isTwoHanded": true
+    },
+    {
+     "name": "Test heavy xbow 2",
+     "slot": "WEAPON",
+     "arange": 110,
+     "aspeed": 5
+    },
+    {
+     "name": "Test rune brutal",
+     "slot": "AMMO",
+     "rstr": 75
+    },
+    {
+     "name": "Test runite bolt",
+     "slot": "AMMO",
+     "rstr": 115
+    }
+   ],
+   "expectInWinner": {
+    "RANGED": "Comp ogre bow"
+   }
+  },
+  {
+   "name": "dragon-hunter-wand",
+   "mechanics": [
+    "DragonHunterWand"
+   ],
+   "monster": "Vorkath",
+   "items": [
+    {
+     "name": "Test dh wand",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "mdmg": 10.0,
+     "aspeed": 4,
+     "specialType": "DRAGON_HUNTER_WAND"
+    },
+    {
+     "name": "Test better wand",
+     "slot": "WEAPON",
+     "amagic": 45,
+     "mdmg": 12.0,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MAGIC": "Test dh wand"
+   }
+  },
+  {
+   "name": "dragon-hunter-crossbow",
+   "mechanics": [
+    "DragonHunterWeapons"
+   ],
+   "monster": "Vorkath",
+   "items": [
+    {
+     "name": "Test dhcb",
+     "slot": "WEAPON",
+     "arange": 95,
+     "aspeed": 6,
+     "specialType": "DRAGON_HUNTER_CROSSBOW"
+    },
+    {
+     "name": "Test heavy xbow 3",
+     "slot": "WEAPON",
+     "arange": 115,
+     "aspeed": 6
+    },
+    {
+     "name": "Test runite bolt 2",
+     "slot": "AMMO",
+     "rstr": 110
+    }
+   ],
+   "expectInWinner": {
+    "RANGED": "Test dhcb"
+   }
+  },
+  {
+   "name": "arclight-demon",
+   "mechanics": [
+    "DemonBaneWeapons"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test arclight",
+     "slot": "WEAPON",
+     "aslash": 75,
+     "str": 70,
+     "aspeed": 4,
+     "specialType": "ARCLIGHT"
+    },
+    {
+     "name": "Test big sword 4",
+     "slot": "WEAPON",
+     "aslash": 95,
+     "str": 88,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_SLASH": "Test arclight"
+   }
+  },
+  {
+   "name": "demonbane-spell",
+   "mechanics": [
+    "DemonbaneSpells"
+   ],
+   "monster": "Greater demon",
+   "player": {
+    "selectedSpell": "SUPERIOR_DEMONBANE",
+    "markOfDarkness": true
+   },
+   "items": [
+    {
+     "name": "Test plain staff",
+     "slot": "WEAPON",
+     "amagic": 25,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "golembane-pickaxe",
+   "mechanics": [
+    "GolemBaneWeapons"
+   ],
+   "monster": "Obelisk",
+   "items": [
+    {
+     "name": "Test dragon pickaxe",
+     "slot": "WEAPON",
+     "astab": 45,
+     "str": 42,
+     "aspeed": 5
+    },
+    {
+     "name": "Test big stab 5",
+     "slot": "WEAPON",
+     "astab": 95,
+     "str": 88,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "ratbane-vs-rats",
+   "mechanics": [
+    "RatbaneWeapons"
+   ],
+   "monster": "Giant rat",
+   "items": [
+    {
+     "name": "Bone mace",
+     "slot": "WEAPON",
+     "acrush": 40,
+     "str": 35,
+     "aspeed": 4
+    },
+    {
+     "name": "Test big maul 2",
+     "slot": "WEAPON",
+     "acrush": 90,
+     "str": 85,
+     "aspeed": 5
+    }
+   ]
+  },
+  {
+   "name": "scorching-bow-demon",
+   "mechanics": [
+    "ScorchingBow"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test scorching bow",
+     "slot": "WEAPON",
+     "arange": 65,
+     "aspeed": 4,
+     "specialType": "SCORCHING_BOW"
+    },
+    {
+     "name": "Test better bow",
+     "slot": "WEAPON",
+     "arange": 80,
+     "aspeed": 4
+    },
+    {
+     "name": "Test dragon arrow 2",
+     "slot": "AMMO",
+     "rstr": 60
+    }
+   ],
+   "expectInWinner": {
+    "RANGED": "Test scorching bow"
+   }
+  },
+  {
+   "name": "holy-water-demon",
+   "mechanics": [
+    "HolyWater",
+    "HolyWaterFormula"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test holy water",
+     "slot": "WEAPON",
+     "arange": 20,
+     "aspeed": 4,
+     "specialType": "HOLY_WATER"
+    },
+    {
+     "name": "Test thrown knife 2",
+     "slot": "WEAPON",
+     "arange": 60,
+     "rstr": 40,
+     "aspeed": 3
+    }
+   ]
+  },
+  {
+   "name": "delrith-silverlight",
+   "mechanics": [
+    "DelrithSilverlight"
+   ],
+   "monster": "Delrith",
+   "items": [
+    {
+     "name": "Test silverlight",
+     "slot": "WEAPON",
+     "aslash": 25,
+     "str": 20,
+     "aspeed": 4,
+     "specialType": "SILVERLIGHT"
+    },
+    {
+     "name": "Test big sword 6",
+     "slot": "WEAPON",
+     "aslash": 60,
+     "str": 50,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_SLASH": "Test silverlight"
+   }
+  },
+  {
+   "name": "gadderhammer-shades",
+   "mechanics": [
+    "GadderhammerShades"
+   ],
+   "monster": "Loar Shade",
+   "items": [
+    {
+     "name": "Test gadderhammer",
+     "slot": "WEAPON",
+     "acrush": 40,
+     "str": 40,
+     "aspeed": 4
+    },
+    {
+     "name": "Test big maul 3",
+     "slot": "WEAPON",
+     "acrush": 55,
+     "str": 52,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_CRUSH": "Test gadderhammer"
+   }
+  },
+  {
+   "name": "avarice-revenant",
+   "mechanics": [
+    "AmuletOfAvarice"
+   ],
+   "monster": "Revenant imp",
+   "items": [
+    {
+     "name": "Test slash sword 7",
+     "slot": "WEAPON",
+     "aslash": 80,
+     "str": 75,
+     "aspeed": 4
+    },
+    {
+     "name": "Test avarice",
+     "slot": "AMULET",
+     "specialType": "AMULET_OF_AVARICE"
+    },
+    {
+     "name": "Test power amulet 2",
+     "slot": "AMULET",
+     "aslash": 10,
+     "str": 8
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_SLASH": "Test avarice"
+   }
+  },
+  {
+   "name": "wilderness-chainmace",
+   "mechanics": [
+    "WildernessWeapons"
+   ],
+   "monster": "Revenant imp",
+   "items": [
+    {
+     "name": "Test viggora chainmace",
+     "slot": "WEAPON",
+     "acrush": 65,
+     "str": 60,
+     "aspeed": 4,
+     "specialType": "VIGGORAS_CHAINMACE"
+    },
+    {
+     "name": "Test big maul 4",
+     "slot": "WEAPON",
+     "acrush": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "efaritay-tier2-vampyre",
+   "mechanics": [
+    "EfaritaysAid"
+   ],
+   "monster": "Vampyre Juvinate",
+   "items": [
+    {
+     "name": "Test silver sickle",
+     "slot": "WEAPON",
+     "aslash": 25,
+     "str": 20,
+     "aspeed": 4
+    },
+    {
+     "name": "Test efaritays aid",
+     "slot": "RING",
+     "specialType": "EFARITAYS_AID"
+    },
+    {
+     "name": "Test power ring",
+     "slot": "RING",
+     "aslash": 8,
+     "str": 6
+    }
+   ]
+  },
+  {
+   "name": "keris-amascut-outside-toa",
+   "mechanics": [
+    "KerisAmascutPenalty"
+   ],
+   "monster": "Kalphite Soldier",
+   "items": [
+    {
+     "name": "Test keris amascut",
+     "slot": "WEAPON",
+     "astab": 95,
+     "str": 70,
+     "aspeed": 4,
+     "specialType": "KERIS_AMASCUT"
+    },
+    {
+     "name": "Test keris plain",
+     "slot": "WEAPON",
+     "astab": 70,
+     "str": 60,
+     "aspeed": 4,
+     "specialType": "KERIS"
+    }
+   ]
+  },
+  {
+   "name": "soulreaper-stacks",
+   "mechanics": [
+    "SoulreaperAxeStacks"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test soulreaper",
+     "slot": "WEAPON",
+     "aslash": 95,
+     "str": 95,
+     "aspeed": 5,
+     "specialType": "SOULREAPER_AXE"
+    },
+    {
+     "name": "Test big sword 8",
+     "slot": "WEAPON",
+     "aslash": 100,
+     "str": 98,
+     "aspeed": 5
+    }
+   ]
+  },
+  {
+   "name": "colossal-blade-size",
+   "mechanics": [
+    "ColossalBladeBonus"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test colossal blade",
+     "slot": "WEAPON",
+     "aslash": 80,
+     "str": 75,
+     "aspeed": 5,
+     "isTwoHanded": true,
+     "specialType": "COLOSSAL_BLADE"
+    },
+    {
+     "name": "Test big sword 9",
+     "slot": "WEAPON",
+     "aslash": 85,
+     "str": 80,
+     "aspeed": 5,
+     "isTwoHanded": true
+    }
+   ]
+  },
+  {
+   "name": "tonalztics-ralos",
+   "mechanics": [
+    "TonalzticsOfRalos"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test tonalztics",
+     "slot": "WEAPON",
+     "arange": 70,
+     "rstr": 45,
+     "aspeed": 6,
+     "isTwoHanded": true,
+     "specialType": "TONALZTICS_OF_RALOS"
+    },
+    {
+     "name": "Test thrown knife 3",
+     "slot": "WEAPON",
+     "arange": 70,
+     "rstr": 45,
+     "aspeed": 3
+    }
+   ]
+  },
+  {
+   "name": "venator-bow",
+   "mechanics": [
+    "VenatorBowBounce"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test venator bow",
+     "slot": "WEAPON",
+     "arange": 75,
+     "rstr": 55,
+     "aspeed": 4,
+     "isTwoHanded": true,
+     "specialType": "VENATOR_BOW"
+    },
+    {
+     "name": "Test short bow 2",
+     "slot": "WEAPON",
+     "arange": 70,
+     "aspeed": 4
+    },
+    {
+     "name": "Test rune arrow 3",
+     "slot": "AMMO",
+     "rstr": 49
+    }
+   ]
+  },
+  {
+   "name": "dark-bow-double",
+   "mechanics": [
+    "DarkBowMechanic"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test dark bow",
+     "slot": "WEAPON",
+     "arange": 95,
+     "aspeed": 9,
+     "isTwoHanded": true,
+     "specialType": "DARK_BOW"
+    },
+    {
+     "name": "Test short bow 3",
+     "slot": "WEAPON",
+     "arange": 70,
+     "aspeed": 4
+    },
+    {
+     "name": "Test dragon arrow 3",
+     "slot": "AMMO",
+     "rstr": 60
+    }
+   ]
+  },
+  {
+   "name": "dual-macuahuitl",
+   "mechanics": [
+    "DualMacuahuitlMechanic"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test dual macuahuitl",
+     "slot": "WEAPON",
+     "acrush": 85,
+     "str": 80,
+     "aspeed": 4,
+     "specialType": "DUAL_MACUAHUITL"
+    },
+    {
+     "name": "Test big maul 5",
+     "slot": "WEAPON",
+     "acrush": 88,
+     "str": 82,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "fang-of-hound",
+   "mechanics": [
+    "FangOfTheHoundFlames"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test hound fang",
+     "slot": "WEAPON",
+     "astab": 80,
+     "str": 75,
+     "aspeed": 4,
+     "specialType": "FANG_OF_THE_HOUND"
+    },
+    {
+     "name": "Test stab sword 6",
+     "slot": "WEAPON",
+     "astab": 82,
+     "str": 76,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "hallowfell-cleave",
+   "mechanics": [
+    "HallowfellCleave"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test hallowfell",
+     "slot": "WEAPON",
+     "aslash": 85,
+     "str": 80,
+     "aspeed": 5,
+     "specialType": "HALLOWFELL"
+    },
+    {
+     "name": "Test big sword 10",
+     "slot": "WEAPON",
+     "aslash": 88,
+     "str": 82,
+     "aspeed": 5
+    }
+   ]
+  },
+  {
+   "name": "osmumten-fang",
+   "mechanics": [
+    "OsmumtenFangMechanic"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test osmumten fang",
+     "slot": "WEAPON",
+     "astab": 85,
+     "str": 80,
+     "aspeed": 5,
+     "specialType": "OSMUMTEN_FANG"
+    },
+    {
+     "name": "Test stab sword 7",
+     "slot": "WEAPON",
+     "astab": 90,
+     "str": 84,
+     "aspeed": 5
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_STAB": "Test osmumten fang"
+   }
+  },
+  {
+   "name": "scythe-of-vitur",
+   "mechanics": [
+    "ScytheOfViturMechanic"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test scythe",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 5,
+     "isTwoHanded": true,
+     "specialType": "SCYTHE_OF_VITUR"
+    },
+    {
+     "name": "Test big sword 11",
+     "slot": "WEAPON",
+     "aslash": 100,
+     "str": 95,
+     "aspeed": 5
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_SLASH": "Test scythe"
+   }
+  },
+  {
+   "name": "sanguinesti-proc",
+   "mechanics": [
+    "SanguinestiStaffProc"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test sang staff",
+     "slot": "WEAPON",
+     "amagic": 45,
+     "mdmg": 8.0,
+     "aspeed": 4,
+     "specialType": "SANGUINESTI_STAFF"
+    },
+    {
+     "name": "Test big staff 2",
+     "slot": "WEAPON",
+     "amagic": 46,
+     "mdmg": 8.0,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "harmonised-staff",
+   "mechanics": [
+    "HarmonisedStaffFormula"
+   ],
+   "monster": "Greater demon",
+   "player": {
+    "selectedSpell": "FIRE_SURGE"
+   },
+   "items": [
+    {
+     "name": "Test harmonised staff",
+     "slot": "WEAPON",
+     "amagic": 45,
+     "mdmg": 10.0,
+     "aspeed": 5,
+     "specialType": "HARMONISED_NIGHTMARE_STAFF"
+    },
+    {
+     "name": "Test big staff 3",
+     "slot": "WEAPON",
+     "amagic": 50,
+     "mdmg": 10.0,
+     "aspeed": 5
+    }
+   ],
+   "expectInWinner": {
+    "MAGIC": "Test harmonised staff"
+   }
+  },
+  {
+   "name": "twinflame-second-cast",
+   "mechanics": [
+    "SecondSpellCast"
+   ],
+   "monster": "Greater demon",
+   "player": {
+    "selectedSpell": "FIRE_SURGE"
+   },
+   "items": [
+    {
+     "name": "Test twinflame staff",
+     "slot": "WEAPON",
+     "amagic": 40,
+     "mdmg": 5.0,
+     "aspeed": 5,
+     "specialType": "TWINFLAME_STAFF"
+    },
+    {
+     "name": "Test big staff 4",
+     "slot": "WEAPON",
+     "amagic": 45,
+     "mdmg": 6.0,
+     "aspeed": 5
+    }
+   ]
+  },
+  {
+   "name": "sulphur-blades-split",
+   "mechanics": [
+    "SplitHitWeaponMechanic"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test sulphur blades",
+     "slot": "WEAPON",
+     "aslash": 75,
+     "str": 70,
+     "aspeed": 4,
+     "specialType": "SULPHUR_BLADES"
+    },
+    {
+     "name": "Test big sword 12",
+     "slot": "WEAPON",
+     "aslash": 78,
+     "str": 72,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "veracs-flail-set",
+   "mechanics": [
+    "VeracsFlailMechanic"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test verac flail",
+     "slot": "WEAPON",
+     "acrush": 80,
+     "str": 75,
+     "aspeed": 5,
+     "specialType": "VERAC_FLAIL"
+    },
+    {
+     "name": "Test verac helm",
+     "slot": "HEAD",
+     "acrush": 0,
+     "specialType": "VERAC_HELM"
+    },
+    {
+     "name": "Test verac body",
+     "slot": "BODY",
+     "acrush": 0,
+     "specialType": "VERAC_BODY"
+    },
+    {
+     "name": "Test verac legs",
+     "slot": "LEGS",
+     "acrush": 0,
+     "specialType": "VERAC_LEGS"
+    },
+    {
+     "name": "Test str helm 3",
+     "slot": "HEAD",
+     "str": 4
+    },
+    {
+     "name": "Test str body 3",
+     "slot": "BODY",
+     "str": 5
+    }
+   ]
+  },
+  {
+   "name": "ahrim-damned-proc",
+   "mechanics": [
+    "AhrimsDamnedProc"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test ahrim staff",
+     "slot": "WEAPON",
+     "amagic": 35,
+     "mdmg": 5.0,
+     "aspeed": 5,
+     "specialType": "AHRIM_STAFF"
+    },
+    {
+     "name": "Test ahrim hood",
+     "slot": "HEAD",
+     "amagic": 6,
+     "specialType": "AHRIM_HOOD"
+    },
+    {
+     "name": "Test ahrim top",
+     "slot": "BODY",
+     "amagic": 10,
+     "specialType": "AHRIM_TOP"
+    },
+    {
+     "name": "Test ahrim skirt",
+     "slot": "LEGS",
+     "amagic": 8,
+     "specialType": "AHRIM_SKIRT"
+    },
+    {
+     "name": "Test damned amulet",
+     "slot": "AMULET",
+     "specialType": "AMULET_OF_THE_DAMNED"
+    },
+    {
+     "name": "Test magic amulet",
+     "slot": "AMULET",
+     "amagic": 12
+    }
+   ]
+  },
+  {
+   "name": "karil-damned-proc",
+   "mechanics": [
+    "KarilsDamnedProc"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test karil xbow",
+     "slot": "WEAPON",
+     "arange": 80,
+     "aspeed": 4,
+     "specialType": "KARIL_CROSSBOW"
+    },
+    {
+     "name": "Test karil coif",
+     "slot": "HEAD",
+     "arange": 6,
+     "specialType": "KARIL_COIF"
+    },
+    {
+     "name": "Test karil top",
+     "slot": "BODY",
+     "arange": 10,
+     "specialType": "KARIL_BODY"
+    },
+    {
+     "name": "Test karil skirt",
+     "slot": "LEGS",
+     "arange": 8,
+     "specialType": "KARIL_LEGS"
+    },
+    {
+     "name": "Test damned amulet 2",
+     "slot": "AMULET",
+     "specialType": "AMULET_OF_THE_DAMNED"
+    },
+    {
+     "name": "Test bolt rack",
+     "slot": "AMMO",
+     "rstr": 55
+    }
+   ]
+  },
+  {
+   "name": "virtus-set-magic",
+   "mechanics": [
+    "VirtusSet"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test big staff 5",
+     "slot": "WEAPON",
+     "amagic": 45,
+     "mdmg": 8.0,
+     "aspeed": 4
+    },
+    {
+     "name": "Test virtus mask",
+     "slot": "HEAD",
+     "amagic": 8,
+     "mdmg": 1.0,
+     "specialType": "VIRTUS_MASK"
+    },
+    {
+     "name": "Test virtus top",
+     "slot": "BODY",
+     "amagic": 12,
+     "mdmg": 1.0,
+     "specialType": "VIRTUS_TOP"
+    },
+    {
+     "name": "Test virtus legs",
+     "slot": "LEGS",
+     "amagic": 10,
+     "mdmg": 1.0,
+     "specialType": "VIRTUS_LEGS"
+    },
+    {
+     "name": "Test magic hat 2",
+     "slot": "HEAD",
+     "amagic": 9,
+     "mdmg": 1.0
+    }
+   ]
+  },
+  {
+   "name": "crystal-armor-bowfa",
+   "mechanics": [
+    "CrystalArmorSet"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test bowfa",
+     "slot": "WEAPON",
+     "arange": 80,
+     "rstr": 70,
+     "aspeed": 4,
+     "isTwoHanded": true,
+     "specialType": "BOWFA"
+    },
+    {
+     "name": "Test short bow 4",
+     "slot": "WEAPON",
+     "arange": 85,
+     "aspeed": 4
+    },
+    {
+     "name": "Test crystal helm",
+     "slot": "HEAD",
+     "arange": 5,
+     "specialType": "CRYSTAL_HELM"
+    },
+    {
+     "name": "Test crystal body",
+     "slot": "BODY",
+     "arange": 8,
+     "specialType": "CRYSTAL_BODY"
+    },
+    {
+     "name": "Test crystal legs",
+     "slot": "LEGS",
+     "arange": 6,
+     "specialType": "CRYSTAL_LEGS"
+    },
+    {
+     "name": "Test range helm 2",
+     "slot": "HEAD",
+     "arange": 6,
+     "rstr": 2
+    },
+    {
+     "name": "Test rune arrow 4",
+     "slot": "AMMO",
+     "rstr": 49
+    }
+   ],
+   "expectInWinner": {
+    "RANGED": "Test bowfa"
+   }
+  },
+  {
+   "name": "tome-of-fire",
+   "mechanics": [
+    "TomeDamageBonus",
+    "TomeAccuracyBonus",
+    "MagicDefenceFromDefenceLevel"
+   ],
+   "monster": "Greater demon",
+   "player": {
+    "selectedSpell": "FIRE_SURGE"
+   },
+   "items": [
+    {
+     "name": "Test plain staff 2",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    },
+    {
+     "name": "Test tome of fire",
+     "slot": "SHIELD",
+     "amagic": 8,
+     "specialType": "TOME_OF_FIRE"
+    },
+    {
+     "name": "Test magic shield",
+     "slot": "SHIELD",
+     "amagic": 15,
+     "mdmg": 2.0
+    }
+   ],
+   "expectInWinner": {
+    "MAGIC": "Test tome of fire"
+   }
+  },
+  {
+   "name": "chaos-gauntlets-bolt",
+   "mechanics": [
+    "ChaosGauntletsBonus"
+   ],
+   "monster": "Greater demon",
+   "player": {
+    "selectedSpell": "FIRE_BOLT"
+   },
+   "items": [
+    {
+     "name": "Test plain staff 3",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    },
+    {
+     "name": "Test chaos gauntlets",
+     "slot": "GLOVES",
+     "specialType": "CHAOS_GAUNTLETS"
+    },
+    {
+     "name": "Test magic gloves",
+     "slot": "GLOVES",
+     "amagic": 8,
+     "mdmg": 1.0
+    }
+   ]
+  },
+  {
+   "name": "brimstone-ring-magic",
+   "mechanics": [
+    "BrimstoneRing"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test big staff 6",
+     "slot": "WEAPON",
+     "amagic": 45,
+     "mdmg": 8.0,
+     "aspeed": 4
+    },
+    {
+     "name": "Test brimstone ring",
+     "slot": "RING",
+     "amagic": 4,
+     "specialType": "BRIMSTONE_RING"
+    },
+    {
+     "name": "Test magic ring",
+     "slot": "RING",
+     "amagic": 8
+    }
+   ]
+  },
+  {
+   "name": "corp-spear-halving",
+   "mechanics": [
+    "CorporealBeastReduction"
+   ],
+   "monster": "Corporeal Beast",
+   "items": [
+    {
+     "name": "Test zamorakian spear",
+     "slot": "WEAPON",
+     "astab": 85,
+     "str": 75,
+     "aspeed": 4,
+     "isTwoHanded": true
+    },
+    {
+     "name": "Test big stab 8",
+     "slot": "WEAPON",
+     "astab": 110,
+     "str": 100,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_STAB": "Test zamorakian spear"
+   }
+  },
+  {
+   "name": "skotizo-altars-lit",
+   "mechanics": [
+    "SkotizoAltars"
+   ],
+   "monster": "Skotizo",
+   "monsterOptions": {
+    "skotizoActiveAltars": "4"
+   },
+   "items": [
+    {
+     "name": "Test slash sword b1",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "tormented-demon-unshielded",
+   "mechanics": [
+    "TormentedDemonPhases"
+   ],
+   "monster": "Tormented Demon",
+   "monsterOptions": {
+    "tormentedDemonPhase": "Unshielded"
+   },
+   "items": [
+    {
+     "name": "Test slash sword b2",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "sire-transitioning",
+   "mechanics": [
+    "AbyssalSireTransition",
+    "AbyssalSireMinionAccuracy"
+   ],
+   "monster": "Abyssal Sire",
+   "monsterOptions": {
+    "abyssalSireTransitioning": "true"
+   },
+   "items": [
+    {
+     "name": "Test slash sword b3",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "leviathan-stunned",
+   "mechanics": [
+    "LeviathanMechanics"
+   ],
+   "monster": "The Leviathan",
+   "monsterOptions": {
+    "leviathanSituation": "Stunned"
+   },
+   "items": [
+    {
+     "name": "Test slash sword b4",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    },
+    {
+     "name": "Test short bow b4",
+     "slot": "WEAPON",
+     "arange": 80,
+     "aspeed": 4
+    },
+    {
+     "name": "Test rune arrow b4",
+     "slot": "AMMO",
+     "rstr": 49
+    }
+   ]
+  },
+  {
+   "name": "royal-titan-ranged-magic",
+   "mechanics": [
+    "RoyalTitansRangedAccuracy",
+    "RoyalTitanElementalMagic"
+   ],
+   "monster": "Branda the Fire Queen",
+   "monsterOptions": {
+    "titansOutOfMeleeRange": "true"
+   },
+   "player": {
+    "selectedSpell": "WATER_SURGE"
+   },
+   "items": [
+    {
+     "name": "Test short bow b5",
+     "slot": "WEAPON",
+     "arange": 80,
+     "aspeed": 4
+    },
+    {
+     "name": "Test rune arrow b5",
+     "slot": "AMMO",
+     "rstr": 49
+    },
+    {
+     "name": "Test plain staff b5",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "surok-no-powered-staff",
+   "mechanics": [
+    "SurokMagisImmunity"
+   ],
+   "monster": "Surok Magis",
+   "player": {
+    "selectedSpell": "FIRE_SURGE"
+   },
+   "items": [
+    {
+     "name": "Test trident of the seas",
+     "slot": "WEAPON",
+     "amagic": 35,
+     "mdmg": 5.0,
+     "aspeed": 4
+    },
+    {
+     "name": "Test plain staff b6",
+     "slot": "WEAPON",
+     "amagic": 25,
+     "aspeed": 4
+    },
+    {
+     "name": "Test slash sword b6",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MAGIC": "Test plain staff b6"
+   },
+   "expectStyleAbsent": [
+    "MELEE_STAB",
+    "MELEE_SLASH",
+    "MELEE_CRUSH"
+   ]
+  },
+  {
+   "name": "kamil-fire-spells",
+   "mechanics": [
+    "DesertTreasureElementalImmunity"
+   ],
+   "monster": "Kamil",
+   "player": {
+    "selectedSpell": "FIRE_SURGE"
+   },
+   "items": [
+    {
+     "name": "Test plain staff b7",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "fareed-arrows-only",
+   "mechanics": [
+    "DesertTreasureElementalImmunity"
+   ],
+   "monster": "Fareed",
+   "items": [
+    {
+     "name": "Test yew short bow b8",
+     "slot": "WEAPON",
+     "arange": 70,
+     "aspeed": 4
+    },
+    {
+     "name": "Test rune arrow b8",
+     "slot": "AMMO",
+     "rstr": 49
+    },
+    {
+     "name": "Test heavy xbow b8",
+     "slot": "WEAPON",
+     "arange": 110,
+     "aspeed": 5
+    },
+    {
+     "name": "Test runite bolt b8",
+     "slot": "AMMO",
+     "rstr": 115
+    }
+   ],
+   "expectInWinner": {
+    "RANGED": "Test yew short bow b8"
+   }
+  },
+  {
+   "name": "salarin-strike-spells",
+   "mechanics": [
+    "SalarinImmunity",
+    "SalarinStrikeSpells"
+   ],
+   "monster": "Salarin the twisted",
+   "player": {
+    "selectedSpell": "FIRE_STRIKE"
+   },
+   "items": [
+    {
+     "name": "Test plain staff b9",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    },
+    {
+     "name": "Test slash sword b9",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ],
+   "expectStyleAbsent": [
+    "MELEE_STAB",
+    "MELEE_SLASH",
+    "MELEE_CRUSH"
+   ]
+  },
+  {
+   "name": "tanglefoot-secateurs",
+   "mechanics": [
+    "RequiredWeaponImmunity"
+   ],
+   "monster": "Tanglefoot",
+   "items": [
+    {
+     "name": "Magic secateurs",
+     "slot": "WEAPON",
+     "aslash": 10,
+     "str": 5,
+     "aspeed": 4
+    },
+    {
+     "name": "Test big sword b10",
+     "slot": "WEAPON",
+     "aslash": 110,
+     "str": 100,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_SLASH": "Magic secateurs"
+   }
+  },
+  {
+   "name": "dusk-melee-only",
+   "mechanics": [
+    "GrotesqueGuardiansImmunity"
+   ],
+   "monster": "Dusk",
+   "items": [
+    {
+     "name": "Test slash sword b11",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    },
+    {
+     "name": "Test short bow b11",
+     "slot": "WEAPON",
+     "arange": 80,
+     "aspeed": 4
+    },
+    {
+     "name": "Test rune arrow b11",
+     "slot": "AMMO",
+     "rstr": 49
+    },
+    {
+     "name": "Test plain staff b11",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    }
+   ],
+   "expectStyleAbsent": [
+    "RANGED",
+    "MAGIC"
+   ]
+  },
+  {
+   "name": "blood-moon-set",
+   "mechanics": [
+    "BloodMoonSet"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test dual macuahuitl b12",
+     "slot": "WEAPON",
+     "acrush": 85,
+     "str": 80,
+     "aspeed": 4,
+     "specialType": "DUAL_MACUAHUITL"
+    },
+    {
+     "name": "Test blood moon helm",
+     "slot": "HEAD",
+     "acrush": 3,
+     "str": 3,
+     "specialType": "BLOOD_MOON_HELM"
+    },
+    {
+     "name": "Test blood moon chest",
+     "slot": "BODY",
+     "acrush": 4,
+     "str": 4,
+     "specialType": "BLOOD_MOON_CHEST"
+    },
+    {
+     "name": "Test blood moon tassets",
+     "slot": "LEGS",
+     "acrush": 3,
+     "str": 3,
+     "specialType": "BLOOD_MOON_TASSETS"
+    },
+    {
+     "name": "Test str helm b12",
+     "slot": "HEAD",
+     "str": 4
+    },
+    {
+     "name": "Test str body b12",
+     "slot": "BODY",
+     "str": 5
+    }
+   ]
+  },
+  {
+   "name": "eclipse-moon-set",
+   "mechanics": [
+    "EclipseMoonBurn"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test eclipse atlatl b13",
+     "slot": "WEAPON",
+     "arange": 65,
+     "aspeed": 4,
+     "specialType": "ECLIPSE_ATLATL"
+    },
+    {
+     "name": "Test eclipse helm",
+     "slot": "HEAD",
+     "arange": 3,
+     "str": 3,
+     "specialType": "ECLIPSE_MOON_HELM"
+    },
+    {
+     "name": "Test eclipse chest",
+     "slot": "BODY",
+     "arange": 4,
+     "str": 4,
+     "specialType": "ECLIPSE_MOON_CHEST"
+    },
+    {
+     "name": "Test eclipse tassets",
+     "slot": "LEGS",
+     "arange": 3,
+     "str": 3,
+     "specialType": "ECLIPSE_MOON_TASSETS"
+    },
+    {
+     "name": "Atlatl dart",
+     "slot": "AMMO"
+    }
+   ]
+  },
+  {
+   "name": "frostweaver-blue-moon",
+   "mechanics": [
+    "FrostweaverSetCast"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "selectedSpell": "ICE_BURST"
+   },
+   "items": [
+    {
+     "name": "Test blue moon spear",
+     "slot": "WEAPON",
+     "astab": 70,
+     "str": 65,
+     "amagic": 15,
+     "aspeed": 5,
+     "isTwoHanded": true,
+     "specialType": "BLUE_MOON_SPEAR"
+    },
+    {
+     "name": "Test blue moon helm",
+     "slot": "HEAD",
+     "amagic": 4,
+     "specialType": "BLUE_MOON_HELM"
+    },
+    {
+     "name": "Test blue moon chest",
+     "slot": "BODY",
+     "amagic": 6,
+     "specialType": "BLUE_MOON_CHEST"
+    },
+    {
+     "name": "Test blue moon tassets",
+     "slot": "LEGS",
+     "amagic": 5,
+     "specialType": "BLUE_MOON_TASSETS"
+    }
+   ]
+  },
+  {
+   "name": "poison-weapon",
+   "mechanics": [
+    "PoisonProc"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test dagger (p++)",
+     "slot": "WEAPON",
+     "astab": 60,
+     "str": 55,
+     "aspeed": 4
+    },
+    {
+     "name": "Test dagger plain",
+     "slot": "WEAPON",
+     "astab": 60,
+     "str": 55,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_STAB": "Test dagger (p++)"
+   }
+  },
+  {
+   "name": "venom-serpentine",
+   "mechanics": [
+    "VenomProc"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test dagger (p++) b16",
+     "slot": "WEAPON",
+     "astab": 60,
+     "str": 55,
+     "aspeed": 4
+    },
+    {
+     "name": "Test serpentine helm",
+     "slot": "HEAD",
+     "str": 3,
+     "specialType": "SERPENTINE_HELM"
+    },
+    {
+     "name": "Test str helm b16",
+     "slot": "HEAD",
+     "str": 5
+    }
+   ]
+  },
+  {
+   "name": "guardian-pickaxe",
+   "mechanics": [
+    "GuardianStatues"
+   ],
+   "monster": "Guardian",
+   "items": [
+    {
+     "name": "Test dragon pickaxe g",
+     "slot": "WEAPON",
+     "astab": 45,
+     "str": 42,
+     "aspeed": 5
+    },
+    {
+     "name": "Test abyssal whip g",
+     "slot": "WEAPON",
+     "aslash": 82,
+     "str": 82,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_STAB": "Test dragon pickaxe g"
+   }
+  },
+  {
+   "name": "hueycoatl-braziers",
+   "mechanics": [
+    "HueycoatlBraziers"
+   ],
+   "monster": "The Hueycoatl",
+   "monsterOptions": {
+    "hueycoatlBraziersLit": "2"
+   },
+   "items": [
+    {
+     "name": "Test slash sword hb",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "olm-mitigation",
+   "mechanics": [
+    "GreatOlmMitigation"
+   ],
+   "monster": "Great Olm",
+   "items": [
+    {
+     "name": "Test slash sword om",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    },
+    {
+     "name": "Test plain staff om",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "tekton-magic",
+   "mechanics": [
+    "TektonResistance"
+   ],
+   "monster": "Tekton",
+   "items": [
+    {
+     "name": "Test slash sword tk",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    },
+    {
+     "name": "Test plain staff tk",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "nightmare-parity",
+   "mechanics": [
+    "NightmareTotemVulnerability"
+   ],
+   "monster": "The Nightmare",
+   "items": [
+    {
+     "name": "Test slash sword nm",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "chinchompa-distance",
+   "mechanics": [
+    "ChinchompaDistanceAccuracy",
+    "MultiTargetSplash"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Red chinchompa cd",
+     "slot": "WEAPON",
+     "arange": 70,
+     "rstr": 15,
+     "aspeed": 4
+    },
+    {
+     "name": "Test rune knife cd",
+     "slot": "WEAPON",
+     "arange": 60,
+     "rstr": 40,
+     "aspeed": 3
+    }
+   ]
+  },
+  {
+   "name": "vespula-halberd-reach",
+   "mechanics": [
+    "ReachRequiredImmunity"
+   ],
+   "monster": "Vespula",
+   "items": [
+    {
+     "name": "Test dragon halberd vr",
+     "slot": "WEAPON",
+     "aslash": 85,
+     "str": 80,
+     "aspeed": 7,
+     "isTwoHanded": true
+    },
+    {
+     "name": "Test big sword vr",
+     "slot": "WEAPON",
+     "aslash": 110,
+     "str": 100,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MELEE_SLASH": "Test dragon halberd vr"
+   }
+  },
+  {
+   "name": "glowing-crystal-pickaxe",
+   "mechanics": [
+    "GlowingCrystalResistance"
+   ],
+   "monster": "Glowing crystal",
+   "items": [
+    {
+     "name": "Test dragon pickaxe gc",
+     "slot": "WEAPON",
+     "astab": 45,
+     "str": 42,
+     "aspeed": 5
+    },
+    {
+     "name": "Test abyssal whip gc",
+     "slot": "WEAPON",
+     "aslash": 82,
+     "str": 82,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "nylocas-hagios-magic",
+   "mechanics": [
+    "NylocasFormImmunity"
+   ],
+   "monster": "Nylocas Hagios",
+   "items": [
+    {
+     "name": "Test slash sword nh",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    },
+    {
+     "name": "Test short bow nh",
+     "slot": "WEAPON",
+     "arange": 80,
+     "aspeed": 4
+    },
+    {
+     "name": "Test bronze arrow nh",
+     "slot": "AMMO",
+     "rstr": 7
+    },
+    {
+     "name": "Test plain staff nh",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    }
+   ],
+   "expectStyleAbsent": [
+    "MELEE_STAB",
+    "MELEE_SLASH",
+    "MELEE_CRUSH",
+    "RANGED"
+   ]
+  },
+  {
+   "name": "smoke-staff-standard",
+   "mechanics": [
+    "SmokeStaffBonus"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "selectedSpell": "FIRE_SURGE"
+   },
+   "items": [
+    {
+     "name": "Smoke battlestaff",
+     "slot": "WEAPON",
+     "amagic": 17,
+     "aspeed": 4
+    },
+    {
+     "name": "Test better staff ss",
+     "slot": "WEAPON",
+     "amagic": 25,
+     "aspeed": 4
+    }
+   ],
+   "expectInWinner": {
+    "MAGIC": "Smoke battlestaff"
+   }
+  },
+  {
+   "name": "elemental-weakness-fire",
+   "mechanics": [
+    "ElementalWeakness"
+   ],
+   "monster": "Ice giant",
+   "player": {
+    "selectedSpell": "FIRE_SURGE"
+   },
+   "items": [
+    {
+     "name": "Test plain staff ew",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "confliction-gauntlets",
+   "mechanics": [
+    "ConflictionGauntlets"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test trident of the swamp cg",
+     "slot": "WEAPON",
+     "amagic": 35,
+     "mdmg": 5.0,
+     "aspeed": 4
+    },
+    {
+     "name": "Test confliction gauntlets",
+     "slot": "GLOVES",
+     "amagic": 2,
+     "specialType": "CONFLICTION_GAUNTLETS"
+    },
+    {
+     "name": "Test magic gloves cg",
+     "slot": "GLOVES",
+     "amagic": 8,
+     "mdmg": 1.0
+    }
+   ]
+  },
+  {
+   "name": "seeking-arrows",
+   "mechanics": [
+    "SeekingArrowMinimum"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test yew short bow sa",
+     "slot": "WEAPON",
+     "arange": 70,
+     "aspeed": 4
+    },
+    {
+     "name": "Seeking arrow",
+     "slot": "AMMO",
+     "rstr": 40
+    },
+    {
+     "name": "Test rune arrow sa",
+     "slot": "AMMO",
+     "rstr": 49
+    }
+   ]
+  },
+  {
+   "name": "aquanite-hopper",
+   "mechanics": [
+    "AquaniteHopperSecondShot"
+   ],
+   "monster": "Aquanite",
+   "items": [
+    {
+     "name": "Test hopper ballista",
+     "slot": "WEAPON",
+     "arange": 90,
+     "aspeed": 6,
+     "isTwoHanded": true,
+     "specialType": "AQUANITE_HOPPER"
+    },
+    {
+     "name": "Test heavy xbow ah",
+     "slot": "WEAPON",
+     "arange": 100,
+     "aspeed": 6
+    },
+    {
+     "name": "Test rune javelin ah",
+     "slot": "AMMO",
+     "rstr": 77
+    },
+    {
+     "name": "Test runite bolt ah",
+     "slot": "AMMO",
+     "rstr": 115
+    }
+   ]
+  },
+  {
+   "name": "powered-staff-trident",
+   "mechanics": [
+    "PoweredStaffBaseHits"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Test trident of the seas ps",
+     "slot": "WEAPON",
+     "amagic": 25,
+     "mdmg": 3.0,
+     "aspeed": 4
+    },
+    {
+     "name": "Test plain staff ps",
+     "slot": "WEAPON",
+     "amagic": 28,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "salamander-tar",
+   "mechanics": [
+    "SalamanderMagicBaseHits"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Black salamander",
+     "slot": "WEAPON",
+     "arange": 45,
+     "aslash": 0,
+     "aspeed": 5,
+     "isTwoHanded": true
+    },
+    {
+     "name": "Harralander tar",
+     "slot": "AMMO",
+     "rstr": 49
+    },
+    {
+     "name": "Test rune arrow st",
+     "slot": "AMMO",
+     "rstr": 49
+    }
+   ]
+  },
+  {
+   "name": "dawnbringer-verzik",
+   "mechanics": [
+    "DawnbringerMechanics"
+   ],
+   "monster": "Verzik Vitur",
+   "items": [
+    {
+     "name": "Test dawnbringer",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "mdmg": 5.0,
+     "aspeed": 4,
+     "specialType": "DAWNBRINGER"
+    },
+    {
+     "name": "Test big staff dv",
+     "slot": "WEAPON",
+     "amagic": 50,
+     "mdmg": 10.0,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "spec-dragon-dagger",
+   "mechanics": [
+    "SpecialAttackAccuracy",
+    "SpecialAttackDamage",
+    "TwoHitSpecDistribution"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "usingSpecialAttack": true
+   },
+   "items": [
+    {
+     "name": "Dragon dagger",
+     "slot": "WEAPON",
+     "astab": 40,
+     "str": 40,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "spec-voidwaker",
+   "mechanics": [
+    "VoidwakerGuaranteedAccuracy",
+    "VoidwakerSpecDistribution"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "usingSpecialAttack": true
+   },
+   "items": [
+    {
+     "name": "Voidwaker",
+     "slot": "WEAPON",
+     "aslash": 85,
+     "str": 80,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "spec-dragon-claws",
+   "mechanics": [
+    "DragonClawsSpecDistribution"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "usingSpecialAttack": true
+   },
+   "items": [
+    {
+     "name": "Dragon claws",
+     "slot": "WEAPON",
+     "aslash": 60,
+     "str": 55,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "spec-burning-claws",
+   "mechanics": [
+    "BurningClawsSpecDistribution"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "usingSpecialAttack": true
+   },
+   "items": [
+    {
+     "name": "Burning claws",
+     "slot": "WEAPON",
+     "aslash": 60,
+     "str": 55,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "spec-bandos-godsword",
+   "mechanics": [
+    "GodswordSpecBaseDamage"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "usingSpecialAttack": true
+   },
+   "items": [
+    {
+     "name": "Bandos godsword",
+     "slot": "WEAPON",
+     "aslash": 120,
+     "str": 110,
+     "aspeed": 6,
+     "isTwoHanded": true
+    }
+   ]
+  },
+  {
+   "name": "spec-granite-hammer",
+   "mechanics": [
+    "GraniteHammerFlatBonus"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "usingSpecialAttack": true
+   },
+   "items": [
+    {
+     "name": "Granite hammer",
+     "slot": "WEAPON",
+     "acrush": 55,
+     "str": 50,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "spec-abyssal-bludgeon",
+   "mechanics": [
+    "AbyssalBludgeonPenance"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "usingSpecialAttack": true,
+    "currentPrayerPoints": 0
+   },
+   "items": [
+    {
+     "name": "Abyssal bludgeon",
+     "slot": "WEAPON",
+     "acrush": 100,
+     "str": 85,
+     "aspeed": 4,
+     "isTwoHanded": true
+    }
+   ]
+  },
+  {
+   "name": "spec-arkan-blade",
+   "mechanics": [
+    "ArkanBladeSpecBurn"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "usingSpecialAttack": true
+   },
+   "items": [
+    {
+     "name": "Arkan blade",
+     "slot": "WEAPON",
+     "astab": 85,
+     "str": 80,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "spec-dragon-halberd",
+   "mechanics": [
+    "HalberdSweepSecondHit"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "usingSpecialAttack": true
+   },
+   "items": [
+    {
+     "name": "Dragon halberd",
+     "slot": "WEAPON",
+     "aslash": 85,
+     "str": 80,
+     "aspeed": 7,
+     "isTwoHanded": true
+    }
+   ]
+  },
+  {
+   "name": "spec-saradomin-sword",
+   "mechanics": [
+    "SaradominsLightningBolt"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "usingSpecialAttack": true
+   },
+   "items": [
+    {
+     "name": "Saradomin sword",
+     "slot": "WEAPON",
+     "aslash": 82,
+     "str": 80,
+     "aspeed": 4,
+     "isTwoHanded": true
+    }
+   ]
+  },
+  {
+   "name": "spec-auto-voidwaker",
+   "mechanics": [
+    "VoidwakerSpecDistribution"
+   ],
+   "monster": "General Graardor",
+   "specAuto": true,
+   "items": [
+    {
+     "name": "Voidwaker",
+     "slot": "WEAPON",
+     "aslash": 85,
+     "str": 80,
+     "aspeed": 4
+    },
+    {
+     "name": "Test big sword sv",
+     "slot": "WEAPON",
+     "aslash": 95,
+     "str": 90,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "respiratory-system",
+   "mechanics": [
+    "RespiratorySystem"
+   ],
+   "monster": "Respiratory system",
+   "items": [
+    {
+     "name": "Test slash sword rs",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "void-flare",
+   "mechanics": [
+    "VoidFlareMaxHit"
+   ],
+   "monster": "Void Flare",
+   "items": [
+    {
+     "name": "Test slash sword vf",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    },
+    {
+     "name": "Test plain staff vf",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "titan-elemental-healing",
+   "mechanics": [
+    "ElementalHealing"
+   ],
+   "monster": "Branda the Fire Queen",
+   "player": {
+    "selectedSpell": "FIRE_SURGE"
+   },
+   "items": [
+    {
+     "name": "Test plain staff eh",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "gauntlet-staff",
+   "mechanics": [
+    "GauntletStaffBaseHits"
+   ],
+   "monster": "General Graardor",
+   "items": [
+    {
+     "name": "Corrupted staff (perfected)",
+     "slot": "WEAPON",
+     "amagic": 25,
+     "aspeed": 4
+    },
+    {
+     "name": "Test plain staff gs",
+     "slot": "WEAPON",
+     "amagic": 28,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "aviansie-style-table",
+   "mechanics": [
+    "StyleImmunityTable"
+   ],
+   "monster": "Aviansie",
+   "items": [
+    {
+     "name": "Test slash sword av",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    },
+    {
+     "name": "Test short bow av",
+     "slot": "WEAPON",
+     "arange": 80,
+     "aspeed": 4
+    },
+    {
+     "name": "Test rune arrow av",
+     "slot": "AMMO",
+     "rstr": 49
+    }
+   ],
+   "expectStyleAbsent": [
+    "MELEE_STAB",
+    "MELEE_SLASH",
+    "MELEE_CRUSH"
+   ]
+  },
+  {
+   "name": "hydra-parity",
+   "mechanics": [
+    "AlchemicalHydraResistance"
+   ],
+   "monster": "Alchemical Hydra",
+   "items": [
+    {
+     "name": "Test slash sword hy",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    },
+    {
+     "name": "Test short bow hy",
+     "slot": "WEAPON",
+     "arange": 80,
+     "aspeed": 4
+    },
+    {
+     "name": "Test rune arrow hy",
+     "slot": "AMMO",
+     "rstr": 49
+    }
+   ]
+  },
+  {
+   "name": "broodoo-parity",
+   "mechanics": [
+    "BroodooVictimResistance"
+   ],
+   "monster": "Broodoo victim",
+   "items": [
+    {
+     "name": "Test slash sword bv",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "slagilith-pickaxe",
+   "mechanics": [
+    "SlagilithResistance"
+   ],
+   "monster": "Slagilith",
+   "items": [
+    {
+     "name": "Test dragon pickaxe sl",
+     "slot": "WEAPON",
+     "astab": 45,
+     "str": 42,
+     "aspeed": 5
+    },
+    {
+     "name": "Test slash sword sl",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "ice-demon-fire",
+   "mechanics": [
+    "IceDemonResistance"
+   ],
+   "monster": "Ice demon",
+   "player": {
+    "selectedSpell": "FIRE_SURGE"
+   },
+   "items": [
+    {
+     "name": "Test plain staff id",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    },
+    {
+     "name": "Test slash sword id",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "araxxor-noxious",
+   "mechanics": [
+    "AraxyteMinionMaxHit"
+   ],
+   "monster": "Araxxor",
+   "items": [
+    {
+     "name": "Noxious halberd",
+     "slot": "WEAPON",
+     "aslash": 95,
+     "str": 90,
+     "aspeed": 5,
+     "isTwoHanded": true
+    },
+    {
+     "name": "Test slash sword ar",
+     "slot": "WEAPON",
+     "aslash": 100,
+     "str": 95,
+     "aspeed": 5
+    }
+   ]
+  },
+  {
+   "name": "thrall-flat-dps",
+   "mechanics": [
+    "ThrallBonus"
+   ],
+   "monster": "General Graardor",
+   "player": {
+    "thrallTier": "GREATER"
+   },
+   "items": [
+    {
+     "name": "Test slash sword th",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "wardens-p2-window",
+   "mechanics": [
+    "WardensP2Damage"
+   ],
+   "monster": "Tumeken's Warden",
+   "items": [
+    {
+     "name": "Test slash sword wp",
+     "slot": "WEAPON",
+     "aslash": 90,
+     "str": 85,
+     "aspeed": 4
+    },
+    {
+     "name": "Test plain staff wp",
+     "slot": "WEAPON",
+     "amagic": 30,
+     "aspeed": 4
+    }
+   ]
+  },
+  {
+   "name": "atlatl-requires-darts",
+   "mechanics": [
+    "EclipseAtlatlFormula"
+   ],
+   "monster": "Greater demon",
+   "items": [
+    {
+     "name": "Test eclipse atlatl nd",
+     "slot": "WEAPON",
+     "arange": 87,
+     "str": 40,
+     "aspeed": 4,
+     "isTwoHanded": true,
+     "specialType": "ECLIPSE_ATLATL"
+    },
+    {
+     "name": "Test rune arrow nd",
+     "slot": "AMMO",
+     "rstr": 49
+    },
+    {
+     "name": "Test thrown knife nd",
+     "slot": "WEAPON",
+     "arange": 60,
+     "rstr": 40,
+     "aspeed": 3
+    }
+   ],
+   "expectInWinner": {
+    "RANGED": "Test thrown knife nd"
+   }
+  },
+  {
+   "name": "spec-auto-lightbearer",
+   "mechanics": [
+    "VoidwakerSpecDistribution"
+   ],
+   "monster": "General Graardor",
+   "specAuto": true,
+   "expectInWinner": {
+    "MELEE_SLASH": "Lightbearer"
+   },
+   "items": [
+    {
+     "name": "Voidwaker",
+     "slot": "WEAPON",
+     "aslash": 85,
+     "str": 80,
+     "aspeed": 4
+    },
+    {
+     "name": "Lightbearer",
+     "slot": "RING",
+     "specialType": "LIGHTBEARER"
+    },
+    {
+     "name": "Test warrior ring",
+     "slot": "RING",
+     "str": 2
+    }
+   ]
+  },
+  {
+   "name": "spec-auto-lightbearer-declined",
+   "mechanics": [
+    "TwoHitSpecDistribution"
+   ],
+   "monster": "General Graardor",
+   "specAuto": true,
+   "expectInWinner": {
+    "MELEE_SLASH": "Test berserker ring"
+   },
+   "items": [
+    {
+     "name": "Test big sword sd",
+     "slot": "WEAPON",
+     "aslash": 85,
+     "str": 80,
+     "aspeed": 4
+    },
+    {
+     "name": "Dragon dagger",
+     "slot": "WEAPON",
+     "astab": 40,
+     "aslash": 25,
+     "str": 40,
+     "aspeed": 4
+    },
+    {
+     "name": "Lightbearer",
+     "slot": "RING",
+     "specialType": "LIGHTBEARER"
+    },
+    {
+     "name": "Test berserker ring",
+     "slot": "RING",
+     "str": 8
+    }
+   ]
+  },
+  {
+   "name": "ancient-barrage-clump",
+   "mechanics": [
+    "AncientMultiTarget"
+   ],
+   "monster": "Greater demon",
+   "player": {
+    "targetCount": 9
+   },
+   "items": [
+    {
+     "name": "Test ancient staff",
+     "slot": "WEAPON",
+     "amagic": 25,
+     "aspeed": 5
+    },
+    {
+     "name": "Test strong staff",
+     "slot": "WEAPON",
+     "amagic": 45,
+     "aspeed": 4
+    },
+    {
+     "name": "Test mage hat",
+     "slot": "HEAD",
+     "amagic": 8,
+     "mdmg": 2
+    },
+    {
+     "name": "Test mage top",
+     "slot": "BODY",
+     "amagic": 12,
+     "mdmg": 3
+    }
+   ]
+  }
+ ]
+}

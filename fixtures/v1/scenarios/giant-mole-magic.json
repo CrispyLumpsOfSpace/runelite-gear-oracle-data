@@ -1,0 +1,35 @@
+{
+  "name": "Giant Mole — Tumeken's shadow (reconciliation case)",
+
+  "player": {
+    "attack": 99, "strength": 99, "defence": 99, "ranged": 99, "magic": 99, "prayer": 99,
+    "magicPotion": "SATURATED_HEART",
+    "magicPrayer": "AUGURY",
+    "magicStance": "ACCURATE"
+  },
+
+  "target": {
+    "name": "Giant Mole",
+    "combatLevel": 230,
+    "hitpoints": 200,
+    "defenceLevel": 200,
+    "magicLevel": 200,
+    "defStab": 60, "defSlash": 80, "defCrush": 100, "defMagic": 80, "defRange": 60,
+    "thrallImmune": "Not immune"
+  },
+
+  "loadout": {
+    "HEAD":   "Ancestral hat",
+    "CAPE":   "Imbued guthix cape",
+    "AMULET": "Occult necklace",
+    "WEAPON": "Tumeken's shadow",
+    "BODY":   "Ancestral robe top",
+    "LEGS":   "Ancestral robe bottom",
+    "GLOVES": "Confliction gauntlets",
+    "BOOTS":  "Avernic treads (max)",
+    "RING":   "Magus ring",
+    "AMMO":   "Rada's blessing 4"
+  },
+
+  "styles": ["MAGIC"]
+}

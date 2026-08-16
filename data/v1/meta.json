@@ -1,0 +1,13 @@
+{
+ "generated": "2026-08-16",
+ "source": "OSRS Wiki Bucket API (oldschool.runescape.wiki/api.php)",
+ "licence": "CC BY-NC-SA 3.0 \u2014 see data/LICENSE",
+ "counts": {
+  "monsters": 3235,
+  "monstersWithStatOverrides": 603,
+  "equipmentCategories": 1636,
+  "equipmentRows": 5476,
+  "referenceAttributes": 4126,
+  "referenceWeapons": 1636
+ }
+}
