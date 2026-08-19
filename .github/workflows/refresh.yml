@@ -24,6 +24,9 @@ jobs:
         run: python3 tools/fetch_data.py
         working-directory: ${{ github.workspace }}
 
+      - name: Rewrite the client manifest
+        run: python3 tools/manifest.py
+
       - name: Validate before publishing
         run: python3 tools/validate.py
 

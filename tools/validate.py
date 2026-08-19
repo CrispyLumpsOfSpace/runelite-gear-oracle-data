@@ -3,13 +3,16 @@
 
 The point of this repo is that a bad wiki edit or a Bucket API schema change breaks THIS
 pipeline, visibly, instead of degrading every installed client — so this errs toward failing.
-Checks each file's shape, its required fields, and that row counts have not collapsed against
-the previously published copy (a shrink beyond tolerance means the source query broke).
+Checks each file's shape, its required fields, that row counts have not collapsed against the
+previously published copy (a shrink beyond tolerance means the source query broke), and that
+the published manifest still matches the files it hashes.
 """
 import json
 import subprocess
 import sys
 from pathlib import Path
+
+import manifest
 
 ROOT = Path(__file__).resolve().parent.parent
 # The universe grows over time; a real update never removes more than a few rows at once.
@@ -89,6 +92,14 @@ def main():
         meta = doc.get("_meta") or {}
         if "licence" not in meta or "source" not in meta:
             errors.append(f"{name}: published file is missing its _meta attribution block")
+
+    # A stale manifest is worse than none: clients trust it to decide what NOT to re-download,
+    # so a table published without regenerating it would never reach an installed client.
+    published = json.loads((ROOT / "data/v1/manifest.json").read_text()).get("files", {})
+    actual = manifest.hashes()
+    for name in sorted(set(published) | set(actual)):
+        if published.get(name) != actual.get(name):
+            errors.append(f"manifest: stale for {name} — run tools/manifest.py")
 
     before = previous_counts()
     counts = json.loads((ROOT / "data/v1/meta.json").read_text())["counts"]
