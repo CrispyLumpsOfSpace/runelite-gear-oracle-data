@@ -32,6 +32,7 @@ values appear, though which fields carry an override is itself a product of it.
 | `data/v1/equipment.json` | Weapon id → wiki combat category — the one item field the game client has no concept of; names and slots come from the client at runtime | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/mechanic-rows.json` | Additive mechanic rows, served to the plugin's row grammar. Empty until a row is published here | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{monster-families,weapon-families,damage-caps,equipment-sets,magic-base-hits,magic-damage-pool,special-attack-weapons,potions,prayers}.json` | The nine overlay-served combat tables. Seeded from the plugin's bundled copies; a row published here extends a table, and one whose key a bundled row already holds is skipped | [CC BY-NC-SA 3.0](data/LICENSE) |
+| `data/v1/{status-immunities,slayer-finishers,slayer-equipment}.json` | Additive rows for the three tables the plugin ships and a publish may only extend. Empty until a row is published here | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/manifest.json` | Content hash of every runtime file. Clients fetch this one file per startup and re-download only the entries whose hash moved; regenerate with `tools/manifest.py` after any hand-publish | — |
 | `data/v1/meta.json` | Generation date, source, row counts | — |
 | `fixtures/v1/` | Test fixtures for the plugin's suite, including the bestiary's full-override variant (tests run without a game client) | [CC BY-NC-SA 3.0](fixtures/LICENSE) |
