@@ -127,6 +127,6 @@
 
 	{"key": "VOIDWAKER", "name": "Voidwaker", "energy": 50, "attackStyle": "MELEE_STAB", "accNum": 1, "accDen": 1,
 	 "dmgNum": 1, "dmgDen": 1, "shape": "VOIDWAKER", "defenceStyleOverride": "MAGIC",
-	 "source": "Disrupt: a guaranteed roll of 50-150% of the max melee hit, dealt as magic damage."}
-
+	 "source": "Disrupt: a guaranteed roll of 50-150% of the max melee hit, dealt as magic damage."},
+	{"key": "DAWNBRINGER", "name": "Dawnbringer", "energy": 35, "attackStyle": "MAGIC", "accNum": 1, "accDen": 1, "dmgNum": 1, "dmgDen": 1, "shape": "FLAT_UNIFORM", "flatMin": 75, "flatMax": 150, "onlyMonsterIds": [10830, 10831, 10832, 8369, 8370, 8371, 10847, 10848, 10849], "source": "https://oldschool.runescape.wiki/w/Dawnbringer — Pulsate \"inflict[s] 75-150 hitpoints of damage towards her and consum[es] 35% of the wielder's special attack energy\", and \"magic damage gear bonuses, prayer and base magic level/boosts do not affect the damage inflicted\", which is why the range is stated outright rather than read off the max hit. \"Guaranteed to be a successful hit\": the accuracy comes from DawnbringerMechanics, which already makes every Dawnbringer hit land on this fight. Restricted to phase one, the only place the staff functions."}
 ]
