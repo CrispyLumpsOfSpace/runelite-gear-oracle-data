@@ -176,10 +176,9 @@
 	 "splats": [{"unraised": true}, {"flat": 5, "accuracyPower": 0}]},
 
 	{"id": "SecondSpellCast", "kind": "sequence",
-	 "source": "https://oldschool.runescape.wiki/w/Twinflame_staff — the Twinflame staff and the Shadowflame quadrant each fire a second spell \"dealing 40% of the damage dealt by the first, rounded down\", every cast rather than as a proc, both striking the SAME target. The staff doubles elemental spells \"excluding Strike and Surge spells\" and casts on 6 ticks where every other staff takes 5; the quadrant doubles every standard-spellbook elemental spell (its article's worked example uses Water Surge) with no speed penalty, and its cycle is the ordinary one. The second hitsplat gets NO accurate-0-lands-as-1 raise, unlike Karil's: the wiki states no rule and only this reading matches the oracle (docs/ENGINE-GAPS.md). The Strike/Surge exclusion is stated so the auto-picker cannot score Surge a bonus the staff does not give. Not modelled: the staff's separate +10% standard-spellbook accuracy and damage, auto spell swap, rune and experience costs.",
+	 "source": "https://oldschool.runescape.wiki/w/Twinflame_staff — the staff fires a second spell \"dealing 40% of the damage dealt by the first, rounded down\", every cast rather than as a proc, both striking the SAME target. It doubles elemental spells \"excluding Strike and Surge spells\" and casts on 6 ticks where every other staff takes 5. The second hitsplat gets NO accurate-0-lands-as-1 raise, unlike Karil's: the wiki states no rule and only this reading matches the oracle (docs/ENGINE-GAPS.md). The Strike/Surge exclusion is stated so the auto-picker can weigh the second cast where it applies and not where it does not. Not modelled: the staff's separate +10% standard-spellbook accuracy and damage, auto spell swap, rune and experience costs.",
 	 "whenAny": [
-		{"style": "MAGIC", "worn": "TWINFLAME_STAFF", "spellFamily": "boltBlastOrWave"},
-		{"style": "MAGIC", "worn": "SHADOWFLAME_QUADRANT", "spellFamily": "standardElemental"}],
+		{"style": "MAGIC", "worn": "TWINFLAME_STAFF", "spellFamily": "boltBlastOrWave"}],
 	 "filterWhen": {"style": "MAGIC"},
 	 "speed": {"style": "MAGIC", "weapon": "TWINFLAME_STAFF", "ticks": 6},
 	 "splats": [{}, {"ofRoll": true, "fraction": [4, 10], "raiseZero": false}],

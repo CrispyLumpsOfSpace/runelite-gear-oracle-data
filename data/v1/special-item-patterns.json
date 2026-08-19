@@ -75,7 +75,6 @@
 	{"type": "VENATOR_BOW", "any": ["venator bow&!uncharged"]},
 	{"type": "TWINFLAME_STAFF", "any": ["twinflame staff"]},
 	{"type": "TONALZTICS_OF_RALOS", "any": ["tonalztics of ralos"]},
-	{"type": "SHADOWFLAME_QUADRANT", "any": ["shadowflame quadrant"]},
 	{"type": "AQUANITE_HOPPER", "any": ["aquanite hopper"]},
 	{"type": "KINGS_BARRAGE", "any": ["king's barrage", "kings barrage"]},
 	{"type": "DAWNBRINGER", "any": ["dawnbringer"]},
