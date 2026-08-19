@@ -1,0 +1,491 @@
+[
+	{"key": "pickaxe", "nameContains": ["pickaxe"],
+	 "source": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric) \"can only be harmed with pickaxes\"; https://oldschool.runescape.wiki/w/Slagilith \"will reduce your damage by 67% if a pickaxe is not equipped\""},
+
+	{"key": "ratbane", "namesExact": ["bone mace", "bone shortbow", "bone staff"],
+	 "source": "https://oldschool.runescape.wiki/w/Bone_mace \"it is effective against all types of rats by adding 10 damage to the player's maximum hit\"; \"The mace cannot be used against any other type of monster (including manual cast spells)\""},
+
+	{"key": "chinchompa", "nameContains": ["chinchompa"],
+	 "source": "https://oldschool.runescape.wiki/w/Chinchompa_(weapon) — grey, red and black, plus the Last Man Standing copies. Safe as a name rule: the only other \"chinchompa\" items are the Hunter-caught ones (same ids, thrown the same way) and the pet, which cannot occupy the weapon slot."},
+
+	{"key": "blackChinchompa", "nameContains": ["chinchompa&black"],
+	 "group": "chinchompaTargetCap", "value": 12,
+	 "source": "https://oldschool.runescape.wiki/w/Black_chinchompa — hits one more target than the grey and red ones (12 in PvM, not 11). Only this row carries the cap: a value group answers with the first matching row in file order, and the plain chinchompa row above would otherwise shadow it, so 11 is the fallback the caller passes."},
+
+	{"key": "salamander", "nameContains": ["salamander", "tecu"],
+	 "source": "https://oldschool.runescape.wiki/w/Salamander — its own weapon category in the game's own classification, and one of the two melee families that reach an airborne target."},
+
+	{"key": "smokeStaff", "specialTypes": ["TWINFLAME_STAFF"],
+	 "nameContains": ["smoke battlestaff", "mystic smoke staff"],
+	 "source": "https://twitter.com/JagexAsh/status/1791070064369647838 — \"a 10% increase in accuracy and damage when casting spells from the standard spellbook\". Type-keyed for the Twinflame staff, which has other behaviour to hang a type on; name-keyed for the two battlestaves, which do not."},
+
+	{"key": "crossbowOrBallista",
+	 "specialTypes": ["DRAGON_HUNTER_CROSSBOW", "ZARYTE_CROSSBOW"],
+	 "nameContains": ["crossbow", "ballista"],
+	 "source": "The two families the araxyte minions' guaranteed max hit names (https://oldschool.runescape.wiki/w/Araxxor). Deliberately not the HEAVY ranged weight class, which also carries chinchompas: the rule names the two weapon families, and a chinchompa is neither."},
+
+	{"key": "ballista", "nameContains": ["ballista"],
+	 "source": "https://oldschool.runescape.wiki/w/Aquanite_hopper — a CROSSBOW passive, so the ballistae the family above shares a rule with are excluded here."},
+
+	{"key": "chargedTonalztics", "specialTypes": ["TONALZTICS_OF_RALOS"],
+	 "notNameContains": ["uncharged"],
+	 "source": "https://oldschool.runescape.wiki/w/Tonalztics_of_ralos \"When charged, the weapon will hit twice, with two independent damage rolls\". Charge state is a game-state property the item id does not carry; the uncharged form is named \"Tonalztics of ralos (uncharged)\"."},
+
+	{"key": "accursedAutocastSceptre", "nameContains": ["accursed sceptre (a)"],
+	 "source": "The charged AUTOCAST swap, whose Condemn special casts the plain sceptre's built-in spell. The registry has no category for it — the \"(a)\" suffix is its only mark, and \"(a)\" exactly: \"(au)\" is uncharged and cannot fire the special at all."},
+
+	{"key": "silverMelee",
+	 "specialTypes": ["IVANDIS_FLAIL", "BLISTERWOOD_FLAIL", "BLISTERWOOD_SICKLE", "HALLOWED_FLAIL",
+		"ROD_OF_IVANDIS", "SILVERLIGHT", "DARKLIGHT", "ARCLIGHT"],
+	 "nameContains": ["silver sickle", "emerald sickle", "ruby sickle", "diamond sickle",
+		"blessed axe", "wolfbane"],
+	 "source": "https://oldschool.runescape.wiki/w/Vampyre \"Only specific silver weapons deal full damage\". The diamond sickle is the 2025 Blood Moon Rises addition — \"a blessed silver sickle with a diamond recessed into it\" — missing from the oracle's own silver list, so no vector can confirm it; the wiki's examine text is the source. Without it the engine reports zero damage against tier-2 vampyres for a weapon that works in game."},
+
+	{"key": "silverRanged", "specialTypes": ["BLISTERWOOD_STAKE"], "nameContains": ["silver bolts"],
+	 "source": "https://oldschool.runescape.wiki/w/Silver_bolts — the Ranged half of the silver rule, with the Blisterwood stake."},
+
+	{"key": "saradominStrikeStaff", "nameContains": ["saradomin staff", "staff of light"],
+	 "source": "https://oldschool.runescape.wiki/w/Saradomin_strike — the god spells are unusable without their staff, so the spell picker must gate on it. The charged variants share the staves (Charge is a buff, not a weapon)."},
+
+	{"key": "clawsOfGuthixStaff",
+	 "nameContains": ["guthix staff", "void knight mace", "staff of balance"],
+	 "source": "https://oldschool.runescape.wiki/w/Claws_of_Guthix — see saradominStrikeStaff."},
+
+	{"key": "flamesOfZamorakStaff",
+	 "nameContains": ["zamorak staff", "staff of the dead", "toxic staff"],
+	 "source": "https://oldschool.runescape.wiki/w/Flames_of_Zamorak — see saradominStrikeStaff."},
+
+	{"key": "abyssalMelee",
+	 "namesExact": ["abyssal bludgeon", "abyssal dagger", "abyssal whip", "abyssal tentacle"],
+	 "source": "https://oldschool.runescape.wiki/w/Tormented_Demon \"Tormented demons usually have a fire shield that reduces damage done by non-demonbane weapons/spells and non-abyssal weapons by 20%.\" The four melee weapons the article's \"abyssal weapons\" names."},
+
+	{"key": "silverlight", "specialTypes": ["SILVERLIGHT"], "nameContains": ["silverlight"],
+	 "source": "https://oldschool.runescape.wiki/w/Delrith \"All damage dealt to Delrith is doubled when Silverlight is equipped\" — Silverlight and its dyed variants; Darklight is a different weapon and does not count."},
+
+	{"key": "demonbaneClaws", "namesExact": ["bone claws", "burning claws"],
+	 "source": "https://oldschool.runescape.wiki/w/Burning_claws — 5% demonbane on both accuracy and damage. Name-matched because the claws carry no special type of their own."},
+
+	{"key": "gadderhammer", "nameContains": ["gadderhammer"],
+	 "source": "https://oldschool.runescape.wiki/w/Gadderhammer \"possessing a 25% damage bonus against shades as well as a 5% chance to deal double damage.\""},
+
+	{"key": "noxiousHalberd", "namesStartWith": ["noxious halberd"],
+	 "source": "https://oldschool.runescape.wiki/w/Araxxor — the one weapon that always max hits the araxyte minions whatever the loadout's best style."},
+
+	{"key": "compOgreBow", "namesExact": ["comp ogre bow"],
+	 "source": "https://oldschool.runescape.wiki/w/Zogre \"Brutal arrows are effective against them\" — full damage needs the composite bow specifically."},
+
+	{"key": "ogreBow", "nameContains": ["ogre bow"],
+	 "source": "https://oldschool.runescape.wiki/w/Ogre_bow \"A stance bonus of 10 is used regardless of attack style used.\"; \"Only the player's visible ranged level matters.\""},
+
+	{"key": "seekingArrow", "namesStartWith": ["seeking "],
+	 "source": "https://oldschool.runescape.wiki/w/Seeking_arrows — \"a minimum hit of 3\", clamped per roll rather than shifting the range."},
+
+	{"key": "broadAmmo", "nameContains": ["broad arrow", "broad bolt"],
+	 "source": "https://oldschool.runescape.wiki/w/Kurask \"they can only be damaged with leaf-bladed weapons, broad ammunition, or the Magic Dart spell\" — broad arrows, broad bolts and amethyst broad bolts."},
+
+	{"key": "brutalArrow", "nameContains": [" brutal"],
+	 "source": "https://oldschool.runescape.wiki/w/Brutal_arrow — the ogre-bow ammunition Zogres take full damage from; the leading space keeps the match on the colour-prefixed names (\"Mithril brutal\")."},
+	{"key": "basicGauntletStaff", "nameContains": ["staff&crystal&basic", "staff&corrupted&basic"],
+	 "source": "https://oldschool.runescape.wiki/w/Crystal_staff_(basic) — \"staff\" is what disambiguates: the Gauntlet also has crystal and corrupted bows, halberds and helms, and none of them casts anything."},
+
+	{"key": "attunedGauntletStaff", "nameContains": ["staff&crystal&attuned", "staff&corrupted&attuned"],
+	 "source": "https://oldschool.runescape.wiki/w/Crystal_staff_(attuned) — see the basic staff."},
+
+	{"key": "perfectedGauntletStaff", "nameContains": ["staff&crystal&perfected", "staff&corrupted&perfected"],
+	 "source": "https://oldschool.runescape.wiki/w/Crystal_staff_(perfected) — see the basic staff."},
+
+	{"key": "swampLizard", "nameContains": ["swamp lizard"],
+	 "group": "salamanderTar", "text": "guam tar",
+	 "source": "https://oldschool.runescape.wiki/w/Swamp_lizard — the salamander family's lowest Magic tier."},
+
+	{"key": "orangeSalamander", "nameContains": ["orange salamander"],
+	 "group": "salamanderTar", "text": "marrentill tar",
+	 "source": "https://oldschool.runescape.wiki/w/Orange_salamander — see the swamp lizard."},
+
+	{"key": "redSalamander", "nameContains": ["red salamander"],
+	 "group": "salamanderTar", "text": "tarromin tar",
+	 "source": "https://oldschool.runescape.wiki/w/Red_salamander — see the swamp lizard."},
+
+	{"key": "blackSalamander", "nameContains": ["black salamander"],
+	 "group": "salamanderTar", "text": "harralander tar",
+	 "source": "https://oldschool.runescape.wiki/w/Black_salamander — see the swamp lizard."},
+
+	{"key": "tecuSalamander", "nameContains": ["tecu salamander"],
+	 "group": "salamanderTar", "text": "irit tar",
+	 "source": "https://oldschool.runescape.wiki/w/Tecu_salamander — see the swamp lizard."},
+	{"key": "bronzeOrIronPickaxe", "nameContains": ["bronze", "iron pickaxe"],
+	 "group": "pickaxeGuardianRequirement", "value": 1,
+	 "source": "https://oldschool.runescape.wiki/w/Pickaxe — the tier's MINING level requirement, which feeds the Guardian damage multiplier (50 + mining + this) / 150."},
+
+	{"key": "steelPickaxe", "nameContains": ["steel"],
+	 "group": "pickaxeGuardianRequirement", "value": 6,
+	 "source": "https://oldschool.runescape.wiki/w/Pickaxe — see bronzeOrIronPickaxe."},
+
+	{"key": "blackPickaxe", "nameContains": ["black pickaxe"],
+	 "group": "pickaxeGuardianRequirement", "value": 11,
+	 "source": "https://oldschool.runescape.wiki/w/Pickaxe — see bronzeOrIronPickaxe."},
+
+	{"key": "mithrilPickaxe", "nameContains": ["mithril"],
+	 "group": "pickaxeGuardianRequirement", "value": 21,
+	 "source": "https://oldschool.runescape.wiki/w/Pickaxe — see bronzeOrIronPickaxe."},
+
+	{"key": "adamantPickaxe", "nameContains": ["adamant"],
+	 "group": "pickaxeGuardianRequirement", "value": 31,
+	 "source": "https://oldschool.runescape.wiki/w/Pickaxe — see bronzeOrIronPickaxe."},
+
+	{"key": "runePickaxe", "nameContains": ["rune pickaxe", "gilded"],
+	 "group": "pickaxeGuardianRequirement", "value": 41,
+	 "source": "https://oldschool.runescape.wiki/w/Pickaxe — see bronzeOrIronPickaxe. Anything past this row is dragon-tier (dragon variants, infernal, 3rd age) and worth 61, the crystal pickaxe included: https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric) \"The formula is capped to ensure the Crystal pickaxe deals the same damage as the Dragon pickaxe, despite having a higher mining level requirement.\""},
+
+	{"key": "corpbaneBase",
+	 "namesStartWith": [
+		"bronze spear",
+		"iron spear",
+		"steel spear",
+		"black spear",
+		"mithril spear",
+		"adamant spear",
+		"rune spear",
+		"dragon spear",
+		"bone spear",
+		"gilded spear",
+		"leaf-bladed spear",
+		"guthan's warspear",
+		"zamorakian spear",
+		"sunspear",
+		"vesta's spear",
+		"bronze halberd",
+		"iron halberd",
+		"steel halberd",
+		"black halberd",
+		"white halberd",
+		"mithril halberd",
+		"adamant halberd",
+		"rune halberd",
+		"dragon halberd",
+		"crystal halberd",
+		"noxious halberd",
+		"osmumten's fang",
+		"thunder khopesh",
+		"king's barrage"],
+	 "source": "https://oldschool.runescape.wiki/w/Corpbane_weapons — the wiki's canonical list. The corp parameter is PER-ITEM, not \"anything named spear or halberd\": the Blue moon spear and Hunter's spear are excluded while the Thunder khopesh and King's barrage are included. Poisoned, degraded and (cr) variants of these bases inherit it, which is why these are prefixes. This table builds the registry's corpbane column; the engine then asks that column, so the weaponFlag of the same name is registry-first and answers for known ids without consulting these names."},
+
+	{"key": "bowElite", "group": "bowTier", "text": "ELITE",
+	 "specialTypes": ["TWISTED_BOW", "DARK_BOW", "SCORCHING_BOW"],
+	 "nameContains": ["3rd age bow", "third age bow", "venator bow"],
+	 "source": "https://oldschool.runescape.wiki/w/Arrow — the bows that fire the whole line. The three special types have no tier word in their names; the 3rd age and Venator bows have no special type either, so each half of this row exists for the items the other cannot reach."},
+
+	{"key": "bowTraining", "group": "bowTier", "text": "NONE",
+	 "nameContains": ["training bow"],
+	 "source": "https://oldschool.runescape.wiki/w/Training_bow — fires nothing, so it must beat every wood row below."},
+
+	{"key": "bowSeercull", "group": "bowTier", "text": "MAGIC",
+	 "nameContains": ["seercull"],
+	 "source": "https://oldschool.runescape.wiki/w/Seercull \"fires arrows up to Amethyst\" — a bow whose name carries no tier word."},
+
+	{"key": "bowRecurve", "group": "bowTier", "text": "ELITE",
+	 "nameContains": ["recurve"],
+	 "source": "https://oldschool.runescape.wiki/w/Nature's_recurve_bow \"can fire up to dragon arrows\" — likewise nameless as to tier, and it must precede the magic row."},
+
+	{"key": "bowMagic", "group": "bowTier", "text": "MAGIC",
+	 "nameContains": ["magic"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "bowYew", "group": "bowTier", "text": "YEW",
+	 "nameContains": ["yew"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "bowMaple", "group": "bowTier", "text": "MAPLE",
+	 "nameContains": ["maple"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "bowWillow", "group": "bowTier", "text": "WILLOW",
+	 "nameContains": ["willow"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "bowOak", "group": "bowTier", "text": "OAK",
+	 "nameContains": ["oak"],
+	 "source": "https://oldschool.runescape.wiki/w/Bow — the standard wood line. Shortbow, longbow, composite and anything unrecognised fall past these to the bottom of the line rather than to NONE, so a future bow still fires Bronze and Iron."},
+
+	{"key": "arrowDragon", "group": "arrowMinTier", "text": "ELITE",
+	 "nameContains": ["dragon arrow"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "arrowBroad", "group": "arrowMinTier", "text": "MAGIC",
+	 "nameContains": ["broad arrow", "amethyst arrow"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "arrowRune", "group": "arrowMinTier", "text": "YEW",
+	 "nameContains": ["rune arrow", "ice arrow"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "arrowAdamant", "group": "arrowMinTier", "text": "MAPLE",
+	 "nameContains": ["adamant arrow"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "arrowMithril", "group": "arrowMinTier", "text": "WILLOW",
+	 "nameContains": ["mithril arrow"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "arrowSteel", "group": "arrowMinTier", "text": "OAK",
+	 "nameContains": ["steel arrow"],
+	 "source": "https://oldschool.runescape.wiki/w/Arrow — the bow each arrow needs. Bronze, iron, headless and anything else unrecognised need only a real, non-training bow."},
+
+	{"key": "crossbowElite", "group": "crossbowTier", "text": "ELITE",
+	 "specialTypes": ["DRAGON_HUNTER_CROSSBOW", "ZARYTE_CROSSBOW", "KINGS_BARRAGE"],
+	 "nameContains": ["dragon crossbow", "armadyl crossbow"],
+	 "source": "https://oldschool.runescape.wiki/w/King%27s_barrage \"able to fire bolts up to dragon\" — and it carries no \"crossbow\" in its name at all, which is why the type half of this row exists."},
+
+	{"key": "crossbowRune", "group": "crossbowTier", "text": "RUNE",
+	 "nameContains": ["rune crossbow"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "crossbowAdamant", "group": "crossbowTier", "text": "ADAMANT",
+	 "nameContains": ["adamant crossbow"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "crossbowMithril", "group": "crossbowTier", "text": "MITHRIL",
+	 "nameContains": ["mithril crossbow"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "crossbowSteel", "group": "crossbowTier", "text": "STEEL",
+	 "nameContains": ["steel crossbow"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "crossbowIron", "group": "crossbowTier", "text": "IRON",
+	 "nameContains": ["iron crossbow"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "crossbowBlurite", "group": "crossbowTier", "text": "BLURITE",
+	 "nameContains": ["blurite crossbow"],
+	 "source": "https://oldschool.runescape.wiki/w/Crossbow — the standard line. Bronze, Phoenix and anything unrecognised fall past these to the bottom rather than to NONE, so a future crossbow still fires Bronze and Barbed."},
+
+	{"key": "boltDragon", "group": "boltMinTier", "text": "ELITE",
+	 "nameContains": ["dragon bolt"],
+	 "source": "Matched on \"dragon bolt\" and not a bare \"dragon\", so that a gem-tipped dragon bolt stays Elite while Dragonstone bolts remain Runite-tier — this row must precede the gem list."},
+
+	{"key": "boltBroad", "group": "boltMinTier", "text": "RUNE",
+	 "nameContains": ["broad"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "boltGemTipped", "group": "boltMinTier", "text": "RUNE",
+	 "nameContains": ["opal", "jade", "pearl", "topaz", "sapphire", "emerald", "ruby", "diamond", "dragonstone", "onyx"],
+	 "source": "https://oldschool.runescape.wiki/w/Enchanted_bolts — every gem-tipped bolt is built on a Runite base and needs a Rune crossbow."},
+
+	{"key": "boltRunite", "group": "boltMinTier", "text": "RUNE",
+	 "nameContains": ["runite", "rune bolt"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "boltAdamant", "group": "boltMinTier", "text": "ADAMANT",
+	 "nameContains": ["adamant"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "boltMithril", "group": "boltMinTier", "text": "MITHRIL",
+	 "nameContains": ["mithril"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "boltSteel", "group": "boltMinTier", "text": "STEEL",
+	 "nameContains": ["steel"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "boltSilver", "group": "boltMinTier", "text": "IRON",
+	 "nameContains": ["silver"],
+	 "source": "https://oldschool.runescape.wiki/w/Silver_bolts — Iron tier, not Bronze, despite the raw strength bonus falling between the two."},
+
+	{"key": "boltIron", "group": "boltMinTier", "text": "IRON",
+	 "nameContains": ["iron"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "boltBlurite", "group": "boltMinTier", "text": "BLURITE",
+	 "nameContains": ["blurite"],
+	 "source": "https://oldschool.runescape.wiki/w/Bolts — the crossbow each bolt needs. Bronze, barbed and anything unrecognised need only a crossbow."},
+
+	{"key": "blowpipeToxic", "group": "blowpipeTier", "text": "TOXIC",
+	 "nameContains": ["toxic"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "blowpipeRosewood", "group": "blowpipeTier", "text": "ROSEWOOD",
+	 "nameContains": ["rosewood"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "blowpipeIronwood", "group": "blowpipeTier", "text": "IRONWOOD",
+	 "nameContains": ["ironwood"],
+	 "source": "https://oldschool.runescape.wiki/w/Toxic_blowpipe and the Varlamore blowpipes' Ammo sections. Camphor is the bottom of the line and the fallback, so it needs no row."},
+
+	{"key": "dartDragon", "group": "dartMinTier", "text": "TOXIC",
+	 "nameContains": ["dragon", "amethyst"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "dartRune", "group": "dartMinTier", "text": "ROSEWOOD",
+	 "nameContains": ["rune"],
+	 "source": "See the row that closes this ladder for the article; the tiers are one table read in file order."},
+
+	{"key": "dartAdamant", "group": "dartMinTier", "text": "IRONWOOD",
+	 "nameContains": ["adamant"],
+	 "source": "https://oldschool.runescape.wiki/w/Blowpipe — the blowpipe each dart needs. Mithril and weaker load into any blowpipe, so Camphor is the fallback."},
+
+	{"key": "staffTridentSwamp", "group": "poweredStaffType", "text": "TRIDENT_OF_THE_SWAMP",
+	 "nameContains": ["trident of the swamp"],
+	 "source": "See the row that closes this ladder for the article; the cascade is read in file order."},
+
+	{"key": "staffTridentSeas", "group": "poweredStaffType", "text": "TRIDENT_OF_THE_SEAS",
+	 "nameContains": ["trident of the seas"],
+	 "source": "See the row that closes this ladder for the article; the cascade is read in file order."},
+
+	{"key": "staffSanguinesti", "group": "poweredStaffType", "text": "SANGUINESTI",
+	 "nameContains": ["sanguinesti"],
+	 "source": "See the row that closes this ladder for the article; the cascade is read in file order."},
+
+	{"key": "staffWarpedUncharged", "group": "poweredStaffType", "text": "NONE",
+	 "nameContains": ["warped&uncharged"],
+	 "source": "An uncharged staff casts nothing, so each charge-state row precedes the staff it vetoes."},
+
+	{"key": "staffWarped", "group": "poweredStaffType", "text": "WARPED",
+	 "nameContains": ["warped"],
+	 "source": "See the row that closes this ladder for the article; the cascade is read in file order."},
+
+	{"key": "staffAccursedUncharged", "group": "poweredStaffType", "text": "NONE",
+	 "nameContains": ["accursed sceptre&(a", "accursed sceptre&(u"],
+	 "source": "The wilderness sceptres: only the plain charged form is a powered staff. \"(a)\" casts its built-in spell only during the special and \"(u)\"/\"(au)\" are uncharged, so both suffixes veto here."},
+
+	{"key": "staffAccursed", "group": "poweredStaffType", "text": "ACCURSED",
+	 "nameContains": ["accursed sceptre"],
+	 "source": "See the row that closes this ladder for the article; the cascade is read in file order."},
+
+	{"key": "staffThammaronUncharged", "group": "poweredStaffType", "text": "NONE",
+	 "nameContains": ["thammaron's sceptre&(a", "thammaron's sceptre&(u", "thammarons sceptre&(a", "thammarons sceptre&(u"],
+	 "source": "See the accursed sceptre; the apostrophe-less spelling is carried because the item data uses both."},
+
+	{"key": "staffThammaron", "group": "poweredStaffType", "text": "THAMMARON",
+	 "nameContains": ["thammaron's sceptre", "thammarons sceptre"],
+	 "source": "See the row that closes this ladder for the article; the cascade is read in file order."},
+
+	{"key": "staffDawnbringer", "group": "poweredStaffType", "text": "DAWNBRINGER",
+	 "nameContains": ["dawnbringer"],
+	 "source": "See the row that closes this ladder for the article; the cascade is read in file order."},
+
+	{"key": "staffAyakUncharged", "group": "poweredStaffType", "text": "NONE",
+	 "nameContains": ["eye of ayak&uncharged"],
+	 "source": "See the row that closes this ladder for the article; the cascade is read in file order."},
+
+	{"key": "staffAyak", "group": "poweredStaffType", "text": "EYE_OF_AYAK",
+	 "nameContains": ["eye of ayak"],
+	 "source": "See the row that closes this ladder for the article; the cascade is read in file order."},
+
+	{"key": "staffBone", "group": "poweredStaffType", "text": "BONE_STAFF",
+	 "nameContains": ["bone staff"],
+	 "source": "See the row that closes this ladder for the article; the cascade is read in file order."},
+
+	{"key": "staffGauntlet", "group": "poweredStaffType", "text": "GAUNTLET_STAFF",
+	 "nameContains": ["crystal staff", "corrupted staff"],
+	 "source": "https://oldschool.runescape.wiki/w/Powered_staff — the staves with a built-in cast. Anything unmatched is not a powered staff, which is the fallback the caller passes."},
+
+	{"key": "weightHeavy", "group": "rangedWeightClass", "text": "HEAVY",
+	 "specialTypes": ["DRAGON_HUNTER_CROSSBOW", "KINGS_BARRAGE"],
+	 "nameContains": ["crossbow", "ballista", "chinchompa"],
+	 "source": "The projectiles a monster rolls its HEAVY ranged defence against (see Monster#rangedDefenceBonus): bolts, javelins and chinchompas."},
+
+	{"key": "weightLight", "group": "rangedWeightClass", "text": "LIGHT",
+	 "specialTypes": ["ECLIPSE_ATLATL"],
+	 "nameContains": ["dart", "knife", "throwing axe", "thrownaxe", "blowpipe"],
+	 "source": "The LIGHT projectiles: darts, knives, thrown axes, the blowpipe and the atlatl. Arrows — every bow — and anything unrecognised are STANDARD, which is the fallback."},
+
+	{"key": "ammoCrystalBow", "group": "ammoRequirement", "text": "NONE_ALLOWED",
+	 "specialTypes": ["BOWFA", "CRYSTAL_BOW"],
+	 "source": "The crystal-family bows are charged and have no arrow slot."},
+
+	{"key": "ammoAtlatl", "group": "ammoRequirement", "text": "ATLATL",
+	 "specialTypes": ["ECLIPSE_ATLATL"],
+	 "source": "https://oldschool.runescape.wiki/w/Atlatl_dart \"Atlatl darts are ammunition used exclusively by the eclipse atlatl\" — equipped in the AMMO slot, required to attack."},
+
+	{"key": "ammoSelfContained", "group": "ammoRequirement", "text": "NONE_ALLOWED",
+	 "nameContains": ["blowpipe", "chinchompa", "craw's bow", "webweaver"],
+	 "source": "See the row that closes this ladder for the article; the cascade is read in file order."},
+
+	{"key": "ammoNamelessBow", "group": "ammoRequirement", "text": "ARROW",
+	 "nameContains": ["seercull", "recurve"],
+	 "source": "Bows whose names contain no \"bow\", so they must precede the bow row below."},
+
+	{"key": "ammoCrossbow", "group": "ammoRequirement", "text": "BOLT",
+	 "specialTypes": ["DRAGON_HUNTER_CROSSBOW", "KINGS_BARRAGE"],
+	 "nameContains": ["crossbow"],
+	 "source": "The King's barrage is a crossbow with no \"crossbow\" in its name, which is why the type half is here."},
+
+	{"key": "ammoBallista", "group": "ammoRequirement", "text": "JAVELIN",
+	 "nameContains": ["ballista"],
+	 "source": "See the row that closes this ladder for the article; the cascade is read in file order."},
+
+	{"key": "ammoBow", "group": "ammoRequirement", "text": "ARROW",
+	 "specialTypes": ["TWISTED_BOW"],
+	 "nameContains": ["bow"],
+	 "source": "Everything else that fires from the AMMO slot. Anything unmatched fires nothing from it, which is the fallback."},
+
+	{"key": "selfContainedRanged",
+	 "specialTypes": ["BOWFA", "CRYSTAL_BOW"],
+	 "nameContains": ["blowpipe", "chinchompa", "craw's bow", "webweaver", "dart", "knife", "javelin", "throwing axe", "thrownaxe", "blisterwood stake", "holy water", "hunter's spear", "spine", "toktz-xil-ul", "tonalztics of ralos"],
+	 "source": "Ranged weapons that ARE their own ammunition, so their AMMO slot is only good for a Prayer blessing. The tail of the list is the thrown weapons whose names do not say so — note \"thrownaxe\" is one word in game, which is why the \"throwing axe\" entry misses every axe."},
+
+	{"key": "holyWater", "namesExact": ["holy water"],
+	 "source": "https://oldschool.runescape.wiki/w/Holy_water — thrown vials that can damage demons and nothing else. Its damage formula is deliberately not modelled (see docs/ENGINE-GAPS.md); only the demons-only restriction is, so the optimizer can never offer it against something it cannot hurt."},
+
+	{"key": "slayerStaffFamily",
+	 "nameContains": ["slayer's staff", "staff of the dead", "staff of light", "staff of balance"],
+	 "source": "https://oldschool.runescape.wiki/w/Magic_Dart — the staves that can cast it; only the enhanced Slayer's staff gets the on-task formula."},
+
+	{"key": "ibansStaff",
+	 "nameContains": ["iban's staff"],
+	 "source": "https://oldschool.runescape.wiki/w/Iban_Blast — castable only while wielding Iban's staff."},
+
+	{"key": "enhancedSlayerStaff",
+	 "nameContains": ["slayer's staff (e)"],
+	 "source": "https://oldschool.runescape.wiki/w/Slayer%27s_staff_(e) — the one staff with the enhanced Magic Dart formula."},
+
+	{"key": "venomousWeapon",
+	 "nameContains": ["toxic blowpipe", "trident of the swamp", "toxic staff of the dead", "noxious halberd"],
+	 "source": "https://oldschool.runescape.wiki/w/Serpentine_helm — the weapons that envenom with it; VenomProc carries the Magic-cast gating the staff additionally needs."},
+
+	{"key": "corpbaneFallback",
+	 "specialTypes": ["OSMUMTEN_FANG"],
+	 "nameContains": ["spear", "halberd"],
+	 "notNameContains": ["blue moon spear"],
+	 "source": "The unknown-id approximation for corpbane: the registry carries the exact per-item list, and this is only consulted for items released after it was built. The Blue moon spear exclusion is checked ahead of the registry itself (https://twitter.com/JagexAsh/status/1777673598099968104), so it appears here only as belt and braces."},
+
+	{"key": "atlatlDart",
+	 "nameContains": ["atlatl dart"],
+	 "source": "https://oldschool.runescape.wiki/w/Atlatl_dart — the atlatl's only ammunition, though not strictly one-to-one the way the salamanders' tars are."},
+
+	{"key": "blueMoonSpear",
+	 "nameContains": ["blue moon spear"],
+	 "source": "https://twitter.com/JagexAsh/status/1777673598099968104 — the one spear that is NOT corpbane."},
+
+	{"key": "halberdName",
+	 "nameContains": ["halberd"],
+	 "source": "The unknown-id approximation for melee reach; the registry carries the exact list."},
+
+	{"key": "voidPiece", "specialTypes": ["VOID_MELEE_HELM", "VOID_RANGED_HELM", "VOID_MAGIC_HELM", "VOID_BODY", "VOID_LEGS", "VOID_GLOVES", "ELITE_VOID_BODY", "ELITE_VOID_LEGS"],
+	 "source": "Special types only, so the row answers from the type bitset alone."},
+
+	{"key": "slayerHelm", "specialTypes": ["SLAYER_HELMET", "SLAYER_HELMET_IMBUED", "BLACK_MASK", "BLACK_MASK_IMBUED"],
+	 "source": "Weapon-side ammo requirement, cached like the powered-staff type. Opaque here (the enum is the classifier's private taxonomy); only WeaponClassifier reads or writes it. / @PackagePrivate @NonFinal transient Object ammoRequirementCache; / Weapon-side ammo-family facts (tiers, side branches), owned by {@link AmmoFamilyFacts}. / @PackagePrivate @NonFinal transient Object weaponAmmoFactsCache; / Ammo-side family facts, owned by {@link AmmoFamilyFacts}. / @PackagePrivate @NonFinal transient Object ammoFactsCache; / Single-entry resolved attack speed for this WEAPON under one (style, stance): the engine resolves the speed per evaluation through a provider chain whose inputs are fixed for a whole search, so one entry serves every evaluation after the first. Written only by DpsCalculatorEngine#calculateAttackSpeedTicks (hence public, unlike the same-package classifier caches); immutable holder swapped by one reference write, benign race. / public static final class SpeedCache { public final CombatStyle style; public final AttackStance stance; public final int ticks; public SpeedCache(CombatStyle style, AttackStance stance, int ticks) { this.style = style; this.stance = stance; this.ticks = ticks; } } // Style-INDEXED slots, not one entry: the optimizer runs all five styles' searches // concurrently over the same item objects, and a single entry ping-ponged between them — // profiling caught the miss path (the provider chain) still running per evaluation. // Races are benign throughout: cells are idempotent holders, and a lost array-init race // merely recomputes. @NonFinal public transient SpeedCache[] speedCachePerStyle; / The item name lower-cased once, for the name-heuristic classifiers. Never null. / public String nameLower() { String cached = nameLowerCache; if (cached == null) { cached = name != null ? name.toLowerCase(Locale.ROOT) : \"\"; nameLowerCache = cached; } return cached; } / The wiki weapon category for this id (registry-backed, cached); UNKNOWN when unregistered. / public WeaponCategory weaponCategory() { WeaponCategory cached = weaponCategoryCache; if (cached == null) { cached = ItemClassifications.weaponCategory(id); weaponCategoryCache = cached; } return cached; } public int getAttackBonus(CombatStyle style) { switch (style) { case MELEE_STAB: return astab; case MELEE_SLASH: return aslash; case MELEE_CRUSH: return acrush; case RANGED: return arange; case MAGIC: return amagic; default: return 0; } } / The per-STYLE weapon gate: the category-level stat heuristics below, then the game's own Combat Options table for the specific attack type (see {@link CombatOptions}) — a whip passes for Slash and nothing else, an axe never for Stab, a trident only for Magic. Weapons the registry doesn't categorize keep the pure category-level answer, exactly the pre-category behavior (synthetic test items land here by design). <p>This is the definition the candidate pools AND the reference-exhaustive oracle share (see docs/QUALITY-BENCH.md on why they must never diverge). / public boolean isSuitableWeaponFor(CombatStyle style) { if (slot != EquipmentInventorySlot.WEAPON) { return true; } if (id == -1) { // True barehanded (the pool's statless placeholder): Punch/Kick/Block are all // Crush, and spells can be cast with nothing wielded — the Unarmed category. // Synthetic id-less items CARRY stats, and keep the category-level answer. if (astab == 0 && aslash == 0 && acrush == 0 && amagic == 0 && arange == 0 && str == 0 && rstr == 0 && mdmg == 0) { return style == CombatStyle.MELEE_CRUSH || style == CombatStyle.MAGIC; } return isSuitableWeaponFor(style.getCategory()); } return isSuitableWeaponFor(style.getCategory()) && CombatOptions.offersStyle(weaponCategory(), style); } public boolean isSuitableWeaponFor(CombatStyle.Category category) { if (slot != EquipmentInventorySlot.WEAPON) { return true; } if (id == -1) { // Unarmed / Barehanded return category == CombatStyle.Category.MELEE || category == CombatStyle.Category.MAGIC; } String lowerName = nameLower(); switch (category) { case MELEE: // The eclipse atlatl carries a real melee STRENGTH stat, but only to feed its // ranged formula (see EclipseAtlatlFormula) — the weapon offers ranged attack // styles only, so its strength must not read as \"can punch with it\". if (specialType == SpecialWeaponType.ECLIPSE_ATLATL) { return false; } if (rstr > 0 || (arange > 0 && str == 0 && astab <= 0 && aslash <= 0 && acrush <= 0)) { return false; } return str > 0 || astab > 0 || aslash > 0 || acrush > 0; case RANGED: return rstr > 0 || arange > 0 || lowerName.contains(\"bow\") || lowerName.contains(\"dart\") || lowerName.contains(\"javelin\") || lowerName.contains(\"knife\") || lowerName.contains(\"blowpipe\") || lowerName.contains(\"atlatl\"); case MAGIC: return amagic > 0 || mdmg > 0 || lowerName.contains(\"staff\") || lowerName.contains(\"wand\") || lowerName.contains(\"sceptre\") || lowerName.contains(\"trident\") || lowerName.contains(\"shadow\"); default: return false; } } public boolean isVoidPiece() { switch (specialType) { case VOID_MELEE_HELM: case VOID_RANGED_HELM: case VOID_MAGIC_HELM: case VOID_BODY: case VOID_LEGS: case VOID_GLOVES: case ELITE_VOID_BODY: case ELITE_VOID_LEGS: return true; default: return false; } } / Any headgear carrying the on-task slayer damage bonus: helmet or bare black mask. Special types only, so the row answers from the type bitset alone."},
+
+	{"key": "imbuedSlayerHeadgear", "specialTypes": ["SLAYER_HELMET_IMBUED", "BLACK_MASK_IMBUED"],
+	 "source": "Weapon-side ammo requirement, cached like the powered-staff type. Opaque here (the enum is the classifier's private taxonomy); only WeaponClassifier reads or writes it. / @PackagePrivate @NonFinal transient Object ammoRequirementCache; / Weapon-side ammo-family facts (tiers, side branches), owned by {@link AmmoFamilyFacts}. / @PackagePrivate @NonFinal transient Object weaponAmmoFactsCache; / Ammo-side family facts, owned by {@link AmmoFamilyFacts}. / @PackagePrivate @NonFinal transient Object ammoFactsCache; / Single-entry resolved attack speed for this WEAPON under one (style, stance): the engine resolves the speed per evaluation through a provider chain whose inputs are fixed for a whole search, so one entry serves every evaluation after the first. Written only by DpsCalculatorEngine#calculateAttackSpeedTicks (hence public, unlike the same-package classifier caches); immutable holder swapped by one reference write, benign race. / public static final class SpeedCache { public final CombatStyle style; public final AttackStance stance; public final int ticks; public SpeedCache(CombatStyle style, AttackStance stance, int ticks) { this.style = style; this.stance = stance; this.ticks = ticks; } } // Style-INDEXED slots, not one entry: the optimizer runs all five styles' searches // concurrently over the same item objects, and a single entry ping-ponged between them — // profiling caught the miss path (the provider chain) still running per evaluation. // Races are benign throughout: cells are idempotent holders, and a lost array-init race // merely recomputes. @NonFinal public transient SpeedCache[] speedCachePerStyle; / The item name lower-cased once, for the name-heuristic classifiers. Never null. / public String nameLower() { String cached = nameLowerCache; if (cached == null) { cached = name != null ? name.toLowerCase(Locale.ROOT) : \"\"; nameLowerCache = cached; } return cached; } / The wiki weapon category for this id (registry-backed, cached); UNKNOWN when unregistered. / public WeaponCategory weaponCategory() { WeaponCategory cached = weaponCategoryCache; if (cached == null) { cached = ItemClassifications.weaponCategory(id); weaponCategoryCache = cached; } return cached; } public int getAttackBonus(CombatStyle style) { switch (style) { case MELEE_STAB: return astab; case MELEE_SLASH: return aslash; case MELEE_CRUSH: return acrush; case RANGED: return arange; case MAGIC: return amagic; default: return 0; } } / The per-STYLE weapon gate: the category-level stat heuristics below, then the game's own Combat Options table for the specific attack type (see {@link CombatOptions}) — a whip passes for Slash and nothing else, an axe never for Stab, a trident only for Magic. Weapons the registry doesn't categorize keep the pure category-level answer, exactly the pre-category behavior (synthetic test items land here by design). <p>This is the definition the candidate pools AND the reference-exhaustive oracle share (see docs/QUALITY-BENCH.md on why they must never diverge). / public boolean isSuitableWeaponFor(CombatStyle style) { if (slot != EquipmentInventorySlot.WEAPON) { return true; } if (id == -1) { // True barehanded (the pool's statless placeholder): Punch/Kick/Block are all // Crush, and spells can be cast with nothing wielded — the Unarmed category. // Synthetic id-less items CARRY stats, and keep the category-level answer. if (astab == 0 && aslash == 0 && acrush == 0 && amagic == 0 && arange == 0 && str == 0 && rstr == 0 && mdmg == 0) { return style == CombatStyle.MELEE_CRUSH || style == CombatStyle.MAGIC; } return isSuitableWeaponFor(style.getCategory()); } return isSuitableWeaponFor(style.getCategory()) && CombatOptions.offersStyle(weaponCategory(), style); } public boolean isSuitableWeaponFor(CombatStyle.Category category) { if (slot != EquipmentInventorySlot.WEAPON) { return true; } if (id == -1) { // Unarmed / Barehanded return category == CombatStyle.Category.MELEE || category == CombatStyle.Category.MAGIC; } String lowerName = nameLower(); switch (category) { case MELEE: // The eclipse atlatl carries a real melee STRENGTH stat, but only to feed its // ranged formula (see EclipseAtlatlFormula) — the weapon offers ranged attack // styles only, so its strength must not read as \"can punch with it\". if (specialType == SpecialWeaponType.ECLIPSE_ATLATL) { return false; } if (rstr > 0 || (arange > 0 && str == 0 && astab <= 0 && aslash <= 0 && acrush <= 0)) { return false; } return str > 0 || astab > 0 || aslash > 0 || acrush > 0; case RANGED: return rstr > 0 || arange > 0 || lowerName.contains(\"bow\") || lowerName.contains(\"dart\") || lowerName.contains(\"javelin\") || lowerName.contains(\"knife\") || lowerName.contains(\"blowpipe\") || lowerName.contains(\"atlatl\"); case MAGIC: return amagic > 0 || mdmg > 0 || lowerName.contains(\"staff\") || lowerName.contains(\"wand\") || lowerName.contains(\"sceptre\") || lowerName.contains(\"trident\") || lowerName.contains(\"shadow\"); default: return false; } } public boolean isVoidPiece() { switch (specialType) { case VOID_MELEE_HELM: case VOID_RANGED_HELM: case VOID_MAGIC_HELM: case VOID_BODY: case VOID_LEGS: case VOID_GLOVES: case ELITE_VOID_BODY: case ELITE_VOID_LEGS: return true; default: return false; } } / Any headgear carrying the on-task slayer damage bonus: helmet or bare black mask. / public boolean isSlayerHelm() { return specialType == SpecialWeaponType.SLAYER_HELMET || specialType == SpecialWeaponType.SLAYER_HELMET_IMBUED || specialType == SpecialWeaponType.BLACK_MASK || specialType == SpecialWeaponType.BLACK_MASK_IMBUED; } / …and specifically the imbued form, which adds the Ranged/Magic bonuses. Special types only, so the row answers from the type bitset alone."},
+
+	{"key": "salveAmulet", "specialTypes": ["SALVE_AMULET", "SALVE_AMULET_E", "SALVE_AMULET_I", "SALVE_AMULET_EI"],
+	 "source": "Special types only, so the row answers from the type bitset alone."},
+
+	{"key": "dragonbane", "specialTypes": ["DRAGON_HUNTER_CROSSBOW", "DRAGON_HUNTER_LANCE"],
+	 "source": "Special types only, so the row answers from the type bitset alone."},
+
+	{"key": "demonbane", "specialTypes": ["ARCLIGHT", "EMBERLIGHT", "DARKLIGHT", "SILVERLIGHT"],
+	 "source": "Special types only, so the row answers from the type bitset alone."},
+
+	{"key": "kalphitebane", "specialTypes": ["KERIS", "KERIS_SUN", "KERIS_BREACH", "KERIS_AMASCUT"],
+	 "source": "Special types only, so the row answers from the type bitset alone."},
+
+	{"key": "leafyBane", "specialTypes": ["LEAF_BLADED_BATTLEAXE", "LEAF_BLADED_WEAPON"],
+	 "source": "Special types only, so the row answers from the type bitset alone."},
+
+	{"key": "vampyreBane", "specialTypes": ["BLISTERWOOD_FLAIL", "BLISTERWOOD_STAKE", "BLISTERWOOD_SICKLE", "HALLOWED_FLAIL", "SUNSPEAR", "ROD_OF_IVANDIS", "IVANDIS_FLAIL"],
+	 "source": "Weapon-side ammo requirement, cached like the powered-staff type. Opaque here (the enum is the classifier's private taxonomy); only WeaponClassifier reads or writes it. / @PackagePrivate @NonFinal transient Object ammoRequirementCache; / Weapon-side ammo-family facts (tiers, side branches), owned by {@link AmmoFamilyFacts}. / @PackagePrivate @NonFinal transient Object weaponAmmoFactsCache; / Ammo-side family facts, owned by {@link AmmoFamilyFacts}. / @PackagePrivate @NonFinal transient Object ammoFactsCache; / Single-entry resolved attack speed for this WEAPON under one (style, stance): the engine resolves the speed per evaluation through a provider chain whose inputs are fixed for a whole search, so one entry serves every evaluation after the first. Written only by DpsCalculatorEngine#calculateAttackSpeedTicks (hence public, unlike the same-package classifier caches); immutable holder swapped by one reference write, benign race. / public static final class SpeedCache { public final CombatStyle style; public final AttackStance stance; public final int ticks; public SpeedCache(CombatStyle style, AttackStance stance, int ticks) { this.style = style; this.stance = stance; this.ticks = ticks; } } // Style-INDEXED slots, not one entry: the optimizer runs all five styles' searches // concurrently over the same item objects, and a single entry ping-ponged between them — // profiling caught the miss path (the provider chain) still running per evaluation. // Races are benign throughout: cells are idempotent holders, and a lost array-init race // merely recomputes. @NonFinal public transient SpeedCache[] speedCachePerStyle; / The item name lower-cased once, for the name-heuristic classifiers. Never null. / public String nameLower() { String cached = nameLowerCache; if (cached == null) { cached = name != null ? name.toLowerCase(Locale.ROOT) : \"\"; nameLowerCache = cached; } return cached; } / The wiki weapon category for this id (registry-backed, cached); UNKNOWN when unregistered. / public WeaponCategory weaponCategory() { WeaponCategory cached = weaponCategoryCache; if (cached == null) { cached = ItemClassifications.weaponCategory(id); weaponCategoryCache = cached; } return cached; } public int getAttackBonus(CombatStyle style) { switch (style) { case MELEE_STAB: return astab; case MELEE_SLASH: return aslash; case MELEE_CRUSH: return acrush; case RANGED: return arange; case MAGIC: return amagic; default: return 0; } } / The per-STYLE weapon gate: the category-level stat heuristics below, then the game's own Combat Options table for the specific attack type (see {@link CombatOptions}) — a whip passes for Slash and nothing else, an axe never for Stab, a trident only for Magic. Weapons the registry doesn't categorize keep the pure category-level answer, exactly the pre-category behavior (synthetic test items land here by design). <p>This is the definition the candidate pools AND the reference-exhaustive oracle share (see docs/QUALITY-BENCH.md on why they must never diverge). / public boolean isSuitableWeaponFor(CombatStyle style) { if (slot != EquipmentInventorySlot.WEAPON) { return true; } if (id == -1) { // True barehanded (the pool's statless placeholder): Punch/Kick/Block are all // Crush, and spells can be cast with nothing wielded — the Unarmed category. // Synthetic id-less items CARRY stats, and keep the category-level answer. if (astab == 0 && aslash == 0 && acrush == 0 && amagic == 0 && arange == 0 && str == 0 && rstr == 0 && mdmg == 0) { return style == CombatStyle.MELEE_CRUSH || style == CombatStyle.MAGIC; } return isSuitableWeaponFor(style.getCategory()); } return isSuitableWeaponFor(style.getCategory()) && CombatOptions.offersStyle(weaponCategory(), style); } public boolean isSuitableWeaponFor(CombatStyle.Category category) { if (slot != EquipmentInventorySlot.WEAPON) { return true; } if (id == -1) { // Unarmed / Barehanded return category == CombatStyle.Category.MELEE || category == CombatStyle.Category.MAGIC; } String lowerName = nameLower(); switch (category) { case MELEE: // The eclipse atlatl carries a real melee STRENGTH stat, but only to feed its // ranged formula (see EclipseAtlatlFormula) — the weapon offers ranged attack // styles only, so its strength must not read as \"can punch with it\". if (specialType == SpecialWeaponType.ECLIPSE_ATLATL) { return false; } if (rstr > 0 || (arange > 0 && str == 0 && astab <= 0 && aslash <= 0 && acrush <= 0)) { return false; } return str > 0 || astab > 0 || aslash > 0 || acrush > 0; case RANGED: return rstr > 0 || arange > 0 || lowerName.contains(\"bow\") || lowerName.contains(\"dart\") || lowerName.contains(\"javelin\") || lowerName.contains(\"knife\") || lowerName.contains(\"blowpipe\") || lowerName.contains(\"atlatl\"); case MAGIC: return amagic > 0 || mdmg > 0 || lowerName.contains(\"staff\") || lowerName.contains(\"wand\") || lowerName.contains(\"sceptre\") || lowerName.contains(\"trident\") || lowerName.contains(\"shadow\"); default: return false; } } public boolean isVoidPiece() { switch (specialType) { case VOID_MELEE_HELM: case VOID_RANGED_HELM: case VOID_MAGIC_HELM: case VOID_BODY: case VOID_LEGS: case VOID_GLOVES: case ELITE_VOID_BODY: case ELITE_VOID_LEGS: return true; default: return false; } } / Any headgear carrying the on-task slayer damage bonus: helmet or bare black mask. / public boolean isSlayerHelm() { return specialType == SpecialWeaponType.SLAYER_HELMET || specialType == SpecialWeaponType.SLAYER_HELMET_IMBUED || specialType == SpecialWeaponType.BLACK_MASK || specialType == SpecialWeaponType.BLACK_MASK_IMBUED; } / …and specifically the imbued form, which adds the Ranged/Magic bonuses. / public boolean isImbuedSlayerHeadgear() { return specialType == SpecialWeaponType.SLAYER_HELMET_IMBUED || specialType == SpecialWeaponType.BLACK_MASK_IMBUED; } public boolean isSalveAmulet() { switch (specialType) { case SALVE_AMULET: case SALVE_AMULET_E: case SALVE_AMULET_I: case SALVE_AMULET_EI: return true; default: return false; } } public boolean isDragonbane() { return specialType == SpecialWeaponType.DRAGON_HUNTER_CROSSBOW || specialType == SpecialWeaponType.DRAGON_HUNTER_LANCE; } public boolean isDemonbane() { switch (specialType) { case ARCLIGHT: case EMBERLIGHT: case DARKLIGHT: case SILVERLIGHT: return true; default: return false; } } public boolean isKalphitebane() { switch (specialType) { case KERIS: case KERIS_SUN: case KERIS_BREACH: case KERIS_AMASCUT: return true; default: return false; } } public boolean isLeafyBane() { return specialType == SpecialWeaponType.LEAF_BLADED_BATTLEAXE || specialType == SpecialWeaponType.LEAF_BLADED_WEAPON; } / Whether this weapon can hurt a vampyre at all. Getting this list wrong is not a rounding error: a Vyrewatch is immune to everything else, so an unrecognised vampyrebane weapon makes the calculator report zero damage for a loadout that works perfectly well in game — which is what it did for the Hallowed flail, Blisterwood stake, Blisterwood sickle, Sunspear and Rod of ivandis until the wiki-calculator battery covered them. Special types only, so the row answers from the type bitset alone."}
+]

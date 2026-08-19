@@ -1,0 +1,132 @@
+[
+
+	{"key": "DRAGON_DAGGER", "name": "Dragon dagger", "energy": 25, "attackStyle": "MELEE_STAB", "accNum": 23,
+	 "accDen": 20, "dmgNum": 23, "dmgDen": 20, "shape": "TWO_INDEPENDENT_HITS", "defenceStyleOverride": "MELEE_SLASH",
+	 "source": "Puncture: x23/20 accuracy and damage (\"+15%\" each), twice, rolling independently."},
+
+	{"key": "ABYSSAL_DAGGER", "name": "Abyssal dagger", "energy": 25, "attackStyle": "MELEE_STAB", "accNum": 5,
+	 "accDen": 4, "dmgNum": 17, "dmgDen": 20, "shape": "TWO_HITS_SINGLE_ROLL", "defenceStyleOverride": "MELEE_SLASH",
+	 "source": "Abyssal Puncture: 25% energy, a \"25% increase in accuracy\", \"15% reduced damage\", and \"two hits in quick succession\" where \"a single attack roll is performed, meaning that either both hits are successful, or both hits miss\". \"The damage calculation rolls against the opponent's slash defence.\" That single shared roll is why this is TWO_HITS_SINGLE_ROLL rather than the dragon dagger's independent pair — the same expectation, a different distribution."},
+
+	{"key": "GRANITE_HAMMER", "name": "Granite hammer", "energy": 60, "attackStyle": "MELEE_CRUSH", "accNum": 3,
+	 "accDen": 2, "dmgNum": 1, "dmgDen": 1, "shape": "FLAT_BONUS_EVEN_ON_MISS",
+	 "source": "Hammer Blow: 60% energy, \"50% increased accuracy\", and it \"guarantees 5 additional damage to that attack\" — where the wiki is explicit that \"even if the special attack misses, the target will still take a minimum of 5 damage from it\". That is why the 5 is a shape rather than a damage factor: it is not scaled by anything and it does not depend on the attack landing. The wiki's own carve-out — the guaranteed damage \"does not apply to NPCs immune to normal attacks\" — needs no code: the engine resolves immunity before the hit distribution runs at all, so an immune target already scores zero. The wiki does not name a defence style for it, so the weapon's own crush roll applies."},
+
+	{"key": "DRAGON_MACE", "name": "Dragon mace", "energy": 25, "attackStyle": "MELEE_CRUSH", "accNum": 5, "accDen": 4,
+	 "dmgNum": 3, "dmgDen": 2, "shape": "STANDARD", "defenceStyleOverride": "MELEE_CRUSH",
+	 "source": "Shatter: 25% energy — it \"increases the player's accuracy by 25% and damage by 50%, while rolling against the target's crush defence\". One hitsplat. The crush roll is declared explicitly even though the mace attacks with crush anyway, so the row states the rule rather than relying on the coincidence."},
+
+	{"key": "DRAGON_SWORD", "name": "Dragon sword", "energy": 40, "attackStyle": "MELEE_STAB", "accNum": 5, "accDen": 4,
+	 "dmgNum": 5, "dmgDen": 4, "shape": "STANDARD", "defenceStyleOverride": "MELEE_STAB",
+	 "source": "Wild Stab: \"consumes 40% of the player's special attack energy to hit the target with 25% increased accuracy and damage\", and \"this special rolls off of the opponent's stab defence regardless of which mode it is in\" — the \"regardless\" is why the defence style is a declared override rather than the attack style. The Protect from Melee bypass is a PvP/prayer rule with no place in an NPC damage model."},
+
+	{"key": "DRAGON_LONGSWORD", "name": "Dragon longsword", "energy": 25, "attackStyle": "MELEE_SLASH", "accNum": 1,
+	 "accDen": 1, "dmgNum": 5, "dmgDen": 4, "shape": "STANDARD", "defenceStyleOverride": "MELEE_SLASH",
+	 "source": "Cleave: 25% energy, and it \"raises the player's maximum hit by 25% for one hit\" — damage only, with no accuracy bonus at all, which is why this row's accuracy factor is 1/1. \"The accuracy roll for Cleave is based on the attack bonus of the player's currently selected style, which is rolled against an opponent's slash defence.\""},
+
+	{"key": "DRAGON_SCIMITAR", "name": "Dragon scimitar", "energy": 55, "attackStyle": "MELEE_SLASH", "accNum": 5,
+	 "accDen": 4, "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD", "defenceStyleOverride": "MELEE_SLASH",
+	 "source": "Sever: 55% energy, and it \"rolls against the target's slash defence with 25% higher accuracy\". Accuracy only — the wiki names no damage bonus, so the damage factor is 1/1. Its other half is a PvP rule (disabling protection prayers for 8 ticks) with no bearing on an NPC damage model."},
+
+	{"key": "ABYSSAL_BLUDGEON", "name": "Abyssal bludgeon", "energy": 50, "attackStyle": "MELEE_CRUSH", "accNum": 1,
+	 "accDen": 1, "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD",
+	 "source": "Penance: 50% energy, and it \"increases damage dealt by 0.5% for every prayer point that the wielder is missing\" — a factor that depends on PLAYER STATE, so it cannot live in this row's fixed numerator: AbyssalBludgeonPenance computes (100 + missing/2) / 100 from PlayerSetup#missingPrayerPoints() in the per-weapon damage stage. No accuracy modifier; the bludgeon's own crush roll."},
+
+	{"key": "BRINE_SABRE", "name": "Brine sabre", "energy": 75, "attackStyle": "MELEE_SLASH", "accNum": 2, "accDen": 1,
+	 "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD", "onlyMonsterIds": [7796],
+	 "source": "Liquify: 75% energy, \"doubles the player's accuracy\", no damage bonus — and \"the special attack only works underwater\", where exactly one attackable NPC exists: the lobstrosity (7796). The self-buff (+25% of damage dealt to Strength, Attack and Defence levels) is a boost, not damage, and is not modelled. The target gate keeps Auto from ever bringing it anywhere else."},
+
+	{"key": "ABYSSAL_WHIP", "name": "Abyssal whip", "energy": 50, "attackStyle": "MELEE_SLASH", "accNum": 5, "accDen": 4,
+	 "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD", "defenceStyleOverride": "MELEE_SLASH",
+	 "source": "Energy Drain: 50% energy, and it \"increases accuracy by 25%\" with no damage bonus. \"The accuracy roll for Energy Drain is made against an opponent's slash defence.\" The run-energy theft is PvP-only and is not a DPS effect either way."},
+
+	{"key": "ARCLIGHT", "name": "Arclight", "energy": 50, "attackStyle": "MELEE_STAB", "accNum": 1, "accDen": 1,
+	 "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD", "defenceStyleOverride": "MELEE_STAB",
+	 "source": "Weaken: 50% energy, rolled against <b>stab</b> defence, with no accuracy or damage modifier at all — an ordinary hit whose value is entirely in its drain. That drain \"lowers the opponent's Strength, Attack, and Defence levels by 5% (10% for demons) of their base level + 1\" and \"stacks additively rather than multiplicatively\", which is the player-asserted state modelled by DefenceReductions.arclight rather than something this row prices."},
+
+	{"key": "EMBERLIGHT", "name": "Emberlight", "energy": 50, "attackStyle": "MELEE_STAB", "accNum": 1, "accDen": 1,
+	 "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD", "defenceStyleOverride": "MELEE_STAB",
+	 "source": "Weaken, Arclight's upgrade: 50% energy, stab defence, no accuracy or damage modifier. Its drain \"lowers the opponent's Strength, Attack, and Defence levels by 5% (15% for demons) of their base level + 1\" — the demon rate is the one difference from Arclight (a \"+5% improvement to Arclight and Darklight's 10% drain on demons\"), and it is why DefenceReductions counts the two weapons separately rather than as one field."},
+
+	{"key": "BARRELCHEST_ANCHOR", "name": "Barrelchest anchor", "energy": 50, "attackStyle": "MELEE_CRUSH", "accNum": 2,
+	 "accDen": 1, "dmgNum": 11, "dmgDen": 10, "shape": "STANDARD",
+	 "source": "Sunder: 50% energy, \"doubles the player's accuracy\" and \"increases max damage by 10%\", one hitsplat on its ordinary crush roll. The incidental drain — 10% of the damage dealt, walked through Defence, Attack, Ranged then Magic — is a few levels per special; it has no DefenceReductions input (the oracle has none for it either, so no vector could see one) and is left unmodelled as noise rather than mechanics."},
+
+	{"key": "ELDER_MAUL", "name": "Elder maul", "energy": 50, "attackStyle": "MELEE_CRUSH", "accNum": 5, "accDen": 4,
+	 "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD",
+	 "source": "Pulverize: x5/4 accuracy; the defence drain is asserted separately (DefenceReductions)."},
+
+	{"key": "DRAGON_WARHAMMER", "name": "Dragon warhammer", "energy": 50, "attackStyle": "MELEE_CRUSH", "accNum": 1,
+	 "accDen": 1, "dmgNum": 3, "dmgDen": 2, "shape": "STANDARD",
+	 "source": "Smash: x3/2 damage; its drain, likewise, is asserted rather than self-valued."},
+
+	{"key": "BANDOS_GODSWORD", "name": "Bandos godsword", "energy": 50, "attackStyle": "MELEE_SLASH", "accNum": 2,
+	 "accDen": 1, "dmgNum": 11, "dmgDen": 10, "shape": "STANDARD", "defenceStyleOverride": "MELEE_SLASH",
+	 "godsword": true,
+	 "source": "Warstrike: x2 accuracy and x11/10 twice over — the wiki's \"+21% damage\"."},
+
+	{"key": "ARMADYL_GODSWORD", "name": "Armadyl godsword", "energy": 50, "attackStyle": "MELEE_SLASH", "accNum": 2,
+	 "accDen": 1, "dmgNum": 5, "dmgDen": 4, "shape": "STANDARD", "defenceStyleOverride": "MELEE_SLASH", "godsword": true,
+	 "source": "The Judgement: \"doubled accuracy\" and \"a 37.5% higher maximum hit than a normal attack (125% multiplied by the hidden 110% every godsword special possesses, the calculation uses integer values after the multiplication of 1.1 the value gets rounded down and then multiplied by 1.25)\" — the wiki spelling out this project's two-stage flooring exactly, and the reason the godsword stage is not folded into the damage factor. \"The Judgement rolls against the opponent's slash defence roll.\""},
+
+	{"key": "SARADOMIN_GODSWORD", "name": "Saradomin godsword", "energy": 50, "attackStyle": "MELEE_SLASH", "accNum": 2,
+	 "accDen": 1, "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD", "defenceStyleOverride": "MELEE_SLASH", "godsword": true,
+	 "source": "Healing Blade: \"their accuracy is doubled\" and \"the player's max hit is increased by 10%\" — that 10% IS the hidden godsword multiplier, so this row carries the godsword flag and no per-weapon damage factor of its own. Rolls against slash defence. The heal (50% of damage as hitpoints, 25% as prayer) is sustain, not damage, and is deliberately not modelled by a DPS engine."},
+
+	{"key": "ZAMORAK_GODSWORD", "name": "Zamorak godsword", "energy": 50, "attackStyle": "MELEE_SLASH", "accNum": 2,
+	 "accDen": 1, "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD", "defenceStyleOverride": "MELEE_SLASH", "godsword": true,
+	 "source": "Ice Cleave: \"doubles the player's accuracy (slash or crush roll)\" and \"increases their max hit by 10%\" — again the hidden godsword multiplier itself, so no per-weapon damage factor. \"It rolls against the opponent's slash defence\" even from a crush stance, which is what the defence-style override exists for. The 32-tick freeze is positional utility, not damage, and is not modelled."},
+
+	{"key": "ANCIENT_GODSWORD", "name": "Ancient godsword", "energy": 50, "attackStyle": "MELEE_SLASH", "accNum": 2,
+	 "accDen": 1, "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD", "defenceStyleOverride": "MELEE_SLASH", "godsword": true,
+	 "source": "Blood Sacrifice: \"doubled accuracy\" and a \"10% higher maximum hit than a normal attack\" — the godsword multiplier again, so no per-weapon damage factor. <b>The delayed sacrifice damage is deliberately NOT modelled</b>, and that is a decision rather than an oversight. On a landed hit the target is marked, and eight ticks later takes 25 typeless damage unless it has moved five tiles away. Three things make it unmodelled here: whether the target escapes is a positional question this engine has no model for (the same reason chinchompa clumps are a player assertion); the damage is typeless, so it belongs to no part of the hit pipeline; and it lands eight ticks after the swing, which a steady-state per-attack model would have to amortise. The oracle omits it too, so no vector could validate an implementation either way. Against a stationary boss this understates the special by up to 25 damage per cast."},
+
+	{"key": "DRAGON_HALBERD", "name": "Dragon halberd", "energy": 30, "attackStyle": "MELEE_SLASH", "accNum": 1,
+	 "accDen": 1, "dmgNum": 11, "dmgDen": 10, "shape": "HALBERD_SWEEP", "defenceStyleOverride": "MELEE_SLASH",
+	 "source": "Sweep: 30% energy, a \"10% damage boost\", and it \"rolls against the opponent's slash defence roll\". Against \"'large' monsters (anything that is larger than 1x1, such as most Boss monsters)\" it lands a second hitsplat \"with 25% reduced accuracy\" — see HalberdSweepSecondHit for why that is a reduced attack ROLL rather than a scaled hit chance. Not modelled: the multi-combat sweep across a 3x1 area (up to ten NPCs). That is a multi-target effect like the Hallowfell cleave and would read targetCount; the size-gated second hit is the single-target mechanic and the one this row covers."},
+
+	{"key": "CRYSTAL_HALBERD", "name": "Crystal halberd", "energy": 30, "attackStyle": "MELEE_SLASH", "accNum": 1,
+	 "accDen": 1, "dmgNum": 11, "dmgDen": 10, "shape": "HALBERD_SWEEP", "defenceStyleOverride": "MELEE_SLASH",
+	 "source": "Sweep, again: the wiki states the crystal halberd \"shares the same special attack as the dragon halberd\", and its own page repeats every figure — 30% energy, a \"10% damage boost\", a second hit on anything \"larger than 1x1\" at \"25% reduced accuracy\", rolling \"against the opponent's slash defence\". Checked rather than assumed from the shared name; it is an identical row."},
+
+	{"key": "OSMUMTEN_FANG", "name": "Osmumten's fang", "energy": 25, "attackStyle": "MELEE_STAB", "accNum": 3,
+	 "accDen": 2, "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD",
+	 "source": "Eviscerate: 25% energy, a \"50% increase to accuracy for the next hit\", and the spec <b>removes the fang's upper damage clamp</b> — the roll becomes [15% of max, max] instead of the passive [15%, 85%] window, so at max 60 the spec rolls 9-60 where a normal swing rolls 9-51. The minimum stays; the double accuracy roll stays too (see OsmumtenFangMechanic, which owns both branches)."},
+
+	{"key": "SARADOMIN_SWORD", "name": "Saradomin sword", "energy": 100, "attackStyle": "MELEE_SLASH", "accNum": 1,
+	 "accDen": 1, "dmgNum": 11, "dmgDen": 10, "shape": "STANDARD", "defenceStyleOverride": "MELEE_SLASH",
+	 "source": "Saradomin's Lightning: 100% energy, \"10% more melee damage\" (a per-weapon x11/10 — NOT the godsword stage; the sword is no godsword), rolled \"against the opponent's Slash defence bonus\", plus \"1-16 extra Magic damage\" that lands exactly when the melee hit does (\"if the melee attack misses, then the Magic attack will also fail\") — priced by SaradominsLightningBolt, which also owns the magic-damage-immunity carve-out (Dusk, the Warriors' Guild cyclopes)."},
+
+	{"key": "GRANITE_MAUL_ORNATE", "name": "Granite maul (ornate handle)", "energy": 50, "attackStyle": "MELEE_CRUSH",
+	 "accNum": 1, "accDen": 1, "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD", "instant": true, "itemIds": [24225, 24227],
+	 "source": "Quick Smash with the ornate handle: the upgrade cheapens the special to 50%. Every granite maul variant is literally named \"Granite maul\" in game data — the wiki's \"(ornate handle)\" is a page title, not an item name — so this row is matched BY ITEM ID (24225, and 24227 for the clamped one) ahead of the name loop; the display name here is for the UI only."},
+
+	{"key": "GRANITE_MAUL", "name": "Granite maul", "energy": 60, "attackStyle": "MELEE_CRUSH", "accNum": 1, "accDen": 1,
+	 "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD", "instant": true,
+	 "source": "Quick Smash: 60% energy, an INSTANT ordinary attack — \"does not increase accuracy\" and \"does not give the player any attack cooldown\". No factors, no shape: its entire value is that the hit costs no attack time, which the instant flag expresses as a zero-tick opportunity cost in the spec rate model. The oracle does not model this special, so the model is validated by hand rather than by vector."},
+
+	{"key": "DRAGON_THROWNAXE", "name": "Dragon thrownaxe", "energy": 25, "attackStyle": "RANGED", "accNum": 5,
+	 "accDen": 4, "dmgNum": 1, "dmgDen": 1, "shape": "STANDARD",
+	 "source": "Momentum Throw: 25% energy, \"improves the player's accuracy by 25%\", no damage modifier — the first RANGED row, and self-contained (thrownaxes need no ammo, so the overlay question never arises). Deliberately NOT the instant flag: the throw lands on the next tick but \"counts as a normal attack, resetting the player's attack delay\", so it consumes a full attack cycle like any spec — the queue-jump it grants is inside the perfect-switching idealisation the composition layer already assumes."},
+
+	{"key": "ACCURSED_SCEPTRE", "name": "Accursed sceptre", "energy": 50, "attackStyle": "MAGIC", "accNum": 3,
+	 "accDen": 2, "dmgNum": 3, "dmgDen": 2, "shape": "STANDARD", "unchargedMarkers": ["(u)", "(au)"],
+	 "source": "Condemn: 50% energy, \"a 50% increase to max hit and accuracy\" on the sceptre's BUILT-IN spell (the ACCURSED powered-staff formula) — the (a) autocast variant shares the prefix and the identical special, and under the spec it too casts the built-in spell whatever it was autocasting. The 15% Defence and Magic drain is the DefenceReductions.accursed field, asserted rather than self-valued, and the wiki confirms it caps at one application. The first MAGIC row."},
+
+	{"key": "ARKAN_BLADE", "name": "Arkan blade", "energy": 30, "attackStyle": "MELEE_SLASH", "accNum": 3, "accDen": 2,
+	 "dmgNum": 3, "dmgDen": 2, "shape": "STANDARD", "defenceStyleOverride": "MELEE_SLASH",
+	 "source": "Flames of Ralos: 30% energy, \"50% increased accuracy\" and \"50% increased damage\", one hit, \"rolls against the opponent's slash defence roll\" — plus a guaranteed burn on a landed hit (\"10 damage over 40 ticks\"), priced by ArkanBladeSpecBurn as 10 x hit chance and gated on normal-tier burn immunity."},
+
+	{"key": "BURNING_CLAWS", "name": "Burning claws", "energy": 35, "attackStyle": "MELEE_SLASH", "accNum": 1,
+	 "accDen": 1, "dmgNum": 1, "dmgDen": 1, "shape": "BURNING_CLAWS_CASCADE",
+	 "source": "Burning Barrage: 35% energy, three sequential accuracy rolls with widening-then-lowering damage windows (75-175%, 50-150%, 25-125% of max), three hitsplats, and a burn whose chance scales with WHICH roll landed (15%/30%/45% per splat) — see BurningClawsSpecDistribution for the full transcription. Rolls the weapon's own slash/stab defence, so no override."},
+
+	{"key": "DRAGON_CLAWS", "name": "Dragon claws", "energy": 50, "attackStyle": "MELEE_SLASH", "accNum": 1, "accDen": 1,
+	 "dmgNum": 1, "dmgDen": 1, "shape": "CLAWS_CASCADE", "defenceStyleOverride": "MELEE_SLASH",
+	 "source": "Slice and Dice: the four-roll cascade (see DragonClawsSpecDistribution)."},
+
+	{"key": "VOIDWAKER", "name": "Voidwaker", "energy": 50, "attackStyle": "MELEE_STAB", "accNum": 1, "accDen": 1,
+	 "dmgNum": 1, "dmgDen": 1, "shape": "VOIDWAKER", "defenceStyleOverride": "MAGIC",
+	 "source": "Disrupt: a guaranteed roll of 50-150% of the max melee hit, dealt as magic damage."}
+
+]

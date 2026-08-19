@@ -1,0 +1,22 @@
+[
+	{"monster": "zulrah", "kind": "reroll", "threshold": 50, "lo": 45,
+	 "source": "https://oldschool.runescape.wiki/w/Zulrah \"Damage at Zulrah is capped at 50, with any hits greater than this amount dealing 45-50 damage instead.\""},
+
+	{"monster": "fragmentOfSeren", "kind": "linearMinimum", "threshold": 24, "lo": 22,
+	 "source": "https://twitter.com/JagexAsh/status/1375037874559721474 \"ignoring whatever damage you rolled, and simply picking a number 22-24\" — the smaller of the hit and a fresh 22-24 roll."},
+
+	{"monster": "verzikPhaseOne", "category": "MELEE", "kind": "linearMinimum", "threshold": 10, "lo": 0,
+	 "exemptWorn": "DAWNBRINGER",
+	 "source": "https://oldschool.runescape.wiki/w/Verzik_Vitur \"Ranged/mage is capped at 3 and melee is capped at 10 damage per hitsplat\" — the Dawnbringer is exempt."},
+
+	{"monster": "verzikPhaseOne", "kind": "linearMinimum", "threshold": 3, "lo": 0,
+	 "exemptWorn": "DAWNBRINGER",
+	 "source": "The Ranged and Magic half of the row above, same article and same exemption."},
+
+	{"monster": "corporealBeast", "style": "MELEE_STAB", "kind": "hard", "threshold": 100,
+	 "source": "https://oldschool.runescape.wiki/w/Corporeal_Beast \"The damage cap of 50 for halberds and spears has been increased to 100.\""},
+
+	{"monster": "leviathan", "optionIs": {"key": "leviathanSituation", "value": "Stunned", "fallback": "Normal"},
+	 "kind": "hard", "threshold": 10,
+	 "source": "https://oldschool.runescape.wiki/w/The_Leviathan \"Damage against it is capped at 10 when stunned\" — anywhere but the backside wound, which is its own situation."}
+]

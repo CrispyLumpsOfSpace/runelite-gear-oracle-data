@@ -1,0 +1,23 @@
+[
+	{"key": "NONE", "style": "MELEE", "name": "None"},
+	{"key": "CLARITY_OF_THOUGHT", "style": "MELEE", "name": "Clarity of Thought", "group": "ATTACK", "attack": 1.05, "icon": 117},
+	{"key": "IMPROVED_REFLEXES", "style": "MELEE", "name": "Improved Reflexes", "group": "ATTACK", "attack": 1.1, "icon": 120},
+	{"key": "INCREDIBLE_REFLEXES", "style": "MELEE", "name": "Incredible Reflexes", "group": "ATTACK", "attack": 1.15, "icon": 126},
+	{"key": "BURST_OF_STRENGTH", "style": "MELEE", "name": "Burst of Strength", "group": "STRENGTH", "strength": 1.05, "icon": 116},
+	{"key": "SUPERHUMAN_STRENGTH", "style": "MELEE", "name": "Superhuman Strength", "group": "STRENGTH", "strength": 1.1, "icon": 119},
+	{"key": "ULTIMATE_STRENGTH", "style": "MELEE", "name": "Ultimate Strength", "group": "STRENGTH", "strength": 1.15, "icon": 125},
+	{"key": "CHIVALRY", "style": "MELEE", "name": "Chivalry", "group": "BOTH", "attack": 1.15, "strength": 1.18, "icon": 945},
+	{"key": "PIETY", "style": "MELEE", "name": "Piety", "group": "BOTH", "attack": 1.2, "strength": 1.23, "icon": 946, "source": "https://oldschool.runescape.wiki/w/Piety \"a 23% boost to a player's Strength, and a 20% boost to a player's Attack\""},
+	{"key": "NONE", "style": "RANGED", "name": "None"},
+	{"key": "SHARP_EYE", "style": "RANGED", "name": "Sharp Eye", "attack": 1.05, "strength": 1.05, "icon": 133},
+	{"key": "HAWK_EYE", "style": "RANGED", "name": "Hawk Eye", "attack": 1.1, "strength": 1.1, "icon": 502},
+	{"key": "EAGLE_EYE", "style": "RANGED", "name": "Eagle Eye", "attack": 1.15, "strength": 1.15, "icon": 504},
+	{"key": "DEADEYE", "style": "RANGED", "name": "Deadeye", "attack": 1.18, "strength": 1.18, "icon": 1422},
+	{"key": "RIGOUR", "style": "RANGED", "name": "Rigour", "attack": 1.2, "strength": 1.23, "icon": 1420, "source": "https://oldschool.runescape.wiki/w/Rigour \"boosts Ranged Attack by 20%, Ranged Strength by 23%\""},
+	{"key": "NONE", "style": "MAGIC", "name": "None"},
+	{"key": "MYSTIC_WILL", "style": "MAGIC", "name": "Mystic Will", "attack": 1.05, "icon": 134},
+	{"key": "MYSTIC_LORE", "style": "MAGIC", "name": "Mystic Lore", "attack": 1.1, "damage": 1.01, "icon": 503},
+	{"key": "MYSTIC_MIGHT", "style": "MAGIC", "name": "Mystic Might", "attack": 1.15, "damage": 1.02, "icon": 505},
+	{"key": "MYSTIC_VIGOUR", "style": "MAGIC", "name": "Mystic Vigour", "attack": 1.18, "damage": 1.03, "icon": 1423},
+	{"key": "AUGURY", "style": "MAGIC", "name": "Augury", "attack": 1.25, "damage": 1.04, "icon": 1421, "source": "https://oldschool.runescape.wiki/w/Augury \"boosts Magic Attack by 25%, Magic damage by 4%\""}
+]
