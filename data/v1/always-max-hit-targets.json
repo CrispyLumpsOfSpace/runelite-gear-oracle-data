@@ -1,0 +1,15 @@
+[
+	{"ids": [11781], "styles": ["MELEE", "RANGED", "MAGIC"], "name": "Baboon"},
+	{"ids": [11709, 11712], "styles": ["MAGIC"], "name": "Baboon Brawler"},
+	{"ids": [11710, 11713], "styles": ["MELEE"], "name": "Baboon Thrower"},
+	{"ids": [11711, 11714], "styles": ["RANGED"], "name": "Baboon Mage"},
+	{"ids": [11715, 11717], "styles": ["RANGED"], "name": "Baboon Shaman, Cursed Baboon"},
+	{"ids": [12814], "styles": ["MELEE"], "name": "Wilderness warband archer"},
+	{"ids": [12815], "styles": ["RANGED"], "name": "Wilderness warband seer"},
+	{"ids": [12816], "styles": ["MAGIC"], "name": "Wilderness warband berserker"},
+	{"ids": [14150, 14151], "styles": ["MAGIC"], "name": "Royal Titan elementals"},
+	{"ids": [11755, 11758], "styles": ["MELEE"], "name": "Ejected Warden cores"},
+	{"ids": [12000], "styles": ["MELEE", "RANGED", "MAGIC"], "name": "Venenatis' Spiderling"},
+	{"ids": [12001], "styles": ["MELEE", "RANGED", "MAGIC"], "name": "Spindel's Spiderling"},
+	{"ids": [14180], "styles": ["MELEE", "RANGED", "MAGIC"], "name": "Judge of Yama"}
+]

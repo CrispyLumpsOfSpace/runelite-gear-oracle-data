@@ -1,0 +1,9 @@
+[
+	{"ids": [1060], "weaponName": "anger spear"},
+	{"ids": [1061], "weaponName": "anger sword"},
+	{"ids": [1062], "weaponName": "anger mace"},
+	{"ids": [1065], "weaponName": "anger battleaxe"},
+	{"ids": [6353, 6291], "weaponName": "magic secateurs"},
+	{"ids": [7513, 7859, 12450], "spell": "CLAWS_OF_GUTHIX"},
+	{"ids": [5977, 7858, 12449], "spell": "SARADOMIN_STRIKE"}
+]

@@ -1,0 +1,12 @@
+[
+	{ "copy": "slayerTask",              "default": "defaultSlayerTask" },
+	{ "copy": "wilderness",              "default": "defaultInWilderness" },
+	{ "copy": "kandarinDiary",           "default": "defaultKandarinHardDiary" },
+	{ "copy": "sunfireRunes",            "default": "defaultSunfireRunes" },
+	{ "copy": "taskEquipment",           "default": "defaultRequireTaskEquipment" },
+	{ "copy": "breathProtection",        "default": "defaultRequireBreathProtection" },
+	{ "copy": "knockbackWeight",         "default": "defaultRequireKnockbackWeight" },
+	{ "copy": "ignoreLevelRequirements", "default": "defaultIgnoreLevelRequirements" },
+	{ "copy": "markOfDarkness",          "default": "defaultMarkOfDarkness" },
+	{ "copy": "chargeSpell",             "default": "defaultChargeSpell" }
+]
