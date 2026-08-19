@@ -34,8 +34,35 @@ def check_shrink(errors, name, now, before):
         errors.append(f"{name}: row count collapsed {before} -> {now}")
 
 
+SOURCE_CODE_MARKERS = ("@PackagePrivate", "@NonFinal", "transient ", "{@link", "public static",
+                       "private static", "} }")
+
+
+def check_no_source_dumps(errors):
+    """A row's prose field must not carry pasted Java.
+
+    Three weapon-families rows once held 18KB of ItemSpec.java between them, glued ahead of the
+    note the author wrote. It reached every client, and nothing here noticed.
+    """
+    for path in sorted((ROOT / "data/v1").glob("*.json")):
+        rows = json.loads(path.read_text())
+        if not isinstance(rows, list):
+            continue
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            for field, value in row.items():
+                if not isinstance(value, str):
+                    continue
+                found = [m for m in SOURCE_CODE_MARKERS if m in value]
+                if found:
+                    errors.append(f"{path.name}: {row.get('key')}.{field} looks like pasted "
+                                  f"source ({found[0]!r}, {len(value)} bytes)")
+
+
 def main():
     errors = []
+    check_no_source_dumps(errors)
 
     monsters = json.loads((ROOT / "data/v1/monsters.json").read_text())
     rows = monsters.get("rows")
