@@ -7,7 +7,7 @@
 	{"ids": [7513, 7859, 12450], "spell": "CLAWS_OF_GUTHIX"},
 	{"ids": [5977, 7858, 12449], "spell": "SARADOMIN_STRIKE"},
 	{"ids": [980, 981, 982, 983, 984, 985, 986, 987, 988],
-	 "option": {"key": "dagannothMotherColour", "label": "Dagannoth Mother colour", "description": "<html>She can only be damaged by the style her current colour names.<br>The colour changes every 18 seconds on a fixed cycle; each is costed on its own.</html>", "default": "White"},
+	 "option": {"key": "dagannothMotherColour", "label": "Colour", "description": "<html>She can only be damaged by the style her current colour names.<br>The colour changes every 18 seconds on a fixed cycle; each is costed on its own.</html>", "default": "White"},
 	 "requirements": [
 		{"when": "White", "element": "AIR"},
 		{"when": "Blue", "element": "WATER"},
@@ -17,7 +17,7 @@
 		{"when": "Green", "style": "RANGED"}],
 	 "source": "https://oldschool.runescape.wiki/w/Horror_from_the_Deep \"For as long as she remains that colour, she can only be damaged through use of that particular attack style\"; the six colours and their styles are that guide's weakness table. She changes every 18 seconds on a fixed cycle, which is not modelled: each colour is costed on its own."},
 	{"ids": [6361, 6362, 6363, 6364, 6365, 6366, 6300, 6301, 6302, 6303, 6304, 6305],
-	 "option": {"key": "dagannothMotherColour", "label": "Dagannoth Mother colour", "description": "<html>She can only be damaged by the style her current colour names.<br>The colour changes every 18 seconds on a fixed cycle; each is costed on its own.</html>", "default": "White"},
+	 "option": {"key": "dagannothMotherColour", "label": "Colour", "description": "<html>She can only be damaged by the style her current colour names.<br>The colour changes every 18 seconds on a fixed cycle; each is costed on its own.</html>", "default": "White"},
 	 "requirements": [
 		{"when": "White", "element": "AIR"},
 		{"when": "Blue", "element": "WATER"},
@@ -27,7 +27,7 @@
 		{"when": "Green", "style": "RANGED"}],
 	 "source": "https://oldschool.runescape.wiki/w/Horror_from_the_Deep \"For as long as she remains that colour, she can only be damaged through use of that particular attack style\"; the six colours and their styles are that guide's weakness table. She changes every 18 seconds on a fixed cycle, which is not modelled: each colour is costed on its own."},
 	{"ids": [4884, 4885, 4886, 4887, 4888, 4889, 6373, 6374, 6375, 6376, 6377, 6378, 6312, 6313, 6314, 6315, 6316, 6317],
-	 "option": {"key": "gelatinnothMotherColour", "label": "Gelatinnoth Mother colour", "description": "<html>She can only be damaged by the style her current colour names.<br>The colour changes every 18 seconds on a fixed cycle; each is costed on its own.</html>", "default": "White"},
+	 "option": {"key": "gelatinnothMotherColour", "label": "Colour", "description": "<html>She can only be damaged by the style her current colour names.<br>The colour changes every 18 seconds on a fixed cycle; each is costed on its own.</html>", "default": "White"},
 	 "requirements": [
 		{"when": "White", "element": "AIR"},
 		{"when": "Blue", "element": "WATER"},
