@@ -1,0 +1,75 @@
+[
+	{"id": "StyleImmunityTable", "kind": "immunity",
+	 "source": "Unconditional style immunities — a whole style doing nothing at all, each row of style-immunities.json stated on its own article and carrying the name that re-verifies it. https://oldschool.runescape.wiki/w/Animated_Bronze_Armour \"Like all other animated armour variants, it is immune to Ranged and Magic attacks.\"; https://oldschool.runescape.wiki/w/Cyclops \"cyclopes found in these areas are immune to Ranged and Magic attacks and must be fought with melee combat.\"; https://oldschool.runescape.wiki/w/Mother \"Mother is immune to magic\". Id-keyed because \"Cyclops\" is shared with level-81 monsters outside the guild that have no immunity, so a name match would misdirect. Conditional immunities (Kraken, Vasa, aviansies) are rows of their own.",
+	 "immuneAny": [{"styleImmuneTarget": true}],
+	 "styleBlanket": true},
+
+	{"id": "ElementalHealing", "kind": "immunity",
+	 "source": "https://oldschool.runescape.wiki/w/Lava_Strykewyrm \"Fire spells will heal them equal to the amount hit.\"; https://oldschool.runescape.wiki/w/Water_wizard \"The elemental wizards south of Falador are now healed by their own element and damaged by all others.\" Modelled as immunity because the engine has no way to express negative damage. The trap is the second-best element — fire looks strongest against a lava strykewyrm and then heals it; the spell picker never offers a healing element, and this rule is what catches the powered staves that go round the picker. Which element heals which monster is the healingElement group of monster-families.json.",
+	 "immuneAny": [{"category": "MAGIC", "castElementHeals": true}]},
+
+	{"id": "LeafyBaneImmunity", "kind": "immunity",
+	 "source": "https://oldschool.runescape.wiki/w/Kurask \"they can only be damaged with leaf-bladed weapons, broad ammunition, or the Magic Dart spell\" — one way through per style. Turoth and Kurask carry the LEAFY attribute; broad ammunition must actually be fired by the weapon, which is the ordinary ammo-compatibility rule, and Magic Dart is the reason the slayer staff family exists.",
+	 "immuneAny": [{"targetAttr": "LEAFY"}],
+	 "unless": [
+		{"category": "MELEE", "weaponFlag": "leafyBane"},
+		{"category": "RANGED", "ammoFamily": "broadAmmo", "ammoCompatible": true},
+		{"category": "MAGIC", "spell": "MAGIC_DART"}]},
+
+	{"id": "ReachRequiredImmunity", "kind": "immunity",
+	 "source": "https://oldschool.runescape.wiki/w/Aviansie \"As they are airborne, they are immune to being directly targeted by melee attacks except for salamanders and halberds.\" Attribute-keyed for the airborne, which catches the ones a name list would miss (Vespula, reanimated aviansies); Zulrah is the halberdReach family instead, needing the same reach for a different reason: \"It cannot be reached with melee (with the exception of halberds).\" Not modelled: splash damage from scythes or bulwarks onto airborne targets, and weapon reach in tiles.",
+	 "immuneAny": [
+		{"category": "MELEE", "targetAttr": "FLYING"},
+		{"category": "MELEE", "monsterClass": "halberdReach"}],
+	 "unless": [{"weaponFlag": "halberd"}, {"weaponFamily": "salamander"}]},
+
+	{"id": "VampyreBaneImmunity", "kind": "immunity",
+	 "source": "The game data splits the castes across three attributes so a tier-1 quest boss like Count Draynor is told apart from the higher ones. Tier 1: https://oldschool.runescape.wiki/w/Vampyre \"All weapons deal full damage\". Tier 2: \"Regular weapons deal no damage unless using an Efaritay's aid\". Tier 3: \"Only specific silver weapons deal full damage\". The rod of ivandis reaches tier 2 only; the blisterwood stake is the Ranged way through and is checked before everything else, since a thrown stake is not a melee vampyrebane; and the rod is excluded from the melee vampyrebane escape because it is the tier-2 rule, not the general one.",
+	 "immuneAny": [{"vampyreTierAtLeast": 2}],
+	 "unless": [
+		{"category": "RANGED", "weaponSpecial": "BLISTERWOOD_STAKE"},
+		{"categoryNot": "RANGED", "vampyreTier": 2, "worn": "ROD_OF_IVANDIS"},
+		{"category": "MELEE", "weaponFlag": "vampyreBane", "weaponSpecialNot": "ROD_OF_IVANDIS"},
+		{"vampyreTier": 2, "worn": "EFARITAYS_AID"},
+		{"vampyreTier": 2, "category": "MELEE", "weaponFamily": "silverMelee"},
+		{"vampyreTier": 2, "category": "RANGED", "weaponFamily": "silverRanged"}]},
+
+	{"id": "KrakenImmunity", "kind": "immunity",
+	 "source": "Wiki: Kraken — melee cannot reach it at all; Ranged deals 1/7 through the separate KrakenRangedResistance.",
+	 "immuneAny": [{"monsterClass": "kraken", "category": "MELEE"}],
+	 "styleBlanket": true},
+
+	{"id": "NylocasFormImmunity", "kind": "immunity",
+	 "source": "https://oldschool.runescape.wiki/w/Nylocas_Vasilias — blue for magic, green for ranged and white for melee; the wrong style reflects the hit back.",
+	 "immuneAny": [
+		{"monsterClass": "nylocasIschyros", "categoryNot": "MELEE"},
+		{"monsterClass": "nylocasToxobolos", "categoryNot": "RANGED"},
+		{"monsterClass": "nylocasHagios", "categoryNot": "MAGIC"}],
+	 "styleBlanket": true},
+
+	{"id": "GrotesqueGuardiansImmunity", "kind": "immunity",
+	 "source": "Wiki: Grotesque Guardians#Dusk — immune to everything but melee. Immunity takes precedence over the stat block's listed Earth weakness.",
+	 "immuneAny": [{"monsterClass": "dusk", "categoryNot": "MELEE"}],
+	 "styleBlanket": true},
+
+	{"id": "SalarinImmunity", "kind": "immunity",
+	 "source": "Wiki: Salarin the Twisted — only the Strike spells hurt him. Ring of recoil and dynamite are not modeled.",
+	 "immuneAny": [{"monsterClass": "salarin"}],
+	 "unless": [{"category": "MAGIC", "spellFamily": "strikeSpell"}]},
+
+	{"id": "SurokMagisImmunity", "kind": "immunity",
+	 "source": "Wiki: Surok Magis — damaged only by spellbook magic; immune to powered staves.",
+	 "immuneAny": [{"monsterClass": "surokMagis"}],
+	 "unless": [{"category": "MAGIC", "poweredStaff": "false"}]},
+
+	{"id": "DesertTreasureElementalImmunity", "kind": "immunity",
+	 "source": "https://oldschool.runescape.wiki/w/Kamil \"Kamil is weak to fire spells, but is immune to all other magic damage and effects\"; https://oldschool.runescape.wiki/w/Fareed \"can only otherwise be damaged with Water spells or any kind of Ranged weapon\".",
+	 "immuneAny": [
+		{"monsterClass": "kamil", "category": "MAGIC", "castElementNot": "FIRE"},
+		{"monsterClass": "fareed", "category": "MAGIC", "castElementNot": "WATER"}],
+	 "filterAny": [{"monsterClass": "kamil"}, {"monsterClass": "fareed"}]},
+	{"id": "HolyWaterDemonsOnly", "kind": "immunity",
+	 "source": "https://oldschool.runescape.wiki/w/Holy_water \"Holy water can only be used against demons\" — the restriction outlives the damage formula this engine dropped, so a loadout holding holy water scores zero against anything that is not a demon rather than being priced as an ordinary thrown weapon.",
+	 "immuneAny": [{"weaponFamily": "holyWater"}],
+	 "unless": [{"targetAttr": "DEMON"}]}
+]

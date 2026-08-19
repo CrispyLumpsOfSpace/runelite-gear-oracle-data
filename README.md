@@ -30,6 +30,7 @@ values appear, though which fields carry an override is itself a product of it.
 |---|---|---|
 | `data/v1/monsters.json` | The bestiary, minimised to what the game client's own cache cannot supply | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/equipment.json` | Weapon id → wiki combat category — the one item field the game client has no concept of; names and slots come from the client at runtime | [CC BY-NC-SA 3.0](data/LICENSE) |
+| `data/v1/mechanic-{weapons,gear,monsters,immunities}.json` | The engine's mechanic rows themselves, named apart from the bestiary's `monsters.json`. The plugin resolves these by id as it builds, so an absent copy leaves it with no mechanics until the fetch lands | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/mechanic-rows.json` | Additive mechanic rows, served to the plugin's row grammar. Empty until a row is published here | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{monster-families,weapon-families,damage-caps,equipment-sets,magic-base-hits,magic-damage-pool,special-attack-weapons,potions,prayers}.json` | The nine overlay-served combat tables. Seeded from the plugin's bundled copies; a row published here extends a table, and one whose key a bundled row already holds is skipped | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{status-immunities,slayer-finishers,slayer-equipment}.json` | Monster status immunities, Slayer finishing items, Slayer equipment requirements | [CC BY-NC-SA 3.0](data/LICENSE) |
