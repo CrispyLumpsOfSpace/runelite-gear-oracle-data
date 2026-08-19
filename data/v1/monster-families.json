@@ -258,5 +258,7 @@
 	{"key": "yamaDefenceFloor",
 	 "group": "defenceFloor", "value": 145,
 	 "ids": [14176],
-	 "source": "https://oldschool.runescape.wiki/w/Yama \"his stats can be drained a maximum of 80 Defence levels (to 145)\". Keyed by id and separate from the name-keyed yama row, which carries the demonbane group — a row carries one value group."}
+	 "source": "https://oldschool.runescape.wiki/w/Yama \"his stats can be drained a maximum of 80 Defence levels (to 145)\". Keyed by id and separate from the name-keyed yama row, which carries the demonbane group — a row carries one value group."},
+	{"key": "verzik", "namesExact": ["verzik vitur"],
+	 "source": "Every phase and mode: all nine bestiary rows are called \"Verzik Vitur\", so the name covers what verzikPhaseOne narrows by id."}
 ]

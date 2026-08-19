@@ -37,6 +37,7 @@ values appear, though which fields carry an override is itself a product of it.
 | `data/v1/{always-max-hit-targets,style-immunities,required-weapon-immunities}.json` | Per-monster-id combat rules: guaranteed max hits, style immunities, weapons a kill requires | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/combat-spells.json` | Every castable spell: book, element, max hit, level and rune cost. A row here adds a spell the picker can choose, with no plugin release | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{combat-options,runes}.json` | The game's Combat Options table per weapon category, and rune item ids with their names | [CC BY-NC-SA 3.0](data/LICENSE) |
+| `data/v1/encounter-gear.json` | Per-encounter gear availability: which slots survive an arena that confiscates equipment, and which items it supplies that no bank can hold | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/special-item-patterns.json` | Name patterns that classify an item into the engine's special-weapon taxonomy | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{setup-copy,setup-modifiers}.json` | The plugin's own UI labels and modifier list. Original authored content, not wiki-derived | [MIT](tools/LICENSE) |
 | `data/v1/manifest.json` | Content hash of every runtime file. Clients fetch this one file per startup and re-download only the entries whose hash moved; regenerate with `tools/manifest.py` after any hand-publish | — |

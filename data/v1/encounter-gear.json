@@ -1,0 +1,9 @@
+[
+	{"ids": [3897, 3898, 3899, 3900], "keepSlots": ["RING", "AMULET"],
+	 "note": "Thorvald's arena takes your weapons and armour; only jewellery goes in.",
+	 "source": "https://oldschool.runescape.wiki/w/The_Fremennik_Trials — \"you cannot bring weapons, armour, runes, or fletching materials\" into the arena, while \"you can use food, Prayer, god books, and jewellery\". God books and boots of lightness are permitted too and are not modelled: neither carries an offensive stat, so neither can change a DPS answer."},
+
+	{"monsterClass": "verzik", "adds": [22516],
+	 "note": "The Dawnbringer is taken from the skeleton outside Verzik's room.",
+	 "source": "https://oldschool.runescape.wiki/w/Dawnbringer — taken from a skeleton by the entrance to Verzik's throne room and used on her first phase. It has \"a built in failsafe where it's destroyed when you attempt to do anything with it outside of Verzik's room\", so no bank can hold it and the pool has to supply it."}
+]
