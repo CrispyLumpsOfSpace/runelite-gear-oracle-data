@@ -3,6 +3,7 @@
  "generated": "2026-08-19",
  "files": {
   "always-max-hit-targets.json": "8783bcf549fe2eceea49292e25f9a068d18d73072179e798de5fa4b84f60bea3",
+  "combat-options.json": "9bba912c5e1a2e30356e48108ba59a5d718f5c855a0536cce6d8f8f6b67bbb94",
   "damage-caps.json": "8f57570a843607cb8aa33714c8f45c03ceef99c8a10300eed32449ea6ab47818",
   "equipment-sets.json": "540f28786ae98950c722a69ae998c9671881570e95e65188791e11d435f09c89",
   "equipment.json": "a123d25f9a04638641fcfcd7b35f6cf3a0b765366c81036fda90e80fb35b4254",
@@ -15,6 +16,7 @@
   "potions.json": "71fb53351e4a606db5a0593ce4892e9a639bb425798057f6074bcc2019bb8434",
   "prayers.json": "4db14f2f0a0aff52dcff23ed148a0c1cdac23d9252c838cef4e5bbc645828f77",
   "required-weapon-immunities.json": "4485f858267ad4e0ac5946767ecefa8385bdaa26b1d5fecafb6a7aa1915423aa",
+  "runes.json": "dd9e37c1af26e79a3d62309bf988d3e306dff88ab0f8f78929b0f512a581a332",
   "setup-copy.json": "972108ed67908e92457e7f82c9f5e03cb4eb80f39aaf774286988932a3ca7c28",
   "setup-modifiers.json": "de2ca2f842b6cdf14fa065a63d2118d1cada90226de6431693599fb5675e5cb7",
   "slayer-equipment.json": "ccdba7668e600ebe1f1500ff1f29ba132ff33992679c5b186cd00e83d2b8b24a",
