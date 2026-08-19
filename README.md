@@ -35,6 +35,7 @@ values appear, though which fields carry an override is itself a product of it.
 | `data/v1/{monster-families,weapon-families,damage-caps,equipment-sets,magic-base-hits,magic-damage-pool,special-attack-weapons,potions,prayers}.json` | The nine overlay-served combat tables. Seeded from the plugin's bundled copies; a row published here extends a table, and one whose key a bundled row already holds is skipped | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{status-immunities,slayer-finishers,slayer-equipment}.json` | Monster status immunities, Slayer finishing items, Slayer equipment requirements | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{always-max-hit-targets,style-immunities,required-weapon-immunities}.json` | Per-monster-id combat rules: guaranteed max hits, style immunities, weapons a kill requires | [CC BY-NC-SA 3.0](data/LICENSE) |
+| `data/v1/combat-spells.json` | Every castable spell: book, element, max hit, level and rune cost. A row here adds a spell the picker can choose, with no plugin release | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{combat-options,runes}.json` | The game's Combat Options table per weapon category, and rune item ids with their names | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/special-item-patterns.json` | Name patterns that classify an item into the engine's special-weapon taxonomy | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{setup-copy,setup-modifiers}.json` | The plugin's own UI labels and modifier list. Original authored content, not wiki-derived | [MIT](tools/LICENSE) |
