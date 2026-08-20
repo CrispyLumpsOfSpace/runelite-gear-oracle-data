@@ -549,10 +549,6 @@
    "category": "MELEE",
    "targetAttr": "DEMON"
   },
-  "scaledPercent": {
-   "group": "demonbaneVulnerability",
-   "default": 100
-  },
   "accuracy": [
    {
     "when": {
@@ -561,7 +557,7 @@
       "EMBERLIGHT"
      ]
     },
-    "percent": 70
+    "factor": "1 + floor(70 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
    },
    {
     "when": {
@@ -570,13 +566,13 @@
       "SILVERLIGHT"
      ]
     },
-    "percent": 60
+    "factor": "1 + floor(60 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
    },
    {
     "when": {
      "weaponFamily": "demonbaneClaws"
     },
-    "percent": 5
+    "factor": "1 + floor(5 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
    }
   ],
   "damage": [
@@ -587,7 +583,7 @@
       "EMBERLIGHT"
      ]
     },
-    "percent": 70
+    "factor": "1 + floor(70 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
    },
    {
     "when": {
@@ -596,13 +592,13 @@
       "SILVERLIGHT"
      ]
     },
-    "percent": 60
+    "factor": "1 + floor(60 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
    },
    {
     "when": {
      "weaponFamily": "demonbaneClaws"
     },
-    "percent": 5
+    "factor": "1 + floor(5 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
    }
   ],
   "aggregateBoundSafe": true
@@ -615,18 +611,14 @@
    "targetAttr": "DEMON",
    "worn": "SCORCHING_BOW"
   },
-  "scaledPercent": {
-   "group": "demonbaneVulnerability",
-   "default": 100
-  },
   "accuracy": [
    {
-    "percent": 30
+    "factor": "1 + floor(30 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
    }
   ],
   "damage": [
    {
-    "percent": 30
+    "factor": "1 + floor(30 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
    }
   ],
   "slayerAdditiveTwentieths": 6,
@@ -642,13 +634,7 @@
   "filterWhen": {
    "category": "MELEE"
   },
-  "flat": {
-   "inputs": [
-    "targetSize"
-   ],
-   "mul": 2,
-   "max": 10
-  },
+  "flat": "min(10, monster.size * 2)",
   "aggregateBoundSafe": true
  },
  {

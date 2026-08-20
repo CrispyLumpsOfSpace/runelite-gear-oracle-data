@@ -263,7 +263,7 @@
  },
  {
   "id": "CrystalArmorSet",
-  "source": "Per-piece Ranged bonuses crystal armour grants a crystal bow or Bow of Faerdhinen; since 2021 carried by the pieces, deliberately unequal so body and legs under an imbued slayer helmet beat the full set on task. https://oldschool.runescape.wiki/w/Update:Equipment_Rebalance:_Ranged_Meta_Proposal \"grant a total bonus of 40% Ranged accuracy and 27.5% Ranged damage while on any Slayer task.\" Damage shares: https://oldschool.runescape.wiki/w/Crystal_helm changelog \"The damage bonus has been decreased from 3% to 2.5%.\" \u2014 the article bodies' flat 5% per piece contradicts both the changelog and the 27.5% total, so the changelog and blog win.",
+  "source": "Per-piece Ranged bonuses crystal armour grants a crystal bow or Bow of Faerdhinen; since 2021 carried by the pieces, deliberately unequal so body and legs under an imbued slayer helmet beat the full set on task. https://oldschool.runescape.wiki/w/Update:Equipment_Rebalance:_Ranged_Meta_Proposal \"grant a total bonus of 40% Ranged accuracy and 27.5% Ranged damage while on any Slayer task.\" Damage shares: https://oldschool.runescape.wiki/w/Crystal_helm changelog \"The damage bonus has been decreased from 3% to 2.5%.\" \u2014 the article bodies' flat 5% per piece contradicts both the changelog and the 27.5% total, so the changelog and blog win. The three shares add in declared order onto 1, the exact float accumulation the per-piece list stated.",
   "when": {
    "category": "RANGED",
    "weaponSpecialAny": [
@@ -271,53 +271,17 @@
     "CRYSTAL_BOW"
    ]
   },
-  "accuracyPieces": [
+  "aggregateBoundSafe": true,
+  "accuracy": [
    {
-    "worn": "CRYSTAL_HELM",
-    "add": [
-     5,
-     100
-    ]
-   },
-   {
-    "worn": "CRYSTAL_BODY",
-    "add": [
-     15,
-     100
-    ]
-   },
-   {
-    "worn": "CRYSTAL_LEGS",
-    "add": [
-     10,
-     100
-    ]
+    "factor": "1 + (worn('CRYSTAL_HELM') ? 5/100 : 0) + (worn('CRYSTAL_BODY') ? 15/100 : 0) + (worn('CRYSTAL_LEGS') ? 10/100 : 0)"
    }
   ],
-  "damagePieces": [
+  "damage": [
    {
-    "worn": "CRYSTAL_HELM",
-    "add": [
-     25,
-     1000
-    ]
-   },
-   {
-    "worn": "CRYSTAL_BODY",
-    "add": [
-     75,
-     1000
-    ]
-   },
-   {
-    "worn": "CRYSTAL_LEGS",
-    "add": [
-     5,
-     100
-    ]
+    "factor": "1 + (worn('CRYSTAL_HELM') ? 25/1000 : 0) + (worn('CRYSTAL_BODY') ? 75/1000 : 0) + (worn('CRYSTAL_LEGS') ? 5/100 : 0)"
    }
-  ],
-  "aggregateBoundSafe": true
+  ]
  },
  {
   "id": "VeracsFlailMechanic",
@@ -655,5 +619,28 @@
    ],
    "factorExpr": "monster.attr('UNDEAD') || player.onSlayerTask ? (item.special('SALVE_AMULET') || item.special('SALVE_AMULET_E') || item.special('SALVE_AMULET_I') || item.special('SALVE_AMULET_EI') ? 1.44 : (7/6) * (7/6)) : 1"
   }
+ },
+ {
+  "id": "VirtusSetPool",
+  "kind": "flatShare",
+  "stage": "magicDamagePool",
+  "source": "https://oldschool.runescape.wiki/w/Virtus_mask \"When using combat spells from Ancient Magicks, the magic damage bonus is increased to 5% for each piece for a total of 15%.\" Three points per piece over and above the 2% each piece's stat line already carries; standard spells and powered staves get the stat and nothing more. Pooled into the additive gear percent rather than taken as its own floored multiplier, which would overstate the effect once the pool is large.",
+  "when": {
+   "category": "MAGIC",
+   "spellBook": "ANCIENT"
+  },
+  "value": "3 * ((worn('VIRTUS_MASK') ? 1 : 0) + (worn('VIRTUS_TOP') ? 1 : 0) + (worn('VIRTUS_LEGS') ? 1 : 0))"
+ },
+ {
+  "id": "SmokeStaffPool",
+  "kind": "flatShare",
+  "stage": "magicDamagePool",
+  "source": "https://twitter.com/JagexAsh/status/1791070064369647838 - the smoke staves grant \"a 10% increase in accuracy and damage when casting spells from the standard spellbook\"; Ancient Magicks get nothing. Percentage POINTS into the pool, not a multiplier over it (vector-pinned); the accuracy half is a floored stage of its own and stays in SmokeStaffBonus.",
+  "when": {
+   "style": "MAGIC",
+   "weaponFamily": "smokeStaff",
+   "spellBook": "STANDARD"
+  },
+  "value": "10"
  }
 ]

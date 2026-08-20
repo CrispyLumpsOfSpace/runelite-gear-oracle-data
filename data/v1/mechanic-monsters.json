@@ -177,16 +177,7 @@
   "kind": "resistance",
   "minResult": 1,
   "factor": {
-   "num": {
-    "inputs": [
-     "miningLevel",
-     {
-      "weaponValue": "pickaxeGuardianRequirement",
-      "default": 61
-     }
-    ],
-    "add": 50
-   },
+   "num": "player.miningLevel + weapon.familyValue('pickaxeGuardianRequirement', 61) + 50",
    "den": 150
   },
   "source": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric) \u2014 a Guardian takes damage only from a pickaxe, and each hitsplat is scaled by (50 + Mining level + the pickaxe tier's own Mining requirement) / 150. The requirement is the tier's, not the item's wield level, and is capped so the crystal pickaxe matches the dragon one (weapon-families.json, group pickaxeGuardianRequirement). Not modelled: the tunnel spawn timing, the melee-only reach, the party scaling.",
@@ -485,40 +476,6 @@
   "when": {
    "monsterClass": "skotizo"
   },
-  "multipliers": [
-   {
-    "when": {
-     "wornAny": [
-      "ARCLIGHT",
-      "EMBERLIGHT"
-     ]
-    },
-    "num": {
-     "inputs": [
-      "optionInt:skotizoActiveAltars"
-     ],
-     "inputMin": 0,
-     "inputMax": 4,
-     "mul": -15,
-     "add": 100,
-     "min": 40
-    },
-    "den": 100
-   },
-   {
-    "num": {
-     "inputs": [
-      "optionInt:skotizoActiveAltars"
-     ],
-     "inputMin": 0,
-     "inputMax": 4,
-     "mul": -25,
-     "add": 100,
-     "min": 0
-    },
-    "den": 100
-   }
-  ],
   "monsterOptions": {
    "when": {
     "monsterClass": "skotizo"
@@ -535,7 +492,11 @@
     }
    ]
   },
-  "aggregateBoundSafe": true
+  "aggregateBoundSafe": true,
+  "let": {
+   "altars": "clamp(monster.optionInt('skotizoActiveAltars', 0), 0, 4)"
+  },
+  "multiplierExpr": "(worn('ARCLIGHT') || worn('EMBERLIGHT') ? max(40, 100 - 15 * altars) : max(0, 100 - 25 * altars)) / 100"
  },
  {
   "id": "NightmareTotemVulnerability",
@@ -988,12 +949,7 @@
    "category": "MAGIC",
    "exprFilter": "player.targetCount > 1"
   },
-  "multipliers": [
-   {
-    "num": "cast.targets",
-    "den": 1
-   }
-  ],
-  "aggregateBoundSafe": true
+  "aggregateBoundSafe": true,
+  "multiplierExpr": "cast.targets"
  }
 ]
