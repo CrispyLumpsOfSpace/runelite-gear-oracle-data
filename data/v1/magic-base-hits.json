@@ -1,70 +1,122 @@
 [
-	{"key": "TRIDENT_OF_THE_SWAMP", "poweredStaffType": "TRIDENT_OF_THE_SWAMP",
-	 "kind": "offsetOverThird", "offset": -2,
-	 "source": "https://oldschool.runescape.wiki/w/Trident_of_the_swamp — the trident line's max hit is the Magic level over three, less the staff's own offset."},
-
-	{"key": "TRIDENT_OF_THE_SEAS", "poweredStaffType": "TRIDENT_OF_THE_SEAS",
-	 "kind": "offsetOverThird", "offset": -5,
-	 "source": "https://oldschool.runescape.wiki/w/Trident_of_the_seas — see the swamp trident."},
-
-	{"key": "SANGUINESTI", "poweredStaffType": "SANGUINESTI",
-	 "kind": "offsetOverThird", "offset": 0,
-	 "source": "https://oldschool.runescape.wiki/w/Sanguinesti_staff — level/3 with no offset at all."},
-
-	{"key": "ACCURSED", "poweredStaffType": "ACCURSED",
-	 "kind": "offsetOverThird", "offset": -6,
-	 "source": "https://oldschool.runescape.wiki/w/Accursed_sceptre — its own article's formula."},
-
-	{"key": "THAMMARON", "poweredStaffType": "THAMMARON",
-	 "kind": "offsetOverThird", "offset": -8,
-	 "source": "https://oldschool.runescape.wiki/w/Thammaron%27s_sceptre — its own article's formula."},
-
-	{"key": "DAWNBRINGER", "poweredStaffType": "DAWNBRINGER",
-	 "kind": "offsetOverThird", "offset": -2, "halveBy": 2, "postFloor": 2,
-	 "source": "https://oldschool.runescape.wiki/w/Dawnbringer — the trident line halved and floored at 2; halving after the base row reproduces the wiki's listed max of 15 at 99, trunc(31 / 2)."},
-
-	{"key": "EYE_OF_AYAK", "poweredStaffType": "EYE_OF_AYAK",
-	 "kind": "offsetOverThird", "offset": -6, "speedTicks": 3,
-	 "source": "https://oldschool.runescape.wiki/w/Eye_of_ayak \"The fastest attack speed of all powered staves, firing at a rate of 3 ticks\" — a 25% faster cycle traded for a low max hit."},
-
-	{"key": "BONE_STAFF", "poweredStaffType": "BONE_STAFF",
-	 "kind": "offsetOverThird", "offset": -5, "flat": 10,
-	 "source": "https://oldschool.runescape.wiki/w/Bone_staff — the +10 is its ratbane bonus, added after the clamp rather than in the offset; the staff only works on rats, and the wiki calculator (and the game's combat dummy) report the max hit with it included."},
-
-	{"key": "WARPED", "poweredStaffType": "WARPED",
-	 "kind": "linear", "mul": 8, "add": 96, "den": 37,
-	 "source": "https://oldschool.runescape.wiki/w/Warped_sceptre — trunc((8 * level + 96) / 37), the one row that is not an offset over the level's third."},
-
-	{"key": "basicGauntletStaff", "weaponFamily": "basicGauntletStaff", "kind": "constant", "value": 23,
-	 "source": "https://oldschool.runescape.wiki/w/Crystal_staff_(basic) — a constant base hit \"regardless of Magic level\"."},
-
-	{"key": "attunedGauntletStaff", "weaponFamily": "attunedGauntletStaff", "kind": "constant", "value": 31,
-	 "source": "https://oldschool.runescape.wiki/w/Crystal_staff_(attuned) — see the basic staff."},
-
-	{"key": "perfectedGauntletStaff", "weaponFamily": "perfectedGauntletStaff", "kind": "constant", "value": 39,
-	 "source": "https://oldschool.runescape.wiki/w/Crystal_staff_(perfected) — see the basic staff. The 40 quoted with Augury or Mystic Vigour is not a special case: 39 is the base and Augury's +4% gives trunc(39 * 1.04) = 40."},
-
-	{"key": "swampLizard", "weaponFamily": "swampLizard", "kind": "hiddenMagicBonus", "value": 56,
-	 "source": "https://oldschool.runescape.wiki/w/Swamp_lizard — the standard magic formula over a magic damage bonus that no equipment stat shows."},
-
-	{"key": "orangeSalamander", "weaponFamily": "orangeSalamander", "kind": "hiddenMagicBonus", "value": 59,
-	 "source": "https://oldschool.runescape.wiki/w/Orange_salamander — see the swamp lizard."},
-
-	{"key": "redSalamander", "weaponFamily": "redSalamander", "kind": "hiddenMagicBonus", "value": 77,
-	 "source": "https://oldschool.runescape.wiki/w/Red_salamander — see the swamp lizard."},
-
-	{"key": "blackSalamander", "weaponFamily": "blackSalamander", "kind": "hiddenMagicBonus", "value": 92,
-	 "source": "https://oldschool.runescape.wiki/w/Black_salamander — see the swamp lizard."},
-
-	{"key": "tecuSalamander", "weaponFamily": "tecuSalamander", "kind": "hiddenMagicBonus", "value": 104,
-	 "source": "https://oldschool.runescape.wiki/w/Tecu_salamander — see the swamp lizard."},
-
-	{"key": "TUMEKEN_SHADOW", "specialType": "TUMEKEN_SHADOW",
-	 "kind": "offsetOverThird", "offset": 1, "speedTicks": 5,
-	 "gearMultiplier": 3, "raidGearMultiplier": 4, "gearDamageCapPercent": 100,
-	 "source": "https://oldschool.runescape.wiki/w/Tumeken's_shadow \"At level 0, the max hit is 1\" — the level's third plus one, floored at 1, on a 5-tick cycle. The staff also multiplies the loadout's magic attack bonus and magic damage percent by three, or by four inside the Tombs of Amascut, with the damage percent capped at 100; which of the two multiplies applies is a fight predicate and stays in TumekenShadowFormula."},
-
-	{"key": "HARMONISED_NIGHTMARE_STAFF", "specialType": "HARMONISED_NIGHTMARE_STAFF",
-	 "kind": "constant", "value": 24, "speedTicks": 4,
-	 "source": "https://oldschool.runescape.wiki/w/Harmonised_Nightmare_staff — modelled as always autocasting Fire Surge, its best option and the only kind of spell it can speed up, so the base hit is that spell's 24 and the cycle is 4 ticks. \"The 4-tick spell speed only applies when autocasting\"; manual casting forfeits it and is not modelled."}
+ {
+  "key": "TRIDENT_OF_THE_SWAMP",
+  "poweredStaffType": "TRIDENT_OF_THE_SWAMP",
+  "hit": "max(1, idiv(magicLevel, 3) - 2)",
+  "source": "https://oldschool.runescape.wiki/w/Trident_of_the_swamp \u2014 the trident line's max hit is the Magic level over three, less the staff's own offset."
+ },
+ {
+  "key": "TRIDENT_OF_THE_SEAS",
+  "poweredStaffType": "TRIDENT_OF_THE_SEAS",
+  "hit": "max(1, idiv(magicLevel, 3) - 5)",
+  "source": "https://oldschool.runescape.wiki/w/Trident_of_the_seas \u2014 see the swamp trident."
+ },
+ {
+  "key": "SANGUINESTI",
+  "poweredStaffType": "SANGUINESTI",
+  "hit": "max(1, idiv(magicLevel, 3))",
+  "source": "https://oldschool.runescape.wiki/w/Sanguinesti_staff \u2014 level/3 with no offset at all."
+ },
+ {
+  "key": "ACCURSED",
+  "poweredStaffType": "ACCURSED",
+  "hit": "max(1, idiv(magicLevel, 3) - 6)",
+  "source": "https://oldschool.runescape.wiki/w/Accursed_sceptre \u2014 its own article's formula."
+ },
+ {
+  "key": "THAMMARON",
+  "poweredStaffType": "THAMMARON",
+  "hit": "max(1, idiv(magicLevel, 3) - 8)",
+  "source": "https://oldschool.runescape.wiki/w/Thammaron%27s_sceptre \u2014 its own article's formula."
+ },
+ {
+  "key": "DAWNBRINGER",
+  "poweredStaffType": "DAWNBRINGER",
+  "hit": "max(2, idiv(max(1, idiv(magicLevel, 3) - 2), 2))",
+  "source": "https://oldschool.runescape.wiki/w/Dawnbringer \u2014 the trident line halved and floored at 2; halving after the base row reproduces the wiki's listed max of 15 at 99, trunc(31 / 2)."
+ },
+ {
+  "key": "EYE_OF_AYAK",
+  "poweredStaffType": "EYE_OF_AYAK",
+  "hit": "max(1, idiv(magicLevel, 3) - 6)",
+  "speedTicks": 3,
+  "source": "https://oldschool.runescape.wiki/w/Eye_of_ayak \"The fastest attack speed of all powered staves, firing at a rate of 3 ticks\" \u2014 a 25% faster cycle traded for a low max hit."
+ },
+ {
+  "key": "BONE_STAFF",
+  "poweredStaffType": "BONE_STAFF",
+  "hit": "max(1, idiv(magicLevel, 3) - 5) + 10",
+  "source": "https://oldschool.runescape.wiki/w/Bone_staff \u2014 the +10 is its ratbane bonus, added after the clamp rather than in the offset; the staff only works on rats, and the wiki calculator (and the game's combat dummy) report the max hit with it included."
+ },
+ {
+  "key": "WARPED",
+  "poweredStaffType": "WARPED",
+  "hit": "max(1, idiv(8 * magicLevel + 96, 37))",
+  "source": "https://oldschool.runescape.wiki/w/Warped_sceptre \u2014 trunc((8 * level + 96) / 37), the one row that is not an offset over the level's third."
+ },
+ {
+  "key": "basicGauntletStaff",
+  "weaponFamily": "basicGauntletStaff",
+  "hit": "23",
+  "source": "https://oldschool.runescape.wiki/w/Crystal_staff_(basic) \u2014 a constant base hit \"regardless of Magic level\"."
+ },
+ {
+  "key": "attunedGauntletStaff",
+  "weaponFamily": "attunedGauntletStaff",
+  "hit": "31",
+  "source": "https://oldschool.runescape.wiki/w/Crystal_staff_(attuned) \u2014 see the basic staff."
+ },
+ {
+  "key": "perfectedGauntletStaff",
+  "weaponFamily": "perfectedGauntletStaff",
+  "hit": "39",
+  "source": "https://oldschool.runescape.wiki/w/Crystal_staff_(perfected) \u2014 see the basic staff. The 40 quoted with Augury or Mystic Vigour is not a special case: 39 is the base and Augury's +4% gives trunc(39 * 1.04) = 40."
+ },
+ {
+  "key": "swampLizard",
+  "weaponFamily": "swampLizard",
+  "hit": "idiv(magicLevel * (56 + 64) + 320, 640)",
+  "source": "https://oldschool.runescape.wiki/w/Swamp_lizard \u2014 the standard magic formula over a magic damage bonus that no equipment stat shows."
+ },
+ {
+  "key": "orangeSalamander",
+  "weaponFamily": "orangeSalamander",
+  "hit": "idiv(magicLevel * (59 + 64) + 320, 640)",
+  "source": "https://oldschool.runescape.wiki/w/Orange_salamander \u2014 see the swamp lizard."
+ },
+ {
+  "key": "redSalamander",
+  "weaponFamily": "redSalamander",
+  "hit": "idiv(magicLevel * (77 + 64) + 320, 640)",
+  "source": "https://oldschool.runescape.wiki/w/Red_salamander \u2014 see the swamp lizard."
+ },
+ {
+  "key": "blackSalamander",
+  "weaponFamily": "blackSalamander",
+  "hit": "idiv(magicLevel * (92 + 64) + 320, 640)",
+  "source": "https://oldschool.runescape.wiki/w/Black_salamander \u2014 see the swamp lizard."
+ },
+ {
+  "key": "tecuSalamander",
+  "weaponFamily": "tecuSalamander",
+  "hit": "idiv(magicLevel * (104 + 64) + 320, 640)",
+  "source": "https://oldschool.runescape.wiki/w/Tecu_salamander \u2014 see the swamp lizard."
+ },
+ {
+  "key": "TUMEKEN_SHADOW",
+  "specialType": "TUMEKEN_SHADOW",
+  "hit": "max(1, idiv(magicLevel, 3) + 1)",
+  "speedTicks": 5,
+  "gearMultiplier": 3,
+  "raidGearMultiplier": 4,
+  "gearDamageCapPercent": 100,
+  "source": "https://oldschool.runescape.wiki/w/Tumeken's_shadow \"At level 0, the max hit is 1\" \u2014 the level's third plus one, floored at 1, on a 5-tick cycle. The staff also multiplies the loadout's magic attack bonus and magic damage percent by three, or by four inside the Tombs of Amascut, with the damage percent capped at 100; which of the two multiplies applies is a fight predicate and stays in TumekenShadowFormula."
+ },
+ {
+  "key": "HARMONISED_NIGHTMARE_STAFF",
+  "specialType": "HARMONISED_NIGHTMARE_STAFF",
+  "hit": "24",
+  "speedTicks": 4,
+  "source": "https://oldschool.runescape.wiki/w/Harmonised_Nightmare_staff \u2014 modelled as always autocasting Fire Surge, its best option and the only kind of spell it can speed up, so the base hit is that spell's 24 and the cycle is 4 ticks. \"The 4-tick spell speed only applies when autocasting\"; manual casting forfeits it and is not modelled."
+ }
 ]
