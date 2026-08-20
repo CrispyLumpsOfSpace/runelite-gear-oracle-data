@@ -1426,5 +1426,46 @@
   },
   "displayFloor": 2,
   "effectiveMaxHit": "maxHit + idiv(maxHit, 4) - 2"
+ },
+ {
+  "id": "HalberdSweepSecondHit",
+  "kind": "splitHit",
+  "source": "https://oldschool.runescape.wiki/w/Halberd \"the only melee weapons capable of hitting enemies\" at a two-tile range: Sweep lands a second hitsplat against targets larger than 1x1, the second swing reducing the attack roll by 25% at roll level before hit chance is re-derived; folding it into the accuracy sum keeps (a1 + a2) * E exactly. The damage bonus is already in maxHit.",
+  "when": {
+   "specShape": "HALBERD_SWEEP",
+   "targetSizeAtLeast": 2
+  },
+  "accuracy": "accuracy + hitChance(idiv(attackRoll * 3, 4), defenceRoll)",
+  "splats": [
+   {
+    "lo": "0",
+    "hi": "maxHit",
+    "displayCount": 2
+   }
+  ],
+  "effectiveMaxHit": "maxHit"
+ },
+ {
+  "id": "SaradominsLightningBolt",
+  "kind": "splitHit",
+  "source": "https://oldschool.runescape.wiki/w/Saradomin_sword \"deals 10% more melee damage and 1-16 extra Magic damage\": the magic bolt rolls no accuracy of its own and fails when the melee hit misses, and against the magic-damage immune (Dusk, Warriors' Guild cyclopes) it lands for 0. The melee half's x11/10 damage is a standard chain stage; flat armour never applies to magic damage.",
+  "when": {
+   "specWeapon": "SARADOMIN_SWORD"
+  },
+  "splats": [
+   {
+    "lo": "0",
+    "hi": "maxHit"
+   },
+   {
+    "lo": "1",
+    "hi": "16",
+    "ignoresFlatArmour": true,
+    "unless": {
+     "monsterClass": "magicDamageImmune"
+    }
+   }
+  ],
+  "effectiveMaxHit": "maxHit"
  }
 ]
