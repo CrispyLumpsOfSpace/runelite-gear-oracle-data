@@ -449,5 +449,62 @@
    "exprFilter": "!player.inToA"
   },
   "value": "-50"
+ },
+ {
+  "id": "VoidKnightBonus",
+  "kind": "modifier",
+  "source": "https://oldschool.runescape.wiki/w/Void_Knight_equipment melee/ranged 10% accuracy, magic 45%; damage: melee 10%, ranged 10% (elite 12.5%), magic 5% with elite only. Applied to the effective level after the stance bonus and constant, floored, per the wiki's Melee and Ranged DPS articles; for Magic the engine keeps the same post-constant position, which the recorded vectors agree with (see docs/ENGINE-GAPS.md).",
+  "when": {},
+  "accuracy": [
+   {
+    "when": {
+     "category": "MAGIC"
+    },
+    "factor": "loadout.voidActive ? 1.45 : 1"
+   },
+   {
+    "factor": "loadout.voidActive ? 1.1 : 1"
+   }
+  ],
+  "damage": [
+   {
+    "when": {
+     "category": "MELEE"
+    },
+    "factor": "loadout.voidActive ? 1.1 : 1"
+   },
+   {
+    "when": {
+     "category": "RANGED"
+    },
+    "factor": "loadout.voidActive ? (loadout.eliteVoid ? 1.125 : 1.1) : 1"
+   },
+   {
+    "when": {
+     "category": "MAGIC"
+    },
+    "factor": "loadout.voidActive && loadout.eliteVoid ? 1.05 : 1"
+   }
+  ]
+ },
+ {
+  "id": "SharpEyeGuaranteedLevel",
+  "kind": "flatShare",
+  "source": "https://oldschool.runescape.wiki/w/Sharp_Eye the prayer is guaranteed to grant a level: at a Ranged level of 20 or below its +5% truncates to nothing and the game adds 1 instead. It is the only Ranged prayer at 1.05, which is what identifies it; the value is the +1 exactly where the truncated 5% would give nothing.",
+  "when": {
+   "category": "RANGED",
+   "exprFilter": "player.rangedStrengthPrayer == 1.05"
+  },
+  "value": "base <= 20 && trunc(base * 1.05) == base ? 1 : 0"
+ },
+ {
+  "id": "SunfireRuneMinimum",
+  "kind": "flatShare",
+  "source": "https://oldschool.runescape.wiki/w/Sunfire_rune a fire cast's minimum hit is 10% of the max hit, excluding the tome's +10% (the basis is the pre-tome max). The engine replaces the running minimum with this share when the row applies.",
+  "when": {
+   "castElement": "FIRE",
+   "expr": "player.sunfireRunes"
+  },
+  "value": "floor(0.10 * base)"
  }
 ]
