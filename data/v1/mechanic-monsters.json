@@ -1,166 +1,631 @@
 [
-	{"id": "ZogreResistance",
-	 "source": "https://oldschool.runescape.wiki/w/Zogre \"Zogres are almost immune to normal weapons (you will hit just as often, but damage is reduced by 75%).\"; \"Brutal arrows are effective against them, as is the Crumble Undead spell (however, damage is halved, for a maximum of 7).\" A resistance rather than a bonus, and the kind a recommendation tool cannot afford to miss: without it the calculator both overstates every Zogre loadout fourfold and ranks the one setup that actually works no differently from the ones that do not. First match wins, so Crumble Undead's half precedes the brutal-arrow exemption and the fourfold reduction everything else takes.",
-	 "when": {"monsterClass": "zogre"},
-	 "damage": [
-		{"when": {"spell": "CRUMBLE_UNDEAD"}, "factor": [1, 2]},
-		{"when": {"category": "RANGED", "weaponFamily": "compOgreBow", "ammoFamily": "brutalArrow"}, "factor": [1, 1]},
-		{"factor": [1, 4]}],
-	 "aggregateBoundSafe": false},
-
-	{"id": "AraxyteMinionMaxHit", "kind": "guaranteed", "guaranteedMaxHit": true,
-	 "source": "https://oldschool.runescape.wiki/w/Araxxor \"Players will always max hit when attacking them with a crush or heavy Ranged weapon (such as a crossbow or ballista) if crush or ranged is their highest accuracy style respectively, or the noxious halberd\". \"Highest accuracy style\" means the loadout's best offensive bonus, so a crossbow in melee gear earns nothing; the wiki states no tie-break, so the order the engine compares in is its own and stays in Java. The weapon test is crossbow-or-ballista rather than the HEAVY ranged class, which also holds chinchompas. The halberd clause is deliberately style-free, matching the class, which checked it before reading the style at all. Not modelled: the eggs, the minions' own attacks, Mirrorback's aura.",
-	 "any": [
-		{"monsterClass": "araxyteMinion", "weaponFamily": "noxiousHalberd"},
-		{"monsterClass": "araxyteMinion", "style": "RANGED", "highestOffensiveStyle": "RANGED",
-		 "weaponFlag": "crossbowOrBallista"},
-		{"monsterClass": "araxyteMinion", "style": "MELEE_CRUSH", "highestOffensiveStyle": "MELEE_CRUSH"}],
-	 "filterAny": [{"monsterClass": "araxyteMinion"}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "AlwaysMaxHitTargets", "kind": "guaranteed", "guaranteedMaxHit": true,
-	 "source": "Monsters a combat style cannot miss or under-hit: the attack simply lands for max, with no formula behind it — each row of always-max-hit-targets.json is stated on its own article, and the ids there carry the styles. https://oldschool.runescape.wiki/w/Baboon \"Players are guaranteed to land a max hit on Ba-Ba's baboons.\"; https://oldschool.runescape.wiki/w/Venenatis \"players will deal their max hit on them regardless of gear.\"; https://oldschool.runescape.wiki/w/Fire_elemental_(Royal_Titans) \"With a 100% elemental weakness to water spells and a guaranteed max hit\". The Wardens' ejected cores were narrowed by a hotfix to Melee only. Id-keyed because the bestiary's quest-NPC \"Judge of Yama\" is not Yama's judge. Not modelled: Volatile Baboon and Baboon Thrall (unsourced), and Yama's void flares, whose guarantee is restricted to a weapon family and so has its own row.",
-	 "any": [{"alwaysMaxHitTarget": true}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "AbyssalSireMinionAccuracy", "kind": "guaranteed",
-	 "source": "https://oldschool.runescape.wiki/w/Abyssal_Sire/Strategies \"Demonbane attacks will always land as successful hits against them regardless of the player's bonuses, but will not guarantee a max hit.\" Battery-exempt: the oracle models spawns only, any weapon.",
-	 "any": [{"monsterIds": [5916, 5917, 5918, 6177], "usingDemonbane": "true"}],
-	 "hidesItems": {"category": "MELEE", "types": ["SILVERLIGHT", "DARKLIGHT", "ARCLIGHT", "EMBERLIGHT"]},
-	 "aggregateBoundSafe": true},
-
-	{"id": "VoidFlareMaxHit", "kind": "guaranteed", "guaranteedMaxHit": true,
-	 "source": "Wiki: Yama#Void Flare — guaranteed max hit against Magic and Standard-class Ranged (bows and arrows; not blowpipe, crossbow or melee). The ranged half is a weapon class rather than a whole style, which is why this is not a row in always-max-hit-targets.json.",
-	 "any": [
-		{"monsterIds": [14179], "category": "MAGIC"},
-		{"monsterIds": [14179], "category": "RANGED", "rangedWeightClass": "STANDARD"}],
-	 "filterAny": [{"monsterIds": [14179], "categoryNot": "MELEE"}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "HueycoatlBraziers", "kind": "resistance", "factor": [13, 10], "minResult": 0, "capAware": true,
-	 "source": "https://oldschool.runescape.wiki/w/The_Hueycoatl — lighting the braziers gives every player a 30% damage bonus for as long as they burn; the body takes no buff either way, which is why the family lists the buffable parts. The buff multiplies a hit the cap has already resolved, so the row owns the cap: the honest ceiling is 13/10 of what the cap allows through, not 13/10 of the raw roll.",
-	 "resistAny": [{"monsterClass": "hueycoatlBuffable",
-		"optionFlag": {"key": "hueycoatlBraziersLit", "is": true, "default": true}}],
-	 "filterAny": [{"monsterClass": "hueycoatlBuffable"}],
-	 "monsterOptions": {"when": {"monsterClass": "hueycoatlBuffable"}, "options": [
-		{"key": "hueycoatlBraziersLit", "label": "Braziers lit", "default": true,
-		 "help": "<html>Lighting the braziers gives every player a <b>30% damage bonus</b> for as long as they burn.<br>On by default — any group that knows the fight keeps them lit.<br>The body takes no buff either way.</html>"}]},
-	 "aggregateBoundSafe": true},
-
-	{"id": "GuardianStatues", "kind": "resistance", "minResult": 1,
-	 "factor": {"num": {"inputs": ["miningLevel", {"weaponValue": "pickaxeGuardianRequirement", "default": 61}], "add": 50}, "den": 150},
-	 "source": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric) — a Guardian takes damage only from a pickaxe, and each hitsplat is scaled by (50 + Mining level + the pickaxe tier's own Mining requirement) / 150. The requirement is the tier's, not the item's wield level, and is capped so the crystal pickaxe matches the dragon one (weapon-families.json, group pickaxeGuardianRequirement). Not modelled: the tunnel spawn timing, the melee-only reach, the party scaling.",
-	 "resistAny": [{"monsterClass": "guardianStatue", "category": "MELEE", "weaponFamily": "pickaxe"}],
-	 "immuneAny": [
-		{"monsterClass": "guardianStatue", "categoryNot": "MELEE"},
-		{"monsterClass": "guardianStatue", "weaponFamily": "!pickaxe"}],
-	 "filterAny": [{"monsterClass": "guardianStatue"}],
-	 "hidesItems": {"category": "MELEE", "family": "pickaxe"},
-	 "aggregateBoundSafe": true},
-
-	{"id": "TektonResistance", "kind": "resistance", "factor": [1, 5], "minResult": 1,
-	 "source": "https://oldschool.runescape.wiki/w/Tekton \"Tekton is immune to Range and takes 80% reduced Magic damage.\" Each magic hitsplat divides by 5 with a floor of 1.",
-	 "resistAny": [{"monsterClass": "tekton", "category": "MAGIC"}],
-	 "immuneAny": [{"monsterClass": "tekton", "category": "RANGED"}],
-	 "filterAny": [{"monsterClass": "tekton"}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "GlowingCrystalResistance", "kind": "resistance", "factor": [1, 3], "minResult": 0,
-	 "source": "https://oldschool.runescape.wiki/w/Glowing_crystal \"They are weak to stab attacks, immune to ranged damage (including the ranged thrall), and take 1/3rd damage from magic attacks.\" The magic third has no floor — a divided hit can reach zero.",
-	 "resistAny": [{"monsterClass": "glowingCrystal", "category": "MAGIC"}],
-	 "immuneAny": [{"monsterClass": "glowingCrystal", "category": "RANGED"}],
-	 "filterAny": [{"monsterClass": "glowingCrystal"}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "KrakenRangedResistance", "kind": "resistance", "factor": [1, 7], "minResult": 1,
-	 "source": "Wiki: Kraken — ranged damage is reduced to one seventh, floored at a chip hit of 1; melee is the separate KrakenImmunity row.",
-	 "resistAny": [{"monsterClass": "kraken", "category": "RANGED"}]},
-
-	{"id": "BroodooVictimResistance", "kind": "resistance", "ceiling": 3,
-	 "source": "https://oldschool.runescape.wiki/w/Broodoo_victim \"They are highly resistant to conventional attack methods (the player's max hit is reduced to 3)\" — a replacement ceiling rather than a reduction, so speed is the only thing left to tell loadouts apart. Not modelled: the consumables that actually kill them (food, poison cures, disease cures).",
-	 "resistAny": [{"monsterClass": "broodooVictim"}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "CorporealBeastReduction", "kind": "resistance", "factor": [1, 2], "minResult": 0,
-	 "source": "https://oldschool.runescape.wiki/w/Corporeal_Beast \"The Corporeal Beast has a 50% damage reduction against any weapon that is not a Corpbane weapon on stab attack style.\" Magic is exempt too: \"Although magic attacks also deal full damage, they are generally very inaccurate against the boss.\" Halves each rolled hitsplat after the accurate-hits-deal-1 raise and before flat armour. Not modelled: the dark energy core's heal, and the 100 damage cap on the spear path this never halves.",
-	 "resistAny": [{"monsterClass": "corporealBeast"}],
-	 "unless": [{"category": "MAGIC"}, {"style": "MELEE_STAB", "weaponFlag": "corpbane"}],
-	 "filterAny": [{"monsterClass": "corporealBeast", "categoryNot": "MAGIC"}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "IceDemonResistance", "kind": "resistance", "factor": [1, 3], "minResult": 0,
-	 "source": "https://oldschool.runescape.wiki/w/Ice_demon \"all damage dealt to the demon is reduced by 67%, except for fire spells (which deal 250% damage) and demonbane weapons\"; https://twitter.com/JagexAsh/status/1133350436554121216 \"Increased to 150% for a fire spell, decreased to 33% otherwise.\" Only the reduction is here: the fire 250% is the demon's elemental weakness and the demonbane 15% its demonbane vulnerability, both already in the monster data. A FIRE cast means the spell actually being cast, so a powered staff (which casts no spell) is reduced like anything else.",
-	 "resistAny": [{"monsterClass": "iceDemon", "usingDemonbane": false, "castElementNot": "FIRE"}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "SlagilithResistance", "kind": "resistance", "factor": [1, 3], "minResult": 0,
-	 "source": "https://oldschool.runescape.wiki/w/Slagilith \"will reduce your damage by 67% if a pickaxe is not equipped\" — spells and arrows included (Jagex-confirmed). Post-roll, minimum 0: a small hitsplat really can be reduced to nothing. Not modelled: the ranged projectile-swap timing exploit, the five-minute despawn.",
-	 "resistAny": [{"monsterClass": "slagilith", "weaponFamily": "!pickaxe"}],
-	 "filterAny": [{"monsterClass": "slagilith"}],
-	 "hidesItems": {"category": "MELEE", "family": "pickaxe"},
-	 "aggregateBoundSafe": true},
-
-	{"id": "GreatOlmMitigation", "kind": "resistance", "factor": [1, 3], "minResult": 0,
-	 "source": "https://oldschool.runescape.wiki/w/Great_Olm — each part takes full damage from one style and 34% from the other two: head from Ranged, left claw from Melee, right claw from Magic. Post-roll, one-third of the rolled hitsplat, no floor. Accepted delta: the oracle omits melee mitigation on head and right claw (docs/ENGINE-GAPS.md). Not modelled: head self-heal, hand-disable phase gating, CoX party scaling.",
-	 "resistAny": [
-		{"monsterClass": "olmHead", "categoryNot": "RANGED"},
-		{"monsterClass": "olmLeftClaw", "categoryNot": "MELEE"},
-		{"monsterClass": "olmRightClaw", "categoryNot": "MAGIC"}],
-	 "filterAny": [{"monsterClass": "olmHead"}, {"monsterClass": "olmLeftClaw"}, {"monsterClass": "olmRightClaw"}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "AbyssalSireTransition", "kind": "resistance", "factor": [1, 2], "minResult": 0,
-	 "source": "https://oldschool.runescape.wiki/w/Abyssal_Sire \"Damage dealt to the Sire while it is transitioning between phases is reduced by 50%.\" Post-roll, per hitsplat — a rolled 1 halves to 0, so the expectation is not simply half the ordinary one.",
-	 "resistAny": [{"monsterClass": "abyssalSireTransitioning",
-		"optionFlag": {"key": "abyssalSireTransitioning", "is": true, "default": false}}],
-	 "filterAny": [{"monsterClass": "abyssalSireTransitioning"}],
-	 "monsterOptions": {"when": {"monsterClass": "abyssalSireTransitioning"},
-		"options": [{"key": "abyssalSireTransitioning", "label": "Between phases",
-			"help": "<html>While the Sire is moving between phases, <b>all damage to it is halved</b>.<br>Off by default: a transition is a passage the fight goes through, not a state to plan a loadout around.</html>",
-			"default": false}]},
-	 "aggregateBoundSafe": true},
-
-	{"id": "DelrithSilverlight", "kind": "resistance", "factor": [2, 1], "minResult": 0,
-	 "source": "https://oldschool.runescape.wiki/w/Delrith \"All damage dealt to Delrith is doubled when Silverlight is equipped\". Delrith carries no demon attribute, so Silverlight's usual +60% demonbane never applies — without this rule it is simply a bad sword, hence the hidesItems pinning. Not modelled: ring of recoil's doubled 2s; the quest requirement to equip it at the killing blow.",
-	 "resistAny": [{"monsterClass": "delrith", "weaponFamily": "silverlight"}],
-	 "filterAny": [{"monsterClass": "delrith"}],
-	 "hidesItems": {"category": "MELEE", "family": "silverlight"},
-	 "aggregateBoundSafe": true},
-
-	{"id": "SkotizoAltars", "kind": "averageHit",
-	 "source": "https://oldschool.runescape.wiki/w/Skotizo — each Awakened Altar still up cuts damage by 15% with Arclight or Emberlight (capped at 60%) and by 25% with anything else (capped at 100%, so four altars and an ordinary weapon deal nothing at all). Stated as the surviving percent so the single division happens once: max(40, 100 - 15a) and max(0, 100 - 25a) are the capped reductions read from the other side.",
-	 "when": {"monsterClass": "skotizo"},
-	 "multipliers": [
-		{"when": {"wornAny": ["ARCLIGHT", "EMBERLIGHT"]},
-		 "num": {"inputs": ["optionInt:skotizoActiveAltars"], "inputMin": 0, "inputMax": 4, "mul": -15, "add": 100, "min": 40}, "den": 100},
-		{"num": {"inputs": ["optionInt:skotizoActiveAltars"], "inputMin": 0, "inputMax": 4, "mul": -25, "add": 100, "min": 0}, "den": 100}],
-	 "monsterOptions": {"when": {"monsterClass": "skotizo"}, "options": [
-		{"key": "skotizoActiveAltars", "label": "Active altars", "type": "integer", "min": 0, "max": 4, "default": 0,
-		 "help": "<html>Each Awakened Altar still up reduces your damage to Skotizo — <b>15% each (max 60%)</b> with Arclight or Emberlight, <b>25% each (max 100%)</b> with any other weapon.<br>With all four up and a non-demonbane weapon you deal <b>no damage at all</b>, which is why the altars decide the weapon here rather than the DPS numbers. Defaults to 0 — the state you fight him in once they are cleared.</html>"}]},
-	 "aggregateBoundSafe": true},
-
-	{"id": "NightmareTotemVulnerability", "kind": "averageHit",
-	 "source": "https://oldschool.runescape.wiki/w/Totem_(The_Nightmare) \"The totems take 2x damage when attacked with magic.\" Post-distribution: doubling per-hit or per-expectation makes no rounding difference here.",
-	 "when": {"category": "MAGIC", "monsterClass": "nightmareTotem"},
-	 "multiplier": [2, 1],
-	 "aggregateBoundSafe": true},
-
-	{"id": "AlchemicalHydraResistance", "kind": "averageHit",
-	 "source": "Wiki: Alchemical Hydra — reduces incoming damage by 75% until it is lured over and sprayed by the appropriate chemical vent. Uniform across styles, so it never changes gear ranking.",
-	 "when": {"monsterClass": "alchemicalHydra", "optionFlag": {"key": "hydraVentSprayed", "is": false, "default": true}},
-	 "multiplier": [1, 4],
-	 "monsterOptions": {"when": {"monsterClass": "alchemicalHydra"}, "options": [
-		{"key": "hydraVentSprayed", "label": "Chemical vent sprayed", "default": true,
-		 "help": "<html>For the first three phases the Hydra takes <b>75% less damage</b> until it is lured onto the matching chemical vent.<br>Leave this on for the number you actually plan around — the ranking of your gear is identical either way, since the reduction hits every weapon and style equally.</html>"}]},
-	 "aggregateBoundSafe": true},
-
-	{"id": "RoyalTitansRangedAccuracy",
-	 "source": "https://oldschool.runescape.wiki/w/Royal_Titans/Strategies \"despite their high ranged defences of +700, players get a hidden +500% (a 6x multiplier) to ranged accuracy whenever the titans are out of melee distance.\"",
-	 "when": {"category": "RANGED", "monsterClass": "royalTitan",
-		"optionFlag": {"key": "titansOutOfMeleeRange", "is": true, "default": true}},
-	 "accuracy": [{"factor": [6, 1]}],
-	 "monsterOptions": {"when": {"monsterClass": "royalTitan"}, "options": [
-		{"key": "titansOutOfMeleeRange", "label": "Out of melee range", "default": true,
-		 "help": "<html>The Royal Titans grant a hidden <b>6x ranged accuracy</b> bonus while they are out of melee distance — the counterweight to their +700 ranged defence.<br>Leave this on unless you are deliberately standing next to them with a ranged weapon, in which case ranged accuracy is as bad as the stat block suggests.</html>"}]},
-	 "aggregateBoundSafe": true}
+ {
+  "id": "ZogreResistance",
+  "source": "https://oldschool.runescape.wiki/w/Zogre \"Zogres are almost immune to normal weapons (you will hit just as often, but damage is reduced by 75%).\"; \"Brutal arrows are effective against them, as is the Crumble Undead spell (however, damage is halved, for a maximum of 7).\" A resistance rather than a bonus, and the kind a recommendation tool cannot afford to miss: without it the calculator both overstates every Zogre loadout fourfold and ranks the one setup that actually works no differently from the ones that do not. First match wins, so Crumble Undead's half precedes the brutal-arrow exemption and the fourfold reduction everything else takes.",
+  "when": {
+   "monsterClass": "zogre"
+  },
+  "damage": [
+   {
+    "when": {
+     "spell": "CRUMBLE_UNDEAD"
+    },
+    "factor": [
+     1,
+     2
+    ]
+   },
+   {
+    "when": {
+     "category": "RANGED",
+     "weaponFamily": "compOgreBow",
+     "ammoFamily": "brutalArrow"
+    },
+    "factor": [
+     1,
+     1
+    ]
+   },
+   {
+    "factor": [
+     1,
+     4
+    ]
+   }
+  ],
+  "aggregateBoundSafe": false
+ },
+ {
+  "id": "AraxyteMinionMaxHit",
+  "kind": "guaranteed",
+  "guaranteedMaxHit": true,
+  "source": "https://oldschool.runescape.wiki/w/Araxxor \"Players will always max hit when attacking them with a crush or heavy Ranged weapon (such as a crossbow or ballista) if crush or ranged is their highest accuracy style respectively, or the noxious halberd\". \"Highest accuracy style\" means the loadout's best offensive bonus, so a crossbow in melee gear earns nothing; the wiki states no tie-break, so the order the engine compares in is its own and stays in Java. The weapon test is crossbow-or-ballista rather than the HEAVY ranged class, which also holds chinchompas. The halberd clause is deliberately style-free, matching the class, which checked it before reading the style at all. Not modelled: the eggs, the minions' own attacks, Mirrorback's aura.",
+  "any": [
+   {
+    "monsterClass": "araxyteMinion",
+    "weaponFamily": "noxiousHalberd"
+   },
+   {
+    "monsterClass": "araxyteMinion",
+    "style": "RANGED",
+    "highestOffensiveStyle": "RANGED",
+    "weaponFlag": "crossbowOrBallista"
+   },
+   {
+    "monsterClass": "araxyteMinion",
+    "style": "MELEE_CRUSH",
+    "highestOffensiveStyle": "MELEE_CRUSH"
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "araxyteMinion"
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "AlwaysMaxHitTargets",
+  "kind": "guaranteed",
+  "guaranteedMaxHit": true,
+  "source": "Monsters a combat style cannot miss or under-hit: the attack simply lands for max, with no formula behind it \u2014 each row of always-max-hit-targets.json is stated on its own article, and the ids there carry the styles. https://oldschool.runescape.wiki/w/Baboon \"Players are guaranteed to land a max hit on Ba-Ba's baboons.\"; https://oldschool.runescape.wiki/w/Venenatis \"players will deal their max hit on them regardless of gear.\"; https://oldschool.runescape.wiki/w/Fire_elemental_(Royal_Titans) \"With a 100% elemental weakness to water spells and a guaranteed max hit\". The Wardens' ejected cores were narrowed by a hotfix to Melee only. Id-keyed because the bestiary's quest-NPC \"Judge of Yama\" is not Yama's judge. Not modelled: Volatile Baboon and Baboon Thrall (unsourced), and Yama's void flares, whose guarantee is restricted to a weapon family and so has its own row.",
+  "any": [
+   {
+    "alwaysMaxHitTarget": true
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "AbyssalSireMinionAccuracy",
+  "kind": "guaranteed",
+  "source": "https://oldschool.runescape.wiki/w/Abyssal_Sire/Strategies \"Demonbane attacks will always land as successful hits against them regardless of the player's bonuses, but will not guarantee a max hit.\" Battery-exempt: the oracle models spawns only, any weapon.",
+  "any": [
+   {
+    "monsterIds": [
+     5916,
+     5917,
+     5918,
+     6177
+    ],
+    "usingDemonbane": "true"
+   }
+  ],
+  "hidesItems": {
+   "category": "MELEE",
+   "types": [
+    "SILVERLIGHT",
+    "DARKLIGHT",
+    "ARCLIGHT",
+    "EMBERLIGHT"
+   ]
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "VoidFlareMaxHit",
+  "kind": "guaranteed",
+  "guaranteedMaxHit": true,
+  "source": "Wiki: Yama#Void Flare \u2014 guaranteed max hit against Magic and Standard-class Ranged (bows and arrows; not blowpipe, crossbow or melee). The ranged half is a weapon class rather than a whole style, which is why this is not a row in always-max-hit-targets.json.",
+  "any": [
+   {
+    "monsterIds": [
+     14179
+    ],
+    "category": "MAGIC"
+   },
+   {
+    "monsterIds": [
+     14179
+    ],
+    "category": "RANGED",
+    "rangedWeightClass": "STANDARD"
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterIds": [
+     14179
+    ],
+    "categoryNot": "MELEE"
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "HueycoatlBraziers",
+  "kind": "resistance",
+  "factor": [
+   13,
+   10
+  ],
+  "minResult": 0,
+  "capAware": true,
+  "source": "https://oldschool.runescape.wiki/w/The_Hueycoatl \u2014 lighting the braziers gives every player a 30% damage bonus for as long as they burn; the body takes no buff either way, which is why the family lists the buffable parts. The buff multiplies a hit the cap has already resolved, so the row owns the cap: the honest ceiling is 13/10 of what the cap allows through, not 13/10 of the raw roll.",
+  "resistAny": [
+   {
+    "monsterClass": "hueycoatlBuffable",
+    "optionFlag": {
+     "key": "hueycoatlBraziersLit",
+     "is": true,
+     "default": true
+    }
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "hueycoatlBuffable"
+   }
+  ],
+  "monsterOptions": {
+   "when": {
+    "monsterClass": "hueycoatlBuffable"
+   },
+   "options": [
+    {
+     "key": "hueycoatlBraziersLit",
+     "label": "Braziers lit",
+     "default": true,
+     "help": "<html>Lighting the braziers gives every player a <b>30% damage bonus</b> for as long as they burn.<br>On by default \u2014 any group that knows the fight keeps them lit.<br>The body takes no buff either way.</html>"
+    }
+   ]
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "GuardianStatues",
+  "kind": "resistance",
+  "minResult": 1,
+  "factor": {
+   "num": {
+    "inputs": [
+     "miningLevel",
+     {
+      "weaponValue": "pickaxeGuardianRequirement",
+      "default": 61
+     }
+    ],
+    "add": 50
+   },
+   "den": 150
+  },
+  "source": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric) \u2014 a Guardian takes damage only from a pickaxe, and each hitsplat is scaled by (50 + Mining level + the pickaxe tier's own Mining requirement) / 150. The requirement is the tier's, not the item's wield level, and is capped so the crystal pickaxe matches the dragon one (weapon-families.json, group pickaxeGuardianRequirement). Not modelled: the tunnel spawn timing, the melee-only reach, the party scaling.",
+  "resistAny": [
+   {
+    "monsterClass": "guardianStatue",
+    "category": "MELEE",
+    "weaponFamily": "pickaxe"
+   }
+  ],
+  "immuneAny": [
+   {
+    "monsterClass": "guardianStatue",
+    "categoryNot": "MELEE"
+   },
+   {
+    "monsterClass": "guardianStatue",
+    "weaponFamily": "!pickaxe"
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "guardianStatue"
+   }
+  ],
+  "hidesItems": {
+   "category": "MELEE",
+   "family": "pickaxe"
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "TektonResistance",
+  "kind": "resistance",
+  "factor": [
+   1,
+   5
+  ],
+  "minResult": 1,
+  "source": "https://oldschool.runescape.wiki/w/Tekton \"Tekton is immune to Range and takes 80% reduced Magic damage.\" Each magic hitsplat divides by 5 with a floor of 1.",
+  "resistAny": [
+   {
+    "monsterClass": "tekton",
+    "category": "MAGIC"
+   }
+  ],
+  "immuneAny": [
+   {
+    "monsterClass": "tekton",
+    "category": "RANGED"
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "tekton"
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "GlowingCrystalResistance",
+  "kind": "resistance",
+  "factor": [
+   1,
+   3
+  ],
+  "minResult": 0,
+  "source": "https://oldschool.runescape.wiki/w/Glowing_crystal \"They are weak to stab attacks, immune to ranged damage (including the ranged thrall), and take 1/3rd damage from magic attacks.\" The magic third has no floor \u2014 a divided hit can reach zero.",
+  "resistAny": [
+   {
+    "monsterClass": "glowingCrystal",
+    "category": "MAGIC"
+   }
+  ],
+  "immuneAny": [
+   {
+    "monsterClass": "glowingCrystal",
+    "category": "RANGED"
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "glowingCrystal"
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "KrakenRangedResistance",
+  "kind": "resistance",
+  "factor": [
+   1,
+   7
+  ],
+  "minResult": 1,
+  "source": "Wiki: Kraken \u2014 ranged damage is reduced to one seventh, floored at a chip hit of 1; melee is the separate KrakenImmunity row.",
+  "resistAny": [
+   {
+    "monsterClass": "kraken",
+    "category": "RANGED"
+   }
+  ]
+ },
+ {
+  "id": "BroodooVictimResistance",
+  "kind": "resistance",
+  "ceiling": 3,
+  "source": "https://oldschool.runescape.wiki/w/Broodoo_victim \"They are highly resistant to conventional attack methods (the player's max hit is reduced to 3)\" \u2014 a replacement ceiling rather than a reduction, so speed is the only thing left to tell loadouts apart. Not modelled: the consumables that actually kill them (food, poison cures, disease cures).",
+  "resistAny": [
+   {
+    "monsterClass": "broodooVictim"
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "CorporealBeastReduction",
+  "kind": "resistance",
+  "factor": [
+   1,
+   2
+  ],
+  "minResult": 0,
+  "source": "https://oldschool.runescape.wiki/w/Corporeal_Beast \"The Corporeal Beast has a 50% damage reduction against any weapon that is not a Corpbane weapon on stab attack style.\" Magic is exempt too: \"Although magic attacks also deal full damage, they are generally very inaccurate against the boss.\" Halves each rolled hitsplat after the accurate-hits-deal-1 raise and before flat armour. Not modelled: the dark energy core's heal, and the 100 damage cap on the spear path this never halves.",
+  "resistAny": [
+   {
+    "monsterClass": "corporealBeast"
+   }
+  ],
+  "unless": [
+   {
+    "category": "MAGIC"
+   },
+   {
+    "style": "MELEE_STAB",
+    "weaponFlag": "corpbane"
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "corporealBeast",
+    "categoryNot": "MAGIC"
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "IceDemonResistance",
+  "kind": "resistance",
+  "factor": [
+   1,
+   3
+  ],
+  "minResult": 0,
+  "source": "https://oldschool.runescape.wiki/w/Ice_demon \"all damage dealt to the demon is reduced by 67%, except for fire spells (which deal 250% damage) and demonbane weapons\"; https://twitter.com/JagexAsh/status/1133350436554121216 \"Increased to 150% for a fire spell, decreased to 33% otherwise.\" Only the reduction is here: the fire 250% is the demon's elemental weakness and the demonbane 15% its demonbane vulnerability, both already in the monster data. A FIRE cast means the spell actually being cast, so a powered staff (which casts no spell) is reduced like anything else.",
+  "resistAny": [
+   {
+    "monsterClass": "iceDemon",
+    "usingDemonbane": false,
+    "castElementNot": "FIRE"
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "SlagilithResistance",
+  "kind": "resistance",
+  "factor": [
+   1,
+   3
+  ],
+  "minResult": 0,
+  "source": "https://oldschool.runescape.wiki/w/Slagilith \"will reduce your damage by 67% if a pickaxe is not equipped\" \u2014 spells and arrows included (Jagex-confirmed). Post-roll, minimum 0: a small hitsplat really can be reduced to nothing. Not modelled: the ranged projectile-swap timing exploit, the five-minute despawn.",
+  "resistAny": [
+   {
+    "monsterClass": "slagilith",
+    "weaponFamily": "!pickaxe"
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "slagilith"
+   }
+  ],
+  "hidesItems": {
+   "category": "MELEE",
+   "family": "pickaxe"
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "GreatOlmMitigation",
+  "kind": "resistance",
+  "factor": [
+   1,
+   3
+  ],
+  "minResult": 0,
+  "source": "https://oldschool.runescape.wiki/w/Great_Olm \u2014 each part takes full damage from one style and 34% from the other two: head from Ranged, left claw from Melee, right claw from Magic. Post-roll, one-third of the rolled hitsplat, no floor. Accepted delta: the oracle omits melee mitigation on head and right claw (docs/ENGINE-GAPS.md). Not modelled: head self-heal, hand-disable phase gating, CoX party scaling.",
+  "resistAny": [
+   {
+    "monsterClass": "olmHead",
+    "categoryNot": "RANGED"
+   },
+   {
+    "monsterClass": "olmLeftClaw",
+    "categoryNot": "MELEE"
+   },
+   {
+    "monsterClass": "olmRightClaw",
+    "categoryNot": "MAGIC"
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "olmHead"
+   },
+   {
+    "monsterClass": "olmLeftClaw"
+   },
+   {
+    "monsterClass": "olmRightClaw"
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "AbyssalSireTransition",
+  "kind": "resistance",
+  "factor": [
+   1,
+   2
+  ],
+  "minResult": 0,
+  "source": "https://oldschool.runescape.wiki/w/Abyssal_Sire \"Damage dealt to the Sire while it is transitioning between phases is reduced by 50%.\" Post-roll, per hitsplat \u2014 a rolled 1 halves to 0, so the expectation is not simply half the ordinary one.",
+  "resistAny": [
+   {
+    "monsterClass": "abyssalSireTransitioning",
+    "optionFlag": {
+     "key": "abyssalSireTransitioning",
+     "is": true,
+     "default": false
+    }
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "abyssalSireTransitioning"
+   }
+  ],
+  "monsterOptions": {
+   "when": {
+    "monsterClass": "abyssalSireTransitioning"
+   },
+   "options": [
+    {
+     "key": "abyssalSireTransitioning",
+     "label": "Between phases",
+     "help": "<html>While the Sire is moving between phases, <b>all damage to it is halved</b>.<br>Off by default: a transition is a passage the fight goes through, not a state to plan a loadout around.</html>",
+     "default": false
+    }
+   ]
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "DelrithSilverlight",
+  "kind": "resistance",
+  "factor": [
+   2,
+   1
+  ],
+  "minResult": 0,
+  "source": "https://oldschool.runescape.wiki/w/Delrith \"All damage dealt to Delrith is doubled when Silverlight is equipped\". Delrith carries no demon attribute, so Silverlight's usual +60% demonbane never applies \u2014 without this rule it is simply a bad sword, hence the hidesItems pinning. Not modelled: ring of recoil's doubled 2s; the quest requirement to equip it at the killing blow.",
+  "resistAny": [
+   {
+    "monsterClass": "delrith",
+    "weaponFamily": "silverlight"
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "delrith"
+   }
+  ],
+  "hidesItems": {
+   "category": "MELEE",
+   "family": "silverlight"
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "SkotizoAltars",
+  "kind": "averageHit",
+  "source": "https://oldschool.runescape.wiki/w/Skotizo \u2014 each Awakened Altar still up cuts damage by 15% with Arclight or Emberlight (capped at 60%) and by 25% with anything else (capped at 100%, so four altars and an ordinary weapon deal nothing at all). Stated as the surviving percent so the single division happens once: max(40, 100 - 15a) and max(0, 100 - 25a) are the capped reductions read from the other side.",
+  "when": {
+   "monsterClass": "skotizo"
+  },
+  "multipliers": [
+   {
+    "when": {
+     "wornAny": [
+      "ARCLIGHT",
+      "EMBERLIGHT"
+     ]
+    },
+    "num": {
+     "inputs": [
+      "optionInt:skotizoActiveAltars"
+     ],
+     "inputMin": 0,
+     "inputMax": 4,
+     "mul": -15,
+     "add": 100,
+     "min": 40
+    },
+    "den": 100
+   },
+   {
+    "num": {
+     "inputs": [
+      "optionInt:skotizoActiveAltars"
+     ],
+     "inputMin": 0,
+     "inputMax": 4,
+     "mul": -25,
+     "add": 100,
+     "min": 0
+    },
+    "den": 100
+   }
+  ],
+  "monsterOptions": {
+   "when": {
+    "monsterClass": "skotizo"
+   },
+   "options": [
+    {
+     "key": "skotizoActiveAltars",
+     "label": "Active altars",
+     "type": "integer",
+     "min": 0,
+     "max": 4,
+     "default": 0,
+     "help": "<html>Each Awakened Altar still up reduces your damage to Skotizo \u2014 <b>15% each (max 60%)</b> with Arclight or Emberlight, <b>25% each (max 100%)</b> with any other weapon.<br>With all four up and a non-demonbane weapon you deal <b>no damage at all</b>, which is why the altars decide the weapon here rather than the DPS numbers. Defaults to 0 \u2014 the state you fight him in once they are cleared.</html>"
+    }
+   ]
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "NightmareTotemVulnerability",
+  "kind": "averageHit",
+  "source": "https://oldschool.runescape.wiki/w/Totem_(The_Nightmare) \"The totems take 2x damage when attacked with magic.\" Post-distribution: doubling per-hit or per-expectation makes no rounding difference here.",
+  "when": {
+   "category": "MAGIC",
+   "monsterClass": "nightmareTotem"
+  },
+  "multiplier": [
+   2,
+   1
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "AlchemicalHydraResistance",
+  "kind": "averageHit",
+  "source": "Wiki: Alchemical Hydra \u2014 reduces incoming damage by 75% until it is lured over and sprayed by the appropriate chemical vent. Uniform across styles, so it never changes gear ranking.",
+  "when": {
+   "monsterClass": "alchemicalHydra",
+   "optionFlag": {
+    "key": "hydraVentSprayed",
+    "is": false,
+    "default": true
+   }
+  },
+  "multiplier": [
+   1,
+   4
+  ],
+  "monsterOptions": {
+   "when": {
+    "monsterClass": "alchemicalHydra"
+   },
+   "options": [
+    {
+     "key": "hydraVentSprayed",
+     "label": "Chemical vent sprayed",
+     "default": true,
+     "help": "<html>For the first three phases the Hydra takes <b>75% less damage</b> until it is lured onto the matching chemical vent.<br>Leave this on for the number you actually plan around \u2014 the ranking of your gear is identical either way, since the reduction hits every weapon and style equally.</html>"
+    }
+   ]
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "RoyalTitansRangedAccuracy",
+  "source": "https://oldschool.runescape.wiki/w/Royal_Titans/Strategies \"despite their high ranged defences of +700, players get a hidden +500% (a 6x multiplier) to ranged accuracy whenever the titans are out of melee distance.\"",
+  "when": {
+   "category": "RANGED",
+   "monsterClass": "royalTitan",
+   "optionFlag": {
+    "key": "titansOutOfMeleeRange",
+    "is": true,
+    "default": true
+   }
+  },
+  "accuracy": [
+   {
+    "factor": [
+     6,
+     1
+    ]
+   }
+  ],
+  "monsterOptions": {
+   "when": {
+    "monsterClass": "royalTitan"
+   },
+   "options": [
+    {
+     "key": "titansOutOfMeleeRange",
+     "label": "Out of melee range",
+     "default": true,
+     "help": "<html>The Royal Titans grant a hidden <b>6x ranged accuracy</b> bonus while they are out of melee distance \u2014 the counterweight to their +700 ranged defence.<br>Leave this on unless you are deliberately standing next to them with a ranged weapon, in which case ranged accuracy is as bad as the stat block suggests.</html>"
+    }
+   ]
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "MagicDefenceFromDefenceLevel",
+  "kind": "defenceLevelSource",
+  "source": "Monsters whose magic defence roll is built from their Defence level, not their Magic level: the documented exception to Rd = (Mlvl + 9) * (Mdb + 64), confirmed at https://twitter.com/JagexAsh/status/1689566945635438592 and on each monster's own article (the magicDefenceFromDefence family). Not modeled: Defence draining.",
+  "when": {
+   "style": "MAGIC",
+   "monsterClass": "magicDefenceFromDefence"
+  },
+  "level": "monster.defenceLevel",
+  "aggregateBoundSafe": true
+ }
 ]
