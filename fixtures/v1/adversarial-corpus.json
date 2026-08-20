@@ -403,7 +403,13 @@
   {
    "name": "ruby-bolts-vs-constant-damage",
    "mechanics": [
-    "EnchantedBoltProcs"
+    "RubyBoltProc",
+    "DiamondBoltProc",
+    "OnyxBoltProc",
+    "DragonstoneBoltProc",
+    "PearlBoltProc",
+    "OpalBoltProc",
+    "EmeraldBoltProc"
    ],
    "monster": "Vorkath",
    "items": [

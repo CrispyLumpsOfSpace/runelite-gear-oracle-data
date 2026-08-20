@@ -1467,5 +1467,151 @@
    }
   ],
   "effectiveMaxHit": "maxHit"
+ },
+ {
+  "id": "RubyBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Ruby_bolts_(e) \"The special effect has a 11% chance of activating in PvP and a 6% chance of activating in PvM\"; the proc decays with the target's HP, so it is averaged over a kill by the rubyFightAverage closed form. https://oldschool.runescape.wiki/w/Gemstone_Crab \"Ruby bolt (e) special attacks treat the boss as if it has 300 Hitpoints and deal 60 damage, increased to 66 if using a Zaryte crossbow\" - no decay to average, and the 1.1 sits in the rate. Zaryte (+10% proc damage) and the Hard Kandarin Diary (+10% proc chance) fold into the rate exactly, ruby's curve being linear in it.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "RUBY_BOLTS"
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "monster.family('gemstoneCrab') ? (0.06 * (worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1)) * 60 : rubyFightAverage(accuracy * expectedHit(0, maxHit), monster.hitpoints, 0.06 * (worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1))",
+  "aggregateBoundSafe": true,
+  "bound": {
+   "items": [
+    "RUBY_BOLTS"
+   ],
+   "category": "RANGED",
+   "addendDps": "!chunk.canFire ? 0 : (0.06 * (chunk.special('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1)) * (monster.family('gemstoneCrab') ? 60 : (monster.hitpoints > 0 ? min(chunk.special('ZARYTE_CROSSBOW') ? 110.0 : 100.0, 0.2 * (chunk.special('ZARYTE_CROSSBOW') ? 1.1 : 1) * monster.hitpoints) : (chunk.special('ZARYTE_CROSSBOW') ? 110.0 : 100.0))) / (max(1, chunk.aspeed - 1) * 0.6)"
+  }
+ },
+ {
+  "id": "DiamondBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Diamond_bolts_(e) \"Diamond bolts (e) have a 10% chance of triggering\"; \"This increases the maximum damage by 15% (26% when under the effect of the Zaryte crossbow) for that hit and guarantees it will be a successful hit.\" Those shots replace the ordinary one, so the addend is the difference of expectations; no bound claim, since the widened roll's ceiling scales with the loadout's max hit rather than any chunk constant.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "DIAMOND_BOLTS"
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "(player.kandarinHardDiary ? 1.1 : 1) * (0.10 * (expectedHit(0, floor(maxHit * (worn('ZARYTE_CROSSBOW') ? 126.0 : 115.0) / 100)) - accuracy * expectedHit(0, maxHit)))",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "OnyxBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Onyx_bolts_(e) \"The special effect has a 10% chance of activating in PvP and an 11% chance of activating in PvM\"; with a Zaryte \"132% - it's being 110% x 120%\". Life Leech replaces the landed hit with a roll over 0 to 120% of max, on 11% of accurate hits, and never against the undead (\"immune to life leech\"). No bound claim: roll-widening has no chunk-constant ceiling.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "ONYX_BOLTS",
+   "targetAttrNot": "UNDEAD"
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "accuracy * (0.11 * (player.kandarinHardDiary ? 1.1 : 1)) * (expectedHit(0, floor(maxHit * (worn('ZARYTE_CROSSBOW') ? 132.0 : 120.0) / 100)) - expectedHit(0, maxHit))",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "DragonstoneBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Dragonstone_bolts_(e) 6% of landed hits deal an extra floor(visible Ranged level x 2 / 10) (\"22% instead of 20%\" with a Zaryte, a smaller divisor because the division is truncated); \"If the target is immune to dragonfire, the special effect will not activate\" - DRAGON and FIERY are the two dragonfire-immunity marks.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "DRAGONSTONE_BOLTS",
+   "targetAttrNot": "DRAGON",
+   "not": {
+    "targetAttr": "FIERY"
+   }
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "(player.kandarinHardDiary ? 1.1 : 1) * (accuracy * 0.06 * floor((player.rangedLevel + player.rangedBoost) * 2.0 / (worn('ZARYTE_CROSSBOW') ? 9 : 10)))",
+  "aggregateBoundSafe": true,
+  "bound": {
+   "items": [
+    "DRAGONSTONE_BOLTS"
+   ],
+   "category": "RANGED",
+   "addendDps": "!chunk.canFire || monster.attr('DRAGON') || monster.attr('FIERY') ? 0 : 0.06 * (player.kandarinHardDiary ? 1.1 : 1) * floor((player.rangedLevel + player.rangedBoost) * 2.0 / (chunk.special('ZARYTE_CROSSBOW') ? 9 : 10)) / (max(1, chunk.aspeed - 1) * 0.6)"
+  }
+ },
+ {
+  "id": "PearlBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Pearl_bolts_(e) 6% chance of an extra floor(Ranged level / 20); \"Against fiery enemies, the increase is boosted to 1/15 of the user's Ranged level.\" Accuracy-independent: the proc rolls its own chance whether or not the shot lands. The Zaryte takes two off the divisor.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "PEARL_BOLTS"
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "(player.kandarinHardDiary ? 1.1 : 1) * (0.06 * floor((player.rangedLevel + player.rangedBoost) / ((monster.attr('FIERY') ? 15 : 20) - (worn('ZARYTE_CROSSBOW') ? 2 : 0))))",
+  "aggregateBoundSafe": true,
+  "bound": {
+   "items": [
+    "PEARL_BOLTS"
+   ],
+   "category": "RANGED",
+   "addendDps": "!chunk.canFire ? 0 : 0.06 * (player.kandarinHardDiary ? 1.1 : 1) * floor((player.rangedLevel + player.rangedBoost) / ((monster.attr('FIERY') ? 15 : 20) - (chunk.special('ZARYTE_CROSSBOW') ? 2 : 0))) / (max(1, chunk.aspeed - 1) * 0.6)"
+  }
+ },
+ {
+  "id": "OpalBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Opal_bolts_(e) Lucky Lightning: 5% chance of an extra floor(Ranged level / 10), rolled \"regardless of whether or not it passes an accuracy roll\". The Zaryte takes one off the divisor.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "OPAL_BOLTS"
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "(player.kandarinHardDiary ? 1.1 : 1) * (0.05 * floor((player.rangedLevel + player.rangedBoost) / (worn('ZARYTE_CROSSBOW') ? 9 : 10)))",
+  "aggregateBoundSafe": true,
+  "bound": {
+   "items": [
+    "OPAL_BOLTS"
+   ],
+   "category": "RANGED",
+   "addendDps": "!chunk.canFire ? 0 : 0.05 * (player.kandarinHardDiary ? 1.1 : 1) * floor((player.rangedLevel + player.rangedBoost) / (chunk.special('ZARYTE_CROSSBOW') ? 9 : 10)) / (max(1, chunk.aspeed - 1) * 0.6)"
+  }
+ },
+ {
+  "id": "EmeraldBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Emerald_bolts_(e) 55% chance on a landed hit to poison for 75 total damage over ~450 seconds, converted to a per-shot average through the stance-aware attack time; nothing against the poison-immune. The Zaryte's 1.1 lands flat, this being a flat-damage bolt.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "EMERALD_BOLTS",
+   "exprFilter": "!monster.poisonImmune"
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "(worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1) * (accuracy * 0.55 * (75.0 / 450.0) * (attackTicks * 0.6))",
+  "aggregateBoundSafe": true,
+  "bound": {
+   "items": [
+    "EMERALD_BOLTS"
+   ],
+   "category": "RANGED",
+   "addendDps": "!chunk.canFire || monster.poisonImmune ? 0 : 0.55 * (player.kandarinHardDiary ? 1.1 : 1) * (75.0 / 450.0)"
+  }
  }
 ]
