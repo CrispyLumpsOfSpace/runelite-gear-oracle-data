@@ -2593,7 +2593,7 @@
   {
    "name": "spec-dragon-claws",
    "mechanics": [
-    "DragonClawsSpecDistribution"
+    "DragonClawsSpec"
    ],
    "monster": "General Graardor",
    "player": {
@@ -2612,7 +2612,7 @@
   {
    "name": "spec-burning-claws",
    "mechanics": [
-    "BurningClawsSpecDistribution"
+    "BurningClawsSpec"
    ],
    "monster": "General Graardor",
    "player": {

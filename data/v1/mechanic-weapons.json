@@ -1320,5 +1320,111 @@
   "level": "player.rangedLevel + player.rangedBoost + 10",
   "gearStr": "loadout.wornAmmoCompatible ? ammo.str : 0",
   "bypassChain": true
+ },
+ {
+  "id": "DragonClawsSpec",
+  "kind": "cascade",
+  "source": "https://oldschool.runescape.wiki/w/Dragon_claws \"hits an enemy four times in succession\" (Slice and Dice): four accuracy rolls succeed in turn; the first to pass fixes total damage d drawn uniformly from a window that slides down with each failed roll, split across remaining hitsplats per the wiki's case list. All-fail: ~2/3 chance of 2, ~1/3 of 0. Always-max-hit targets are modelled as one certain hitsplat of the cascade's ceiling, pinned by the authored always-max-hit spec vectors. Overkill basis: the fourth roll's lone splat.",
+  "when": {
+   "specShape": "CLAWS_CASCADE"
+  },
+  "filterWhen": {
+   "specActive": "true",
+   "category": "MELEE"
+  },
+  "rolls": 4,
+  "window": {
+   "lo": "idiv(maxHit * (4 - failed), 4)",
+   "hi": "maxHit + lo - 1"
+  },
+  "splats": [
+   [
+    "idiv(d, 2)",
+    "idiv(d, 4)",
+    "idiv(d, 8)",
+    "idiv(d, 8) + 1"
+   ],
+   [
+    "idiv(d, 2)",
+    "idiv(d, 4)",
+    "idiv(d, 4) + 1"
+   ],
+   [
+    "idiv(d, 2)",
+    "idiv(d, 2) + 1"
+   ],
+   [
+    "d + 1"
+   ]
+  ],
+  "allFail": [
+   {
+    "chance": [
+     2,
+     3
+    ],
+    "damage": 2
+   }
+  ],
+  "displayFloor": 2,
+  "effectiveMaxHit": "maxHit + idiv(maxHit, 4)"
+ },
+ {
+  "id": "BurningClawsSpec",
+  "kind": "cascade",
+  "source": "https://oldschool.runescape.wiki/w/Burning_claws Burning Barrage: three sequential accuracy rolls determining a total d split across three hitsplats per the wiki's cases; all-fail 40% of 1 and 40% of 2. Burn rider: each hitsplat independently procs at 15%/30%/45% (first/second/third roll) for 10 each, expected 30b - b^2 per landing roll with the overlap loss pinned by the battery and awaiting in-game confirmation (docs/ENGINE-GAPS.md); suppressed against normal-burn-immune targets and left out of the displayed max. Overkill basis: the third roll's d - 2.",
+  "when": {
+   "specShape": "BURNING_CLAWS_CASCADE"
+  },
+  "filterWhen": {
+   "specActive": "true",
+   "category": "MELEE"
+  },
+  "rolls": 3,
+  "window": {
+   "lo": "idiv(maxHit * (3 - failed), 4)",
+   "hi": "maxHit + lo"
+  },
+  "splats": [
+   [
+    "idiv(d, 2)",
+    "idiv(d, 4)",
+    "idiv(d, 4)"
+   ],
+   [
+    "idiv(d, 2) - 1",
+    "idiv(d, 2) - 1",
+    "2"
+   ],
+   [
+    "d - 2",
+    "1",
+    "1"
+   ]
+  ],
+  "allFail": [
+   {
+    "chance": [
+     2,
+     5
+    ],
+    "damage": 1
+   },
+   {
+    "chance": [
+     2,
+     5
+    ],
+    "damage": 2
+   }
+  ],
+  "rider": {
+   "when": {
+    "burnImmuneNormal": false
+   },
+   "value": "30 * (0.15 * (failed + 1)) - (0.15 * (failed + 1)) * (0.15 * (failed + 1))"
+  },
+  "displayFloor": 2,
+  "effectiveMaxHit": "maxHit + idiv(maxHit, 4) - 2"
  }
 ]
