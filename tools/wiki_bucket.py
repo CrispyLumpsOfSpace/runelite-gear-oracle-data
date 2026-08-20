@@ -32,11 +32,13 @@ def _api_request(query, user_agent):
                 time.sleep(int(e.headers.get("Retry-After") or 15 * (attempt + 1)))
                 continue
             raise
-        if data.get("error", {}).get("code") == "maxlag" and attempt < 3:
+        # MediaWiki errors are dicts with a code; action=bucket errors are bare strings.
+        error = data.get("error")
+        if isinstance(error, dict) and error.get("code") == "maxlag" and attempt < 3:
             time.sleep(15 * (attempt + 1))
             continue
-        if "error" in data:
-            raise RuntimeError(data["error"])
+        if error is not None:
+            raise RuntimeError(error)
         return data
     raise RuntimeError("wiki API kept lagging after retries")
 

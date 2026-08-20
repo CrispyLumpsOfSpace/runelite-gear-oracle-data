@@ -47,7 +47,7 @@ MONSTER_FIELDS = (
     "'name','page_name','id','combat_level','hitpoints','defence_level','magic_level','magic_attack_bonus',"
     "'stab_defence_bonus','slash_defence_bonus','crush_defence_bonus','magic_defence_bonus','range_defence_bonus',"
     "'light_range_defence_bonus','standard_range_defence_bonus','heavy_range_defence_bonus',"
-    "'poison_resistance','venom_immune','thrall_immune','cannon_immune','burn_immune','freeze_resistance',"
+    "'poison_resistance','venom_resistance','thrall_immune','cannon_immune','burn_immune','freeze_resistance',"
     "'attack_level','strength_level','ranged_level','attack_bonus',"
     "'range_attack_bonus','strength_bonus','range_strength_bonus','magic_damage_bonus',"
     "'attack_speed','attack_style','max_hit',"
@@ -76,7 +76,7 @@ KEPT_FIELDS = [
     "attack_style", "max_hit", "attack_bonus", "attack_speed", "examine",
     "slayer_level", "slayer_experience", "slayer_category",
     "attribute", "elemental_weakness", "elemental_weakness_percent",
-    "poison_resistance", "venom_immune", "thrall_immune", "cannon_immune", "burn_immune",
+    "poison_resistance", "venom_resistance", "thrall_immune", "cannon_immune", "burn_immune",
     "freeze_resistance", "flat_armour",
     "range_defence_bonus", "light_range_defence_bonus", "standard_range_defence_bonus",
     "heavy_range_defence_bonus",
