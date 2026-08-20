@@ -1283,5 +1283,42 @@
   "lo": "floor(0.15 * maxHit)",
   "hi": "maxHit - floor(0.15 * maxHit)",
   "aggregateBoundSafe": true
+ },
+ {
+  "id": "EclipseAtlatlFormula",
+  "kind": "strengthInputs",
+  "source": "https://oldschool.runescape.wiki/w/Eclipse_atlatl rolls Ranged max hit off melee Strength level and gear. Melee prayers inactive, Ranged prayers active; darts carry no bonuses. The hidden-stat declaration exists because its DPS is invisible to linear ranged-stat scoring.",
+  "when": {
+   "category": "RANGED",
+   "weaponSpecial": "ECLIPSE_ATLATL"
+  },
+  "level": "player.strengthLevel + player.strengthBoost",
+  "gearStr": "loadout.meleeStr",
+  "hidesItems": {
+   "types": [
+    "ECLIPSE_ATLATL"
+   ],
+   "category": "RANGED"
+  },
+  "hiddenStats": {
+   "types": [
+    "ECLIPSE_ATLATL"
+   ],
+   "category": "RANGED",
+   "value": "max(0, itemStr)"
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "OgreBowFormula",
+  "kind": "strengthInputs",
+  "source": "https://oldschool.runescape.wiki/w/Ogre_bow \"A stance bonus of 10 is used regardless of attack style used.\" \"Only the player's visible ranged level matters. Boosts given through prayers and Void Knight armour are ignored.\" \"it can fire ogre arrows as well as brutal arrows up to mithril brutals\": only fireable worn ammo counts. Bypasses the whole standard chain, so no amulet-class stage applies either (a salve amulet (ei) on a Zogre adds nothing to a comp ogre bow).",
+  "when": {
+   "category": "RANGED",
+   "weaponFamily": "ogreBow"
+  },
+  "level": "player.rangedLevel + player.rangedBoost + 10",
+  "gearStr": "loadout.wornAmmoCompatible ? ammo.str : 0",
+  "bypassChain": true
  }
 ]
