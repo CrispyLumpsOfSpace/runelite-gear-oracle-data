@@ -1209,5 +1209,34 @@
   "hi": "spec.flatMax",
   "ignoresFlatArmour": true,
   "alwaysMaxHitYieldsCeiling": true
+ },
+ {
+  "id": "TwistedBow",
+  "kind": "modifier",
+  "source": "https://oldschool.runescape.wiki/w/Twisted_bow accuracy percent = 140 + (3M-10)/100 - ((3M/10 - 100)^2)/100 clamped to [0, 140]; damage percent = 250 + (3M-14)/100 - ((3M/10 - 140)^2)/100 clamped to [0, 250]; every division truncated. M = max(target Magic level, Magic attack bonus) capped at 250, or 350 in CoX, which raises only the M input cap (the damage clamp never binds under it). Accuracy is its own late, separately-floored stage; damage folds into the main product with the other Ranged bonuses.",
+  "when": {
+   "category": "RANGED",
+   "worn": "TWISTED_BOW"
+  },
+  "filterWhen": {
+   "category": "RANGED"
+  },
+  "accuracy": [
+   {
+    "factor": "clamp(140 + idiv(3 * min(player.inCoX ? 350 : 250, max(monster.magicLevel, monster.magicAttackBonus)) - 10, 100) - idiv(pow(idiv(3 * min(player.inCoX ? 350 : 250, max(monster.magicLevel, monster.magicAttackBonus)), 10) - 100, 2), 100), 0, 140) / 100"
+   }
+  ],
+  "damage": [
+   {
+    "factor": "clamp(250 + idiv(3 * min(player.inCoX ? 350 : 250, max(monster.magicLevel, monster.magicAttackBonus)) - 14, 100) - idiv(pow(idiv(3 * min(player.inCoX ? 350 : 250, max(monster.magicLevel, monster.magicAttackBonus)), 10) - 140, 2), 100), 0, 250) / 100"
+   }
+  ],
+  "hidesItems": {
+   "types": [
+    "TWISTED_BOW"
+   ],
+   "category": "RANGED"
+  },
+  "aggregateBoundSafe": true
  }
 ]

@@ -664,5 +664,23 @@
   "lo": "idiv(maxHit, 2)",
   "hi": "maxHit",
   "aggregateBoundSafe": true
+ },
+ {
+  "id": "SalarinStrikeSpells",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/Salarin_the_twisted \"the spells will always deal 9, 10, 11, or 12 damage, depending on the highest tier of spell unlocked\"; \"This damage is not affected by items that would normally increase spell damage\". Modelled as a raised 0..tier roll through the accuracy chance, the tier being the highest Bolt hit the visible Magic level unlocks, matching the recorded oracle. Not modeled: ring of recoil, dynamite(p).",
+  "when": {
+   "category": "MAGIC",
+   "monsterClass": "salarin",
+   "spellFamily": "strikeSpell"
+  },
+  "filterWhen": {
+   "style": "MAGIC",
+   "monsterClass": "salarin"
+  },
+  "lo": "0",
+  "hi": "spellMaxHit('WIND_BOLT')",
+  "ignoresFlatArmour": true,
+  "aggregateBoundSafe": true
  }
 ]
