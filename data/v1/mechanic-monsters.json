@@ -682,5 +682,19 @@
   "hi": "spellMaxHit('WIND_BOLT')",
   "ignoresFlatArmour": true,
   "aggregateBoundSafe": true
+ },
+ {
+  "id": "ElementalWeaknessShare",
+  "kind": "flatShare",
+  "source": "https://oldschool.runescape.wiki/w/Elemental_weakness a matching standard-spellbook elemental cast gains +trunc(base * severity/100) accuracy and damage: a flat share of the base roll and base spell hit, added at the end rather than multiplied over the stages above it.",
+  "when": {
+   "style": "MAGIC",
+   "expr": "cast.matchesElementalWeakness && monster.elementalWeaknessPercent > 0"
+  },
+  "value": "floor(base * (monster.elementalWeaknessPercent / 100))",
+  "filterWhen": {
+   "style": "MAGIC",
+   "exprFilter": "monster.elementalWeaknessPercent > 0"
+  }
  }
 ]

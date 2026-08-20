@@ -392,5 +392,62 @@
   },
   "dps": "player.thrallMaxHit / 2 / 2.4",
   "aggregateBoundSafe": true
+ },
+ {
+  "id": "DharokSetBonus",
+  "kind": "modifier",
+  "source": "https://oldschool.runescape.wiki/w/Dharok_the_Wretched%27s_equipment \"The lower a player's remaining hitpoints are, the higher maximum hit the player can inflict with the set equipped.\" Wretched Strength: factor 1 + (maxHP - currentHP)/100 * maxHP/100, its own floored stage before bane. Overhealing (anglerfish etc.) never pushes the multiplier below 1.",
+  "when": {
+   "setActive": "DHAROK"
+  },
+  "damage": [
+   {
+    "factor": "1 + ((max(1, player.hitpointsLevel) - min(player.currentHp, max(1, player.hitpointsLevel))) / 100) * (max(1, player.hitpointsLevel) / 100)"
+   }
+  ]
+ },
+ {
+  "id": "ObsidianSetFlatShare",
+  "kind": "flatShare",
+  "source": "https://oldschool.runescape.wiki/w/Obsidian_armour full obsidian armour with an obsidian weapon gives +10% melee accuracy and strength: a flat share of the base roll and base max hit, added after the amulet-class stage and before the multiplicative stages.",
+  "when": {
+   "category": "MELEE",
+   "setActive": "OBSIDIAN"
+  },
+  "value": "floor(base / 10)"
+ },
+ {
+  "id": "SoulreaperAxeStacks",
+  "kind": "flatShare",
+  "source": "https://oldschool.runescape.wiki/w/Soulreaper_axe \"Each Soul stack provides a 6% boost to a player's Strength level\", \"up to a maximum of +30% at five stacks\": a share of the base level (level + potion) added after the prayer, so it does not compound with it.",
+  "when": {
+   "category": "MELEE",
+   "worn": "SOULREAPER_AXE"
+  },
+  "value": "floor(base * (clamp(player.soulreaperStacks, 0, 5) * 6) / 100)"
+ },
+ {
+  "id": "KerisStrengthPenalty",
+  "kind": "flatShare",
+  "source": "https://oldschool.runescape.wiki/w/Keris_partisan_of_amascut outside the Tombs of Amascut the partisan loses 22 melee strength: a penalty on the gear total the max hit is built from, not a stage over it. The strength penalty applies to all melee styles.",
+  "when": {
+   "category": "MELEE",
+   "worn": "KERIS_AMASCUT",
+   "monsterClass": "!toa",
+   "exprFilter": "!player.inToA"
+  },
+  "value": "-22"
+ },
+ {
+  "id": "KerisStabAttackPenalty",
+  "kind": "flatShare",
+  "source": "https://oldschool.runescape.wiki/w/Keris_partisan_of_amascut outside the Tombs of Amascut the partisan loses 50 stab attack: a penalty on the gear total the roll is built from. The attack penalty applies to stab only.",
+  "when": {
+   "style": "MELEE_STAB",
+   "worn": "KERIS_AMASCUT",
+   "monsterClass": "!toa",
+   "exprFilter": "!player.inToA"
+  },
+  "value": "-50"
  }
 ]
