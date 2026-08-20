@@ -38,6 +38,7 @@ jobs:
         run: |
           git config user.name "gear-oracle-data refresh"
           git config user.email "actions@users.noreply.github.com"
+          python3 tools/summarize_changes.py > "$RUNNER_TEMP/summary.md"
           git add data fixtures
           if git diff --cached --quiet; then
             echo "no changes against master"
@@ -48,12 +49,14 @@ jobs:
             echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Ensure a promotion PR exists
+      # The body summarises the refresh; an already-open PR gets its body replaced, since a
+      # new snapshot supersedes the staged one wholesale.
+      - name: Open or refresh the promotion PR
         if: steps.publish.outputs.pushed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh pr create --base master --head staging \
             --title "Promote staged dataset refresh" \
-            --body "Published to staging by the refresh workflow. Merging serves it to clients; test first by launching the plugin with GEAR_ORACLE_DATA_BRANCH=staging." \
-            || echo "promotion PR already open"
+            --body-file "$RUNNER_TEMP/summary.md" \
+          || gh pr edit staging --body-file "$RUNNER_TEMP/summary.md"
