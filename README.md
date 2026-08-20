@@ -10,6 +10,13 @@ fields, row-count collapse against the previous copy), and commits only what pas
 broken wiki edit or an API schema change breaks this pipeline visibly instead of degrading
 every installed client. Clients keep serving their last cached copy regardless.
 
+## Branches
+
+Clients read `master`; the weekly refresh lands on `staging`. CI force-pushes each refresh to
+`staging` as a single snapshot commit on top of `master` and opens a promotion pull request —
+merging it is what serves the refresh to clients. To test staged data first, launch the plugin
+with `GEAR_ORACLE_DATA_BRANCH=staging` in its environment.
+
 Everything is published as **plain JSON, one row per line in a stable order**, so each refresh
 commit is a reviewable row-by-row diff rather than an opaque archive; clients receive it
 gzip-compressed on the wire regardless.
