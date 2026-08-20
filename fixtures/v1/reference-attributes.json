@@ -1,6 +1,6 @@
 {
  "_comment": "Generated from the OSRS Wiki's infobox_monster bucket (the `attribute` field). Do not hand-edit.",
- "_retrieved": "2026-08-16",
+ "_retrieved": "2026-08-20",
  "attributesById": {
   "1": [],
   "10": [],
@@ -1003,8 +1003,6 @@
   ],
   "12810": [],
   "12811": [],
-  "12812": [],
-  "12813": [],
   "12814": [],
   "12815": [],
   "12816": [],
