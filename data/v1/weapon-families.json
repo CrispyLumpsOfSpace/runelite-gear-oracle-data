@@ -223,6 +223,31 @@
   "source": "https://oldschool.runescape.wiki/w/Brutal_arrow \u2014 the ogre-bow ammunition Zogres take full damage from; the leading space keeps the match on the colour-prefixed names (\"Mithril brutal\")."
  },
  {
+  "key": "ogreArrow",
+  "nameContains": [
+   "ogre arrow",
+   " brutal"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Arrows \"Ogre arrows can only be used with the Ogre bow or comp ogre bow\" \u2014 the ogre side branch's ammo half. Brutal arrows are ogre arrows without saying so (\"Adamant brutal\"); the leading space keeps the match on the colour-prefixed names."
+ },
+ {
+  "key": "javelinAmmo",
+  "nameContains": [
+   "javelin"
+  ],
+  "notNameContains": [
+   "morrigan"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Heavy_ballista \"uses javelins as ammunition\". Morrigan's javelin is \"a standalone thrown weapon\" per the wiki (equipped in the WEAPON slot, self-contained), not ballista ammo, so it is excluded despite its name."
+ },
+ {
+  "key": "silvthrill",
+  "nameContains": [
+   "silvthrill"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Silvthrill_ballista \u2014 the Silvthrill ballista/javelin pair is exclusive on both sides, the javelin family's only side branch. One row answers for both halves."
+ },
+ {
   "key": "basicGauntletStaff",
   "nameContains": [
    "staff&crystal&basic",
@@ -417,6 +442,15 @@
   "source": "https://oldschool.runescape.wiki/w/Seercull \"fires arrows up to Amethyst\" \u2014 a bow whose name carries no tier word."
  },
  {
+  "key": "bowBone",
+  "group": "bowTier",
+  "text": "MAGIC",
+  "namesExact": [
+   "bone shortbow"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Bone_shortbow \"has identical offensive stats to the magic shortbow, and can fire up to amethyst arrows\" \u2014 no substring of the name says anything about its tier, which would otherwise bottom out at WOOD."
+ },
+ {
   "key": "bowRecurve",
   "group": "bowTier",
   "text": "ELITE",
@@ -596,6 +630,42 @@
   "source": "https://oldschool.runescape.wiki/w/Crossbow \u2014 the standard line. Bronze, Phoenix and anything unrecognised fall past these to the bottom rather than to NONE, so a future crossbow still fires Bronze and Barbed."
  },
  {
+  "key": "crossbowBranchSunlight",
+  "group": "crossbowBranch",
+  "text": "HUNTERS_SUNLIGHT",
+  "nameContains": [
+   "hunters&sunlight"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Hunters'_sunlight_crossbow \"can only fire sunlight antler bolts\" \u2014 must precede the hunters row, whose term this name also contains."
+ },
+ {
+  "key": "crossbowBranchHunters",
+  "group": "crossbowBranch",
+  "text": "HUNTERS",
+  "nameContains": [
+   "hunters"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Hunters'_crossbow \"can only use kebbit bolts or long kebbit bolts\"."
+ },
+ {
+  "key": "crossbowBranchDorgeshuun",
+  "group": "crossbowBranch",
+  "text": "DORGESHUUN",
+  "nameContains": [
+   "dorgeshuun"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Dorgeshuun_crossbow \"can only fire bone bolts\"."
+ },
+ {
+  "key": "crossbowBranchKarils",
+  "group": "crossbowBranch",
+  "text": "KARILS",
+  "nameContains": [
+   "karil"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Karil%27s_crossbow \"uses bolt racks as ammunition\" \u2014 exclusive on both sides: no other crossbow fires them. Anything unmatched is NONE, the tier-ladder side, which is the fallback the caller passes."
+ },
+ {
   "key": "boltDragon",
   "group": "boltMinTier",
   "text": "ELITE",
@@ -694,6 +764,66 @@
    "blurite"
   ],
   "source": "https://oldschool.runescape.wiki/w/Bolts \u2014 the crossbow each bolt needs. Bronze, barbed and anything unrecognised need only a crossbow."
+ },
+ {
+  "key": "boltBranchHunters",
+  "group": "boltBranch",
+  "text": "HUNTERS",
+  "nameContains": [
+   "kebbit"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Kebbit_bolts \u2014 the Hunters' crossbow's exclusive ammo, kebbit and long kebbit alike."
+ },
+ {
+  "key": "boltBranchSunlight",
+  "group": "boltBranch",
+  "text": "HUNTERS_SUNLIGHT",
+  "nameContains": [
+   "antler"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Sunlight_antler_bolts \u2014 the Hunters' sunlight crossbow's exclusive ammo; moonlight antler bolts share the branch."
+ },
+ {
+  "key": "boltBranchDorgeshuun",
+  "group": "boltBranch",
+  "text": "DORGESHUUN",
+  "nameContains": [
+   "bone"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Bone_bolts \u2014 usable only with the Dorgeshuun crossbow."
+ },
+ {
+  "key": "boltBranchKarils",
+  "group": "boltBranch",
+  "text": "KARILS",
+  "nameContains": [
+   "bolt rack"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Bolt_rack \u2014 Karil's crossbow's exclusive ammo. Anything unmatched is NONE, the tier-ladder side, which is the fallback the caller passes."
+ },
+ {
+  "key": "blowpipe",
+  "nameContains": [
+   "blowpipe"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Toxic_blowpipe and the Varlamore blowpipes \u2014 the weapons the blowpipeTier ladder below adjudicates."
+ },
+ {
+  "key": "dart",
+  "nameContains": [
+   "dart"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Dart \u2014 blowpipe ammunition, adjudicated by the dartMinTier ladder below. Atlatl darts match too, exactly as the registry's slot-agnostic dart column does; their blowpipe exclusion is the atlatlDart family's one-to-one pairing."
+ },
+ {
+  "key": "blowpipeToxicVariants",
+  "group": "blowpipeTier",
+  "text": "TOXIC",
+  "nameContains": [
+   "blazing blowpipe",
+   "drygore blowpipe"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Blazing_blowpipe \u2014 a Toxic blowpipe with a cosmetic kit, so top dart tier; https://oldschool.runescape.wiki/w/Drygore_blowpipe (Leagues) states no dart-tier restriction. Neither name carries a tier word, and \"drygore blowpipe\" is deliberately tight: a bare \"drygore\" also names Leagues melee weapons. Ordered above the ironwood/rosewood rungs, which answer first-match."
  },
  {
   "key": "blowpipeToxic",
@@ -911,7 +1041,25 @@
    "thrownaxe",
    "blowpipe"
   ],
-  "source": "The LIGHT projectiles: darts, knives, thrown axes, the blowpipe and the atlatl. Arrows \u2014 every bow \u2014 and anything unrecognised are STANDARD, which is the fallback."
+  "notNameContains": [
+   "kitchen",
+   "killer's",
+   "hunting"
+  ],
+  "source": "The LIGHT projectiles: darts, knives, thrown axes, the blowpipe and the atlatl. Arrows \u2014 every bow \u2014 and anything unrecognised are STANDARD, which is the fallback. The Kitchen, Killer's and Hunting knives are melee \"knife\" lookalikes, not throwing knives."
+ },
+ {
+  "key": "ammoSalamander",
+  "group": "ammoRequirement",
+  "text": "TAR",
+  "nameContains": [
+   "swamp lizard",
+   "orange salamander",
+   "red salamander",
+   "black salamander",
+   "tecu salamander"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Salamander \"must be fuelled using a variety of herb-tars\" \u2014 the tar sits in the AMMO slot and carries Flare mode's ranged strength. The names are exactly the salamanderTar rows' name halves, so a weapon answers TAR here precisely when that group can name its tar."
  },
  {
   "key": "ammoCrystalBow",
@@ -1011,7 +1159,35 @@
    "toktz-xil-ul",
    "tonalztics of ralos"
   ],
-  "source": "Ranged weapons that ARE their own ammunition, so their AMMO slot is only good for a Prayer blessing. The tail of the list is the thrown weapons whose names do not say so \u2014 note \"thrownaxe\" is one word in game, which is why the \"throwing axe\" entry misses every axe."
+  "notNameContains": [
+   "kitchen",
+   "killer's",
+   "hunting"
+  ],
+  "source": "Ranged weapons that ARE their own ammunition, so their AMMO slot is only good for a Prayer blessing. The tail of the list is the thrown weapons whose names do not say so \u2014 note \"thrownaxe\" is one word in game, which is why the \"throwing axe\" entry misses every axe. The Kitchen, Killer's and Hunting knives are melee \"knife\" lookalikes, not throwing knives."
+ },
+ {
+  "key": "rangedWeaponName",
+  "nameContains": [
+   "bow",
+   "dart",
+   "javelin",
+   "knife",
+   "blowpipe",
+   "atlatl"
+  ],
+  "source": "The last-resort Ranged style gate (ItemSpec#isSuitableWeaponFor) for a weapon carrying neither a ranged attack nor a ranged strength stat; the stats answer first, so these only speak for statless synthetic items."
+ },
+ {
+  "key": "magicWeaponName",
+  "nameContains": [
+   "staff",
+   "wand",
+   "sceptre",
+   "trident",
+   "shadow"
+  ],
+  "source": "The Magic half of the last-resort style gate; see the rangedWeaponName row."
  },
  {
   "key": "holyWater",
@@ -1048,11 +1224,33 @@
   "key": "venomousWeapon",
   "nameContains": [
    "toxic blowpipe",
+   "blazing blowpipe",
    "trident of the swamp",
    "toxic staff of the dead",
    "noxious halberd"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Serpentine_helm \u2014 the weapons that envenom with it; VenomProc carries the Magic-cast gating the staff additionally needs."
+  "source": "https://oldschool.runescape.wiki/w/Serpentine_helm \u2014 the weapons that envenom with it; VenomProc carries the Magic-cast gating the staff additionally needs. The Blazing blowpipe is a Toxic blowpipe with a cosmetic kit; the Drygore blowpipe is not venomous."
+ },
+ {
+  "key": "saradominGodCape",
+  "nameContains": [
+   "saradomin&cape"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Charge \u2014 the god cape matching Saradomin Strike. Capes named \"saradomin ... cape\" only (plain, imbued and max variants); the conjunction excludes cloaks and vestments."
+ },
+ {
+  "key": "guthixGodCape",
+  "nameContains": [
+   "guthix&cape"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Charge \u2014 the god cape matching Claws of Guthix; see the saradominGodCape row."
+ },
+ {
+  "key": "zamorakGodCape",
+  "nameContains": [
+   "zamorak&cape"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Charge \u2014 the god cape matching Flames of Zamorak; see the saradominGodCape row."
  },
  {
   "key": "corpbaneFallback",

@@ -347,7 +347,9 @@
    "exprFilter": "player.thrallMaxHit > 0 && !monster.thrallImmune",
    "anyOf": [
     {
-     "categoryNot": "MAGIC"
+     "not": {
+      "category": "MAGIC"
+     }
     },
     {
      "poweredStaff": true

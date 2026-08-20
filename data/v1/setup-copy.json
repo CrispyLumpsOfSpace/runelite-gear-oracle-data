@@ -30,5 +30,14 @@
 	{"key": "bandosGodsword", "title": "Bandos godsword", "body": "Total special DAMAGE dealt — drains Defence one for one, spilling into Strength, Attack, Magic then Ranged only as each stat reaches 0. Bosses with a defence floor (Nex 250, ToA rooms, …) stop the drain there; Verzik and Vardorvis can't be drained at all."},
 	{"key": "seercull", "title": "Seercull", "body": "Total special damage dealt: drains Magic one for one"},
 	{"key": "eyeOfAyak", "title": "Eye of Ayak", "body": "Magic defence BONUS drained by specials (only while the bonus is positive)"},
-	{"key": "currentPrayerPoints", "title": "Current prayer points", "body": "The abyssal bludgeon's Penance special gains 0.5% damage per MISSING point, measured against your Prayer level. Refreshing stats seeds this to the full pool for your level."}
+	{"key": "currentPrayerPoints", "title": "Current prayer points", "body": "The abyssal bludgeon's Penance special gains 0.5% damage per MISSING point, measured against your Prayer level. Refreshing stats seeds this to the full pool for your level."},
+	{"key": "stanceAccurateMelee", "effect": "+3 invisible Attack levels"},
+	{"key": "stanceAccurateRanged", "effect": "+3 invisible Ranged levels"},
+	{"key": "stanceAccurateMagic", "effect": "+3 invisible Magic levels on a powered staff — autocast gains no invisible boost"},
+	{"key": "stanceAggressive", "effect": "+3 invisible Strength levels"},
+	{"key": "stanceControlled", "effect": "+1 invisible Attack, Strength and Defence"},
+	{"key": "stanceDefensive", "effect": "+3 invisible Defence levels"},
+	{"key": "stanceRapid", "effect": "attacks one tick faster"},
+	{"key": "stanceLongrangeRanged", "effect": "+3 invisible Defence levels, longer attack range"},
+	{"key": "stanceLongrangeMagic", "effect": "+1 invisible Magic and +3 Defence on a powered staff, longer attack range"}
 ]

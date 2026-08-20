@@ -127,7 +127,9 @@
     "monsterIds": [
      14179
     ],
-    "categoryNot": "MELEE"
+    "not": {
+     "category": "MELEE"
+    }
    }
   ],
   "aggregateBoundSafe": true
@@ -191,7 +193,9 @@
   "immuneAny": [
    {
     "monsterClass": "guardianStatue",
-    "categoryNot": "MELEE"
+    "not": {
+     "category": "MELEE"
+    }
    },
    {
     "monsterClass": "guardianStatue",
@@ -319,7 +323,9 @@
   "filterAny": [
    {
     "monsterClass": "corporealBeast",
-    "categoryNot": "MAGIC"
+    "not": {
+     "category": "MAGIC"
+    }
    }
   ],
   "aggregateBoundSafe": true
@@ -337,7 +343,9 @@
    {
     "monsterClass": "iceDemon",
     "usingDemonbane": false,
-    "castElementNot": "FIRE"
+    "not": {
+     "castElement": "FIRE"
+    }
    }
   ],
   "aggregateBoundSafe": true
@@ -380,15 +388,21 @@
   "resistAny": [
    {
     "monsterClass": "olmHead",
-    "categoryNot": "RANGED"
+    "not": {
+     "category": "RANGED"
+    }
    },
    {
     "monsterClass": "olmLeftClaw",
-    "categoryNot": "MELEE"
+    "not": {
+     "category": "MELEE"
+    }
    },
    {
     "monsterClass": "olmRightClaw",
-    "categoryNot": "MAGIC"
+    "not": {
+     "category": "MAGIC"
+    }
    }
   ],
   "filterAny": [

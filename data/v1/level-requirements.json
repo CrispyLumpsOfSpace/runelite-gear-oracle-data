@@ -1,0 +1,75 @@
+[
+ {
+  "ids": [8839, 8840, 8841, 8842, 11663, 11664, 11665, 13072, 13073],
+  "requirements": [
+   {"skill": "ATTACK", "level": 42},
+   {"skill": "STRENGTH", "level": 42},
+   {"skill": "DEFENCE", "level": 42},
+   {"skill": "HITPOINTS", "level": 42},
+   {"skill": "RANGED", "level": 42},
+   {"skill": "MAGIC", "level": 42},
+   {"skill": "PRAYER", "level": 22}
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Void_Knight_equipment \"To buy or equip any of the items (besides the seal), a player must have 42 Attack, Strength, Defence, Hitpoints, Ranged, and Magic, along with 22 Prayer.\" \"any of the items\" covers the elite pieces, which state no requirement of their own. Their params carry an extra 50 the article does not corroborate, so it is not modelled."
+ },
+ {
+  "ids": [12821, 12825],
+  "requirements": [
+   {"skill": "DEFENCE", "level": 75},
+   {"skill": "MAGIC", "level": 65},
+   {"skill": "PRAYER", "level": 70}
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Arcane_spirit_shield \"requires 75 Defence, 65 Magic and 70 Prayer to wield.\""
+ },
+ {
+  "ids": [22951],
+  "requirements": [
+   {"skill": "DEFENCE", "level": 70},
+   {"skill": "MAGIC", "level": 70},
+   {"skill": "RANGED", "level": 70}
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Boots_of_brimstone \"A Slayer level of 44, along with level 70 in Defence, Magic, and Ranged is required to wear them.\" Slayer is not a level this calculator tracks, so only the three combat levels gate it."
+ },
+ {
+  "ids": [25985, 27251, 27253],
+  "requirements": [
+   {"skill": "MAGIC", "level": 80},
+   {"skill": "DEFENCE", "level": 80},
+   {"skill": "PRAYER", "level": 80}
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Elidinis'_ward \"is a magical shield requiring 80 Magic, Defence, and Prayer to equip.\""
+ },
+ {
+  "ids": [26749, 26751, 26753, 26755, 26757, 26759],
+  "requirements": [
+   {"skill": "STRENGTH", "level": 70},
+   {"skill": "RANGED", "level": 70},
+   {"skill": "MAGIC", "level": 70}
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Calamity_chest \"It is part of the Calamity armour set, requiring level 70 Strength, Ranged, and Magic to be worn.\""
+ },
+ {
+  "ids": [29000, 29851],
+  "requirements": [
+   {"skill": "RANGED", "level": 75},
+   {"skill": "ATTACK", "level": 50},
+   {"skill": "STRENGTH", "level": 50}
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Eclipse_atlatl \"requires level 75 Ranged, 50 Attack, and 50 Strength to equip.\""
+ },
+ {
+  "ids": [31088, 31091, 31092, 31093, 31094, 31095, 31096, 31097],
+  "requirements": [
+   {"skill": "DEFENCE", "level": 80},
+   {"skill": "STRENGTH", "level": 80},
+   {"skill": "RANGED", "level": 80},
+   {"skill": "MAGIC", "level": 80}
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Avernic_treads \"are boots that require level 80 in Defence, Strength, Ranged, and Magic to wear.\""
+ },
+ {
+  "ids": [27110, 27111, 27112],
+  "requirements": [],
+  "source": "The Last Man Standing gloves carry a Defence figure that gates their quest unlock, not their use: https://oldschool.runescape.wiki/w/Rune_gloves \"While only 1 Defence is required to wear these gloves, and they can be acquired at a minimum of 13 Defence, it is impossible to equip them at this level.\""
+ }
+]

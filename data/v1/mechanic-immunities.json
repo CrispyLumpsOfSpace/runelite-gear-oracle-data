@@ -73,14 +73,18 @@
     "weaponSpecial": "BLISTERWOOD_STAKE"
    },
    {
-    "categoryNot": "RANGED",
+    "not": {
+     "category": "RANGED"
+    },
     "vampyreTier": 2,
     "worn": "ROD_OF_IVANDIS"
    },
    {
     "category": "MELEE",
     "weaponFlag": "vampyreBane",
-    "weaponSpecialNot": "ROD_OF_IVANDIS"
+    "not": {
+     "weaponSpecial": "ROD_OF_IVANDIS"
+    }
    },
    {
     "vampyreTier": 2,
@@ -117,15 +121,21 @@
   "immuneAny": [
    {
     "monsterClass": "nylocasIschyros",
-    "categoryNot": "MELEE"
+    "not": {
+     "category": "MELEE"
+    }
    },
    {
     "monsterClass": "nylocasToxobolos",
-    "categoryNot": "RANGED"
+    "not": {
+     "category": "RANGED"
+    }
    },
    {
     "monsterClass": "nylocasHagios",
-    "categoryNot": "MAGIC"
+    "not": {
+     "category": "MAGIC"
+    }
    }
   ],
   "styleBlanket": true
@@ -137,7 +147,9 @@
   "immuneAny": [
    {
     "monsterClass": "dusk",
-    "categoryNot": "MELEE"
+    "not": {
+     "category": "MELEE"
+    }
    }
   ],
   "styleBlanket": true
@@ -182,12 +194,16 @@
    {
     "monsterClass": "kamil",
     "category": "MAGIC",
-    "castElementNot": "FIRE"
+    "not": {
+     "castElement": "FIRE"
+    }
    },
    {
     "monsterClass": "fareed",
     "category": "MAGIC",
-    "castElementNot": "WATER"
+    "not": {
+     "castElement": "WATER"
+    }
    }
   ],
   "filterAny": [
@@ -230,7 +246,9 @@
      2456,
      6438
     ],
-    "categoryNot": "MELEE"
+    "not": {
+     "category": "MELEE"
+    }
    }
   ],
   "styleBlanket": true
@@ -255,7 +273,9 @@
      2141,
      2142
     ],
-    "categoryNot": "MELEE"
+    "not": {
+     "category": "MELEE"
+    }
    }
   ],
   "styleBlanket": true

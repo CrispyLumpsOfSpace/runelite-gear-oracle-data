@@ -39,7 +39,7 @@
 	{"type": "EARTHBOUND_TECPATL", "any": ["earthbound tecpatl"]},
 	{"type": "INFERNAL_TECPATL", "any": ["infernal tecpatl"]},
 	{"type": "TORAGS_HAMMERS", "any": ["^torag's hammers", "^torags hammers"]},
-	{"type": "DARK_BOW", "any": ["=dark bow", "^dark bow ("]},
+	{"type": "DARK_BOW", "any": ["=dark bow", "^dark bow (", "corrupted dark bow"]},
 	{"type": "SOULREAPER_AXE", "any": ["soulreaper axe"]},
 	{"type": "DRAGON_HUNTER_WAND", "any": ["dragon hunter wand"]},
 	{"type": "BARRONITE_MACE", "any": ["barronite mace"]},
