@@ -588,5 +588,29 @@
   },
   "extra": "stacks * (1 / (4 * 0.6)) * attackSeconds",
   "aggregateBoundSafe": true
+ },
+ {
+  "id": "FrostweaverSetCast",
+  "kind": "subEvaluate",
+  "source": "https://oldschool.runescape.wiki/w/Blue_moon_armour Frostweaver: \"20% chance to occur after successfully casting\" a qualifying spell (Bind or Ancient Ice; the trigger is the cast, not the freeze landing). The free hit is melee (stab), priced inside the MAGIC rotation by a sub-evaluation at MELEE_STAB as accuracy x E[hit | success] rather than averageHit, so timed effects don't re-trigger; the free hit does feel flat armour even though the cast that triggered it does not, so the expression reads the monster's armour directly. The bound claim: pieces are plain stats under any weapon but the blue moon spear, where the extra cast is additive and stays unpruned. Not modeled: special-attack weave, the melee hit's Strength experience.",
+  "when": {
+   "style": "MAGIC",
+   "setActive": "BLUE_MOON",
+   "expr": "cast.isAncientIceSpell"
+  },
+  "filterWhen": {
+   "style": "MAGIC"
+  },
+  "subStyle": "MELEE_STAB",
+  "extra": "subDps <= 0 ? 0 : 0.20 * (subAccuracy * expectedHitWithArmour(0, subMaxHit, monster.flatArmour))",
+  "bound": {
+   "items": [
+    "BLUE_MOON_HELM",
+    "BLUE_MOON_CHEST",
+    "BLUE_MOON_TASSETS"
+   ],
+   "factorExpr": "chunk.special('BLUE_MOON_SPEAR') ? veto() : 1"
+  },
+  "aggregateBoundSafe": true
  }
 ]
