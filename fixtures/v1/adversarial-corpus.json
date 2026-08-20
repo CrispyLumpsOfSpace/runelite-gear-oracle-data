@@ -502,7 +502,7 @@
   {
    "name": "salve-on-undead",
    "mechanics": [
-    "SlayerSalveModifier"
+    "SlayerSalveGroup"
    ],
    "monster": "Zombie",
    "items": [

@@ -612,5 +612,48 @@
    "factorExpr": "chunk.special('BLUE_MOON_SPEAR') ? veto() : 1"
   },
   "aggregateBoundSafe": true
+ },
+ {
+  "id": "SlayerSalveGroup",
+  "kind": "exclusiveGroup",
+  "source": "https://oldschool.runescape.wiki/w/Salve_amulet \"The salve amulet's bonuses against the undead do not stack with the black mask and slayer helmet's 16.67% attack and strength bonuses; wearing both will only apply the bonuses of the salve amulet.\" The higher single multiplier wins, covering accuracy and damage alike, applied as its own separately-floored stage. Magic differs: the salve (i)/(ei) joins the additive damage block (15/20 points; the un-imbued salve and salve (e) give no Magic bonus at all) while the black mask (i) stays its own floored stage and never stacks with it. The Dragon hunter wand's passive \"stacks with the Slayer helm (i) ... but not the salve amulet (i)\", so the salve contributes nothing while it runs. Bound: salve tops out at 1.20 x 1.20, slayer headgear at (7/6)^2, both firing only on undead or on task; a roll multiplier m raises hit chance by at most m, so acc x dmg is the DPS ceiling.",
+  "filterWhen": {
+   "anyOf": [
+    {
+     "targetAttr": "UNDEAD"
+    },
+    {
+     "exprFilter": "player.onSlayerTask"
+    }
+   ]
+  },
+  "let": {
+   "wandOverride": "style.magic && monster.attr('DRAGON') && worn('DRAGON_HUNTER_WAND')",
+   "salveActive": "monster.attr('UNDEAD') && !wandOverride",
+   "salve": "!salveActive ? 1 : worn('SALVE_AMULET_EI') ? 1.20 : worn('SALVE_AMULET_I') ? 1.15 : worn('SALVE_AMULET_E') ? (style.melee ? 1.20 : 1) : worn('SALVE_AMULET') ? (style.melee ? 1.15 : 1) : 1",
+   "helm": "!player.onSlayerTask || !wornFamily('slayerHelm') ? 1 : style.melee ? 7/6 : wornFamily('imbuedSlayerHeadgear') ? 1.15 : 1",
+   "magicSalvePercent": "!salveActive ? 0 : worn('SALVE_AMULET_EI') ? 20.0 : worn('SALVE_AMULET_I') ? 15.0 : 0"
+  },
+  "queries": {
+   "multiplier": "max(salve, helm)",
+   "salveMultiplier": "salve",
+   "slayerHelmMultiplier": "helm",
+   "magicSalveAdditivePercent": "magicSalvePercent",
+   "magicSlayerMultiplier": "magicSalvePercent > 0 ? 1 : (player.onSlayerTask && wornFamily('imbuedSlayerHeadgear') ? 1.15 : 1)",
+   "imbuedBlackMaskWins": "player.onSlayerTask && wornFamily('imbuedSlayerHeadgear') && salve == 1 ? 1 : 0"
+  },
+  "bound": {
+   "items": [
+    "SALVE_AMULET",
+    "SALVE_AMULET_E",
+    "SALVE_AMULET_I",
+    "SALVE_AMULET_EI",
+    "SLAYER_HELMET",
+    "SLAYER_HELMET_IMBUED",
+    "BLACK_MASK",
+    "BLACK_MASK_IMBUED"
+   ],
+   "factorExpr": "monster.attr('UNDEAD') || player.onSlayerTask ? (item.special('SALVE_AMULET') || item.special('SALVE_AMULET_E') || item.special('SALVE_AMULET_I') || item.special('SALVE_AMULET_EI') ? 1.44 : (7/6) * (7/6)) : 1"
+  }
  }
 ]

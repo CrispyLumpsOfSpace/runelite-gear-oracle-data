@@ -1613,5 +1613,25 @@
    "category": "RANGED",
    "addendDps": "!chunk.canFire || monster.poisonImmune ? 0 : 0.55 * (player.kandarinHardDiary ? 1.1 : 1) * (75.0 / 450.0)"
   }
+ },
+ {
+  "id": "MultiTargetSplash",
+  "kind": "averageHit",
+  "source": "https://oldschool.runescape.wiki/w/Chinchompa area-of-effect weapons damaging targets other than the one being calculated, over a 3x3 area; above targetCount 1 the reported number means DPS across the clump. One accuracy roll covers every target (a shared roll changes variance, not expectation); secondaries lose \"the boosts from Salve and Avarice\" but keep the black mask, which is why the ratio reads the group's two multipliers apart. PvM cap 11 for grey and red; the black one's extra target is the chinchompaTargetCap group of weapon-families.json. Not modeled: cleave/bounce weapons, PvP target caps, whether the enemies are actually stacked.",
+  "when": {
+   "category": "RANGED",
+   "weaponFlag": "chinchompa"
+  },
+  "filterWhen": {
+   "category": "RANGED",
+   "exprFilter": "player.targetCount > 1"
+  },
+  "let": {
+   "targets": "min(max(1, player.targetCount), weapon.familyValue('chinchompaTargetCap', 11))",
+   "avarice": "modifierDamageFactor('AmuletOfAvarice')",
+   "ratio": "avarice != 1 ? 1 / avarice : groupQuery('SlayerSalveGroup', 'slayerHelmMultiplier') / max(groupQuery('SlayerSalveGroup', 'salveMultiplier'), groupQuery('SlayerSalveGroup', 'slayerHelmMultiplier'))"
+  },
+  "multiplierExpr": "targets <= 1 ? 1 : 1 + (targets - 1) * ratio",
+  "aggregateBoundSafe": true
  }
 ]
