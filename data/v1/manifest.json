@@ -11,10 +11,10 @@
   "equipment.json": "a123d25f9a04638641fcfcd7b35f6cf3a0b765366c81036fda90e80fb35b4254",
   "magic-base-hits.json": "46d5bf9c3033550d37578ffe8e5ee7dc838abeaa5a9ea77d4d6706e3a83a1439",
   "mechanic-gear.json": "68ef2c477043f4c26a5e9732d7b7a5ad50ababa06f7d33ae8c6a0c963340913e",
-  "mechanic-immunities.json": "2393811417ccee01b4152e3af578a407851099a5c15d9d559507060ed9b396f3",
+  "mechanic-immunities.json": "76c6a8d28c7553ffc6af2b0ec49fc7271b1e13e1e5e988ac4b9e4469073c95a5",
   "mechanic-monsters.json": "97b1f59c81d67be2dfb8ee44cdf1a87e50f514c5ad20e8689f0289a4fe989f5a",
   "mechanic-rows.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-  "mechanic-weapons.json": "66093a961145827bd52f5030459843da2a6c6f5bdd7d653e056e7a8c8770ae9f",
+  "mechanic-weapons.json": "c2cd87cd53406211e2ee07d9cb003d25e4a56d8197fd2e8d881869c30d887777",
   "meta.json": "1331f815be52dc4830068c4478a406a04a20ed730639d7e6d6075b8bd23c2422",
   "monster-families.json": "0a1c3def31aba04f9b35dec32d9a9d4a68cd7b0c5da4e7c6f80f86e9ba2320fb",
   "monsters.json": "0b95e8426aa720411c2cd86dd9cc6766b5bd93cace96919109d6f7b403818146",
@@ -29,7 +29,6 @@
   "special-attack-weapons.json": "35bb68802fbaf579a58358825a67cacecf9e3a0056210b1c10e3312becd6420a",
   "special-item-patterns.json": "1426c964e934146f4fc4b1f6cc6224fc94e2b049f904741eeac9863e28352f8c",
   "status-immunities.json": "50874e34a7b1f6ebd13aa6ddb4054a777c0aff01e4fbb76e12d17b05d4ff0f86",
-  "style-immunities.json": "db1375f324afc52da1c20539a736f8da3a84967260a9d54527eec4b2d886bc8c",
   "weapon-families.json": "fa5e548732380228f2d0d7d487a498ec8c614ef744ab7c9b06fd9b48df7a2632"
  }
 }

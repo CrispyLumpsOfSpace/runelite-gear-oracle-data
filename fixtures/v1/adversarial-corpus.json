@@ -2873,7 +2873,9 @@
   {
    "name": "aviansie-style-table",
    "mechanics": [
-    "StyleImmunityTable"
+    "AnimatedArmourMeleeOnly",
+    "WarriorsGuildCyclopesMeleeOnly",
+    "MotherMagicImmunity"
    ],
    "monster": "Aviansie",
    "items": [
