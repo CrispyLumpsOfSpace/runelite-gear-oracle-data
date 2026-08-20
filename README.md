@@ -6,6 +6,14 @@ each hitting the OSRS Wiki's API directly. Data lives apart from code, under the
 licences; the plugin repository ships none of these tables, keeping only two small built-in
 fallbacks of its own.
 
+The split is what lets the plugin's modelling move quickly and safely. Because the mechanic
+rows and combat tables are published here, a newly modelled mechanic or a corrected
+calculation reaches players on this repository's cadence — the day the content lands — under
+the validation ladder the pipeline and the plugin's test suite enforce, with no plugin release
+or Plugin Hub review in its path. It also keeps policy (which mechanics exist and what numbers
+they carry) out of the plugin, leaving it only the engine that evaluates them: modelling more
+mechanics costs zero tokens against the Hub's 200k-token review cap on the jar.
+
 A weekly GitHub Action fetches from the wiki, **validates before publishing** (shape, required
 fields, row-count collapse against the previous copy), and commits only what passed — so a
 broken wiki edit or an API schema change breaks this pipeline visibly instead of degrading
@@ -18,8 +26,10 @@ Clients read `master`; the weekly refresh lands on `staging`. CI force-pushes ea
 merging it is what serves the refresh to clients. To test staged data first, launch the plugin
 with `GEAR_ORACLE_DATA_BRANCH=staging` in its environment.
 
-Everything is published as **plain JSON, one row per line in a stable order**, so each refresh
-commit is a reviewable row-by-row diff rather than an opaque archive; clients receive it
+Everything is published as **plain JSON in a stable order**, so each refresh commit is a
+reviewable diff rather than an opaque archive: the pipeline-fetched files and the simpler hand
+tables put one row per line, and the hand-authored tables whose rows carry conditions and
+expressions are pretty-printed so a row's own fields diff line by line. Clients receive it
 gzip-compressed on the wire regardless.
 
 The bestiary is **minimised to what the game client cannot answer for itself**: mechanics the
@@ -39,7 +49,7 @@ values appear, though which fields carry an override is itself a product of it.
 | `data/v1/monsters.json` | The bestiary, minimised to what the game client's own cache cannot supply | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/equipment.json` | Weapon id → wiki combat category — the one item field the game client has no concept of; names and slots come from the client at runtime | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/mechanic-{weapons,gear,monsters,immunities}.json` | The engine's mechanic rows themselves, named apart from the bestiary's `monsters.json`. The plugin resolves these by id as it builds, so an absent copy leaves it with no mechanics until the fetch lands | [CC BY-NC-SA 3.0](data/LICENSE) |
-| `data/v1/mechanic-rows.json` | Additive mechanic rows, served to the plugin's row grammar. Empty until a row is published here | [CC BY-NC-SA 3.0](data/LICENSE) |
+| `data/v1/mechanic-rows.json` | Additive mechanic rows, served to the plugin's row grammar: these extend the four `mechanic-*` files above rather than replacing any of them | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{monster-families,weapon-families,damage-caps,equipment-sets,magic-base-hits,special-attack-weapons,potions,prayers}.json` | The overlay-served combat tables. The plugin bundles no copy of any of them, so the file published here is the table: it installs whole as the fetch lands, replacing whatever the last one left, and the plugin's table answers empty until then | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{status-immunities,slayer-finishers,slayer-equipment}.json` | Monster status immunities, Slayer finishing items, Slayer equipment requirements | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{always-max-hit-targets,required-weapon-immunities}.json` | Per-monster-id combat rules: guaranteed max hits, weapons a kill requires. Style immunities are ordinary rows of `mechanic-immunities.json` | [CC BY-NC-SA 3.0](data/LICENSE) |
@@ -75,7 +85,8 @@ This repository is data, not code, and each directory carries its own terms:
   outputs are the calculator's (GPL-3.0), and the resolved monster/item stat rows in each
   scenario reach the recording through the calculator's bundled wiki-derived data files
   (CC BY-NC-SA 3.0) — see `vectors/README.md`. The file's own `source` block records the
-  upstream commit and recording date. It exists solely to cross-validate Gear Oracle's
+  recording date; its `commit` field is a placeholder (`unknown (reused recording)`), so the
+  calculator revision behind these numbers is not pinned — see `vectors/README.md`. It exists solely to cross-validate Gear Oracle's
   independently implemented engine.
 - The scripts under `tools/` and the workflow are original and MIT-licensed (`tools/LICENSE`).
 
