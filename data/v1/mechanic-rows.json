@@ -1,1 +1,29 @@
-[]
+[
+ {
+  "id": "HolyWaterMaxHit",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/Holy_water \"Maximum Hit = floor(floor(0.5 + (Visible Ranged Level + 10) * (Ammo Ranged Strength + 64) / 640) * 1.6) + 5 (If fighting Nezikchened)\": its own formula off the visible level with a flat +10 stance term and the vial's own ranged strength of 12, which is why \"prayers such as Eagle Eye or Rigour will not\" raise it and \"the set effect of Void ranger armour\" does not apply - the replacement ceiling ignores the pipeline's max hit outright. The demons-only restriction is HolyWaterDemonsOnly's. Not modelled: the 5% Defence drain on a landed hit (asserted defence reductions are the player's to state, like the other drain weapons).",
+  "when": {
+   "category": "RANGED",
+   "weaponFamily": "holyWater",
+   "targetAttr": "DEMON"
+  },
+  "filterWhen": {
+   "category": "RANGED",
+   "targetAttr": "DEMON"
+  },
+  "let": {
+   "base": "idiv((player.rangedLevel + player.rangedBoost + 10) * (12 + 64) + 320, 640)"
+  },
+  "lo": "0",
+  "hi": "trunc(base * 1.6) + (monster.family('nezikchened') ? 5 : 0)",
+  "hidesItems": {
+   "family": "holyWater",
+   "category": "RANGED",
+   "targetAttrAny": [
+    "DEMON"
+   ]
+  },
+  "aggregateBoundSafe": true
+ }
+]
