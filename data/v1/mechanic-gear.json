@@ -529,5 +529,23 @@
    "expr": "player.markOfDarkness"
   },
   "value": "floor(base * floor((worn('PURGING_STAFF') ? 50 : 25) * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100)"
+ },
+ {
+  "id": "TumekenShadowScaling",
+  "kind": "magicScaling",
+  "source": "https://oldschool.runescape.wiki/w/Tumeken's_shadow \"the player's magic attack bonus and magic damage are multiplied by three from the player's worn equipment (four within the Tombs of Amascut), capped at a total of 100% magic damage\". Both rescales land on the summed gear stat before the roll and max hit are built; the staff's own base hit and 5-tick cycle stay rows in magic-base-hits.json.",
+  "when": {
+   "style": "MAGIC",
+   "worn": "TUMEKEN_SHADOW"
+  },
+  "accuracyBonus": "base * (player.inToA ? 4 : 3)",
+  "damagePercent": "min(100, base * (player.inToA ? 4 : 3))",
+  "hidesItems": {
+   "types": [
+    "TUMEKEN_SHADOW"
+   ],
+   "category": "MAGIC"
+  },
+  "aggregateBoundSafe": true
  }
 ]

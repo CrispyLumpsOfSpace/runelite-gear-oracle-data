@@ -326,7 +326,7 @@
   {
    "name": "tumeken-shadow-triple",
    "mechanics": [
-    "TumekenShadowFormula"
+    "TumekenShadowScaling"
    ],
    "monster": "Zulrah",
    "items": [

@@ -107,10 +107,7 @@
   "specialType": "TUMEKEN_SHADOW",
   "hit": "max(1, idiv(magicLevel, 3) + 1)",
   "speedTicks": 5,
-  "gearMultiplier": 3,
-  "raidGearMultiplier": 4,
-  "gearDamageCapPercent": 100,
-  "source": "https://oldschool.runescape.wiki/w/Tumeken's_shadow \"At level 0, the max hit is 1\" \u2014 the level's third plus one, floored at 1, on a 5-tick cycle. The staff also multiplies the loadout's magic attack bonus and magic damage percent by three, or by four inside the Tombs of Amascut, with the damage percent capped at 100; which of the two multiplies applies is a fight predicate and stays in TumekenShadowFormula."
+  "source": "https://oldschool.runescape.wiki/w/Tumeken's_shadow \"At level 0, the max hit is 1\" - the level's third plus one, floored at 1, on a 5-tick cycle. The staff's 3x/4x gear rescale is the TumekenShadowScaling row."
  },
  {
   "key": "HARMONISED_NIGHTMARE_STAFF",
