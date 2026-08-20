@@ -958,5 +958,42 @@
   "lo": "idiv(maxHit * 65, 100)",
   "hi": "maxHit",
   "aggregateBoundSafe": true
+ },
+ {
+  "id": "WardensP2MinWindow",
+  "kind": "flatShare",
+  "source": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies \"the player having 100% accuracy regardless of equipment; however, the damage dealt corresponds to the player's accuracy bonuses\": the damage window's floor, modifier% of the max hit, where the modifier lerps 15..40 with how far the attack roll clears a third of the defence roll (capped at a 42,000 delta). CITATION-NONE for the figures: the wiki gives the shape but no numbers, see gap 6 in docs/ENGINE-GAPS.md.",
+  "when": {
+   "monsterClass": "wardenP2"
+  },
+  "value": "idiv(base * clamp(15 + idiv(25 * max(roll.attack - idiv(roll.defence, 3), 0), 42000), 15, 40), 100)"
+ },
+ {
+  "id": "WardensP2MaxWindow",
+  "kind": "flatShare",
+  "source": "See WardensP2MinWindow: the window's ceiling, (modifier + 20)% of the max hit. Non-monotone roll arithmetic, which is why a wardens search runs with bound pruning off.",
+  "when": {
+   "monsterClass": "wardenP2"
+  },
+  "value": "idiv(base * (clamp(15 + idiv(25 * max(roll.attack - idiv(roll.defence, 3), 0), 42000), 15, 40) + 20), 100)"
+ },
+ {
+  "id": "AncientMultiTarget",
+  "kind": "averageHit",
+  "source": "https://oldschool.runescape.wiki/w/Ice_Barrage \"up to nine targets in a 3x3 grid around its primary target\"; a clean xN, since the engine models one monster so every target carries the same hit chance, and no source strips a damage bonus from a secondary target here. The Brimstone ring is the one bonus the primary does not share; its row dilutes itself across the clump so this stays a clean xN. Last with the other target-count entries: everything above scales damage to one enemy, this multiplies by how many there are. Not modeled: Smoke's 1/8 poison, Blood's leech, Ice's freeze, whether the player is in a multi-way area at all.",
+  "when": {
+   "category": "MAGIC"
+  },
+  "filterWhen": {
+   "category": "MAGIC",
+   "exprFilter": "player.targetCount > 1"
+  },
+  "multipliers": [
+   {
+    "num": "cast.targets",
+    "den": 1
+   }
+  ],
+  "aggregateBoundSafe": true
  }
 ]
