@@ -4,7 +4,7 @@
  "files": {
   "always-max-hit-targets.json": "8783bcf549fe2eceea49292e25f9a068d18d73072179e798de5fa4b84f60bea3",
   "combat-options.json": "9bba912c5e1a2e30356e48108ba59a5d718f5c855a0536cce6d8f8f6b67bbb94",
-  "combat-spells.json": "3980f3a017909394b193e052aaa5def1904dd262a2766d6b3a2bb100f2cef329",
+  "combat-spells.json": "0d18d055bc65201ea0cfdaba5f5cc8fc4eb921445f2a696b12786e0c06b0cc60",
   "damage-caps.json": "8f57570a843607cb8aa33714c8f45c03ceef99c8a10300eed32449ea6ab47818",
   "darts.json": "62e59a2bf9f617cf424f860fc4ed22ce27b302f2a31d86d50b64ba28231858b3",
   "encounter-gear.json": "b8761386389a05e402ff0efee178245e4728dd0710577081b82c66ce7d2fcd17",
@@ -16,7 +16,7 @@
   "mechanic-immunities.json": "f54c831af48ead09f62db656206e7bd60923ecfb29b9a15bceb51dd5992d2389",
   "mechanic-monsters.json": "49bf342e49ab043f773c40425da4945723774f84929cd6a494f9017bab61213d",
   "mechanic-rows.json": "0ad815508cf8de0f80db92ffb89bfd130d8c045c95e825b1606d08eb1de38265",
-  "mechanic-weapons.json": "cd62f0782b611ab09e4046c4555444236ad05bf1f250f09ff416bd1532dfdb96",
+  "mechanic-weapons.json": "c0d6aeb5c5747b2879c8c482ca4b66a5f09770cd3f23b54ebaaa2dcc35e4a3b9",
   "meta.json": "b4ba7292aa9601cafa04b9d3a8a44b4ef456edc469cc3dbd77f109e29dba5543",
   "monster-families.json": "aede51cd967d127afe647e67978ff5d3ff1da7297524dbc87dda387d2dc41898",
   "monsters.json": "389eabecf089d17b81052aef7e41b3ba7bf1d2d9782e3445c7b058adc53b389a",

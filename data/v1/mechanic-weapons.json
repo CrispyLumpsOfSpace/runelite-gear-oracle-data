@@ -885,14 +885,18 @@
      1,
      2
     ],
-    "minTargetSize": 2
+    "when": {
+     "targetSizeAtLeast": 2
+    }
    },
    {
     "fraction": [
      1,
      4
     ],
-    "minTargetSize": 3
+    "when": {
+     "targetSizeAtLeast": 3
+    }
    }
   ],
   "displaySum": true,
@@ -949,8 +953,7 @@
  },
  {
   "id": "KerisMechanics",
-  "kind": "proc",
-  "source": "Wiki: Keris \u2014 a 1/51 chance of puncturing a hole in their exoskeleton for triple damage against kalphites; the Keris partisan of breaching adds +33% accuracy. Scabarites aren't a tracked attribute, so this keys on KALPHITE only (docs/ENGINE-GAPS.md gap 1 covers the reference's 3x disagreement).",
+  "source": "Wiki: Keris \u2014 the Keris partisan of breaching adds +33% accuracy against kalphites. Scabarites aren't a tracked attribute, so this keys on KALPHITE only.",
   "when": {
    "category": "MELEE",
    "targetAttr": "KALPHITE"
@@ -966,21 +969,23 @@
     ]
    }
   ],
-  "proc": {
-   "when": {
-    "wornAny": [
-     "KERIS",
-     "KERIS_BREACH",
-     "KERIS_SUN",
-     "KERIS_AMASCUT"
-    ]
-   },
-   "chance": [
-    1,
-    51
-   ],
-   "damageMultiplier": 3
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "KerisPunctureProc",
+  "kind": "additiveHit",
+  "source": "Wiki: Keris \u2014 a 1/51 chance of puncturing a hole in their exoskeleton for triple damage against kalphites: chance times the doubled expectation over the ordinary roll (docs/ENGINE-GAPS.md gap 1 covers the reference's 3x disagreement).",
+  "when": {
+   "category": "MELEE",
+   "targetAttr": "KALPHITE",
+   "wornAny": [
+    "KERIS",
+    "KERIS_BREACH",
+    "KERIS_SUN",
+    "KERIS_AMASCUT"
+   ]
   },
+  "extra": "accuracy * (1/51) * 2 * (maxHit / 2)",
   "aggregateBoundSafe": true
  },
  {
@@ -1034,7 +1039,7 @@
  },
  {
   "id": "ArkanBladeSpecBurn",
-  "kind": "proc",
+  "kind": "additiveHit",
   "source": "https://oldschool.runescape.wiki/w/Arkan_blade \u2014 the special applies \"a strong burn effect to the target, dealing 10 damage over 40 ticks\". Suppressed by normal-tier burn immunity, not weak-only (contrast the eclipse moon burn).",
   "when": {
    "specWeapon": "ARKAN_BLADE",
@@ -1044,13 +1049,7 @@
    "specActive": "true",
    "category": "MELEE"
   },
-  "proc": {
-   "chance": [
-    1,
-    1
-   ],
-   "flat": 10
-  }
+  "extra": "accuracy * 10"
  },
  {
   "id": "GadderhammerShades",
