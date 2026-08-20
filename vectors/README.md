@@ -4,8 +4,9 @@
 [weirdgloop/osrs-dps-calc](https://github.com/weirdgloop/osrs-dps-calc), licensed
 **GPL-3.0** (see LICENSE). The scenarios are Gear Oracle's own
 (`tools/wiki-oracle/authored-scenarios.test.ts` in the plugin repository), executed against the
-calculator as a black box. The file's `source` block records the upstream commit and the
-recording date.
+calculator as a black box. The file's `source` block records the recording date and how the
+recording was made (which scenarios, through which script); its `commit` field is a placeholder
+(`unknown (reused recording)`), so the calculator revision behind these numbers is not pinned.
 
 Each vector carries two kinds of upstream content, under two sets of terms:
 
@@ -22,5 +23,8 @@ a wiki-data question, and redistribution of the file as a whole must satisfy bot
 schema, or test-case text from the calculator is included; the vector vocabulary is Gear
 Oracle's own.
 
-It exists solely to cross-validate Gear Oracle's independently implemented DPS engine
-(`WikiReferenceTest`); the engine contains no code from that project.
+It exists solely to cross-validate Gear Oracle's independently implemented DPS engine; the engine
+contains no code from that project. In the plugin repository it is read by `WikiReferenceTest`, which
+compares engine output against the recorded numbers; by `MechanicCoverageTest`, which walks the same
+battery to assert which mechanics it exercises; and by `VectorItemIdentityTest`, which checks that
+each vector item's name is the game's name for its id.

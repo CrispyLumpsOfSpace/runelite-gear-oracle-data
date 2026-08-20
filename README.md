@@ -3,7 +3,8 @@
 The datasets behind the [Gear Oracle](https://github.com/CrispyLumpsOfSpace/runelite-gear-oracle)
 RuneLite plugin, refreshed on a schedule so that plugin installs fetch from here instead of
 each hitting the OSRS Wiki's API directly. Data lives apart from code, under the data's own
-licences; the plugin repository ships no data at all.
+licences; the plugin repository ships none of these tables, keeping only two small built-in
+fallbacks of its own.
 
 A weekly GitHub Action fetches from the wiki, **validates before publishing** (shape, required
 fields, row-count collapse against the previous copy), and commits only what passed — so a
@@ -39,14 +40,15 @@ values appear, though which fields carry an override is itself a product of it.
 | `data/v1/equipment.json` | Weapon id → wiki combat category — the one item field the game client has no concept of; names and slots come from the client at runtime | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/mechanic-{weapons,gear,monsters,immunities}.json` | The engine's mechanic rows themselves, named apart from the bestiary's `monsters.json`. The plugin resolves these by id as it builds, so an absent copy leaves it with no mechanics until the fetch lands | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/mechanic-rows.json` | Additive mechanic rows, served to the plugin's row grammar. Empty until a row is published here | [CC BY-NC-SA 3.0](data/LICENSE) |
-| `data/v1/{monster-families,weapon-families,damage-caps,equipment-sets,magic-base-hits,magic-damage-pool,special-attack-weapons,potions,prayers}.json` | The nine overlay-served combat tables. Seeded from the plugin's bundled copies; a row published here extends a table, and one whose key a bundled row already holds is skipped | [CC BY-NC-SA 3.0](data/LICENSE) |
+| `data/v1/{monster-families,weapon-families,damage-caps,equipment-sets,magic-base-hits,special-attack-weapons,potions,prayers}.json` | The overlay-served combat tables. The plugin bundles no copy of any of them, so the file published here is the table: it installs whole as the fetch lands, replacing whatever the last one left, and the plugin's table answers empty until then | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/{status-immunities,slayer-finishers,slayer-equipment}.json` | Monster status immunities, Slayer finishing items, Slayer equipment requirements | [CC BY-NC-SA 3.0](data/LICENSE) |
-| `data/v1/{always-max-hit-targets,style-immunities,required-weapon-immunities}.json` | Per-monster-id combat rules: guaranteed max hits, style immunities, weapons a kill requires | [CC BY-NC-SA 3.0](data/LICENSE) |
+| `data/v1/{always-max-hit-targets,required-weapon-immunities}.json` | Per-monster-id combat rules: guaranteed max hits, weapons a kill requires. Style immunities are ordinary rows of `mechanic-immunities.json` | [CC BY-NC-SA 3.0](data/LICENSE) |
+| `data/v1/level-requirements.json` | Item level requirements for the ids the game cache's own item parameters cannot spell out | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/combat-spells.json` | Every castable spell: book, element, max hit, level and rune cost. A row here adds a spell the picker can choose, with no plugin release | [CC BY-NC-SA 3.0](data/LICENSE) |
-| `data/v1/{combat-options,runes}.json` | The game's Combat Options table per weapon category, and rune item ids with their names | [CC BY-NC-SA 3.0](data/LICENSE) |
+| `data/v1/{combat-options,runes,darts}.json` | The game's Combat Options table per weapon category, rune item ids with their names, and dart ids by the name the blowpipe's Check message spells | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/encounter-gear.json` | Per-encounter gear availability: which slots survive an arena that confiscates equipment, and which items it supplies that no bank can hold | [CC BY-NC-SA 3.0](data/LICENSE) |
 | `data/v1/special-item-patterns.json` | Name patterns that classify an item into the engine's special-weapon taxonomy | [CC BY-NC-SA 3.0](data/LICENSE) |
-| `data/v1/{setup-copy,setup-modifiers}.json` | The plugin's own UI labels and modifier list. Original authored content, not wiki-derived | [MIT](tools/LICENSE) |
+| `data/v1/{setup-copy,setup-modifiers,setup-drains}.json` | The plugin's own UI labels, modifier list, and the spec-drain spinners with the items they belong to. Original authored content, not wiki-derived | [MIT](tools/LICENSE) |
 | `data/v1/manifest.json` | Content hash of every runtime file. Clients fetch this one file per startup and re-download only the entries whose hash moved; regenerate with `tools/manifest.py` after any hand-publish | — |
 | `data/v1/meta.json` | Generation date, source, row counts | — |
 | `fixtures/v1/` | Test fixtures for the plugin's suite, including the bestiary's full-override variant (tests run without a game client) | [CC BY-NC-SA 3.0](fixtures/LICENSE) |
@@ -66,7 +68,7 @@ This repository is data, not code, and each directory carries its own terms:
   `api.php` Bucket API, and is redistributed under
   [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) — attribution,
   non-commercial and share-alike conditions travel with the files, and the published files
-  carry an in-band `_meta` block naming source, licence and retrieval date.
+  (monsters.json and equipment.json) carry an in-band `_meta` block naming source, licence and retrieval date.
 - `fixtures/v1/adversarial-corpus.json` is original authored test data (MIT, `tools/LICENSE`).
 - `vectors/vectors.json` records runs of
   [weirdgloop/osrs-dps-calc](https://github.com/weirdgloop/osrs-dps-calc): the computed

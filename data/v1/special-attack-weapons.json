@@ -119,7 +119,7 @@
 
 	{"key": "BURNING_CLAWS", "name": "Burning claws", "energy": 35, "attackStyle": "MELEE_SLASH", "accNum": 1,
 	 "accDen": 1, "dmgNum": 1, "dmgDen": 1, "shape": "BURNING_CLAWS_CASCADE",
-	 "source": "Burning Barrage: 35% energy, three sequential accuracy rolls with widening-then-lowering damage windows (75-175%, 50-150%, 25-125% of max), three hitsplats, and a burn whose chance scales with WHICH roll landed (15%/30%/45% per splat) — see BurningClawsSpecDistribution for the full transcription. Rolls the weapon's own slash/stab defence, so no override."},
+	 "source": "Burning Barrage: 35% energy, three sequential accuracy rolls with widening-then-lowering damage windows (75-175%, 50-150%, 25-125% of max), three hitsplats, and a burn whose chance scales with WHICH roll landed (15%/30%/45% per splat) — see BurningClawsSpec for the full transcription. Rolls the weapon's own slash/stab defence, so no override."},
 
 	{"key": "DRAGON_CLAWS", "name": "Dragon claws", "energy": 50, "attackStyle": "MELEE_SLASH", "accNum": 1, "accDen": 1,
 	 "dmgNum": 1, "dmgDen": 1, "shape": "CLAWS_CASCADE", "defenceStyleOverride": "MELEE_SLASH",
