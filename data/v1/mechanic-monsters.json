@@ -627,5 +627,42 @@
   },
   "level": "monster.defenceLevel",
   "aggregateBoundSafe": true
+ },
+ {
+  "id": "RespiratorySystemDemonbane",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/Abyssal_Sire/Strategies demonbane weapons one-shot a respiratory system for its full hitpoints; the accuracy roll still happens, since the wiki guarantees the damage of a hit that lands rather than that it lands. Ahead of the plain row so the demonbane branch matches first.",
+  "when": {
+   "monsterClass": "respiratorySystem",
+   "usingDemonbane": "true"
+  },
+  "filterWhen": {
+   "monsterClass": "respiratorySystem"
+  },
+  "lo": "monster.hitpoints",
+  "hi": "monster.hitpoints",
+  "ignoresFlatArmour": true,
+  "hidesItems": {
+   "types": [
+    "ARCLIGHT",
+    "EMBERLIGHT",
+    "DARKLIGHT",
+    "SILVERLIGHT",
+    "SCORCHING_BOW"
+   ],
+   "family": "demonbaneClaws"
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "RespiratorySystem",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/Abyssal_Sire/Strategies the four respiratory systems' damage rules replace the normal 0..max roll: a minimum hit of trunc(max / 2), so the roll is uniform over min..max. Not modeled: the fight's phases and vent stun timing (no timeline).",
+  "when": {
+   "monsterClass": "respiratorySystem"
+  },
+  "lo": "idiv(maxHit, 2)",
+  "hi": "maxHit",
+  "aggregateBoundSafe": true
  }
 ]

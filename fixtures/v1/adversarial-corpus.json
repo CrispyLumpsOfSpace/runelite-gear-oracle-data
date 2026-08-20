@@ -2772,7 +2772,8 @@
   {
    "name": "respiratory-system",
    "mechanics": [
-    "RespiratorySystem"
+    "RespiratorySystem",
+    "RespiratorySystemDemonbane"
    ],
    "monster": "Respiratory system",
    "items": [
@@ -2782,6 +2783,14 @@
      "aslash": 90,
      "str": 85,
      "aspeed": 4
+    },
+    {
+     "name": "Silverlight",
+     "slot": "WEAPON",
+     "aslash": 18,
+     "str": 12,
+     "aspeed": 4,
+     "specialType": "SILVERLIGHT"
     }
    ]
   },

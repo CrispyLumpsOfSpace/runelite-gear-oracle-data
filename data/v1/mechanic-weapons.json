@@ -1178,5 +1178,36 @@
   },
   "accuracy": "loadout.voidActive ? min(1, chance * 1.45) : chance",
   "aggregateBoundSafe": true
+ },
+ {
+  "id": "VoidwakerSpecDistribution",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage between 50-150% of the wielder's maximum melee hit\", ignoring flat armour; the boss damage cap still applies. Accuracy is set to 1.0 by VoidwakerGuaranteedAccuracy; an always-max-hit target post-processes the spec distribution to one certain hitsplat at the ceiling.",
+  "when": {
+   "specShape": "VOIDWAKER"
+  },
+  "filterWhen": {
+   "specActive": "true",
+   "category": "MELEE"
+  },
+  "lo": "idiv(maxHit, 2)",
+  "hi": "maxHit + idiv(maxHit, 2)",
+  "ignoresFlatArmour": true,
+  "alwaysMaxHitYieldsCeiling": true
+ },
+ {
+  "id": "FlatUniformSpecDistribution",
+  "kind": "rollWindow",
+  "source": "A special attack whose damage is a guaranteed uniform roll over a range the spec row states outright, owing nothing to the wielder's max hit: the Dawnbringer's Pulsate, which \"magic damage gear bonuses, prayer and base magic level/boosts do not affect\" (https://oldschool.runescape.wiki/w/Dawnbringer). Flat armour is not applied, as for the other guaranteed magic special; the damage cap still is.",
+  "when": {
+   "specShape": "FLAT_UNIFORM"
+  },
+  "filterWhen": {
+   "specActive": "true"
+  },
+  "lo": "spec.flatMin",
+  "hi": "spec.flatMax",
+  "ignoresFlatArmour": true,
+  "alwaysMaxHitYieldsCeiling": true
  }
 ]
