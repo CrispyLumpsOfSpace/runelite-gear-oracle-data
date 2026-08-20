@@ -1,270 +1,1630 @@
 [
-	{"id": "WildernessWeapons",
-	 "source": "https://oldschool.runescape.wiki/w/Craw's_bow \"an additional 50% ranged accuracy and damage boost is applied when attacking any NPC in the Wilderness, consuming 1 ether per attack whether the player hits or not.\" The ether drain is not modeled.",
-	 "when": {"inWilderness": "true"},
-	 "accuracy": [
-		{"when": {"category": "RANGED", "wornAny": ["CRAWS_BOW", "WEBWEAVER_BOW"]}, "factor": [3, 2]},
-		{"when": {"category": "MELEE", "worn": "VIGGORAS_CHAINMACE"}, "factor": [3, 2]},
-		{"when": {"category": "MAGIC", "worn": "ACCURSED_SCEPTRE"}, "factor": [3, 2]}],
-	 "damage": [
-		{"when": {"category": "RANGED", "wornAny": ["CRAWS_BOW", "WEBWEAVER_BOW"]}, "factor": [3, 2]},
-		{"when": {"category": "MELEE", "worn": "VIGGORAS_CHAINMACE"}, "factor": [3, 2]},
-		{"when": {"category": "MAGIC", "worn": "ACCURSED_SCEPTRE"}, "factor": [3, 2]}],
-	 "slayerAdditiveTwentieths": 10,
-	 "aggregateBoundSafe": true},
-
-	{"id": "DragonHunterWeapons",
-	 "hidesItems": {"types": ["DRAGON_HUNTER_CROSSBOW", "DRAGON_HUNTER_LANCE"], "targetAttrAny": ["DRAGON"]},
-	 "source": "https://oldschool.runescape.wiki/w/Dragon_hunter_lance \"its 20% increased accuracy and damage when fighting draconic creatures\"; the crossbow's +30% accuracy / +25% damage per its own article, its +25% folding into the imbued black mask stage as 5 twentieths.",
-	 "when": {"targetAttr": "DRAGON"},
-	 "filterWhen": {"targetAttr": "DRAGON", "categoryNot": "MAGIC"},
-	 "accuracy": [
-		{"when": {"category": "RANGED", "worn": "DRAGON_HUNTER_CROSSBOW"}, "factor": [13, 10]},
-		{"when": {"category": "MELEE", "worn": "DRAGON_HUNTER_LANCE"}, "factor": [6, 5]}],
-	 "damage": [
-		{"when": {"category": "RANGED", "worn": "DRAGON_HUNTER_CROSSBOW"}, "factor": [5, 4]},
-		{"when": {"category": "MELEE", "worn": "DRAGON_HUNTER_LANCE"}, "factor": [6, 5]}],
-	 "slayerAdditiveTwentieths": 5,
-	 "aggregateBoundSafe": true},
-
-	{"id": "DragonHunterWand",
-	 "source": "https://oldschool.runescape.wiki/w/Dragon_hunter_wand — +75% magic accuracy and +40% magic damage against draconic creatures. Stacks with Slayer helm (i) and Void, but not salve amulet (i); SlayerSalveModifier suppresses the salve while this row applies.",
-	 "when": {"style": "MAGIC", "targetAttr": "DRAGON", "worn": "DRAGON_HUNTER_WAND"},
-	 "accuracy": [{"factor": [7, 4]}],
-	 "damage": [{"factor": [7, 5]}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "VampyreBaneDamage",
-	 "hidesItems": {"types": ["BLISTERWOOD_FLAIL", "BLISTERWOOD_STAKE", "BLISTERWOOD_SICKLE", "HALLOWED_FLAIL",
-		"SUNSPEAR", "ROD_OF_IVANDIS", "IVANDIS_FLAIL"],
-	 "targetAttrAny": ["VAMPYRE_1", "VAMPYRE_2", "VAMPYRE_3"]},
-	 "source": "Battery-pinned per-weapon figures pending wiki or in-game confirmation (docs/ENGINE-GAPS.md open gap: Mod Ed's tweets of 6 and 8 Jun 2020 agree on damage but contradict each other on Blisterwood accuracy, 10% vs 5%). Deliberately not style-gated: the Blisterwood stake is thrown. Cascades are first-match alternatives, not stacking effects, and the accuracy table does not align with the damage one.",
-	 "when": {"monsterClass": "vampyre"},
-	 "accuracy": [
-		{"when": {"wornAny": ["HALLOWED_FLAIL", "SUNSPEAR"]}, "factor": [5, 4]},
-		{"when": {"wornAny": ["BLISTERWOOD_FLAIL", "BLISTERWOOD_SICKLE"]}, "factor": [21, 20]}],
-	 "damage": [
-		{"when": {"worn": "SUNSPEAR"}, "factor": [3, 2]},
-		{"when": {"wornAny": ["BLISTERWOOD_FLAIL", "HALLOWED_FLAIL", "BLISTERWOOD_STAKE"]}, "factor": [5, 4]},
-		{"when": {"worn": "IVANDIS_FLAIL"}, "factor": [6, 5]},
-		{"when": {"worn": "BLISTERWOOD_SICKLE"}, "factor": [23, 20]},
-		{"when": {"worn": "ROD_OF_IVANDIS"}, "factor": [11, 10]}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "GolemBaneWeapons",
-	 "source": "https://oldschool.runescape.wiki/w/Barronite_mace \"a 15% damage and accuracy bonus against golems\" — deliberately contradicted: damage only, no accuracy bonus at all. Granite hammer +30% accuracy and damage per its article.",
-	 "when": {"targetAttr": "GOLEM"},
-	 "accuracy": [{"when": {"worn": "GRANITE_HAMMER"}, "factor": [13, 10]}],
-	 "damage": [
-		{"when": {"worn": "GRANITE_HAMMER"}, "factor": [13, 10]},
-		{"when": {"worn": "BARRONITE_MACE"}, "factor": [23, 20]}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "KalphiteBaneDamage",
-	 "hidesItems": {"types": ["KERIS", "KERIS_SUN", "KERIS_BREACH", "KERIS_AMASCUT"], "targetAttrAny": ["KALPHITE"]},
-	 "source": "https://oldschool.runescape.wiki/w/Keris \"It deals 33% bonus damage against all kalphites and scabarites\"; https://oldschool.runescape.wiki/w/Keris_partisan_of_amascut \"this variant has a damage bonus of 15%, down from the base weapon's 33%\". Scabarites are not a tracked attribute, so this keys on KALPHITE only.",
-	 "when": {"category": "MELEE", "targetAttr": "KALPHITE", "weaponFlag": "kalphitebane"},
-	 "damage": [
-		{"when": {"weaponSpecial": "KERIS_AMASCUT"}, "factor": [23, 20]},
-		{"factor": [133, 100]}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "LeafyBaneDamage",
-	 "hidesItems": {"types": ["LEAF_BLADED_BATTLEAXE", "LEAF_BLADED_WEAPON"], "targetAttrAny": ["LEAFY"]},
-	 "source": "https://oldschool.runescape.wiki/w/Leaf-bladed_battleaxe \"it has an added 17.5% damage, stacking with the Slayer helmet.\"",
-	 "when": {"category": "MELEE", "targetAttr": "LEAFY", "worn": "LEAF_BLADED_BATTLEAXE"},
-	 "damage": [{"factor": [47, 40]}]},
-
-	{"id": "SmokeStaffBonus",
-	 "source": "https://twitter.com/JagexAsh/status/1791070064369647838 — the smoke battlestaff, mystic smoke staff and Twinflame staff grant \"a 10% increase in accuracy and damage when casting spells from the standard spellbook\"; Ancient Magicks get nothing. Only the accuracy half is a floored stage of its own: the damage half is a row of the additive gear-magic-damage pool. With a magic salve on an undead target the oracle can differ by a point of attack roll — it pools accuracy and floors once where this engine floors per stage, and no vector covers it.",
-	 "when": {"style": "MAGIC", "weaponFamily": "smokeStaff", "spellBook": "STANDARD"},
-	 "accuracy": [{"factor": [11, 10]}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "ChinchompaDistanceAccuracy",
-	 "source": "https://twitter.com/JagexAsh/status/761964699646828544 \"If you chose the short fuse, 0-3 gives you full accuracy, 4-6 gives reduced, 7+ gives bad, etc.\"; https://twitter.com/JagexAsh/status/993196171677126661 \"Medium fuses 0-3 tiles and 7+ tiles are 75%, not 50%. It's applied to the accuracy/defence roll when the attack is cast, like armour bonuses are.\" Short, Medium and Long fuse ARE the Accurate, Rapid and Longrange stances, so the distance is the only new input; the factors are quarters, exact in binary, so the floored stage loses nothing. Not modelled: the shared accuracy roll and the 3x3 splash, which are MultiTargetSplash's.",
-	 "when": {"category": "RANGED", "weaponFamily": "chinchompa"},
-	 "filterWhen": {"category": "RANGED"},
-	 "accuracy": [
-		{"when": {"stance": "ACCURATE", "fuseDistanceMax": 3}, "factor": [1, 1]},
-		{"when": {"stance": "ACCURATE", "fuseDistanceMin": 7}, "factor": [1, 2]},
-		{"when": {"stance": "ACCURATE"}, "factor": [3, 4]},
-		{"when": {"stance": "LONGRANGE", "fuseDistanceMin": 7}, "factor": [1, 1]},
-		{"when": {"stance": "LONGRANGE", "fuseDistanceMax": 3}, "factor": [1, 2]},
-		{"when": {"stance": "LONGRANGE"}, "factor": [3, 4]},
-		{"when": {"fuseDistanceMax": 3}, "factor": [3, 4]},
-		{"when": {"fuseDistanceMin": 7}, "factor": [3, 4]},
-		{"factor": [1, 1]}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "GodswordSpecBaseDamage",
-	 "source": "https://oldschool.runescape.wiki/w/Godsword \"doubling effective accuracy and increase effective strength by 10%\". Floored separately from the per-weapon spec stage: the Bandos godsword applies x11/10 twice, which is the wiki's +21% — one combined factor could not produce it.",
-	 "when": {"specGodsword": "true"},
-	 "damage": [{"factor": [11, 10]}]},
-
-	{"id": "DawnbringerMechanics", "kind": "guaranteed",
-	 "source": "https://oldschool.runescape.wiki/w/Dawnbringer \"the Dawnbringer ignores accuracy rolls, meaning the player will always deal successful hits, even when at or below -64 Magic attack bonus.\" Functions only in the Verzik P1 fight; useless — modelled as immune — against everything else.",
-	 "any": [{"worn": "DAWNBRINGER", "monsterClass": "verzikPhaseOne"}],
-	 "immuneAny": [{"worn": "DAWNBRINGER", "monsterClass": "!verzikPhaseOne"}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "VoidwakerGuaranteedAccuracy", "kind": "guaranteed",
-	 "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage\" — the spec never rolls accuracy; its damage window is VoidwakerSpecDistribution's.",
-	 "any": [{"specShape": "VOIDWAKER"}]},
-
-	{"id": "DemonBaneWeapons",
-	 "hidesItems": {"types": ["ARCLIGHT", "EMBERLIGHT", "DARKLIGHT", "SILVERLIGHT"], "targetAttrAny": ["DEMON"]},
-	 "source": "https://oldschool.runescape.wiki/w/Demonbane_weapons — Arclight and Emberlight +70%, Darklight and Silverlight +60%, the burning and bone claws +5%, on accuracy and damage alike, Melee only. Each percentage is scaled by how much demonbane the target actually takes and truncated as in game, so an Arclight's 70% is a 49% bonus against Duke Sucellus — the scaling applies to the percentage, not to the resulting hit.",
-	 "when": {"category": "MELEE", "targetAttr": "DEMON"},
-	 "scaledPercent": {"group": "demonbaneVulnerability", "default": 100},
-	 "accuracy": [
-		{"when": {"wornAny": ["ARCLIGHT", "EMBERLIGHT"]}, "percent": 70},
-		{"when": {"wornAny": ["DARKLIGHT", "SILVERLIGHT"]}, "percent": 60},
-		{"when": {"weaponFamily": "demonbaneClaws"}, "percent": 5}],
-	 "damage": [
-		{"when": {"wornAny": ["ARCLIGHT", "EMBERLIGHT"]}, "percent": 70},
-		{"when": {"wornAny": ["DARKLIGHT", "SILVERLIGHT"]}, "percent": 60},
-		{"when": {"weaponFamily": "demonbaneClaws"}, "percent": 5}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "ScorchingBow",
-	 "source": "https://oldschool.runescape.wiki/w/Scorching_bow — +30% Ranged accuracy and damage against demons, scaled by the target's demonbane vulnerability like any bane percentage. Six twentieths is the ordinary-demon figure for the imbued black mask fold-in: unlike the other members of that stage this percentage is scaled per demon (21% on Duke Sucellus, 36% on Yama) and those do not land on whole twentieths, the unit the fold-in is defined over. If the combination ever needs to be exact the fix is a finer unit, not a per-weapon fudge.",
-	 "when": {"category": "RANGED", "targetAttr": "DEMON", "worn": "SCORCHING_BOW"},
-	 "scaledPercent": {"group": "demonbaneVulnerability", "default": 100},
-	 "accuracy": [{"percent": 30}],
-	 "damage": [{"percent": 30}],
-	 "slayerAdditiveTwentieths": 6,
-	 "aggregateBoundSafe": true},
-
-	{"id": "ColossalBladeBonus", "kind": "flatDamage",
-	 "source": "https://oldschool.runescape.wiki/w/Colossal_blade \"increases the wielder's maximum hit against larger enemies\" — +2 per size of the target, capped at +10.",
-	 "when": {"worn": "COLOSSAL_BLADE"},
-	 "filterWhen": {"category": "MELEE"},
-	 "flat": {"inputs": ["targetSize"], "mul": 2, "max": 10},
-	 "aggregateBoundSafe": true},
-
-	{"id": "RatbaneWeapons", "kind": "flatDamage",
-	 "source": "https://oldschool.runescape.wiki/w/Bone_mace \"it is effective against all types of rats by adding 10 damage to the player's maximum hit\"; \"Looks like a static +10 in the code, from what I can see.\"; \"The mace cannot be used against any other type of monster (including manual cast spells)\". The flat bonus lands on the raw base hit so set bonuses scale it; the Bone staff's +10 is already in its powered-staff base hit, which is why Magic is excluded here. The filter is deliberately unnarrowed: the immunity half depends on what is wielded, not on the monster alone.",
-	 "when": {"targetAttr": "RAT", "categoryNot": "MAGIC", "weaponFamily": "ratbane"},
-	 "filterWhen": {},
-	 "flat": 10,
-	 "immuneAny": [{"targetAttrNot": "RAT", "weaponFamily": "ratbane"}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "TonalzticsOfRalos", "kind": "sequence",
-	 "source": "https://oldschool.runescape.wiki/w/Multi-hit_weapons \"Each hit deals 0-75% of total weapon damage.\"; https://oldschool.runescape.wiki/w/Tonalztics_of_ralos \"When charged, the weapon will hit twice, with two independent damage rolls\". The three quarters apply per hit whether charged or not, so the damage stage keys on merely HOLDING the glaives while the second throw keys on the charged form — an uncharged pair is strictly worse than an ordinary weapon, and the engine has to be able to say so. The displayed ceiling reports both throws together.",
-	 "whenAny": [{"category": "RANGED", "weaponFamily": "chargedTonalztics"}],
-	 "filterWhen": {"category": "RANGED"},
-	 "damage": [{"when": {"category": "RANGED", "worn": "TONALZTICS_OF_RALOS"}, "factor": [3, 4]}],
-	 "splats": [{}, {}],
-	 "displaySum": true,
-	 "aggregateBoundSafe": true},
-
-	{"id": "TwoHitSpecDistribution", "kind": "sequence",
-	 "source": "Two-hit special attacks. https://oldschool.runescape.wiki/w/Abyssal_dagger \"A single attack roll is performed, meaning that either both hits are successful, or both hits miss\" — where the dragon dagger rolls each hit separately, which is the only thing separating the two shapes. Same expectation, different distributions: both are recorded so variance and percentile readouts keep the distinction. Each hitsplat takes flat armour and the boss cap independently.",
-	 "whenAny": [{"specShape": "TWO_INDEPENDENT_HITS"}, {"specShape": "TWO_HITS_SINGLE_ROLL"}],
-	 "filterWhen": {"specActive": "true", "category": "MELEE"},
-	 "alwaysMaxHitYields": "displayed",
-	 "splats": [{}, {}],
-	 "displaySum": true, "breakdown": true},
-
-	{"id": "GraniteHammerFlatBonus", "kind": "sequence",
-	 "source": "https://oldschool.runescape.wiki/w/Granite_hammer \"guaranteeing 5 additional damage\" — even on a miss, so the expectation is accuracy * E[roll] + 5 rather than accuracy * (E[roll] + 5), which is why this is a shape and not a damage factor. The roll underneath takes no accurate-0-lands-as-1 raise: that rule is vacuous once 5 is guaranteed.",
-	 "when": {"specShape": "FLAT_BONUS_EVEN_ON_MISS"},
-	 "filterWhen": {"specActive": "true", "category": "MELEE"},
-	 "alwaysMaxHitYields": "effective",
-	 "splats": [{"unraised": true}, {"flat": 5, "accuracyPower": 0}]},
-
-	{"id": "SecondSpellCast", "kind": "sequence",
-	 "source": "https://oldschool.runescape.wiki/w/Twinflame_staff — the staff fires a second spell \"dealing 40% of the damage dealt by the first, rounded down\", every cast rather than as a proc, both striking the SAME target. It doubles elemental spells \"excluding Strike and Surge spells\" and casts on 6 ticks where every other staff takes 5. The second hitsplat gets NO accurate-0-lands-as-1 raise, unlike Karil's: the wiki states no rule and only this reading matches the oracle (docs/ENGINE-GAPS.md). The Strike/Surge exclusion is stated so the auto-picker can weigh the second cast where it applies and not where it does not. Not modelled: the staff's separate +10% standard-spellbook accuracy and damage, auto spell swap, rune and experience costs.",
-	 "whenAny": [
-		{"style": "MAGIC", "worn": "TWINFLAME_STAFF", "spellFamily": "boltBlastOrWave"}],
-	 "filterWhen": {"style": "MAGIC"},
-	 "speed": {"style": "MAGIC", "weapon": "TWINFLAME_STAFF", "ticks": 6},
-	 "splats": [{}, {"ofRoll": true, "fraction": [4, 10], "raiseZero": false}],
-	 "accuracyOnce": true,
-	 "displaySum": true,
-	 "aggregateBoundSafe": true},
-
-	{"id": "SeekingArrowMinimum", "kind": "sequence",
-	 "source": "https://oldschool.runescape.wiki/w/Update:The_Blood_Moon_Rises — seeking arrows carry \"a minimum hit of 3\", CLAMPED per roll (a rolled 1 or 2 lands as 3) rather than shifting the range, which is what separates them from sunfire runes. The clamp lands before flat armour and after accuracy, so a miss is still a miss. Name-identified, and the arrows must be ones the weapon can actually fire — arrows it cannot never leave the quiver.",
-	 "when": {"category": "RANGED", "ammoFamily": "seekingArrow", "ammoCompatible": true},
-	 "filterWhen": {"category": "RANGED"},
-	 "splats": [{"damageFloor": 3}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "DarkBowMechanic", "kind": "sequence",
-	 "source": "https://oldschool.runescape.wiki/w/Dark_bow \"fires two arrows per attack which roll independent accuracy checks\" — neither arrow is halved, unlike the twin weapons, and the displayed ceiling is both together.",
-	 "when": {"category": "RANGED", "worn": "DARK_BOW"},
-	 "splats": [{}, {}],
-	 "displaySum": true, "breakdown": true,
-	 "aggregateBoundSafe": true},
-
-	{"id": "SplitHitWeaponMechanic", "kind": "sequence",
-	 "source": "https://oldschool.runescape.wiki/w/Sulphur_blades \"it performs two independently rolled hits per attack\"; \"The maximum damage of each hit is determined by calculating the combined max hit as normal and dividing it by two.\" Five melee weapons (sulphur blades, glacial temotli, earthbound tecpatl, infernal tecpatl, Torag's hammers) and one Ranged weapon (King's barrage) share the arithmetic; the first hit floors and the second takes the remainder. No style gate: every weapon in the set is usable in exactly one style, so holding one IS the gate.",
-	 "when": {"wornAny": ["SULPHUR_BLADES", "GLACIAL_TEMOTLI", "EARTHBOUND_TECPATL",
-		"INFERNAL_TECPATL", "TORAGS_HAMMERS", "KINGS_BARRAGE"]},
-	 "filterWhen": {"categoryNot": "MAGIC"},
-	 "splats": [{"fraction": [1, 2]}, {"remainder": true}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "DualMacuahuitlMechanic", "kind": "sequence",
-	 "source": "https://oldschool.runescape.wiki/w/Dual_macuahuitl \"dealing damage in two hitsplats, with both hitsplats having their max hit halved\" — one tick apart, and the accuracy checks are sequential rather than independent: the second hit rolls only if the first landed.",
-	 "when": {"category": "MELEE", "worn": "DUAL_MACUAHUITL"},
-	 "splats": [{"fraction": [1, 2]}, {"remainder": true, "accuracyPower": 2}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "ScytheOfViturMechanic", "kind": "sequence",
-	 "source": "https://oldschool.runescape.wiki/w/Scythe_of_vitur \"A 2x2 monster (such as Vardorvis) will be hit twice per attack, while a 3x3 or larger monster (such as dragons and Duke Sucellus) will be hit three times per attack.\" 100% / 50% / 25% of the max hit, with flat armour applying per hit against each hit's own ceiling rather than once against the combined one.",
-	 "when": {"category": "MELEE", "worn": "SCYTHE_OF_VITUR"},
-	 "splats": [{}, {"fraction": [1, 2], "minTargetSize": 2}, {"fraction": [1, 4], "minTargetSize": 3}],
-	 "displaySum": true, "breakdown": true,
-	 "aggregateBoundSafe": true},
-
-	{"id": "HallowfellCleave", "kind": "sequence",
-	 "source": "https://oldschool.runescape.wiki/w/Hallowfell — cleaves through nearby enemies for up to 50% max hit each, up to two additional unique enemies. \"Unique\" is load-bearing: large enemies are one target. The cleave rides the primary hit landing rather than rolling its own accuracy, which is what produces the wiki's 100/50/50. Out of scope: the five-tile cleave shape, and the removed multi-combat-mode attack styles.",
-	 "when": {"category": "MELEE", "worn": "HALLOWFELL"},
-	 "splats": [{}, {"ofRoll": true, "fraction": [1, 2], "count": {"kind": "PER_EXTRA_TARGET", "value": 2}}],
-	 "accuracyOnce": true,
-	 "aggregateBoundSafe": true},
-
-	{"id": "VenatorBowBounce", "kind": "sequence",
-	 "source": "https://oldschool.runescape.wiki/w/Venator_bow \"the arrow will try to bounce to another target near the first\"; \"the attack can bounce again\"; \"a max hit equal to two-thirds of the original max hit, rounded down\". Each bounce rolls its own accuracy, and two targets are enough for both bounces (the second may return to the first). The displayed ceiling stays the clicked target's, since the bounce direction is unknown. Charge-dependent: the uncharged bow is an ordinary bow with no special type. Not modelled: the two-tile bounce geometry, charge consumption, per-bounce salve interactions.",
-	 "when": {"category": "RANGED", "worn": "VENATOR_BOW"},
-	 "splats": [{}, {"fraction": [2, 3], "count": {"kind": "ANY_EXTRA_TARGET", "value": 2}}],
-	 "aggregateBoundSafe": true},
-
-	{"id": "KerisMechanics", "kind": "proc",
-	 "source": "Wiki: Keris — a 1/51 chance of puncturing a hole in their exoskeleton for triple damage against kalphites; the Keris partisan of breaching adds +33% accuracy. Scabarites aren't a tracked attribute, so this keys on KALPHITE only (docs/ENGINE-GAPS.md gap 1 covers the reference's 3x disagreement).",
-	 "when": {"category": "MELEE", "targetAttr": "KALPHITE"},
-	 "accuracy": [{"when": {"worn": "KERIS_BREACH"}, "factor": [133, 100]}],
-	 "proc": {"when": {"wornAny": ["KERIS", "KERIS_BREACH", "KERIS_SUN", "KERIS_AMASCUT"]},
-		"chance": [1, 51], "damageMultiplier": 3},
-	 "aggregateBoundSafe": true},
-
-	{"id": "AquaniteHopperSecondShot", "kind": "proc",
-	 "source": "https://oldschool.runescape.wiki/w/Aquanite_hopper \"the hopper's chance of proccing appears to be 11% rather than 10%\" — not the round 10% the item description implies; \"This second shot has 33.3% reduced accuracy, 66.7% reduced damage, and 66.7% reduced enchanted bolt proc chance\". A crossbow passive, so the ballista is excluded from the crossbow-or-ballista flag. Not modelled: the second shot's own enchanted bolt procs (about 3.7% of one proc), and the accuracy cut is taken off the resolved hit chance rather than the attack roll the wiki points at — second-order on 11% of shots.",
-	 "when": {"category": "RANGED", "worn": "AQUANITE_HOPPER", "weaponFlag": "crossbowOrBallista",
-		"weaponFamily": "!ballista"},
-	 "filterWhen": {"category": "RANGED"},
-	 "proc": {"chance": [11, 100], "roll": {"fraction": [1, 3], "accuracyFactor": [2, 3]}},
-	 "aggregateBoundSafe": true},
-
-	{"id": "SanguinestiStaffProc", "kind": "proc",
-	 "source": "https://oldschool.runescape.wiki/w/Sanguinesti_staff \"have a 1/5 (20%) chance of dealing 8 additional damage and healing the user half the amount of hitpoints dealt to a target\". Cap-aware: under a damage cap the extra is the exact capped-expectation delta per hitsplat.",
-	 "when": {"style": "MAGIC", "worn": "SANGUINESTI_STAFF"},
-	 "proc": {"chance": [1, 5], "flat": 8, "capAware": true},
-	 "aggregateBoundSafe": true},
-
-	{"id": "ArkanBladeSpecBurn", "kind": "proc",
-	 "source": "https://oldschool.runescape.wiki/w/Arkan_blade — the special applies \"a strong burn effect to the target, dealing 10 damage over 40 ticks\". Suppressed by normal-tier burn immunity, not weak-only (contrast the eclipse moon burn).",
-	 "when": {"specWeapon": "ARKAN_BLADE", "burnImmuneNormal": "false"},
-	 "filterWhen": {"specActive": "true", "category": "MELEE"},
-	 "proc": {"chance": [1, 1], "flat": 10}},
-	{"id": "GadderhammerShades", "kind": "branch",
-	 "source": "https://oldschool.runescape.wiki/w/Gadderhammer \"possessing a 25% damage bonus against shades as well as a 5% chance to deal double damage.\" The two are alternatives, not stages: \"It has a 1/20 chance of doubling your damage. If it doesn't do that, it increases your damage by 25% instead.\" Order: scale the roll, raise to 1, take flat armour, then cap — pinned by the battery, which separates doubling a 0 from raising a 1.",
-	 "when": {"category": "MELEE", "targetAttr": "SHADE", "weaponFamily": "gadderhammer"},
-	 "scales": "roll",
-	 "arms": [{"chance": [19, 20], "scale": [5, 4]}, {"chance": [1, 20], "scale": [2, 1]}],
-	 "aggregateBoundSafe": true}
+ {
+  "id": "WildernessWeapons",
+  "source": "https://oldschool.runescape.wiki/w/Craw's_bow \"an additional 50% ranged accuracy and damage boost is applied when attacking any NPC in the Wilderness, consuming 1 ether per attack whether the player hits or not.\" The ether drain is not modeled.",
+  "when": {
+   "inWilderness": "true"
+  },
+  "accuracy": [
+   {
+    "when": {
+     "category": "RANGED",
+     "wornAny": [
+      "CRAWS_BOW",
+      "WEBWEAVER_BOW"
+     ]
+    },
+    "factor": [
+     3,
+     2
+    ]
+   },
+   {
+    "when": {
+     "category": "MELEE",
+     "worn": "VIGGORAS_CHAINMACE"
+    },
+    "factor": [
+     3,
+     2
+    ]
+   },
+   {
+    "when": {
+     "category": "MAGIC",
+     "worn": "ACCURSED_SCEPTRE"
+    },
+    "factor": [
+     3,
+     2
+    ]
+   }
+  ],
+  "damage": [
+   {
+    "when": {
+     "category": "RANGED",
+     "wornAny": [
+      "CRAWS_BOW",
+      "WEBWEAVER_BOW"
+     ]
+    },
+    "factor": [
+     3,
+     2
+    ]
+   },
+   {
+    "when": {
+     "category": "MELEE",
+     "worn": "VIGGORAS_CHAINMACE"
+    },
+    "factor": [
+     3,
+     2
+    ]
+   },
+   {
+    "when": {
+     "category": "MAGIC",
+     "worn": "ACCURSED_SCEPTRE"
+    },
+    "factor": [
+     3,
+     2
+    ]
+   }
+  ],
+  "slayerAdditiveTwentieths": 10,
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "DragonHunterWeapons",
+  "hidesItems": {
+   "types": [
+    "DRAGON_HUNTER_CROSSBOW",
+    "DRAGON_HUNTER_LANCE"
+   ],
+   "targetAttrAny": [
+    "DRAGON"
+   ]
+  },
+  "source": "https://oldschool.runescape.wiki/w/Dragon_hunter_lance \"its 20% increased accuracy and damage when fighting draconic creatures\"; the crossbow's +30% accuracy / +25% damage per its own article, its +25% folding into the imbued black mask stage as 5 twentieths.",
+  "when": {
+   "targetAttr": "DRAGON"
+  },
+  "filterWhen": {
+   "targetAttr": "DRAGON",
+   "categoryNot": "MAGIC"
+  },
+  "accuracy": [
+   {
+    "when": {
+     "category": "RANGED",
+     "worn": "DRAGON_HUNTER_CROSSBOW"
+    },
+    "factor": [
+     13,
+     10
+    ]
+   },
+   {
+    "when": {
+     "category": "MELEE",
+     "worn": "DRAGON_HUNTER_LANCE"
+    },
+    "factor": [
+     6,
+     5
+    ]
+   }
+  ],
+  "damage": [
+   {
+    "when": {
+     "category": "RANGED",
+     "worn": "DRAGON_HUNTER_CROSSBOW"
+    },
+    "factor": [
+     5,
+     4
+    ]
+   },
+   {
+    "when": {
+     "category": "MELEE",
+     "worn": "DRAGON_HUNTER_LANCE"
+    },
+    "factor": [
+     6,
+     5
+    ]
+   }
+  ],
+  "slayerAdditiveTwentieths": 5,
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "DragonHunterWand",
+  "source": "https://oldschool.runescape.wiki/w/Dragon_hunter_wand \u2014 +75% magic accuracy and +40% magic damage against draconic creatures. Stacks with Slayer helm (i) and Void, but not salve amulet (i); SlayerSalveModifier suppresses the salve while this row applies.",
+  "when": {
+   "style": "MAGIC",
+   "targetAttr": "DRAGON",
+   "worn": "DRAGON_HUNTER_WAND"
+  },
+  "accuracy": [
+   {
+    "factor": [
+     7,
+     4
+    ]
+   }
+  ],
+  "damage": [
+   {
+    "factor": [
+     7,
+     5
+    ]
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "VampyreBaneDamage",
+  "hidesItems": {
+   "types": [
+    "BLISTERWOOD_FLAIL",
+    "BLISTERWOOD_STAKE",
+    "BLISTERWOOD_SICKLE",
+    "HALLOWED_FLAIL",
+    "SUNSPEAR",
+    "ROD_OF_IVANDIS",
+    "IVANDIS_FLAIL"
+   ],
+   "targetAttrAny": [
+    "VAMPYRE_1",
+    "VAMPYRE_2",
+    "VAMPYRE_3"
+   ]
+  },
+  "source": "Battery-pinned per-weapon figures pending wiki or in-game confirmation (docs/ENGINE-GAPS.md open gap: Mod Ed's tweets of 6 and 8 Jun 2020 agree on damage but contradict each other on Blisterwood accuracy, 10% vs 5%). Deliberately not style-gated: the Blisterwood stake is thrown. Cascades are first-match alternatives, not stacking effects, and the accuracy table does not align with the damage one.",
+  "when": {
+   "monsterClass": "vampyre"
+  },
+  "accuracy": [
+   {
+    "when": {
+     "wornAny": [
+      "HALLOWED_FLAIL",
+      "SUNSPEAR"
+     ]
+    },
+    "factor": [
+     5,
+     4
+    ]
+   },
+   {
+    "when": {
+     "wornAny": [
+      "BLISTERWOOD_FLAIL",
+      "BLISTERWOOD_SICKLE"
+     ]
+    },
+    "factor": [
+     21,
+     20
+    ]
+   }
+  ],
+  "damage": [
+   {
+    "when": {
+     "worn": "SUNSPEAR"
+    },
+    "factor": [
+     3,
+     2
+    ]
+   },
+   {
+    "when": {
+     "wornAny": [
+      "BLISTERWOOD_FLAIL",
+      "HALLOWED_FLAIL",
+      "BLISTERWOOD_STAKE"
+     ]
+    },
+    "factor": [
+     5,
+     4
+    ]
+   },
+   {
+    "when": {
+     "worn": "IVANDIS_FLAIL"
+    },
+    "factor": [
+     6,
+     5
+    ]
+   },
+   {
+    "when": {
+     "worn": "BLISTERWOOD_SICKLE"
+    },
+    "factor": [
+     23,
+     20
+    ]
+   },
+   {
+    "when": {
+     "worn": "ROD_OF_IVANDIS"
+    },
+    "factor": [
+     11,
+     10
+    ]
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "GolemBaneWeapons",
+  "source": "https://oldschool.runescape.wiki/w/Barronite_mace \"a 15% damage and accuracy bonus against golems\" \u2014 deliberately contradicted: damage only, no accuracy bonus at all. Granite hammer +30% accuracy and damage per its article.",
+  "when": {
+   "targetAttr": "GOLEM"
+  },
+  "accuracy": [
+   {
+    "when": {
+     "worn": "GRANITE_HAMMER"
+    },
+    "factor": [
+     13,
+     10
+    ]
+   }
+  ],
+  "damage": [
+   {
+    "when": {
+     "worn": "GRANITE_HAMMER"
+    },
+    "factor": [
+     13,
+     10
+    ]
+   },
+   {
+    "when": {
+     "worn": "BARRONITE_MACE"
+    },
+    "factor": [
+     23,
+     20
+    ]
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "KalphiteBaneDamage",
+  "hidesItems": {
+   "types": [
+    "KERIS",
+    "KERIS_SUN",
+    "KERIS_BREACH",
+    "KERIS_AMASCUT"
+   ],
+   "targetAttrAny": [
+    "KALPHITE"
+   ]
+  },
+  "source": "https://oldschool.runescape.wiki/w/Keris \"It deals 33% bonus damage against all kalphites and scabarites\"; https://oldschool.runescape.wiki/w/Keris_partisan_of_amascut \"this variant has a damage bonus of 15%, down from the base weapon's 33%\". Scabarites are not a tracked attribute, so this keys on KALPHITE only.",
+  "when": {
+   "category": "MELEE",
+   "targetAttr": "KALPHITE",
+   "weaponFlag": "kalphitebane"
+  },
+  "damage": [
+   {
+    "when": {
+     "weaponSpecial": "KERIS_AMASCUT"
+    },
+    "factor": [
+     23,
+     20
+    ]
+   },
+   {
+    "factor": [
+     133,
+     100
+    ]
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "LeafyBaneDamage",
+  "hidesItems": {
+   "types": [
+    "LEAF_BLADED_BATTLEAXE",
+    "LEAF_BLADED_WEAPON"
+   ],
+   "targetAttrAny": [
+    "LEAFY"
+   ]
+  },
+  "source": "https://oldschool.runescape.wiki/w/Leaf-bladed_battleaxe \"it has an added 17.5% damage, stacking with the Slayer helmet.\"",
+  "when": {
+   "category": "MELEE",
+   "targetAttr": "LEAFY",
+   "worn": "LEAF_BLADED_BATTLEAXE"
+  },
+  "damage": [
+   {
+    "factor": [
+     47,
+     40
+    ]
+   }
+  ]
+ },
+ {
+  "id": "SmokeStaffBonus",
+  "source": "https://twitter.com/JagexAsh/status/1791070064369647838 \u2014 the smoke battlestaff, mystic smoke staff and Twinflame staff grant \"a 10% increase in accuracy and damage when casting spells from the standard spellbook\"; Ancient Magicks get nothing. Only the accuracy half is a floored stage of its own: the damage half is a row of the additive gear-magic-damage pool. With a magic salve on an undead target the oracle can differ by a point of attack roll \u2014 it pools accuracy and floors once where this engine floors per stage, and no vector covers it.",
+  "when": {
+   "style": "MAGIC",
+   "weaponFamily": "smokeStaff",
+   "spellBook": "STANDARD"
+  },
+  "accuracy": [
+   {
+    "factor": [
+     11,
+     10
+    ]
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "ChinchompaDistanceAccuracy",
+  "source": "https://twitter.com/JagexAsh/status/761964699646828544 \"If you chose the short fuse, 0-3 gives you full accuracy, 4-6 gives reduced, 7+ gives bad, etc.\"; https://twitter.com/JagexAsh/status/993196171677126661 \"Medium fuses 0-3 tiles and 7+ tiles are 75%, not 50%. It's applied to the accuracy/defence roll when the attack is cast, like armour bonuses are.\" Short, Medium and Long fuse ARE the Accurate, Rapid and Longrange stances, so the distance is the only new input; the factors are quarters, exact in binary, so the floored stage loses nothing. Not modelled: the shared accuracy roll and the 3x3 splash, which are MultiTargetSplash's.",
+  "when": {
+   "category": "RANGED",
+   "weaponFamily": "chinchompa"
+  },
+  "filterWhen": {
+   "category": "RANGED"
+  },
+  "accuracy": [
+   {
+    "when": {
+     "stance": "ACCURATE",
+     "fuseDistanceMax": 3
+    },
+    "factor": [
+     1,
+     1
+    ]
+   },
+   {
+    "when": {
+     "stance": "ACCURATE",
+     "fuseDistanceMin": 7
+    },
+    "factor": [
+     1,
+     2
+    ]
+   },
+   {
+    "when": {
+     "stance": "ACCURATE"
+    },
+    "factor": [
+     3,
+     4
+    ]
+   },
+   {
+    "when": {
+     "stance": "LONGRANGE",
+     "fuseDistanceMin": 7
+    },
+    "factor": [
+     1,
+     1
+    ]
+   },
+   {
+    "when": {
+     "stance": "LONGRANGE",
+     "fuseDistanceMax": 3
+    },
+    "factor": [
+     1,
+     2
+    ]
+   },
+   {
+    "when": {
+     "stance": "LONGRANGE"
+    },
+    "factor": [
+     3,
+     4
+    ]
+   },
+   {
+    "when": {
+     "fuseDistanceMax": 3
+    },
+    "factor": [
+     3,
+     4
+    ]
+   },
+   {
+    "when": {
+     "fuseDistanceMin": 7
+    },
+    "factor": [
+     3,
+     4
+    ]
+   },
+   {
+    "factor": [
+     1,
+     1
+    ]
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "GodswordSpecBaseDamage",
+  "source": "https://oldschool.runescape.wiki/w/Godsword \"doubling effective accuracy and increase effective strength by 10%\". Floored separately from the per-weapon spec stage: the Bandos godsword applies x11/10 twice, which is the wiki's +21% \u2014 one combined factor could not produce it.",
+  "when": {
+   "specGodsword": "true"
+  },
+  "damage": [
+   {
+    "factor": [
+     11,
+     10
+    ]
+   }
+  ]
+ },
+ {
+  "id": "DawnbringerMechanics",
+  "kind": "guaranteed",
+  "source": "https://oldschool.runescape.wiki/w/Dawnbringer \"the Dawnbringer ignores accuracy rolls, meaning the player will always deal successful hits, even when at or below -64 Magic attack bonus.\" Functions only in the Verzik P1 fight; useless \u2014 modelled as immune \u2014 against everything else.",
+  "any": [
+   {
+    "worn": "DAWNBRINGER",
+    "monsterClass": "verzikPhaseOne"
+   }
+  ],
+  "immuneAny": [
+   {
+    "worn": "DAWNBRINGER",
+    "monsterClass": "!verzikPhaseOne"
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "VoidwakerGuaranteedAccuracy",
+  "kind": "guaranteed",
+  "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage\" \u2014 the spec never rolls accuracy; its damage window is VoidwakerSpecDistribution's.",
+  "any": [
+   {
+    "specShape": "VOIDWAKER"
+   }
+  ]
+ },
+ {
+  "id": "DemonBaneWeapons",
+  "hidesItems": {
+   "types": [
+    "ARCLIGHT",
+    "EMBERLIGHT",
+    "DARKLIGHT",
+    "SILVERLIGHT"
+   ],
+   "targetAttrAny": [
+    "DEMON"
+   ]
+  },
+  "source": "https://oldschool.runescape.wiki/w/Demonbane_weapons \u2014 Arclight and Emberlight +70%, Darklight and Silverlight +60%, the burning and bone claws +5%, on accuracy and damage alike, Melee only. Each percentage is scaled by how much demonbane the target actually takes and truncated as in game, so an Arclight's 70% is a 49% bonus against Duke Sucellus \u2014 the scaling applies to the percentage, not to the resulting hit.",
+  "when": {
+   "category": "MELEE",
+   "targetAttr": "DEMON"
+  },
+  "accuracy": [
+   {
+    "when": {
+     "wornAny": [
+      "ARCLIGHT",
+      "EMBERLIGHT"
+     ]
+    },
+    "factor": "1 + floor(70 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
+   },
+   {
+    "when": {
+     "wornAny": [
+      "DARKLIGHT",
+      "SILVERLIGHT"
+     ]
+    },
+    "factor": "1 + floor(60 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
+   },
+   {
+    "when": {
+     "weaponFamily": "demonbaneClaws"
+    },
+    "factor": "1 + floor(5 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
+   }
+  ],
+  "damage": [
+   {
+    "when": {
+     "wornAny": [
+      "ARCLIGHT",
+      "EMBERLIGHT"
+     ]
+    },
+    "factor": "1 + floor(70 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
+   },
+   {
+    "when": {
+     "wornAny": [
+      "DARKLIGHT",
+      "SILVERLIGHT"
+     ]
+    },
+    "factor": "1 + floor(60 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
+   },
+   {
+    "when": {
+     "weaponFamily": "demonbaneClaws"
+    },
+    "factor": "1 + floor(5 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "ScorchingBow",
+  "source": "https://oldschool.runescape.wiki/w/Scorching_bow \u2014 +30% Ranged accuracy and damage against demons, scaled by the target's demonbane vulnerability like any bane percentage. Six twentieths is the ordinary-demon figure for the imbued black mask fold-in: unlike the other members of that stage this percentage is scaled per demon (21% on Duke Sucellus, 36% on Yama) and those do not land on whole twentieths, the unit the fold-in is defined over. If the combination ever needs to be exact the fix is a finer unit, not a per-weapon fudge.",
+  "when": {
+   "category": "RANGED",
+   "targetAttr": "DEMON",
+   "worn": "SCORCHING_BOW"
+  },
+  "accuracy": [
+   {
+    "factor": "1 + floor(30 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
+   }
+  ],
+  "damage": [
+   {
+    "factor": "1 + floor(30 * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100"
+   }
+  ],
+  "slayerAdditiveTwentieths": 6,
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "ColossalBladeBonus",
+  "kind": "flatDamage",
+  "source": "https://oldschool.runescape.wiki/w/Colossal_blade \"increases the wielder's maximum hit against larger enemies\" \u2014 +2 per size of the target, capped at +10.",
+  "when": {
+   "worn": "COLOSSAL_BLADE"
+  },
+  "filterWhen": {
+   "category": "MELEE"
+  },
+  "flat": "min(10, monster.size * 2)",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "RatbaneWeapons",
+  "kind": "flatDamage",
+  "source": "https://oldschool.runescape.wiki/w/Bone_mace \"it is effective against all types of rats by adding 10 damage to the player's maximum hit\"; \"Looks like a static +10 in the code, from what I can see.\"; \"The mace cannot be used against any other type of monster (including manual cast spells)\". The flat bonus lands on the raw base hit so set bonuses scale it; the Bone staff's +10 is already in its powered-staff base hit, which is why Magic is excluded here. The filter is deliberately unnarrowed: the immunity half depends on what is wielded, not on the monster alone.",
+  "when": {
+   "targetAttr": "RAT",
+   "categoryNot": "MAGIC",
+   "weaponFamily": "ratbane"
+  },
+  "filterWhen": {},
+  "flat": 10,
+  "immuneAny": [
+   {
+    "targetAttrNot": "RAT",
+    "weaponFamily": "ratbane"
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "TonalzticsOfRalos",
+  "kind": "sequence",
+  "source": "https://oldschool.runescape.wiki/w/Multi-hit_weapons \"Each hit deals 0-75% of total weapon damage.\"; https://oldschool.runescape.wiki/w/Tonalztics_of_ralos \"When charged, the weapon will hit twice, with two independent damage rolls\". The three quarters apply per hit whether charged or not, so the damage stage keys on merely HOLDING the glaives while the second throw keys on the charged form \u2014 an uncharged pair is strictly worse than an ordinary weapon, and the engine has to be able to say so. The displayed ceiling reports both throws together.",
+  "whenAny": [
+   {
+    "category": "RANGED",
+    "weaponFamily": "chargedTonalztics"
+   }
+  ],
+  "filterWhen": {
+   "category": "RANGED"
+  },
+  "damage": [
+   {
+    "when": {
+     "category": "RANGED",
+     "worn": "TONALZTICS_OF_RALOS"
+    },
+    "factor": [
+     3,
+     4
+    ]
+   }
+  ],
+  "splats": [
+   {},
+   {}
+  ],
+  "displaySum": true,
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "TwoHitSpecDistribution",
+  "kind": "sequence",
+  "source": "Two-hit special attacks. https://oldschool.runescape.wiki/w/Abyssal_dagger \"A single attack roll is performed, meaning that either both hits are successful, or both hits miss\" \u2014 where the dragon dagger rolls each hit separately, which is the only thing separating the two shapes. Same expectation, different distributions: both are recorded so variance and percentile readouts keep the distinction. Each hitsplat takes flat armour and the boss cap independently.",
+  "whenAny": [
+   {
+    "specShape": "TWO_INDEPENDENT_HITS"
+   },
+   {
+    "specShape": "TWO_HITS_SINGLE_ROLL"
+   }
+  ],
+  "filterWhen": {
+   "specActive": "true",
+   "category": "MELEE"
+  },
+  "alwaysMaxHitYields": "displayed",
+  "splats": [
+   {},
+   {}
+  ],
+  "displaySum": true,
+  "breakdown": true
+ },
+ {
+  "id": "GraniteHammerFlatBonus",
+  "kind": "sequence",
+  "source": "https://oldschool.runescape.wiki/w/Granite_hammer \"guaranteeing 5 additional damage\" \u2014 even on a miss, so the expectation is accuracy * E[roll] + 5 rather than accuracy * (E[roll] + 5), which is why this is a shape and not a damage factor. The roll underneath takes no accurate-0-lands-as-1 raise: that rule is vacuous once 5 is guaranteed.",
+  "when": {
+   "specShape": "FLAT_BONUS_EVEN_ON_MISS"
+  },
+  "filterWhen": {
+   "specActive": "true",
+   "category": "MELEE"
+  },
+  "alwaysMaxHitYields": "effective",
+  "splats": [
+   {
+    "unraised": true
+   },
+   {
+    "flat": 5,
+    "accuracyPower": 0
+   }
+  ]
+ },
+ {
+  "id": "SecondSpellCast",
+  "kind": "sequence",
+  "source": "https://oldschool.runescape.wiki/w/Twinflame_staff \u2014 the staff fires a second spell \"dealing 40% of the damage dealt by the first, rounded down\", every cast rather than as a proc, both striking the SAME target. It doubles elemental spells \"excluding Strike and Surge spells\" and casts on 6 ticks where every other staff takes 5. The second hitsplat gets NO accurate-0-lands-as-1 raise, unlike Karil's: the wiki states no rule and only this reading matches the oracle (docs/ENGINE-GAPS.md). The Strike/Surge exclusion is stated so the auto-picker can weigh the second cast where it applies and not where it does not. Not modelled: the staff's separate +10% standard-spellbook accuracy and damage, auto spell swap, rune and experience costs.",
+  "whenAny": [
+   {
+    "style": "MAGIC",
+    "worn": "TWINFLAME_STAFF",
+    "spellFamily": "boltBlastOrWave"
+   }
+  ],
+  "filterWhen": {
+   "style": "MAGIC"
+  },
+  "speed": {
+   "style": "MAGIC",
+   "weapon": "TWINFLAME_STAFF",
+   "ticks": 6
+  },
+  "splats": [
+   {},
+   {
+    "ofRoll": true,
+    "fraction": [
+     4,
+     10
+    ],
+    "raiseZero": false
+   }
+  ],
+  "accuracyOnce": true,
+  "displaySum": true,
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "SeekingArrowMinimum",
+  "kind": "sequence",
+  "source": "https://oldschool.runescape.wiki/w/Update:The_Blood_Moon_Rises \u2014 seeking arrows carry \"a minimum hit of 3\", CLAMPED per roll (a rolled 1 or 2 lands as 3) rather than shifting the range, which is what separates them from sunfire runes. The clamp lands before flat armour and after accuracy, so a miss is still a miss. Name-identified, and the arrows must be ones the weapon can actually fire \u2014 arrows it cannot never leave the quiver. The bound's 2 is the floor's 3 minus the 1 an accurate hit already pays, per shot at the weapon's rapid-stance minimum attack time.",
+  "when": {
+   "category": "RANGED",
+   "ammoFamily": "seekingArrow",
+   "ammoCompatible": true
+  },
+  "filterWhen": {
+   "category": "RANGED"
+  },
+  "splats": [
+   {
+    "damageFloor": 3
+   }
+  ],
+  "aggregateBoundSafe": true,
+  "bound": {
+   "families": [
+    "seekingArrow"
+   ],
+   "category": "RANGED",
+   "addendDps": "!chunk.canFire || !item.isAmmo ? 0 : 2 / (max(1, chunk.aspeed - 1) * 0.6)"
+  }
+ },
+ {
+  "id": "DarkBowMechanic",
+  "kind": "sequence",
+  "source": "https://oldschool.runescape.wiki/w/Dark_bow \"fires two arrows per attack which roll independent accuracy checks\" \u2014 neither arrow is halved, unlike the twin weapons, and the displayed ceiling is both together.",
+  "when": {
+   "category": "RANGED",
+   "worn": "DARK_BOW"
+  },
+  "splats": [
+   {},
+   {}
+  ],
+  "displaySum": true,
+  "breakdown": true,
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "SplitHitWeaponMechanic",
+  "kind": "sequence",
+  "source": "https://oldschool.runescape.wiki/w/Sulphur_blades \"it performs two independently rolled hits per attack\"; \"The maximum damage of each hit is determined by calculating the combined max hit as normal and dividing it by two.\" Five melee weapons (sulphur blades, glacial temotli, earthbound tecpatl, infernal tecpatl, Torag's hammers) and one Ranged weapon (King's barrage) share the arithmetic; the first hit floors and the second takes the remainder. No style gate: every weapon in the set is usable in exactly one style, so holding one IS the gate.",
+  "when": {
+   "wornAny": [
+    "SULPHUR_BLADES",
+    "GLACIAL_TEMOTLI",
+    "EARTHBOUND_TECPATL",
+    "INFERNAL_TECPATL",
+    "TORAGS_HAMMERS",
+    "KINGS_BARRAGE"
+   ]
+  },
+  "filterWhen": {
+   "categoryNot": "MAGIC"
+  },
+  "splats": [
+   {
+    "fraction": [
+     1,
+     2
+    ]
+   },
+   {
+    "remainder": true
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "DualMacuahuitlMechanic",
+  "kind": "sequence",
+  "source": "https://oldschool.runescape.wiki/w/Dual_macuahuitl \"dealing damage in two hitsplats, with both hitsplats having their max hit halved\" \u2014 one tick apart, and the accuracy checks are sequential rather than independent: the second hit rolls only if the first landed.",
+  "when": {
+   "category": "MELEE",
+   "worn": "DUAL_MACUAHUITL"
+  },
+  "splats": [
+   {
+    "fraction": [
+     1,
+     2
+    ]
+   },
+   {
+    "remainder": true,
+    "accuracyPower": 2
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "ScytheOfViturMechanic",
+  "kind": "sequence",
+  "source": "https://oldschool.runescape.wiki/w/Scythe_of_vitur \"A 2x2 monster (such as Vardorvis) will be hit twice per attack, while a 3x3 or larger monster (such as dragons and Duke Sucellus) will be hit three times per attack.\" 100% / 50% / 25% of the max hit, with flat armour applying per hit against each hit's own ceiling rather than once against the combined one.",
+  "when": {
+   "category": "MELEE",
+   "worn": "SCYTHE_OF_VITUR"
+  },
+  "splats": [
+   {},
+   {
+    "fraction": [
+     1,
+     2
+    ],
+    "minTargetSize": 2
+   },
+   {
+    "fraction": [
+     1,
+     4
+    ],
+    "minTargetSize": 3
+   }
+  ],
+  "displaySum": true,
+  "breakdown": true,
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "HallowfellCleave",
+  "kind": "sequence",
+  "source": "https://oldschool.runescape.wiki/w/Hallowfell \u2014 cleaves through nearby enemies for up to 50% max hit each, up to two additional unique enemies. \"Unique\" is load-bearing: large enemies are one target. The cleave rides the primary hit landing rather than rolling its own accuracy, which is what produces the wiki's 100/50/50. Out of scope: the five-tile cleave shape, and the removed multi-combat-mode attack styles.",
+  "when": {
+   "category": "MELEE",
+   "worn": "HALLOWFELL"
+  },
+  "splats": [
+   {},
+   {
+    "ofRoll": true,
+    "fraction": [
+     1,
+     2
+    ],
+    "count": {
+     "kind": "PER_EXTRA_TARGET",
+     "value": 2
+    }
+   }
+  ],
+  "accuracyOnce": true,
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "VenatorBowBounce",
+  "kind": "sequence",
+  "source": "https://oldschool.runescape.wiki/w/Venator_bow \"the arrow will try to bounce to another target near the first\"; \"the attack can bounce again\"; \"a max hit equal to two-thirds of the original max hit, rounded down\". Each bounce rolls its own accuracy, and two targets are enough for both bounces (the second may return to the first). The displayed ceiling stays the clicked target's, since the bounce direction is unknown. Charge-dependent: the uncharged bow is an ordinary bow with no special type. Not modelled: the two-tile bounce geometry, charge consumption, per-bounce salve interactions.",
+  "when": {
+   "category": "RANGED",
+   "worn": "VENATOR_BOW"
+  },
+  "splats": [
+   {},
+   {
+    "fraction": [
+     2,
+     3
+    ],
+    "count": {
+     "kind": "ANY_EXTRA_TARGET",
+     "value": 2
+    }
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "KerisMechanics",
+  "kind": "proc",
+  "source": "Wiki: Keris \u2014 a 1/51 chance of puncturing a hole in their exoskeleton for triple damage against kalphites; the Keris partisan of breaching adds +33% accuracy. Scabarites aren't a tracked attribute, so this keys on KALPHITE only (docs/ENGINE-GAPS.md gap 1 covers the reference's 3x disagreement).",
+  "when": {
+   "category": "MELEE",
+   "targetAttr": "KALPHITE"
+  },
+  "accuracy": [
+   {
+    "when": {
+     "worn": "KERIS_BREACH"
+    },
+    "factor": [
+     133,
+     100
+    ]
+   }
+  ],
+  "proc": {
+   "when": {
+    "wornAny": [
+     "KERIS",
+     "KERIS_BREACH",
+     "KERIS_SUN",
+     "KERIS_AMASCUT"
+    ]
+   },
+   "chance": [
+    1,
+    51
+   ],
+   "damageMultiplier": 3
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "AquaniteHopperSecondShot",
+  "kind": "proc",
+  "source": "https://oldschool.runescape.wiki/w/Aquanite_hopper \"the hopper's chance of proccing appears to be 11% rather than 10%\" \u2014 not the round 10% the item description implies; \"This second shot has 33.3% reduced accuracy, 66.7% reduced damage, and 66.7% reduced enchanted bolt proc chance\". A crossbow passive, so the ballista is excluded from the crossbow-or-ballista flag. Not modelled: the second shot's own enchanted bolt procs (about 3.7% of one proc), and the accuracy cut is taken off the resolved hit chance rather than the attack roll the wiki points at \u2014 second-order on 11% of shots.",
+  "when": {
+   "category": "RANGED",
+   "worn": "AQUANITE_HOPPER",
+   "weaponFlag": "crossbowOrBallista",
+   "weaponFamily": "!ballista"
+  },
+  "filterWhen": {
+   "category": "RANGED"
+  },
+  "proc": {
+   "chance": [
+    11,
+    100
+   ],
+   "roll": {
+    "fraction": [
+     1,
+     3
+    ],
+    "accuracyFactor": [
+     2,
+     3
+    ]
+   }
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "SanguinestiStaffProc",
+  "kind": "proc",
+  "source": "https://oldschool.runescape.wiki/w/Sanguinesti_staff \"have a 1/5 (20%) chance of dealing 8 additional damage and healing the user half the amount of hitpoints dealt to a target\". Cap-aware: under a damage cap the extra is the exact capped-expectation delta per hitsplat.",
+  "when": {
+   "style": "MAGIC",
+   "worn": "SANGUINESTI_STAFF"
+  },
+  "proc": {
+   "chance": [
+    1,
+    5
+   ],
+   "flat": 8,
+   "capAware": true
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "ArkanBladeSpecBurn",
+  "kind": "proc",
+  "source": "https://oldschool.runescape.wiki/w/Arkan_blade \u2014 the special applies \"a strong burn effect to the target, dealing 10 damage over 40 ticks\". Suppressed by normal-tier burn immunity, not weak-only (contrast the eclipse moon burn).",
+  "when": {
+   "specWeapon": "ARKAN_BLADE",
+   "burnImmuneNormal": "false"
+  },
+  "filterWhen": {
+   "specActive": "true",
+   "category": "MELEE"
+  },
+  "proc": {
+   "chance": [
+    1,
+    1
+   ],
+   "flat": 10
+  }
+ },
+ {
+  "id": "GadderhammerShades",
+  "kind": "branch",
+  "source": "https://oldschool.runescape.wiki/w/Gadderhammer \"possessing a 25% damage bonus against shades as well as a 5% chance to deal double damage.\" The two are alternatives, not stages: \"It has a 1/20 chance of doubling your damage. If it doesn't do that, it increases your damage by 25% instead.\" Order: scale the roll, raise to 1, take flat armour, then cap \u2014 pinned by the battery, which separates doubling a 0 from raising a 1.",
+  "when": {
+   "category": "MELEE",
+   "targetAttr": "SHADE",
+   "weaponFamily": "gadderhammer"
+  },
+  "scales": "roll",
+  "arms": [
+   {
+    "chance": [
+     19,
+     20
+    ],
+    "scale": [
+     5,
+     4
+    ]
+   },
+   {
+    "chance": [
+     1,
+     20
+    ],
+    "scale": [
+     2,
+     1
+    ]
+   }
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "SpecialAttackAccuracy",
+  "source": "Accuracy multiplier of the priced special attack, from special-attack-weapons.json's accNum/accDen (each row cites its wiki page). A no-op for 1/1 specs; Voidwaker's guaranteed hit lives in VoidwakerGuaranteedAccuracy.",
+  "when": {
+   "specActive": "true"
+  },
+  "accuracy": [
+   {
+    "factor": "spec.accFactor"
+   }
+  ]
+ },
+ {
+  "id": "SpecialAttackDamage",
+  "source": "Damage multiplier of the priced special attack, from special-attack-weapons.json's dmgNum/dmgDen. Applied after GodswordSpecBaseDamage and floored separately: the Bandos godsword's two x11/10 stages are the wiki's \"+21%\", which one combined factor could not produce.",
+  "when": {
+   "specActive": "true"
+  },
+  "damage": [
+   {
+    "factor": "spec.dmgFactor"
+   }
+  ]
+ },
+ {
+  "id": "AbyssalBludgeonPenance",
+  "source": "https://oldschool.runescape.wiki/w/Abyssal_bludgeon Penance: bonus damage scales with missing prayer, 0.5% per point, with real division so an odd missing count contributes a half-percent.",
+  "when": {
+   "specActive": "true",
+   "specWeapon": "ABYSSAL_BLUDGEON"
+  },
+  "damage": [
+   {
+    "factor": "(100 + player.missingPrayer / 2) / 100"
+   }
+  ]
+ },
+ {
+  "id": "ConflictionGauntlets",
+  "kind": "accuracyTransform",
+  "source": "https://oldschool.runescape.wiki/w/Confliction_gauntlets after a miss, \"the next magic attack of that weapon or spell against the same enemy [rolls] accuracy twice\"; \"disabled if using a two-handed weapon\" (the 2H gate blocks Tumeken's shadow). The mechanic has memory, solved by the wiki's own steady state h = P2/(1+P2-P1), P2 the fang double-roll number (both rolls face the same defence roll). Not modeled: multi-target rule, PvP ice-spell exclusion. Ahead of BrimstoneRing: the gauntlets recompute from the raw rolls, so a ring applied first would vanish.",
+  "when": {
+   "style": "MAGIC",
+   "worn": "CONFLICTION_GAUNTLETS",
+   "not": {
+    "weaponFlag": "effectivelyTwoHanded"
+   }
+  },
+  "let": {
+   "doubled": "doubleRollShared(attackRoll, defenceRoll)",
+   "denominator": "1 + doubled - accuracy"
+  },
+  "accuracy": "denominator <= 0 ? accuracy : clamp(doubled / denominator, 0, 1)",
+  "hidesItems": {
+   "types": [
+    "CONFLICTION_GAUNTLETS"
+   ],
+   "category": "MAGIC"
+  },
+  "interactingSlots": [
+   "GLOVES",
+   "WEAPON"
+  ],
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "BrimstoneRing",
+  "kind": "accuracyTransform",
+  "source": "https://oldschool.runescape.wiki/w/Brimstone_ring on any magic attack (\"powered staves included\"), 25% chance the target's magic defensive roll is reduced by 10% for that attack. Shape: mix the two outcomes, since averaging the defence roll instead understates accuracy on the convex a<d branch; integer division is the game's truncation of the reduced roll. The reduction \"doesn't affect multiple targets when barraging\", so under a clumped ancient cast this is the target-count-weighted mean, leaving the xN that follows to land the proc on one target and the plain chance on the rest.",
+  "when": {
+   "style": "MAGIC",
+   "worn": "BRIMSTONE_RING"
+  },
+  "let": {
+   "mixed": "0.75 * accuracy + 0.25 * hitChance(attackRoll, idiv(defenceRoll * 9, 10))",
+   "targets": "cast.targets"
+  },
+  "accuracy": "targets <= 1 ? mixed : (mixed + (targets - 1) * accuracy) / targets",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "RoyalTitanElementalMagic",
+  "kind": "accuracyTransform",
+  "source": "https://oldschool.runescape.wiki/w/Royal_Titans the elementals (ids 14150, 14151) replace normal accuracy: \"chance to hit ... is equal to their magic accuracy bonus plus 30, with a minimum of 30%\"; void mage multiplies that by 1.45. Registered after AlwaysMaxHitTargets, which this narrows. Family-keyed: the ordinary Fire elemental (id 1365) shares a name and has none of this. Not modeled: the wiki's \"Wind Strike always hits\" note.",
+  "when": {
+   "category": "MAGIC",
+   "monsterClass": "royalTitanElemental"
+  },
+  "let": {
+   "chance": "min(1, max(0, loadout.attackBonus) / 100 + 0.30)"
+  },
+  "accuracy": "loadout.voidActive ? min(1, chance * 1.45) : chance",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "VoidwakerSpecDistribution",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage between 50-150% of the wielder's maximum melee hit\", ignoring flat armour; the boss damage cap still applies. Accuracy is set to 1.0 by VoidwakerGuaranteedAccuracy; an always-max-hit target post-processes the spec distribution to one certain hitsplat at the ceiling.",
+  "when": {
+   "specShape": "VOIDWAKER"
+  },
+  "filterWhen": {
+   "specActive": "true",
+   "category": "MELEE"
+  },
+  "lo": "idiv(maxHit, 2)",
+  "hi": "maxHit + idiv(maxHit, 2)",
+  "ignoresFlatArmour": true,
+  "alwaysMaxHitYieldsCeiling": true
+ },
+ {
+  "id": "FlatUniformSpecDistribution",
+  "kind": "rollWindow",
+  "source": "A special attack whose damage is a guaranteed uniform roll over a range the spec row states outright, owing nothing to the wielder's max hit: the Dawnbringer's Pulsate, which \"magic damage gear bonuses, prayer and base magic level/boosts do not affect\" (https://oldschool.runescape.wiki/w/Dawnbringer). Flat armour is not applied, as for the other guaranteed magic special; the damage cap still is.",
+  "when": {
+   "specShape": "FLAT_UNIFORM"
+  },
+  "filterWhen": {
+   "specActive": "true"
+  },
+  "lo": "spec.flatMin",
+  "hi": "spec.flatMax",
+  "ignoresFlatArmour": true,
+  "alwaysMaxHitYieldsCeiling": true
+ },
+ {
+  "id": "TwistedBow",
+  "kind": "modifier",
+  "source": "https://oldschool.runescape.wiki/w/Twisted_bow accuracy percent = 140 + (3M-10)/100 - ((3M/10 - 100)^2)/100 clamped to [0, 140]; damage percent = 250 + (3M-14)/100 - ((3M/10 - 140)^2)/100 clamped to [0, 250]; every division truncated. M = max(target Magic level, Magic attack bonus) capped at 250, or 350 in CoX, which raises only the M input cap (the damage clamp never binds under it). Accuracy is its own late, separately-floored stage; damage folds into the main product with the other Ranged bonuses.",
+  "when": {
+   "category": "RANGED",
+   "worn": "TWISTED_BOW"
+  },
+  "filterWhen": {
+   "category": "RANGED"
+  },
+  "accuracy": [
+   {
+    "factor": "clamp(140 + idiv(3 * min(player.inCoX ? 350 : 250, max(monster.magicLevel, monster.magicAttackBonus)) - 10, 100) - idiv(pow(idiv(3 * min(player.inCoX ? 350 : 250, max(monster.magicLevel, monster.magicAttackBonus)), 10) - 100, 2), 100), 0, 140) / 100"
+   }
+  ],
+  "damage": [
+   {
+    "factor": "clamp(250 + idiv(3 * min(player.inCoX ? 350 : 250, max(monster.magicLevel, monster.magicAttackBonus)) - 14, 100) - idiv(pow(idiv(3 * min(player.inCoX ? 350 : 250, max(monster.magicLevel, monster.magicAttackBonus)), 10) - 140, 2), 100), 0, 250) / 100"
+   }
+  ],
+  "hidesItems": {
+   "types": [
+    "TWISTED_BOW"
+   ],
+   "category": "RANGED"
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "OsmumtenFangDoubleRoll",
+  "kind": "accuracyTransform",
+  "source": "https://oldschool.runescape.wiki/w/Osmumten%27s_fang \"the fang rolls accuracy twice in a single hit\" (Stab); \"The fang will now only re-roll the player's accuracy roll, rather than re-rolling both accuracy and the monster's defence outside the Tombs of Amascut\": inside the Tombs the re-roll is independent (1-(1-p)^2), everywhere else the two attack rolls share one defence roll and are correlated (the doubleRollShared closed form).",
+  "when": {
+   "style": "MELEE_STAB",
+   "worn": "OSMUMTEN_FANG"
+  },
+  "filterWhen": {
+   "style": "MELEE_STAB"
+  },
+  "accuracy": "monster.family('toa') ? 1 - (1 - accuracy) * (1 - accuracy) : doubleRollShared(attackRoll, defenceRoll)",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "OsmumtenFangEviscerate",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/Osmumten%27s_fang Eviscerate keeps the floor and drops the ceiling clamp: the roll is [shrink, maxHit], not [shrink, maxHit - shrink]. Ahead of the plain window row so the spec branch matches first.",
+  "when": {
+   "style": "MELEE_STAB",
+   "worn": "OSMUMTEN_FANG",
+   "specWeapon": "OSMUMTEN_FANG"
+  },
+  "filterWhen": {
+   "style": "MELEE_STAB"
+  },
+  "lo": "floor(0.15 * maxHit)",
+  "hi": "maxHit",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "OsmumtenFangWindow",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/Osmumten%27s_fang the fang narrows the roll by taking a 15% slice off both ends: [shrink, maxHit - shrink], not [15% of max, 85% of max]; the two ends share one term, not rounded independently.",
+  "when": {
+   "style": "MELEE_STAB",
+   "worn": "OSMUMTEN_FANG"
+  },
+  "filterWhen": {
+   "style": "MELEE_STAB"
+  },
+  "lo": "floor(0.15 * maxHit)",
+  "hi": "maxHit - floor(0.15 * maxHit)",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "EclipseAtlatlFormula",
+  "kind": "strengthInputs",
+  "source": "https://oldschool.runescape.wiki/w/Eclipse_atlatl rolls Ranged max hit off melee Strength level and gear. Melee prayers inactive, Ranged prayers active; darts carry no bonuses. The hidden-stat declaration exists because its DPS is invisible to linear ranged-stat scoring.",
+  "when": {
+   "category": "RANGED",
+   "weaponSpecial": "ECLIPSE_ATLATL"
+  },
+  "level": "player.strengthLevel + player.strengthBoost",
+  "gearStr": "loadout.meleeStr",
+  "hidesItems": {
+   "types": [
+    "ECLIPSE_ATLATL"
+   ],
+   "category": "RANGED"
+  },
+  "hiddenStats": {
+   "types": [
+    "ECLIPSE_ATLATL"
+   ],
+   "category": "RANGED",
+   "value": "max(0, itemStr)"
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "OgreBowFormula",
+  "kind": "strengthInputs",
+  "source": "https://oldschool.runescape.wiki/w/Ogre_bow \"A stance bonus of 10 is used regardless of attack style used.\" \"Only the player's visible ranged level matters. Boosts given through prayers and Void Knight armour are ignored.\" \"it can fire ogre arrows as well as brutal arrows up to mithril brutals\": only fireable worn ammo counts. Bypasses the whole standard chain, so no amulet-class stage applies either (a salve amulet (ei) on a Zogre adds nothing to a comp ogre bow).",
+  "when": {
+   "category": "RANGED",
+   "weaponFamily": "ogreBow"
+  },
+  "level": "player.rangedLevel + player.rangedBoost + 10",
+  "gearStr": "loadout.wornAmmoCompatible ? ammo.str : 0",
+  "bypassChain": true
+ },
+ {
+  "id": "DragonClawsSpec",
+  "kind": "cascade",
+  "source": "https://oldschool.runescape.wiki/w/Dragon_claws \"hits an enemy four times in succession\" (Slice and Dice): four accuracy rolls succeed in turn; the first to pass fixes total damage d drawn uniformly from a window that slides down with each failed roll, split across remaining hitsplats per the wiki's case list. All-fail: ~2/3 chance of 2, ~1/3 of 0. Always-max-hit targets are modelled as one certain hitsplat of the cascade's ceiling, pinned by the authored always-max-hit spec vectors. Overkill basis: the fourth roll's lone splat.",
+  "when": {
+   "specShape": "CLAWS_CASCADE"
+  },
+  "filterWhen": {
+   "specActive": "true",
+   "category": "MELEE"
+  },
+  "rolls": 4,
+  "window": {
+   "lo": "idiv(maxHit * (4 - failed), 4)",
+   "hi": "maxHit + lo - 1"
+  },
+  "splats": [
+   [
+    "idiv(d, 2)",
+    "idiv(d, 4)",
+    "idiv(d, 8)",
+    "idiv(d, 8) + 1"
+   ],
+   [
+    "idiv(d, 2)",
+    "idiv(d, 4)",
+    "idiv(d, 4) + 1"
+   ],
+   [
+    "idiv(d, 2)",
+    "idiv(d, 2) + 1"
+   ],
+   [
+    "d + 1"
+   ]
+  ],
+  "allFail": [
+   {
+    "chance": [
+     2,
+     3
+    ],
+    "damage": 2
+   }
+  ],
+  "displayFloor": 2,
+  "effectiveMaxHit": "maxHit + idiv(maxHit, 4)"
+ },
+ {
+  "id": "BurningClawsSpec",
+  "kind": "cascade",
+  "source": "https://oldschool.runescape.wiki/w/Burning_claws Burning Barrage: three sequential accuracy rolls determining a total d split across three hitsplats per the wiki's cases; all-fail 40% of 1 and 40% of 2. Burn rider: each hitsplat independently procs at 15%/30%/45% (first/second/third roll) for 10 each, expected 30b - b^2 per landing roll with the overlap loss pinned by the battery and awaiting in-game confirmation (docs/ENGINE-GAPS.md); suppressed against normal-burn-immune targets and left out of the displayed max. Overkill basis: the third roll's d - 2.",
+  "when": {
+   "specShape": "BURNING_CLAWS_CASCADE"
+  },
+  "filterWhen": {
+   "specActive": "true",
+   "category": "MELEE"
+  },
+  "rolls": 3,
+  "window": {
+   "lo": "idiv(maxHit * (3 - failed), 4)",
+   "hi": "maxHit + lo"
+  },
+  "splats": [
+   [
+    "idiv(d, 2)",
+    "idiv(d, 4)",
+    "idiv(d, 4)"
+   ],
+   [
+    "idiv(d, 2) - 1",
+    "idiv(d, 2) - 1",
+    "2"
+   ],
+   [
+    "d - 2",
+    "1",
+    "1"
+   ]
+  ],
+  "allFail": [
+   {
+    "chance": [
+     2,
+     5
+    ],
+    "damage": 1
+   },
+   {
+    "chance": [
+     2,
+     5
+    ],
+    "damage": 2
+   }
+  ],
+  "rider": {
+   "when": {
+    "burnImmuneNormal": false
+   },
+   "value": "30 * (0.15 * (failed + 1)) - (0.15 * (failed + 1)) * (0.15 * (failed + 1))"
+  },
+  "displayFloor": 2,
+  "effectiveMaxHit": "maxHit + idiv(maxHit, 4) - 2"
+ },
+ {
+  "id": "HalberdSweepSecondHit",
+  "kind": "splitHit",
+  "source": "https://oldschool.runescape.wiki/w/Halberd \"the only melee weapons capable of hitting enemies\" at a two-tile range: Sweep lands a second hitsplat against targets larger than 1x1, the second swing reducing the attack roll by 25% at roll level before hit chance is re-derived; folding it into the accuracy sum keeps (a1 + a2) * E exactly. The damage bonus is already in maxHit.",
+  "when": {
+   "specShape": "HALBERD_SWEEP",
+   "targetSizeAtLeast": 2
+  },
+  "accuracy": "accuracy + hitChance(idiv(attackRoll * 3, 4), defenceRoll)",
+  "splats": [
+   {
+    "lo": "0",
+    "hi": "maxHit",
+    "displayCount": 2
+   }
+  ],
+  "effectiveMaxHit": "maxHit"
+ },
+ {
+  "id": "SaradominsLightningBolt",
+  "kind": "splitHit",
+  "source": "https://oldschool.runescape.wiki/w/Saradomin_sword \"deals 10% more melee damage and 1-16 extra Magic damage\": the magic bolt rolls no accuracy of its own and fails when the melee hit misses, and against the magic-damage immune (Dusk, Warriors' Guild cyclopes) it lands for 0. The melee half's x11/10 damage is a standard chain stage; flat armour never applies to magic damage.",
+  "when": {
+   "specWeapon": "SARADOMIN_SWORD"
+  },
+  "splats": [
+   {
+    "lo": "0",
+    "hi": "maxHit"
+   },
+   {
+    "lo": "1",
+    "hi": "16",
+    "ignoresFlatArmour": true,
+    "unless": {
+     "monsterClass": "magicDamageImmune"
+    }
+   }
+  ],
+  "effectiveMaxHit": "maxHit"
+ },
+ {
+  "id": "RubyBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Ruby_bolts_(e) \"The special effect has a 11% chance of activating in PvP and a 6% chance of activating in PvM\"; the proc decays with the target's HP, so it is averaged over a kill by the rubyFightAverage closed form. https://oldschool.runescape.wiki/w/Gemstone_Crab \"Ruby bolt (e) special attacks treat the boss as if it has 300 Hitpoints and deal 60 damage, increased to 66 if using a Zaryte crossbow\" - no decay to average, and the 1.1 sits in the rate. Zaryte (+10% proc damage) and the Hard Kandarin Diary (+10% proc chance) fold into the rate exactly, ruby's curve being linear in it.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "RUBY_BOLTS"
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "monster.family('gemstoneCrab') ? (0.06 * (worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1)) * 60 : rubyFightAverage(accuracy * expectedHit(0, maxHit), monster.hitpoints, 0.06 * (worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1))",
+  "aggregateBoundSafe": true,
+  "bound": {
+   "items": [
+    "RUBY_BOLTS"
+   ],
+   "category": "RANGED",
+   "addendDps": "!chunk.canFire ? 0 : (0.06 * (chunk.special('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1)) * (monster.family('gemstoneCrab') ? 60 : (monster.hitpoints > 0 ? min(chunk.special('ZARYTE_CROSSBOW') ? 110.0 : 100.0, 0.2 * (chunk.special('ZARYTE_CROSSBOW') ? 1.1 : 1) * monster.hitpoints) : (chunk.special('ZARYTE_CROSSBOW') ? 110.0 : 100.0))) / (max(1, chunk.aspeed - 1) * 0.6)"
+  }
+ },
+ {
+  "id": "DiamondBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Diamond_bolts_(e) \"Diamond bolts (e) have a 10% chance of triggering\"; \"This increases the maximum damage by 15% (26% when under the effect of the Zaryte crossbow) for that hit and guarantees it will be a successful hit.\" Those shots replace the ordinary one, so the addend is the difference of expectations; no bound claim, since the widened roll's ceiling scales with the loadout's max hit rather than any chunk constant.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "DIAMOND_BOLTS"
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "(player.kandarinHardDiary ? 1.1 : 1) * (0.10 * (expectedHit(0, floor(maxHit * (worn('ZARYTE_CROSSBOW') ? 126.0 : 115.0) / 100)) - accuracy * expectedHit(0, maxHit)))",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "OnyxBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Onyx_bolts_(e) \"The special effect has a 10% chance of activating in PvP and an 11% chance of activating in PvM\"; with a Zaryte \"132% - it's being 110% x 120%\". Life Leech replaces the landed hit with a roll over 0 to 120% of max, on 11% of accurate hits, and never against the undead (\"immune to life leech\"). No bound claim: roll-widening has no chunk-constant ceiling.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "ONYX_BOLTS",
+   "targetAttrNot": "UNDEAD"
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "accuracy * (0.11 * (player.kandarinHardDiary ? 1.1 : 1)) * (expectedHit(0, floor(maxHit * (worn('ZARYTE_CROSSBOW') ? 132.0 : 120.0) / 100)) - expectedHit(0, maxHit))",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "DragonstoneBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Dragonstone_bolts_(e) 6% of landed hits deal an extra floor(visible Ranged level x 2 / 10) (\"22% instead of 20%\" with a Zaryte, a smaller divisor because the division is truncated); \"If the target is immune to dragonfire, the special effect will not activate\" - DRAGON and FIERY are the two dragonfire-immunity marks.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "DRAGONSTONE_BOLTS",
+   "targetAttrNot": "DRAGON",
+   "not": {
+    "targetAttr": "FIERY"
+   }
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "(player.kandarinHardDiary ? 1.1 : 1) * (accuracy * 0.06 * floor((player.rangedLevel + player.rangedBoost) * 2.0 / (worn('ZARYTE_CROSSBOW') ? 9 : 10)))",
+  "aggregateBoundSafe": true,
+  "bound": {
+   "items": [
+    "DRAGONSTONE_BOLTS"
+   ],
+   "category": "RANGED",
+   "addendDps": "!chunk.canFire || monster.attr('DRAGON') || monster.attr('FIERY') ? 0 : 0.06 * (player.kandarinHardDiary ? 1.1 : 1) * floor((player.rangedLevel + player.rangedBoost) * 2.0 / (chunk.special('ZARYTE_CROSSBOW') ? 9 : 10)) / (max(1, chunk.aspeed - 1) * 0.6)"
+  }
+ },
+ {
+  "id": "PearlBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Pearl_bolts_(e) 6% chance of an extra floor(Ranged level / 20); \"Against fiery enemies, the increase is boosted to 1/15 of the user's Ranged level.\" Accuracy-independent: the proc rolls its own chance whether or not the shot lands. The Zaryte takes two off the divisor.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "PEARL_BOLTS"
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "(player.kandarinHardDiary ? 1.1 : 1) * (0.06 * floor((player.rangedLevel + player.rangedBoost) / ((monster.attr('FIERY') ? 15 : 20) - (worn('ZARYTE_CROSSBOW') ? 2 : 0))))",
+  "aggregateBoundSafe": true,
+  "bound": {
+   "items": [
+    "PEARL_BOLTS"
+   ],
+   "category": "RANGED",
+   "addendDps": "!chunk.canFire ? 0 : 0.06 * (player.kandarinHardDiary ? 1.1 : 1) * floor((player.rangedLevel + player.rangedBoost) / ((monster.attr('FIERY') ? 15 : 20) - (chunk.special('ZARYTE_CROSSBOW') ? 2 : 0))) / (max(1, chunk.aspeed - 1) * 0.6)"
+  }
+ },
+ {
+  "id": "OpalBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Opal_bolts_(e) Lucky Lightning: 5% chance of an extra floor(Ranged level / 10), rolled \"regardless of whether or not it passes an accuracy roll\". The Zaryte takes one off the divisor.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "OPAL_BOLTS"
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "(player.kandarinHardDiary ? 1.1 : 1) * (0.05 * floor((player.rangedLevel + player.rangedBoost) / (worn('ZARYTE_CROSSBOW') ? 9 : 10)))",
+  "aggregateBoundSafe": true,
+  "bound": {
+   "items": [
+    "OPAL_BOLTS"
+   ],
+   "category": "RANGED",
+   "addendDps": "!chunk.canFire ? 0 : 0.05 * (player.kandarinHardDiary ? 1.1 : 1) * floor((player.rangedLevel + player.rangedBoost) / (chunk.special('ZARYTE_CROSSBOW') ? 9 : 10)) / (max(1, chunk.aspeed - 1) * 0.6)"
+  }
+ },
+ {
+  "id": "EmeraldBoltProc",
+  "kind": "additiveHit",
+  "source": "https://oldschool.runescape.wiki/w/Emerald_bolts_(e) 55% chance on a landed hit to poison for 75 total damage over ~450 seconds, converted to a per-shot average through the stance-aware attack time; nothing against the poison-immune. The Zaryte's 1.1 lands flat, this being a flat-damage bolt.",
+  "when": {
+   "style": "RANGED",
+   "ammoCompatible": "true",
+   "ammoSpecial": "EMERALD_BOLTS",
+   "exprFilter": "!monster.poisonImmune"
+  },
+  "filterWhen": {
+   "style": "RANGED"
+  },
+  "extra": "(worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1) * (accuracy * 0.55 * (75.0 / 450.0) * (attackTicks * 0.6))",
+  "aggregateBoundSafe": true,
+  "bound": {
+   "items": [
+    "EMERALD_BOLTS"
+   ],
+   "category": "RANGED",
+   "addendDps": "!chunk.canFire || monster.poisonImmune ? 0 : 0.55 * (player.kandarinHardDiary ? 1.1 : 1) * (75.0 / 450.0)"
+  }
+ },
+ {
+  "id": "MultiTargetSplash",
+  "kind": "averageHit",
+  "source": "https://oldschool.runescape.wiki/w/Chinchompa area-of-effect weapons damaging targets other than the one being calculated, over a 3x3 area; above targetCount 1 the reported number means DPS across the clump. One accuracy roll covers every target (a shared roll changes variance, not expectation); secondaries lose \"the boosts from Salve and Avarice\" but keep the black mask, which is why the ratio reads the group's two multipliers apart. PvM cap 11 for grey and red; the black one's extra target is the chinchompaTargetCap group of weapon-families.json. Not modeled: cleave/bounce weapons, PvP target caps, whether the enemies are actually stacked.",
+  "when": {
+   "category": "RANGED",
+   "weaponFlag": "chinchompa"
+  },
+  "filterWhen": {
+   "category": "RANGED",
+   "exprFilter": "player.targetCount > 1"
+  },
+  "let": {
+   "targets": "min(max(1, player.targetCount), weapon.familyValue('chinchompaTargetCap', 11))",
+   "avarice": "modifierDamageFactor('AmuletOfAvarice')",
+   "ratio": "avarice != 1 ? 1 / avarice : groupQuery('SlayerSalveGroup', 'slayerHelmMultiplier') / max(groupQuery('SlayerSalveGroup', 'salveMultiplier'), groupQuery('SlayerSalveGroup', 'slayerHelmMultiplier'))"
+  },
+  "multiplierExpr": "targets <= 1 ? 1 : 1 + (targets - 1) * ratio",
+  "aggregateBoundSafe": true
+ }
 ]
