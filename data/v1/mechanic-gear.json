@@ -506,5 +506,28 @@
    "expr": "player.sunfireRunes"
   },
   "value": "floor(0.10 * base)"
+ },
+ {
+  "id": "DemonbaneSpellAccuracyShare",
+  "kind": "flatShare",
+  "source": "https://oldschool.runescape.wiki/w/Demonbane_spells \"By default, demonbane spells have an accuracy bonus of 20%, but can be doubled to 40% when the Mark of Darkness spell is active\"; https://oldschool.runescape.wiki/w/Purging_staff \"doubles the base accuracy bonus of demonbane spells from 20% to 40%\", and with the Mark \"further doubles the accuracy and damage bonus, giving an 80% accuracy and 50% damage bonus\". A truncated share of the running roll, scaled by the monster's demonbaneVulnerability family value.",
+  "when": {
+   "style": "MAGIC",
+   "targetAttr": "DEMON",
+   "usingDemonbane": "true"
+  },
+  "value": "floor(base * floor((player.markOfDarkness ? 40 : 20) * (worn('PURGING_STAFF') ? 2 : 1) * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100)"
+ },
+ {
+  "id": "DemonbaneSpellDamageShare",
+  "kind": "flatShare",
+  "source": "https://oldschool.runescape.wiki/w/Demonbane_spells damage is 0% until a Mark of Darkness grants 25%, or 50% alongside the purging staff; \"All of these bonuses are calculated after the player's own magic damage bonuses from their equipment.\" A truncated share of the running max hit, scaled by the demonbaneVulnerability family value.",
+  "when": {
+   "style": "MAGIC",
+   "targetAttr": "DEMON",
+   "usingDemonbane": "true",
+   "expr": "player.markOfDarkness"
+  },
+  "value": "floor(base * floor((worn('PURGING_STAFF') ? 50 : 25) * monster.familyValue('demonbaneVulnerability', 100) / 100) / 100)"
  }
 ]

@@ -1238,5 +1238,50 @@
    "category": "RANGED"
   },
   "aggregateBoundSafe": true
+ },
+ {
+  "id": "OsmumtenFangDoubleRoll",
+  "kind": "accuracyTransform",
+  "source": "https://oldschool.runescape.wiki/w/Osmumten%27s_fang \"the fang rolls accuracy twice in a single hit\" (Stab); \"The fang will now only re-roll the player's accuracy roll, rather than re-rolling both accuracy and the monster's defence outside the Tombs of Amascut\": inside the Tombs the re-roll is independent (1-(1-p)^2), everywhere else the two attack rolls share one defence roll and are correlated (the doubleRollShared closed form).",
+  "when": {
+   "style": "MELEE_STAB",
+   "worn": "OSMUMTEN_FANG"
+  },
+  "filterWhen": {
+   "style": "MELEE_STAB"
+  },
+  "accuracy": "monster.family('toa') ? 1 - (1 - accuracy) * (1 - accuracy) : doubleRollShared(attackRoll, defenceRoll)",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "OsmumtenFangEviscerate",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/Osmumten%27s_fang Eviscerate keeps the floor and drops the ceiling clamp: the roll is [shrink, maxHit], not [shrink, maxHit - shrink]. Ahead of the plain window row so the spec branch matches first.",
+  "when": {
+   "style": "MELEE_STAB",
+   "worn": "OSMUMTEN_FANG",
+   "specWeapon": "OSMUMTEN_FANG"
+  },
+  "filterWhen": {
+   "style": "MELEE_STAB"
+  },
+  "lo": "floor(0.15 * maxHit)",
+  "hi": "maxHit",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "OsmumtenFangWindow",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/Osmumten%27s_fang the fang narrows the roll by taking a 15% slice off both ends: [shrink, maxHit - shrink], not [15% of max, 85% of max]; the two ends share one term, not rounded independently.",
+  "when": {
+   "style": "MELEE_STAB",
+   "worn": "OSMUMTEN_FANG"
+  },
+  "filterWhen": {
+   "style": "MELEE_STAB"
+  },
+  "lo": "floor(0.15 * maxHit)",
+  "hi": "maxHit - floor(0.15 * maxHit)",
+  "aggregateBoundSafe": true
  }
 ]

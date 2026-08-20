@@ -1128,7 +1128,9 @@
   {
    "name": "osmumten-fang",
    "mechanics": [
-    "OsmumtenFangMechanic"
+    "OsmumtenFangDoubleRoll",
+    "OsmumtenFangWindow",
+    "OsmumtenFangEviscerate"
    ],
    "monster": "General Graardor",
    "items": [
