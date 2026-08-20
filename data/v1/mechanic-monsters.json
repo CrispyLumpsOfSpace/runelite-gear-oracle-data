@@ -696,5 +696,267 @@
    "style": "MAGIC",
    "exprFilter": "monster.elementalWeaknessPercent > 0"
   }
+ },
+ {
+  "id": "TormentedDemonShield",
+  "kind": "resistance",
+  "source": "https://oldschool.runescape.wiki/w/Tormented_Demon \"Tormented demons usually have a fire shield that reduces damage done by non-demonbane weapons/spells and non-abyssal weapons by 20%.\" Post-roll, per hitsplat, floored at 1, in the two shielded phases; the abyssalMelee family is the wiki's \"abyssal weapons\". Out of scope: shield phases per fire bomb, the demons' own attacks.",
+  "resistAny": [
+   {
+    "monsterClass": "tormentedDemon",
+    "not": {
+     "optionIs": {
+      "key": "tormentedDemonPhase",
+      "is": "Unshielded",
+      "default": "Shielded"
+     }
+    }
+   }
+  ],
+  "unless": [
+   {
+    "usingDemonbane": "true"
+   },
+   {
+    "category": "MELEE",
+    "weaponFamily": "abyssalMelee"
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "tormentedDemon"
+   }
+  ],
+  "factor": [
+   4,
+   5
+  ],
+  "minResult": 1,
+  "aggregateBoundSafe": true,
+  "monsterOptions": {
+   "when": {
+    "monsterClass": "tormentedDemon"
+   },
+   "options": [
+    {
+     "key": "tormentedDemonPhase",
+     "type": "choice",
+     "label": "Demon phase",
+     "help": "<html>A Tormented Demon's fire shield takes <b>20% off everything but demonbane and abyssal weapons</b>.<br>It drops after each fire bomb, and about 30 ticks in the demon is defenceless (every attack lands).<br>While unshielded, slow crush, heavy Ranged and spellcasting gain a large flat bonus.</html>",
+     "choices": [
+      "Shielded",
+      "Shielded (Defenceless)",
+      "Unshielded"
+     ],
+     "default": "Shielded"
+    }
+   ]
+  }
+ },
+ {
+  "id": "TormentedDemonDefenceless",
+  "kind": "accuracyTransform",
+  "source": "https://oldschool.runescape.wiki/w/Tormented_Demon in both non-default phases every attack lands, whatever the rolls say.",
+  "when": {
+   "monsterClass": "tormentedDemon",
+   "not": {
+    "optionIs": {
+     "key": "tormentedDemonPhase",
+     "is": "Shielded",
+     "default": "Shielded"
+    }
+   }
+  },
+  "filterWhen": {
+   "monsterClass": "tormentedDemon"
+  },
+  "accuracy": "1",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "TormentedDemonUnshieldedBonus",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/Tormented_Demon unshielded, magic spells, heavy Ranged and crush gain a flat speed^2 - 16 damage bonus, added before the raise so a 0 roll lands as the bonus rather than as 1. The bonus grows with the square of the weapon's speed, so the slowest crush weapon in the bank can beat the fastest, a ranking no raw stat carries (the hidesItems speed predicate).",
+  "when": {
+   "monsterClass": "tormentedDemon",
+   "optionIs": {
+    "key": "tormentedDemonPhase",
+    "is": "Unshielded",
+    "default": "Shielded"
+   },
+   "anyOf": [
+    {
+     "category": "MAGIC",
+     "expr": "cast.isSpell"
+    },
+    {
+     "category": "RANGED",
+     "rangedWeightClass": "HEAVY"
+    },
+    {
+     "style": "MELEE_CRUSH"
+    }
+   ],
+   "expr": "attackTicks * attackTicks - 16 > 0"
+  },
+  "filterWhen": {
+   "monsterClass": "tormentedDemon"
+  },
+  "lo": "attackTicks * attackTicks - 16",
+  "hi": "maxHit + (attackTicks * attackTicks - 16)",
+  "hidesItems": {
+   "style": "MELEE_CRUSH",
+   "minAspeed": 5
+  },
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "TormentedDemonQuickened",
+  "kind": "attackSpeed",
+  "source": "https://oldschool.runescape.wiki/w/Tormented_Demon a qualifying attack on an unshielded demon lands a tick sooner.",
+  "when": {
+   "monsterClass": "tormentedDemon",
+   "optionIs": {
+    "key": "tormentedDemonPhase",
+    "is": "Unshielded",
+    "default": "Shielded"
+   },
+   "anyOf": [
+    {
+     "category": "MAGIC",
+     "expr": "cast.isSpell"
+    },
+    {
+     "category": "RANGED",
+     "rangedWeightClass": "HEAVY"
+    },
+    {
+     "style": "MELEE_CRUSH"
+    }
+   ],
+   "expr": "attackTicks * attackTicks - 16 > 0"
+  },
+  "filterWhen": {
+   "monsterClass": "tormentedDemon"
+  },
+  "expectedTicks": "ticks - 1",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "LeviathanMeleeUnreachable",
+  "kind": "immunity",
+  "source": "https://oldschool.runescape.wiki/w/The_Leviathan melee never reaches it: \"Your melee attacks can't reach the lure!\"",
+  "immuneAny": [
+   {
+    "monsterClass": "leviathan",
+    "category": "MELEE"
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "leviathan"
+   }
+  ]
+ },
+ {
+  "id": "LeviathanPoolRangedAccuracy",
+  "kind": "accuracyTransform",
+  "source": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies in the pathfinder's AoE the player \"will be granted perfect accuracy and an increased minimum hit\"; the guarantee is Ranged's alone, magic is paid in damage instead.",
+  "when": {
+   "monsterClass": "leviathan",
+   "category": "RANGED",
+   "optionIs": {
+    "key": "leviathanSituation",
+    "is": "In the pathfinder's pool",
+    "default": "Normal"
+   }
+  },
+  "filterWhen": {
+   "monsterClass": "leviathan"
+  },
+  "accuracy": "1",
+  "aggregateBoundSafe": true,
+  "monsterOptions": {
+   "when": {
+    "monsterClass": "leviathan"
+   },
+   "options": [
+    {
+     "key": "leviathanSituation",
+     "type": "choice",
+     "label": "Fight situation",
+     "help": "<html>The Leviathan pays differently by moment.<br><b>In the pool:</b> ranged cannot miss and hits for at least 20% of its max; magic gets double damage instead.<br><b>Stunned:</b> damage is capped at 10 \u2014 unless you are at the <b>backside</b>, where ranged hits for at least 65% of its max.</html>",
+     "choices": [
+      "Normal",
+      "In the pathfinder's pool",
+      "Stunned",
+      "Stunned, at the backside"
+     ],
+     "default": "Normal"
+    }
+   ]
+  }
+ },
+ {
+  "id": "LeviathanPoolMagic",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies in the pathfinder's pool magic gets doubled damage on an otherwise ordinary roll, including its ordinary accuracy; the doubled hit really can land for twice the ceiling.",
+  "when": {
+   "monsterClass": "leviathan",
+   "category": "MAGIC",
+   "optionIs": {
+    "key": "leviathanSituation",
+    "is": "In the pathfinder's pool",
+    "default": "Normal"
+   }
+  },
+  "filterWhen": {
+   "monsterClass": "leviathan"
+  },
+  "lo": "0",
+  "hi": "maxHit",
+  "factor": "2",
+  "effectiveMaxHit": "maxHit * 2",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "LeviathanPoolRangedFloor",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies the pool's increased minimum: Mod Ash, \"it's ensuring you hit for at least 20% of your max\".",
+  "when": {
+   "monsterClass": "leviathan",
+   "category": "RANGED",
+   "optionIs": {
+    "key": "leviathanSituation",
+    "is": "In the pathfinder's pool",
+    "default": "Normal"
+   }
+  },
+  "filterWhen": {
+   "monsterClass": "leviathan"
+  },
+  "lo": "idiv(maxHit * 20, 100)",
+  "hi": "maxHit",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "LeviathanBacksideFloor",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies \"When attacking the backside with ranged, it deals at least a minimum of ~65% of your maximum hit as damage\"; stunned elsewhere is the 10 damage cap in damage-caps.json.",
+  "when": {
+   "monsterClass": "leviathan",
+   "category": "RANGED",
+   "optionIs": {
+    "key": "leviathanSituation",
+    "is": "Stunned, at the backside",
+    "default": "Normal"
+   }
+  },
+  "filterWhen": {
+   "monsterClass": "leviathan"
+  },
+  "lo": "idiv(maxHit * 65, 100)",
+  "hi": "maxHit",
+  "aggregateBoundSafe": true
  }
 ]

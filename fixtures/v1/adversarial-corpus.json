@@ -1660,7 +1660,10 @@
   {
    "name": "tormented-demon-unshielded",
    "mechanics": [
-    "TormentedDemonPhases"
+    "TormentedDemonShield",
+    "TormentedDemonDefenceless",
+    "TormentedDemonUnshieldedBonus",
+    "TormentedDemonQuickened"
    ],
    "monster": "Tormented Demon",
    "monsterOptions": {
@@ -1699,7 +1702,11 @@
   {
    "name": "leviathan-stunned",
    "mechanics": [
-    "LeviathanMechanics"
+    "LeviathanMeleeUnreachable",
+    "LeviathanPoolRangedAccuracy",
+    "LeviathanPoolMagic",
+    "LeviathanPoolRangedFloor",
+    "LeviathanBacksideFloor"
    ],
    "monster": "The Leviathan",
    "monsterOptions": {
