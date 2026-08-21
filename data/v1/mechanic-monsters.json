@@ -316,7 +316,7 @@
    2
   ],
   "minResult": 0,
-  "source": "https://oldschool.runescape.wiki/w/Corporeal_Beast \"The Corporeal Beast has a 50% damage reduction against any weapon that is not a Corpbane weapon on stab attack style.\" Magic is exempt too: \"Although magic attacks also deal full damage, they are generally very inaccurate against the boss.\" Halves each rolled hitsplat after the accurate-hits-deal-1 raise and before flat armour. Not modelled: the dark energy core's heal, and the 100 damage cap on the spear path this never halves.",
+  "source": "https://oldschool.runescape.wiki/w/Corporeal_Beast \"The Corporeal Beast has a 50% damage reduction against any weapon that is not a Corpbane weapon on stab attack style.\" Magic is exempt too: \"Although magic attacks also deal full damage, they are generally very inaccurate against the boss.\" The stab qualifier covers the melee corpbane weapons only: https://oldschool.runescape.wiki/w/King%27s_barrage \"deals full damage to the Corporeal Beast\" is a crossbow with no stab style, so a ranged corpbane weapon is exempt on the flag alone. Halves each rolled hitsplat after the accurate-hits-deal-1 raise and before flat armour. Not modelled: the dark energy core's heal, and the 100 damage cap on the spear path this never halves.",
   "resistAny": [
    {
     "monsterClass": "corporealBeast"
@@ -328,6 +328,10 @@
    },
    {
     "style": "MELEE_STAB",
+    "weaponFlag": "corpbane"
+   },
+   {
+    "category": "RANGED",
     "weaponFlag": "corpbane"
    }
   ],
