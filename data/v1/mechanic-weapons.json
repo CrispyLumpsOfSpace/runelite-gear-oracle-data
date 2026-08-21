@@ -1220,7 +1220,7 @@
  {
   "id": "TwistedBow",
   "kind": "modifier",
-  "source": "https://oldschool.runescape.wiki/w/Twisted_bow accuracy percent = 140 + (3M-10)/100 - ((3M/10 - 100)^2)/100 clamped to [0, 140]; damage percent = 250 + (3M-14)/100 - ((3M/10 - 140)^2)/100 clamped to [0, 250]; every division truncated. M = max(target Magic level, Magic attack bonus) capped at 250, or 350 in CoX, which raises only the M input cap (the damage clamp never binds under it). Accuracy is its own late, separately-floored stage; damage folds into the main product with the other Ranged bonuses.",
+  "source": "https://oldschool.runescape.wiki/w/Twisted_bow accuracy percent = 140 + (3M-10)/100 - ((3M/10 - 100)^2)/100 clamped to [0, 140]; damage percent = 250 + (3M-14)/100 - ((3M/10 - 140)^2)/100 clamped to [0, 250]; every division truncated. M = max(target Magic level, Magic attack bonus) capped at 250, or 350 in CoX, which raises only the M input cap (the damage clamp never binds under it). Accuracy is its own late, separately-floored stage; damage folds into the main product with the other Ranged bonuses. Unsourced: below Magic level 4 the additive term's numerator is negative, where truncation and flooring differ (40% accuracy and 54% damage at Magic 1, against 39% and 53%); the wiki's markup carries no floor brackets and no statement of the direction, so this follows the truncation the rest of the formula uses.",
   "when": {
    "category": "RANGED",
    "worn": "TWISTED_BOW"
