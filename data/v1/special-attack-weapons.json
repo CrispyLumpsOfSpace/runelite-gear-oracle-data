@@ -115,7 +115,7 @@
 
 	{"key": "ARKAN_BLADE", "name": "Arkan blade", "energy": 30, "attackStyle": "MELEE_SLASH", "accNum": 3, "accDen": 2,
 	 "dmgNum": 3, "dmgDen": 2, "shape": "STANDARD", "defenceStyleOverride": "MELEE_SLASH",
-	 "source": "Flames of Ralos: 30% energy, \"50% increased accuracy\" and \"50% increased damage\", one hit, \"rolls against the opponent's slash defence roll\" — plus a guaranteed burn on a landed hit (\"10 damage over 40 ticks\"), priced by ArkanBladeSpecBurn as 10 x hit chance and gated on normal-tier burn immunity."},
+	 "source": "Flames of Ralos: 30% energy, \"50% increased accuracy\" and \"50% increased damage\", one hit, \"rolls against the opponent's slash defence roll\" — plus a guaranteed burn on a landed hit (\"10 damage over 40 ticks\"), priced by ArkanBladeSpecBurn as 10 x hit chance and gated on strong-tier burn immunity, the tier https://oldschool.runescape.wiki/w/Burn files this burn under."},
 
 	{"key": "BURNING_CLAWS", "name": "Burning claws", "energy": 35, "attackStyle": "MELEE_SLASH", "accNum": 1,
 	 "accDen": 1, "dmgNum": 1, "dmgDen": 1, "shape": "BURNING_CLAWS_CASCADE",

@@ -148,6 +148,15 @@
  },
  {
   "id": "DragonHunterWand",
+  "hidesItems": {
+   "types": [
+    "DRAGON_HUNTER_WAND"
+   ],
+   "style": "MAGIC",
+   "targetAttrAny": [
+    "DRAGON"
+   ]
+  },
   "source": "https://oldschool.runescape.wiki/w/Dragon_hunter_wand \u2014 +75% magic accuracy and +40% magic damage against draconic creatures. Stacks with Slayer helm (i) and Void, but not salve amulet (i); SlayerSalveModifier suppresses the salve while this row applies.",
   "when": {
    "style": "MAGIC",
@@ -275,8 +284,18 @@
  },
  {
   "id": "GolemBaneWeapons",
-  "source": "https://oldschool.runescape.wiki/w/Barronite_mace \"a 15% damage and accuracy bonus against golems\" \u2014 deliberately contradicted: damage only, no accuracy bonus at all. Granite hammer +30% accuracy and damage per its article.",
+  "hidesItems": {
+   "types": [
+    "BARRONITE_MACE",
+    "GRANITE_HAMMER"
+   ],
+   "targetAttrAny": [
+    "GOLEM"
+   ]
+  },
+  "source": "https://oldschool.runescape.wiki/w/Barronite_mace \"a 15% damage and accuracy bonus against golems\"; https://oldschool.runescape.wiki/w/Granite_hammer \"30% Golembane effect, dealing 30% extra damage and accuracy\". Melee-scoped like the other bane rows: the passive belongs to the weapon's own attack, not to a spell manually cast while it is held.",
   "when": {
+   "category": "MELEE",
    "targetAttr": "GOLEM"
   },
   "accuracy": [
@@ -287,6 +306,15 @@
     "factor": [
      13,
      10
+    ]
+   },
+   {
+    "when": {
+     "worn": "BARRONITE_MACE"
+    },
+    "factor": [
+     23,
+     20
     ]
    }
   ],
@@ -396,7 +424,7 @@
  },
  {
   "id": "ChinchompaDistanceAccuracy",
-  "source": "https://twitter.com/JagexAsh/status/761964699646828544 \"If you chose the short fuse, 0-3 gives you full accuracy, 4-6 gives reduced, 7+ gives bad, etc.\"; https://twitter.com/JagexAsh/status/993196171677126661 \"Medium fuses 0-3 tiles and 7+ tiles are 75%, not 50%. It's applied to the accuracy/defence roll when the attack is cast, like armour bonuses are.\" Short, Medium and Long fuse ARE the Accurate, Rapid and Longrange stances, so the distance is the only new input; the factors are quarters, exact in binary, so the floored stage loses nothing. The distance each band reads is clamped to the outer bands, min(7, max(1, d)): the clamp is the game's, where the bands fall is each sub-row's to say. Not modelled: the shared accuracy roll and the 3x3 splash, which are MultiTargetSplash's.",
+  "source": "https://twitter.com/JagexAsh/status/761964699646828544 \"If you chose the short fuse, 0-3 gives you full accuracy, 4-6 gives reduced, 7+ gives bad, etc.\"; https://twitter.com/JagexAsh/status/993196171677126661 \"Medium fuses 0-3 tiles and 7+ tiles are 75%, not 50%. It's applied to the accuracy/defence roll when the attack is cast, like armour bonuses are.\" Short, Medium and Long fuse ARE the Accurate, Rapid and Longrange stances, so the distance is the only new input; the factors are quarters, exact in binary, so the floored stage loses nothing. The distance each band reads is clamped to the outer bands, min(7, max(1, d)): the clamp is the game's, where the bands fall is each sub-row's to say. The factor scales the whole attack roll, on the second tweet's placement; https://oldschool.runescape.wiki/w/Chinchompa_(weapon) instead glosses it as scaling the Ranged attack bonus (\"+100 Ranged attack ... long fuse ... effectively becomes +50\"), which is a different number once the +64 constant is in the roll, and which no recorded assertion can distinguish. Unresolved pending in-game testing at a fixed Ranged bonus against a known Defence. Not modelled: the shared accuracy roll and the 3x3 splash, which are MultiTargetSplash's.",
   "when": {
    "category": "RANGED",
    "weaponFamily": "chinchompa"
@@ -607,7 +635,7 @@
  },
  {
   "id": "ScorchingBow",
-  "source": "https://oldschool.runescape.wiki/w/Scorching_bow \u2014 +30% Ranged accuracy and damage against demons, scaled by the target's demonbane vulnerability like any bane percentage. Six twentieths is the ordinary-demon figure for the imbued black mask fold-in: unlike the other members of that stage this percentage is scaled per demon (21% on Duke Sucellus, 36% on Yama) and those do not land on whole twentieths, the unit the fold-in is defined over. If the combination ever needs to be exact the fix is a finer unit, not a per-weapon fudge.",
+  "source": "https://oldschool.runescape.wiki/w/Scorching_bow \u2014 +30% Ranged accuracy and damage against demons, scaled by the target's demonbane vulnerability like any bane percentage. Six twentieths is the ordinary-demon figure for the imbued black mask fold-in: unlike the other members of that stage this percentage is scaled per demon (21% on Duke Sucellus, 36% on Yama) and those do not land on whole twentieths, the unit the fold-in is defined over. If the combination ever needs to be exact the fix is a finer unit, not a per-weapon fudge (docs/ENGINE-GAPS.md, battery-pinned list).",
   "when": {
    "category": "RANGED",
    "targetAttr": "DEMON",
@@ -642,7 +670,7 @@
  {
   "id": "RatbaneWeapons",
   "kind": "flatDamage",
-  "source": "https://oldschool.runescape.wiki/w/Bone_mace \"it is effective against all types of rats by adding 10 damage to the player's maximum hit\"; \"Looks like a static +10 in the code, from what I can see.\"; \"The mace cannot be used against any other type of monster (including manual cast spells)\". The flat bonus lands on the raw base hit so set bonuses scale it; the Bone staff's +10 is already in its powered-staff base hit, which is why Magic is excluded here. The filter is deliberately unnarrowed: the immunity half depends on what is wielded, not on the monster alone.",
+  "source": "https://oldschool.runescape.wiki/w/Bone_mace \"it is effective against all types of rats by adding 10 damage to the player's maximum hit\"; \"Looks like a static +10 in the code, from what I can see.\"; \"The mace cannot be used against any other type of monster (including manual cast spells)\". Where the flat bonus lands differs by style: Melee and Magic add it to the raw base hit so later percentage stages scale it, Ranged adds it after them (docs/ENGINE-GAPS.md, battery-pinned list); the Bone staff's +10 is already in its powered-staff base hit, which is why Magic is excluded here. The filter is deliberately unnarrowed: the immunity half depends on what is wielded, not on the monster alone.",
   "when": {
    "targetAttr": "RAT",
    "not": {
@@ -931,7 +959,7 @@
  {
   "id": "VenatorBowBounce",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Venator_bow \"the arrow will try to bounce to another target near the first\"; \"the attack can bounce again\"; \"a max hit equal to two-thirds of the original max hit, rounded down\". Each bounce rolls its own accuracy, and two targets are enough for both bounces (the second may return to the first). The displayed ceiling stays the clicked target's, since the bounce direction is unknown. Charge-dependent: the uncharged bow is an ordinary bow with no special type. Not modelled: the two-tile bounce geometry, charge consumption, per-bounce salve interactions.",
+  "source": "https://oldschool.runescape.wiki/w/Venator_bow \"the arrow will try to bounce to another target near the first\"; \"the attack can bounce again\"; \"a max hit equal to two-thirds of the original max hit, rounded down\". Each bounce rolls its own accuracy, and two targets are enough for both bounces (the second may return to the first). The displayed ceiling stays the clicked target's, since the bounce direction is unknown. Charge-dependent: the uncharged bow is an ordinary bow with no special type. Not modelled: the multicombat requirement (\"When attacking a target in a multicombat area\"), since the engine has no multi-way input and reads any target count above one as a clump; the two-tile bounce geometry, charge consumption, per-bounce salve interactions.",
   "when": {
    "category": "RANGED",
    "worn": "VENATOR_BOW"
@@ -1040,10 +1068,10 @@
  {
   "id": "ArkanBladeSpecBurn",
   "kind": "additiveHit",
-  "source": "https://oldschool.runescape.wiki/w/Arkan_blade \u2014 the special applies \"a strong burn effect to the target, dealing 10 damage over 40 ticks\". Suppressed by normal-tier burn immunity, not weak-only (contrast the eclipse moon burn).",
+  "source": "https://oldschool.runescape.wiki/w/Arkan_blade \u2014 the special applies \"a strong burn effect to the target, dealing 10 damage over 40 ticks\". https://oldschool.runescape.wiki/w/Burn lists the blade under strong burns and names TzKal-Zuk, Slug Prince, Gemstone Crab, sea creatures and the Moons of Peril as the only NPCs immune to those, so only strong-tier immunity suppresses it; Cerberus and red-phase Alchemical Hydra resist normal burns and still take this one.",
   "when": {
    "specWeapon": "ARKAN_BLADE",
-   "burnImmuneNormal": "false"
+   "burnImmuneStrong": "false"
   },
   "filterWhen": {
    "specActive": "true",
