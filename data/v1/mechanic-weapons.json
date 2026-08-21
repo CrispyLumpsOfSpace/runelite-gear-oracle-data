@@ -563,10 +563,11 @@
  {
   "id": "VoidwakerGuaranteedAccuracy",
   "kind": "guaranteed",
-  "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage\" \u2014 the spec never rolls accuracy; its damage window is VoidwakerSpecDistribution's.",
+  "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage\" \u2014 the spec never rolls accuracy; its damage window is VoidwakerSpecDistribution's. Scoped to MELEE so the guarantee and the window fire together: the wielded weapon alone decides specShape, so an unscoped guarantee would reach a spell cast with the Voidwaker in hand.",
   "any": [
    {
-    "specShape": "VOIDWAKER"
+    "specShape": "VOIDWAKER",
+    "category": "MELEE"
    }
   ]
  },
@@ -856,7 +857,6 @@
  {
   "id": "SplitHitWeaponMechanic",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Sulphur_blades \"it performs two independently rolled hits per attack\"; \"The maximum damage of each hit is determined by calculating the combined max hit as normal and dividing it by two.\" Five melee weapons (sulphur blades, glacial temotli, earthbound tecpatl, infernal tecpatl, Torag's hammers) and one Ranged weapon (King's barrage) share the arithmetic; the first hit floors and the second takes the remainder. No style gate: every weapon in the set is usable in exactly one style, so holding one IS the gate. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\".",
   "source": "https://oldschool.runescape.wiki/w/Sulphur_blades \"it performs two independently rolled hits per attack\"; \"The maximum damage of each hit is determined by calculating the combined max hit as normal and dividing it by two.\" The displayed ceiling is the two together; the largest real hitsplat, which is what overkill rolls against, is the rounded-up half. Five melee weapons (sulphur blades, glacial temotli, earthbound tecpatl, infernal tecpatl, Torag's hammers) and one Ranged weapon (King's barrage) share the arithmetic; the first hit floors and the second takes the remainder. No style gate: every weapon in the set is usable in exactly one style, so holding one IS the gate.",
   "when": {
    "wornAny": [
@@ -1234,7 +1234,8 @@
   "kind": "rollWindow",
   "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage between 50-150% of the wielder's maximum melee hit\", ignoring flat armour; the boss damage cap still applies. Accuracy is set to 1.0 by VoidwakerGuaranteedAccuracy; an always-max-hit target post-processes the spec distribution to one certain hitsplat at the ceiling.",
   "when": {
-   "specShape": "VOIDWAKER"
+   "specShape": "VOIDWAKER",
+   "category": "MELEE"
   },
   "filterWhen": {
    "specActive": "true",
