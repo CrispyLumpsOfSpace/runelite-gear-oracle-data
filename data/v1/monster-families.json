@@ -118,10 +118,18 @@
  },
  {
   "key": "tekton",
+  "ids": [
+   7540,
+   7541,
+   7542,
+   7543,
+   7544,
+   7545
+  ],
   "namesExact": [
    "tekton"
   ],
-  "source": "Exact name: both wiki versions (\"Normal\" and \"Enraged\") share the page name, and nothing else in the game is called Tekton."
+  "source": "https://oldschool.runescape.wiki/w/Tekton \"Tekton is immune to Range and takes 80% reduced Magic damage\", stated with no enraged carve-out. Id-keyed as well as named because the enraged rows are named \"Tekton (enraged)\" and only share the page name, which the matcher never reads."
  },
  {
   "key": "olmHead",
@@ -195,9 +203,26 @@
    11761,
    11762,
    11763,
-   11764
+   11764,
+   11697,
+   11705,
+   11709,
+   11710,
+   11711,
+   11712,
+   11713,
+   11714,
+   11715,
+   11716,
+   11717,
+   11718,
+   11723,
+   11727,
+   11728,
+   11729,
+   11781
   ],
-  "source": "The Tombs of Amascut roster by NPC id (the wiki's ToA monster list; each monster's infobox lists its ids): Akkha and his shadows, Ba-Ba, Kephri shielded/unshielded and her overlords, Zebak, the obelisk, and the Wardens' P2, ejected cores and P3."
+  "source": "The Tombs of Amascut roster by NPC id (the wiki's ToA monster list; each monster's infobox lists its ids): Akkha and his shadows, Ba-Ba, Kephri shielded/unshielded and her overlords, Zebak, the obelisk, and the Wardens' P2, ejected cores and P3, plus the path and room monsters (crocodiles, baboons, scarabs, scarab swarms, eggs). https://oldschool.runescape.wiki/w/Osmumten's_fang scopes the independent re-roll to the raid, not its bosses: \"Within the raid, this check is performed using the standard mechanics, but is repeated\"."
  },
  {
   "key": "gemstoneCrab",
@@ -274,10 +299,16 @@
  },
  {
   "key": "slagilith",
+  "ids": [
+   1362,
+   1364,
+   6324,
+   6385
+  ],
   "namesExact": [
    "slagilith"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Slagilith \"will reduce your damage by 67% if a pickaxe is not equipped\""
+  "source": "https://oldschool.runescape.wiki/w/Slagilith \"will reduce your damage by 67% if a pickaxe is not equipped\"; https://oldschool.runescape.wiki/w/Slagilith_(Nightmare_Zone) states the same for the encounter with no mode split, so the hard-mode copy (6324, named \"Slagilith (hard)\") needs the id arm to match."
  },
  {
   "key": "respiratorySystem",
@@ -354,13 +385,11 @@
  {
   "key": "araxyteMinion",
   "ids": [
-   13670,
    13671,
-   13672,
    13673,
    13675
   ],
-  "source": "https://oldschool.runescape.wiki/w/Araxxor \"Players will always max hit when attacking them with a crush or heavy Ranged weapon (such as a crossbow or ballista) if crush or ranged is their highest accuracy style respectively, or the noxious halberd\". Id-keyed: the three named minions carry different names from each other."
+  "source": "https://oldschool.runescape.wiki/w/Araxxor \"Players will always max hit when attacking them with a crush or heavy Ranged weapon (such as a crossbow or ballista) if crush or ranged is their highest accuracy style respectively, or the noxious halberd\". Id-keyed: the three named minions carry different names from each other. The unhatched eggs 13670/13672/13674 are excluded, https://oldschool.runescape.wiki/w/Araxxor/Strategies \"attacking the unhatched eggs - does not guarantee a max hit, and rolls damage normally\"."
  },
  {
   "key": "guardianStatue",
