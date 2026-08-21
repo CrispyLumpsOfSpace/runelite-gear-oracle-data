@@ -1,0 +1,103 @@
+name: Validate
+
+# Installed clients fetch this repository's master directly, so a hand-edited table that
+# merges is already published. `refresh` validates what the scrape produced; this validates
+# what a human wrote, on the way in.
+#
+#   validate  the committed tree's own shape checks
+#   plugin    the consumer's test suite, run against this tree rather than its pinned commit
+
+on:
+  push:
+    branches: [master, staging]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # tools/validate.py reads only the committed tree and `git show HEAD:` — no network, no
+      # dependencies, so the whole of it runs here. Its shrink checks compare against HEAD,
+      # which on a pushed commit is this same tree, so on this trigger they are a no-op and the
+      # shape, schema and manifest checks are what gate.
+      - name: Validate the committed dataset
+        run: python3 tools/validate.py
+
+  citations:
+    # Report-only, and deliberately so: it reaches the live wiki, and an article reworded since
+    # it was cited says nothing about whether the fact it stated still holds. A NOT-FOUND is a
+    # prompt for a human to look, never a reason to hold a publish, so this job must not gate a
+    # pull request. validate.py above is what blocks on a citation's shape.
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    continue-on-error: true
+    name: citation quotes (report only)
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check every cited quote against the wiki
+        working-directory: tools
+        run: python3 verify_sources.py
+
+  plugin:
+    # The suite that actually reads these tables lives in the plugin repository and normally
+    # tests `wikiDataPin`, a commit that may be many edits behind. Run it against this tree.
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    name: plugin suite
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: data
+
+      - uses: actions/checkout@v4
+        with:
+          repository: CrispyLumpsOfSpace/runelite-gear-oracle
+          ref: master
+          path: plugin
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          # 11 is what the plugin targets and what the Plugin Hub builds with; its own CI also
+          # covers 21, which nothing about the data changes.
+          java-version: '11'
+          cache: gradle
+
+      # Several tests lay out real Swing components and assert pixel widths, which font metrics
+      # decide. Matches the plugin's own CI.
+      - name: Install fonts for the headless UI tests
+        run: sudo apt-get update && sudo apt-get install -y fonts-dejavu-core
+
+      # -PwikiDataSource copies the test data out of this checkout instead of fetching the
+      # pinned commit from raw hosting, so an unpushed or forked tree is testable too.
+      - name: Run the plugin suite against this dataset
+        working-directory: plugin
+        run: ./gradlew test --no-daemon --stacktrace -PwikiDataSource=${{ github.workspace }}/data
+
+      - name: Upload test report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: plugin-test-report
+          path: plugin/build/reports/tests/test
+          retention-days: 14
