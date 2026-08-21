@@ -1041,7 +1041,8 @@
   "group": "rangedWeightClass",
   "text": "LIGHT",
   "specialTypes": [
-   "ECLIPSE_ATLATL"
+   "ECLIPSE_ATLATL",
+   "TONALZTICS_OF_RALOS"
   ],
   "nameContains": [
    "dart",
@@ -1055,7 +1056,7 @@
    "killer's",
    "hunting"
   ],
-  "source": "The LIGHT projectiles: darts, knives, thrown axes, the blowpipe and the atlatl. Arrows \u2014 every bow \u2014 and anything unrecognised are STANDARD, which is the fallback. The Kitchen, Killer's and Hunting knives are melee \"knife\" lookalikes, not throwing knives."
+  "source": "The LIGHT projectiles: darts, knives, thrown axes, the blowpipe, the atlatl and the tonalztics of ralos, https://oldschool.runescape.wiki/w/Tonalztics_of_ralos \"The weapon rolls against a monster's light ranged defence\". Arrows \u2014 every bow \u2014 and anything unrecognised are STANDARD, which is the fallback. The Kitchen, Killer's and Hunting knives are melee \"knife\" lookalikes, not throwing knives."
  },
  {
   "key": "ammoSalamander",
