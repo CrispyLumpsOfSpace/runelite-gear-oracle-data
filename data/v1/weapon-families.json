@@ -224,6 +224,14 @@
   "source": "https://oldschool.runescape.wiki/w/Brutal_arrow \u2014 the ogre-bow ammunition Zogres take full damage from; the leading space keeps the match on the colour-prefixed names (\"Mithril brutal\")."
  },
  {
+  "key": "brutalArrowAboveMithril",
+  "nameContains": [
+   "adamant brutal",
+   "rune brutal"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Brutal_arrow \"Ogre bows can only fire up to mithril brutal arrows, while composite ogre bows can fire all types of brutal arrows.\" The colour prefix is the tier, so the two rungs above mithril are named."
+ },
+ {
   "key": "ogreArrow",
   "nameContains": [
    "ogre arrow",
