@@ -27,11 +27,31 @@ alone.
       category), likewise for the clientless test suite.
   fixtures/v1/reference-attributes.json        -- monster id -> attribute list (cross-check)
   fixtures/v1/reference-weapon-categories.json -- weapon id -> category/speed/ranged (cross-check)
+  fixtures/v1/monster-stat-gaps.json -- every stat the wiki could not state as one number,
+      the report tools/validate.py holds the publish against.
 
 To decide which stats need publishing, the pipeline consults a rendering of the game client's
 cache (chisel.weirdgloop.org) transiently at build time. No cache-derived value is published or
 committed: the comparison only selects WHICH wiki values appear, and every published value is
 the wiki's.
+
+Stat parsing policy
+-------------------
+The Bucket API stores a monster stat only when the infobox parameter is a bare number, so a
+band, a footnoted number and a blank parameter all arrive as an absent bucket field. Each is
+resolved against the article's own {{Infobox Monster}} source (tools/wiki_infobox.py):
+
+  band ("215-<br />145")     -> the first-listed value, the stat at the start of the fight.
+      The other end is reached only at 0 hitpoints, where the fight is over, so it is the
+      one end that is defined for the whole encounter. Monsters whose defence scales through
+      a kill are therefore published at their opening defence, not averaged over it.
+  footnoted ("40&thinsp;{{CiteTwitter|...}}") -> the number; a citation is annotation.
+  blank, absent, or anything else (Yama's "-30 ... or +60" conditional) -> unknown: the stat
+      is omitted from "ov" entirely, so the plugin fills it from the player's game cache
+      rather than being handed a wiki 0 the wiki never claimed.
+
+A stat coerced to 0 here would be published as an override precisely because it disagrees
+with the cache, so the parse failure would outrank the correct value.
 """
 import datetime
 import json
@@ -39,6 +59,8 @@ import re
 import urllib.request
 from pathlib import Path
 
+import wiki_infobox
+import wiki_pages
 from wiki_bucket import fetch_bucket, iter_equipment, normalise_category
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -131,12 +153,54 @@ def cache_effective(npc, field):
     return (npc.get("params") or {}).get(CACHE_PARAM[field], 0)
 
 
-def wiki_int(row, field, default=0):
+UNKNOWN = "unknown"  # no int the wiki states; distinct from every value wiki_int can return
+
+
+def wiki_int(row, field):
+    """The wiki's integer for one stat, or UNKNOWN when the bucket row does not hold one.
+
+    UNKNOWN covers a blank parameter and one the Bucket API dropped alike; recover_stats()
+    separates them from the article source. See the module docstring for why neither may
+    become a 0.
+    """
     value = row.get(field)
     try:
         return int(value)
     except (TypeError, ValueError):
-        return default
+        return UNKNOWN
+
+
+def recover_stats(rows):
+    """Second pass over the articles whose bucket row is missing a stat.
+
+    Returns (recovered, gaps): {(page_name, version_anchor, field): int} for the stats the
+    infobox does state, and a gap row per stat it does not, for the report validate.py holds
+    the publish against.
+    """
+    wanted = {}
+    for row in rows:
+        missing = [f for f in CACHE_FIELDS if wiki_int(row, f) is UNKNOWN]
+        if missing:
+            wanted.setdefault(row.get("page_name") or "", []).append((row, missing))
+
+    recovered, gaps = {}, []
+    for title, entries in sorted(wanted.items()):
+        box = wiki_infobox.infobox(wiki_pages.wikitext(title, delay=0.2) or "")
+        values = wiki_infobox.parameters(box) if box else {}
+        for row, missing in entries:
+            anchor = row.get("version_anchor") or ""
+            for field in missing:
+                value, raw = (wiki_infobox.read(values, field, anchor) if values
+                              else (wiki_infobox.BLANK, None))
+                if isinstance(value, int):
+                    recovered[(title, anchor, field)] = value
+                else:
+                    gap = {"page_name": title, "version_anchor": anchor, "field": field,
+                           "why": value}
+                    if raw:
+                        gap["raw"] = raw  # what defeated the parse; a blank parameter has none
+                    gaps.append(gap)
+    return recovered, gaps
 
 
 def primary_id(row):
@@ -167,13 +231,20 @@ def fetch_monsters(cache_npcs):
     if not rows:
         raise SystemExit("monster fetch returned no rows")
 
+    recovered, gaps = recover_stats(rows)
+
     minimal, full = [], []
     for row in rows:
         base = {f: clean(row[f]) for f in KEPT_FIELDS if f in row and clean(row[f]) is not None}
         npc = cache_npcs.get(primary_id(row))
         overrides, everything = {}, {}
         for field in CACHE_FIELDS:
-            wiki_value = wiki_int(row, field, 1 if field == "size" else 0)
+            wiki_value = wiki_int(row, field)
+            if wiki_value is UNKNOWN:
+                wiki_value = recovered.get(
+                    (row.get("page_name") or "", row.get("version_anchor") or "", field), UNKNOWN)
+            if wiki_value is UNKNOWN:
+                continue  # the wiki does not state it; the game cache answers instead
             everything[field] = wiki_value
             if cache_effective(npc, field) != wiki_value:
                 overrides[field] = wiki_value
@@ -190,7 +261,15 @@ def fetch_monsters(cache_npcs):
     overridden = sum(1 for r in minimal if "ov" in r)
     write_rows(ROOT / "data/v1/monsters.json", minimal, meta=dataset_meta())
     write_rows(ROOT / "fixtures/v1/monsters-full.json", full, meta=dataset_meta())
-    return len(minimal), overridden
+    gaps.sort(key=lambda g: (g["page_name"], g["version_anchor"], g["field"]))
+    write_rows(ROOT / "fixtures/v1/monster-stat-gaps.json", gaps, meta={
+        "comment": "Stats no published row may carry: the wiki states no single number for "
+                   "them. validate.py fails the publish if one appears in an 'ov' block, "
+                   "which is how a silently zeroed stat would reach clients. "
+                   "Generated by tools/fetch_data.py; do not hand-edit.",
+        "retrieved": datetime.date.today().isoformat(),
+    })
+    return len(minimal), overridden, len(gaps)
 
 
 def fetch_equipment():
@@ -311,7 +390,7 @@ def fetch_reference_fixtures():
 
 def main():
     cache_npcs = load_cache_npcs()
-    monsters, overridden = fetch_monsters(cache_npcs)
+    monsters, overridden, gaps = fetch_monsters(cache_npcs)
     equipment, equipmentRows = fetch_equipment()
     attributes, weapons = fetch_reference_fixtures()
     (ROOT / "data/v1/meta.json").write_text(json.dumps({
@@ -322,8 +401,8 @@ def main():
                    "equipmentCategories": equipment, "equipmentRows": equipmentRows,
                    "referenceAttributes": attributes, "referenceWeapons": weapons},
     }, indent=1) + "\n")
-    print(f"monsters={monsters} (ov={overridden}) categories={equipment} rows={equipmentRows} "
-          f"attributes={attributes} weapons={weapons}")
+    print(f"monsters={monsters} (ov={overridden}, statGaps={gaps}) categories={equipment} "
+          f"rows={equipmentRows} attributes={attributes} weapons={weapons}")
 
 
 if __name__ == "__main__":

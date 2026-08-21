@@ -98,6 +98,24 @@ def fetch(title, delay=0.5):
     return _cached("page:" + title, produce)
 
 
+def wikitext(title, delay=0.5):
+    """Just the article source, memoised apart from fetch()'s pair.
+
+    The infobox recovery in fetch_data.py reads a hundred-odd articles and needs none of the
+    rendered text, which costs a second API call each.
+    """
+    def produce():
+        time.sleep(delay)
+        query = _request({"action": "query", "prop": "revisions", "rvslots": "main",
+                          "rvprop": "content", "redirects": "1", "titles": title})
+        pages = list(query.get("query", {}).get("pages", {}).values())
+        if not pages or "missing" in pages[0]:
+            return ""
+        revisions = pages[0].get("revisions") or [{}]
+        return revisions[0].get("slots", {}).get("main", {}).get("*", "")
+    return _cached("wikitext:" + title, produce)
+
+
 _PUNCTUATION = {"’": "'", "‘": "'", "“": '"', "”": '"', "–": "-",
                 "—": "-", "−": "-", "×": "x", "≥": ">=", "≤": "<=",
                 " ": " ", "​": ""}

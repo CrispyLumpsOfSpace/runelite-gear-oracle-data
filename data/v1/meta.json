@@ -4,7 +4,7 @@
  "licence": "CC BY-NC-SA 3.0 \u2014 see data/LICENSE",
  "counts": {
   "monsters": 3234,
-  "monstersWithStatOverrides": 604,
+  "monstersWithStatOverrides": 531,
   "equipmentCategories": 1636,
   "equipmentRows": 5476,
   "referenceAttributes": 4124,

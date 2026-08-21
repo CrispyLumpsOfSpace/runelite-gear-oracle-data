@@ -194,6 +194,38 @@ def check_citations(errors):
         walk(doc)
 
 
+def check_stat_gaps(errors):
+    """No row publishes a stat the wiki could not state as one number.
+
+    The Bucket API drops a stat it cannot store numerically, so a band, a footnoted number and
+    a blank parameter all reach the fetcher as an absent field. Coercing one to 0 publishes an
+    override that outranks the game cache's real stat, so a gap appearing inside "ov" is that
+    coercion.
+    """
+    try:
+        report = json.loads((ROOT / "fixtures/v1/monster-stat-gaps.json").read_text())
+    except (OSError, ValueError) as error:
+        errors.append(f"monster-stat-gaps: unreadable ({error}) — run tools/fetch_data.py")
+        return
+    gaps = report.get("rows")
+    if not isinstance(gaps, list):
+        errors.append("monster-stat-gaps: no gap list — run tools/fetch_data.py")
+        return
+    gapped = {(g.get("page_name"), g.get("version_anchor"), g.get("field")) for g in gaps
+              if isinstance(g, dict)}
+    for name in ("data/v1/monsters.json", "fixtures/v1/monsters-full.json"):
+        try:
+            rows = json.loads((ROOT / name).read_text()).get("rows") or []
+        except (OSError, ValueError):
+            continue  # check_tables reports the parse failure.
+        published = [(r.get("page_name"), r.get("version_anchor") or "", field)
+                     for r in rows for field in (r.get("ov") or {})]
+        leaked = sorted(set(published) & gapped)
+        if leaked:
+            errors.append(f"{Path(name).name}: publishes {len(leaked)} stats the wiki states no "
+                          f"number for (e.g. {leaked[:3]}) — a parse failure became a value")
+
+
 def check_format(errors):
     """Every hand-authored table is byte-identical to its canonical layout.
 
@@ -211,6 +243,7 @@ def check_format(errors):
 def main():
     errors = []
     check_tables(errors)
+    check_stat_gaps(errors)
     check_format(errors)
     check_no_source_dumps(errors)
     check_citations(errors)
@@ -282,6 +315,8 @@ def main():
     before = previous_counts()
     counts = json.loads((ROOT / "data/v1/meta.json").read_text())["counts"]
     for key in counts:
+        if key == "monstersWithStatOverrides":
+            continue  # not a universe count: a parse fixed upstream legitimately removes rows
         check_shrink(errors, key, counts[key], before.get(key))
 
     if errors:
