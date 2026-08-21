@@ -1601,7 +1601,7 @@
  {
   "id": "EmeraldBoltProc",
   "kind": "additiveHit",
-  "source": "https://oldschool.runescape.wiki/w/Emerald_bolts_(e) 55% chance on a landed hit to poison for 75 total damage over ~450 seconds, converted to a per-shot average through the stance-aware attack time; nothing against the poison-immune. The Zaryte's 1.1 lands flat, this being a flat-damage bolt.",
+  "source": "https://oldschool.runescape.wiki/w/Emerald_bolts_(e) 55% chance on a landed hit to poison for 75 total damage over ~450 seconds, converted to a per-shot average through the attack time the engine divides by (expectedAttackTicks, not the base speed, so an attackSpeed row cannot leave the conversion uncancelled); nothing against the poison-immune. The Zaryte's 1.1 lands flat, this being a flat-damage bolt.",
   "when": {
    "style": "RANGED",
    "ammoCompatible": "true",
@@ -1611,7 +1611,7 @@
   "filterWhen": {
    "style": "RANGED"
   },
-  "extra": "(worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1) * (accuracy * 0.55 * (75.0 / 450.0) * (attackTicks * 0.6))",
+  "extra": "(worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1) * (accuracy * 0.55 * (75.0 / 450.0) * (expectedAttackTicks * 0.6))",
   "aggregateBoundSafe": true,
   "bound": {
    "items": [
