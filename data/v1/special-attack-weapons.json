@@ -123,7 +123,7 @@
 
 	{"key": "DRAGON_CLAWS", "name": "Dragon claws", "energy": 50, "attackStyle": "MELEE_SLASH", "accNum": 1, "accDen": 1,
 	 "dmgNum": 1, "dmgDen": 1, "shape": "CLAWS_CASCADE", "defenceStyleOverride": "MELEE_SLASH",
-	 "source": "Slice and Dice: the four-roll cascade (see DragonClawsSpecDistribution)."},
+	 "source": "Slice and Dice: the four-roll cascade (see DragonClawsSpec)."},
 
 	{"key": "VOIDWAKER", "name": "Voidwaker", "energy": 50, "attackStyle": "MELEE_STAB", "accNum": 1, "accDen": 1,
 	 "dmgNum": 1, "dmgDen": 1, "shape": "VOIDWAKER", "defenceStyleOverride": "MAGIC",
