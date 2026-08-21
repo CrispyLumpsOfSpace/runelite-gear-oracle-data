@@ -2,7 +2,7 @@
  {
   "id": "ElementalHealing",
   "kind": "immunity",
-  "description": "https://oldschool.runescape.wiki/w/Lava_Strykewyrm \"Fire spells will heal them equal to the amount hit.\"; https://oldschool.runescape.wiki/w/Water_wizard \"The elemental wizards south of Falador are now healed by their own element and damaged by all others.\" Modelled as immunity because the engine has no way to express negative damage. The trap is the second-best element — fire looks strongest against a lava strykewyrm and then heals it; the spell picker never offers a healing element, and this rule is what catches the powered staves that go round the picker. Which element heals which monster is the healingElement group of monster-families.json.",
+  "description": "Some monsters are healed by the element they are aligned with rather than damaged by it, such as lava strykewyrms under fire spells and the Falador elemental wizards under their own element. The engine has no way to express negative damage, so it models the case as immunity. The trap is that the healing element is often the one that otherwise looks strongest; the spell picker never offers it, and this rule is what catches the powered staves that go around the picker. Which element heals which monster lives in the healing element group of the monster families table.",
   "_cite": [
    {
     "kind": "wiki",
@@ -31,7 +31,7 @@
  {
   "id": "LeafyBaneImmunity",
   "kind": "immunity",
-  "description": "https://oldschool.runescape.wiki/w/Kurask \"they can only be damaged with leaf-bladed weapons, broad ammunition, or the Magic Dart spell\" — one way through per style. Turoth and Kurask carry the LEAFY attribute; broad ammunition must actually be fired by the weapon, which is the ordinary ammo-compatibility rule, and Magic Dart is the reason the slayer staff family exists.",
+  "description": "Leafy monsters such as Turoth and Kurask can only be damaged by leaf-bladed weapons, broad ammunition, or the Magic Dart spell, one way through per combat style. The immunity is keyed off the leafy attribute; broad ammunition must actually be fired by the equipped weapon, which is the ordinary ammo-compatibility rule, and Magic Dart is why the slayer staff family exists.",
   "_cite": [
    {
     "kind": "wiki",
@@ -66,7 +66,7 @@
  {
   "id": "ReachRequiredImmunity",
   "kind": "immunity",
-  "description": "https://oldschool.runescape.wiki/w/Flying \"immune to melee damage except for polearms\". Attribute-keyed for the airborne, which catches the ones a name list would miss (Vespula, reanimated aviansies); Zulrah is the halberdReach family instead, needing the same reach for a different reason: https://oldschool.runescape.wiki/w/Zulrah \"It cannot be reached with melee (with the exception of halberds).\" The salamander escape is narrowed to the salamanderMeleeable family, the targets whose own articles still name salamanders, since https://oldschool.runescape.wiki/w/Grotesque_Guardians (\"Dawn is flying and cannot be targeted by non-halberd melee weapons\") and Vespula's 6 August 2025 note (\"Halberds can now do damage to Vespula when flying\") except halberds alone. Not modelled: splash damage from scythes or bulwarks onto airborne targets, and weapon reach in tiles.",
+  "description": "Flying monsters take no melee damage except from polearms, so the immunity is keyed off the flying attribute, which catches the ones a name list would miss such as Vespula and reanimated aviansies; Zulrah sits in a separate halberd-reach family, needing the same reach for a different reason. The salamander escape is narrowed to the family of targets whose own articles still name salamanders, since the Grotesque Guardians article and Vespula's 6 August 2025 change both allow halberds alone. Not modelled: splash damage from scythes or bulwarks onto airborne targets, and weapon reach in tiles.",
   "_cite": [
    {
     "kind": "wiki",
@@ -88,8 +88,15 @@
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Grotesque_Guardians",
     "quotes": [
-     "Dawn is flying and cannot be targeted by non-halberd melee weapons",
-     "Halberds can now do damage to Vespula when flying"
+     "Dawn is flying and cannot be targeted by non-halberd melee weapons"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Vespula",
+    "quotes": [
+     "Halberds can now do damage to Vespula when flying."
     ],
     "verified": "2026-08-21"
    }
@@ -117,7 +124,7 @@
  {
   "id": "VampyreBaneImmunity",
   "kind": "immunity",
-  "description": "The game data splits the castes across three attributes so a tier-1 quest boss like Count Draynor is told apart from the higher ones. Tier 1: https://oldschool.runescape.wiki/w/Vampyre \"All weapons deal full damage\". Tier 2: \"Regular weapons deal no damage unless using an Efaritay's aid\". Tier 3: \"Only specific silver weapons deal full damage\". The rod of ivandis reaches tier 2 only; the blisterwood stake is the Ranged way through and is checked before everything else, since a thrown stake is not a melee vampyrebane; and the rod is excluded from the melee vampyrebane escape because it is the tier-2 rule, not the general one. Silver bolts are an ammo-slot item, so the tier-2 Ranged escape reads the ammo slot: https://oldschool.runescape.wiki/w/Silver_bolts \"one of the few ammo types able to be used to effectively kill Vampyre Juvinates\", fired \"from iron crossbows or better\".",
+  "description": "Vampyres are split across three caste attributes so that a tier-1 quest boss like Count Draynor is told apart from the higher ones: tier 1 takes full damage from any weapon, tier 2 takes nothing from regular weapons unless Efaritay's aid is worn, and tier 3 only from specific silver weapons. The rod of ivandis reaches tier 2 only, so it is excluded from the general melee vampyrebane escape; the blisterwood stake is the Ranged way through and is checked first, since a thrown stake is not a melee vampyrebane. Silver bolts are an ammo-slot item fired from iron crossbows or better, so the tier-2 Ranged escape reads the ammo slot.",
   "_cite": [
    {
     "kind": "wiki",
@@ -135,6 +142,14 @@
     "quotes": [
      "one of the few ammo types able to be used to effectively kill Vampyre Juvinates",
      "from iron crossbows or better"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Rod_of_Ivandis",
+    "quotes": [
+     "It is also one of the weapons that is capable of killing tier 2 vampyres."
     ],
     "verified": "2026-08-21"
    }
@@ -183,30 +198,53 @@
  {
   "id": "KrakenImmunity",
   "kind": "immunity",
-  "description": "Wiki: Kraken — melee cannot reach it at all; Ranged deals 1/7 through the separate KrakenRangedResistance.",
+  "description": "The Kraken cannot be reached by melee weapons and is entirely immune to melee attacks, so every melee loadout scores zero against it. Its Ranged reduction to a seventh is the separate KrakenRangedResistance row.",
   "immuneAny": [
    {
     "monsterClass": "kraken",
     "category": "MELEE"
    }
   ],
-  "styleBlanket": true
+  "styleBlanket": true,
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Kraken",
+    "quotes": [
+     "The Kraken cannot be reached with Melee weapons, and is additionally entirely immune to melee attacks",
+     "Magic is the only reliable way of damaging it, as Ranged deals 1/7th of its normal damage."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "id": "NylocasFormImmunity",
   "kind": "immunity",
-  "description": "https://oldschool.runescape.wiki/w/Nylocas_Vasilias — blue for magic, green for ranged and white for melee; the wrong style reflects the hit back. https://oldschool.runescape.wiki/w/Nylocas_Prinkipas carries the same rule and is keyed by id, its three forms sharing one name. Not modelled: Nylocas Vasilias itself, whose four form ids are shipped as a single row, so no form can be told from another.",
+  "description": "Each Theatre of Blood nylocas takes damage only from the one combat style its carapace colour names, blue for magic, green for ranged and white for melee, and the wrong style is reflected back at the player. The three Nylocas Prinkipas forms carry the same rule and are keyed by monster id because they share a single name. Not modelled: Nylocas Vasilias itself, whose four form ids are shipped as one row, so no form can be told from another.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Nylocas_Vasilias",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Theatre_of_Blood/Strategies",
+    "quotes": [
+     "Each spider is immune to damage outside of their combat style - ranged must be used against the Toxobolos, magic against the Hagios, and melee against the Ischyros."
+    ],
     "verified": "2026-08-21"
    },
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas",
-    "quotes": [],
+    "quotes": [
+     "with their active combat style and weakness changing according to the colour of their carapace: blue for magic, green for ranged and white for melee. Attacking them with the wrong combat style will cause them to reflect the hit back towards the player as well as healing from the hit."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Nylocas_Vasilias",
+    "quotes": [
+     "Vasilias changes its combat style throughout the fight by changing its carapace, which also indicates its weakness: blue for magic, green for ranged and white for melee."
+    ],
     "verified": "2026-08-21"
    }
   ],
@@ -253,7 +291,7 @@
  {
   "id": "GrotesqueGuardiansImmunity",
   "kind": "immunity",
-  "description": "Wiki: Grotesque Guardians#Dusk — immune to everything but melee. Immunity takes precedence over the stat block's listed Earth weakness.",
+  "description": "Dusk is immune to everything but melee, so no Ranged or Magic loadout scores against it. The immunity takes precedence over the earth-spell elemental weakness its stat block lists.",
   "immuneAny": [
    {
     "monsterClass": "dusk",
@@ -262,12 +300,23 @@
     }
    }
   ],
-  "styleBlanket": true
+  "styleBlanket": true,
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Grotesque_Guardians",
+    "quotes": [
+     "Dawn is flying and cannot be targeted by non-halberd melee weapons, while Dusk is completely immune to magic and ranged damage.",
+     "Dusk now has a 40% elemental weakness to earth spells (despite being immune to Magic) and -1 flat armour."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "id": "SalarinImmunity",
   "kind": "immunity",
-  "description": "Wiki: Salarin the Twisted — only the Strike spells hurt him. Ring of recoil and dynamite are not modeled.",
+  "description": "Salarin the Twisted can be damaged only by Strike spells; melee, Ranged and every other spell do nothing to him. Not modelled: the ring of recoil and dynamite damage that also hurt him.",
   "immuneAny": [
    {
     "monsterClass": "salarin"
@@ -278,12 +327,23 @@
     "category": "MAGIC",
     "spellFamily": "strikeSpell"
    }
+  ],
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Salarin_the_Twisted",
+    "quotes": [
+     "Salarin can only be damaged by Strike spells, ring of recoil damage, and dynamite(p).",
+     "Salarin must be killed with Strike spells; melee and ranged cannot harm him, nor can any other magic attacks."
+    ],
+    "verified": "2026-08-21"
+   }
   ]
  },
  {
   "id": "SurokMagisImmunity",
   "kind": "immunity",
-  "description": "Wiki: Surok Magis — damaged only by spellbook magic; immune to powered staves.",
+  "description": "Surok Magis has Protect from Melee and Protect from Missiles up together and is immune to powered staves, so only a cast spell damages him. Not modelled: his immunity to the sapping effects of blood spells, which the steady-state model has no notion of.",
   "immuneAny": [
    {
     "monsterClass": "surokMagis"
@@ -294,12 +354,24 @@
     "category": "MAGIC",
     "poweredStaff": "false"
    }
+  ],
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/While_Guthix_Sleeps",
+    "quotes": [
+     "Surok has 450 hitpoints, attacks with Fire Surge, and has both Protect from Melee and Protect from Missiles simultaneously active. It is therefore necessary to attack with magic.",
+     "Surok is notably immune to damage from powered staves, thus the player must use combat spells in order to damage him.",
+     "He is also immune to the sapping effects caused by blood spells."
+    ],
+    "verified": "2026-08-21"
+   }
   ]
  },
  {
   "id": "DesertTreasureElementalImmunity",
   "kind": "immunity",
-  "description": "https://oldschool.runescape.wiki/w/Kamil \"Kamil is weak to fire spells, but is immune to all other magic damage and effects\"; https://oldschool.runescape.wiki/w/Fareed \"can only otherwise be damaged with Water spells or any kind of Ranged weapon\".",
+  "description": "Kamil takes magic damage only from fire spells and Fareed only from water spells; every other spell is stopped outright. The rows narrow to those two monsters and leave the non-magic styles alone.",
   "_cite": [
    {
     "kind": "wiki",
@@ -346,13 +418,13 @@
  {
   "id": "HolyWaterDemonsOnly",
   "kind": "immunity",
-  "description": "https://oldschool.runescape.wiki/w/Holy_water \"Holy water can only be used against demons\" — the restriction outlives the damage formula this engine dropped, so a loadout holding holy water scores zero against anything that is not a demon rather than being priced as an ordinary thrown weapon.",
+  "description": "Holy water damages demons and nothing else. The restriction outlives the damage formula this engine dropped, so a loadout holding holy water scores zero against a non-demon rather than being priced as an ordinary thrown weapon.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Holy_water",
     "quotes": [
-     "Holy water can only be used against demons"
+     "it will only deal damage against demons"
     ],
     "verified": "2026-08-21"
    }
@@ -371,7 +443,7 @@
  {
   "id": "AnimatedArmourMeleeOnly",
   "kind": "immunity",
-  "description": "https://oldschool.runescape.wiki/w/Animated_Bronze_Armour \"Like all other animated armour variants, it is immune to Ranged and Magic attacks.\" Id-keyed because the Warriors' Guild animation ids are the immune ones, and https://oldschool.runescape.wiki/w/Animated_armour enumerates those variants as the seven guild ones. Not the Tarn's Lair armour (6438), a separate article carrying +400 magic and ranged defence and no immunity.",
+  "description": "The Warriors' Guild animated armours are immune to Ranged and Magic, leaving melee as the only style that scores against them. Keyed by monster id to the seven guild variants: the Tarn's Lair animated armour shares the name but is a separate monster carrying heavy magic and ranged defence and no immunity.",
   "_cite": [
    {
     "kind": "wiki",
@@ -384,7 +456,9 @@
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Animated_armour",
-    "quotes": [],
+    "quotes": [
+     "Animated armour can be created and fought in the Warriors' Guild by using a full helm, platebody, and platelegs of the same type of metal on one of the magical animators."
+    ],
     "verified": "2026-08-21"
    }
   ],
@@ -409,7 +483,7 @@
  {
   "id": "WarriorsGuildCyclopesMeleeOnly",
   "kind": "immunity",
-  "description": "https://oldschool.runescape.wiki/w/Cyclops \"cyclopes found in these areas are immune to Ranged and Magic attacks and must be fought with melee combat.\" Id-keyed because \"Cyclops\" is shared with level-81 monsters outside the guild that have no immunity, so a name match would misdirect.",
+  "description": "Cyclopes inside the Warriors' Guild are immune to Ranged and Magic and must be fought with melee. Keyed by monster id because the Cyclops name is shared with level-81 monsters outside the guild that carry no immunity, so a name match would misdirect.",
   "_cite": [
    {
     "kind": "wiki",
@@ -446,7 +520,7 @@
  {
   "id": "MotherMagicImmunity",
   "kind": "immunity",
-  "description": "https://oldschool.runescape.wiki/w/Mother \"Mother is immune to magic\", the Weiss troll boss (id 8428).",
+  "description": "Mother, the Weiss troll boss, is immune to Magic, so every magic loadout scores zero against her. Keyed by her monster id.",
   "_cite": [
    {
     "kind": "wiki",

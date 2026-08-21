@@ -14,15 +14,16 @@
    "MAGIC"
   ],
   "note": "Thorvald's arena takes your weapons, armour and runes; only jewellery goes in.",
-  "description": "https://oldschool.runescape.wiki/w/The_Fremennik_Trials — \"you cannot bring weapons, armour, runes, or fletching materials\" into the arena, while \"you can use food, Prayer, god books, and jewellery\". Runes are on that list, so no spell can be cast in the arena however little the cast needs, which is what forbidsStyles states: a barehanded caster would otherwise out-damage a barehanded puncher and be recommended. God books and boots of lightness are permitted too and are not modelled: neither carries an offensive stat, so neither can change a DPS answer. \"Weapons and armour are not allowed within the arena, though the player can optionally bring a dramen branch and a knife to make a dramen staff once inside\", which is the one weapon the trial admits. Runes are banned outright, so no thrall can be summoned; potions are not on the banned list and are left alone.",
+  "description": "Thorvald's arena in the Fremennik Trials strips weapons, armour and runes, leaving jewellery as the only gear a player carries in; the optional dramen staff is made inside from a branch and a knife. Because no runes reach the fight, no spell can be cast and no thrall summoned, which is what the forbidden magic style and thrall flag record. God books and boots of lightness are also permitted but are not modelled, since neither carries an offensive stat; potions are not on the banned list and are left alone.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/The_Fremennik_Trials",
     "quotes": [
-     "you cannot bring weapons, armour, runes, or fletching materials",
-     "you can use food, Prayer, god books, and jewellery",
-     "Weapons and armour are not allowed within the arena, though the player can optionally bring a dramen branch and a knife to make a dramen staff once inside"
+     "You cannot use any weapons, armour, fletching materials (such as logs/arrowtips), or bring runes.",
+     "The Ardougne cloak counts as armour, but the boots of lightness do not.",
+     "However, you can use food, Prayer, god books, and jewellery.",
+     "If you have low combat stats you may bring a god book, rings of recoil (7 minimum), goblin paint cannon, phoenix necklaces, a dramen branch and knife."
     ],
     "verified": "2026-08-21"
    }
@@ -56,7 +57,7 @@
    22516
   ],
   "note": "The Dawnbringer is taken from the skeleton outside Verzik's room.",
-  "description": "https://oldschool.runescape.wiki/w/Dawnbringer — taken from a skeleton by the entrance to Verzik's throne room and used on her first phase. It has \"a built in failsafe where it's destroyed when you attempt to do anything with it outside of Verzik's room\", so no bank can hold it and the pool has to supply it.",
+  "description": "The Dawnbringer is taken from a skeleton by the entrance to Verzik's throne room and used on her first phase. It is destroyed on any attempt to use it outside that room, so no bank can hold it and the encounter pool has to supply it.",
   "_cite": [
    {
     "kind": "wiki",
@@ -86,7 +87,7 @@
   ],
   "keepSlots": [],
   "note": "The Gauntlet stores everything you walk in with; this is what the arena makes.",
-  "description": "https://oldschool.runescape.wiki/w/The_Gauntlet — \"Players cannot bring any items into the Gauntlet; when entering the minigame, all items currently on the player will be automatically stored for its duration.\" The pool is what the arena makes: helm, body and legs, and a halberd, bow and staff, each in basic, attuned and perfected, plus the starting sceptre. The crystalline set is the normal Gauntlet's. Every creature in the arena is under the same rule, not the Hunllef alone: the rat, spider, bat, unicorn, scorpion, wolf, bear, dragon and dark beast are all fought with what was made inside. No crystal dagger: the article lists no dagger among them. Weapon and armour tier are separate ladders: the arena's shards are spent on one or the other, so a player is rarely at the same rung in both. \"You cannot bring any items into or out of this activity\" and \"any pre-applied skill boosts will also be removed upon entry\", so no combat potion reaches the fight; the egniol potion made inside restores run energy and prayer and boosts no combat stat. No runes reach it either, so no thrall.",
+  "description": "The Gauntlet stores everything a player walks in with, so the gear pool is only what the arena itself makes: the crystalline helm, body and legs, and the crystalline halberd, bow and staff, each in basic, attuned and perfected form, plus the starting sceptre. No crystal dagger is listed among them, and weapon and armour tier are separate ladders because the arena's shards are spent on one or the other. Every creature in the arena is under the same rule, not the Hunllef alone, and since no items or pre-applied boosts cross the entrance, no combat potion and no thrall reach the fight; the egniol potion made inside restores run energy and prayer and boosts no combat stat.",
   "_cite": [
    {
     "kind": "wiki",
@@ -191,7 +192,7 @@
   ],
   "keepSlots": [],
   "note": "The Corrupted Gauntlet stores everything you walk in with; this is what the arena makes.",
-  "description": "https://oldschool.runescape.wiki/w/The_Gauntlet — \"Players cannot bring any items into the Gauntlet; when entering the minigame, all items currently on the player will be automatically stored for its duration.\" The pool is what the arena makes: helm, body and legs, and a halberd, bow and staff, each in basic, attuned and perfected, plus the starting sceptre. The corrupted set is the Corrupted Gauntlet's; the crystalline set cannot be made there. Every creature in the arena is under the same rule, not the Hunllef alone. No crystal dagger: the article lists no dagger among them. Weapon and armour tier are separate ladders: the arena's shards are spent on one or the other, so a player is rarely at the same rung in both. \"You cannot bring any items into or out of this activity\" and \"any pre-applied skill boosts will also be removed upon entry\", so no combat potion reaches the fight; the egniol potion made inside restores run energy and prayer and boosts no combat stat. No runes reach it either, so no thrall.",
+  "description": "The Corrupted Gauntlet stores everything a player walks in with, so the gear pool is only what the arena itself makes: the corrupted helm, body and legs, and the corrupted halberd, bow and staff, each in basic, attuned and perfected form, plus the starting sceptre. The crystalline set cannot be made there, no crystal dagger is listed, and weapon and armour tier are separate ladders because the arena's shards are spent on one or the other. Every creature in the arena is under the same rule, and since no items or pre-applied boosts cross the entrance, no combat potion and no thrall reach the fight.",
   "_cite": [
    {
     "kind": "wiki",

@@ -69,7 +69,7 @@
   "attack": 1.2,
   "strength": 1.23,
   "icon": 946,
-  "description": "https://oldschool.runescape.wiki/w/Piety \"a 23% boost to a player's Strength, and a 20% boost to a player's Attack\"",
+  "description": "Piety's melee boost: twenty per cent to Attack and twenty-three per cent to Strength.",
   "_cite": [
    {
     "kind": "wiki",
@@ -125,7 +125,7 @@
   "attack": 1.2,
   "strength": 1.23,
   "icon": 1420,
-  "description": "https://oldschool.runescape.wiki/w/Rigour \"boosts Ranged Attack by 20%, Ranged Strength by 23%\"",
+  "description": "Rigour's ranged boost: twenty per cent to Ranged Attack and twenty-three per cent to Ranged Strength.",
   "_cite": [
    {
     "kind": "wiki",
@@ -180,7 +180,7 @@
   "attack": 1.25,
   "damage": 1.04,
   "icon": 1421,
-  "description": "https://oldschool.runescape.wiki/w/Augury \"boosts Magic Attack by 25%, Magic damage by 4%\"",
+  "description": "Augury's magic boost: twenty-five per cent to Magic Attack and four per cent to magic damage.",
   "_cite": [
    {
     "kind": "wiki",

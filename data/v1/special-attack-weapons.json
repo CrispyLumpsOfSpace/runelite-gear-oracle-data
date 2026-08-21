@@ -10,7 +10,18 @@
   "dmgDen": 20,
   "shape": "TWO_INDEPENDENT_HITS",
   "defenceStyleOverride": "MELEE_SLASH",
-  "description": "Puncture: x23/20 accuracy and damage (\"+15%\" each), twice, rolling independently."
+  "description": "Puncture, the dragon dagger's special attack: twenty-five per cent energy for two hits, each with fifteen per cent added accuracy and damage, rolled independently against the target's slash defence.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dragon_dagger",
+    "quotes": [
+     "deals two hits at once with an extra 15% accuracy and 15% damage for each of the two hits, consuming 25% of the wielder's special attack energy",
+     "Puncture rolls against opponent's slash defence roll."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "ABYSSAL_DAGGER",
@@ -23,14 +34,13 @@
   "dmgDen": 20,
   "shape": "TWO_HITS_SINGLE_ROLL",
   "defenceStyleOverride": "MELEE_SLASH",
-  "description": "Abyssal Puncture: 25% energy, a \"25% increase in accuracy\", \"15% reduced damage\", and \"two hits in quick succession\" where \"a single attack roll is performed, meaning that either both hits are successful, or both hits miss\". \"The damage calculation rolls against the opponent's slash defence.\" That single shared roll is why this is TWO_HITS_SINGLE_ROLL rather than the dragon dagger's independent pair — the same expectation, a different distribution.",
+  "description": "Abyssal Puncture, the abyssal dagger's special attack: twenty-five per cent energy for two hits with twenty-five per cent added accuracy and fifteen per cent reduced damage, rolled against the target's slash defence. One accuracy roll decides both hits, so they land or miss together, which is why the shape is a shared roll rather than the dragon dagger's independent pair: the same expectation, a different distribution.",
   "_cite": [
    {
-    "kind": "unsourced",
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Abyssal_dagger",
     "quotes": [
-     "25% increase in accuracy",
-     "15% reduced damage",
-     "two hits in quick succession",
+     "which hits twice in quick succession with a 25% increase in accuracy and 15% reduced damage, consuming 25% of the player's special attack energy",
      "a single attack roll is performed, meaning that either both hits are successful, or both hits miss",
      "The damage calculation rolls against the opponent's slash defence."
     ],
@@ -48,15 +58,15 @@
   "dmgNum": 1,
   "dmgDen": 1,
   "shape": "FLAT_BONUS_EVEN_ON_MISS",
-  "description": "Hammer Blow: 60% energy, \"50% increased accuracy\", and it \"guarantees 5 additional damage to that attack\" — where the wiki is explicit that \"even if the special attack misses, the target will still take a minimum of 5 damage from it\". That is why the 5 is a shape rather than a damage factor: it is not scaled by anything and it does not depend on the attack landing. The wiki's own carve-out — the guaranteed damage \"does not apply to NPCs immune to normal attacks\" — needs no code: the engine resolves immunity before the hit distribution runs at all, so an immune target already scores zero. The wiki does not name a defence style for it, so the weapon's own crush roll applies.",
+  "description": "Hammer Blow, the granite hammer's special attack: sixty per cent energy for one attack with fifty per cent added accuracy and five guaranteed extra damage, dealt even when the attack misses. The five is a shape rather than a damage factor because nothing scales it and it does not depend on the hit landing. The carve-out for NPCs immune to normal attacks needs no code, since immunity is resolved before the hit distribution runs. No defence style is stated for it, so the weapon's own crush roll applies.",
   "_cite": [
    {
-    "kind": "unsourced",
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Granite_hammer",
     "quotes": [
-     "50% increased accuracy",
-     "guarantees 5 additional damage to that attack",
+     "which consumes 60% of the player's special attack energy, and deals an attack with 50% increased accuracy, while guaranteeing 5 additional damage to that attack",
      "even if the special attack misses, the target will still take a minimum of 5 damage from it",
-     "does not apply to NPCs immune to normal attacks"
+     "This excludes NPCs that are immune to normal forms of attack"
     ],
     "verified": "2026-08-21"
    }
@@ -73,7 +83,7 @@
   "dmgDen": 2,
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_CRUSH",
-  "description": "Shatter: 25% energy — it \"increases the player's accuracy by 25% and damage by 50%, while rolling against the target's crush defence\". One hitsplat. The crush roll is declared explicitly even though the mace attacks with crush anyway, so the row states the rule rather than relying on the coincidence.",
+  "description": "Shatter, the dragon mace's special attack: twenty-five per cent energy for one hit with twenty-five per cent added accuracy and fifty per cent added damage, rolled against the target's crush defence. The crush roll is declared explicitly rather than left to coincide with the mace's own attack style.",
   "_cite": [
    {
     "kind": "wiki",
@@ -96,7 +106,7 @@
   "dmgDen": 4,
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_STAB",
-  "description": "Wild Stab: \"consumes 40% of the player's special attack energy to hit the target with 25% increased accuracy and damage\", and \"this special rolls off of the opponent's stab defence regardless of which mode it is in\" — the \"regardless\" is why the defence style is a declared override rather than the attack style. The Protect from Melee bypass is a PvP/prayer rule with no place in an NPC damage model.",
+  "description": "Wild Stab, the dragon sword's special attack: forty per cent energy for one hit with twenty-five per cent added accuracy and damage, always rolled against the target's stab defence whatever style the sword is set to, which is why the defence style is a declared override. Its bypassing of Protect from Melee is a PvP prayer rule and has no place in an NPC damage model.",
   "_cite": [
    {
     "kind": "wiki",
@@ -120,7 +130,7 @@
   "dmgDen": 4,
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_SLASH",
-  "description": "Cleave: 25% energy, and it \"raises the player's maximum hit by 25% for one hit\" — damage only, with no accuracy bonus at all, which is why this row's accuracy factor is 1/1. \"The accuracy roll for Cleave is based on the attack bonus of the player's currently selected style, which is rolled against an opponent's slash defence.\"",
+  "description": "Cleave, the dragon longsword's special attack: twenty-five per cent energy for one hit with a twenty-five per cent higher maximum hit and no accuracy bonus at all, which is why the accuracy factor is one. The accuracy roll uses the player's selected style against the target's slash defence.",
   "_cite": [
    {
     "kind": "wiki",
@@ -144,13 +154,13 @@
   "dmgDen": 1,
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_SLASH",
-  "description": "Sever: 55% energy, and it \"rolls against the target's slash defence with 25% higher accuracy\". Accuracy only — the wiki names no damage bonus, so the damage factor is 1/1. Its other half is a PvP rule (disabling protection prayers for 8 ticks) with no bearing on an NPC damage model.",
+  "description": "Models the dragon scimitar's Sever special attack: it costs 55% special attack energy and rolls against the target's slash defence with 25% higher accuracy, so the row carries an accuracy factor of 5/4 and no damage factor. The special's other half, disabling a target player's protection prayers for 8 ticks, is a PvP rule with no bearing on an NPC damage model and is not modelled.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Dragon_scimitar",
     "quotes": [
-     "rolls against the target's slash defence with 25% higher accuracy"
+     "costing 55% of the player's special attack energy and rolls against the target's slash defence with 25% higher accuracy"
     ],
     "verified": "2026-08-21"
    }
@@ -166,13 +176,13 @@
   "dmgNum": 1,
   "dmgDen": 1,
   "shape": "STANDARD",
-  "description": "Penance: 50% energy, and it \"increases damage dealt by 0.5% for every prayer point that the wielder is missing\" — a factor that depends on PLAYER STATE, so it cannot live in this row's fixed numerator: AbyssalBludgeonPenance computes (100 + missing/2) / 100 from PlayerSetup#missingPrayerPoints() in the per-weapon damage stage. No accuracy modifier; the bludgeon's own crush roll.",
+  "description": "Models the abyssal bludgeon's Penance special attack: it costs 50% special attack energy and raises damage by 0.5% for every prayer point the wielder is missing. That factor depends on player state rather than being fixed, so the row carries no damage factor and AbyssalBludgeonPenance computes it from the player's missing prayer points in the per-weapon damage stage. There is no accuracy modifier and the special uses the bludgeon's ordinary crush roll.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Abyssal_bludgeon",
     "quotes": [
-     "increases damage dealt by 0.5% for every prayer point that the wielder is missing"
+     "increases damage dealt by 0.5% for every prayer point that the wielder is missing, consuming 50% of the wielder's special attack energy"
     ],
     "verified": "2026-08-21"
    }
@@ -191,14 +201,14 @@
   "onlyMonsterIds": [
    7796
   ],
-  "description": "Liquify: 75% energy, \"doubles the player's accuracy\", no damage bonus — and \"the special attack only works underwater\", where exactly one attackable NPC exists: the lobstrosity (7796). The self-buff (+25% of damage dealt to Strength, Attack and Defence levels) is a boost, not damage, and is not modelled. The target gate keeps Auto from ever bringing it anywhere else.",
+  "description": "Models the brine sabre's Liquify special attack: it costs 75% special attack energy and doubles the player's accuracy with no damage bonus. The special only works underwater, where the lobstrosity is the sole attackable NPC, so the row is gated to that monster id and Auto can never bring the weapon anywhere else. The self-buff that raises Strength, Attack and Defence levels by 25% of the damage dealt is a boost rather than damage and is not modelled.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Brine_sabre",
     "quotes": [
-     "doubles the player's accuracy",
-     "the special attack only works underwater"
+     "which doubles the player's accuracy, and increases the player's Strength, Attack and Defence levels by 25% of the damage dealt",
+     "The special attack only works underwater, and consumes 75% of the player's special attack energy."
     ],
     "verified": "2026-08-21"
    }
@@ -215,13 +225,13 @@
   "dmgDen": 1,
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_SLASH",
-  "description": "Energy Drain: 50% energy, and it \"increases accuracy by 25%\" with no damage bonus. \"The accuracy roll for Energy Drain is made against an opponent's slash defence.\" The run-energy theft is PvP-only and is not a DPS effect either way.",
+  "description": "Models the abyssal whip's Energy Drain special attack: it costs 50% special attack energy and increases accuracy by 25% with no damage bonus, and its accuracy roll is made against the opponent's slash defence, which is what the defence-style override records. The run-energy theft is PvP-only and is not a damage effect, so it is not modelled.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Abyssal_whip",
     "quotes": [
-     "increases accuracy by 25%",
+     "which consumes 50% of the player's special attack energy, increases accuracy by 25%",
      "The accuracy roll for Energy Drain is made against an opponent's slash defence."
     ],
     "verified": "2026-08-21"
@@ -239,13 +249,15 @@
   "dmgDen": 1,
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_STAB",
-  "description": "Weaken: 50% energy, rolled against <b>stab</b> defence, with no accuracy or damage modifier at all — an ordinary hit whose value is entirely in its drain. That drain \"lowers the opponent's Strength, Attack, and Defence levels by 5% (10% for demons) of their base level + 1\" and \"stacks additively rather than multiplicatively\", which is the player-asserted state modelled by DefenceReductions.arclight rather than something this row prices.",
+  "description": "Models Arclight's Weaken special attack: it costs 50% special attack energy and is rolled against the opponent's stab defence with no accuracy or damage modifier, an ordinary hit whose value lies entirely in its drain. That drain lowers the opponent's Strength, Attack and Defence levels by 5% of base level plus 1, or 10% against demons, and stacks additively; it is the player-asserted state modelled by DefenceReductions.arclight rather than something this row prices.",
   "_cite": [
    {
-    "kind": "unsourced",
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Arclight",
     "quotes": [
-     "lowers the opponent's Strength, Attack, and Defence levels by 5% (10% for demons) of their base level + 1",
-     "stacks additively rather than multiplicatively"
+     "which consumes 50% of the player's special attack energy and lowers the opponent's Strength, Attack, and Defence levels by 5% (10% for demons) of their base level + 1",
+     "The accuracy roll for Weaken is made against an opponent's stab defence",
+     "Weaken will stack additively upon successful hits unlike the dragon warhammer, which stacks multiplicatively."
     ],
     "verified": "2026-08-21"
    }
@@ -262,14 +274,15 @@
   "dmgDen": 1,
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_STAB",
-  "description": "Weaken, Arclight's upgrade: 50% energy, stab defence, no accuracy or damage modifier. Its drain \"lowers the opponent's Strength, Attack, and Defence levels by 5% (15% for demons) of their base level + 1\" — the demon rate is the one difference from Arclight (a \"+5% improvement to Arclight and Darklight's 10% drain on demons\"), and it is why DefenceReductions counts the two weapons separately rather than as one field.",
+  "description": "Models Emberlight's Weaken special attack, the upgrade of Arclight's: it costs 50% special attack energy, rolls against stab defence, and applies no accuracy or damage modifier. Its drain lowers the opponent's Strength, Attack and Defence levels by 5% of base level plus 1, or 15% against demons; that demon rate is the only difference from Arclight and Darklight, which is why DefenceReductions counts the two weapons separately.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Emberlight",
     "quotes": [
-     "lowers the opponent's Strength, Attack, and Defence levels by 5% (15% for demons) of their base level + 1",
-     "+5% improvement to Arclight and Darklight's 10% drain on demons"
+     "which consumes 50% of the player's special attack energy and lowers the opponent's Strength, Attack, and Defence levels by 5% (15% for demons) of their base level + 1",
+     "This is a +5% improvement to Arclight and Darklight's 10% drain on demons but is otherwise the same.",
+     "The accuracy roll for Weaken is made against an opponent's stab defence"
     ],
     "verified": "2026-08-21"
    }
@@ -285,14 +298,14 @@
   "dmgNum": 11,
   "dmgDen": 10,
   "shape": "STANDARD",
-  "description": "Sunder: 50% energy, \"doubles the player's accuracy\" and \"increases max damage by 10%\", one hitsplat on its ordinary crush roll. The incidental drain — 10% of the damage dealt, walked through Defence, Attack, Ranged then Magic — is a few levels per special; it has no DefenceReductions input (the oracle has none for it either, so no vector could see one) and is left unmodelled as noise rather than mechanics.",
+  "description": "Models the barrelchest anchor's Sunder special attack: it costs 50% special attack energy, doubles the player's accuracy and increases max damage by 10%, landing one hitsplat on the anchor's ordinary crush roll. The incidental stat drain of 10% of the damage dealt, walked through Defence, Attack, Ranged then Magic, amounts to a few levels per special, has no DefenceReductions input and is left unmodelled as noise rather than mechanics.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Barrelchest_anchor",
     "quotes": [
-     "doubles the player's accuracy",
-     "increases max damage by 10%"
+     "which doubles the player's accuracy, increases max damage by 10%, and drains the opponent's combat stats equivalent by 10% of the damage dealt in the following order: Defence, Attack, Ranged, then Magic.",
+     "This consumes 50% of the player's special attack energy."
     ],
     "verified": "2026-08-21"
    }
@@ -308,7 +321,17 @@
   "dmgNum": 1,
   "dmgDen": 1,
   "shape": "STANDARD",
-  "description": "Pulverize: x5/4 accuracy; the defence drain is asserted separately (DefenceReductions)."
+  "description": "Models the elder maul's Pulverize special attack: it costs 50% special attack energy and increases the player's accuracy by 25%, so the row carries an accuracy factor of 5/4 and no damage factor. The 35% current-Defence reduction a successful hit applies is asserted separately through DefenceReductions rather than priced here.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Elder_maul",
+    "quotes": [
+     "costing 50% special attack energy. Increasing the player's accuracy by 25%, a successful hit will reduce the target's current Defence level by 35%"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "DRAGON_WARHAMMER",
@@ -320,7 +343,18 @@
   "dmgNum": 3,
   "dmgDen": 2,
   "shape": "STANDARD",
-  "description": "Smash: x3/2 damage; its drain, likewise, is asserted rather than self-valued."
+  "description": "Models the dragon warhammer's Smash special attack: it costs 50% special attack energy and deals 50% more damage, so the row carries a damage factor of 3/2 and no accuracy modifier. The 30% current-Defence drain a successful hit applies is asserted separately through DefenceReductions rather than priced here.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dragon_warhammer",
+    "quotes": [
+     "which deals 50% more damage, while lowering the target's current Defence level by 30% on successful hit",
+     "This attack consumes 50% of the player's special attack energy."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "BANDOS_GODSWORD",
@@ -334,7 +368,18 @@
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_SLASH",
   "godsword": true,
-  "description": "Warstrike: x2 accuracy and x11/10 twice over — the wiki's \"+21% damage\"."
+  "description": "Models the Bandos godsword's Warstrike special attack: it costs 50% special attack energy, has doubled accuracy, rolls against the opponent's slash defence, and inflicts 21% more damage. That 21% is the row's own 11/10 factor applied on top of the hidden 11/10 every godsword special carries, which is why the row sets the godsword flag as well. The combat-level drain equal to the damage hit is not priced by this row.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bandos_godsword",
+    "quotes": [
+     "has doubled accuracy, inflicts 21% more damage and drains the opponent's combat levels equivalent to the damage hit in the following order: Defence, Strength, Prayer, Attack, Magic, Ranged.",
+     "Warstrike consumes 50% of the wielder's special attack energy. Warstrike rolls against the opponent's slash defence roll."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "ARMADYL_GODSWORD",
@@ -348,13 +393,13 @@
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_SLASH",
   "godsword": true,
-  "description": "The Judgement: \"doubled accuracy\" and \"a 37.5% higher maximum hit than a normal attack (125% multiplied by the hidden 110% every godsword special possesses, the calculation uses integer values after the multiplication of 1.1 the value gets rounded down and then multiplied by 1.25)\" — the wiki spelling out this project's two-stage flooring exactly, and the reason the godsword stage is not folded into the damage factor. \"The Judgement rolls against the opponent's slash defence roll.\"",
+  "description": "Models the Armadyl godsword's The Judgement special attack: it costs 50% special attack energy, has doubled accuracy, rolls against the opponent's slash defence, and inflicts a 37.5% higher maximum hit than a normal attack. The wiki spells that out as 125% multiplied by the hidden 110% every godsword special possesses, with the 1.1 result floored before the 1.25 is applied, which is exactly this project's two-stage flooring and the reason the godsword stage is kept separate from the row's 5/4 damage factor.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Armadyl_godsword",
     "quotes": [
-     "a 37.5% higher maximum hit than a normal attack (125% multiplied by the hidden 110% every godsword special possesses, the calculation uses integer values after the multiplication of 1.1 the value gets rounded down and then multiplied by 1.25)",
+     "a 37.5% higher maximum hit than a normal attack (125% multiplied by the hidden 110% every godsword special possesses, the calculation uses integer values after the multiplication of 1.1 the value gets rounded down and then multiplied by 1.25), consuming 50% of the player's special attack energy",
      "The Judgement rolls against the opponent's slash defence roll."
     ],
     "verified": "2026-08-21"
@@ -373,14 +418,14 @@
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_SLASH",
   "godsword": true,
-  "description": "Healing Blade: \"their accuracy is doubled\" and \"the player's max hit is increased by 10%\" — that 10% IS the hidden godsword multiplier, so this row carries the godsword flag and no per-weapon damage factor of its own. Rolls against slash defence. The heal (50% of damage as hitpoints, 25% as prayer) is sustain, not damage, and is deliberately not modelled by a DPS engine.",
+  "description": "Models the Saradomin godsword's Healing Blade special attack: it costs 50% special attack energy, doubles the player's accuracy, rolls against the opponent's slash defence, and increases max hit by 10%. That 10% is the hidden godsword multiplier itself, so the row sets the godsword flag and carries no damage factor of its own. The healing, which restores hitpoints and prayer points equal to 50% and 25% of the damage dealt, is sustain rather than damage and is not modelled by a DPS engine.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Healing_Blade",
+    "url": "https://oldschool.runescape.wiki/w/Saradomin_godsword",
     "quotes": [
-     "their accuracy is doubled",
-     "the player's max hit is increased by 10%"
+     "which consumes 50% of the player's special attack energy. When used, the player's max hit is increased by 10%, their accuracy is doubled, and Hitpoints and Prayer Points are restored equal to 50% and 25% of the damage dealt respectively",
+     "Healing Blade rolls against the opponent's slash defence roll."
     ],
     "verified": "2026-08-21"
    }
@@ -398,15 +443,14 @@
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_SLASH",
   "godsword": true,
-  "description": "Ice Cleave: \"doubles the player's accuracy (slash or crush roll)\" and \"increases their max hit by 10%\" — again the hidden godsword multiplier itself, so no per-weapon damage factor. \"It rolls against the opponent's slash defence\" even from a crush stance, which is what the defence-style override exists for. The 32-tick freeze is positional utility, not damage, and is not modelled.",
+  "description": "Models the Zamorak godsword's Ice Cleave special attack: it costs 50% special attack energy, doubles the player's accuracy and increases max hit by 10%. That 10% is the hidden godsword multiplier itself, so the row sets the godsword flag and carries no damage factor of its own. It rolls against the opponent's slash defence even from a crush stance, which is what the defence-style override exists for. The 32-tick freeze is positional utility rather than damage and is not modelled.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Ice_Cleave",
+    "url": "https://oldschool.runescape.wiki/w/Zamorak_godsword",
     "quotes": [
-     "doubles the player's accuracy (slash or crush roll)",
-     "increases their max hit by 10%",
-     "It rolls against the opponent's slash defence"
+     "which consumes 50% of the player's special attack energy. It doubles the player's accuracy (slash or crush roll) and increases their max hit by 10%.",
+     "it rolls against the opponent's slash defence"
     ],
     "verified": "2026-08-21"
    }
@@ -424,13 +468,14 @@
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_SLASH",
   "godsword": true,
-  "description": "Blood Sacrifice: \"doubled accuracy\" and a \"10% higher maximum hit than a normal attack\" — the godsword multiplier again, so no per-weapon damage factor. <b>The delayed sacrifice damage is deliberately NOT modelled</b>, and that is a decision rather than an oversight. On a landed hit the target is marked, and eight ticks later takes 25 typeless damage unless it has moved five tiles away. Three things make it unmodelled here: whether the target escapes is a positional question this engine has no model for (the same reason chinchompa clumps are a player assertion); the damage is typeless, so it belongs to no part of the hit pipeline; and it lands eight ticks after the swing, which a steady-state per-attack model would have to amortise. The oracle omits it too, so no vector could validate an implementation either way. Against a stationary boss this understates the special by up to 25 damage per cast.",
+  "description": "Models the ancient godsword's Blood Sacrifice special attack: it costs 50% special attack energy, has doubled accuracy, and inflicts a 10% higher maximum hit than a normal attack. That 10% is the hidden godsword multiplier, so the row sets the godsword flag and carries no damage factor of its own. The delayed sacrifice is not modelled: on a landed hit the target is marked and eight ticks later takes 25 typeless damage unless it moves five tiles away, and whether it escapes is a positional question this engine has no model for, the damage is typeless so belongs to no part of the hit pipeline, and it lands eight ticks after the swing, which a steady-state per-attack model would have to amortise. Against a stationary boss this understates the special by up to 25 damage per cast.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Ancient_godsword",
     "quotes": [
-     "10% higher maximum hit than a normal attack"
+     "In addition to doubled accuracy, it inflicts damage with a 10% higher maximum hit than a normal attack, consuming 50% of the player's special attack energy.",
+     "the target will be marked for sacrifice and will have eight ticks (4.8 seconds) to move at least five tiles away from the attacker. If the target fails to do so, they will take 25 typeless magic damage"
     ],
     "verified": "2026-08-21"
    }
@@ -447,15 +492,14 @@
   "dmgDen": 10,
   "shape": "HALBERD_SWEEP",
   "defenceStyleOverride": "MELEE_SLASH",
-  "description": "Sweep: 30% energy, a \"10% damage boost\", and it \"rolls against the opponent's slash defence roll\". Against \"'large' monsters (anything that is larger than 1x1, such as most Boss monsters)\" it lands a second hitsplat \"with 25% reduced accuracy\", read as a reduced attack ROLL rather than a scaled hit chance, an assumption HalberdSweepSecondHit records as pinned rather than sourced. Not modelled: the multi-combat sweep across a 3x1 area (up to ten NPCs). That is a multi-target effect like the Hallowfell cleave and would read targetCount; the size-gated second hit is the single-target mechanic and the one this row covers.",
+  "description": "Models the dragon halberd's Sweep special attack: it costs 30% special attack energy, gives a 10% damage boost, and rolls against the opponent's slash defence. Against monsters larger than 1x1 it lands a second hit with 25% reduced accuracy, which this engine reads as a reduced attack roll rather than a scaled hit chance, an assumption HalberdSweepSecondHit records as pinned rather than sourced. The multi-combat sweep across a 3x1 area is not modelled: that is a multi-target effect needing a target count, whereas the size-gated second hit is the single-target mechanic this row covers.",
   "_cite": [
    {
-    "kind": "unsourced",
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dragon_halberd",
     "quotes": [
-     "10% damage boost",
-     "rolls against the opponent's slash defence roll",
-     "'large' monsters (anything that is larger than 1x1, such as most Boss monsters)",
-     "with 25% reduced accuracy"
+     "consuming 30% of the player's special attack energy. In addition to a 10% damage boost, if used against \"large\" monsters (anything that is larger than 1x1, such as most Boss monsters), the special attack will deal an additional second hit onto them, although with 25% reduced accuracy.",
+     "rolls against the opponent's slash defence roll"
     ],
     "verified": "2026-08-21"
    }
@@ -472,17 +516,14 @@
   "dmgDen": 10,
   "shape": "HALBERD_SWEEP",
   "defenceStyleOverride": "MELEE_SLASH",
-  "description": "Sweep, again: the wiki states the crystal halberd \"shares the same special attack as the dragon halberd\", and its own page repeats every figure — 30% energy, a \"10% damage boost\", a second hit on anything \"larger than 1x1\" at \"25% reduced accuracy\", rolling \"against the opponent's slash defence\". Checked rather than assumed from the shared name; it is an identical row.",
+  "description": "Models the crystal halberd's Sweep special attack, which the wiki states is the same special as the dragon halberd's and whose own page repeats every figure: 30% special attack energy, a 10% damage boost, a second hit against monsters larger than 1x1 at 25% reduced accuracy, and an accuracy roll against the opponent's slash defence. The identical row was checked against that page rather than assumed from the shared name.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Crystal_halberd",
     "quotes": [
-     "shares the same special attack as the dragon halberd",
-     "10% damage boost",
-     "larger than 1x1",
-     "25% reduced accuracy",
-     "against the opponent's slash defence"
+     "The crystal halberd shares the same special attack as the dragon halberd, consuming 30% of the player's special attack energy. In addition to a 10% damage boost, if used against \"large\" monsters (anything that is larger than 1x1, such as General Graardor), the special attack will deal an additional second hit onto them, although with 25% reduced accuracy.",
+     "The crystal halberd's special attack's accuracy rolls against the opponent's slash defence."
     ],
     "verified": "2026-08-21"
    }
@@ -498,13 +539,14 @@
   "dmgNum": 1,
   "dmgDen": 1,
   "shape": "STANDARD",
-  "description": "Eviscerate: 25% energy, a \"50% increase to accuracy for the next hit\", and the spec <b>removes the fang's upper damage clamp</b> — the roll becomes [15% of max, max] instead of the passive [15%, 85%] window, so at max 60 the spec rolls 9-60 where a normal swing rolls 9-51. The minimum stays; the double accuracy roll stays too (see OsmumtenFangMechanic, which owns both branches).",
+  "description": "Models Osmumten's fang's Eviscerate special attack: it costs 25% special attack energy and gives a 50% increase to accuracy for the next hit. The special also removes the fang's upper damage clamp, so the roll runs from 15% of max up to the true max instead of the passive window that stops at 85%; at a max of 60 the special rolls 9 to 60 where a normal swing rolls 9 to 51. The minimum and the fang's double accuracy roll both stay, and OsmumtenFangMechanic owns both branches.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Osmumten's_fang",
     "quotes": [
-     "50% increase to accuracy for the next hit"
+     "which consumes 25% of the player's special attack energy. The attack provides a 50% increase to accuracy for the next hit. The fang's normal attacks are limited to 85% of the player's max hit; the special attack instead uses the fang's true max hit when determining damage rolls (i.e., 100% of max hit).",
+     "if the fang's true max hit was 60, it would roll between 9 to 60 damage upon a successful hit, rather than the usual 9 to 51 damage it would normally roll"
     ],
     "verified": "2026-08-21"
    }
@@ -521,16 +563,16 @@
   "dmgDen": 10,
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_SLASH",
-  "description": "Saradomin's Lightning: 100% energy, \"10% more melee damage\" (a per-weapon x11/10 — NOT the godsword stage; the sword is no godsword), rolled \"against the opponent's Slash defence bonus\", plus \"1-16 extra Magic damage\" that lands exactly when the melee hit does (\"if the melee attack misses, then the Magic attack will also fail\") — priced by SaradominsLightningBolt, which also owns the magic-damage-immunity carve-out (Dusk, the Warriors' Guild cyclopes).",
+  "description": "Models the Saradomin sword's Saradomin's Lightning special attack: it costs 100% special attack energy, deals 10% more melee damage as a per-weapon factor rather than the godsword stage since the sword is no godsword, and rolls against the opponent's slash defence. The 1-16 extra magic damage lands exactly when the melee hit does, failing whenever the melee attack misses; SaradominsLightningBolt prices it and owns the magic-damage-immunity carve-out for the Warriors' Guild cyclopes and Dusk.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Saradomin_sword",
     "quotes": [
-     "10% more melee damage",
-     "against the opponent's Slash defence bonus",
-     "1-16 extra Magic damage",
-     "if the melee attack misses, then the Magic attack will also fail"
+     "that deals 10% more melee damage and 1-16 extra Magic damage. This special attack consumes 100% of the wielder's special attack energy.",
+     "The special attack rolls against the opponent's Slash defence bonus using the attack bonus of the stance the player is currently in.",
+     "If the melee attack misses, then the Magic attack will also fail.",
+     "The Magic damage will always hit 0 on cyclopes in the Warriors' Guild"
     ],
     "verified": "2026-08-21"
    }
@@ -551,7 +593,19 @@
    24225,
    24227
   ],
-  "description": "Quick Smash with the ornate handle: the upgrade cheapens the special to 50%. Every granite maul variant is literally named \"Granite maul\" in game data — the wiki's \"(ornate handle)\" is a page title, not an item name — so this row is matched BY ITEM ID (24225, and 24227 for the clamped one) ahead of the name loop; the display name here is for the UI only."
+  "description": "Models Quick Smash as performed with the ornate handle, where the upgrade cheapens the special to 50% special attack energy; it is otherwise the instant, unmodified attack the plain maul gives. Every granite maul variant is named Granite maul in game data, the ornate-handle wording being a wiki page title rather than an item name, so this row is matched by item id ahead of the name loop and the display name here serves the UI only.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Granite_maul_(ornate_handle)",
+    "quotes": [
+     "consumes 50% of the player's special attack energy and deals an instant attack",
+     "Quick Smash does not increase accuracy",
+     "the special attack does not give the player any attack cooldown"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "GRANITE_MAUL",
@@ -564,14 +618,15 @@
   "dmgDen": 1,
   "shape": "STANDARD",
   "instant": true,
-  "description": "Quick Smash: 60% energy, an INSTANT ordinary attack — \"does not increase accuracy\" and \"does not give the player any attack cooldown\". No factors, no shape: its entire value is that the hit costs no attack time, which the instant flag expresses as a zero-tick opportunity cost in the spec rate model. The oracle does not model this special, so the model is validated by hand rather than by vector.",
+  "description": "Models the granite maul's Quick Smash special attack: it costs 60% special attack energy and deals an instant attack, does not increase accuracy, and gives the player no attack cooldown. The row therefore carries no accuracy or damage factor and no shape; its entire value is that the hit costs no attack time, which the instant flag expresses as a zero-tick opportunity cost in the spec rate model. The oracle does not model this special, so the model is checked by hand rather than by vector.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Granite_maul",
     "quotes": [
-     "does not increase accuracy",
-     "does not give the player any attack cooldown"
+     "consumes 60% of the player's special attack energy and deals an instant attack",
+     "Quick Smash does not increase accuracy",
+     "the special attack does not give the player any attack cooldown"
     ],
     "verified": "2026-08-21"
    }
@@ -587,14 +642,14 @@
   "dmgNum": 1,
   "dmgDen": 1,
   "shape": "STANDARD",
-  "description": "Momentum Throw: 25% energy, \"improves the player's accuracy by 25%\", no damage modifier — the first RANGED row, and self-contained (thrownaxes need no ammo, so the overlay question never arises). Deliberately NOT the instant flag: the throw lands on the next tick but \"counts as a normal attack, resetting the player's attack delay\", so it consumes a full attack cycle like any spec — the queue-jump it grants is inside the perfect-switching idealisation the composition layer already assumes.",
+  "description": "Models the dragon thrownaxe's Momentum Throw special attack: it costs 25% special attack energy and improves accuracy by 25% with no damage modifier. It is the first ranged row and is self-contained, since thrownaxes need no ammunition. The instant flag is deliberately not set: the throw lands on the next tick but counts as a normal attack and resets the player's attack delay, so it consumes a full attack cycle like any other special, and the queue-jump it grants falls inside the perfect-switching idealisation the composition layer already assumes.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Dragon_thrownaxe",
     "quotes": [
-     "improves the player's accuracy by 25%",
-     "counts as a normal attack, resetting the player's attack delay"
+     "which consumes 25% of the player's special attack energy. It improves the player's accuracy by 25% along with guaranteeing that the player will attack on the next game tick.",
+     "using the special attack counts as a normal attack, resetting the player's attack delay to 5 ticks, or 4 using rapid"
     ],
     "verified": "2026-08-21"
    }
@@ -614,13 +669,14 @@
    "(u)",
    "(au)"
   ],
-  "description": "Condemn: 50% energy, \"a 50% increase to max hit and accuracy\" on the sceptre's BUILT-IN spell (the ACCURSED powered-staff formula) — the (a) autocast variant shares the prefix and the identical special, and under the spec it too casts the built-in spell whatever it was autocasting. The 15% Defence and Magic drain is the DefenceReductions.accursed field, asserted rather than self-valued, and the wiki confirms it caps at one application. The first MAGIC row.",
+  "description": "Models the accursed sceptre's Condemn special attack: it costs 50% special attack energy and gives a 50% increase to both max hit and accuracy on the sceptre's built-in spell, which is the powered-staff formula the row selects. The autocast variant shares the name prefix and the identical special, and under the special it too casts the built-in spell whatever it was autocasting. The 15% Defence and Magic drain is the DefenceReductions.accursed field, asserted rather than priced here, and the wiki confirms repeat specials do not stack it further. This is the first magic row.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Accursed_sceptre",
     "quotes": [
-     "a 50% increase to max hit and accuracy"
+     "which consumes 50% of the player's special attack energy and 1 revenant ether (whether it hits or not). The special attack hits an enemy with a 50% increase to max hit and accuracy, and upon a successful hit, also drains the target's Defence and Magic by 15%, regardless of the damage inflicted.",
+     "multiple special attacks do not stack"
     ],
     "verified": "2026-08-21"
    }
@@ -637,16 +693,21 @@
   "dmgDen": 2,
   "shape": "STANDARD",
   "defenceStyleOverride": "MELEE_SLASH",
-  "description": "Flames of Ralos: 30% energy, \"50% increased accuracy\" and \"50% increased damage\", one hit, \"rolls against the opponent's slash defence roll\" — plus a guaranteed burn on a landed hit (\"10 damage over 40 ticks\"), priced by ArkanBladeSpecBurn as 10 x hit chance and gated on strong-tier burn immunity, the tier https://oldschool.runescape.wiki/w/Burn files this burn under.",
+  "description": "Models the Arkan blade's Flames of Ralos special attack: it costs 30% special attack energy, deals one hit with 50% increased accuracy and 50% increased damage, and rolls against the opponent's slash defence. A successful hit also applies a strong burn dealing 10 damage over 40 ticks, which ArkanBladeSpecBurn prices as 10 multiplied by the hit chance and gates on strong-tier burn immunity.",
   "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Arkan_blade",
+    "quotes": [
+     "which consumes 30% of the player's special attack energy. The special attack deals 1 hit with 50% increased accuracy and damage. Additionally, if the attack is successful, it will apply a strong burn effect to the target, dealing 10 damage over 40 ticks (24 seconds). Flames of Ralos rolls against the opponent's slash defence roll."
+    ],
+    "verified": "2026-08-21"
+   },
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Burn",
     "quotes": [
-     "50% increased accuracy",
-     "50% increased damage",
-     "rolls against the opponent's slash defence roll",
-     "10 damage over 40 ticks"
+     "Strong burns, sometimes called sunfire burns (inflicted by the eclipse moon armour set and the Arkan blade)."
     ],
     "verified": "2026-08-21"
    }
@@ -662,7 +723,21 @@
   "dmgNum": 1,
   "dmgDen": 1,
   "shape": "BURNING_CLAWS_CASCADE",
-  "description": "Burning Barrage: 35% energy, three sequential accuracy rolls with widening-then-lowering damage windows (75-175%, 50-150%, 25-125% of max), three hitsplats, and a burn whose chance scales with WHICH roll landed (15%/30%/45% per splat) — see BurningClawsSpec for the full transcription. Rolls the weapon's own slash/stab defence, so no override."
+  "description": "Models the burning claws' Burning barrage special attack: it costs 35% special attack energy and makes three sequential accuracy rolls whose damage windows narrow downward as later rolls are reached, from 75-175% of max on the first to 50-150% on the second and 25-125% on the third, splitting each roll into three hitsplats. The burn chance per hitsplat depends on which roll first succeeded, at 15%, 30% and 45%; BurningClawsSpec carries the full transcription. The special rolls the weapon's own slash or stab defence, so the row needs no defence-style override.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Burning_claws",
+    "quotes": [
+     "which drains 35% of the player's special attack energy. Burning barrage hits an enemy three times in succession, rolling against the opponent's slash or stab defence (depending on the combat style used).",
+     "The chance to inflict a burn on each hitsplat scales based on which of the attack's three accuracy rolls is the first to succeed: 15% if the first roll succeeds, 30% if the second roll succeeds, and 45% if the third rolls succeeds.",
+     "roll total damage between 75% and 175% of the maximum hit",
+     "roll total damage between 50% and 150% of the maximum hit",
+     "roll total damage between 25% and 125% of the maximum hit"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "DRAGON_CLAWS",
@@ -675,7 +750,18 @@
   "dmgDen": 1,
   "shape": "CLAWS_CASCADE",
   "defenceStyleOverride": "MELEE_SLASH",
-  "description": "Slice and Dice: the four-roll cascade (see DragonClawsSpec)."
+  "description": "Models the dragon claws' Slice and Dice special attack: it costs 50% special attack energy, hits four times in succession, and rolls against the opponent's slash defence. The four-roll damage cascade itself lives in DragonClawsSpec.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dragon_claws",
+    "quotes": [
+     "which drains 50% of the special attack bar and hits an enemy four times in succession",
+     "The damage calculation rolls against the opponent's slash defence."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "VOIDWAKER",
@@ -688,7 +774,17 @@
   "dmgDen": 1,
   "shape": "VOIDWAKER",
   "defenceStyleOverride": "MAGIC",
-  "description": "Disrupt: a guaranteed roll of 50-150% of the max melee hit, dealt as magic damage."
+  "description": "Models the Voidwaker's Disrupt special attack: it costs 50% special attack energy and deals guaranteed magic damage rolled between 50% and 150% of the wielder's maximum melee hit, which is why the row rolls against magic defence rather than its stab attack style.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Voidwaker",
+    "quotes": [
+     "which consumes 50% of the player's special attack energy. The special attack deals guaranteed Magic damage between 50-150% of the wielder's maximum melee hit."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "DAWNBRINGER",
@@ -713,15 +809,15 @@
    10848,
    10849
   ],
-  "description": "https://oldschool.runescape.wiki/w/Dawnbringer — Pulsate \"inflict[s] 75-150 hitpoints of damage towards her and consum[es] 35% of the wielder's special attack energy\", and \"magic damage gear bonuses, prayer and base magic level/boosts do not affect the damage inflicted\", which is why the range is stated outright rather than read off the max hit. \"Guaranteed to be a successful hit\": the accuracy comes from DawnbringerMechanics, which already makes every Dawnbringer hit land on this fight. Restricted to phase one, the only place the staff functions.",
+  "description": "Models the Dawnbringer's Pulsate special attack against Verzik Vitur: it costs 35% special attack energy and inflicts a flat 75-150 damage, stated outright rather than read off a max hit because magic damage gear bonuses, prayer and magic level do not affect it. The hit is guaranteed, and its accuracy comes from DawnbringerMechanics, which already makes every Dawnbringer hit land in this fight. The row is restricted to the Verzik ids of the phase where the staff functions.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Dawnbringer",
     "quotes": [
-     "inflict[s] 75-150 hitpoints of damage towards her and consum[es] 35% of the wielder's special attack energy",
-     "magic damage gear bonuses, prayer and base magic level/boosts do not affect the damage inflicted",
-     "Guaranteed to be a successful hit"
+     "fires a powerful blast towards Verzik Vitur, inflicting 75-150 hitpoints of damage towards her and consuming 35% of the wielder's special attack energy.",
+     "Magic damage gear bonuses, prayer and base magic level/boosts do not affect the damage inflicted",
+     "guaranteed to be a successful hit"
     ],
     "verified": "2026-08-21"
    }

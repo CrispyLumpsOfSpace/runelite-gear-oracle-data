@@ -2,20 +2,25 @@
  {
   "key": "TRIDENT_OF_THE_SWAMP",
   "poweredStaffType": "TRIDENT_OF_THE_SWAMP",
-  "hit": "max(1, idiv(magicLevel, 3) - 2)",
+  "hit": "max(4, idiv(magicLevel, 3) - 2)",
   "speedTicks": 4,
-  "description": "https://oldschool.runescape.wiki/w/Trident_of_the_swamp — the trident line's max hit is the Magic level over three, less the staff's own offset. All powered staves attack every 4 ticks unless their article states otherwise (https://oldschool.runescape.wiki/w/Powered_staves), stated per row so the engine needs no staff-wide fallback.",
+  "description": "Base max hit of the trident of the swamp's built-in spell: the visible Magic level divided by three and rounded down, less two, floored at the four the article states, on the four-tick cycle powered staves share unless a staff's own article states otherwise.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Trident_of_the_swamp",
-    "quotes": [],
+    "quotes": [
+     "The base maximum hit dealt by the trident is dependent on the player's current Magic level, starting at 24 with level 78 Magic and increasing by one every three Magic levels, up to a maximum of 39 at level 123",
+     "The trident always has a max hit of at least 4, even when reduced to 0 magic."
+    ],
     "verified": "2026-08-21"
    },
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Powered_staves",
-    "quotes": [],
+    "quotes": [
+     "Attack speed 4 ticks (2.4 seconds)"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -25,12 +30,23 @@
   "poweredStaffType": "TRIDENT_OF_THE_SEAS",
   "hit": "max(1, idiv(magicLevel, 3) - 5)",
   "speedTicks": 4,
-  "description": "https://oldschool.runescape.wiki/w/Trident_of_the_seas — see the swamp trident.",
+  "description": "Base max hit of the trident of the seas: the visible Magic level divided by three and rounded down, less five, floored at one, on the standard four-tick powered-staff cycle.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Trident_of_the_seas",
-    "quotes": [],
+    "quotes": [
+     "The base maximum hit dealt by the trident is dependent on the player's current Magic level, starting at 20 with level 75 Magic and increasing by one every three Magic levels, up to a maximum of 36 at level 123",
+     "The trident always has a max hit of at least 1, even when reduced to 0 magic."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Powered_staves",
+    "quotes": [
+     "Attack speed 4 ticks (2.4 seconds)"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -40,12 +56,22 @@
   "poweredStaffType": "SANGUINESTI",
   "hit": "max(1, idiv(magicLevel, 3))",
   "speedTicks": 4,
-  "description": "https://oldschool.runescape.wiki/w/Sanguinesti_staff — level/3 with no offset at all.",
+  "description": "Base max hit of the Sanguinesti staff: the visible Magic level divided by three and rounded down, with no offset, on the standard four-tick powered-staff cycle.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Sanguinesti_staff",
-    "quotes": [],
+    "quotes": [
+     "The base maximum hit dealt by the staff is dependent on the player's current Magic level, starting at 27 with level 82 Magic and increasing by one every three Magic levels, up to a maximum of 41 at level 123"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Powered_staves",
+    "quotes": [
+     "Attack speed 4 ticks (2.4 seconds)"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -53,14 +79,25 @@
  {
   "key": "ACCURSED",
   "poweredStaffType": "ACCURSED",
-  "hit": "max(1, idiv(magicLevel, 3) - 6)",
+  "hit": "max(0, idiv(magicLevel, 3) - 6)",
   "speedTicks": 4,
-  "description": "https://oldschool.runescape.wiki/w/Accursed_sceptre — its own article's formula.",
+  "description": "Base max hit of the accursed sceptre: the visible Magic level divided by three and rounded down, less six, floored at the zero the article gives for zero Magic; the sceptre's wilderness and revenant bonuses are separate rows.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Accursed_sceptre",
-    "quotes": [],
+    "quotes": [
+     "The base maximum hit dealt by the sceptre is dependent on the player's current Magic level, starting at 17 with level 70 Magic, increasing by one at 72 and every three Magic levels thereafter, up to a maximum of 35 at level 123",
+     "At 0 magic, the sceptre has a maximum hit of 0."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Powered_staves",
+    "quotes": [
+     "Attack speed 4 ticks (2.4 seconds)"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -70,12 +107,23 @@
   "poweredStaffType": "THAMMARON",
   "hit": "max(1, idiv(magicLevel, 3) - 8)",
   "speedTicks": 4,
-  "description": "https://oldschool.runescape.wiki/w/Thammaron%27s_sceptre — its own article's formula.",
+  "description": "Base max hit of Thammaron's sceptre: the visible Magic level divided by three and rounded down, less eight, on the standard four-tick powered-staff cycle.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Thammaron%27s_sceptre",
-    "quotes": [],
+    "quotes": [
+     "The maximum hit dealt by the sceptre is dependent on the player's current visible Magic level. The formula is as follows:",
+     "Max Hit = ⌊ Magic 3 ⌋ − 8"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Powered_staves",
+    "quotes": [
+     "Attack speed 4 ticks (2.4 seconds)"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -83,14 +131,26 @@
  {
   "key": "DAWNBRINGER",
   "poweredStaffType": "DAWNBRINGER",
-  "hit": "max(2, idiv(max(1, idiv(magicLevel, 3) - 2), 2))",
+  "hit": "max(2, idiv(idiv(magicLevel, 3) - 2, 2))",
   "speedTicks": 4,
-  "description": "https://oldschool.runescape.wiki/w/Dawnbringer — the trident line halved and floored at 2; halving after the base row reproduces the wiki's listed max of 15 at 99, trunc(31 / 2).",
+  "description": "Base max hit of the Dawnbringer: the trident of the swamp's formula halved and rounded down, floored at the two the article states, on the standard four-tick powered-staff cycle. The halving takes the unfloored trident line, which is what the article's own formula divides.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Dawnbringer",
-    "quotes": [],
+    "quotes": [
+     "The following formula may be used to describe the maximum hit of the Dawnbringer:",
+     "This formula is the same as the trident of the swamp, then divided by 2 and floored.",
+     "The staff always has a max hit of at least 2, even when reduced to 0 magic."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Powered_staves",
+    "quotes": [
+     "Attack speed 4 ticks (2.4 seconds)"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -100,13 +160,14 @@
   "poweredStaffType": "EYE_OF_AYAK",
   "hit": "max(1, idiv(magicLevel, 3) - 6)",
   "speedTicks": 3,
-  "description": "https://oldschool.runescape.wiki/w/Eye_of_ayak \"The fastest attack speed of all powered staves, firing at a rate of 3 ticks\" — a 25% faster cycle traded for a low max hit.",
+  "description": "Base max hit of the Eye of Ayak: the visible Magic level divided by three and rounded down, less six. Its three-tick cycle is the fastest of any powered staff, traded against that low base hit.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Eye_of_ayak",
     "quotes": [
-     "The fastest attack speed of all powered staves, firing at a rate of 3 ticks"
+     "it has the fastest attack speed of all powered staves, firing at a rate of 3 ticks (1.8 seconds) compared to the other staves' 4 or 5-tick speed.",
+     "Max Hit = ⌊ MagicLevel 3 ⌋ − 6"
     ],
     "verified": "2026-08-21"
    }
@@ -117,12 +178,17 @@
   "poweredStaffType": "BONE_STAFF",
   "hit": "max(1, idiv(magicLevel, 3) - 5) + 10",
   "speedTicks": 4,
-  "description": "https://oldschool.runescape.wiki/w/Bone_staff — the +10 is its ratbane bonus, added after the clamp rather than in the offset; the staff only works on rats, and the wiki calculator (and the game's combat dummy) report the max hit with it included.",
+  "description": "Base max hit of the bone staff against rats: the visible Magic level divided by three and rounded down, plus five, on the standard four-tick powered-staff cycle. The engine composes that as the trident of the seas offset with the staff's ten-damage rat bone bonus added after the clamp, since the staff cannot be used on anything but rats.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Bone_staff",
-    "quotes": [],
+    "quotes": [
+     "The maximum hit dealt by the staff is dependent on the player's current visible Magic level; the formula is as follows:",
+     "Max Hit = ⌊ MagicLevel 3 ⌋ + 5",
+     "it is effective against all types of rats by adding 10 damage to the player's maximum hit",
+     "The staff cannot be used against any other type of monster"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -132,12 +198,23 @@
   "poweredStaffType": "WARPED",
   "hit": "max(1, idiv(8 * magicLevel + 96, 37))",
   "speedTicks": 4,
-  "description": "https://oldschool.runescape.wiki/w/Warped_sceptre — trunc((8 * level + 96) / 37), the one row that is not an offset over the level's third.",
+  "description": "Base max hit of the warped sceptre: eight times the visible Magic level plus ninety-six, over thirty-seven, rounded down. It is the one powered staff whose base hit is not an offset applied to a third of the Magic level.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Warped_sceptre",
-    "quotes": [],
+    "quotes": [
+     "The base maximum hit dealt by the sceptre is dependent on the player's current Magic level, starting at 16 with level 62, up to a maximum of 24 at level 99.",
+     "Max Hit = ⌊ 8 ( Magic Level ) + 96 37 ⌋"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Powered_staves",
+    "quotes": [
+     "Attack speed 4 ticks (2.4 seconds)"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -147,13 +224,21 @@
   "weaponFamily": "basicGauntletStaff",
   "hit": "23",
   "speedTicks": 4,
-  "description": "https://oldschool.runescape.wiki/w/Crystal_staff_(basic) — a constant base hit \"regardless of Magic level\".",
+  "description": "Base max hit of the basic crystal staff from the Gauntlet: a flat 23 at any Magic level, on the standard four-tick powered-staff cycle.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Crystal_staff_(basic)",
     "quotes": [
-     "regardless of Magic level"
+     "The staff has a max hit of 23, regardless of level."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Powered_staves",
+    "quotes": [
+     "Attack speed 4 ticks (2.4 seconds)"
     ],
     "verified": "2026-08-21"
    }
@@ -164,12 +249,22 @@
   "weaponFamily": "attunedGauntletStaff",
   "hit": "31",
   "speedTicks": 4,
-  "description": "https://oldschool.runescape.wiki/w/Crystal_staff_(attuned) — see the basic staff.",
+  "description": "Base max hit of the attuned crystal staff: a flat 31 at any Magic level, on the standard four-tick powered-staff cycle.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Crystal_staff_(attuned)",
-    "quotes": [],
+    "quotes": [
+     "The staff has a max hit of 31, regardless of level."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Powered_staves",
+    "quotes": [
+     "Attack speed 4 ticks (2.4 seconds)"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -179,12 +274,22 @@
   "weaponFamily": "perfectedGauntletStaff",
   "hit": "39",
   "speedTicks": 4,
-  "description": "https://oldschool.runescape.wiki/w/Crystal_staff_(perfected) — see the basic staff. The 40 quoted with Augury or Mystic Vigour is not a special case: 39 is the base and Augury's +4% gives trunc(39 * 1.04) = 40.",
+  "description": "Base max hit of the perfected crystal staff: a flat 39 at any Magic level, on the standard four-tick powered-staff cycle. The 40 the article quotes under Augury or Mystic Vigour is not a separate case, since the prayer's four percent applied to 39 rounds down to 40.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Crystal_staff_(perfected)",
-    "quotes": [],
+    "quotes": [
+     "The staff has a max hit of 39, regardless of level. This is increased to 40 by the Mystic Vigour and Augury prayers."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Powered_staves",
+    "quotes": [
+     "Attack speed 4 ticks (2.4 seconds)"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -193,12 +298,15 @@
   "key": "swampLizard",
   "weaponFamily": "swampLizard",
   "hit": "idiv(magicLevel * (56 + 64) + 320, 640)",
-  "description": "https://oldschool.runescape.wiki/w/Swamp_lizard — the standard magic formula over a magic damage bonus that no equipment stat shows.",
+  "description": "Magic-mode max hit of the swamp lizard: half plus the visible Magic level times sixty-four plus the creature's magic damage bonus, over six hundred and forty, rounded down. That bonus is 56 for the swamp lizard and appears in no equipment stat, so the engine carries it in the expression itself.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Swamp_lizard",
-    "quotes": [],
+    "quotes": [
+     "This bonus is not visible in the equipment stats, but is equal to 56 for the swamp lizard.",
+     "Hit_{max} &= \\lfloor \\frac{1}{2} + \\frac{Magic * (64 + Bonus)}{640} \\rfloor"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -207,12 +315,15 @@
   "key": "orangeSalamander",
   "weaponFamily": "orangeSalamander",
   "hit": "idiv(magicLevel * (59 + 64) + 320, 640)",
-  "description": "https://oldschool.runescape.wiki/w/Orange_salamander — see the swamp lizard.",
+  "description": "Magic-mode max hit of the orange salamander: half plus the visible Magic level times sixty-four plus the creature's magic damage bonus, over six hundred and forty, rounded down. That bonus is 59 for the orange salamander and appears in no equipment stat, so the engine carries it in the expression itself.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Orange_salamander",
-    "quotes": [],
+    "quotes": [
+     "This bonus is not visible in the equipment stats, but is equal to 59 for the orange salamander.",
+     "Hit_{max} &= \\lfloor \\frac{1}{2} + \\frac{Magic * (64 + Bonus)}{640} \\rfloor"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -221,12 +332,15 @@
   "key": "redSalamander",
   "weaponFamily": "redSalamander",
   "hit": "idiv(magicLevel * (77 + 64) + 320, 640)",
-  "description": "https://oldschool.runescape.wiki/w/Red_salamander — see the swamp lizard.",
+  "description": "Magic-mode max hit of the red salamander: half plus the visible Magic level times sixty-four plus the creature's magic damage bonus, over six hundred and forty, rounded down. That bonus is 77 for the red salamander and appears in no equipment stat, so the engine carries it in the expression itself.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Red_salamander",
-    "quotes": [],
+    "quotes": [
+     "This bonus is not visible in the equipment stats, but is equal to 77 for the red salamander.",
+     "Hit_{max} &= \\lfloor \\frac{1}{2} + \\frac{Magic * (64 + Bonus)}{640} \\rfloor"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -235,12 +349,15 @@
   "key": "blackSalamander",
   "weaponFamily": "blackSalamander",
   "hit": "idiv(magicLevel * (92 + 64) + 320, 640)",
-  "description": "https://oldschool.runescape.wiki/w/Black_salamander — see the swamp lizard.",
+  "description": "Magic-mode max hit of the black salamander: half plus the visible Magic level times sixty-four plus the creature's magic damage bonus, over six hundred and forty, rounded down. That bonus is 92 for the black salamander and appears in no equipment stat, so the engine carries it in the expression itself.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Black_salamander",
-    "quotes": [],
+    "quotes": [
+     "This bonus is not visible in the equipment stats, but is equal to 92 for the black salamander.",
+     "\\text{Hit}_\\text{max} &= \\lfloor \\frac{1}{2} + \\frac{\\text{Magic} \\times (64 + \\text{Bonus})}{640} \\rfloor"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -249,12 +366,15 @@
   "key": "tecuSalamander",
   "weaponFamily": "tecuSalamander",
   "hit": "idiv(magicLevel * (104 + 64) + 320, 640)",
-  "description": "https://oldschool.runescape.wiki/w/Tecu_salamander — see the swamp lizard.",
+  "description": "Magic-mode max hit of the tecu salamander: half plus the visible Magic level times sixty-four plus the creature's magic damage bonus, over six hundred and forty, rounded down. That bonus is 104 for the tecu salamander and appears in no equipment stat, so the engine carries it in the expression itself.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Tecu_salamander",
-    "quotes": [],
+    "quotes": [
+     "This bonus is not visible in the equipment stats, but is equal to 104 for the tecu salamander.",
+     "\\text{Hit}_\\text{max} &= \\lfloor \\frac{1}{2} + \\frac{\\text{Magic} \\times (64 + \\text{Bonus})}{640} \\rfloor"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -264,13 +384,14 @@
   "specialType": "TUMEKEN_SHADOW",
   "hit": "max(1, idiv(magicLevel, 3) + 1)",
   "speedTicks": 5,
-  "description": "https://oldschool.runescape.wiki/w/Tumeken's_shadow \"At level 0, the max hit is 1\" - the level's third plus one, floored at 1, on a 5-tick cycle. The staff's 3x/4x gear rescale is the TumekenShadowScaling row.",
+  "description": "Base max hit of Tumeken's shadow: the visible Magic level divided by three, plus one, rounded down and floored at one, on a five-tick cycle. The staff's threefold and fourfold rescaling of magic attack and damage bonuses is a separate row.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Tumeken",
+    "url": "https://oldschool.runescape.wiki/w/Tumeken%27s_shadow",
     "quotes": [
-     "At level 0, the max hit is 1"
+     "The maximum hit dealt by the staff is dependent on the player's current visible Magic level; the formula is as follows. At level 0, the max hit is 1.",
+     "Max Hit = ⌊ Magic 3 + 1 ⌋"
     ],
     "verified": "2026-08-21"
    }
@@ -281,13 +402,23 @@
   "specialType": "HARMONISED_NIGHTMARE_STAFF",
   "hit": "24",
   "speedTicks": 4,
-  "description": "https://oldschool.runescape.wiki/w/Harmonised_Nightmare_staff — modelled as autocasting a standard-spellbook Surge, whose element the spell picker chooses, so the base hit is a Surge's 24 and the cycle is 4 ticks. \"The 4-tick spell speed only applies when autocasting\"; manual casting forfeits it and is not modelled, and the staff cannot autocast Ancients or Arceuus. Not modelled: the lower Surge base hits below Magic 95.",
+  "description": "The harmonised Nightmare staff is modelled as autocasting a standard-spellbook Surge, whose element the spell picker chooses, so its base hit is a Surge's 24 on a four-tick cycle. The four-tick speed only applies to autocasting, so manual casting is not modelled, and the staff cannot autocast Ancient Magicks or Arceuus spells. The lower base hits of the Surge spells below Magic 95 are not modelled.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Harmonised_Nightmare_staff",
     "quotes": [
-     "The 4-tick spell speed only applies when autocasting"
+     "it can autocast offensive standard spells, but cannot autocast any other spells (including Ancient Magicks and the Arceuus spellbook) unlike its other variants.",
+     "the harmonised Nightmare staff reduces the cast time from 5 (3.0s) to 4 (2.4s) ticks",
+     "The 4-tick spell speed only applies when autocasting. Manually casting spells with the staff equipped will result in a 5-tick attack speed."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Fire_Surge",
+    "quotes": [
+     "Fire Surge has a base maximum hit of 24."
     ],
     "verified": "2026-08-21"
    }

@@ -4,7 +4,7 @@
   "kind": "reroll",
   "threshold": 50,
   "lo": 45,
-  "description": "https://oldschool.runescape.wiki/w/Zulrah \"Damage at Zulrah is capped at 50, with any hits greater than this amount dealing 45-50 damage instead.\"",
+  "description": "Zulrah caps incoming damage at 50: a hitsplat that would exceed 50 is rerolled to a value in the 45 to 50 range instead.",
   "_cite": [
    {
     "kind": "wiki",
@@ -21,7 +21,7 @@
   "kind": "reroll",
   "threshold": 24,
   "lo": 22,
-  "description": "https://twitter.com/JagexAsh/status/1375037874559721474 \"ignoring whatever damage you rolled, and simply picking a number 22-24\" — a replacement, so a hitsplat at or below 24 is untouched. https://oldschool.runescape.wiki/w/Maximum_damage_cap words it the same way: \"Any hitsplats done to the boss above 24 damage will be re-rolled to 22-24 damage\".",
+  "description": "The Fragment of Seren rerolls any hitsplat above 24 to a value in the 22 to 24 range. It is a replacement of the rolled damage rather than a clamp, so a hitsplat at or below 24 is left untouched.",
   "_cite": [
    {
     "kind": "tweet",
@@ -48,13 +48,14 @@
   "threshold": 10,
   "lo": 0,
   "exemptWorn": "DAWNBRINGER",
-  "description": "https://oldschool.runescape.wiki/w/Maximum_damage_cap \"Any hitsplats done to the boss with melee above 10 damage will be re-rolled to 0-10 damage\" (Mod Ash, 7 Sep 2018) — only an over-cap hitsplat rerolls, so a sub-cap one is untouched. https://oldschool.runescape.wiki/w/Verzik_Vitur \"melee is capped at 10 damage per hitsplat\"; the Dawnbringer is exempt.",
+  "description": "Verzik Vitur's first phase rerolls any melee hitsplat above 10 to a value in the 0 to 10 range. Only an over-cap hitsplat is rerolled, so a sub-cap one is left untouched, and the Dawnbringer is exempt from the cap entirely.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Maximum_damage_cap",
     "quotes": [
-     "Any hitsplats done to the boss with melee above 10 damage will be re-rolled to 0-10 damage"
+     "Any hitsplats done to the boss with melee above 10 damage will be re-rolled to 0-10 damage",
+     "Dawnbringer - Has no damage cap on the boss."
     ],
     "verified": "2026-08-21"
    },
@@ -74,12 +75,14 @@
   "threshold": 3,
   "lo": 0,
   "exemptWorn": "DAWNBRINGER",
-  "description": "The Ranged and Magic half of the row above, same articles and same exemption: \"Any hitsplats done to the boss with ranged or magic above 3 damage (excluding Dawnbringer) will be re-rolled to 0-3 damage\".",
+  "description": "The Ranged and Magic half of Verzik Vitur's first-phase cap: any hitsplat above 3 is rerolled to a value in the 0 to 3 range, with the Dawnbringer exempt.",
   "_cite": [
    {
-    "kind": "unsourced",
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Maximum_damage_cap",
     "quotes": [
-     "Any hitsplats done to the boss with ranged or magic above 3 damage (excluding Dawnbringer) will be re-rolled to 0-3 damage"
+     "Any hitsplats done to the boss with ranged or magic above 3 damage (excluding Dawnbringer) will be re-rolled to 0-3 damage.",
+     "Dawnbringer - Has no damage cap on the boss."
     ],
     "verified": "2026-08-21"
    }
@@ -91,7 +94,7 @@
   "weaponFlag": "corpbane",
   "kind": "hard",
   "threshold": 100,
-  "description": "https://oldschool.runescape.wiki/w/Corporeal_Beast \"The damage cap of 50 for halberds and spears has been increased to 100.\" https://oldschool.runescape.wiki/w/Maximum_damage_cap scopes it: \"Applies to Corpbane weapons set to Stab; ranged and non-Corpbane melee weapons have their damage reduced by 50%\" — the halved path is CorporealBeastReduction, and no source says it keeps the legacy 50, so it is left uncapped.",
+  "description": "The Corporeal Beast caps a Corpbane weapon set to Stab at 100 damage per hitsplat. Ranged and non-Corpbane melee are halved instead, which is modelled separately as a damage reduction, and no source says that path retains the legacy cap of 50, so it is left uncapped here.",
   "_cite": [
    {
     "kind": "wiki",
@@ -120,7 +123,7 @@
   },
   "kind": "hard",
   "threshold": 10,
-  "description": "https://oldschool.runescape.wiki/w/The_Leviathan \"Damage against it is capped at 10 when stunned\" — anywhere but the backside wound, which is its own situation.",
+  "description": "The Leviathan caps damage at 10 while it is stunned. This applies away from the backside wound, which the calculator treats as its own situation.",
   "_cite": [
    {
     "kind": "wiki",

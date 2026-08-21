@@ -4,7 +4,7 @@
   "nameContains": [
    "pickaxe"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric) \"can only be harmed with pickaxes\"; https://oldschool.runescape.wiki/w/Slagilith \"will reduce your damage by 67% if a pickaxe is not equipped\"",
+  "description": "Groups every weapon whose name contains pickaxe, the family some monsters test for: the Guardians in the Chambers of Xeric can only be harmed with pickaxes, and Slagilith reduces a player's damage by 67% when no pickaxe is equipped.",
   "_cite": [
    {
     "kind": "wiki",
@@ -31,8 +31,17 @@
    "bone shortbow",
    "bone staff"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Bone_mace \"it is effective against all types of rats by adding 10 damage to the player's maximum hit\"; \"The mace cannot be used against any other type of monster (including manual cast spells)\"",
+  "description": "The rat bone weapons: the bone mace, bone shortbow and bone staff, which add a flat 10 to the player's maximum hit against monsters carrying the rat attribute. They cannot damage any other type of monster, manual spellcasts included.",
   "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Rat_bone_weapons",
+    "quotes": [
+     "In addition to their stats, all ratbane weapons offer +10 maximum hit when attacking rats, and have no attack delay when attacking the giant rats summoned by Scurrius.",
+     "Rat bone weapons are not effective against most monsters, and can only deal damage to rats."
+    ],
+    "verified": "2026-08-21"
+   },
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Bone_mace",
@@ -49,12 +58,15 @@
   "nameContains": [
    "chinchompa"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Chinchompa_(weapon) — grey, red and black, plus the Last Man Standing copies. Safe as a name rule: the only other \"chinchompa\" items are the Hunter-caught ones (same ids, thrown the same way) and the pet, which cannot occupy the weapon slot.",
+  "description": "Chinchompas, the thrown Ranged weapons that explode on impact and hit every target in a 3x3 area: grey, red and black, plus the Last Man Standing copies. Matching on the name is safe because the only other chinchompa items are the Hunter-caught creatures, which are thrown the same way, and the pet, which cannot occupy the weapon slot.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Chinchompa_(weapon)",
-    "quotes": [],
+    "quotes": [
+     "Chinchompas are a type of members Ranged throwing weapon.",
+     "They are thrown and explode on impact, hitting any targets in a 3x3 area"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -66,12 +78,14 @@
   ],
   "group": "chinchompaTargetCap",
   "value": 12,
-  "description": "https://oldschool.runescape.wiki/w/Black_chinchompa — hits one more target than the grey and red ones (12 in PvM, not 11). Only this row carries the cap: a value group answers with the first matching row in file order, and the plain chinchompa row above would otherwise shadow it, so 11 is the fallback the caller passes.",
+  "description": "The black chinchompa's explosion reaches 12 targets in PvM where the grey and red ones reach 11, so this row carries the higher target cap. Only this row carries it: a value group answers with the first matching row in file order and the general chinchompa row above would otherwise shadow it, so 11 stays the fallback the caller passes.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Black_chinchompa",
-    "quotes": [],
+    "quotes": [
+     "In PvM, they can hit up to 12 (as opposed to 11 with other chinchompas) targets in a 3x3 area. In PvP, the cap is 10 (as opposed to 9 with other chinchompas)."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -82,12 +96,15 @@
    "salamander",
    "tecu"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Salamander — its own weapon category in the game's own classification, and one of the two melee families that reach an airborne target.",
+  "description": "Salamanders, two-handed weapons with their own combat-style block that offer a melee, a Ranged and a Magic attack option from the one weapon. They also attack diagonally past obstacles the way ranged and magic attacks do, so they reach targets ordinary melee cannot. Matched by name so the Tecu salamander is picked up.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Salamander",
-    "quotes": [],
+    "quotes": [
+     "Salamanders are unique and versatile two-handed weapons that facilitate the training of all combat styles, namely the Ranged, Magic and Strength skills.",
+     "They are also able to attack diagonally over some obstacles and corners similar to most ranged or magic attacks, which allows it to be used in melee safespotting without having to flinch or use a halberd."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -101,19 +118,21 @@
    "smoke battlestaff",
    "mystic smoke staff"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Smoke_battlestaff 8 October 2015: \"The smoke battlestaff and mystic smoke staff now provide a 10% increase in accuracy and damage when used to cast spells from the standard spellbook\"; https://oldschool.runescape.wiki/w/Twinflame_staff quotes the same bonus for the Twinflame. Type-keyed for the Twinflame staff, which has other behaviour to hang a type on; name-keyed for the two battlestaves, which do not.",
+  "description": "The smoke staves, which add 10% magic accuracy and 10% magic damage to spells cast from the standard spellbook. The Twinflame staff is keyed by its special weapon type because it has other behaviour to hang a type on; the smoke battlestaff and mystic smoke staff are keyed by name because they do not.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Smoke_battlestaff",
-    "quotes": [],
+    "quotes": [
+     "The smoke battlestaff and mystic smoke staff now provide a 10% increase in accuracy and damage when used to cast spells from the standard spellbook"
+    ],
     "verified": "2026-08-21"
    },
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Twinflame_staff",
     "quotes": [
-     "The smoke battlestaff and mystic smoke staff now provide a 10% increase in accuracy and damage when used to cast spells from the standard spellbook"
+     "It provides a 10% increase in accuracy and damage when casting spells from the standard spellbook"
     ],
     "verified": "2026-08-21"
    }
@@ -129,12 +148,14 @@
    "crossbow",
    "ballista"
   ],
-  "description": "The two families the araxyte minions' guaranteed max hit names (https://oldschool.runescape.wiki/w/Araxxor). Deliberately not the HEAVY ranged weight class, which also carries chinchompas: the rule names the two weapon families, and a chinchompa is neither.",
+  "description": "Crossbows and ballistae, the heavy Ranged weapons that always deal the player's max hit against the araxytes hatched during the Araxxor fight when Ranged is the loadout's most accurate style. The rule names those two weapon families rather than the HEAVY ranged weight class, which would also take in chinchompas.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Araxxor",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Araxxor/Strategies",
+    "quotes": [
+     "Players will always max hit when attacking the hatched araxytes with a noxious halberd, crush weapons, or heavy Ranged weapon (such as a crossbow or ballista) if crush or ranged is their highest accuracy style respectively."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -144,12 +165,15 @@
   "nameContains": [
    "ballista"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Aquanite_hopper — a CROSSBOW passive, so the ballistae the family above shares a rule with are excluded here.",
+  "description": "Ballistae on their own, so they can be excluded from the aquanite hopper's passive: that passive gives crossbows an 11% chance of a second, weakened shot, and the ballistae the crossbow family shares a rule with do not get it.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Aquanite_hopper",
-    "quotes": [],
+    "quotes": [
+     "crossbows are given an 11% chance",
+     "to fire a second shot when the hopper is equipped. This second shot has 33.3% reduced accuracy, 66.7% reduced damage, and 66.7% reduced enchanted bolt proc chance"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -162,7 +186,7 @@
   "notNameContains": [
    "uncharged"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Tonalztics_of_ralos \"When charged, the weapon will hit twice, with two independent damage rolls\". Charge state is a game-state property the item id does not carry; the uncharged form is named \"Tonalztics of ralos (uncharged)\".",
+  "description": "A charged Tonalztics of ralos, which hits twice with two independent damage rolls. Charge state is a game-state property the item id does not carry, so the row excludes the item whose name ends in uncharged.",
   "_cite": [
    {
     "kind": "wiki",
@@ -180,7 +204,19 @@
   "nameContains": [
    "accursed sceptre (a)"
   ],
-  "description": "The charged AUTOCAST swap, whose Condemn special casts the plain sceptre's built-in spell. The registry has no category for it — the \"(a)\" suffix is its only mark, and \"(a)\" exactly: \"(au)\" is uncharged and cannot fire the special at all."
+  "description": "The autocasting accursed sceptre, whose Condemn special attack casts the plain sceptre's built-in spell with a 50% increase to max hit and accuracy and costs one revenant ether per use. The registry has no category for it, so the (a) suffix is the only mark, and (a) exactly: the uncharged form is the accursed sceptre (au), which holds no ether to spend.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Accursed_sceptre_(a)",
+    "quotes": [
+     "The accursed sceptre (a) is the autocasting variant of the accursed sceptre, requiring level 70 in Magic to wield.",
+     "The accursed sceptre (a) has a special attack, Condemn, which consumes 50% of the player's special attack energy and 1 revenant ether (whether it hits or not). The special attack hits an enemy by using the accursed sceptre's built-in spell with a 50% increase to max hit and accuracy",
+     "Accursed sceptre (au)"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "silverMelee",
@@ -203,14 +239,15 @@
    "blessed axe",
    "wolfbane"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Silver_weaponry \"Tier 2 only\" lists the blessed axe, rod of Ivandis, the silver and gem sickles, Silverlight, Darklight, Arclight, Emberlight and Wolfbane. The diamond sickle is the 2025 Blood Moon Rises addition — \"a blessed silver sickle with a diamond recessed into it\" — missing from the oracle's own silver list, so no vector can confirm it; the wiki's examine text is the source. Without it the engine reports zero damage against tier-2 vampyres for a weapon that works in game.",
+  "description": "The silver melee weapons, the only melee that can harm tier 2 vampyres: the blessed axe, the rod of Ivandis, the silver and gem sickles, Silverlight and its successors, and Wolfbane. The diamond sickle is the 2025 Blood Moon Rises addition and is missing from the oracle's own silver list, so no vector can confirm it; without it the engine would report zero damage against tier-2 vampyres for a weapon that works in game.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Silver_weaponry",
     "quotes": [
-     "Tier 2 only",
-     "a blessed silver sickle with a diamond recessed into it"
+     "Silver weaponry are pieces of equipment that are able to harm tier 2 vampyres. Tier 2 vampyres are immune to other types of weapons.",
+     "The following list contains weapons that can harm tier 2 vampyres and deal full damage, but cannot harm tier 3 vampyres.",
+     "Diamond sickle (b)"
     ],
     "verified": "2026-08-21"
    }
@@ -224,12 +261,22 @@
   "nameContains": [
    "silver bolts"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Silver_bolts — the Ranged half of the silver rule, with the Blisterwood stake.",
+  "description": "The Ranged half of the silver rule: silver bolts, which count as silver weaponry, together with the Blisterwood stake, which deals full damage to vampyres of every tier.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Silver_bolts",
-    "quotes": [],
+    "quotes": [
+     "They are a type of silver weaponry and are one of the few ammo types able to be used to effectively kill Vampyre Juvinates."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Blisterwood_stake",
+    "quotes": [
+     "Blisterwood stakes can deal full damage to vampyres of all tiers and have an accuracy and damage bonus of 25% against them."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -240,12 +287,14 @@
    "saradomin staff",
    "staff of light"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Saradomin_strike — the god spells are unusable without their staff, so the spell picker must gate on it. The charged variants share the staves (Charge is a buff, not a weapon).",
+  "description": "The weapons Saradomin Strike can be cast with, a Saradomin staff or a staff of light. The god spells are unusable without their staff, so the spell picker gates on it; the charged variants share the same staves, Charge being a buff rather than a weapon.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Saradomin_strike",
-    "quotes": [],
+    "quotes": [
+     "players must also be wielding a Saradomin staff or staff of light; only the staff of light is able to autocast the spell"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -257,12 +306,14 @@
    "void knight mace",
    "staff of balance"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Claws_of_Guthix — see saradominStrikeStaff.",
+  "description": "The weapons Claws of Guthix can be cast with: a Guthix staff, a void knight mace or a staff of balance. The spell picker gates on them the same way it does for the other god spells.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Claws_of_Guthix",
-    "quotes": [],
+    "quotes": [
+     "players must also be wielding a Guthix staff, void knight mace, or staff of balance. Only the void knight mace and staff of balance are able to autocast the spell."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -274,12 +325,14 @@
    "staff of the dead",
    "toxic staff"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Flames_of_Zamorak — see saradominStrikeStaff.",
+  "description": "The plain staves Flames of Zamorak can be cast with: a Zamorak staff, a staff of the dead or a toxic staff of the dead. The autocasting sceptres that also cast the spell are matched by their own rows.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Flames_of_Zamorak",
-    "quotes": [],
+    "quotes": [
+     "players must also be wielding a Zamorak staff, staff of the dead, Thammaron's sceptre (a), accursed sceptre (a), or toxic staff of the dead; all except the Zamorak staff are able to autocast the spell."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -292,13 +345,23 @@
    "abyssal whip",
    "abyssal tentacle"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Tormented_Demon \"Tormented demons usually have a fire shield that reduces damage done by non-demonbane weapons/spells and non-abyssal weapons by 20%.\" The four melee weapons the article's \"abyssal weapons\" names.",
+  "description": "The four abyssal melee weapons, the bludgeon, the dagger, the whip and the tentacle. A tormented demon's fire shield does not apply its 20% damage reduction to them.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Tormented_Demon",
     "quotes": [
      "Tormented demons usually have a fire shield that reduces damage done by non-demonbane weapons/spells and non-abyssal weapons by 20%."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Abyssal_weapons",
+    "quotes": [
+     "Abyssal bludgeon",
+     "Abyssal dagger",
+     "Abyssal whip/tentacle"
     ],
     "verified": "2026-08-21"
    }
@@ -312,7 +375,7 @@
   "nameContains": [
    "silverlight"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Delrith \"All damage dealt to Delrith is doubled when Silverlight is equipped\" — Silverlight and its dyed variants; Darklight is a different weapon and does not count.",
+  "description": "Silverlight and its dyed variants, which double all damage dealt to Delrith. Darklight is a different weapon and does not count.",
   "_cite": [
    {
     "kind": "wiki",
@@ -330,12 +393,15 @@
    "bone claws",
    "burning claws"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Burning_claws — 5% demonbane on both accuracy and damage. Name-matched because the claws carry no special type of their own.",
+  "description": "The burning claws, released under the name bone claws, which add 5% accuracy and 5% damage against demonic creatures. Matched by name because the claws carry no special weapon type of their own.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Burning_claws",
-    "quotes": [],
+    "quotes": [
+     "when used against demonic creatures, the claws provide a 5% increase in accuracy and damage",
+     "The item's name was changed from \"Bone claws\" to \"Burning claws\"."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -345,7 +411,7 @@
   "nameContains": [
    "gadderhammer"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Gadderhammer \"possessing a 25% damage bonus against shades as well as a 5% chance to deal double damage.\"",
+  "description": "The gadderhammer, which carries a 25% damage bonus against shades along with a 5% chance to deal double damage.",
   "_cite": [
    {
     "kind": "wiki",
@@ -362,12 +428,22 @@
   "namesStartWith": [
    "noxious halberd"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Araxxor — the one weapon that always max hits the araxyte minions whatever the loadout's best style.",
+  "description": "The noxious halberd, the one weapon that always deals the player's max hit against the acidic, mirrorback and ruptura araxytes hatched during the Araxxor fight, whatever the loadout's best style.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Araxxor",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Noxious_halberd",
+    "quotes": [
+     "The noxious halberd will always deal the player's max hit when hitting the acidic, mirrorback, and ruptura araxytes that hatch during the fight with Araxxor."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Araxxor/Strategies",
+    "quotes": [
+     "Players will always max hit when attacking the hatched araxytes with a noxious halberd, crush weapons, or heavy Ranged weapon (such as a crossbow or ballista) if crush or ranged is their highest accuracy style respectively."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -377,13 +453,21 @@
   "namesExact": [
    "comp ogre bow"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Brutal_arrow \"Ogre bows can only fire up to mithril brutal arrows, while composite ogre bows can fire all types\" — the half of the ogre-bow pair that reaches every brutal.",
+  "description": "The composite ogre bow, the half of the ogre-bow pair that can fire every tier of brutal arrow as well as ogre arrows, where a plain ogre bow stops at mithril.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Brutal_arrow",
     "quotes": [
-     "Ogre bows can only fire up to mithril brutal arrows, while composite ogre bows can fire all types"
+     "Brutal arrows can only be fired from ogre bows and composite ogre bows. Ogre bows can only fire up to mithril brutal arrows, while composite ogre bows can fire all types of brutal arrows."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Comp_ogre_bow",
+    "quotes": [
+     "It can fire any type of brutal arrow, as well as ogre arrows."
     ],
     "verified": "2026-08-21"
    }
@@ -398,13 +482,21 @@
    "black brutal",
    "mithril brutal"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Brutal_arrow \"Ogre bows can only fire up to mithril brutal arrows\" — the brutals a plain Ogre bow reaches, the ladder being bronze, iron, steel, black, mithril, adamant, rune.",
+  "description": "The brutal arrows a plain ogre bow can fire, bronze through mithril. The ladder runs bronze, iron, steel, black, mithril, adamant, rune, and only the composite bow reaches the last two.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Brutal_arrow",
     "quotes": [
-     "Ogre bows can only fire up to mithril brutal arrows"
+     "Brutal arrows can only be fired from ogre bows and composite ogre bows. Ogre bows can only fire up to mithril brutal arrows, while composite ogre bows can fire all types of brutal arrows."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Ogre_bow",
+    "quotes": [
+     "it can fire ogre arrows as well as brutal arrows up to mithril brutals"
     ],
     "verified": "2026-08-21"
    }
@@ -415,14 +507,14 @@
   "nameContains": [
    "ogre bow"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Ogre_bow \"A stance bonus of 10 is used regardless of attack style used.\"; \"Only the player's visible ranged level matters.\"",
+  "description": "The ogre bows, whose maximum hit is computed off a fixed stance bonus of 10 whatever the attack style, and off the player's visible Ranged level alone, with prayer and Void boosts ignored.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Ogre_bow",
     "quotes": [
      "A stance bonus of 10 is used regardless of attack style used.",
-     "Only the player's visible ranged level matters."
+     "Only the player's visible ranged level matters. Boosts given through prayers and Void Knight armour are ignored."
     ],
     "verified": "2026-08-21"
    }
@@ -433,13 +525,14 @@
   "namesStartWith": [
    "seeking "
   ],
-  "description": "https://oldschool.runescape.wiki/w/Seeking_arrows — \"a minimum hit of 3\", clamped per roll rather than shifting the range.",
+  "description": "Seeking arrows, which add 20 Ranged accuracy over their ordinary counterparts and floor the damage at 3. The floor is a clamp applied per roll rather than a shift of the whole range: a roll of 1 or 2 becomes 3, and a miss still shows 0.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Seeking_arrows",
     "quotes": [
-     "a minimum hit of 3"
+     "They have +20 ranged accuracy more than their normal counterpart and a minimum hit of 3.",
+     "If an attack would deal 1 or 2 damage, it instead deals 3. The lowest possible hits are 3,3,3,3 - NOT 3,4,5,6"
     ],
     "verified": "2026-08-21"
    }
@@ -451,7 +544,7 @@
    "broad arrow",
    "broad bolt"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Kurask \"they can only be damaged with leaf-bladed weapons, broad ammunition, or the Magic Dart spell\" — broad arrows, broad bolts and amethyst broad bolts.",
+  "description": "Broad ammunition, meaning broad arrows and broad bolts including the amethyst broad bolts, one of the few things a kurask can be damaged with.",
   "_cite": [
    {
     "kind": "wiki",
@@ -468,12 +561,15 @@
   "nameContains": [
    " brutal"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Brutal_arrow — the ogre-bow ammunition Zogres take full damage from; the leading space keeps the match on the colour-prefixed names (\"Mithril brutal\").",
+  "description": "Brutal arrows, the ogre-bow ammunition zogres and skogres take full damage from. The leading space in the match keeps it on the colour-prefixed item names such as Mithril brutal.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Brutal_arrow",
-    "quotes": [],
+    "quotes": [
+     "The brutal arrows are stronger than their regular arrow counterpart and have the bonus of being very effective versus zogres and skogres",
+     "Brutal arrows can only be fired from ogre bows and composite ogre bows. Ogre bows can only fire up to mithril brutal arrows, while composite ogre bows can fire all types of brutal arrows."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -484,13 +580,13 @@
    "adamant brutal",
    "rune brutal"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Brutal_arrow \"Ogre bows can only fire up to mithril brutal arrows, while composite ogre bows can fire all types of brutal arrows.\" The colour prefix is the tier, so the two rungs above mithril are named.",
+  "description": "The two brutal arrow tiers above mithril, adamant and rune, which only a composite ogre bow can fire. The colour prefix is the tier, so the row names those two rungs directly.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Brutal_arrow",
     "quotes": [
-     "Ogre bows can only fire up to mithril brutal arrows, while composite ogre bows can fire all types of brutal arrows."
+     "Brutal arrows can only be fired from ogre bows and composite ogre bows. Ogre bows can only fire up to mithril brutal arrows, while composite ogre bows can fire all types of brutal arrows."
     ],
     "verified": "2026-08-21"
    }
@@ -502,13 +598,21 @@
    "ogre arrow",
    " brutal"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Arrows \"Ogre arrows can only be used with the Ogre bow or comp ogre bow\" — the ogre side branch's ammo half. Brutal arrows are ogre arrows without saying so (\"Adamant brutal\"); the leading space keeps the match on the colour-prefixed names.",
+  "description": "The ammunition half of the ogre-bow branch: ogre arrows, which only the ogre bow and comp ogre bow fire, plus the brutal arrows, which are ogre arrows without saying so. The leading space keeps the brutal match on the colour-prefixed names such as Adamant brutal.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Arrows",
+    "url": "https://oldschool.runescape.wiki/w/Ogre_bow",
     "quotes": [
-     "Ogre arrows can only be used with the Ogre bow or comp ogre bow"
+     "it can fire ogre arrows as well as brutal arrows up to mithril brutals"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Comp_ogre_bow",
+    "quotes": [
+     "It can fire any type of brutal arrow, as well as ogre arrows."
     ],
     "verified": "2026-08-21"
    }
@@ -522,14 +626,21 @@
   "notNameContains": [
    "morrigan"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Heavy_ballista \"uses javelins as ammunition\". Morrigan's javelin is \"a standalone thrown weapon\" per the wiki (equipped in the WEAPON slot, self-contained), not ballista ammo, so it is excluded despite its name.",
+  "description": "Javelins, the ammunition a ballista fires. Morrigan's javelin is excluded despite its name: it is a thrown weapon in its own right, not ballista ammunition.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Heavy_ballista",
     "quotes": [
-     "uses javelins as ammunition",
-     "a standalone thrown weapon"
+     "The heavy ballista is a two-handed crossbow that uses javelins as ammunition"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Morrigan's_javelin",
+    "quotes": [
+     "Unlike other javelins, it is not used as ammunition for ballistae, nor is it stackable, effectively providing unlimited \"charges\"."
     ],
     "verified": "2026-08-21"
    }
@@ -540,12 +651,14 @@
   "nameContains": [
    "silvthrill"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Silvthrill_ballista — the Silvthrill ballista/javelin pair is exclusive on both sides, the javelin family's only side branch. One row answers for both halves.",
+  "description": "Groups the silvthrill ballista with the silvthrill javelins it fires. The pairing is exclusive on both sides, the javelin family's only side branch, so one row answers for both halves of the quest-only weapon.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Silvthrill_ballista",
-    "quotes": [],
+    "quotes": [
+     "The player uses it to destroy the various portals Drakan summons. It can only fire silvthrill javelins, which are also given to the player during this segment of the quest."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -556,12 +669,15 @@
    "staff&crystal&basic",
    "staff&corrupted&basic"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Crystal_staff_(basic) — \"staff\" is what disambiguates: the Gauntlet also has crystal and corrupted bows, halberds and helms, and none of them casts anything.",
+  "description": "Matches the basic-tier Gauntlet powered staff in both its crystal and corrupted forms. The word staff is what disambiguates: the Gauntlet builds crystal and corrupted bows, halberds and helms at the same tiers, and none of those cast.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Crystal_staff_(basic)",
-    "quotes": [],
+    "quotes": [
+     "A basic crystal staff is a powered staff that can be created in the Gauntlet from a weapon frame.",
+     "The staff has a max hit of 23, regardless of level."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -572,12 +688,15 @@
    "staff&crystal&attuned",
    "staff&corrupted&attuned"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Crystal_staff_(attuned) — see the basic staff.",
+  "description": "Matches the attuned-tier Gauntlet powered staff in both its crystal and corrupted forms, on the same staff-plus-tier name test as the basic staff.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Crystal_staff_(attuned)",
-    "quotes": [],
+    "quotes": [
+     "An attuned crystal staff is a powered staff that can be created in the Gauntlet from 50 crystal shards and a basic crystal staff.",
+     "The staff has a max hit of 31, regardless of level."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -588,12 +707,15 @@
    "staff&crystal&perfected",
    "staff&corrupted&perfected"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Crystal_staff_(perfected) — see the basic staff.",
+  "description": "Matches the perfected-tier Gauntlet powered staff in both its crystal and corrupted forms, on the same staff-plus-tier name test as the basic staff.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Crystal_staff_(perfected)",
-    "quotes": [],
+    "quotes": [
+     "A perfected crystal staff is a powered staff that can be created in the Gauntlet from an attuned crystal staff and a crystal orb.",
+     "The staff has a max hit of 39, regardless of level."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -605,12 +727,14 @@
   ],
   "group": "salamanderTar",
   "text": "guam tar",
-  "description": "https://oldschool.runescape.wiki/w/Swamp_lizard — the salamander family's lowest Magic tier.",
+  "description": "Gives the swamp lizard its ammunition, guam tar. It is the lowest rung of the salamander family, wieldable at level 30 Attack, Ranged and Magic.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Swamp_lizard",
-    "quotes": [],
+    "quotes": [
+     "swamp lizard is a two-handed Ranged weapon requiring level 30 in Attack, Ranged, and Magic to wield. The required ammunition for the swamp lizard is Guam tar."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -622,12 +746,15 @@
   ],
   "group": "salamanderTar",
   "text": "marrentill tar",
-  "description": "https://oldschool.runescape.wiki/w/Orange_salamander — see the swamp lizard.",
+  "description": "Gives the orange salamander its ammunition, marrentill tar. It is the fourth strongest salamander, wieldable at level 50 Attack, Ranged and Magic.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Orange_salamander",
-    "quotes": [],
+    "quotes": [
+     "orange salamander is the fourth strongest salamander weapon.",
+     "The orange salamander requires level 50 Ranged, 50 Attack, and 50 Magic to wield and is a two-handed weapon. Marrentill tar is used as ammunition for the salamander."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -639,12 +766,15 @@
   ],
   "group": "salamanderTar",
   "text": "tarromin tar",
-  "description": "https://oldschool.runescape.wiki/w/Red_salamander — see the swamp lizard.",
+  "description": "Gives the red salamander its ammunition, tarromin tar. It is the third strongest salamander, wieldable at level 60 Attack, Ranged and Magic.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Red_salamander",
-    "quotes": [],
+    "quotes": [
+     "red salamander is the third strongest salamander and can be caught using a net trap and the Hunter skill at level 59. It requires level 60 Ranged, 60 Attack, and 60 Magic to wield.",
+     "Tarromin tar is used as ammo for the salamander."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -656,12 +786,15 @@
   ],
   "group": "salamanderTar",
   "text": "harralander tar",
-  "description": "https://oldschool.runescape.wiki/w/Black_salamander — see the swamp lizard.",
+  "description": "Gives the black salamander its ammunition, harralander tar. It is the second strongest salamander, wieldable at level 70 Attack, Ranged and Magic.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Black_salamander",
-    "quotes": [],
+    "quotes": [
+     "black salamander is the second strongest salamander that can be caught using the Hunter skill at level 67 Hunter",
+     "It is a two-handed weapon that requires level 70 Attack, Magic, and Ranged to wield, and can be used to train Strength, Magic, and Ranged. Harralander tar is used as ammunition for the salamander."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -673,12 +806,15 @@
   ],
   "group": "salamanderTar",
   "text": "irit tar",
-  "description": "https://oldschool.runescape.wiki/w/Tecu_salamander — see the swamp lizard.",
+  "description": "Gives the tecu salamander its ammunition, irit tar. It is the strongest salamander, wieldable at level 80 Attack, Ranged and Magic.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Tecu_salamander",
-    "quotes": [],
+    "quotes": [
+     "tecu salamander is the strongest salamander",
+     "Tecu salamanders require level 80 Attack, Magic, and Ranged to wield. Irit tar is used as ammunition for the salamander."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -691,12 +827,24 @@
   ],
   "group": "pickaxeGuardianRequirement",
   "value": 1,
-  "description": "https://oldschool.runescape.wiki/w/Pickaxe — the tier's MINING level requirement, which feeds the Guardian damage multiplier (50 + mining + this) / 150.",
+  "description": "Carries the Mining level a bronze or iron pickaxe requires, which is 1. That requirement is the pickaxe term of the Chambers of Xeric Guardian damage multiplier, (50 + Mining level + the pickaxe's level requirement) / 150.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Pickaxe",
-    "quotes": [],
+    "quotes": [
+     "Bronze pickaxe 1 1",
+     "Iron pickaxe 1 1"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric)",
+    "quotes": [
+     "These statues must be destroyed in order to pass the room and can only be harmed with pickaxes; all other sources of damage will not count.",
+     "The damage modifier is ((50 + Mining level + pickaxes's level req) / 150)."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -708,12 +856,23 @@
   ],
   "group": "pickaxeGuardianRequirement",
   "value": 6,
-  "description": "https://oldschool.runescape.wiki/w/Pickaxe — see bronzeOrIronPickaxe.",
+  "description": "Carries the steel pickaxe's Mining level requirement of 6, the pickaxe term of the Chambers of Xeric Guardian damage multiplier.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Pickaxe",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Steel_pickaxe",
+    "quotes": [
+     "The steel pickaxe requires 6 Mining to use, and 5 Attack to equip."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric)",
+    "quotes": [
+     "These statues must be destroyed in order to pass the room and can only be harmed with pickaxes; all other sources of damage will not count.",
+     "The damage modifier is ((50 + Mining level + pickaxes's level req) / 150)."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -725,12 +884,23 @@
   ],
   "group": "pickaxeGuardianRequirement",
   "value": 11,
-  "description": "https://oldschool.runescape.wiki/w/Pickaxe — see bronzeOrIronPickaxe.",
+  "description": "Carries the black pickaxe's Mining level requirement of 11, the pickaxe term of the Chambers of Xeric Guardian damage multiplier.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Pickaxe",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Black_pickaxe",
+    "quotes": [
+     "Players need 10 Attack to wield the pickaxe and 11 Mining to mine with it."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric)",
+    "quotes": [
+     "These statues must be destroyed in order to pass the room and can only be harmed with pickaxes; all other sources of damage will not count.",
+     "The damage modifier is ((50 + Mining level + pickaxes's level req) / 150)."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -742,12 +912,23 @@
   ],
   "group": "pickaxeGuardianRequirement",
   "value": 21,
-  "description": "https://oldschool.runescape.wiki/w/Pickaxe — see bronzeOrIronPickaxe.",
+  "description": "Carries the mithril pickaxe's Mining level requirement of 21, the pickaxe term of the Chambers of Xeric Guardian damage multiplier.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Pickaxe",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Mithril_pickaxe",
+    "quotes": [
+     "It requires an Attack level of 20 to wield, and a Mining level of 21 to mine with."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric)",
+    "quotes": [
+     "These statues must be destroyed in order to pass the room and can only be harmed with pickaxes; all other sources of damage will not count.",
+     "The damage modifier is ((50 + Mining level + pickaxes's level req) / 150)."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -759,12 +940,23 @@
   ],
   "group": "pickaxeGuardianRequirement",
   "value": 31,
-  "description": "https://oldschool.runescape.wiki/w/Pickaxe — see bronzeOrIronPickaxe.",
+  "description": "Carries the adamant pickaxe's Mining level requirement of 31, the pickaxe term of the Chambers of Xeric Guardian damage multiplier.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Pickaxe",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Adamant_pickaxe",
+    "quotes": [
+     "It requires an Attack level of 30 to wield, and a Mining level of 31 to mine with."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric)",
+    "quotes": [
+     "These statues must be destroyed in order to pass the room and can only be harmed with pickaxes; all other sources of damage will not count.",
+     "The damage modifier is ((50 + Mining level + pickaxes's level req) / 150)."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -777,18 +969,31 @@
   ],
   "group": "pickaxeGuardianRequirement",
   "value": 41,
-  "description": "https://oldschool.runescape.wiki/w/Pickaxe — see bronzeOrIronPickaxe. Anything past this row is dragon-tier (dragon variants, infernal, 3rd age) and worth 61, the crystal pickaxe included: https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric) \"The formula is capped to ensure the Crystal pickaxe deals the same damage as the Dragon pickaxe, despite having a higher mining level requirement.\"",
+  "description": "Carries the Mining level requirement of 41 shared by the rune pickaxe and its gilded cosmetic variant, the pickaxe term of the Chambers of Xeric Guardian damage multiplier. Anything past this row is dragon tier and worth 61, the crystal pickaxe included, because the formula is capped so a crystal pickaxe deals no more damage than a dragon one despite its higher Mining requirement.",
   "_cite": [
    {
     "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Rune_pickaxe",
+    "quotes": [
+     "The rune pickaxe requires 41 Mining to use, and 40 Attack to equip."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Pickaxe",
-    "quotes": [],
+    "quotes": [
+     "Gilded pickaxe 41 40",
+     "Dragon pickaxe 61 60",
+     "Crystal pickaxe 71 70"
+    ],
     "verified": "2026-08-21"
    },
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric)",
     "quotes": [
+     "The damage modifier is ((50 + Mining level + pickaxes's level req) / 150).",
      "The formula is capped to ensure the Crystal pickaxe deals the same damage as the Dragon pickaxe, despite having a higher mining level requirement."
     ],
     "verified": "2026-08-21"
@@ -828,13 +1033,15 @@
    "thunder khopesh",
    "king's barrage"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Corpbane_weapons — the wiki's canonical list. The corp parameter is PER-ITEM, not \"anything named spear or halberd\": the Blue moon spear and Hunter's spear are excluded while the Thunder khopesh and King's barrage are included. Poisoned, degraded and (cr) variants of these bases inherit it, which is why these are prefixes. This table builds the registry's corpbane column; the engine then asks that column, so the weaponFlag of the same name is registry-first and answers for known ids without consulting these names.",
+  "description": "Lists the weapon bases that are corpbane, that is, the spears, halberds and other weapons that deal full damage to the Corporeal Beast on the stab attack style. Corpbane is a per-item property rather than a rule about anything named spear or halberd, so the wiki's list is copied outright; poisoned, degraded and (cr) variants inherit it, which is why these are name prefixes. The table fills the registry's corpbane column, and the weaponFlag of the same name reads that column first, so known item ids never consult these names.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Corpbane_weapons",
     "quotes": [
-     "anything named spear or halberd"
+     "Corpbane weapons are melee weapons that deal full damage against the Corporeal Beast when using the stab attack style.",
+     "Note: The poisoned variants of these weapons are also Corpbane, though the Corporeal Beast is immune to both poison and venom.",
+     "The Corp actually uses a separate parameter called \"corpbane\" that's applied to individual spears/halberds that have been enabled against it."
     ],
     "verified": "2026-08-21"
    }
@@ -854,12 +1061,26 @@
    "third age bow",
    "venator bow"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Arrow — the bows that fire the whole line. The three special types have no tier word in their names; the 3rd age and Venator bows have no special type either, so each half of this row exists for the items the other cannot reach.",
+  "description": "Puts the bows that fire the whole arrow line, up to dragon arrows, in the top tier: the twisted, dark and scorching bows plus the 3rd Age and venator bows. The three special types carry no tier word in their names and the 3rd Age and venator bows have no special type, so each half of the row reaches items the other cannot.",
   "_cite": [
    {
     "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bow",
+    "quotes": [
+     "Dark bow +95 Up to dragon arrows",
+     "3rd Age bow +80 Up to dragon arrows",
+     "Scorching bow +124 Up to dragon arrows",
+     "Venator bow +90 Up to dragon arrows",
+     "Twisted bow +70 Up to dragon arrows"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Arrow",
-    "quotes": [],
+    "quotes": [
+     "Dark bow, twisted bow, 3rd Age bow, venator bow, scorching bow"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -871,12 +1092,22 @@
   "nameContains": [
    "training bow"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Training_bow — fires nothing, so it must beat every wood row below.",
+  "description": "The training bow fires only training arrows, so it takes the tier that admits no ordinary arrow at all and must be tested before every wood row below it.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Training_bow",
-    "quotes": [],
+    "quotes": [
+     "It can only fire training arrows, which are given to players in sets of 25 by the tutor."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bow",
+    "quotes": [
+     "Training bow +8 Training arrows"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -888,13 +1119,21 @@
   "nameContains": [
    "seercull"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Seercull \"fires arrows up to Amethyst\" — a bow whose name carries no tier word.",
+  "description": "The seercull fires arrows up to amethyst, the same ceiling as a magic bow, and its name carries no tier word to reach that ceiling by.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Seercull",
     "quotes": [
-     "fires arrows up to Amethyst"
+     "The seercull is a Fremennik bow that requires a Ranged level of 50 to wield, and fires arrows up to Amethyst."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bow",
+    "quotes": [
+     "Seercull +69 Up to amethyst arrows"
     ],
     "verified": "2026-08-21"
    }
@@ -907,13 +1146,21 @@
   "namesExact": [
    "bone shortbow"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Bone_shortbow \"has identical offensive stats to the magic shortbow, and can fire up to amethyst arrows\" — no substring of the name says anything about its tier, which would otherwise bottom out at WOOD.",
+  "description": "The bone shortbow fires arrows up to amethyst, matching the magic shortbow. No substring of its name says anything about its tier, so without this row it would fall through to the bottom wood rung.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Bone_shortbow",
     "quotes": [
-     "has identical offensive stats to the magic shortbow, and can fire up to amethyst arrows"
+     "The bow has identical offensive stats to the magic shortbow, and can fire up to amethyst arrows."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bow",
+    "quotes": [
+     "Bone shortbow +69 Up to amethyst arrows"
     ],
     "verified": "2026-08-21"
    }
@@ -926,13 +1173,13 @@
   "nameContains": [
    "recurve"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Nature's_recurve_bow \"can fire up to dragon arrows\" — likewise nameless as to tier, and it must precede the magic row.",
+  "description": "Nature's recurve fires arrows up to dragon, so it belongs in the elite tier. Its name is likewise silent about its tier, and the row must be read before the magic row that the ladder reaches next.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Nature",
+    "url": "https://oldschool.runescape.wiki/w/Nature's_recurve",
     "quotes": [
-     "can fire up to dragon arrows"
+     "It can fire up to dragon arrows."
     ],
     "verified": "2026-08-21"
    }
@@ -945,7 +1192,18 @@
   "nameContains": [
    "magic"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Magic bows fire arrows up to amethyst. The bow tiers are one table read in file order, so this row is reached only after the named exceptions above it have failed to match.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bow",
+    "quotes": [
+     "Magic shortbow +69 Up to amethyst arrows",
+     "Magic longbow +69 Up to amethyst arrows"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "bowYew",
@@ -954,7 +1212,18 @@
   "nameContains": [
    "yew"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Yew bows fire arrows up to rune, one rung below the magic tier in the ladder this table is read as.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bow",
+    "quotes": [
+     "Yew shortbow +47 Up to rune arrows",
+     "Yew longbow +47 Up to rune arrows"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "bowMaple",
@@ -963,7 +1232,18 @@
   "nameContains": [
    "maple"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Maple bows fire arrows up to adamant, one rung below the yew tier.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bow",
+    "quotes": [
+     "Maple shortbow +29 Up to adamant arrows",
+     "Maple longbow +29 Up to adamant arrows"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "bowWillow",
@@ -972,7 +1252,18 @@
   "nameContains": [
    "willow"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Willow bows fire arrows up to mithril, one rung below the maple tier.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bow",
+    "quotes": [
+     "Willow shortbow +20 Up to mithril arrows",
+     "Willow longbow +20 Up to mithril arrows"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "bowOak",
@@ -981,12 +1272,17 @@
   "nameContains": [
    "oak"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Bow — the standard wood line. Shortbow, longbow, composite and anything unrecognised fall past these to the bottom of the line rather than to NONE, so a future bow still fires Bronze and Iron.",
+  "description": "Oak bows fire arrows up to steel, the top of the plain wood line. Shortbows, longbows, composite bows and anything unrecognised fall past these rows to the bottom of the line rather than to no tier at all, so a future bow still fires bronze and iron.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Bow",
-    "quotes": [],
+    "quotes": [
+     "Oak shortbow +14 Up to steel arrows",
+     "Oak longbow +14 Up to steel arrows",
+     "Shortbow +8 Up to iron arrows",
+     "Longbow +8 Up to iron arrows"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -998,7 +1294,17 @@
   "nameContains": [
    "dragon arrow"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Dragon arrows demand an elite bow: only the dark, twisted, 3rd Age, venator and scorching bows can fire them.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Arrow",
+    "quotes": [
+     "Dark bow, twisted bow, 3rd Age bow, venator bow, scorching bow"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "arrowBroad",
@@ -1008,7 +1314,18 @@
    "broad arrow",
    "amethyst arrow"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Broad and amethyst arrows demand a magic-tier bow or stronger, the minimum bow tier this row records.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Arrow",
+    "quotes": [
+     "magic or stronger 50 +28",
+     "magic or stronger 50 +55"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "arrowRune",
@@ -1018,7 +1335,18 @@
    "rune arrow",
    "ice arrow"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Rune and ice arrows sit at the Yew rung of the arrow ladder: a yew bow or stronger is needed to fire them.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Arrow",
+    "quotes": [
+     "Ice 1 Yew or stronger 40 +16 N/A Rune 1 Yew or stronger 40 +49",
+     "Arrows can only be fired from bows that are strong enough to use them."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "arrowAdamant",
@@ -1027,7 +1355,18 @@
   "nameContains": [
    "adamant arrow"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Adamant arrows sit at the Maple rung of the arrow ladder: a maple bow or stronger is needed to fire them.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Arrow",
+    "quotes": [
+     "Adamant 0 Maple or stronger 30 +31",
+     "Arrows can only be fired from bows that are strong enough to use them."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "arrowMithril",
@@ -1036,7 +1375,18 @@
   "nameContains": [
    "mithril arrow"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Mithril arrows sit at the Willow rung of the arrow ladder: a willow bow or stronger is needed to fire them.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Arrow",
+    "quotes": [
+     "Mithril 0 Willow or stronger 20 +22",
+     "Arrows can only be fired from bows that are strong enough to use them."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "arrowSteel",
@@ -1045,12 +1395,17 @@
   "nameContains": [
    "steel arrow"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Arrow — the bow each arrow needs. Bronze, iron, headless and anything else unrecognised need only a real, non-training bow.",
+  "description": "Steel arrows sit at the Oak rung of the arrow ladder, the bottom rung this table spells out. Bronze, iron, headless and anything else unrecognised fall past it and need only a real, non-training bow.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Arrow",
-    "quotes": [],
+    "quotes": [
+     "Steel 0 Oak or stronger 5 +16",
+     "Bronze 0 All except training bow 1 +7",
+     "Iron 0 All except training bow 1 +10",
+     "Arrows can only be fired from bows that are strong enough to use them."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1068,8 +1423,19 @@
    "dragon crossbow",
    "armadyl crossbow"
   ],
-  "description": "https://oldschool.runescape.wiki/w/King%27s_barrage \"able to fire bolts up to dragon\" — and it carries no \"crossbow\" in its name at all, which is why the type half of this row exists.",
+  "description": "The Elite rung of the crossbow ladder, the crossbows that can fire dragon bolts: dragon and Armadyl crossbows by name, and the dragon hunter crossbow, Zaryte crossbow and King's barrage by item type. The King's barrage carries no crossbow in its name at all, which is why the type half of this row exists.",
   "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "64 Dragon crossbow +94 Up to dragon bolts",
+     "70 Dragon hunter crossbow +95 Up to dragon bolts",
+     "70 Armadyl crossbow +100 Up to dragon bolts",
+     "80 Zaryte crossbow +110 Up to dragon bolts"
+    ],
+    "verified": "2026-08-21"
+   },
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/King%27s_barrage",
@@ -1087,7 +1453,17 @@
   "nameContains": [
    "rune crossbow"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "The Rune rung of the crossbow ladder: a rune crossbow fires metal bolts up to runite.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "61 Rune crossbow +90 Up to runite bolts"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "crossbowAdamant",
@@ -1096,7 +1472,17 @@
   "nameContains": [
    "adamant crossbow"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "The Adamant rung of the crossbow ladder: an adamant crossbow fires metal bolts up to adamant.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "46 Adamant crossbow +78 Up to adamant bolts"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "crossbowMithril",
@@ -1105,7 +1491,17 @@
   "nameContains": [
    "mithril crossbow"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "The Mithril rung of the crossbow ladder: a mithril crossbow fires metal bolts up to mithril.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "36 Mithril crossbow +66 Up to mithril bolts"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "crossbowSteel",
@@ -1114,7 +1510,17 @@
   "nameContains": [
    "steel crossbow"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "The Steel rung of the crossbow ladder: a steel crossbow fires metal bolts up to steel.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "31 Steel crossbow +54 Up to steel bolts"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "crossbowIron",
@@ -1123,7 +1529,17 @@
   "nameContains": [
    "iron crossbow"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "The Iron rung of the crossbow ladder: an iron crossbow fires metal bolts up to iron.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "26 Iron crossbow +42 Up to iron bolts"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "crossbowBlurite",
@@ -1132,12 +1548,15 @@
   "nameContains": [
    "blurite crossbow"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Crossbow — the standard line. Bronze, Phoenix and anything unrecognised fall past these to the bottom rather than to NONE, so a future crossbow still fires Bronze and Barbed.",
+  "description": "The Blurite rung of the crossbow ladder: a blurite crossbow fires metal bolts up to blurite. Bronze, the plain crossbow, Phoenix and anything unrecognised fall past this bottom rung rather than to NONE, so a future crossbow still fires bronze and barbed bolts.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Crossbow",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "16 Blurite crossbow +30 Up to blurite bolts",
+     "1 Crossbow +6 Bronze bolts 1 Phoenix crossbow +6 Bronze bolts 1 Bronze crossbow +18 Bronze bolts"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1149,13 +1568,22 @@
   "nameContains": [
    "hunters&sunlight"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Hunters'_sunlight_crossbow \"can only fire sunlight antler bolts\" — must precede the hunters row, whose term this name also contains.",
+  "description": "The hunters' sunlight crossbow is its own ammunition branch: it fires sunlight and moonlight antler bolts only, and not the kebbit bolts its unupgraded parent takes. This row must precede the hunters row, whose match term this name also contains.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Hunters",
+    "url": "https://oldschool.runescape.wiki/w/Hunters%27_sunlight_crossbow",
     "quotes": [
-     "can only fire sunlight antler bolts"
+     "The crossbow uses sunlight or moonlight antler bolts, and works with grapples.",
+     "it cannot be used to fire kebbit or long kebbit bolts"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "66 Hunters' sunlight crossbow +79 Sunlight antler bolts Moonlight antler bolts"
     ],
     "verified": "2026-08-21"
    }
@@ -1168,13 +1596,21 @@
   "nameContains": [
    "hunters"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Hunters'_crossbow \"can only use kebbit bolts or long kebbit bolts\".",
+  "description": "The hunters' crossbow is its own ammunition branch: it fires kebbit and long kebbit bolts only.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Hunters",
+    "url": "https://oldschool.runescape.wiki/w/Hunters%27_crossbow",
     "quotes": [
-     "can only use kebbit bolts or long kebbit bolts"
+     "It can only use kebbit bolts and long kebbit bolts as ammunition."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "50 Hunters' crossbow +55 Kebbit bolts Long kebbit bolts"
     ],
     "verified": "2026-08-21"
    }
@@ -1187,13 +1623,21 @@
   "nameContains": [
    "dorgeshuun"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Dorgeshuun_crossbow \"can only fire bone bolts\".",
+  "description": "The Dorgeshuun crossbow is its own ammunition branch: it is the only crossbow that fires bone bolts, alongside metal bolts up to iron with silver excluded.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Dorgeshuun_crossbow",
     "quotes": [
-     "can only fire bone bolts"
+     "It can fire metal bolts up to iron, except silver bolts, and is the only crossbow that can use bone bolts."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "Up to iron bolts (except silver)"
     ],
     "verified": "2026-08-21"
    }
@@ -1206,13 +1650,29 @@
   "nameContains": [
    "karil"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Karil%27s_crossbow \"uses bolt racks as ammunition\" — exclusive on both sides: no other crossbow fires them. Anything unmatched is NONE, the tier-ladder side, which is the fallback the caller passes.",
+  "description": "Karil's crossbow is its own ammunition branch: it fires bolt racks, and no other crossbow fires them. A crossbow matching no branch is NONE, the tier-ladder side, which is the fallback the caller passes.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Karil%27s_crossbow",
     "quotes": [
-     "uses bolt racks as ammunition"
+     "It fires bolt racks, which break upon firing."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "70 Karil's crossbow +84 Bolt racks"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bolts",
+    "quotes": [
+     "usable only with Karil's crossbow"
     ],
     "verified": "2026-08-21"
    }
@@ -1225,7 +1685,25 @@
   "nameContains": [
    "dragon bolt"
   ],
-  "description": "Matched on \"dragon bolt\" and not a bare \"dragon\", so that a gem-tipped dragon bolt stays Elite while Dragonstone bolts remain Runite-tier — this row must precede the gem list."
+  "description": "Dragon bolts need an Elite crossbow. The match is on the two-word name rather than a bare dragon so that a gem-tipped dragon bolt stays Elite while dragonstone bolts remain Runite-tier, which is why this row must precede the gem list.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dragon_bolts",
+    "quotes": [
+     "Dragon bolts are a type of crossbow ammo that can only be fired from a dragon crossbow, Armadyl crossbow, dragon hunter crossbow, or Zaryte crossbow."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bolts",
+    "quotes": [
+     "Dragon bolts are the only type of bolt that can accept all available gem bolt tips, excluding amethyst."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "boltBroad",
@@ -1234,30 +1712,182 @@
   "nameContains": [
    "broad"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
- },
- {
-  "key": "boltGemTipped",
-  "group": "boltMinTier",
-  "text": "RUNE",
-  "nameContains": [
-   "opal",
-   "jade",
-   "pearl",
-   "topaz",
-   "sapphire",
-   "emerald",
-   "ruby",
-   "diamond",
-   "dragonstone",
-   "onyx"
-  ],
-  "description": "https://oldschool.runescape.wiki/w/Enchanted_bolts — every gem-tipped bolt is built on a Runite base and needs a Rune crossbow.",
+  "description": "Broad bolts, amethyst broad bolts included, need a Rune crossbow or better.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Enchanted_bolts",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Broad_bolts",
+    "quotes": [
+     "They can be fired only by a rune crossbow, dragon hunter crossbow, dragon crossbow, Armadyl crossbow, or Zaryte crossbow."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "boltGemOpal",
+  "group": "boltMinTier",
+  "text": "BRONZE",
+  "nameContains": [
+   "opal"
+  ],
+  "description": "A gem bolt takes the crossbow tier of the metal bolt its tip was attached to, so this block is a ladder of its own rather than one blanket tier, and it must follow the dragon-bolt row above so that a gem-tipped dragon bolt stays Elite. Opal bolts are bronze, the bottom rung any crossbow meets.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Opal_bolts",
+    "quotes": [
+     "Opal bolts are bronze bolts tipped with opal bolt tips."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bolts",
+    "quotes": [
+     "Each metal type, aside from dragon, accepts a limited number of gem types."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "boltGemJade",
+  "group": "boltMinTier",
+  "text": "BLURITE",
+  "nameContains": [
+   "jade"
+  ],
+  "description": "Jade bolts are blurite bolts, so they need a Blurite crossbow or better.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Jade_bolts",
+    "quotes": [
+     "Jade bolts are blurite bolts tipped with jade."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "boltGemPearl",
+  "group": "boltMinTier",
+  "text": "IRON",
+  "nameContains": [
+   "pearl"
+  ],
+  "description": "Pearl bolts are iron bolts, so they need an Iron crossbow or better.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Pearl_bolts",
+    "quotes": [
+     "Pearl bolts are iron bolts tipped with pearl bolt tips."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "boltGemTopaz",
+  "group": "boltMinTier",
+  "text": "STEEL",
+  "nameContains": [
+   "topaz"
+  ],
+  "description": "Red topaz bolts are steel bolts, so they need a Steel crossbow or better. Matched on the bare gem name, which the wiki's own item name abbreviates to Topaz bolts (e) once enchanted.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Red_topaz_bolts",
+    "quotes": [
+     "Red topaz bolts are steel bolts tipped with red topaz bolt tips."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "boltGemMithril",
+  "group": "boltMinTier",
+  "text": "MITHRIL",
+  "nameContains": [
+   "sapphire",
+   "emerald"
+  ],
+  "description": "Sapphire and emerald bolts are both mithril bolts, so they need a Mithril crossbow or better.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Sapphire_bolts",
+    "quotes": [
+     "Sapphire bolts are mithril bolts tipped with sapphire bolt tips."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Emerald_bolts",
+    "quotes": [
+     "Emerald bolts are mithril bolts tipped with emerald bolt tips, requiring level 36 Ranged to use."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "boltGemAdamant",
+  "group": "boltMinTier",
+  "text": "ADAMANT",
+  "nameContains": [
+   "ruby",
+   "diamond"
+  ],
+  "description": "Ruby and diamond bolts are both adamant bolts, so they need an Adamant crossbow or better.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Ruby_bolts",
+    "quotes": [
+     "Ruby bolts are adamant bolts tipped with ruby bolt tips that require 46 Ranged to wield."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Diamond_bolts",
+    "quotes": [
+     "Diamond bolts are adamant bolts tipped with diamond bolt tips."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "boltGemRunite",
+  "group": "boltMinTier",
+  "text": "RUNE",
+  "nameContains": [
+   "dragonstone",
+   "onyx"
+  ],
+  "description": "Dragonstone and onyx bolts are both runite bolts, so they need a Rune crossbow or better.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dragonstone_bolts",
+    "quotes": [
+     "Dragonstone bolts are runite bolts tipped with dragonstone."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Onyx_bolts",
+    "quotes": [
+     "Onyx bolts are runite bolts tipped with onyx bolt tips."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1270,7 +1900,17 @@
    "runite",
    "rune bolt"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Runite bolts need a Rune crossbow or better.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "61 Rune crossbow +90 Up to runite bolts"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "boltAdamant",
@@ -1279,7 +1919,17 @@
   "nameContains": [
    "adamant"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Adamant bolts need an Adamant crossbow or better.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "46 Adamant crossbow +78 Up to adamant bolts"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "boltMithril",
@@ -1288,7 +1938,17 @@
   "nameContains": [
    "mithril"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Mithril bolts need a Mithril crossbow or better.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "36 Mithril crossbow +66 Up to mithril bolts"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "boltSteel",
@@ -1297,7 +1957,17 @@
   "nameContains": [
    "steel"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Steel bolts need a Steel crossbow or better.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "31 Steel crossbow +54 Up to steel bolts"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "boltSilver",
@@ -1306,12 +1976,15 @@
   "nameContains": [
    "silver"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Silver_bolts — Iron tier, not Bronze, despite the raw strength bonus falling between the two.",
+  "description": "Silver bolts need an Iron crossbow or better, not a Blurite one, even though their raw strength bonus falls between blurite and iron.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Silver_bolts",
-    "quotes": [],
+    "quotes": [
+     "Silver bolts are ranged ammunition that can be fired from iron crossbows or better.",
+     "They have a Ranged Strength bonus higher than blurite bolts but lower than iron bolts."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1323,7 +1996,17 @@
   "nameContains": [
    "iron"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Iron bolts need an Iron crossbow or better.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "26 Iron crossbow +42 Up to iron bolts"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "boltBlurite",
@@ -1332,12 +2015,31 @@
   "nameContains": [
    "blurite"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Bolts — the crossbow each bolt needs. Bronze, barbed and anything unrecognised need only a crossbow.",
+  "description": "Blurite bolts need a Blurite crossbow or better, the bottom rung this ladder spells out. Bronze, barbed and anything unrecognised fall past it and need only a crossbow.",
   "_cite": [
    {
     "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Blurite_bolts",
+    "quotes": [
+     "They can only be fired from at least a blurite crossbow or better."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "16 Blurite crossbow +30 Up to blurite bolts",
+     "1 Crossbow +6 Bronze bolts 1 Phoenix crossbow +6 Bronze bolts 1 Bronze crossbow +18 Bronze bolts"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Bolts",
-    "quotes": [],
+    "quotes": [
+     "Made from bronze bolts by attaching barb bolttips"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1349,12 +2051,22 @@
   "nameContains": [
    "kebbit"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Kebbit_bolts — the Hunters' crossbow's exclusive ammo, kebbit and long kebbit alike.",
+  "description": "Kebbit and long kebbit bolts are the hunters' crossbow's exclusive ammunition, so they take the Hunters branch rather than a metal tier.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Kebbit_bolts",
-    "quotes": [],
+    "quotes": [
+     "Kebbit bolts are ammunition used in tandem with the hunters' crossbow."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bolts",
+    "quotes": [
+     "Kebbit bolts and long kebbit bolts are fletched from kebbit spikes and long kebbit spikes, respectively. They can only be used with the hunters' crossbow and cannot be stored in the bolt pouch."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1366,12 +2078,22 @@
   "nameContains": [
    "antler"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Sunlight_antler_bolts — the Hunters' sunlight crossbow's exclusive ammo; moonlight antler bolts share the branch.",
+  "description": "Sunlight and moonlight antler bolts are the hunters' sunlight crossbow's exclusive ammunition, so both share the Hunters Sunlight branch rather than a metal tier.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Sunlight_antler_bolts",
-    "quotes": [],
+    "quotes": [
+     "Sunlight antler bolts are ranged ammunition for the hunters' sunlight crossbow, requiring 66 Ranged to use."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bolts",
+    "quotes": [
+     "Sunlight antler bolts and moonlight antler bolts are fletched from sunlight antelope antlers and moonlight antelope antlers, respectively. They can only be used with the hunters' sunlight crossbow and cannot be stored in the bolt pouch."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1383,12 +2105,22 @@
   "nameContains": [
    "bone"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Bone_bolts — usable only with the Dorgeshuun crossbow.",
+  "description": "Bone bolts are usable only with the Dorgeshuun crossbow, so they take the Dorgeshuun branch rather than a metal tier.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Bone_bolts",
-    "quotes": [],
+    "quotes": [
+     "They can only be used with the Dorgeshuun crossbow"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bolts",
+    "quotes": [
+     "are only usable with the Dorgeshuun crossbow"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1400,12 +2132,14 @@
   "nameContains": [
    "bolt rack"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Bolt_rack — Karil's crossbow's exclusive ammo. Anything unmatched is NONE, the tier-ladder side, which is the fallback the caller passes.",
+  "description": "Bolt racks are the ammunition only Karil's crossbow fires, so they take the KARILS branch of the bolt classification rather than the ordinary bolt tier ladder. Anything the branch does not match is NONE, the tier-ladder side, which is the fallback the caller passes.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Bolt_rack",
-    "quotes": [],
+    "quotes": [
+     "Bolt racks are ammunition exclusively used by the Karil's crossbow"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1415,12 +2149,23 @@
   "nameContains": [
    "blowpipe"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Toxic_blowpipe and the Varlamore blowpipes — the weapons the blowpipeTier ladder below adjudicates.",
+  "description": "Recognises a blowpipe: the two-handed light ranged weapons that fire darts, covering the toxic blowpipe and the Varlamore camphor, ironwood and rosewood blowpipes. Matching here hands the weapon to the blowpipeTier ladder, which decides how strong a dart it accepts.",
   "_cite": [
    {
     "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Blowpipe",
+    "quotes": [
+     "Blowpipes are two-handed Light Ranged weapons that fire darts"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Toxic_blowpipe",
-    "quotes": [],
+    "quotes": [
+     "The toxic blowpipe is a blowpipe that requires 75 Ranged to wield",
+     "It uses unpoisoned darts as ammunition"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1430,12 +2175,22 @@
   "nameContains": [
    "dart"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Dart — blowpipe ammunition, adjudicated by the dartMinTier ladder below. Atlatl darts match too, exactly as the registry's slot-agnostic dart column does; their blowpipe exclusion is the atlatlDart family's one-to-one pairing.",
+  "description": "Recognises a dart, the blowpipe ammunition whose tier the dartMinTier ladder adjudicates. Atlatl darts match here too, exactly as the registry's slot-agnostic dart column does; the fact that they cannot be loaded into a blowpipe is modelled by the atlatlDart family's one-to-one pairing instead.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Dart",
-    "quotes": [],
+    "quotes": [
+     "Darts may be used to load blowpipes as ammunition, which increases ranged accuracy and ranged strength"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Atlatl_dart",
+    "quotes": [
+     "Despite being called darts, atlatl darts cannot be loaded into the toxic blowpipe, and they deal standard ranged damage."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1448,18 +2203,23 @@
    "blazing blowpipe",
    "drygore blowpipe"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Blazing_blowpipe — a Toxic blowpipe with a cosmetic kit, so top dart tier; https://oldschool.runescape.wiki/w/Drygore_blowpipe (Leagues) states no dart-tier restriction. Neither name carries a tier word, and \"drygore blowpipe\" is deliberately tight: a bare \"drygore\" also names Leagues melee weapons. Ordered above the ironwood/rosewood rungs, which answer first-match.",
+  "description": "Puts the blazing blowpipe and the drygore blowpipe on the top dart rung: the blazing blowpipe is a toxic blowpipe wearing an ornament kit that changes no bonuses, and the drygore blowpipe carries no dart-tier restriction. Neither name carries a tier word, and the drygore match is kept to the full weapon name because a bare drygore also names Leagues melee weapons. The row sits above the ironwood and rosewood rungs, which answer on first match.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Blazing_blowpipe",
-    "quotes": [],
+    "quotes": [
+     "The blazing blowpipe is a toxic blowpipe with a Trailblazer reloaded blowpipe ornament kit added onto it. The kit gives no additional bonuses"
+    ],
     "verified": "2026-08-21"
    },
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Drygore_blowpipe",
-    "quotes": [],
+    "quotes": [
+     "Unlike the toxic blowpipe, the drygore blowpipe does not have a ranged requirement to wield",
+     "When loaded with darts, the drygore blowpipe has an extra +10 Ranged Strength"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1471,7 +2231,17 @@
   "nameContains": [
    "toxic"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "A toxic blowpipe sits on the top dart rung, taking darts up to dragon.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Blowpipe",
+    "quotes": [
+     "75 Toxic blowpipe Up to dragon darts"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "blowpipeRosewood",
@@ -1480,7 +2250,17 @@
   "nameContains": [
    "rosewood"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "A rosewood blowpipe takes darts up to rune.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Blowpipe",
+    "quotes": [
+     "65 Rosewood blowpipe Up to rune darts"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "blowpipeIronwood",
@@ -1489,12 +2269,14 @@
   "nameContains": [
    "ironwood"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Toxic_blowpipe and the Varlamore blowpipes' Ammo sections. Camphor is the bottom of the line and the fallback, so it needs no row.",
+  "description": "An ironwood blowpipe takes darts up to adamant. Camphor is the bottom of the line and the ladder's fallback, so it needs no row of its own.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Toxic_blowpipe",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Blowpipe",
+    "quotes": [
+     "45 Camphor blowpipe Up to mithril darts 55 Ironwood blowpipe Up to adamant darts 65 Rosewood blowpipe Up to rune darts 75 Toxic blowpipe Up to dragon darts"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1507,7 +2289,17 @@
    "dragon",
    "amethyst"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Dragon and amethyst darts need a toxic blowpipe, the top rung of the blowpipe ladder.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dart",
+    "quotes": [
+     "Amethyst Toxic blowpipe 50 +28 Dragon Toxic blowpipe 60 +35"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "dartRune",
@@ -1516,7 +2308,17 @@
   "nameContains": [
    "rune"
   ],
-  "description": "See the row that closes this ladder for the article; the tiers are one table read in file order."
+  "description": "Rune darts need a rosewood blowpipe or stronger.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dart",
+    "quotes": [
+     "Rune Rosewood or stronger 40 +26"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "dartAdamant",
@@ -1525,12 +2327,14 @@
   "nameContains": [
    "adamant"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Blowpipe — the blowpipe each dart needs. Mithril and weaker load into any blowpipe, so Camphor is the fallback.",
+  "description": "Adamant darts need an ironwood blowpipe or stronger. Mithril and weaker darts load into any blowpipe, so camphor is the ladder's fallback.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Blowpipe",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Dart",
+    "quotes": [
+     "Mithril Camphor or stronger 20 +9 Adamant Ironwood or stronger 30 +17 Rune Rosewood or stronger 40 +26 Amethyst Toxic blowpipe 50 +28 Dragon Toxic blowpipe 60 +35"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1542,7 +2346,17 @@
   "nameContains": [
    "trident of the swamp"
   ],
-  "description": "See the row that closes this ladder for the article; the cascade is read in file order."
+  "description": "Identifies the trident of the swamp so the engine casts its built-in powered-staff spell. It precedes the trident of the seas in the cascade because the seas match would otherwise never be reached for the upgraded weapon.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Trident_of_the_swamp",
+    "quotes": [
+     "The trident of the swamp is a one-handed powered staff requiring 78 Magic to wield"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "staffTridentSeas",
@@ -1551,7 +2365,17 @@
   "nameContains": [
    "trident of the seas"
   ],
-  "description": "See the row that closes this ladder for the article; the cascade is read in file order."
+  "description": "Identifies the trident of the seas so the engine casts its built-in powered-staff spell.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Trident_of_the_seas",
+    "quotes": [
+     "The trident of the seas is a one-handed powered staff requiring 75 Magic to wield"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "staffSanguinestiUncharged",
@@ -1560,7 +2384,7 @@
   "nameContains": [
    "sanguinesti&uncharged"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Sanguinesti_staff \"To use the staff's magic spell, it must be charged with blood runes\" — the uncharged staff casts nothing, so it precedes the staff it vetoes.",
+  "description": "An uncharged Sanguinesti staff has no built-in cast, since the spell only works once the staff holds blood runes, so it answers with no powered staff at all. The row precedes the charged Sanguinesti row it vetoes.",
   "_cite": [
    {
     "kind": "wiki",
@@ -1579,7 +2403,17 @@
   "nameContains": [
    "sanguinesti"
   ],
-  "description": "See the row that closes this ladder for the article; the cascade is read in file order."
+  "description": "Identifies the Sanguinesti staff so the engine casts its built-in powered-staff spell.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Sanguinesti_staff",
+    "quotes": [
+     "The Sanguinesti staff is a one-handed powered staff requiring 82 Magic to wield"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "staffWarpedUncharged",
@@ -1588,7 +2422,17 @@
   "nameContains": [
    "warped&uncharged"
   ],
-  "description": "An uncharged staff casts nothing, so each charge-state row precedes the staff it vetoes."
+  "description": "An uncharged warped sceptre has no built-in cast, since the spell only works once the sceptre holds earth and chaos runes, so it answers with no powered staff at all. The row precedes the charged warped sceptre row it vetoes.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Warped_sceptre",
+    "quotes": [
+     "To use the sceptre's magic spell, it must be charged with earth and chaos runes"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "staffWarped",
@@ -1597,7 +2441,17 @@
   "nameContains": [
    "warped"
   ],
-  "description": "See the row that closes this ladder for the article; the cascade is read in file order."
+  "description": "Identifies the warped sceptre so the engine casts its built-in powered-staff spell.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Warped_sceptre",
+    "quotes": [
+     "The warped sceptre is a powered staff requiring 62 Magic to wield"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "staffAccursedAutocast",
@@ -1606,19 +2460,21 @@
   "nameContains": [
    "accursed sceptre&(a"
   ],
-  "description": "The autocast swaps \"(a)\"/\"(au)\", which cast standard/ancient spells rather than the built-in one, so they are not powered staves. https://oldschool.runescape.wiki/w/Accursed_sceptre scopes its activation deposit to the passive (\"To use the sceptre's passive effect, it must first be activated\") while https://oldschool.runescape.wiki/w/Thammaron%27s_sceptre scopes the same store to both (\"To use the sceptre's magic spell or passive effect, it must be charged with revenant ether\"); the \"(u)\" is left casting pending an in-game check, see docs/ENGINE-GAPS.md.",
+  "description": "The accursed sceptre's swapped autocast variants cast standard or Ancient spells instead of the sceptre's built-in one, so they are not powered staves and answer with none. The wiki scopes the accursed sceptre's activation deposit to its passive effect while Thammaron's sceptre's ether covers both its spell and its passive, so the accursed uncharged form is left casting pending an in-game check, recorded in docs/ENGINE-GAPS.md.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Accursed_sceptre",
-    "quotes": [],
+    "quotes": [
+     "The sceptre also has a \"Swap\" option that allows players to switch it to an accursed sceptre (a), which is a variant that can autocast offensive combat spells from the standard spellbook (including Flames of Zamorak) and the Ancient Magicks.",
+     "To use the sceptre's passive effect, it must first be activated"
+    ],
     "verified": "2026-08-21"
    },
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Thammaron%27s_sceptre",
     "quotes": [
-     "To use the sceptre's passive effect, it must first be activated",
      "To use the sceptre's magic spell or passive effect, it must be charged with revenant ether"
     ],
     "verified": "2026-08-21"
@@ -1632,7 +2488,17 @@
   "nameContains": [
    "accursed sceptre"
   ],
-  "description": "See the row that closes this ladder for the article; the cascade is read in file order."
+  "description": "Identifies the accursed sceptre so the engine casts its built-in powered-staff spell.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Accursed_sceptre",
+    "quotes": [
+     "The accursed sceptre is a powered staff requiring 70 Magic to wield"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "staffThammaronUncharged",
@@ -1644,7 +2510,18 @@
    "thammarons sceptre&(a",
    "thammarons sceptre&(u"
   ],
-  "description": "See the accursed sceptre; the apostrophe-less spelling is carried because the item data uses both."
+  "description": "Thammaron's sceptre in its autocast or uncharged form has no built-in cast: the autocast variant casts standard or Ancient spells instead, and the sceptre's own spell needs revenant ether. The apostrophe-less spelling is carried because the item data uses both.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Thammaron%27s_sceptre",
+    "quotes": [
+     "To use the sceptre's magic spell or passive effect, it must be charged with revenant ether",
+     "The sceptre also has a \"Swap\" option that allows players to switch it to Thammaron's sceptre (a), which is a variant that can autocast offensive combat spells from the standard spellbook (including Flames of Zamorak) and the Ancient Magicks."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "staffThammaron",
@@ -1654,7 +2531,17 @@
    "thammaron's sceptre",
    "thammarons sceptre"
   ],
-  "description": "See the row that closes this ladder for the article; the cascade is read in file order."
+  "description": "Identifies Thammaron's sceptre so the engine casts its built-in powered-staff spell, under both the apostrophe and apostrophe-less spellings the item data uses.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Thammaron%27s_sceptre",
+    "quotes": [
+     "Thammaron's sceptre is a powered staff requiring 60 Magic to wield"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "staffDawnbringer",
@@ -1663,7 +2550,17 @@
   "nameContains": [
    "dawnbringer"
   ],
-  "description": "See the row that closes this ladder for the article; the cascade is read in file order."
+  "description": "Identifies the Dawnbringer so the engine casts its built-in powered-staff spell.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dawnbringer",
+    "quotes": [
+     "The Dawnbringer is a powered staff obtained from the skeleton"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "staffAyakUncharged",
@@ -1672,7 +2569,17 @@
   "nameContains": [
    "eye of ayak&uncharged"
   ],
-  "description": "See the row that closes this ladder for the article; the cascade is read in file order."
+  "description": "An uncharged eye of Ayak has no built-in cast, since the spell only works once the staff holds death and chaos runes or demon tears, so it answers with no powered staff at all. The row precedes the charged eye of Ayak row it vetoes.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Eye_of_ayak",
+    "quotes": [
+     "To use the staff's built-in spell, it must either be charged with runes (death and chaos) or demon tears"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "staffAyak",
@@ -1681,7 +2588,17 @@
   "nameContains": [
    "eye of ayak"
   ],
-  "description": "See the row that closes this ladder for the article; the cascade is read in file order."
+  "description": "Identifies the eye of Ayak so the engine casts its built-in powered-staff spell.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Eye_of_ayak",
+    "quotes": [
+     "The Eye of Ayak is a one-handed powered staff that requires level 83 Magic to wield"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "staffBone",
@@ -1690,7 +2607,17 @@
   "nameContains": [
    "bone staff"
   ],
-  "description": "See the row that closes this ladder for the article; the cascade is read in file order."
+  "description": "Identifies the bone staff so the engine casts its built-in powered-staff spell.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bone_staff",
+    "quotes": [
+     "The bone staff is a powered staff requiring level 50 Magic to wield"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "staffGauntlet",
@@ -1700,12 +2627,23 @@
    "crystal staff",
    "corrupted staff"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Powered_staff — the staves with a built-in cast. Anything unmatched is not a powered staff, which is the fallback the caller passes.",
+  "description": "Identifies the Gauntlet's crystal staves and the Corrupted Gauntlet's corrupted staves, which cast the built-in powered-staff spell. It closes the cascade: a weapon matching none of these rows is not a powered staff, which is the fallback the caller passes.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Powered_staff",
-    "quotes": [],
+    "quotes": [
+     "Powered staves are a category of magic weapons that possess a built-in magic spell that can be used regardless of the spellbook the player is using"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crystal_staff",
+    "quotes": [
+     "Crystal staves within The Gauntlet",
+     "Corrupted crystal staves within The Corrupted Gauntlet"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1723,7 +2661,18 @@
    "ballista",
    "chinchompa"
   ],
-  "description": "The projectiles a monster rolls its HEAVY ranged defence against (see Monster#rangedDefenceBonus): bolts, javelins and chinchompas."
+  "description": "Classifies a ranged weapon as heavy, the attack type a monster answers with its heavy ranged defence: crossbows, including ballistae, and chinchompas. The dragon hunter crossbow and King's ransom barrage special attacks are matched by type because they are crossbow attacks the name alone would miss.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Attack_types",
+    "quotes": [
+     "Heavy is used by crossbows (including ballistae) and chinchompas.",
+     "Equipment that gives ranged defence bonuses gives them to all three ranged types (seen as \"Range:\" in the equipment stats interface), but monsters have separate defensive stats for each of the three types."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "weightLight",
@@ -1744,8 +2693,17 @@
    "killer's",
    "hunting"
   ],
-  "description": "The LIGHT projectiles: darts, knives, thrown axes, the blowpipe and the tonalztics of ralos, https://oldschool.runescape.wiki/w/Tonalztics_of_ralos \"The weapon rolls against a monster's light ranged defence\". The eclipse atlatl is STANDARD despite its darts: https://oldschool.runescape.wiki/w/Atlatl_dart \"they deal standard ranged damage\", with Mod Halo quoted that \"the Eclipse atlatl is using the standard ranged style, much like a regular bow\". Arrows - every bow - and anything unrecognised are STANDARD, which is the fallback. The Kitchen, Killer's and Hunting knives are melee \"knife\" lookalikes, not throwing knives.",
+  "description": "Classifies a ranged weapon as light, the attack type a monster answers with its light ranged defence: darts, throwing knives, thrown axes, the blowpipe and the tonalztics of ralos. The eclipse atlatl stays standard despite firing darts, as do all bows and anything unrecognised, which is the fallback. Kitchen, killer's and hunting knives are melee lookalikes rather than throwing knives, so they are excluded by name.",
   "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Attack_types",
+    "quotes": [
+     "Light is used by thrown weapons, such as darts, knives, axes, Toktz-xil-ul, the toxic blowpipe, and the Tonalztics of Ralos.",
+     "Standard is used by all kinds of bows, salamanders, and the Eclipse atlatl."
+    ],
+    "verified": "2026-08-21"
+   },
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Tonalztics_of_ralos",
@@ -1776,13 +2734,14 @@
    "black salamander",
    "tecu salamander"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Salamander \"must be fuelled using a variety of herb-tars\" — the tar sits in the AMMO slot and carries Flare mode's ranged strength. The names are exactly the salamanderTar rows' name halves, so a weapon answers TAR here precisely when that group can name its tar.",
+  "description": "Marks the salamanders and the swamp lizard as weapons whose ammo slot must hold a herb-tar, which is what carries their ranged strength in Flare mode. The names are exactly the salamanderTar rows' name halves, so a weapon answers with a tar requirement here precisely when that group can name its tar.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Salamander",
     "quotes": [
-     "must be fuelled using a variety of herb-tars"
+     "must be fuelled using a variety of herb-tars",
+     "Salamander Ammunition 30 29 Swamp lizard Guam tar 50 47 Orange salamander Marrentill tar 60 59 Red salamander Tarromin tar 70 67 Black salamander Harralander tar 80 79 Tecu salamander Irit tar"
     ],
     "verified": "2026-08-21"
    }
@@ -1796,7 +2755,25 @@
    "BOWFA",
    "CRYSTAL_BOW"
   ],
-  "description": "The crystal-family bows are charged and have no arrow slot."
+  "description": "The crystal bow and the bow of Faerdhinen generate their own arrows when fired, so neither draws from the ammo slot. The engine therefore allows no ammunition for the crystal-bow family.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crystal_bow",
+    "quotes": [
+     "the crystal bow does not require any arrows to use, as it generates its own when fired"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bow_of_Faerdhinen",
+    "quotes": [
+     "Like the crystal bow , the bow of Faerdhinen does not require any arrows to use, as it generates its own when fired"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "ammoAtlatl",
@@ -1805,13 +2782,14 @@
   "specialTypes": [
    "ECLIPSE_ATLATL"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Atlatl_dart \"Atlatl darts are ammunition used exclusively by the eclipse atlatl\" — equipped in the AMMO slot, required to attack.",
+  "description": "The eclipse atlatl attacks only with atlatl darts, which are equipped in the ammo slot, so the engine requires atlatl ammunition for it. Ordinary darts are not interchangeable with them.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Atlatl_dart",
     "quotes": [
-     "Atlatl darts are ammunition used exclusively by the eclipse atlatl"
+     "Atlatl darts are ammunition used exclusively by the eclipse atlatl",
+     "Despite being called darts , atlatl darts cannot be loaded into the toxic blowpipe , and they deal standard ranged damage"
     ],
     "verified": "2026-08-21"
    }
@@ -1827,7 +2805,25 @@
    "craw's bow",
    "webweaver"
   ],
-  "description": "See the row that closes this ladder for the article; the cascade is read in file order."
+  "description": "Ranged weapons that supply their own projectiles or run on charges rather than firing from the ammo slot: blowpipes, chinchompas, Craw's bow and the Webweaver bow. The engine allows no ammo-slot projectile for them, and the row sits ahead of the broader bow and crossbow rows because the cascade is read in file order.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Chinchompa_(weapon)",
+    "quotes": [
+     "Chinchompas are a type of members Ranged throwing weapon"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Toxic_blowpipe",
+    "quotes": [
+     "Fires darts while coating them with venom"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "ammoNamelessBow",
@@ -1837,7 +2833,17 @@
    "seercull",
    "recurve"
   ],
-  "description": "Bows whose names contain no \"bow\", so they must precede the bow row below."
+  "description": "Bows that fire arrows from the ammo slot but whose names do not contain the word bow, so the cascade has to match them by name before reaching the generic bow row below.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Seercull",
+    "quotes": [
+     "The seercull is a Fremennik bow that requires a Ranged level of 50 to wield, and fires arrows up to Amethyst"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "ammoCrossbow",
@@ -1850,7 +2856,26 @@
   "nameContains": [
    "crossbow"
   ],
-  "description": "The King's barrage is a crossbow with no \"crossbow\" in its name, which is why the type half is here."
+  "description": "Crossbows fire bolts from the ammo slot. The King's barrage is a crossbow whose name does not contain crossbow, so the row matches on special type as well as on name.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crossbow_(weapon)",
+    "quotes": [
+     "Crossbows require ammunition in the form of bolts"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/King%27s_barrage",
+    "quotes": [
+     "King's barrage is a two-handed crossbow",
+     "It is able to fire bolts up to dragon"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "ammoBallista",
@@ -1859,7 +2884,17 @@
   "nameContains": [
    "ballista"
   ],
-  "description": "See the row that closes this ladder for the article; the cascade is read in file order."
+  "description": "Ballistae fire javelins from the ammo slot. The row precedes the generic bow row because the cascade is read in file order.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Ballista",
+    "quotes": [
+     "ballistae use javelins with a higher ranged strength bonus as ammunition"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "ammoBow",
@@ -1871,7 +2906,18 @@
   "nameContains": [
    "bow"
   ],
-  "description": "Everything else that fires from the AMMO slot. Anything unmatched fires nothing from it, which is the fallback."
+  "description": "The catch-all for bows: anything else whose name contains bow, plus the twisted bow, fires arrows from the ammo slot. A weapon the cascade leaves unmatched fires nothing from the ammo slot, which is the fallback.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Bow",
+    "quotes": [
+     "Bows are a category of two-handed ranged weapons",
+     "Most bows require arrows to shoot"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "selfContainedRanged",
@@ -1901,7 +2947,17 @@
    "killer's",
    "hunting"
   ],
-  "description": "Ranged weapons that ARE their own ammunition, so their AMMO slot is only good for a Prayer blessing. The tail of the list is the thrown weapons whose names do not say so — note \"thrownaxe\" is one word in game, which is why the \"throwing axe\" entry misses every axe. The Kitchen, Killer's and Hunting knives are melee \"knife\" lookalikes, not throwing knives."
+  "description": "Ranged weapons that are themselves the ammunition, so their ammo slot carries only a Prayer blessing rather than a projectile. The list ends with the thrown weapons whose names do not say so; thrownaxe is one word in game, which is why the throwing axe entry catches no axe at all. The kitchen, killer's and hunting knives are melee lookalikes rather than throwing knives, so they are excluded.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Chinchompa_(weapon)",
+    "quotes": [
+     "Chinchompas are a type of members Ranged throwing weapon"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "rangedWeaponName",
@@ -1913,7 +2969,7 @@
    "blowpipe",
    "atlatl"
   ],
-  "description": "The last-resort Ranged style gate (ItemSpec#isSuitableWeaponFor) for a weapon carrying neither a ranged attack nor a ranged strength stat; the stats answer first, so these only speak for statless synthetic items."
+  "description": "The last-resort Ranged style gate for a weapon that carries neither a ranged attack bonus nor a ranged strength bonus. Equipment stats answer first, so these name fragments only ever speak for statless synthetic items."
  },
  {
   "key": "magicWeaponName",
@@ -1924,19 +2980,22 @@
    "trident",
    "shadow"
   ],
-  "description": "The Magic half of the last-resort style gate; see the rangedWeaponName row."
+  "description": "The Magic half of the same last-resort style gate: name fragments consulted only when a weapon carries no magic attack or magic damage stat for the gate to read."
  },
  {
   "key": "holyWater",
   "namesExact": [
    "holy water"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Holy_water - thrown vials that can damage demons and nothing else. The demons-only restriction is the HolyWaterDemonsOnly immunity row; the damage formula is the HolyWaterMaxHit overlay row.",
+  "description": "Holy water is a thrown vial that behaves like a throwing knife or dart but damages only demons. The demons-only restriction is modelled by the HolyWaterDemonsOnly immunity row and the damage by the HolyWaterMaxHit overlay row.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Holy_water",
-    "quotes": [],
+    "quotes": [
+     "Holy water is a consumable Ranged weapon that is used just like throwing knives and darts ; however, it will only deal damage against demons",
+     "As a demonbane weapon , it has an attribute affinity for demons; the item's max hit is increased by 60%"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1949,12 +3008,15 @@
    "staff of light",
    "staff of balance"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Magic_Dart — the staves that can cast it; only the enhanced Slayer's staff gets the on-task formula.",
+  "description": "The staves that can cast Magic Dart. Only the enhanced slayer's staff gets the higher on-task max hit formula; the rest cast the spell at its base damage.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Magic_Dart",
-    "quotes": [],
+    "quotes": [
+     "The spell requires a slayer's staff , slayer's staff (e) , staff of the dead , toxic staff of the dead , staff of light or staff of balance to be wielded in order to cast it",
+     "If the Slayer's staff (e) is used while on task , its max hit is even higher"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1964,12 +3026,14 @@
   "nameContains": [
    "iban's staff"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Iban_Blast — castable only while wielding Iban's staff.",
+  "description": "Iban Blast can be cast only while Iban's staff is wielded, so the spell is gated on this weapon family.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Iban_Blast",
-    "quotes": [],
+    "quotes": [
+     "To cast this spell, the player must be wielding Iban's staff"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1979,12 +3043,22 @@
   "nameContains": [
    "slayer's staff (e)"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Slayer%27s_staff_(e) — the one staff with the enhanced Magic Dart formula.",
+  "description": "The enhanced slayer's staff is the one staff that raises the Magic Dart max hit while the target is the player's current Slayer assignment.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Slayer%27s_staff_(e)",
-    "quotes": [],
+    "quotes": [
+     "Using the staff increases the damage dealt by Magic Dart when attacking a Slayer monster the player is assigned to kill"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Magic_Dart",
+    "quotes": [
+     "If the Slayer's staff (e) is used while on task , its max hit is even higher"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -1998,12 +3072,14 @@
    "toxic staff of the dead",
    "noxious halberd"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Serpentine_helm — the weapons that envenom with it; VenomProc carries the Magic-cast gating the staff additionally needs. The Blazing blowpipe is a Toxic blowpipe with a cosmetic kit; the Drygore blowpipe is not venomous.",
+  "description": "The weapons that can envenom a target on hit. The VenomProc row carries the extra requirement that the staves envenom only on a magic cast. The blazing blowpipe is a toxic blowpipe wearing a cosmetic kit and so is included, while the drygore blowpipe is not venomous.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Serpentine_helm",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Venom",
+    "quotes": [
+     "Trident of the Swamp Magic attacks and combat spells 25% 100% Toxic staff of the dead Melee attacks and combat spells 25% 100% Toxic blowpipe Ranged attacks and combat spells 25% 100% Noxious halberd Melee attacks 33% 50%"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -2013,13 +3089,14 @@
   "nameContains": [
    "saradomin&cape"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Charge — the god cape matching Saradomin Strike. Capes named \"saradomin ... cape\" only (plain, imbued and max variants); the conjunction excludes cloaks and vestments.",
+  "description": "The god cape that must be worn for Saradomin Strike to gain the Charge effect. The row matches capes named saradomin and cape, which covers the plain, imbued and max variants while the conjunction excludes cloaks and vestments.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Charge",
     "quotes": [
-     "saradomin ... cape"
+     "The respective god cape must be worn for the charge effect to work",
+     "god spells will deal up to 30 damage per cast, instead of the usual 20"
     ],
     "verified": "2026-08-21"
    }
@@ -2030,12 +3107,15 @@
   "nameContains": [
    "guthix&cape"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Charge — the god cape matching Claws of Guthix; see the saradominGodCape row.",
+  "description": "The god cape that must be worn for Claws of Guthix to gain the Charge effect, matched the same way as the Saradomin cape row.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Charge",
-    "quotes": [],
+    "quotes": [
+     "The respective god cape must be worn for the charge effect to work",
+     "god spells will deal up to 30 damage per cast, instead of the usual 20"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -2045,12 +3125,15 @@
   "nameContains": [
    "zamorak&cape"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Charge — the god cape matching Flames of Zamorak; see the saradominGodCape row.",
+  "description": "The god cape that must be worn for Flames of Zamorak to gain the Charge effect, matched the same way as the Saradomin cape row.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Charge",
-    "quotes": [],
+    "quotes": [
+     "The respective god cape must be worn for the charge effect to work",
+     "god spells will deal up to 30 damage per cast, instead of the usual 20"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -2069,7 +3152,7 @@
   "notNameContains": [
    "blue moon spear"
   ],
-  "description": "The unknown-id approximation for corpbane: the registry carries the exact per-item list, and this is only consulted for items released after it was built. The two corpbaneBase members whose name is neither spear nor halberd are listed so the fallback answers for them too. The Blue moon spear exclusion is checked ahead of the registry itself (https://twitter.com/JagexAsh/status/1777673598099968104), so it appears here only as belt and braces.",
+  "description": "An approximation of the corpbane weapon set for items whose id the registry does not know, used only for items released after the registry was built; the registry itself carries the exact per-item list. The two corpbane members whose names are neither spear nor halberd are named so the fallback answers for them, and the blue moon spear is excluded here as belt and braces because that exclusion is already checked ahead of the registry.",
   "_cite": [
    {
     "kind": "tweet",
@@ -2084,12 +3167,14 @@
   "nameContains": [
    "atlatl dart"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Atlatl_dart — the atlatl's only ammunition, though not strictly one-to-one the way the salamanders' tars are.",
+  "description": "Atlatl darts, the eclipse atlatl's only ammunition, though the pairing is not strictly one-to-one the way a salamander and its tar are.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Atlatl_dart",
-    "quotes": [],
+    "quotes": [
+     "Atlatl darts are ammunition used exclusively by the eclipse atlatl"
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -2099,7 +3184,7 @@
   "nameContains": [
    "blue moon spear"
   ],
-  "description": "https://twitter.com/JagexAsh/status/1777673598099968104 — the one spear that is NOT corpbane.",
+  "description": "The one spear that is not a corpbane weapon, so it is excluded from the Corporeal Beast damage rule that the other spears get.",
   "_cite": [
    {
     "kind": "tweet",
@@ -2114,7 +3199,17 @@
   "nameContains": [
    "halberd"
   ],
-  "description": "The unknown-id approximation for melee reach; the registry carries the exact list."
+  "description": "An approximation of the halberd class for items whose id the registry does not know; halberds are the melee weapons with extended attack range, and the registry carries the exact list.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Halberd",
+    "quotes": [
+     "The primary advantage of halberds is that they have an attack range of two tiles"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "voidPiece",
@@ -2128,7 +3223,17 @@
    "ELITE_VOID_BODY",
    "ELITE_VOID_LEGS"
   ],
-  "description": "Special types only, so the row answers from the type bitset alone."
+  "description": "The Void Knight equipment pieces whose set effect the engine models, including the elite top and robe. The row matches on special type alone, so it answers from the item type bitset.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Void_Knight_equipment",
+    "quotes": [
+     "Void melee helm +10% to melee damage and accuracy None Void ranger helm +10% to ranged damage and accuracy +2.5% ranged damage Void mage helm +45% to magic accuracy +5% magic damage"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "slayerHelm",
@@ -2138,7 +3243,25 @@
    "BLACK_MASK",
    "BLACK_MASK_IMBUED"
   ],
-  "description": "Any headgear carrying the on-task slayer damage bonus: helmet or bare black mask. Special types only, so the row answers from the type bitset alone."
+  "description": "Any headgear carrying the on-task Slayer damage bonus, whether a slayer helmet or a bare black mask, imbued or not. The row matches on special type alone, so it answers from the item type bitset.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Slayer_helmet",
+    "quotes": [
+     "When worn on a Slayer assignment , the helmet provides an Attack and Strength boost of 16.67% (from the black mask used to make it) against monsters assigned as the player's Slayer task"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Black_mask",
+    "quotes": [
+     "It provides a player 16.67% Attack and Strength boost against all monsters on the player's current Slayer task"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "imbuedSlayerHeadgear",
@@ -2146,7 +3269,17 @@
    "SLAYER_HELMET_IMBUED",
    "BLACK_MASK_IMBUED"
   ],
-  "description": "…and specifically the imbued form, which adds the Ranged/Magic bonuses. Special types only, so the row answers from the type bitset alone."
+  "description": "The imbued forms specifically, which add the Ranged and Magic boost on top of the melee one. The row matches on special type alone, so it answers from the item type bitset.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Black_mask",
+    "quotes": [
+     "players can imbue a black mask, making it into a black mask (i) , which provides a 15% Ranged and Magic accuracy and damage boost in addition to its melee boost"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "salveAmulet",
@@ -2156,7 +3289,17 @@
    "SALVE_AMULET_I",
    "SALVE_AMULET_EI"
   ],
-  "description": "Special types only, so the row answers from the type bitset alone."
+  "description": "The salve amulet and its enchanted and imbued variants, which boost Attack and Strength against undead targets. The row matches on special type alone, so it answers from the item type bitset.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Salve_amulet",
+    "quotes": [
+     "The salve amulet is an offensive amulet that is made upon completion of the Haunted Mine quest, granting a 16.67% increase in the wearer's Attack and Strength when fighting undead monsters"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "dragonbane",
@@ -2164,7 +3307,25 @@
    "DRAGON_HUNTER_CROSSBOW",
    "DRAGON_HUNTER_LANCE"
   ],
-  "description": "Special types only, so the row answers from the type bitset alone."
+  "description": "The two dragonbane weapons, which gain accuracy and damage against draconic creatures. The row matches on special type alone, so it answers from the item type bitset.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dragon_hunter_lance",
+    "quotes": [
+     "The lance's dragonbane passive effect is its 20% increased accuracy and damage when fighting draconic creatures"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dragon_hunter_crossbow",
+    "quotes": [
+     "The dragon hunter crossbow is a one-handed crossbow and dragonbane weapon obtained as a possible reward from the Chambers of Xeric"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "demonbane",
@@ -2174,7 +3335,18 @@
    "DARKLIGHT",
    "SILVERLIGHT"
   ],
-  "description": "Special types only, so the row answers from the type bitset alone."
+  "description": "The demonbane sword line, which is more effective against demons. The row matches on special type alone, so it answers from the item type bitset.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Demonbane_weapon",
+    "quotes": [
+     "Demonbane weapons are a class of weapons that are more effective against demon-type monsters",
+     "The demonbane sword line consists of four weapons: Silverlight and its three upgraded forms"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "kalphitebane",
@@ -2184,7 +3356,29 @@
    "KERIS_BREACH",
    "KERIS_AMASCUT"
   ],
-  "description": "Special types only, so the row answers from the type bitset alone."
+  "description": "The keris family, whose members deal 33% bonus damage to kalphites and scabarites and have a 1/51 chance of punching through the exoskeleton for triple damage; the partisan variants keep that effect, with breaching adding accuracy and amascut trading damage bonus for base stats. Membership is decided from the weapon's special type alone, so the row answers from the type bitset without a name match.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Keris",
+    "quotes": [
+     "It deals 33% bonus damage against all kalphites and scabarites, and has a 1/51 chance of puncturing a hole in their exoskeleton, dealing triple damage."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Keris_partisan",
+    "quotes": [
+     "The keris partisan retains the effects of the keris, dealing 33%",
+     "bonus damage against all kalphites and scabarites, alongside a 1/51 chance of puncturing a hole in their exoskeleton, dealing triple damage.",
+     "The Breach of the Scarab creates the keris partisan of breaching, granting an additional 33% accuracy against all Kalphites and Scabarites (effect persists outside the raid).",
+     "The Jewel of Amascut creates the keris partisan of amascut, decreasing damage bonus against Kalphites and Scabarites but enhancing base stats.",
+     "The Jewel of the Sun creates the keris partisan of the sun, granting two passive effects and a special attack."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "leafyBane",
@@ -2192,7 +3386,18 @@
    "LEAF_BLADED_BATTLEAXE",
    "LEAF_BLADED_WEAPON"
   ],
-  "description": "Special types only, so the row answers from the type bitset alone."
+  "description": "Leaf-bladed weapons, the melee weapons that can damage a leafy monster such as a kurask or turoth; every other melee weapon deals nothing to them. Membership is decided from the weapon's special type alone, so the row answers from the type bitset without a name match.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Leafy_(attribute)",
+    "quotes": [
+     "The leafy attribute is assigned to monsters that are immune to all but leaf-bladed weapons.",
+     "The monster is immune to all types of damage, excluding from the leaf-bladed battleaxe, leaf-bladed spear, leaf-bladed sword, broad arrows, broad bolts and the spell Magic Dart."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "vampyreBane",
@@ -2205,7 +3410,44 @@
    "ROD_OF_IVANDIS",
    "IVANDIS_FLAIL"
   ],
-  "description": "Whether this weapon can hurt a vampyre at all. Getting this list wrong is not a rounding error: a Vyrewatch is immune to everything else, so an unrecognised vampyrebane weapon makes the calculator report zero damage for a loadout that works perfectly well in game — which is what it did for the Hallowed flail, Blisterwood stake, Blisterwood sickle, Sunspear and Rod of ivandis until the wiki-calculator battery covered them. Special types only, so the row answers from the type bitset alone."
+  "description": "Membership of the wiki's vampyrebane class, decided from the weapon's special type alone, so the row answers from the type bitset without a name match. A tier 3 vampyre such as a vyrewatch is immune to everything outside this class, so an unrecognised vampyrebane weapon makes the calculator report zero damage for a loadout that works perfectly well in game. The rod of Ivandis is the one member that reaches tier 2 only, which VampyreBaneImmunity excludes from the tier-3 escape; its 10% vampyre damage is a VampyreBaneDamage arm.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Vampyre_(attribute)",
+    "quotes": [
+     "Vampyrebane weapons have increased bonuses against vampyric enemies, and are required to harm tier 3 vampyres.",
+     "Tier 3 vampyres are immune to all weaponry except for the Ivandis flail, Blisterwood sickle, Blisterwood flail, Blisterwood stake, Hallowed flail, or the Sunspear."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Vyrewatch",
+    "quotes": [
+     "Vyrewatch are considered tier 3 vampyres, meaning that they will only take damage from corresponding sources, such as the Ivandis flail, blisterwood weaponry, hallowed flail and sunspear."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Vampyrebane_weapons",
+    "quotes": [
+     "Regular weapons deal no damage against tier 2 vampyres, unless using Efaritay's aid.",
+     "a silvthrill staff created during In Aid of the Myreque, deals increased damage.",
+     "Regular weapons deal no damage against tier 3 vampyres. Only specific weapons are able to harm them, and deal increased damage:"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Rod_of_Ivandis",
+    "quotes": [
+     "As a silver weapon, it increases damage against vampyres by 10%. It is also one of the weapons that is capable of killing tier 2 vampyres."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "providesAirRune",
@@ -2220,18 +3462,14 @@
    "mist battlestaff",
    "mystic mist staff"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Staff — an elemental staff provides its rune unlimited while wielded, so a setup carrying one needs no such rune in the inventory. https://oldschool.runescape.wiki/w/Combination_staff — each provides both its elements' runes unlimited. Named in full rather than by element word: \"dust\", \"mist\" and \"smoke\" alone also match unrelated items.",
+  "description": "Weapons that supply air runes free while wielded, so a setup carrying one needs no air rune in the inventory. Elemental staves provide their rune unlimited, and the dust, smoke and mist staves provide air alongside their other element. Matched on the full item name rather than the element word, since dust, mist and smoke on their own also match unrelated items.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Staff",
-    "quotes": [],
-    "verified": "2026-08-21"
-   },
-   {
-    "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Combination_staff",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Elemental_staves",
+    "quotes": [
+     "Elemental staves provide an unlimited amount of one of the basic elemental runes (air, water, earth, and fire) or a combination rune (lava, mud, steam, smoke, mist, and dust) and the autocast option when equipped."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -2254,26 +3492,30 @@
    "kodai wand",
    "tome of water"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Staff — see providesAirRune. https://oldschool.runescape.wiki/w/Kodai_wand \"acts as a water staff\"; the tome is type-keyed since it supplies its runes from the shield slot. https://oldschool.runescape.wiki/w/Combination_staff — each provides both its elements' runes unlimited. Named in full rather than by element word: \"dust\", \"mist\" and \"smoke\" alone also match unrelated items.",
+  "description": "Weapons that supply water runes free while wielded, so a setup carrying one needs no water rune in the inventory. Elemental staves provide their rune unlimited and the mud, steam and mist staves provide water alongside their other element, the kodai wand provides unlimited water runes, and the tome of water acts as a water rune source from the shield slot, so the tome is keyed by special type. Matched on the full item name rather than the element word, since dust, mist and smoke on their own also match unrelated items.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Staff",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Elemental_staves",
+    "quotes": [
+     "Elemental staves provide an unlimited amount of one of the basic elemental runes (air, water, earth, and fire) or a combination rune (lava, mud, steam, smoke, mist, and dust) and the autocast option when equipped."
+    ],
     "verified": "2026-08-21"
    },
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Kodai_wand",
     "quotes": [
-     "acts as a water staff"
+     "provides unlimited water runes when equipped"
     ],
     "verified": "2026-08-21"
    },
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Combination_staff",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Tome_of_water",
+    "quotes": [
+     "The tome can be charged with soaked pages to act as a source of water runes whilst equipped."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -2295,18 +3537,22 @@
    "mystic lava staff",
    "tome of earth"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Staff — see providesAirRune. https://oldschool.runescape.wiki/w/Combination_staff — each provides both its elements' runes unlimited. Named in full rather than by element word: \"dust\", \"mist\" and \"smoke\" alone also match unrelated items.",
+  "description": "Weapons that supply earth runes free while wielded, so a setup carrying one needs no earth rune in the inventory. Elemental staves provide their rune unlimited and the dust, mud and lava staves provide earth alongside their other element, while the tome of earth acts as an earth rune source from the shield slot, so the tome is keyed by special type. Matched on the full item name rather than the element word, since dust, mist and smoke on their own also match unrelated items.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Staff",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Elemental_staves",
+    "quotes": [
+     "Elemental staves provide an unlimited amount of one of the basic elemental runes (air, water, earth, and fire) or a combination rune (lava, mud, steam, smoke, mist, and dust) and the autocast option when equipped."
+    ],
     "verified": "2026-08-21"
    },
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Combination_staff",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Tome_of_earth",
+    "quotes": [
+     "Will act as an infinite source of earth runes for all spells, and will not consume charges when using this effect to cast non-combat spells."
+    ],
     "verified": "2026-08-21"
    }
   ]
@@ -2328,18 +3574,22 @@
    "mystic smoke staff",
    "tome of fire"
   ],
-  "description": "https://oldschool.runescape.wiki/w/Staff — see providesAirRune. https://oldschool.runescape.wiki/w/Combination_staff — each provides both its elements' runes unlimited. Named in full rather than by element word: \"dust\", \"mist\" and \"smoke\" alone also match unrelated items.",
+  "description": "Weapons that supply fire runes free while wielded, so a setup carrying one needs no fire rune in the inventory. Elemental staves provide their rune unlimited and the lava, steam and smoke staves provide fire alongside their other element, while a charged tome of fire acts as a fire rune source from the shield slot, so the tome is keyed by special type. Matched on the full item name rather than the element word, since dust, mist and smoke on their own also match unrelated items.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Staff",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Elemental_staves",
+    "quotes": [
+     "Elemental staves provide an unlimited amount of one of the basic elemental runes (air, water, earth, and fire) or a combination rune (lava, mud, steam, smoke, mist, and dust) and the autocast option when equipped."
+    ],
     "verified": "2026-08-21"
    },
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Combination_staff",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Tome_of_fire",
+    "quotes": [
+     "When the tome has at least one charge, it acts as an infinite source of fire runes while equipped."
+    ],
     "verified": "2026-08-21"
    }
   ]

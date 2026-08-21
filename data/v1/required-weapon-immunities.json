@@ -90,13 +90,16 @@
     "style": "RANGED"
    }
   ],
-  "description": "https://oldschool.runescape.wiki/w/Horror_from_the_Deep \"For as long as she remains that colour, she can only be damaged through use of that particular attack style\"; the six colours and their styles are that guide's weakness table. She changes every 18 seconds on a fixed cycle, which is not modelled: each colour is costed on its own.",
+  "description": "The Dagannoth Mother can only be damaged by the attack style her current colour names: air, water, earth and fire spells for white, blue, brown and red, melee for orange and ranged for green. Her colour changing every eighteen seconds on a fixed cycle is not modelled; each colour is costed on its own.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Horror_from_the_Deep",
     "quotes": [
-     "For as long as she remains that colour, she can only be damaged through use of that particular attack style"
+     "she attacks with both ranged and melee, and changes colour every 18 seconds through a fixed cycle",
+     "her six colours correspond to the four elemental spell types, ranged, and melee",
+     "For as long as she remains that colour, she can only be damaged through use of that particular attack style",
+     "white air spells wind strike , bolt , blast , wave , or surge . blue water spells water strike , bolt , blast , wave , or surge . orange melee melee attacks. brown earth spells earth strike , bolt , blast , wave , or surge . red fire spells fire strike , bolt , blast , wave , or surge . green ranged ranged attacks."
     ],
     "verified": "2026-08-21"
    }
@@ -149,13 +152,16 @@
     "style": "RANGED"
    }
   ],
-  "description": "https://oldschool.runescape.wiki/w/Horror_from_the_Deep \"For as long as she remains that colour, she can only be damaged through use of that particular attack style\"; the six colours and their styles are that guide's weakness table. She changes every 18 seconds on a fixed cycle, which is not modelled: each colour is costed on its own.",
+  "description": "The Dagannoth Mother can only be damaged by the attack style her current colour names: air, water, earth and fire spells for white, blue, brown and red, melee for orange and ranged for green. Her colour changing every eighteen seconds on a fixed cycle is not modelled; each colour is costed on its own.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Horror_from_the_Deep",
     "quotes": [
-     "For as long as she remains that colour, she can only be damaged through use of that particular attack style"
+     "she attacks with both ranged and melee, and changes colour every 18 seconds through a fixed cycle",
+     "her six colours correspond to the four elemental spell types, ranged, and melee",
+     "For as long as she remains that colour, she can only be damaged through use of that particular attack style",
+     "white air spells wind strike , bolt , blast , wave , or surge . blue water spells water strike , bolt , blast , wave , or surge . orange melee melee attacks. brown earth spells earth strike , bolt , blast , wave , or surge . red fire spells fire strike , bolt , blast , wave , or surge . green ranged ranged attacks."
     ],
     "verified": "2026-08-21"
    }
@@ -214,12 +220,16 @@
     "style": "RANGED"
    }
   ],
-  "description": "https://oldschool.runescape.wiki/w/Gelatinnoth_Mother — the Nightmare Zone form of the same fight, same six colours; see the Dagannoth Mother row.",
+  "description": "The Gelatinnoth Mother is the Recipe for Disaster and Nightmare Zone form of the same fight, with the same six colours naming the only style that can damage her. Her colour cycle timing is not modelled; each colour is costed on its own.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Gelatinnoth_Mother",
-    "quotes": [],
+    "quotes": [
+     "She is the equivalent to the Dagannoth Mother from the Horror from the Deep quest",
+     "her colour shows her weakness to a certain type of magic spell or attack",
+     "white air spells wind strike , bolt , blast , wave , or surge . blue water spells water strike , bolt , blast , wave , or surge . orange melee melee attacks. brown earth spells earth strike , bolt , blast , wave , or surge . red fire spells fire strike , bolt , blast , wave , or surge . green ranged ranged attacks."
+    ],
     "verified": "2026-08-21"
    }
   ]

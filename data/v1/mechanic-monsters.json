@@ -1,7 +1,7 @@
 [
  {
   "id": "ZogreResistance",
-  "description": "https://oldschool.runescape.wiki/w/Zogre \"Zogres are almost immune to normal weapons (you will hit just as often, but damage is reduced by 75%).\"; \"Brutal arrows are effective against them, as is the Crumble Undead spell (however, damage is halved, for a maximum of 7).\" A resistance rather than a bonus, and the kind a recommendation tool cannot afford to miss: without it the calculator both overstates every Zogre loadout fourfold and ranks the one setup that actually works no differently from the ones that do not. First match wins, so Crumble Undead's half precedes the brutal-arrow exemption and the fourfold reduction everything else takes. The exemption is stated for the arrows, not for one bow, so both ogre bows earn it; https://oldschool.runescape.wiki/w/Brutal_arrow \"Ogre bows can only fire up to mithril brutal arrows, while composite ogre bows can fire all types\" is why the plain bow gets its own arm, capped at mithril.",
+  "description": "Zogres take a quarter of the damage ordinary weapons roll: accuracy is untouched but the hitsplat is reduced by 75%. Crumble Undead is halved instead, and brutal arrows are exempt entirely from either ogre bow, the plain bow limited to mithril brutal arrows and the composite bow able to fire every type. First match wins, so the Crumble Undead half precedes the brutal-arrow exemption and the fourfold reduction everything else takes.",
   "_cite": [
    {
     "kind": "wiki",
@@ -69,14 +69,14 @@
   "id": "AraxyteMinionMaxHit",
   "kind": "guaranteed",
   "guaranteedMaxHit": true,
-  "description": "https://oldschool.runescape.wiki/w/Araxxor \"Players will always max hit when attacking them with a crush or heavy Ranged weapon (such as a crossbow or ballista) if crush or ranged is their highest accuracy style respectively, or the noxious halberd\". \"Highest accuracy style\" means the loadout's best offensive bonus, so a crossbow in melee gear earns nothing; the wiki states no tie-break, so the order the engine compares in is its own and stays in Java. The weapon test is crossbow-or-ballista rather than the HEAVY ranged class, which also holds chinchompas. The halberd clause is deliberately style-free, matching the class, which checked it before reading the style at all. Not modelled: the eggs, the minions' own attacks, Mirrorback's aura.",
+  "description": "A hatched araxyte is always max hit by the noxious halberd, by a crush weapon when crush is the loadout's highest-accuracy style, and by a crossbow or ballista when Ranged is; anything else rolls damage normally. The weapon test is crossbow-or-ballista rather than the heavy ranged class, which also holds chinchompas, and the halberd clause is style-free. Not modelled: the eggs, the minions' own attacks, and Mirrorback's aura.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Araxxor",
+    "url": "https://oldschool.runescape.wiki/w/Araxxor/Strategies",
     "quotes": [
-     "Players will always max hit when attacking them with a crush or heavy Ranged weapon (such as a crossbow or ballista) if crush or ranged is their highest accuracy style respectively, or the noxious halberd",
-     "Highest accuracy style"
+     "Players will always max hit when attacking the hatched araxytes with a noxious halberd, crush weapons, or heavy Ranged weapon (such as a crossbow or ballista) if crush or ranged is their highest accuracy style respectively.",
+     "Attacking the hatched eggs with anything else - or attacking the unhatched eggs - does not guarantee a max hit, and rolls damage normally."
     ],
     "verified": "2026-08-21"
    }
@@ -109,7 +109,7 @@
   "id": "AlwaysMaxHitTargets",
   "kind": "guaranteed",
   "guaranteedMaxHit": true,
-  "description": "Monsters a combat style cannot miss or under-hit: the attack simply lands for max, with no formula behind it — each row of always-max-hit-targets.json is stated on its own article, and the ids there carry the styles. https://oldschool.runescape.wiki/w/Baboon \"Players are guaranteed to land a max hit on Ba-Ba's baboons.\"; https://oldschool.runescape.wiki/w/Venenatis \"players will deal their max hit on them regardless of gear.\"; https://oldschool.runescape.wiki/w/Fire_elemental_(Royal_Titans) \"With a 100% elemental weakness to water spells and a guaranteed max hit\". The Wardens' ejected cores were narrowed by a hotfix to Melee only. Id-keyed because the bestiary's quest-NPC \"Judge of Yama\" is not Yama's judge. Not modelled: Volatile Baboon and Baboon Thrall (unsourced), and Yama's void flares, whose guarantee is restricted to a weapon family and so has its own row.",
+  "description": "Monsters a combat style cannot miss or under-hit: the attack simply lands for max, with no formula behind it. The ids and the styles they apply to live in always-max-hit-targets.json, each stated on its own article, and the row is keyed by id because the bestiary's quest NPC of the same name is not Yama's judge. Not modelled: Volatile Baboon and Baboon Thrall, which no source covers, and Yama's void flares, whose guarantee is restricted to a weapon class and so has its own row.",
   "_cite": [
    {
     "kind": "wiki",
@@ -131,8 +131,15 @@
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Fire_elemental_(Royal_Titans)",
     "quotes": [
-     "With a 100% elemental weakness to water spells and a guaranteed max hit",
-     "Judge of Yama"
+     "With a 100% elemental weakness to water spells and a guaranteed max hit"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Judge_of_Yama",
+    "quotes": [
+     "This article is about the judge in the Yama fight."
     ],
     "verified": "2026-08-21"
    }
@@ -147,7 +154,7 @@
  {
   "id": "AbyssalSireMinionAccuracy",
   "kind": "guaranteed",
-  "description": "https://oldschool.runescape.wiki/w/Abyssal_Sire/Strategies \"Demonbane attacks will always land as successful hits against them regardless of the player's bonuses, but will not guarantee a max hit.\" Battery-exempt: the oracle models spawns only, any weapon.",
+  "description": "Demonbane attacks always land against the Abyssal Sire's spawns whatever the player's bonuses, though the hit is still rolled for damage rather than guaranteed to be a max. Battery-exempt: the row covers the spawns only, with any weapon.",
   "_cite": [
    {
     "kind": "wiki",
@@ -184,7 +191,7 @@
   "id": "VoidFlareMaxHit",
   "kind": "guaranteed",
   "guaranteedMaxHit": true,
-  "description": "Wiki: Yama#Void Flare — guaranteed max hit against Magic and Standard-class Ranged (bows and arrows; not blowpipe, crossbow or melee). The ranged half is a weapon class rather than a whole style, which is why this is not a row in always-max-hit-targets.json.",
+  "description": "Yama's void flares are always max hit by Magic and by standard-class Ranged weapons, meaning bows and arrows rather than blowpipe or crossbow; melee gets no guarantee. The ranged half is a weapon class rather than a whole style, which is why this is not a row in always-max-hit-targets.json. Not modelled: the Contract of Bloodied Blows, which removes the guarantee entirely.",
   "any": [
    {
     "monsterIds": [
@@ -210,7 +217,18 @@
     }
    }
   ],
-  "aggregateBoundSafe": true
+  "aggregateBoundSafe": true,
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Void_flare",
+    "quotes": [
+     "Additionally, players are guaranteed a maximum hit when attacking them with magic or Standard Ranged weapons.",
+     "In the Contract of Bloodied Blows, more void flares spawn when they appear and players are no longer guaranteed a max hit against them."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "id": "HueycoatlBraziers",
@@ -221,7 +239,7 @@
   ],
   "minResult": 0,
   "capAware": true,
-  "description": "https://oldschool.runescape.wiki/w/The_Hueycoatl/Strategies \"While the braziers are lit, players are given a 30% damage buff\"; \"Teams with only one or two players can not meet the balanced active protection prayer requirement to charge all three pillars and therefore cannot earn the damage buff.\" The buff is the player's, not a property of the part: the body is excluded because it is only fought in phase one, before the seer begins charging the pillars, which is why the family lists head and tail. The buff multiplies a hit the cap has already resolved, so the row owns the cap: the honest ceiling is 13/10 of what the cap allows through, not 13/10 of the raw roll.",
+  "description": "While the Hueycoatl's braziers are lit every player deals 30% more damage, applied here as a 13/10 multiplier on the hitsplat the damage cap has already resolved, so the ceiling is 13/10 of what the cap allows through rather than of the raw roll. The buff is the player's rather than a property of the part, and covers head and tail only: the body is fought in phase one, before the seer begins charging the pillars. A team of one or two cannot meet the protection-prayer requirement to charge all three pillars and so never earns the buff.",
   "_cite": [
    {
     "kind": "wiki",
@@ -271,13 +289,23 @@
    "num": "player.miningLevel + weapon.familyValue('pickaxeGuardianRequirement', 61) + 50",
    "den": 150
   },
-  "description": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric) — a Guardian takes damage only from a pickaxe, and each hitsplat is scaled by (50 + Mining level + the pickaxe tier's own Mining requirement) / 150. The requirement is the tier's, not the item's wield level, and is capped so the crystal pickaxe matches the dragon one (weapon-families.json, group pickaxeGuardianRequirement). Mod Ash, 15 June 2018: the modifier is \"applied to whatever damage you rolled\", and no source states a minimum, so a scaled hitsplat can truncate to zero below Mining + tier requirement 100. Not modelled: the tunnel spawn timing, the melee-only reach, the party scaling.",
+  "description": "A Chambers of Xeric Guardian takes damage only from a pickaxe, and each hitsplat is scaled by 50 plus the player's Mining level plus the pickaxe tier's Mining requirement, over 150, applied to the damage already rolled. The requirement is the tier's rather than the item's wield level, and is capped so the crystal pickaxe matches the dragon one; no source states a minimum, so a scaled hitsplat can truncate to zero below a combined Mining level and tier requirement of 100. Not modelled: the tunnel spawn timing, the melee-only reach, and party scaling.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric)",
     "quotes": [
-     "applied to whatever damage you rolled"
+     "These statues must be destroyed in order to pass the room and can only be harmed with pickaxes; all other sources of damage will not count.",
+     "The damage modifier is ((50 + Mining level + pickaxes's level req) / 150). That's applied to whatever damage you rolled; Void would have been factored in before this calculation occurs.",
+     "The formula is capped to ensure the Crystal pickaxe deals the same damage as the Dragon pickaxe, despite having a higher mining level requirement."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "tweet",
+    "url": "https://twitter.com/JagexAsh/status/1007600220358742021",
+    "quotes": [
+     "The damage modifier is ((50 + Mining level + pickaxes's level req) / 150). That's applied to whatever damage you rolled; Void would have been factored in before this calculation occurs."
     ],
     "verified": "2026-08-21"
    }
@@ -320,7 +348,7 @@
    5
   ],
   "minResult": 1,
-  "description": "https://oldschool.runescape.wiki/w/Tekton \"Tekton is immune to Range and takes 80% reduced Magic damage.\" Each magic hitsplat divides by 5 with a floor of 1.",
+  "description": "Tekton is immune to Ranged and takes 80% reduced Magic damage, so each magic hitsplat divides by 5, with a floor of 1.",
   "_cite": [
    {
     "kind": "wiki",
@@ -358,7 +386,7 @@
    3
   ],
   "minResult": 0,
-  "description": "https://oldschool.runescape.wiki/w/Glowing_crystal \"They are weak to stab attacks, immune to ranged damage (including the ranged thrall), and take 1/3rd damage from magic attacks.\" The magic third has no floor — a divided hit can reach zero.",
+  "description": "Glowing crystals are immune to Ranged damage and take a third of magic damage. The third has no floor, so a small divided hit can reach zero.",
   "_cite": [
    {
     "kind": "wiki",
@@ -396,11 +424,30 @@
    7
   ],
   "minResult": 1,
-  "description": "Wiki: Kraken — ranged damage is reduced to one seventh, floored at a chip hit of 1; melee is the separate KrakenImmunity row.",
+  "description": "Ranged damage to the Kraken is divided by seven with a floor of 1, a rolled zero stays zero, and accuracy is unaffected. Melee is handled by the separate KrakenImmunity row.",
   "resistAny": [
    {
     "monsterClass": "kraken",
     "category": "RANGED"
+   }
+  ],
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Kraken",
+    "quotes": [
+     "Magic is the only reliable way of damaging it, as Ranged deals 1/7th of its normal damage.",
+     "If you rolled 0 damage, it stays as 0. If you rolled >=1 damage, it's divided by 7, with a floor of 1. Accuracy is not affected."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "tweet",
+    "url": "https://twitter.com/JagexAsh/status/1699360516488011950",
+    "quotes": [
+     "If you rolled 0 damage, it stays as 0. If you rolled >=1 damage, it's divided by 7, with a floor of 1. Accuracy is not affected."
+    ],
+    "verified": "2026-08-21"
    }
   ]
  },
@@ -408,7 +455,7 @@
   "id": "BroodooVictimResistance",
   "kind": "resistance",
   "ceiling": 3,
-  "description": "https://oldschool.runescape.wiki/w/Broodoo_victim \"They are highly resistant to conventional attack methods (the player's max hit is reduced to 3)\" — a replacement ceiling rather than a reduction, so speed is the only thing left to tell loadouts apart. Not modelled: the consumables that actually kill them (food, poison cures, disease cures).",
+  "description": "A broodoo victim caps the player's max hit at 3 rather than scaling damage, a replacement ceiling that leaves attack speed as the only thing separating loadouts. Not modelled: the consumables that actually kill them, being food, poison cures and disease cures.",
   "_cite": [
    {
     "kind": "wiki",
@@ -434,13 +481,14 @@
    2
   ],
   "minResult": 0,
-  "description": "https://oldschool.runescape.wiki/w/Corporeal_Beast \"The Corporeal Beast has a 50% damage reduction against any weapon that is not a Corpbane weapon on stab attack style.\" Magic is exempt too: \"Although magic attacks also deal full damage, they are generally very inaccurate against the boss.\" The stab qualifier covers the melee corpbane weapons only: https://oldschool.runescape.wiki/w/King%27s_barrage \"deals full damage to the Corporeal Beast\" is a crossbow with no stab style, so a ranged corpbane weapon is exempt on the flag alone. Halves each rolled hitsplat after the accurate-hits-deal-1 raise and before flat armour. Not modelled: the dark energy core's heal, and the 100 damage cap on the spear path this never halves.",
+  "description": "The Corporeal Beast halves every rolled hitsplat except magic, and except a corpbane weapon used on the stab attack style; a ranged corpbane weapon is exempt on the flag alone, since the stab qualifier can only cover the melee corpbane weapons. The halving lands after the accurate-hits-deal-1 raise and before flat armour. Not modelled: the dark energy core's heal, and the 100 damage cap on the spear path this never halves.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Corporeal_Beast",
     "quotes": [
-     "The Corporeal Beast has a 50% damage reduction against any weapon that is not a Corpbane weapon on stab attack style."
+     "The Corporeal Beast has a 50% damage reduction against any weapon that is not a Corpbane weapon on stab attack style.",
+     "Although magic attacks also deal full damage, they are generally very inaccurate against the boss."
     ],
     "verified": "2026-08-21"
    },
@@ -448,7 +496,6 @@
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/King%27s_barrage",
     "quotes": [
-     "Although magic attacks also deal full damage, they are generally very inaccurate against the boss.",
      "deals full damage to the Corporeal Beast"
     ],
     "verified": "2026-08-21"
@@ -490,7 +537,7 @@
    3
   ],
   "minResult": 0,
-  "description": "https://oldschool.runescape.wiki/w/Ice_demon \"all damage dealt to the demon is reduced by 67%, except for fire spells (which deal 250% damage) and demonbane weapons\"; https://twitter.com/JagexAsh/status/1133350436554121216 \"Increased to 150% for a fire spell, decreased to 33% otherwise.\" Only the reduction is here: the fire 250% is the demon's elemental weakness and the demonbane 15% its demonbane vulnerability, both already in the monster data. A FIRE cast means the spell actually being cast, so a powered staff (which casts no spell) is reduced like anything else. \"Demonbane weapons\" is read as https://oldschool.runescape.wiki/w/Demonbane_weapon defines it, so demonbane spells and the scorching bow escape the reduction as well as the melee demonbane weapons.",
+  "description": "The ice demon reduces all damage to a third, except from fire spells and demonbane weapons. Only the reduction lives here: the fire multiplier is the demon's elemental weakness and the demonbane bonus its demonbane vulnerability, both already carried in the monster data. A fire cast means a spell actually being cast, so a powered staff is reduced like anything else, and demonbane is read as the wiki's demonbane weapon definition, letting demonbane spells and the scorching bow escape alongside the melee demonbane weapons.",
   "_cite": [
    {
     "kind": "wiki",
@@ -534,7 +581,7 @@
    3
   ],
   "minResult": 0,
-  "description": "https://oldschool.runescape.wiki/w/Slagilith \"will reduce your damage by 67% if a pickaxe is not equipped\" — spells and arrows included (Jagex-confirmed). Post-roll, minimum 0: a small hitsplat really can be reduced to nothing. Not modelled: the ranged projectile-swap timing exploit, the five-minute despawn, and the wiki's manual-cast magic setup \"as long as a pickaxe is equipped\" — a pickaxe is not a magic weapon, so the search cannot build that loadout and the magic row quotes a staff at a third.",
+  "description": "A slagilith reduces damage to a third unless a pickaxe is equipped, spells and arrows included, with no scaling for the attacker's level. The third is taken post-roll with a minimum of zero, so a small hitsplat really can be reduced to nothing. Not modelled: the ranged projectile-swap timing exploit, the five-minute despawn, and the wiki's manual-cast magic setup that keeps a pickaxe equipped, which the search cannot build because a pickaxe is not a magic weapon.",
   "_cite": [
    {
     "kind": "wiki",
@@ -542,6 +589,14 @@
     "quotes": [
      "will reduce your damage by 67% if a pickaxe is not equipped",
      "as long as a pickaxe is equipped"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "tweet",
+    "url": "https://twitter.com/JagexAsh/status/1219652159148646401",
+    "quotes": [
+     "The Slagilith is a much simpler one than the CoX guardians. It just reduces the damage to 33% if the attacker isn't wielding a pickaxe. There's no scaling for level. Earth elementals don't seem to have any special pickaxe code at all, other than waking them up."
     ],
     "verified": "2026-08-21"
    }
@@ -571,13 +626,13 @@
    3
   ],
   "minResult": 0,
-  "description": "https://oldschool.runescape.wiki/w/Great_Olm — each part takes full damage from one style and \"66% damage mitigation\" from the other two: head from Ranged, left claw from Melee, right claw from Magic. The implemented reading of that 66% is one third of the rolled hitsplat, truncated, applied post-roll with no minimum. Accepted delta: the oracle omits melee mitigation on head and right claw (docs/ENGINE-GAPS.md). Not modelled: head self-heal, hand-disable phase gating, CoX party scaling.",
+  "description": "Each Great Olm part takes full damage from one combat style and 66% mitigation from the other two: the head from Ranged, the left claw from Melee, the right claw from Magic. The implemented reading of that 66% is one third of the rolled hitsplat, truncated, applied post-roll with no minimum. Accepted delta: the oracle omits melee mitigation on the head and right claw. Not modelled: the head's self-heal, hand-disable phase gating, and Chambers of Xeric party scaling.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Great_Olm",
     "quotes": [
-     "66% damage mitigation"
+     "The head has 66% damage mitigation from all non-range attacks, and will heal itself if hit outside of Olm's final phase. Olm's right hand (also called mage hand) has 66% damage mitigation from all non-mage attacks. Olm's left hand (also called melee hand) has 66% damage mitigation from non-melee attacks."
     ],
     "verified": "2026-08-21"
    }
@@ -623,7 +678,7 @@
    2
   ],
   "minResult": 0,
-  "description": "https://oldschool.runescape.wiki/w/Abyssal_Sire \"Damage dealt to the Sire while it is transitioning between phases is reduced by 50%.\" Post-roll, per hitsplat — a rolled 1 halves to 0, so the expectation is not simply half the ordinary one.",
+  "description": "Damage dealt to the Abyssal Sire while it transitions between phases is halved, per hitsplat and post-roll, so a rolled 1 halves to 0 and the expectation is not simply half the ordinary one. Off by default, since a transition is a passage the fight goes through rather than a state to plan a loadout around.",
   "_cite": [
    {
     "kind": "wiki",
@@ -672,7 +727,7 @@
    1
   ],
   "minResult": 0,
-  "description": "https://oldschool.runescape.wiki/w/Delrith \"All damage dealt to Delrith is doubled when Silverlight is equipped\". Delrith carries no demon attribute, so Silverlight's usual +60% demonbane never applies — without this rule it is simply a bad sword, hence the hidesItems pinning. Not modelled: ring of recoil's doubled 2s; the quest requirement to equip it at the killing blow.",
+  "description": "All damage dealt to Delrith is doubled while Silverlight is equipped. Delrith carries no demon attribute, so Silverlight's usual demonbane bonus never applies and without this rule it is simply a bad sword, which is why the item is pinned into the search. Not modelled: the doubled ring of recoil hits, and the quest requirement to have Silverlight equipped at the killing blow.",
   "_cite": [
    {
     "kind": "wiki",
@@ -703,13 +758,13 @@
  {
   "id": "SkotizoAltars",
   "kind": "averageHit",
-  "description": "https://oldschool.runescape.wiki/w/Skotizo — each Awakened Altar still up cuts damage by 15% with Arclight or Emberlight (capped at 60%) and by 25% with anything else (capped at 100%, so four altars and an ordinary weapon deal nothing at all). Stated as the surviving percent so the single division happens once: max(40, 100 - 15a) and max(0, 100 - 25a) are the capped reductions read from the other side. Not modelled: whether the game scales each hitsplat or the roll, so the multiply lands on the expectation, which is not the same shape; and the wiki's \"all damage inflicted on Skotizo\" is narrowed to weapon damage, leaving thrall damage untouched, so the four-altar ordinary-weapon case is zero weapon damage rather than zero DPS.",
+  "description": "Each Awakened Altar still active reduces damage to Skotizo by 15% with Arclight or Emberlight to a maximum of 60%, and by 25% with any other weapon to a maximum of 100%, so four altars and an ordinary weapon deal nothing at all. The row states the surviving percent instead, so the capped reduction is one division. Not modelled: whether the game scales each hitsplat or the roll, so the multiply lands on the expectation, which is not the same shape; and the reduction is narrowed to weapon damage, leaving thrall damage untouched, so the four-altar ordinary-weapon case is zero weapon damage rather than zero DPS.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Skotizo",
+    "url": "https://oldschool.runescape.wiki/w/Awakened_Altar",
     "quotes": [
-     "all damage inflicted on Skotizo"
+     "These altars reduce all damage inflicted on Skotizo while they are active. If Arclight or Emberlight is equipped, each altar reduces damage by 15% up to a maximum of 60%. Otherwise, with other weapons, it's 25% each up to a maximum of 100%."
     ],
     "verified": "2026-08-21"
    }
@@ -742,7 +797,7 @@
  {
   "id": "NightmareTotemVulnerability",
   "kind": "averageHit",
-  "description": "https://oldschool.runescape.wiki/w/Totem_(The_Nightmare) \"The totems take 2x damage when attacked with magic.\" Post-distribution: doubling per-hit or per-expectation makes no rounding difference here.",
+  "description": "Doubles the damage a magic attack deals to the Nightmare's totems. The doubling lands on the expected hit rather than on each hitsplat, which makes no rounding difference for a plain factor of two.",
   "_cite": [
    {
     "kind": "wiki",
@@ -766,7 +821,7 @@
  {
   "id": "AlchemicalHydraResistance",
   "kind": "averageHit",
-  "description": "Wiki: Alchemical Hydra — reduces incoming damage by 75% until it is lured over and sprayed by the appropriate chemical vent. Uniform across styles, so it never changes gear ranking. Not modelled: whether the game scales each hitsplat or the roll, so the multiply lands on the expectation, which is not the same shape; and thrall damage, which the wiki's \"incoming damage\" covers but which is added after this row.",
+  "description": "Quarters damage dealt to the Alchemical Hydra while a phase's 75% damage reduction is still up, that is until it is lured over the matching chemical vent. The reduction is uniform across styles, so it never changes gear ranking. Not modelled: whether the game scales each hitsplat or the roll, so the multiply lands on the expectation instead, which is not the same shape; and thrall damage, which the wiki's incoming damage covers but which is added after this row.",
   "when": {
    "monsterClass": "alchemicalHydra",
    "optionFlag": {
@@ -792,11 +847,21 @@
     }
    ]
   },
-  "aggregateBoundSafe": true
+  "aggregateBoundSafe": true,
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Alchemical_Hydra",
+    "quotes": [
+     "At the start of each phase, it has a 75% damage reduction, which can be removed if it is lured over a vent on the floor which spews chemical liquid."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "id": "RoyalTitansRangedAccuracy",
-  "description": "https://oldschool.runescape.wiki/w/Royal_Titans/Strategies \"despite their high ranged defences of +700, players get a hidden +500% (a 6x multiplier) to ranged accuracy whenever the titans are out of melee distance.\"",
+  "description": "Multiplies ranged accuracy by six against the Royal Titans while they are out of melee distance, the hidden bonus that offsets their high ranged defence.",
   "_cite": [
    {
     "kind": "wiki",
@@ -842,7 +907,7 @@
  {
   "id": "MagicDefenceFromDefenceLevel",
   "kind": "defenceLevelSource",
-  "description": "Monsters whose magic defence roll is built from their Defence level, not their Magic level: the documented exception to Rd = (Mlvl + 9) * (Mdb + 64), confirmed at https://twitter.com/JagexAsh/status/1689566945635438592 and on each monster's own article (the magicDefenceFromDefence family). A Defence drain moves this roll, since the substituted level is read after the drain stage; the undrainableDefence family is what stops it for Verzik.",
+  "description": "Builds the magic defence roll of the flagged monsters from their Defence level instead of their Magic level, the documented exception to the usual magic defence roll. The substituted level is read after the drain stage, so a Defence drain moves this roll; the undrainable-defence family is what stops that for Verzik.",
   "_cite": [
    {
     "kind": "tweet",
@@ -861,12 +926,15 @@
  {
   "id": "RespiratorySystemDemonbane",
   "kind": "rollWindow",
-  "description": "https://oldschool.runescape.wiki/w/Abyssal_Sire/Strategies demonbane weapons one-shot a respiratory system for its full hitpoints; the accuracy roll still happens, since the wiki guarantees the damage of a hit that lands rather than that it lands. Ahead of the plain row so the demonbane branch matches first.",
+  "description": "Makes a demonbane weapon destroy an Abyssal Sire respiratory system outright, rolling its damage window at the target's full hitpoints. The accuracy roll still happens, since the guarantee covers the damage of a hit that lands rather than that it lands. Ordered ahead of the plain respiratory-system row so the demonbane branch matches first.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Abyssal_Sire/Strategies",
-    "quotes": [],
+    "quotes": [
+     "Demonbane weapons (other than holy water) will always destroy the respiratory systems in one hit regardless of the player's stats.",
+     "Upon a successful hit, demonbane weapons and spells (other than holy water) will destroy them instantly regardless of the player's bonuses."
+    ],
     "verified": "2026-08-21"
    }
   ],
@@ -896,12 +964,14 @@
   "id": "RespiratorySystem",
   "kind": "rollWindow",
   "shapesHitsplats": true,
-  "description": "https://oldschool.runescape.wiki/w/Abyssal_Sire/Strategies the four respiratory systems' damage rules replace the normal 0..max roll: a minimum hit of trunc(max / 2), so the roll is uniform over min..max. Not modeled: the fight's phases and vent stun timing (no timeline). A hitsplat shaper rather than a distribution of its own: the wiki states the rule for the player's weapon with no carve-out, so a multi-hitsplat weapon keeps it, each splat rolling over half its own ceiling. How the floor divides across a scythe's three splats is unstated by the wiki (docs/ENGINE-GAPS.md).",
+  "description": "Replaces the normal zero-to-max roll against an Abyssal Sire respiratory system with a uniform roll from half the max hit, rounded down, up to the max hit. Applied as a hitsplat shaper rather than a distribution of its own, so a multi-hitsplat weapon keeps the rule with each splat rolling over half its own ceiling. Not modelled: the fight's phases and vent stun timing, and how the floor divides across a scythe's three splats, which the wiki does not state.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Abyssal_Sire/Strategies",
-    "quotes": [],
+    "quotes": [
+     "Players will always hit at least 50% of their weapon's maximum hit on the respiratory systems"
+    ],
     "verified": "2026-08-21"
    }
   ],
@@ -915,7 +985,7 @@
  {
   "id": "SalarinStrikeSpells",
   "kind": "rollWindow",
-  "description": "https://oldschool.runescape.wiki/w/Salarin_the_twisted \"the spells will always deal 9, 10, 11, or 12 damage, depending on the highest tier of spell unlocked, as long as the player does not splash\"; \"This damage is not affected by items that would normally increase spell damage\". Modelled as a certain hit at the tier through the accuracy chance, which is the splash chance; the tier is the highest Bolt hit the visible Magic level unlocks. The article's \"minimum of 80 ticks\" kill (70 hp, 6 casts at 5 ticks, 50-tick respawn) only holds under the certain hit. Not modeled: ring of recoil, dynamite(p).",
+  "description": "Against Salarin the twisted a standard strike spell always deals 9, 10, 11 or 12 damage, set by the highest tier of spell the player's visible Magic level unlocks and unaffected by magic damage gear. Modelled as a certain hit at that tier taken through the accuracy chance, which is the splash chance, with the tier read as the highest bolt spell max hit. Not modelled: ring of recoil and dynamite(p).",
   "_cite": [
    {
     "kind": "wiki",
@@ -945,18 +1015,23 @@
  {
   "id": "ElementalWeaknessShare",
   "kind": "flatShare",
-  "description": "https://oldschool.runescape.wiki/w/Elemental_weakness a matching standard-spellbook elemental cast gains +trunc(base * severity/100) accuracy and damage: a flat share of the base roll and base spell hit, added at the end rather than multiplied over the stages above it. That article's Max Hit = floor(floor(BaseMax x (1 + MagicDamage%)) x (1 + Slayer/Salve%)) + floor(BaseMax x EW%) puts the share after the slayer stage, which is the order used here; https://oldschool.runescape.wiki/w/Maximum_magic_hit instead orders Primary Magic Damage, Elemental Weakness, then a Pre Hit Roll stage carrying the slayer helmet, so the two articles disagree (see docs/ENGINE-GAPS.md, battery-pinned).",
+  "description": "A matching standard-spellbook elemental cast gains accuracy and damage equal to the monster's elemental weakness percentage of the base roll and base spell max hit, floored on its own and added as a flat share rather than multiplied through the stages above it. The addend lands after the slayer and salve stage.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Elemental_weakness",
-    "quotes": [],
+    "quotes": [
+     "For every percentage point of elemental weakness that an NPC has, the player will gain an extra 1% magic damage and 1% magic accuracy to their attacks. The bonus to magic damage is added after all previous magic damage sources, such as equipment or bonuses from the Slayer helmet (i) or Salve amulet (i).",
+     "Max Hit = ⌊ ⌊ Base Max x ( 1 + Magic Damage % ) ⌋ x ( 1 + Slayer or Salve % ) ⌋ + ⌊ Base Max x Elemental Weakness % ⌋"
+    ],
     "verified": "2026-08-21"
    },
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Maximum_magic_hit",
-    "quotes": [],
+    "quotes": [
+     "Elemental weakness is calculated by multiplying the base max damage by the monster's weakness, and rounding down. This additional damage is then added to the maximum hit determined above."
+    ],
     "verified": "2026-08-21"
    }
   ],
@@ -973,13 +1048,21 @@
  {
   "id": "TormentedDemonShield",
   "kind": "resistance",
-  "description": "https://oldschool.runescape.wiki/w/Tormented_Demon \"Tormented demons usually have a fire shield that reduces damage done by non-demonbane weapons/spells and non-abyssal weapons by 20%.\" Post-roll, per hitsplat, floored at 1, in the two shielded phases; the abyssalMelee family is the wiki's \"abyssal weapons\". Out of scope: shield phases per fire bomb, the demons' own attacks.",
+  "description": "A tormented demon's fire shield takes 20% off damage from weapons and spells that are neither demonbane nor abyssal, applied post-roll per hitsplat and floored at 1, in the two shielded phases. Out of scope: how shield phases track fire bombs, and the demons' own attacks.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Tormented_Demon",
     "quotes": [
      "Tormented demons usually have a fire shield that reduces damage done by non-demonbane weapons/spells and non-abyssal weapons by 20%."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tormented_Demon/Strategies",
+    "quotes": [
+     "All weapons that are not classified as abyssal or demonbane deal 20% reduced damage against tormented demons."
     ],
     "verified": "2026-08-21"
    }
@@ -1039,12 +1122,14 @@
  {
   "id": "TormentedDemonDefenceless",
   "kind": "accuracyTransform",
-  "description": "https://oldschool.runescape.wiki/w/Tormented_Demon in both non-default phases every attack lands, whatever the rolls say.",
+  "description": "In both non-default demon phases every attack lands whatever the rolls say, the defenceless window that gives the player 100% accuracy.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Tormented_Demon",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Tormented_Demon/Strategies",
+    "quotes": [
+     "Roughly 30 ticks (18s) after the start of the fight, the demon will become defenceless, giving the player 100% accuracy when attacking it"
+    ],
     "verified": "2026-08-21"
    }
   ],
@@ -1067,12 +1152,18 @@
  {
   "id": "TormentedDemonUnshieldedBonus",
   "kind": "rollWindow",
-  "description": "https://oldschool.runescape.wiki/w/Tormented_Demon unshielded, magic spells, heavy Ranged and crush gain a flat speed^2 - 16 damage bonus, added before the raise so a 0 roll lands as the bonus rather than as 1. The bonus grows with the square of the weapon's speed, so the slowest crush weapon in the bank can beat the fastest, a ranking no raw stat carries (the hidesItems speed predicate). Out of scope: the divide-by-3, rounded down, when the weapon matches the demon's protection prayer, which needs a monster prayer no input carries.",
+  "description": "While a tormented demon's shield is down, spells, heavy ranged weapons and crush melee gain a flat damage bonus of the weapon's attack speed squared minus 16, added before the zero-to-one raise so a rolled zero lands as the bonus rather than as 1. The bonus grows with the square of the speed, so the slowest crush weapon in the bank can beat the fastest, a ranking no raw stat carries. Out of scope: the divide-by-three, rounded down, when the weapon matches the demon's protection prayer, which needs a monster prayer no input carries.",
   "_cite": [
    {
     "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Tormented_Demon",
-    "quotes": [],
+    "url": "https://oldschool.runescape.wiki/w/Tormented_Demon/Strategies",
+    "quotes": [
+     "all damage dealt by specific weapons is increased by X 2 - 16 , where X is the weapon's attack speed.",
+     "Melee weapons set to the crush attack style",
+     "Heavy ranged weapons (crossbows and ballistae)",
+     "Spells (not from a powered staff).",
+     "the attack speed and damage bonus will still apply, but be divided by 3 and rounded down"
+    ],
     "verified": "2026-08-21"
    }
   ],
@@ -1112,7 +1203,7 @@
  {
   "id": "TormentedDemonQuickened",
   "kind": "attackSpeed",
-  "description": "https://oldschool.runescape.wiki/w/Tormented_Demon/Strategies \"The attack speed for this one attack is also set to 4 ticks (2.4s)\"; the article's shield-down table reads 4 ticks vs one demon for standard speeds 7, 6, 5 and \"4 or faster\" alike, so the rule is an assignment and not a decrement. Out of scope: the table's multi-demon columns (\"the attack speed decreases by one tick per additional demon\"), which need a demon count no input carries, and the divide-by-3 when the weapon matches the demon's protection prayer.",
+  "description": "While the shield is down the qualifying attack's speed is set to 4 ticks rather than decremented: the article's shield-down table reads 4 ticks against one demon for standard speeds 7, 6, 5 and 4-or-faster alike. Out of scope: the table's multi-demon columns, which need a demon count no input carries, and the divide-by-three when the weapon matches the demon's protection prayer.",
   "_cite": [
    {
     "kind": "wiki",
@@ -1156,7 +1247,7 @@
  {
   "id": "LeviathanMeleeUnreachable",
   "kind": "immunity",
-  "description": "https://oldschool.runescape.wiki/w/The_Leviathan melee never reaches it: \"Your melee attacks can't reach the lure!\"",
+  "description": "Melee never reaches the Leviathan, so melee setups are excluded against it outright.",
   "_cite": [
    {
     "kind": "wiki",
@@ -1182,13 +1273,14 @@
  {
   "id": "LeviathanPoolRangedAccuracy",
   "kind": "accuracyTransform",
-  "description": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies in the pathfinder's AoE the player \"will be granted perfect accuracy and an increased minimum hit\"; the guarantee is Ranged's alone, magic is paid in damage instead.",
+  "description": "Standing in the abyssal pathfinder's area of effect grants perfect accuracy to ranged attacks on the Leviathan. The guarantee is Ranged's alone; magic is paid in damage instead.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies",
     "quotes": [
-     "will be granted perfect accuracy and an increased minimum hit"
+     "will be granted perfect accuracy and an increased minimum hit",
+     "Attacking with magic instead of ranged while within the pathfinder's AoE will grant doubled damage instead of perfect accuracy."
     ],
     "verified": "2026-08-21"
    }
@@ -1231,12 +1323,14 @@
  {
   "id": "LeviathanPoolMagic",
   "kind": "rollWindow",
-  "description": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies in the pathfinder's pool magic gets doubled damage on an otherwise ordinary roll, including its ordinary accuracy; the doubled hit really can land for twice the ceiling.",
+  "description": "In the abyssal pathfinder's area of effect magic deals doubled damage on an otherwise ordinary roll with its ordinary accuracy, so the doubled hit really can land for twice the usual ceiling.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies",
-    "quotes": [],
+    "quotes": [
+     "Attacking with magic instead of ranged while within the pathfinder's AoE will grant doubled damage instead of perfect accuracy."
+    ],
     "verified": "2026-08-21"
    }
   ],
@@ -1261,7 +1355,7 @@
  {
   "id": "LeviathanBacksideMagic",
   "kind": "rollWindow",
-  "description": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies at the gaping wound \"attacking with magic is not guaranteed to hit and is subject to the usual accuracy rolls, but will deal double damage\" - the pathfinder pool's two-sided shape again, ranged paid in a floor and magic in damage.",
+  "description": "Attacking the stunned Leviathan's gaping wound with magic keeps the usual accuracy roll but doubles the damage, the pathfinder pool's two-sided shape again, with Ranged paid in a raised floor and magic in damage.",
   "_cite": [
    {
     "kind": "wiki",
@@ -1294,7 +1388,7 @@
   "id": "LeviathanPoolRangedFloor",
   "kind": "rollWindow",
   "shapesHitsplats": true,
-  "description": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies the pool's increased minimum: Mod Ash, \"it's ensuring you hit for at least 20% of your max\". A hitsplat shaper: the raised minimum layers onto every splat the bow fires rather than replacing the distribution.",
+  "description": "In the abyssal pathfinder's area of effect a ranged hit on the Leviathan lands for at least 20% of the max hit. Applied as a hitsplat shaper, so the raised minimum layers onto every splat the bow fires rather than replacing the distribution.",
   "_cite": [
    {
     "kind": "wiki",
@@ -1325,7 +1419,7 @@
   "id": "LeviathanBacksideFloor",
   "kind": "rollWindow",
   "shapesHitsplats": true,
-  "description": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies \"When attacking the backside with ranged, it deals at least a minimum of ~65% of your maximum hit as damage\"; stunned elsewhere is the 10 damage cap in damage-caps.json. A hitsplat shaper: the raised minimum layers onto every splat the bow fires rather than replacing the distribution.",
+  "description": "Ranged attacks on the stunned Leviathan's backside land for at least roughly 65% of the max hit; being stunned anywhere else is the 10 damage cap held in damage-caps.json. Applied as a hitsplat shaper, so the raised minimum layers onto every splat the bow fires.",
   "_cite": [
    {
     "kind": "wiki",
@@ -1355,13 +1449,13 @@
  {
   "id": "WardensP2MinWindow",
   "kind": "flatShare",
-  "description": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies \"the player having 100% accuracy regardless of equipment; however, the damage dealt corresponds to the player's accuracy bonuses\": the damage window's floor, modifier% of the max hit, where the modifier lerps 15..40 with how far the attack roll clears a third of the defence roll (capped at a 42,000 delta). CITATION-NONE for the figures: the wiki gives the shape but no numbers, see gap 6 in docs/ENGINE-GAPS.md.",
+  "description": "The Wardens P2 accuracy window floor: inside the core-exposed window the hit always lands, with damage scaled by what the player's accuracy would have been.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies",
     "quotes": [
-     "the player having 100% accuracy regardless of equipment; however, the damage dealt corresponds to the player's accuracy bonuses"
+     "the player having 100% accuracy regardless of equipment; however, the damage dealt corresponds to the player's accuracy"
     ],
     "verified": "2026-08-21"
    }
@@ -1374,7 +1468,7 @@
  {
   "id": "WardensP2MaxWindow",
   "kind": "flatShare",
-  "description": "See WardensP2MinWindow: the window's ceiling, (modifier + 20)% of the max hit. Non-monotone roll arithmetic, which is why a wardens search runs with bound pruning off.",
+  "description": "The Wardens P2 window's ceiling, (modifier + 20)% of the max hit; see WardensP2MinWindow for the window itself. Non-monotone roll arithmetic, which is why a wardens search runs with bound pruning off.",
   "when": {
    "monsterClass": "wardenP2"
   },
@@ -1383,14 +1477,13 @@
  {
   "id": "AncientMultiTarget",
   "kind": "averageHit",
-  "description": "https://oldschool.runescape.wiki/w/Ice_Barrage \"up to nine targets in a 3x3 grid around its primary target\"; the engine models one monster so every target carries the same hit chance. Secondaries are not a clean xN: https://oldschool.runescape.wiki/w/Salve_amulet(ei) says the amulet's effects apply to all targets for multi-hitting melee \"but not for multi-hitting magic and ranged attacks (ex. chinchompas and burst spells)\", while https://oldschool.runescape.wiki/w/Ice_Barrage keeps the mask - \"any secondary targets hit will also be subject to the damage bonus from a worn black mask (i)/slayer helmet (i)\". cast.secondaryAmuletRatio is the engine's second Magic max hit with the neck additive dropped and the mask restored, over the primary's. The Brimstone ring is the one bonus the primary does not share; its row dilutes itself across the clump. Last with the other target-count entries: everything above scales damage to one enemy, this multiplies by how many there are. Not modeled: Smoke's 1/8 poison, Blood's leech, Ice's freeze, whether the player is in a multi-way area at all.",
+  "description": "Scales magic damage by how many targets a multi-target ancient spell clumps hit, up to nine in a 3x3 grid around the primary target. The engine models one monster, so every target carries the same hit chance, but secondaries are not a clean multiply by the target count: a salve amulet's bonus does not carry to the secondary targets of a multi-hitting magic attack while an imbued black mask's does, so secondaries are weighted by a second Magic max hit with the neck additive dropped and the mask restored, over the primary's. The Brimstone ring is the one bonus the primary does not share, and its own row dilutes itself across the clump. Ordered last with the other target-count entries, since everything above scales damage to one enemy and this multiplies by how many there are. Not modelled: Smoke's poison chance, Blood's leech, Ice's freeze, or whether the player is in a multi-way area at all.",
   "_cite": [
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Ice_Barrage",
     "quotes": [
      "up to nine targets in a 3x3 grid around its primary target",
-     "but not for multi-hitting magic and ranged attacks (ex. chinchompas and burst spells)",
      "any secondary targets hit will also be subject to the damage bonus from a worn black mask (i)/slayer helmet (i)"
     ],
     "verified": "2026-08-21"
@@ -1398,7 +1491,9 @@
    {
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Salve_amulet(ei)",
-    "quotes": [],
+    "quotes": [
+     "but not for multi-hitting magic and ranged attacks (ex. chinchompas and burst spells)"
+    ],
     "verified": "2026-08-21"
    }
   ],
