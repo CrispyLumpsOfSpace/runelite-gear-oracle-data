@@ -661,7 +661,7 @@
  {
   "id": "ElementalWeaknessShare",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Elemental_weakness a matching standard-spellbook elemental cast gains +trunc(base * severity/100) accuracy and damage: a flat share of the base roll and base spell hit, added at the end rather than multiplied over the stages above it.",
+  "source": "https://oldschool.runescape.wiki/w/Elemental_weakness a matching standard-spellbook elemental cast gains +trunc(base * severity/100) accuracy and damage: a flat share of the base roll and base spell hit, added at the end rather than multiplied over the stages above it. That article's Max Hit = floor(floor(BaseMax x (1 + MagicDamage%)) x (1 + Slayer/Salve%)) + floor(BaseMax x EW%) puts the share after the slayer stage, which is the order used here; https://oldschool.runescape.wiki/w/Maximum_magic_hit instead orders Primary Magic Damage, Elemental Weakness, then a Pre Hit Roll stage carrying the slayer helmet, so the two articles disagree (see docs/ENGINE-GAPS.md, battery-pinned).",
   "when": {
    "style": "MAGIC",
    "expr": "cast.matchesElementalWeakness && monster.elementalWeaknessPercent > 0"
