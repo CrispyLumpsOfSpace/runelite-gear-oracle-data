@@ -630,7 +630,7 @@
  {
   "id": "SlayerSalveGroup",
   "kind": "exclusiveGroup",
-  "source": "https://oldschool.runescape.wiki/w/Salve_amulet \"The salve amulet's bonuses against the undead do not stack with the black mask and slayer helmet's 16.67% attack and strength bonuses; wearing both will only apply the bonuses of the salve amulet.\" The un-imbued tiers are \"a 16.67% increase in the wearer's Attack and Strength when fighting undead\", so the plain salve and the (i) give 7/6 rather than 1.15; the (i) carries that 16.67% on melee and Ranged alike and only Magic takes 15%. The higher single multiplier wins, covering accuracy and damage alike, applied as its own separately-floored stage. Magic differs: the salve (i)/(ei) joins the additive damage block (15/20 points; the un-imbued salve and salve (e) give no Magic bonus at all) while the black mask (i) stays its own floored stage and never stacks with it. The Dragon hunter wand's passive \"stacks with the Slayer helm (i) ... but not the salve amulet (i)\", so the salve contributes nothing while it runs. Bound: salve tops out at 1.20 x 1.20, slayer headgear at (7/6)^2, both firing only on undead or on task; a roll multiplier m raises hit chance by at most m, so acc x dmg is the DPS ceiling.",
+  "source": "https://oldschool.runescape.wiki/w/Salve_amulet \"The salve amulet's bonuses against the undead do not stack with the black mask and slayer helmet's 16.67% attack and strength bonuses; wearing both will only apply the bonuses of the salve amulet.\" The un-imbued tiers are \"a 16.67% increase in the wearer's Attack and Strength when fighting undead\", so the plain salve and the (i) give 7/6 rather than 1.15; the (i) carries that 16.67% on melee and Ranged alike and only Magic takes 15%. The higher single multiplier wins, covering accuracy and damage alike, applied as its own separately-floored stage. Magic differs: the salve (i)/(ei) joins the additive damage block (15/20 points; the un-imbued salve and salve (e) give no Magic bonus at all) while the black mask (i) stays its own floored stage and never stacks with it. The Dragon hunter wand's passive \"stacks with the Slayer helm (i) ... but not the salve amulet (i)\", so the salve contributes nothing while it runs. The eclipse atlatl is a Ranged weapon on the melee tier: https://oldschool.runescape.wiki/w/Eclipse_atlatl \"it uses the melee bonuses from the slayer helmet and salve amulets\", so it takes 7/6 and 1.20 and stays out of the Ranged black mask (i) additive fold. Bound: salve tops out at 1.20 x 1.20, slayer headgear at (7/6)^2, both firing only on undead or on task; a roll multiplier m raises hit chance by at most m, so acc x dmg is the DPS ceiling.",
   "filterWhen": {
    "anyOf": [
     {
@@ -644,8 +644,9 @@
   "let": {
    "wandOverride": "style.magic && monster.attr('DRAGON') && worn('DRAGON_HUNTER_WAND')",
    "salveActive": "monster.attr('UNDEAD') && !wandOverride",
-   "salve": "!salveActive ? 1 : worn('SALVE_AMULET_EI') ? 1.20 : worn('SALVE_AMULET_I') ? (style.magic ? 1.15 : 7/6) : worn('SALVE_AMULET_E') ? (style.melee ? 1.20 : 1) : worn('SALVE_AMULET') ? (style.melee ? 7/6 : 1) : 1",
-   "helm": "!player.onSlayerTask || !wornFamily('slayerHelm') ? 1 : style.melee ? 7/6 : wornFamily('imbuedSlayerHeadgear') ? 1.15 : 1",
+   "meleeTier": "style.melee || worn('ECLIPSE_ATLATL')",
+   "salve": "!salveActive ? 1 : worn('SALVE_AMULET_EI') ? 1.20 : worn('SALVE_AMULET_I') ? (style.magic ? 1.15 : 7/6) : worn('SALVE_AMULET_E') ? (meleeTier ? 1.20 : 1) : worn('SALVE_AMULET') ? (meleeTier ? 7/6 : 1) : 1",
+   "helm": "!player.onSlayerTask || !wornFamily('slayerHelm') ? 1 : meleeTier ? 7/6 : wornFamily('imbuedSlayerHeadgear') ? 1.15 : 1",
    "magicSalvePercent": "!salveActive ? 0 : worn('SALVE_AMULET_EI') ? 20.0 : worn('SALVE_AMULET_I') ? 15.0 : 0"
   },
   "queries": {
@@ -654,7 +655,7 @@
    "slayerHelmMultiplier": "helm",
    "magicSalveAdditivePercent": "magicSalvePercent",
    "magicSlayerMultiplier": "magicSalvePercent > 0 ? 1 : (player.onSlayerTask && wornFamily('imbuedSlayerHeadgear') ? 1.15 : 1)",
-   "imbuedBlackMaskWins": "player.onSlayerTask && wornFamily('imbuedSlayerHeadgear') && salve == 1 ? 1 : 0"
+   "imbuedBlackMaskWins": "player.onSlayerTask && wornFamily('imbuedSlayerHeadgear') && salve == 1 && !worn('ECLIPSE_ATLATL') ? 1 : 0"
   },
   "bound": {
    "items": [
