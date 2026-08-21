@@ -872,7 +872,7 @@
      "key": "leviathanSituation",
      "type": "choice",
      "label": "Fight situation",
-     "help": "<html>The Leviathan pays differently by moment.<br><b>In the pool:</b> ranged cannot miss and hits for at least 20% of its max; magic gets double damage instead.<br><b>Stunned:</b> damage is capped at 10 \u2014 unless you are at the <b>backside</b>, where ranged hits for at least 65% of its max.</html>",
+     "help": "<html>The Leviathan pays differently by moment.<br><b>In the pool:</b> ranged cannot miss and hits for at least 20% of its max; magic gets double damage instead.<br><b>Stunned:</b> damage is capped at 10 \u2014 unless you are at the <b>backside</b>, where ranged hits for at least 65% of its max and magic deals double damage.</html>",
      "choices": [
       "Normal",
       "In the pathfinder's pool",
@@ -894,6 +894,28 @@
    "optionIs": {
     "key": "leviathanSituation",
     "is": "In the pathfinder's pool",
+    "default": "Normal"
+   }
+  },
+  "filterWhen": {
+   "monsterClass": "leviathan"
+  },
+  "lo": "0",
+  "hi": "maxHit",
+  "factor": "2",
+  "effectiveMaxHit": "maxHit * 2",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "LeviathanBacksideMagic",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies at the gaping wound \"attacking with magic is not guaranteed to hit and is subject to the usual accuracy rolls, but will deal double damage\" - the pathfinder pool's two-sided shape again, ranged paid in a floor and magic in damage.",
+  "when": {
+   "monsterClass": "leviathan",
+   "category": "MAGIC",
+   "optionIs": {
+    "key": "leviathanSituation",
+    "is": "Stunned, at the backside",
     "default": "Normal"
    }
   },
