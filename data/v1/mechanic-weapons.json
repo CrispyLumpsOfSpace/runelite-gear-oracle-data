@@ -1518,7 +1518,7 @@
  {
   "id": "RubyBoltProc",
   "kind": "additiveHit",
-  "source": "https://oldschool.runescape.wiki/w/Ruby_bolts_(e) \"The special effect has a 11% chance of activating in PvP and a 6% chance of activating in PvM\"; the proc decays with the target's HP, so it is averaged over a kill by the rubyFightAverage closed form. https://oldschool.runescape.wiki/w/Gemstone_Crab \"Ruby bolt (e) special attacks treat the boss as if it has 300 Hitpoints and deal 60 damage, increased to 66 if using a Zaryte crossbow\" - no decay to average, and the 1.1 sits in the rate. Zaryte (+10% proc damage) and the Hard Kandarin Diary (+10% proc chance) fold into the rate exactly, ruby's curve being linear in it.",
+  "source": "https://oldschool.runescape.wiki/w/Ruby_bolts_(e) \"The special effect has a 11% chance of activating in PvP and a 6% chance of activating in PvM\"; the proc decays with the target's HP, so it is averaged over a kill by the rubyFightAverage closed form. Blood Forfeit \"overrides the projectile's damage\", so a proc shot pays the proc instead of the ordinary hit and the addend is the difference of expectations. https://oldschool.runescape.wiki/w/Gemstone_Crab \"Ruby bolt (e) special attacks treat the boss as if it has 300 Hitpoints and deal 60 damage, increased to 66 if using a Zaryte crossbow\" - no decay to average. The Hard Kandarin Diary's +10% is a chance, the Zaryte's +10% a damage scale, and that scale is divided by hitsplatScale because https://oldschool.runescape.wiki/w/Corporeal_Beast/Strategies puts the halving \"before the cap of 100 damage is calculated\" while the engine scales the whole addend afterwards.",
   "when": {
    "style": "RANGED",
    "ammoCompatible": "true",
@@ -1527,14 +1527,14 @@
   "filterWhen": {
    "style": "RANGED"
   },
-  "extra": "monster.family('gemstoneCrab') ? (0.06 * (worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1)) * 60 : rubyFightAverage(accuracy * expectedHit(0, maxHit), monster.hitpoints, 0.06 * (worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1))",
+  "extra": "monster.family('gemstoneCrab') ? (0.06 * (player.kandarinHardDiary ? 1.1 : 1)) * ((worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * 60 - accuracy * expectedHit(0, maxHit)) : rubyFightAverage(accuracy * expectedHit(0, maxHit), monster.hitpoints, 0.06 * (player.kandarinHardDiary ? 1.1 : 1), (worn('ZARYTE_CROSSBOW') ? 1.1 : 1) / hitsplatScale)",
   "aggregateBoundSafe": true,
   "bound": {
    "items": [
     "RUBY_BOLTS"
    ],
    "category": "RANGED",
-   "addendDps": "!chunk.canFire ? 0 : (0.06 * (chunk.special('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1)) * (monster.family('gemstoneCrab') ? 60 : (monster.hitpoints > 0 ? min(chunk.special('ZARYTE_CROSSBOW') ? 110.0 : 100.0, 0.2 * (chunk.special('ZARYTE_CROSSBOW') ? 1.1 : 1) * monster.hitpoints) : (chunk.special('ZARYTE_CROSSBOW') ? 110.0 : 100.0))) / (max(1, chunk.aspeed - 1) * 0.6)"
+   "addendDps": "!chunk.canFire ? 0 : (0.06 * (chunk.special('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1)) * (monster.family('gemstoneCrab') ? 60 : (monster.hitpoints > 0 ? min(100.0, 0.2 * monster.hitpoints) : 100.0)) / (max(1, chunk.aspeed - 1) * 0.6)"
   }
  },
  {
@@ -1573,33 +1573,24 @@
  {
   "id": "DragonstoneBoltProc",
   "kind": "additiveHit",
-  "source": "https://oldschool.runescape.wiki/w/Dragonstone_bolts_(e) 6% of landed hits deal an extra floor(visible Ranged level x 2 / 10) (\"22% instead of 20%\" with a Zaryte, a smaller divisor because the division is truncated); \"If the target is immune to dragonfire, the special effect will not activate\" - DRAGON and FIERY are the two dragonfire-immunity marks.",
+  "source": "https://oldschool.runescape.wiki/w/Dragonstone_bolts_(e) 6% of landed hits deal an extra floor(visible Ranged level x 2 / 10), \"22% instead of 20%\" with a Zaryte; https://oldschool.runescape.wiki/w/Zaryte_crossbow states the dragonstone enhancement as a percentage (\"visible ranged * 22%\") where it states opal's and pearl's as divisors, so 22/100 rather than 2/9. \"If the target is immune to dragonfire, the special effect will not activate\", and https://oldschool.runescape.wiki/w/Dragonfire scopes that immunity to a conjunction: \"These methods will not cause damage if the opponent is both a fiery and draconic creature\".",
   "when": {
    "style": "RANGED",
    "ammoCompatible": "true",
    "ammoSpecial": "DRAGONSTONE_BOLTS",
-   "not": {
-    "anyOf": [
-     {
-      "targetAttr": "DRAGON"
-     },
-     {
-      "targetAttr": "FIERY"
-     }
-    ]
-   }
+   "exprFilter": "!(monster.attr('DRAGON') && monster.attr('FIERY'))"
   },
   "filterWhen": {
    "style": "RANGED"
   },
-  "extra": "(player.kandarinHardDiary ? 1.1 : 1) * (accuracy * 0.06 * floor((player.rangedLevel + player.rangedBoost) * 2.0 / (worn('ZARYTE_CROSSBOW') ? 9 : 10)))",
+  "extra": "(player.kandarinHardDiary ? 1.1 : 1) * (accuracy * 0.06 * floor((player.rangedLevel + player.rangedBoost) * (worn('ZARYTE_CROSSBOW') ? 22.0 : 20.0) / 100))",
   "aggregateBoundSafe": true,
   "bound": {
    "items": [
     "DRAGONSTONE_BOLTS"
    ],
    "category": "RANGED",
-   "addendDps": "!chunk.canFire || monster.attr('DRAGON') || monster.attr('FIERY') ? 0 : 0.06 * (player.kandarinHardDiary ? 1.1 : 1) * floor((player.rangedLevel + player.rangedBoost) * 2.0 / (chunk.special('ZARYTE_CROSSBOW') ? 9 : 10)) / (max(1, chunk.aspeed - 1) * 0.6)"
+   "addendDps": "!chunk.canFire || (monster.attr('DRAGON') && monster.attr('FIERY')) ? 0 : 0.06 * (player.kandarinHardDiary ? 1.1 : 1) * floor((player.rangedLevel + player.rangedBoost) * (chunk.special('ZARYTE_CROSSBOW') ? 22.0 : 20.0) / 100) / (max(1, chunk.aspeed - 1) * 0.6)"
   }
  },
  {
@@ -1649,7 +1640,7 @@
  {
   "id": "EmeraldBoltProc",
   "kind": "additiveHit",
-  "source": "https://oldschool.runescape.wiki/w/Emerald_bolts_(e) 55% chance on a landed hit to poison for 75 total damage over ~450 seconds, converted to a per-shot average through the attack time the engine divides by (expectedAttackTicks, not the base speed, so an attackSpeed row cannot leave the conversion uncancelled); nothing against the poison-immune. The Zaryte's 1.1 lands flat, this being a flat-damage bolt.",
+  "source": "https://oldschool.runescape.wiki/w/Emerald_bolts_(e) 55% chance on a landed hit to poison: \"The total poison damage dealt by a single emerald bolt proc is 75 health points over 7.5 minutes. With the Zaryte crossbow, this is increased to 87 over 8.1 minutes\", inflicted \"every 30 game ticks (18 seconds)\" at 5 damage per interval to start, 6 with the Zaryte's higher severity. https://oldschool.runescape.wiki/w/Poison \"The poison's duration can be reset while the enemy is poisoned with the same chance as on an unpoisoned enemy\", and the interval timer belongs to the NPC, so a re-applying weapon holds the opening damage indefinitely: the contribution is the lesser of what the procs deliver and what the poison can pay out, converted to a per-shot average through the attack time the engine divides by (expectedAttackTicks, not the base speed, so an attackSpeed row cannot leave the conversion uncancelled). Nothing against the poison-immune.",
   "when": {
    "style": "RANGED",
    "ammoCompatible": "true",
@@ -1659,14 +1650,14 @@
   "filterWhen": {
    "style": "RANGED"
   },
-  "extra": "(worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1) * (accuracy * 0.55 * (75.0 / 450.0) * (expectedAttackTicks * 0.6))",
+  "extra": "min(accuracy * 0.55 * (player.kandarinHardDiary ? 1.1 : 1) * (worn('ZARYTE_CROSSBOW') ? 87.0 : 75.0), (worn('ZARYTE_CROSSBOW') ? 6.0 : 5.0) * (expectedAttackTicks * 0.6) / 18.0)",
   "aggregateBoundSafe": true,
   "bound": {
    "items": [
     "EMERALD_BOLTS"
    ],
    "category": "RANGED",
-   "addendDps": "!chunk.canFire || monster.poisonImmune ? 0 : 0.55 * (player.kandarinHardDiary ? 1.1 : 1) * (75.0 / 450.0)"
+   "addendDps": "!chunk.canFire || monster.poisonImmune ? 0 : (chunk.special('ZARYTE_CROSSBOW') ? 6.0 : 5.0) / 18.0"
   }
  },
  {
