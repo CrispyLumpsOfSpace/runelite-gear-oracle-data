@@ -540,5 +540,33 @@
    }
   ],
   "styleBlanket": true
+ },
+ {
+  "id": "DeathlyTightropeUnreachable",
+  "kind": "immunity",
+  "description": "The Chambers of Xeric tightrope room's deathly rangers and mages stand on a platform across the rope, where no melee weapon can be brought to bear, so every melee loadout scores zero against them. This is a blanket melee immunity rather than a reach row because halberd reach does not close the gap either. The wiki describes the platform and counts the tightrope among the raid's Ranged rooms rather than its melee ones, but nowhere states the unreachability itself, so that half rests on in-game behaviour and stands unsourced. Not modelled: the room's tolerance and stalled-damage timing, and the keystone killing any survivors outright, neither of which steady-state DPS can express.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Chambers_of_Xeric/Strategies",
+    "quotes": [
+     "stand on a platform with a tightrope running in between",
+     "Ranged is used throughout the raid at Olm's final phase, Vespula, Vasa, the magic Vanguard, Shamans, Mystics, Muttadiles, and Tightrope."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "none",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ],
+  "immuneAny": [
+   {
+    "monsterClass": "deathlyTightrope",
+    "category": "MELEE"
+   }
+  ],
+  "styleBlanket": true
  }
 ]

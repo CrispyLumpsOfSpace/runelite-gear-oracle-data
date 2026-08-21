@@ -1713,5 +1713,23 @@
     "verified": "2026-08-21"
    }
   ]
+ },
+ {
+  "key": "deathlyTightrope",
+  "ids": [
+   7559,
+   7560
+  ],
+  "description": "The Chambers of Xeric tightrope room's deathly rangers (7559) and deathly mages (7560), which stand on their own platform across the rope and so are out of melee reach. Keyed by id because one id carries both the normal and the Challenge Mode version of each monster, so the two ids cover all four bestiary rows.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Chambers_of_Xeric/Strategies",
+    "quotes": [
+     "stand on a platform with a tightrope running in between"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  }
 ]

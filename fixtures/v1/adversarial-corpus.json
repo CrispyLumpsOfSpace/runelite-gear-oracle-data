@@ -500,6 +500,38 @@
    ]
   },
   {
+   "name": "deathly-tightrope-unreachable",
+   "mechanics": [
+    "DeathlyTightropeUnreachable"
+   ],
+   "monster": "Deathly ranger",
+   "items": [
+    {
+     "name": "Test big slash sword 2",
+     "slot": "WEAPON",
+     "aslash": 140,
+     "str": 150,
+     "aspeed": 4
+    },
+    {
+     "name": "Test short bow",
+     "slot": "WEAPON",
+     "arange": 60,
+     "aspeed": 4
+    },
+    {
+     "name": "Test iron arrow",
+     "slot": "AMMO",
+     "rstr": 10
+    }
+   ],
+   "expectStyleAbsent": [
+    "MELEE_STAB",
+    "MELEE_SLASH",
+    "MELEE_CRUSH"
+   ]
+  },
+  {
    "name": "salve-on-undead",
    "mechanics": [
     "SlayerSalveGroup"
