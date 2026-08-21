@@ -49,7 +49,7 @@
  },
  {
   "id": "InquisitorSet",
-  "source": "https://oldschool.runescape.wiki/w/Inquisitor%27s_armour \"inquisitor's great helm by 0.5%, inquisitor's hauberk by 1%, and inquisitor's plateskirt by 1%\" \u2014 half a percent per piece to accuracy and damage alike, plus one more percent for the full three, Crush style only. The mace bonus was removed and baked into its combat stats (crush +95 to +102, strength +89 to +96), so modelling the old tripling would double-count that buff. Stated as the three factors the piece count can reach rather than as a running sum: 1.005, 1.01 and 1.025 are exactly 201/200, 101/100 and 41/40, so the cascade is bit-identical to the accumulation it replaces.",
+  "source": "https://oldschool.runescape.wiki/w/Inquisitor%27s_armour \"inquisitor's great helm by 0.5%, inquisitor's hauberk by 1%, and inquisitor's plateskirt by 1%\" \u2014 per piece, not per count: the helm carries half a percent and the hauberk and plateskirt a full one each, summed and applied as one floored stage to accuracy and damage alike, Crush style only. The mace bonus was removed and baked into its combat stats (crush +95 to +102, strength +89 to +96), so modelling the old tripling would double-count that buff. The five reachable sums are exact fractions: 2.5% is 41/40, 2% is 51/50, 1.5% is 203/200, 1% is 101/100 and 0.5% is 201/200, so the cascade below is a first-match-wins statement of which pieces are worn.",
   "when": {
    "style": "MELEE_CRUSH"
   },
@@ -71,7 +71,34 @@
      "setPieces": {
       "set": "INQUISITOR",
       "atLeast": 2
+     },
+     "not": {
+      "worn": "INQUISITOR_HELM"
      }
+    },
+    "factor": [
+     51,
+     50
+    ]
+   },
+   {
+    "when": {
+     "setPieces": {
+      "set": "INQUISITOR",
+      "atLeast": 2
+     }
+    },
+    "factor": [
+     203,
+     200
+    ]
+   },
+   {
+    "when": {
+     "wornAny": [
+      "INQUISITOR_BODY",
+      "INQUISITOR_LEGS"
+     ]
     },
     "factor": [
      101,
@@ -80,10 +107,7 @@
    },
    {
     "when": {
-     "setPieces": {
-      "set": "INQUISITOR",
-      "atLeast": 1
-     }
+     "worn": "INQUISITOR_HELM"
     },
     "factor": [
      201,
@@ -109,7 +133,34 @@
      "setPieces": {
       "set": "INQUISITOR",
       "atLeast": 2
+     },
+     "not": {
+      "worn": "INQUISITOR_HELM"
      }
+    },
+    "factor": [
+     51,
+     50
+    ]
+   },
+   {
+    "when": {
+     "setPieces": {
+      "set": "INQUISITOR",
+      "atLeast": 2
+     }
+    },
+    "factor": [
+     203,
+     200
+    ]
+   },
+   {
+    "when": {
+     "wornAny": [
+      "INQUISITOR_BODY",
+      "INQUISITOR_LEGS"
+     ]
     },
     "factor": [
      101,
@@ -118,10 +169,7 @@
    },
    {
     "when": {
-     "setPieces": {
-      "set": "INQUISITOR",
-      "atLeast": 1
-     }
+     "worn": "INQUISITOR_HELM"
     },
     "factor": [
      201,
@@ -582,7 +630,7 @@
  {
   "id": "SlayerSalveGroup",
   "kind": "exclusiveGroup",
-  "source": "https://oldschool.runescape.wiki/w/Salve_amulet \"The salve amulet's bonuses against the undead do not stack with the black mask and slayer helmet's 16.67% attack and strength bonuses; wearing both will only apply the bonuses of the salve amulet.\" The higher single multiplier wins, covering accuracy and damage alike, applied as its own separately-floored stage. Magic differs: the salve (i)/(ei) joins the additive damage block (15/20 points; the un-imbued salve and salve (e) give no Magic bonus at all) while the black mask (i) stays its own floored stage and never stacks with it. The Dragon hunter wand's passive \"stacks with the Slayer helm (i) ... but not the salve amulet (i)\", so the salve contributes nothing while it runs. Bound: salve tops out at 1.20 x 1.20, slayer headgear at (7/6)^2, both firing only on undead or on task; a roll multiplier m raises hit chance by at most m, so acc x dmg is the DPS ceiling.",
+  "source": "https://oldschool.runescape.wiki/w/Salve_amulet \"The salve amulet's bonuses against the undead do not stack with the black mask and slayer helmet's 16.67% attack and strength bonuses; wearing both will only apply the bonuses of the salve amulet.\" The un-imbued tiers are \"a 16.67% increase in the wearer's Attack and Strength when fighting undead\", so the plain salve and the (i) give 7/6 rather than 1.15; the (i) carries that 16.67% on melee and Ranged alike and only Magic takes 15%. The higher single multiplier wins, covering accuracy and damage alike, applied as its own separately-floored stage. Magic differs: the salve (i)/(ei) joins the additive damage block (15/20 points; the un-imbued salve and salve (e) give no Magic bonus at all) while the black mask (i) stays its own floored stage and never stacks with it. The Dragon hunter wand's passive \"stacks with the Slayer helm (i) ... but not the salve amulet (i)\", so the salve contributes nothing while it runs. Bound: salve tops out at 1.20 x 1.20, slayer headgear at (7/6)^2, both firing only on undead or on task; a roll multiplier m raises hit chance by at most m, so acc x dmg is the DPS ceiling.",
   "filterWhen": {
    "anyOf": [
     {
@@ -596,7 +644,7 @@
   "let": {
    "wandOverride": "style.magic && monster.attr('DRAGON') && worn('DRAGON_HUNTER_WAND')",
    "salveActive": "monster.attr('UNDEAD') && !wandOverride",
-   "salve": "!salveActive ? 1 : worn('SALVE_AMULET_EI') ? 1.20 : worn('SALVE_AMULET_I') ? 1.15 : worn('SALVE_AMULET_E') ? (style.melee ? 1.20 : 1) : worn('SALVE_AMULET') ? (style.melee ? 1.15 : 1) : 1",
+   "salve": "!salveActive ? 1 : worn('SALVE_AMULET_EI') ? 1.20 : worn('SALVE_AMULET_I') ? (style.magic ? 1.15 : 7/6) : worn('SALVE_AMULET_E') ? (style.melee ? 1.20 : 1) : worn('SALVE_AMULET') ? (style.melee ? 7/6 : 1) : 1",
    "helm": "!player.onSlayerTask || !wornFamily('slayerHelm') ? 1 : style.melee ? 7/6 : wornFamily('imbuedSlayerHeadgear') ? 1.15 : 1",
    "magicSalvePercent": "!salveActive ? 0 : worn('SALVE_AMULET_EI') ? 20.0 : worn('SALVE_AMULET_I') ? 15.0 : 0"
   },

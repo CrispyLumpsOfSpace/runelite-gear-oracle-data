@@ -930,10 +930,9 @@
   "group": "poweredStaffType",
   "text": "NONE",
   "nameContains": [
-   "accursed sceptre&(a",
-   "accursed sceptre&(u"
+   "accursed sceptre&(a"
   ],
-  "source": "The wilderness sceptres: only the plain charged form is a powered staff. \"(a)\" casts its built-in spell only during the special and \"(u)\"/\"(au)\" are uncharged, so both suffixes veto here."
+  "source": "The wilderness sceptres: https://oldschool.runescape.wiki/w/Accursed_sceptre \"To use the sceptre's passive effect, it must first be activated\" scopes the ether requirement to the passive, so the uncharged \"(u)\" still casts the built-in spell and stays a powered staff (equipment-full.json categorises it as one); only \"(a)\"/\"(au)\", which cast during the special attack alone, veto here."
  },
  {
   "key": "staffAccursed",
