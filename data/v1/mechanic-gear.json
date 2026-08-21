@@ -467,7 +467,7 @@
  {
   "id": "VoidKnightBonus",
   "kind": "modifier",
-  "source": "https://oldschool.runescape.wiki/w/Void_Knight_equipment melee/ranged 10% accuracy, magic 45%; damage: melee 10%, ranged 10% (elite 12.5%), magic 5% with elite only. Applied to the effective level after the stance bonus and constant, floored, per the wiki's Melee and Ranged DPS articles; for Magic the engine keeps the same post-constant position, which the recorded vectors agree with (see docs/ENGINE-GAPS.md).",
+  "source": "https://oldschool.runescape.wiki/w/Void_Knight_equipment melee/ranged 10% accuracy, magic 45%; damage: melee 10%, ranged 10% (elite 12.5%), magic 5% with elite only. Accuracy is applied to the effective level after the stance bonus and constant, floored, per the wiki's Melee and Ranged DPS articles; for Magic the engine keeps the same post-constant position, which the recorded vectors agree with (see docs/ENGINE-GAPS.md). The magic damage arm is read as a percentage into the additive bracket instead: https://oldschool.runescape.wiki/w/Maximum_magic_hit PrimaryMagicDamage = floor(BaseDamageModifier x (1 + min(1, (VisibleBonuses - Void) x ShadowBonus) + Void + Salve + Avarice + SmokeBattlestaff + VirtusRobesAncientBonus + Prayer)).",
   "when": {},
   "accuracy": [
    {
