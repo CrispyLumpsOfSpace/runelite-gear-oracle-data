@@ -253,7 +253,7 @@
  {
   "id": "AnimatedArmourMeleeOnly",
   "kind": "immunity",
-  "source": "https://oldschool.runescape.wiki/w/Animated_Bronze_Armour \"Like all other animated armour variants, it is immune to Ranged and Magic attacks.\" Id-keyed because the Warriors' Guild animation ids are the immune ones.",
+  "source": "https://oldschool.runescape.wiki/w/Animated_Bronze_Armour \"Like all other animated armour variants, it is immune to Ranged and Magic attacks.\" Id-keyed because the Warriors' Guild animation ids are the immune ones, and https://oldschool.runescape.wiki/w/Animated_armour enumerates those variants as the seven guild ones. Not the Tarn's Lair armour (6438), a separate article carrying +400 magic and ranged defence and no immunity.",
   "immuneAny": [
    {
     "monsterIds": [
@@ -263,8 +263,7 @@
      2453,
      2454,
      2455,
-     2456,
-     6438
+     2456
     ],
     "not": {
      "category": "MELEE"

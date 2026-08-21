@@ -840,11 +840,12 @@
  {
   "id": "DarkBowMechanic",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Dark_bow \"fires two arrows per attack which roll independent accuracy checks\" \u2014 neither arrow is halved, unlike the twin weapons, and the displayed ceiling is both together.",
+  "source": "https://oldschool.runescape.wiki/w/Dark_bow \"fires two arrows per attack which roll independent accuracy checks\" \u2014 neither arrow is halved, unlike the twin weapons, and the displayed ceiling is both together. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\".",
   "when": {
    "category": "RANGED",
    "worn": "DARK_BOW"
   },
+  "alwaysMaxHitYields": "effective",
   "splats": [
    {},
    {}
@@ -856,7 +857,7 @@
  {
   "id": "SplitHitWeaponMechanic",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Sulphur_blades \"it performs two independently rolled hits per attack\"; \"The maximum damage of each hit is determined by calculating the combined max hit as normal and dividing it by two.\" Five melee weapons (sulphur blades, glacial temotli, earthbound tecpatl, infernal tecpatl, Torag's hammers) and one Ranged weapon (King's barrage) share the arithmetic; the first hit floors and the second takes the remainder. No style gate: every weapon in the set is usable in exactly one style, so holding one IS the gate.",
+  "source": "https://oldschool.runescape.wiki/w/Sulphur_blades \"it performs two independently rolled hits per attack\"; \"The maximum damage of each hit is determined by calculating the combined max hit as normal and dividing it by two.\" Five melee weapons (sulphur blades, glacial temotli, earthbound tecpatl, infernal tecpatl, Torag's hammers) and one Ranged weapon (King's barrage) share the arithmetic; the first hit floors and the second takes the remainder. No style gate: every weapon in the set is usable in exactly one style, so holding one IS the gate. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\".",
   "when": {
    "wornAny": [
     "SULPHUR_BLADES",
@@ -872,6 +873,7 @@
     "category": "MAGIC"
    }
   },
+  "alwaysMaxHitYields": "effective",
   "splats": [
    {
     "fraction": [
@@ -888,11 +890,12 @@
  {
   "id": "DualMacuahuitlMechanic",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Dual_macuahuitl \"dealing damage in two hitsplats, with both hitsplats having their max hit halved\" \u2014 one tick apart, and the accuracy checks are sequential rather than independent: the second hit rolls only if the first landed.",
+  "source": "https://oldschool.runescape.wiki/w/Dual_macuahuitl \"dealing damage in two hitsplats, with both hitsplats having their max hit halved\" \u2014 one tick apart, and the accuracy checks are sequential rather than independent: the second hit rolls only if the first landed. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\".",
   "when": {
    "category": "MELEE",
    "worn": "DUAL_MACUAHUITL"
   },
+  "alwaysMaxHitYields": "effective",
   "splats": [
    {
     "fraction": [
@@ -910,11 +913,12 @@
  {
   "id": "ScytheOfViturMechanic",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Scythe_of_vitur \"A 2x2 monster (such as Vardorvis) will be hit twice per attack, while a 3x3 or larger monster (such as dragons and Duke Sucellus) will be hit three times per attack.\" 100% / 50% / 25% of the max hit, with flat armour applying per hit against each hit's own ceiling rather than once against the combined one.",
+  "source": "https://oldschool.runescape.wiki/w/Scythe_of_vitur \"A 2x2 monster (such as Vardorvis) will be hit twice per attack, while a 3x3 or larger monster (such as dragons and Duke Sucellus) will be hit three times per attack.\" 100% / 50% / 25% of the max hit, with flat armour applying per hit against each hit's own ceiling rather than once against the combined one. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\".",
   "when": {
    "category": "MELEE",
    "worn": "SCYTHE_OF_VITUR"
   },
+  "alwaysMaxHitYields": "effective",
   "splats": [
    {},
    {
