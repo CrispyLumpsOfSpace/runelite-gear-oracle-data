@@ -1279,13 +1279,13 @@
  {
   "id": "OsmumtenFangWindow",
   "kind": "rollWindow",
-  "source": "https://oldschool.runescape.wiki/w/Osmumten%27s_fang the fang narrows the roll by taking a 15% slice off both ends: [shrink, maxHit - shrink], not [15% of max, 85% of max]; the two ends share one term, not rounded independently.",
+  "source": "https://oldschool.runescape.wiki/w/Osmumten%27s_fang the fang narrows the roll by taking a 15% slice off both ends: [shrink, maxHit - shrink], not [15% of max, 85% of max]; the two ends share one term, not rounded independently. It \"occurs with any attack type\", unlike the accuracy re-roll that \"only occurs when using the Stab attack styles\", so this row is scoped to the weapon and not to Stab; the fang's Slash option keeps the window and loses the double roll.",
   "when": {
-   "style": "MELEE_STAB",
+   "category": "MELEE",
    "worn": "OSMUMTEN_FANG"
   },
   "filterWhen": {
-   "style": "MELEE_STAB"
+   "category": "MELEE"
   },
   "lo": "floor(0.15 * maxHit)",
   "hi": "maxHit - floor(0.15 * maxHit)",
