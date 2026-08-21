@@ -776,8 +776,10 @@
  },
  {
   "id": "SeekingArrowMinimum",
-  "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Update:The_Blood_Moon_Rises \u2014 seeking arrows carry \"a minimum hit of 3\", CLAMPED per roll (a rolled 1 or 2 lands as 3) rather than shifting the range, which is what separates them from sunfire runes. The clamp lands before flat armour and after accuracy, so a miss is still a miss. Name-identified, and the arrows must be ones the weapon can actually fire \u2014 arrows it cannot never leave the quiver. The bound's 2 is the floor's 3 minus the 1 an accurate hit already pays, per shot at the weapon's rapid-stance minimum attack time.",
+  "kind": "rollWindow",
+  "shapesHitsplats": true,
+  "clampsRoll": true,
+  "source": "https://oldschool.runescape.wiki/w/Update:The_Blood_Moon_Rises \u2014 seeking arrows carry \"a minimum hit of 3\", CLAMPED per roll (a rolled 1 or 2 lands as 3) rather than shifting the range, which is what separates them from sunfire runes. The clamp lands before flat armour and after accuracy, so a miss is still a miss. https://oldschool.runescape.wiki/w/Seeking_arrows \"The lowest possible hits are 3,3,3,3 - NOT 3,4,5,6\" \u2014 the clamp is per hitsplat, so it shapes every splat the bow fires rather than replacing the distribution. Name-identified, and the arrows must be ones the weapon can actually fire \u2014 arrows it cannot never leave the quiver. The bound's 2 is the floor's 3 minus the 1 an accurate hit already pays, per shot at the weapon's rapid-stance minimum attack time.",
   "when": {
    "category": "RANGED",
    "ammoFamily": "seekingArrow",
@@ -786,11 +788,8 @@
   "filterWhen": {
    "category": "RANGED"
   },
-  "splats": [
-   {
-    "damageFloor": 3
-   }
-  ],
+  "lo": "3",
+  "hi": "maxHit",
   "aggregateBoundSafe": true,
   "bound": {
    "families": [
