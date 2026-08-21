@@ -16,7 +16,7 @@
   "mechanic-immunities.json": "6ee34eef5a34503bd7a7fc5420525796f37800d003bf2b92b71bd1618f7bf455",
   "mechanic-monsters.json": "2b8f55a006245f356253491fd0bbb19200336b5e419128f8224301bc3c72512a",
   "mechanic-rows.json": "0ad815508cf8de0f80db92ffb89bfd130d8c045c95e825b1606d08eb1de38265",
-  "mechanic-weapons.json": "2357c9da401eb548ef9e5beb818a72b6fea1cd363750986fde91cc84d73d2a4f",
+  "mechanic-weapons.json": "3daaee9ff5c9bdb8454d25ba63e8c889f2c87747c70628d740acff535ddde532",
   "meta.json": "b4ba7292aa9601cafa04b9d3a8a44b4ef456edc469cc3dbd77f109e29dba5543",
   "monster-families.json": "a44c40f2a1513380ac14d24ec20446e73f13b100867f5281cf44089df03bab4f",
   "monsters.json": "389eabecf089d17b81052aef7e41b3ba7bf1d2d9782e3445c7b058adc53b389a",
@@ -29,7 +29,7 @@
   "setup-modifiers.json": "de2ca2f842b6cdf14fa065a63d2118d1cada90226de6431693599fb5675e5cb7",
   "slayer-equipment.json": "ccdba7668e600ebe1f1500ff1f29ba132ff33992679c5b186cd00e83d2b8b24a",
   "slayer-finishers.json": "5972dd4aa423e7c1a40198b4bd6fc1d4f4a387908a761c65b246144d2900682e",
-  "special-attack-weapons.json": "5e71ab4d5278b8368dc765e26402b57ce4edb51a0853d126ec158f4fb1487626",
+  "special-attack-weapons.json": "f0a8e15a92c744b8858d1b80c35d21d1e318b85b2c8c738608b3b968ecd3a225",
   "special-item-patterns.json": "10c98288c3a21058ed85823339c35ce6a0fdfb3eda36dd320f35a4a487ca0051",
   "status-immunities.json": "4e54c6857a8567a01ac579e4e1361ba937ac76f982e3823b1bebf4bb64ced2f7",
   "weapon-families.json": "204d2ecdb33f521bddbdff5b0a4d10ae6ae2a96074e2887306647edb31ba00eb"

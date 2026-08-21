@@ -1481,7 +1481,7 @@
  {
   "id": "HalberdSweepSecondHit",
   "kind": "splitHit",
-  "source": "https://oldschool.runescape.wiki/w/Halberd \"the only melee weapons capable of hitting enemies\" at a two-tile range: Sweep lands a second hitsplat against targets larger than 1x1, the second swing reducing the attack roll by 25% at roll level before hit chance is re-derived; folding it into the accuracy sum keeps (a1 + a2) * E exactly. The damage bonus is already in maxHit.",
+  "source": "https://oldschool.runescape.wiki/w/Halberd \"the only melee weapons capable of hitting enemies\" at a two-tile range: Sweep lands a second hitsplat against targets larger than 1x1, the second swing reducing the attack roll by 25% at roll level before hit chance is re-derived; folding it into the accuracy sum keeps (a1 + a2) * E exactly. https://oldschool.runescape.wiki/w/Dragon_halberd says only \"an additional second hit onto them, although with 25% reduced accuracy\", which does not distinguish a 3/4 attack roll from a 3/4 hit chance: the roll-level reading is a pinned assumption whose only support is agreement with the reference battery. The damage bonus is already in maxHit.",
   "when": {
    "specShape": "HALBERD_SWEEP",
    "targetSizeAtLeast": 2
