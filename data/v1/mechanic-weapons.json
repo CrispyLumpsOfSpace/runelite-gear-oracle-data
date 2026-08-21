@@ -758,7 +758,7 @@
  {
   "id": "GraniteHammerFlatBonus",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Granite_hammer \"guaranteeing 5 additional damage\" \u2014 even on a miss, so the expectation is accuracy * E[roll] + 5 rather than accuracy * (E[roll] + 5), which is why this is a shape and not a damage factor. The roll underneath takes no accurate-0-lands-as-1 raise: that rule is vacuous once 5 is guaranteed.",
+  "source": "https://oldschool.runescape.wiki/w/Granite_hammer \"guaranteeing 5 additional damage to that attack\", and \"Even if the special attack misses, the target will still take a minimum of 5 damage from it\" \u2014 one attack, one hitsplat, so the 5 rides inside the roll and takes flat armour (https://oldschool.runescape.wiki/w/Flat_armour \"subtracting the flat armour value from the attack's final damage roll\") and the target's damage cap with it, rather than landing beside it. The roll underneath takes no accurate-0-lands-as-1 raise: that rule is vacuous once 5 is guaranteed.",
   "when": {
    "specShape": "FLAT_BONUS_EVEN_ON_MISS"
   },
@@ -769,10 +769,8 @@
   "alwaysMaxHitYields": "effective",
   "splats": [
    {
-    "unraised": true
-   },
-   {
-    "flat": 5,
+    "unraised": true,
+    "addend": 5,
     "accuracyPower": 0
    }
   ]
