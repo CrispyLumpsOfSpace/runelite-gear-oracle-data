@@ -96,7 +96,8 @@
    "ROD_OF_IVANDIS",
    "SILVERLIGHT",
    "DARKLIGHT",
-   "ARCLIGHT"
+   "ARCLIGHT",
+   "EMBERLIGHT"
   ],
   "nameContains": [
    "silver sickle",
@@ -106,7 +107,7 @@
    "blessed axe",
    "wolfbane"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Vampyre \"Only specific silver weapons deal full damage\". The diamond sickle is the 2025 Blood Moon Rises addition \u2014 \"a blessed silver sickle with a diamond recessed into it\" \u2014 missing from the oracle's own silver list, so no vector can confirm it; the wiki's examine text is the source. Without it the engine reports zero damage against tier-2 vampyres for a weapon that works in game."
+  "source": "https://oldschool.runescape.wiki/w/Silver_weaponry \"Tier 2 only\" lists the blessed axe, rod of Ivandis, the silver and gem sickles, Silverlight, Darklight, Arclight, Emberlight and Wolfbane. The diamond sickle is the 2025 Blood Moon Rises addition \u2014 \"a blessed silver sickle with a diamond recessed into it\" \u2014 missing from the oracle's own silver list, so no vector can confirm it; the wiki's examine text is the source. Without it the engine reports zero damage against tier-2 vampyres for a weapon that works in game."
  },
  {
   "key": "silverRanged",
@@ -905,7 +906,7 @@
   "nameContains": [
    "sanguinesti&uncharged"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Sanguinesti_staff \"To use the staff's magic spell, it must be charged with blood runes\" — the uncharged staff casts nothing, so it precedes the staff it vetoes."
+  "source": "https://oldschool.runescape.wiki/w/Sanguinesti_staff \"To use the staff's magic spell, it must be charged with blood runes\" \u2014 the uncharged staff casts nothing, so it precedes the staff it vetoes."
  },
  {
   "key": "staffSanguinesti",
