@@ -84,6 +84,28 @@
   "source": "https://oldschool.runescape.wiki/w/Nylocas_Hagios \u2014 the magic form, immune to all but Magic."
  },
  {
+  "key": "nylocasPrinkipasMelee",
+  "ids": [
+   10803,
+   10804
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas \u2014 the white form, immune to all but Melee. Keyed by id because all three forms share one name."
+ },
+ {
+  "key": "nylocasPrinkipasRanged",
+  "ids": [
+   10806
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas \u2014 the green form, immune to all but Ranged."
+ },
+ {
+  "key": "nylocasPrinkipasMagic",
+  "ids": [
+   10805
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas \u2014 the blue form, immune to all but Magic."
+ },
+ {
   "key": "fragmentOfSeren",
   "nameContains": [
    "fragment of seren"

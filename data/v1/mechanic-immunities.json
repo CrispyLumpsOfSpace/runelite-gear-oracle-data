@@ -118,7 +118,7 @@
  {
   "id": "NylocasFormImmunity",
   "kind": "immunity",
-  "source": "https://oldschool.runescape.wiki/w/Nylocas_Vasilias \u2014 blue for magic, green for ranged and white for melee; the wrong style reflects the hit back.",
+  "source": "https://oldschool.runescape.wiki/w/Nylocas_Vasilias \u2014 blue for magic, green for ranged and white for melee; the wrong style reflects the hit back. https://oldschool.runescape.wiki/w/Nylocas_Prinkipas carries the same rule and is keyed by id, its three forms sharing one name. Not modelled: Nylocas Vasilias itself, whose four form ids are shipped as a single row, so no form can be told from another.",
   "immuneAny": [
    {
     "monsterClass": "nylocasIschyros",
@@ -134,6 +134,24 @@
    },
    {
     "monsterClass": "nylocasHagios",
+    "not": {
+     "category": "MAGIC"
+    }
+   },
+   {
+    "monsterClass": "nylocasPrinkipasMelee",
+    "not": {
+     "category": "MELEE"
+    }
+   },
+   {
+    "monsterClass": "nylocasPrinkipasRanged",
+    "not": {
+     "category": "RANGED"
+    }
+   },
+   {
+    "monsterClass": "nylocasPrinkipasMagic",
     "not": {
      "category": "MAGIC"
     }
