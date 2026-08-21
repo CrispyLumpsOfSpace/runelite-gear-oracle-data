@@ -1643,7 +1643,7 @@
  {
   "id": "EmeraldBoltProc",
   "kind": "additiveHit",
-  "source": "https://oldschool.runescape.wiki/w/Emerald_bolts_(e) 55% chance on a landed hit to poison for 75 total damage over ~450 seconds, converted to a per-shot average through the attack time the engine divides by (expectedAttackTicks, not the base speed, so an attackSpeed row cannot leave the conversion uncancelled); nothing against the poison-immune. The Zaryte's 1.1 lands flat, this being a flat-damage bolt.",
+  "source": "https://oldschool.runescape.wiki/w/Emerald_bolts_(e) 55% chance on a landed hit to poison: \"The total poison damage dealt by a single emerald bolt proc is 75 health points over 7.5 minutes. With the Zaryte crossbow, this is increased to 87 over 8.1 minutes\", inflicted \"every 30 game ticks (18 seconds)\" at 5 damage per interval to start, 6 with the Zaryte's higher severity. https://oldschool.runescape.wiki/w/Poison \"The poison's duration can be reset while the enemy is poisoned with the same chance as on an unpoisoned enemy\", and the interval timer belongs to the NPC, so a re-applying weapon holds the opening damage indefinitely: the contribution is the lesser of what the procs deliver and what the poison can pay out, converted to a per-shot average through the attack time the engine divides by (expectedAttackTicks, not the base speed, so an attackSpeed row cannot leave the conversion uncancelled). Nothing against the poison-immune.",
   "when": {
    "style": "RANGED",
    "ammoCompatible": "true",
@@ -1653,14 +1653,14 @@
   "filterWhen": {
    "style": "RANGED"
   },
-  "extra": "(worn('ZARYTE_CROSSBOW') ? 1.1 : 1) * (player.kandarinHardDiary ? 1.1 : 1) * (accuracy * 0.55 * (75.0 / 450.0) * (expectedAttackTicks * 0.6))",
+  "extra": "min(accuracy * 0.55 * (player.kandarinHardDiary ? 1.1 : 1) * (worn('ZARYTE_CROSSBOW') ? 87.0 : 75.0), (worn('ZARYTE_CROSSBOW') ? 6.0 : 5.0) * (expectedAttackTicks * 0.6) / 18.0)",
   "aggregateBoundSafe": true,
   "bound": {
    "items": [
     "EMERALD_BOLTS"
    ],
    "category": "RANGED",
-   "addendDps": "!chunk.canFire || monster.poisonImmune ? 0 : 0.55 * (player.kandarinHardDiary ? 1.1 : 1) * (75.0 / 450.0)"
+   "addendDps": "!chunk.canFire || monster.poisonImmune ? 0 : (chunk.special('ZARYTE_CROSSBOW') ? 6.0 : 5.0) / 18.0"
   }
  },
  {
