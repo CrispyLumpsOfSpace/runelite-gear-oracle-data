@@ -38,7 +38,7 @@
  {
   "id": "ReachRequiredImmunity",
   "kind": "immunity",
-  "source": "https://oldschool.runescape.wiki/w/Aviansie \"As they are airborne, they are immune to being directly targeted by melee attacks except for salamanders and halberds.\" Attribute-keyed for the airborne, which catches the ones a name list would miss (Vespula, reanimated aviansies); Zulrah is the halberdReach family instead, needing the same reach for a different reason: \"It cannot be reached with melee (with the exception of halberds).\" Not modelled: splash damage from scythes or bulwarks onto airborne targets, and weapon reach in tiles.",
+  "source": "https://oldschool.runescape.wiki/w/Flying \"immune to melee damage except for polearms\". Attribute-keyed for the airborne, which catches the ones a name list would miss (Vespula, reanimated aviansies); Zulrah is the halberdReach family instead, needing the same reach for a different reason: https://oldschool.runescape.wiki/w/Zulrah \"It cannot be reached with melee (with the exception of halberds).\" The salamander escape is narrowed to the salamanderMeleeable family, the targets whose own articles still name salamanders, since https://oldschool.runescape.wiki/w/Grotesque_Guardians (\"Dawn is flying and cannot be targeted by non-halberd melee weapons\") and Vespula's 6 August 2025 note (\"Halberds can now do damage to Vespula when flying\") except halberds alone. Not modelled: splash damage from scythes or bulwarks onto airborne targets, and weapon reach in tiles.",
   "immuneAny": [
    {
     "category": "MELEE",
@@ -54,7 +54,8 @@
     "weaponFlag": "halberd"
    },
    {
-    "weaponFamily": "salamander"
+    "weaponFamily": "salamander",
+    "monsterClass": "salamanderMeleeable"
    }
   ]
  },
@@ -117,7 +118,7 @@
  {
   "id": "NylocasFormImmunity",
   "kind": "immunity",
-  "source": "https://oldschool.runescape.wiki/w/Nylocas_Vasilias \u2014 blue for magic, green for ranged and white for melee; the wrong style reflects the hit back.",
+  "source": "https://oldschool.runescape.wiki/w/Nylocas_Vasilias \u2014 blue for magic, green for ranged and white for melee; the wrong style reflects the hit back. https://oldschool.runescape.wiki/w/Nylocas_Prinkipas carries the same rule and is keyed by id, its three forms sharing one name. Not modelled: Nylocas Vasilias itself, whose four form ids are shipped as a single row, so no form can be told from another.",
   "immuneAny": [
    {
     "monsterClass": "nylocasIschyros",
@@ -133,6 +134,24 @@
    },
    {
     "monsterClass": "nylocasHagios",
+    "not": {
+     "category": "MAGIC"
+    }
+   },
+   {
+    "monsterClass": "nylocasPrinkipasMelee",
+    "not": {
+     "category": "MELEE"
+    }
+   },
+   {
+    "monsterClass": "nylocasPrinkipasRanged",
+    "not": {
+     "category": "RANGED"
+    }
+   },
+   {
+    "monsterClass": "nylocasPrinkipasMagic",
     "not": {
      "category": "MAGIC"
     }
