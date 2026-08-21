@@ -69,11 +69,14 @@ jobs:
         with:
           path: data
 
+      # The plugin repo is private; github.token cannot read it. Until the repo
+      # goes public, this job needs a PLUGIN_REPO_TOKEN repo secret (contents:read).
       - uses: actions/checkout@v4
         with:
           repository: CrispyLumpsOfSpace/runelite-gear-oracle
           ref: master
           path: plugin
+          token: ${{ secrets.PLUGIN_REPO_TOKEN || github.token }}
 
       - uses: actions/setup-java@v4
         with:
