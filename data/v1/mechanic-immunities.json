@@ -124,7 +124,7 @@
  {
   "id": "VampyreBaneImmunity",
   "kind": "immunity",
-  "description": "Vampyres are split across three caste attributes so that a tier-1 quest boss like Count Draynor is told apart from the higher ones: tier 1 takes full damage from any weapon, tier 2 takes nothing from regular weapons unless Efaritay's aid is worn, and tier 3 only from specific silver weapons. The rod of ivandis reaches tier 2 only, so it is excluded from the general melee vampyrebane escape; the blisterwood stake is the Ranged way through and is checked first, since a thrown stake is not a melee vampyrebane. Silver bolts are an ammo-slot item fired from iron crossbows or better, so the tier-2 Ranged escape reads the ammo slot.",
+  "description": "Vampyres are split across three caste attributes so that a tier-1 quest boss like Count Draynor is told apart from the higher ones: tier 1 takes full damage from any weapon, tier 2 takes nothing from regular weapons unless Efaritay's aid is worn, and tier 3 only from specific silver weapons. The rod of ivandis reaches tier 2 only, so it is excluded from the general melee vampyrebane escape; the blisterwood stake is the Ranged way through and is checked first, since a thrown stake is not a melee vampyrebane. Silver bolts are an ammo-slot item fired from iron crossbows or better, so the tier-2 Ranged escape reads the ammo slot. Efaritay's aid unlocks weaponry rather than casting, so its escape excludes Magic; the blisterwood flail article states flatly that no spell damages a vampyre of any tier.",
   "_cite": [
    {
     "kind": "wiki",
@@ -150,6 +150,22 @@
     "url": "https://oldschool.runescape.wiki/w/Rod_of_Ivandis",
     "quotes": [
      "It is also one of the weapons that is capable of killing tier 2 vampyres."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Efaritay's_aid",
+    "quotes": [
+     "it allows non-silver weaponry to be used against Tier 2 vampyres, albeit dealing half their usual damage"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Blisterwood_flail",
+    "quotes": [
+     "no spells are capable of dealing damage to vampyres"
     ],
     "verified": "2026-08-21"
    }
@@ -180,7 +196,10 @@
    },
    {
     "vampyreTier": 2,
-    "worn": "EFARITAYS_AID"
+    "worn": "EFARITAYS_AID",
+    "not": {
+     "category": "MAGIC"
+    }
    },
    {
     "vampyreTier": 2,
@@ -199,13 +218,6 @@
   "id": "KrakenImmunity",
   "kind": "immunity",
   "description": "The Kraken cannot be reached by melee weapons and is entirely immune to melee attacks, so every melee loadout scores zero against it. Its Ranged reduction to a seventh is the separate KrakenRangedResistance row.",
-  "immuneAny": [
-   {
-    "monsterClass": "kraken",
-    "category": "MELEE"
-   }
-  ],
-  "styleBlanket": true,
   "_cite": [
    {
     "kind": "wiki",
@@ -216,7 +228,14 @@
     ],
     "verified": "2026-08-21"
    }
-  ]
+  ],
+  "immuneAny": [
+   {
+    "monsterClass": "kraken",
+    "category": "MELEE"
+   }
+  ],
+  "styleBlanket": true
  },
  {
   "id": "NylocasFormImmunity",
@@ -292,15 +311,6 @@
   "id": "GrotesqueGuardiansImmunity",
   "kind": "immunity",
   "description": "Dusk is immune to everything but melee, so no Ranged or Magic loadout scores against it. The immunity takes precedence over the earth-spell elemental weakness its stat block lists.",
-  "immuneAny": [
-   {
-    "monsterClass": "dusk",
-    "not": {
-     "category": "MELEE"
-    }
-   }
-  ],
-  "styleBlanket": true,
   "_cite": [
    {
     "kind": "wiki",
@@ -311,23 +321,21 @@
     ],
     "verified": "2026-08-21"
    }
-  ]
+  ],
+  "immuneAny": [
+   {
+    "monsterClass": "dusk",
+    "not": {
+     "category": "MELEE"
+    }
+   }
+  ],
+  "styleBlanket": true
  },
  {
   "id": "SalarinImmunity",
   "kind": "immunity",
   "description": "Salarin the Twisted can be damaged only by Strike spells; melee, Ranged and every other spell do nothing to him. Not modelled: the ring of recoil and dynamite damage that also hurt him.",
-  "immuneAny": [
-   {
-    "monsterClass": "salarin"
-   }
-  ],
-  "unless": [
-   {
-    "category": "MAGIC",
-    "spellFamily": "strikeSpell"
-   }
-  ],
   "_cite": [
    {
     "kind": "wiki",
@@ -338,23 +346,23 @@
     ],
     "verified": "2026-08-21"
    }
+  ],
+  "immuneAny": [
+   {
+    "monsterClass": "salarin"
+   }
+  ],
+  "unless": [
+   {
+    "category": "MAGIC",
+    "spellFamily": "strikeSpell"
+   }
   ]
  },
  {
   "id": "SurokMagisImmunity",
   "kind": "immunity",
   "description": "Surok Magis has Protect from Melee and Protect from Missiles up together and is immune to powered staves, so only a cast spell damages him. Not modelled: his immunity to the sapping effects of blood spells, which the steady-state model has no notion of.",
-  "immuneAny": [
-   {
-    "monsterClass": "surokMagis"
-   }
-  ],
-  "unless": [
-   {
-    "category": "MAGIC",
-    "poweredStaff": "false"
-   }
-  ],
   "_cite": [
    {
     "kind": "wiki",
@@ -366,12 +374,23 @@
     ],
     "verified": "2026-08-21"
    }
+  ],
+  "immuneAny": [
+   {
+    "monsterClass": "surokMagis"
+   }
+  ],
+  "unless": [
+   {
+    "category": "MAGIC",
+    "poweredStaff": "false"
+   }
   ]
  },
  {
   "id": "DesertTreasureElementalImmunity",
   "kind": "immunity",
-  "description": "Kamil takes magic damage only from fire spells and Fareed only from water spells; every other spell is stopped outright. The rows narrow to those two monsters and leave the non-magic styles alone.",
+  "description": "Kamil takes magic damage only from fire spells and Fareed only from water spells; every other spell is stopped outright. Fareed also disarms anyone who attacks him in melee range without ice gloves, which a steady-state model can only express as a melee immunity lifted by the gloves. Not modelled: the ashes that swallow any ammunition but ice arrows, which costs supplies rather than damage.",
   "_cite": [
    {
     "kind": "wiki",
@@ -385,7 +404,9 @@
     "kind": "wiki",
     "url": "https://oldschool.runescape.wiki/w/Fareed",
     "quotes": [
-     "can only otherwise be damaged with Water spells or any kind of Ranged weapon"
+     "can only otherwise be damaged with Water spells or any kind of Ranged weapon",
+     "Fareed possesses the unique ability to disarm players who are not wearing ice gloves when they are attacking him close up",
+     "this is not possible for melee users as players who use melee will have their weapon unequipped since they are in close distance"
     ],
     "verified": "2026-08-21"
    }
@@ -403,6 +424,13 @@
     "category": "MAGIC",
     "not": {
      "castElement": "WATER"
+    }
+   },
+   {
+    "monsterClass": "fareed",
+    "category": "MELEE",
+    "not": {
+     "wornFamily": "iceGloves"
     }
    }
   ],
@@ -564,6 +592,60 @@
   "immuneAny": [
    {
     "monsterClass": "deathlyTightrope",
+    "category": "MELEE"
+   }
+  ],
+  "styleBlanket": true
+ },
+ {
+  "id": "FireWarriorIceArrows",
+  "kind": "immunity",
+  "description": "The Fire Warrior of Lesarkus takes damage only from a ranged attack made with ice arrows equipped: the arrows themselves, and also darts or throwing knives thrown while the ice arrows sit in the ammo slot, which is why the escape reads the ammo slot rather than the weapon. Not modelled: the ring of recoil the article names as the one other source of damage, which is not an attack this model prices.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Fire_Warrior_of_Lesarkus",
+    "quotes": [
+     "He is intended to only be damageable by firing the ice arrows that are collected in the icy caverns within the temple.",
+     "However, he can also be damaged by darts and throwing knives, provided that the ice arrows are equipped at the time.",
+     "He can also be damaged with rings of recoil."
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
+  "immuneAny": [
+   {
+    "monsterIds": [
+     3448
+    ]
+   }
+  ],
+  "unless": [
+   {
+    "category": "RANGED",
+    "ammoFamily": "iceArrow"
+   }
+  ]
+ },
+ {
+  "id": "TzKalZukMeleeUnreachable",
+  "kind": "immunity",
+  "description": "TzKal-Zuk stands off the player's platform, so melee never reaches him and only Ranged and Magic score. Keyed by id, which covers the Normal and Enraged bestiary rows alike since both carry 7706. Not modelled: the shield the fight supplies, the Jal healers, or any part of the wave.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/TzKal-Zuk",
+    "quotes": [
+     "As TzKal-Zuk is isolated from the platform the player is on, it cannot be attacked with melee. Only ranged or magic attacks will be able to reach Zuk."
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
+  "immuneAny": [
+   {
+    "monsterIds": [
+     7706
+    ],
     "category": "MELEE"
    }
   ],

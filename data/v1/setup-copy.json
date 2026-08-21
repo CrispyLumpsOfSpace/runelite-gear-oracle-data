@@ -42,6 +42,12 @@
   "body": "Only suggest loadouts you could actually wear on this Slayer task — earmuffs for banshees, a nose peg for spectres, a mirror shield for basilisks, boots of stone in the Karuulm dungeon. A slayer helmet covers all five head requirements. Turn off to see the unconstrained ceiling."
  },
  {
+  "key": "kourendEliteDiary",
+  "label": "Kourend Elite Diary",
+  "title": "Elite Kourend & Kebos Diary",
+  "body": "Completed: the Karuulm dungeon floor no longer burns you, so Wyrm, Drake and Hydra tasks stop spending the boot slot on boots of stone. Nothing else in the Slayer requirement list is waived by a diary."
+ },
+ {
   "key": "ignoreLevelRequirements",
   "label": "Ignore Level Requirements",
   "title": "Ignore level requirements",

@@ -20,6 +20,10 @@
   "default": "defaultRequireTaskEquipment"
  },
  {
+  "copy": "kourendEliteDiary",
+  "default": "defaultKourendEliteDiary"
+ },
+ {
   "copy": "breathProtection",
   "default": "defaultRequireBreathProtection"
  },

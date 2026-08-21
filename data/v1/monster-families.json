@@ -606,7 +606,7 @@
   "namesExact": [
    "kamil"
   ],
-  "description": "Matches Kamil, who is immune to every kind of magic damage and effect except fire spells.",
+  "description": "Matches Kamil, who is immune to every kind of magic damage and effect except fire spells. The Nightmare Zone hard-mode row is listed by id because it is named \"Kamil (hard)\", which the exact-name match cannot reach; the normal-mode row carries the bare name and is matched by it.",
   "_cite": [
    {
     "kind": "wiki",
@@ -616,6 +616,9 @@
     ],
     "verified": "2026-08-21"
    }
+  ],
+  "ids": [
+   1129
   ]
  },
  {
@@ -623,7 +626,7 @@
   "namesExact": [
    "fareed"
   ],
-  "description": "Matches Fareed, who has very high melee defence and can otherwise only be damaged by water spells or a ranged weapon.",
+  "description": "Matches Fareed, who has very high melee defence and can otherwise only be damaged by water spells or a ranged weapon. The Nightmare Zone hard-mode row is listed by id because it is named \"Fareed (hard)\", which the exact-name match cannot reach; the normal-mode row carries the bare name and is matched by it.",
   "_cite": [
    {
     "kind": "wiki",
@@ -633,6 +636,9 @@
     ],
     "verified": "2026-08-21"
    }
+  ],
+  "ids": [
+   4115
   ]
  },
  {

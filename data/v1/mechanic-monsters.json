@@ -192,6 +192,17 @@
   "kind": "guaranteed",
   "guaranteedMaxHit": true,
   "description": "Yama's void flares are always max hit by Magic and by standard-class Ranged weapons, meaning bows and arrows rather than blowpipe or crossbow; melee gets no guarantee. The ranged half is a weapon class rather than a whole style, which is why this is not a row in always-max-hit-targets.json. Not modelled: the Contract of Bloodied Blows, which removes the guarantee entirely.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Void_flare",
+    "quotes": [
+     "Additionally, players are guaranteed a maximum hit when attacking them with magic or Standard Ranged weapons.",
+     "In the Contract of Bloodied Blows, more void flares spawn when they appear and players are no longer guaranteed a max hit against them."
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "any": [
    {
     "monsterIds": [
@@ -217,18 +228,7 @@
     }
    }
   ],
-  "aggregateBoundSafe": true,
-  "_cite": [
-   {
-    "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Void_flare",
-    "quotes": [
-     "Additionally, players are guaranteed a maximum hit when attacking them with magic or Standard Ranged weapons.",
-     "In the Contract of Bloodied Blows, more void flares spawn when they appear and players are no longer guaranteed a max hit against them."
-    ],
-    "verified": "2026-08-21"
-   }
-  ]
+  "aggregateBoundSafe": true
  },
  {
   "id": "HueycoatlBraziers",
@@ -425,12 +425,6 @@
   ],
   "minResult": 1,
   "description": "Ranged damage to the Kraken is divided by seven with a floor of 1, a rolled zero stays zero, and accuracy is unaffected. Melee is handled by the separate KrakenImmunity row.",
-  "resistAny": [
-   {
-    "monsterClass": "kraken",
-    "category": "RANGED"
-   }
-  ],
   "_cite": [
    {
     "kind": "wiki",
@@ -448,6 +442,12 @@
      "If you rolled 0 damage, it stays as 0. If you rolled >=1 damage, it's divided by 7, with a floor of 1. Accuracy is not affected."
     ],
     "verified": "2026-08-21"
+   }
+  ],
+  "resistAny": [
+   {
+    "monsterClass": "kraken",
+    "category": "RANGED"
    }
   ]
  },
@@ -822,6 +822,16 @@
   "id": "AlchemicalHydraResistance",
   "kind": "averageHit",
   "description": "Quarters damage dealt to the Alchemical Hydra while a phase's 75% damage reduction is still up, that is until it is lured over the matching chemical vent. The reduction is uniform across styles, so it never changes gear ranking. Not modelled: whether the game scales each hitsplat or the roll, so the multiply lands on the expectation instead, which is not the same shape; and thrall damage, which the wiki's incoming damage covers but which is added after this row.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Alchemical_Hydra",
+    "quotes": [
+     "At the start of each phase, it has a 75% damage reduction, which can be removed if it is lured over a vent on the floor which spews chemical liquid."
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "monsterClass": "alchemicalHydra",
    "optionFlag": {
@@ -847,17 +857,7 @@
     }
    ]
   },
-  "aggregateBoundSafe": true,
-  "_cite": [
-   {
-    "kind": "wiki",
-    "url": "https://oldschool.runescape.wiki/w/Alchemical_Hydra",
-    "quotes": [
-     "At the start of each phase, it has a 75% damage reduction, which can be removed if it is lured over a vent on the floor which spews chemical liquid."
-    ],
-    "verified": "2026-08-21"
-   }
-  ]
+  "aggregateBoundSafe": true
  },
  {
   "id": "RoyalTitansRangedAccuracy",
@@ -1473,6 +1473,48 @@
    "monsterClass": "wardenP2"
   },
   "value": "idiv(base * (clamp(15 + idiv(25 * max(roll.attack - idiv(roll.defence, 3), 0), 42000), 15, 40) + 20), 100)"
+ },
+ {
+  "id": "WardensP2AlwaysLands",
+  "kind": "guaranteed",
+  "description": "Inside the phase 2 shield-up state an attack always lands, the player's accuracy bonuses feeding the damage window instead, so the hit chance is forced to 1 and only the WardensP2MinWindow / WardensP2MaxWindow roll prices the accuracy. The same paragraph puts Protect from Melee up permanently, and the Protection prayers article reads a warden's overhead as complete immunity rather than the higher defence a Kalphite Queen's purely visual prayer means, so melee is the immunity half of this row. Not modelled: the second, rotating prayer that covers magic and ranged in turn, which would cut a steady-state magic answer further, and the energy-siphon 'protect from all' window.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies",
+    "quotes": [
+     "the player having 100% accuracy regardless of equipment; however, the damage dealt corresponds to the player's accuracy bonuses",
+     "with protect from melee being always active",
+     "weak to magic, though their prayers will prevent it from being exploited once every two cycles"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Protection_prayers",
+    "quotes": [
+     "denotes complete immunity to the attack styles prayed against",
+     "prayers are purely visual, and only indicate a higher defence bonus"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
+  "any": [
+   {
+    "monsterClass": "wardenP2"
+   }
+  ],
+  "immuneAny": [
+   {
+    "monsterClass": "wardenP2",
+    "category": "MELEE"
+   }
+  ],
+  "filterAny": [
+   {
+    "monsterClass": "wardenP2"
+   }
+  ]
  },
  {
   "id": "AncientMultiTarget",

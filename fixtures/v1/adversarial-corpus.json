@@ -3228,6 +3228,78 @@
      "mdmg": 3
     }
    ]
+  },
+  {
+   "name": "fire-warrior-ice-arrows",
+   "mechanics": [
+    "FireWarriorIceArrows"
+   ],
+   "monster": "Fire Warrior of Lesarkus",
+   "items": [
+    {
+     "name": "Test big slash sword 2",
+     "slot": "WEAPON",
+     "aslash": 140,
+     "str": 150,
+     "aspeed": 4
+    },
+    {
+     "name": "Yew shortbow",
+     "slot": "WEAPON",
+     "arange": 60,
+     "aspeed": 3
+    },
+    {
+     "name": "Test iron arrow",
+     "slot": "AMMO",
+     "rstr": 10
+    },
+    {
+     "name": "Ice arrows",
+     "slot": "AMMO",
+     "rstr": 16
+    }
+   ],
+   "expectInWinner": {
+    "RANGED": "Ice arrows"
+   },
+   "expectStyleAbsent": [
+    "MELEE_STAB",
+    "MELEE_SLASH",
+    "MELEE_CRUSH"
+   ]
+  },
+  {
+   "name": "tzkal-zuk-melee-unreachable",
+   "mechanics": [
+    "TzKalZukMeleeUnreachable"
+   ],
+   "monster": "TzKal-Zuk",
+   "items": [
+    {
+     "name": "Test big slash sword 2",
+     "slot": "WEAPON",
+     "aslash": 140,
+     "str": 150,
+     "aspeed": 4
+    },
+    {
+     "name": "Test short bow",
+     "slot": "WEAPON",
+     "arange": 60,
+     "aspeed": 4
+    },
+    {
+     "name": "Test iron arrow",
+     "slot": "AMMO",
+     "rstr": 10
+    }
+   ],
+   "expectStyleAbsent": [
+    "MELEE_STAB",
+    "MELEE_SLASH",
+    "MELEE_CRUSH"
+   ]
   }
  ]
 }

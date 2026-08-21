@@ -88,21 +88,57 @@
   "slot": "BOOTS",
   "itemLabel": "Boots of stone",
   "reason": "The Karuulm dungeon floor burns you without stone/brimstone/granite boots",
-  "required": "KARUULM_BOOTS"
+  "required": "KARUULM_BOOTS",
+  "waivedBy": "KOUREND_ELITE_DIARY",
+  "description": "The Karuulm Slayer Dungeon's floor burns anyone crossing it without boots of stone, brimstone or granite, and the elite Kourend & Kebos Diary removes the burn, so the boot slot is only spent by a player who has not finished it.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Alchemical_Hydra",
+    "quotes": [
+     "players who have not completed the elite Kourend & Kebos Diary must wear boots of stone, boots of brimstone, or granite boots"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "slayerCategory": "Drakes",
   "slot": "BOOTS",
   "itemLabel": "Boots of stone",
   "reason": "The Karuulm dungeon floor burns you without stone/brimstone/granite boots",
-  "required": "KARUULM_BOOTS"
+  "required": "KARUULM_BOOTS",
+  "waivedBy": "KOUREND_ELITE_DIARY",
+  "description": "The Karuulm Slayer Dungeon's floor burns anyone crossing it without boots of stone, brimstone or granite, and the elite Kourend & Kebos Diary removes the burn, so the boot slot is only spent by a player who has not finished it.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Alchemical_Hydra",
+    "quotes": [
+     "players who have not completed the elite Kourend & Kebos Diary must wear boots of stone, boots of brimstone, or granite boots"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "slayerCategory": "Hydras",
   "slot": "BOOTS",
   "itemLabel": "Boots of stone",
   "reason": "The Karuulm dungeon floor burns you without stone/brimstone/granite boots",
-  "required": "KARUULM_BOOTS"
+  "required": "KARUULM_BOOTS",
+  "waivedBy": "KOUREND_ELITE_DIARY",
+  "description": "The Karuulm Slayer Dungeon's floor burns anyone crossing it without boots of stone, brimstone or granite, and the elite Kourend & Kebos Diary removes the burn, so the boot slot is only spent by a player who has not finished it.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Alchemical_Hydra",
+    "quotes": [
+     "players who have not completed the elite Kourend & Kebos Diary must wear boots of stone, boots of brimstone, or granite boots"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "slayerCategory": "Fever Spiders",

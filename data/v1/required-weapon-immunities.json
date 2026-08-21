@@ -3,48 +3,177 @@
   "ids": [
    1060
   ],
-  "weaponName": "anger spear"
+  "weaponName": "anger spear",
+  "description": "The Angry bear fought during A Soul's Bane can be damaged only by the anger spear, one of the four weapons the Anger Room's rack offers. Only the quest id is listed; the post-quest Tolna's rift variants are a separate id this row does not claim.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Angry_bear",
+    "quotes": [
+     "it can only be damaged using the Anger spear"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "ids": [
    1061
   ],
-  "weaponName": "anger sword"
+  "weaponName": "anger sword",
+  "description": "The Angry unicorn fought during A Soul's Bane can be damaged only by the anger sword. Only the quest id is listed; the post-quest Tolna's rift variants are a separate id this row does not claim.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Angry_unicorn",
+    "quotes": [
+     "it can only be damaged using the anger sword"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "ids": [
    1062
   ],
-  "weaponName": "anger mace"
+  "weaponName": "anger mace",
+  "description": "The Angry giant rat fought during A Soul's Bane can be damaged only by the anger mace. Only the quest id is listed; the post-quest Tolna's rift variants are a separate id this row does not claim.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Angry_giant_rat",
+    "quotes": [
+     "only be damaged using the Anger mace"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "ids": [
    1065
   ],
-  "weaponName": "anger battleaxe"
+  "weaponName": "anger battleaxe",
+  "description": "The Angry goblin fought during A Soul's Bane can be damaged only by the anger battleaxe. Only the quest id is listed; the post-quest Tolna's rift variants are a separate id this row does not claim.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Angry_goblin",
+    "quotes": [
+     "only be damaged using the Anger battleaxe"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "ids": [
+   5848,
    6353,
    6291
   ],
-  "weaponName": "magic secateurs"
+  "weaponName": "magic secateurs",
+  "description": "The tanglefoot takes damage from magic secateurs alone, in the Fairytale I quest fight (5848) and in both Nightmare Zone forms (6353 normal, 6291 hard). Not modelled: the ring of recoil the article names as the one other source of damage, which is not a weapon slot, and the Farming-level term in the secateurs' max hit against it, which would be a mechanic row of its own.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tanglefoot",
+    "quotes": [
+     "players must use magic secateurs to damage it; it cannot be damaged by any other means, with the exception of a ring of recoil"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "ids": [
    7513,
-   7859,
-   12450
+   7859
   ],
-  "spell": "CLAWS_OF_GUTHIX"
+  "spell": "CLAWS_OF_GUTHIX",
+  "description": "Derwen, the Wilderness breach boss, can be harmed only by Claws of Guthix, which a Guthix staff, a staff of balance or the Void Knight mace can cast. The Deadman Derwen (12450) is a separate article with a separate rule and is not listed here.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Derwen",
+    "quotes": [
+     "Derwen can only be harmed by the Claws of Guthix spell"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "ids": [
    5977,
-   7858,
-   12449
+   7858
   ],
-  "spell": "SARADOMIN_STRIKE"
+  "spell": "SARADOMIN_STRIKE",
+  "description": "Justiciar Zachariah, the Wilderness breach boss, can be harmed only by Saradomin Strike, which a Saradomin staff or a staff of light can cast. The Deadman Zachariah (12449) is a separate article with a separate rule and is not listed here.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Justiciar_Zachariah",
+    "quotes": [
+     "Zachariah can only be harmed by the Saradomin Strike spell"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "ids": [
+   7515,
+   7860
+  ],
+  "spell": "FLAMES_OF_ZAMORAK",
+  "description": "Porazdir, the Wilderness breach boss, can be harmed only by Flames of Zamorak, which a Zamorak staff, a staff of the dead, its toxic counterpart or an accursed sceptre can cast. The Deadman Porazdir (12448) is a separate article with a separate rule and is not listed here.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Porazdir",
+    "quotes": [
+     "Porazdir can only be harmed by the Flames of Zamorak spell"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "ids": [
+   12448,
+   12449,
+   12450
+  ],
+  "style": "MAGIC",
+  "description": "The Deadman Mode breach trio - Porazdir (12448), Justiciar Zachariah (12449) and Derwen (12450) - are immune to melee and ranged and take magic of any kind, unlike their Wilderness namesakes, whose articles name one spell each. Not modelled: Porazdir (Deadman)'s 1% demonbane vulnerability, and the Tele Block the other two cast.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Porazdir_(Deadman)",
+    "quotes": [
+     "He is completely immune to melee and ranged attacks, so he can only be damaged with magic attacks."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Justiciar_Zachariah_(Deadman)",
+    "quotes": [
+     "He is completely immune to melee and ranged attacks, so he can only be damaged with magic attacks."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Derwen_(Deadman)",
+    "quotes": [
+     "He is completely immune to melee and ranged attacks, so he can only be damaged with magic attacks."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "ids": [

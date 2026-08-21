@@ -3593,5 +3593,40 @@
     "verified": "2026-08-21"
    }
   ]
+ },
+ {
+  "key": "iceArrow",
+  "nameContains": [
+   "ice arrows"
+  ],
+  "description": "Ice arrows, the Temple of Ikov quest ammunition that is the only thing able to damage the Fire Warrior of Lesarkus. Not modelled: their yew-bow-or-better firing requirement, which the shipped ammo-tier groups do not carry.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Ice_arrows",
+    "quotes": [
+     "required to defeat the Fire Warrior of Lesarkus",
+     "must be fired from a yew bow or better"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "iceGloves",
+  "nameContains": [
+   "ice gloves"
+  ],
+  "description": "Ice gloves, the hands-slot item that stops Fareed disarming a player who attacks him in melee range.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Fareed",
+    "quotes": [
+     "Fareed possesses the unique ability to disarm players who are not wearing ice gloves when they are attacking him close up"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  }
 ]
