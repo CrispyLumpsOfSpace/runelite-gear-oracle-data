@@ -899,6 +899,15 @@
   "source": "See the row that closes this ladder for the article; the cascade is read in file order."
  },
  {
+  "key": "staffSanguinestiUncharged",
+  "group": "poweredStaffType",
+  "text": "NONE",
+  "nameContains": [
+   "sanguinesti&uncharged"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Sanguinesti_staff \"To use the staff's magic spell, it must be charged with blood runes\" — the uncharged staff casts nothing, so it precedes the staff it vetoes."
+ },
+ {
   "key": "staffSanguinesti",
   "group": "poweredStaffType",
   "text": "SANGUINESTI",
@@ -926,13 +935,13 @@
   "source": "See the row that closes this ladder for the article; the cascade is read in file order."
  },
  {
-  "key": "staffAccursedUncharged",
+  "key": "staffAccursedAutocast",
   "group": "poweredStaffType",
   "text": "NONE",
   "nameContains": [
    "accursed sceptre&(a"
   ],
-  "source": "The wilderness sceptres: https://oldschool.runescape.wiki/w/Accursed_sceptre \"To use the sceptre's passive effect, it must first be activated\" scopes the ether requirement to the passive, so the uncharged \"(u)\" still casts the built-in spell and stays a powered staff (equipment-full.json categorises it as one); only \"(a)\"/\"(au)\", which cast during the special attack alone, veto here."
+  "source": "The autocast swaps \"(a)\"/\"(au)\", which cast standard/ancient spells rather than the built-in one, so they are not powered staves. https://oldschool.runescape.wiki/w/Accursed_sceptre scopes its activation deposit to the passive (\"To use the sceptre's passive effect, it must first be activated\") while https://oldschool.runescape.wiki/w/Thammaron%27s_sceptre scopes the same store to both (\"To use the sceptre's magic spell or passive effect, it must be charged with revenant ether\"); the \"(u)\" is left casting pending an in-game check, see docs/ENGINE-GAPS.md."
  },
  {
   "key": "staffAccursed",
