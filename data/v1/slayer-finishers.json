@@ -1,7 +1,53 @@
 [
-	{"slayerCategory": "Gargoyles", "itemId": 4162, "itemName": "Rock hammer", "reason": "Gargoyles must be finished with a rock hammer at low HP"},
-	{"slayerCategory": "Rockslugs", "itemId": 4161, "itemName": "Bag of salt", "reason": "Rockslugs must be finished with a bag of salt at low HP"},
-	{"slayerCategory": "Lizards", "itemId": 6696, "itemName": "Ice cooler", "reason": "Desert lizards must be finished with an ice cooler at low HP"},
-	{"slayerCategory": "Mutated Zygomites", "itemId": 7421, "itemName": "Fungicide spray", "reason": "Mutated zygomites must be finished with a fungicide spray at low HP"},
-	{"slayerCategory": "Warped Creatures", "itemId": 28577, "itemName": "Crystal chime", "reason": "Warped terrorbirds and tortoises must be finished with a crystal chime"}
+ {
+  "slayerCategory": "Gargoyles",
+  "itemId": 4162,
+  "itemName": "Rock hammer",
+  "reason": "Gargoyles must be finished with a rock hammer at low HP"
+ },
+ {
+  "slayerCategory": "Rockslugs",
+  "itemId": 4161,
+  "itemName": "Bag of salt",
+  "reason": "Rockslugs must be finished with a bag of salt at low HP"
+ },
+ {
+  "slayerCategory": "Lizards",
+  "itemId": 6696,
+  "itemName": "Ice cooler",
+  "reason": "Desert lizards must be finished with an ice cooler at low HP"
+ },
+ {
+  "slayerCategory": "Mutated Zygomites",
+  "itemId": 7421,
+  "itemName": "Fungicide spray",
+  "reason": "Mutated zygomites must be finished with a fungicide spray at low HP"
+ },
+ {
+  "slayerCategory": "Warped Creatures",
+  "itemId": 28577,
+  "itemName": "Crystal chime",
+  "reason": "Warped terrorbirds and tortoises must be finished with a crystal chime"
+ },
+ {
+  "slayerCategory": "",
+  "monsterName": "Vorkath",
+  "itemId": 556,
+  "itemName": "Air runes (x2 per cast)",
+  "reason": "Crumble Undead one-shots the zombified spawn during the acid phase; cast from the standard spellbook (2 air, 2 earth, 1 chaos)"
+ },
+ {
+  "slayerCategory": "",
+  "monsterName": "Vorkath",
+  "itemId": 557,
+  "itemName": "Earth runes (x2 per cast)",
+  "reason": "Crumble Undead one-shots the zombified spawn during the acid phase; cast from the standard spellbook (2 air, 2 earth, 1 chaos)"
+ },
+ {
+  "slayerCategory": "",
+  "monsterName": "Vorkath",
+  "itemId": 562,
+  "itemName": "Chaos rune (x1 per cast)",
+  "reason": "Crumble Undead one-shots the zombified spawn during the acid phase; cast from the standard spellbook (2 air, 2 earth, 1 chaos)"
+ }
 ]
