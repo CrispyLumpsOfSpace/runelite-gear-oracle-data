@@ -840,7 +840,7 @@
  {
   "id": "DarkBowMechanic",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Dark_bow \"fires two arrows per attack which roll independent accuracy checks\" \u2014 neither arrow is halved, unlike the twin weapons, and the displayed ceiling is both together. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\".",
+  "source": "https://oldschool.runescape.wiki/w/Dark_bow \"fires two arrows per attack which roll independent accuracy checks\" \u2014 neither arrow is halved, unlike the twin weapons, and the displayed ceiling is both together. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\". Not modelled: the two special attacks, https://oldschool.runescape.wiki/w/Dark_bow Descent of Darkness \"deals up to 30% more damage with a minimum of 5 damage per arrow\" and Descent of Dragons \"deals up to 50% more damage with a minimum of 8 damage per arrow, while capping the max hit at 48 damage per arrow\". Both need a per-arrow damage floor plus an arrow-gated per-splat cap, which no shipped spec shape carries.",
   "when": {
    "category": "RANGED",
    "worn": "DARK_BOW"
