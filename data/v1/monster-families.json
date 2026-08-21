@@ -45,6 +45,17 @@
   "source": "Zulrah is the only monster needing halberd reach for a non-flight reason: https://oldschool.runescape.wiki/w/Zulrah \"It cannot be reached with melee (with the exception of halberds).\" Other airborne creatures carry the FLYING attribute instead, so a comprehensive name list here would only risk missing them."
  },
  {
+  "key": "salamanderMeleeable",
+  "namesExact": [
+   "aviansie",
+   "kree'arra",
+   "wingman skree",
+   "flockleader geerin",
+   "flight kilisa"
+  ],
+  "source": "The airborne targets whose own articles still except salamanders, as opposed to the halberd-only rule the Flying attribute otherwise carries: https://oldschool.runescape.wiki/w/Aviansie \"As they are airborne, they are immune to being directly targeted by melee attacks except for salamanders and halberds\" and https://oldschool.runescape.wiki/w/Kree'arra \"he and his bodyguards cannot be attacked with Melee, except when using Halberds or Salamanders\". Excluded deliberately: Armadylean guard, whose 23 July 2025 update note leaves the elite-clue fight \"only vulnerable to halberd melee weapons\"; Reanimated aviansie, Dawn and Vespula, whose articles name halberds alone."
+ },
+ {
   "key": "zulrah",
   "nameContains": [
    "zulrah"
