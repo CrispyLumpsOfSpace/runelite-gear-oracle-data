@@ -651,7 +651,7 @@
    2141,
    2142
   ],
-  "source": "The targets a magic hitsplat cannot reach, so Saradomin's blessed sword lands its melee half alone: Dusk's two forms (https://oldschool.runescape.wiki/w/Dusk \u2014 immune to Magic and Ranged) and the Warriors' Guild cyclopes (https://oldschool.runescape.wiki/w/Cyclops \"immune to Ranged and Magic attacks and must be fought with melee combat\"). Id-keyed for the same reason those two families are: \"Cyclops\" is shared with monsters outside the guild that carry no immunity."
+  "source": "The targets a magic hitsplat cannot reach, so the Saradomin sword's special lands its melee half alone: the Warriors' Guild cyclopes (https://oldschool.runescape.wiki/w/Saradomin_sword \"The Magic damage will always hit 0 on cyclopes in the Warriors' Guild, as with all non-melee damage there\") and Dusk's two forms (https://oldschool.runescape.wiki/w/Dusk \u2014 immune to Magic and Ranged). The Dusk arm is inferred from that immunity rather than stated for this weapon anywhere, and no vector exercises it. Id-keyed for the same reason those two families are: \"Cyclops\" is shared with monsters outside the guild that carry no immunity."
  },
  {
   "key": "undrainableDefence",

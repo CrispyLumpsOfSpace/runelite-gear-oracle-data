@@ -529,7 +529,7 @@
  },
  {
   "id": "GodswordSpecBaseDamage",
-  "source": "https://oldschool.runescape.wiki/w/Godsword \"doubling effective accuracy and increase effective strength by 10%\". Floored separately from the per-weapon spec stage: the Bandos godsword applies x11/10 twice, which is the wiki's +21% \u2014 one combined factor could not produce it.",
+  "source": "https://oldschool.runescape.wiki/w/Godsword \"doubling effective accuracy and increase effective strength by 10%\". Floored separately from the per-weapon spec stage per https://oldschool.runescape.wiki/w/Armadyl_godsword \"the calculation uses integer values after the multiplication of 1.1 the value gets rounded down and then multiplied by 1.25\". The Maximum melee hit table's single 1.375 and 1.21 factors are a simplification of that intermediate rounding, which this row does not follow.",
   "when": {
    "specGodsword": "true"
   },
@@ -563,10 +563,11 @@
  {
   "id": "VoidwakerGuaranteedAccuracy",
   "kind": "guaranteed",
-  "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage\" \u2014 the spec never rolls accuracy; its damage window is VoidwakerSpecDistribution's.",
+  "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage\" \u2014 the spec never rolls accuracy; its damage window is VoidwakerSpecDistribution's. Scoped to MELEE so the guarantee and the window fire together: the wielded weapon alone decides specShape, so an unscoped guarantee would reach a spell cast with the Voidwaker in hand.",
   "any": [
    {
-    "specShape": "VOIDWAKER"
+    "specShape": "VOIDWAKER",
+    "category": "MELEE"
    }
   ]
  },
@@ -734,7 +735,7 @@
  {
   "id": "TwoHitSpecDistribution",
   "kind": "sequence",
-  "source": "Two-hit special attacks. https://oldschool.runescape.wiki/w/Abyssal_dagger \"A single attack roll is performed, meaning that either both hits are successful, or both hits miss\" \u2014 where the dragon dagger rolls each hit separately, which is the only thing separating the two shapes. Same expectation, different distributions: both are recorded so variance and percentile readouts keep the distinction. Each hitsplat takes flat armour and the boss cap independently.",
+  "source": "Two-hit special attacks. https://oldschool.runescape.wiki/w/Abyssal_dagger \"A single attack roll is performed, meaning that either both hits are successful, or both hits miss\" \u2014 where the dragon dagger rolls each hit separately, which is the only thing separating the two shapes. Both shapes have the same expectation, so this row prices them identically; which of the two a weapon has is recorded in special-attack-weapons.json and nothing downstream reads it. Each hitsplat takes flat armour and the boss cap independently.",
   "whenAny": [
    {
     "specShape": "TWO_INDEPENDENT_HITS"
@@ -839,7 +840,7 @@
  {
   "id": "DarkBowMechanic",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Dark_bow \"fires two arrows per attack which roll independent accuracy checks\" \u2014 neither arrow is halved, unlike the twin weapons, and the displayed ceiling is both together. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\".",
+  "source": "https://oldschool.runescape.wiki/w/Dark_bow \"fires two arrows per attack which roll independent accuracy checks\" \u2014 neither arrow is halved, unlike the twin weapons, and the displayed ceiling is both together. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\". Not modelled: the two special attacks, https://oldschool.runescape.wiki/w/Dark_bow Descent of Darkness \"deals up to 30% more damage with a minimum of 5 damage per arrow\" and Descent of Dragons \"deals up to 50% more damage with a minimum of 8 damage per arrow, while capping the max hit at 48 damage per arrow\". Both need a per-arrow damage floor plus an arrow-gated per-splat cap, which no shipped spec shape carries.",
   "when": {
    "category": "RANGED",
    "worn": "DARK_BOW"
@@ -856,7 +857,6 @@
  {
   "id": "SplitHitWeaponMechanic",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Sulphur_blades \"it performs two independently rolled hits per attack\"; \"The maximum damage of each hit is determined by calculating the combined max hit as normal and dividing it by two.\" Five melee weapons (sulphur blades, glacial temotli, earthbound tecpatl, infernal tecpatl, Torag's hammers) and one Ranged weapon (King's barrage) share the arithmetic; the first hit floors and the second takes the remainder. No style gate: every weapon in the set is usable in exactly one style, so holding one IS the gate. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\".",
   "source": "https://oldschool.runescape.wiki/w/Sulphur_blades \"it performs two independently rolled hits per attack\"; \"The maximum damage of each hit is determined by calculating the combined max hit as normal and dividing it by two.\" The displayed ceiling is the two together; the largest real hitsplat, which is what overkill rolls against, is the rounded-up half. Five melee weapons (sulphur blades, glacial temotli, earthbound tecpatl, infernal tecpatl, Torag's hammers) and one Ranged weapon (King's barrage) share the arithmetic; the first hit floors and the second takes the remainder. No style gate: every weapon in the set is usable in exactly one style, so holding one IS the gate.",
   "when": {
    "wornAny": [
@@ -915,7 +915,7 @@
  {
   "id": "ScytheOfViturMechanic",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Scythe_of_vitur \"A 2x2 monster (such as Vardorvis) will be hit twice per attack, while a 3x3 or larger monster (such as dragons and Duke Sucellus) will be hit three times per attack.\" 100% / 50% / 25% of the max hit, with flat armour applying per hit against each hit's own ceiling rather than once against the combined one. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\".",
+  "source": "https://oldschool.runescape.wiki/w/Scythe_of_vitur \"A 2x2 monster (such as Vardorvis) will be hit twice per attack, while a 3x3 or larger monster (such as dragons and Duke Sucellus) will be hit three times per attack.\" 100% / 50% / 25% of the max hit, with flat armour applying per hit against each hit's own ceiling rather than once against the combined one. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\". Out of scope: the 1x3 arc, \"which can allow them to hit three 1x1 targets in front of them\", which is a targetCount effect rather than a size-gated one.",
   "when": {
    "category": "MELEE",
    "worn": "SCYTHE_OF_VITUR"
@@ -949,7 +949,7 @@
  {
   "id": "HallowfellCleave",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Hallowfell \u2014 cleaves through nearby enemies for up to 50% max hit each, up to two additional unique enemies. \"Unique\" is load-bearing: large enemies are one target. The cleave rides the primary hit landing rather than rolling its own accuracy, which is what produces the wiki's 100/50/50. Out of scope: the five-tile cleave shape, and the removed multi-combat-mode attack styles.",
+  "source": "https://oldschool.runescape.wiki/w/Hallowfell \"damaging up to two additional unique enemies for up to 50% of your maximum hit each, rounded down\". \"Unique\" is load-bearing: large enemies are one target. Each cleave rolls its own 0..idiv(maxHit, 2) rather than a share of the primary hitsplat, which is what the max-hit wording states; ofRoll is reserved for the weapons the wiki words as a share of the damage dealt. The cleave rides the primary hit landing rather than rolling its own accuracy. Out of scope: the five-tile cleave shape, and the removed multi-combat-mode attack styles.",
   "when": {
    "category": "MELEE",
    "worn": "HALLOWFELL"
@@ -957,7 +957,6 @@
   "splats": [
    {},
    {
-    "ofRoll": true,
     "fraction": [
      1,
      2
@@ -1142,7 +1141,7 @@
  },
  {
   "id": "SpecialAttackDamage",
-  "source": "Damage multiplier of the priced special attack, from special-attack-weapons.json's dmgNum/dmgDen. Applied after GodswordSpecBaseDamage and floored separately: the Bandos godsword's two x11/10 stages are the wiki's \"+21%\", which one combined factor could not produce.",
+  "source": "Damage multiplier of the priced special attack, from special-attack-weapons.json's dmgNum/dmgDen. Applied after GodswordSpecBaseDamage and floored separately, per the intermediate rounding quoted from https://oldschool.runescape.wiki/w/Armadyl_godsword on that row.",
   "when": {
    "specActive": "true"
   },
@@ -1232,9 +1231,10 @@
  {
   "id": "VoidwakerSpecDistribution",
   "kind": "rollWindow",
-  "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage between 50-150% of the wielder's maximum melee hit\", ignoring flat armour; the boss damage cap still applies. Accuracy is set to 1.0 by VoidwakerGuaranteedAccuracy; an always-max-hit target post-processes the spec distribution to one certain hitsplat at the ceiling.",
+  "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage between 50-150% of the wielder's maximum melee hit\"; the hitsplat is Magic, which is why it takes no flat armour, the same gate every magic hitsplat passes. The boss damage cap still applies. Accuracy is set to 1.0 by VoidwakerGuaranteedAccuracy; an always-max-hit target post-processes the spec distribution to one certain hitsplat at the ceiling.",
   "when": {
-   "specShape": "VOIDWAKER"
+   "specShape": "VOIDWAKER",
+   "category": "MELEE"
   },
   "filterWhen": {
    "specActive": "true",
@@ -1480,7 +1480,7 @@
  {
   "id": "HalberdSweepSecondHit",
   "kind": "splitHit",
-  "source": "https://oldschool.runescape.wiki/w/Halberd \"the only melee weapons capable of hitting enemies\" at a two-tile range: Sweep lands a second hitsplat against targets larger than 1x1, the second swing reducing the attack roll by 25% at roll level before hit chance is re-derived; folding it into the accuracy sum keeps (a1 + a2) * E exactly. The damage bonus is already in maxHit.",
+  "source": "https://oldschool.runescape.wiki/w/Halberd \"the only melee weapons capable of hitting enemies\" at a two-tile range: Sweep lands a second hitsplat against targets larger than 1x1, the second swing reducing the attack roll by 25% at roll level before hit chance is re-derived; folding it into the accuracy sum keeps (a1 + a2) * E exactly. https://oldschool.runescape.wiki/w/Dragon_halberd says only \"an additional second hit onto them, although with 25% reduced accuracy\", which does not distinguish a 3/4 attack roll from a 3/4 hit chance: the roll-level reading is a pinned assumption whose only support is agreement with the reference battery. The damage bonus is already in maxHit.",
   "when": {
    "specShape": "HALBERD_SWEEP",
    "targetSizeAtLeast": 2

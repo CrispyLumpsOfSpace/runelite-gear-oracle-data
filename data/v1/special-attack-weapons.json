@@ -83,7 +83,7 @@
 
 	{"key": "DRAGON_HALBERD", "name": "Dragon halberd", "energy": 30, "attackStyle": "MELEE_SLASH", "accNum": 1,
 	 "accDen": 1, "dmgNum": 11, "dmgDen": 10, "shape": "HALBERD_SWEEP", "defenceStyleOverride": "MELEE_SLASH",
-	 "source": "Sweep: 30% energy, a \"10% damage boost\", and it \"rolls against the opponent's slash defence roll\". Against \"'large' monsters (anything that is larger than 1x1, such as most Boss monsters)\" it lands a second hitsplat \"with 25% reduced accuracy\" — see HalberdSweepSecondHit for why that is a reduced attack ROLL rather than a scaled hit chance. Not modelled: the multi-combat sweep across a 3x1 area (up to ten NPCs). That is a multi-target effect like the Hallowfell cleave and would read targetCount; the size-gated second hit is the single-target mechanic and the one this row covers."},
+	 "source": "Sweep: 30% energy, a \"10% damage boost\", and it \"rolls against the opponent's slash defence roll\". Against \"'large' monsters (anything that is larger than 1x1, such as most Boss monsters)\" it lands a second hitsplat \"with 25% reduced accuracy\", read as a reduced attack ROLL rather than a scaled hit chance, an assumption HalberdSweepSecondHit records as pinned rather than sourced. Not modelled: the multi-combat sweep across a 3x1 area (up to ten NPCs). That is a multi-target effect like the Hallowfell cleave and would read targetCount; the size-gated second hit is the single-target mechanic and the one this row covers."},
 
 	{"key": "CRYSTAL_HALBERD", "name": "Crystal halberd", "energy": 30, "attackStyle": "MELEE_SLASH", "accNum": 1,
 	 "accDen": 1, "dmgNum": 11, "dmgDen": 10, "shape": "HALBERD_SWEEP", "defenceStyleOverride": "MELEE_SLASH",
@@ -123,7 +123,7 @@
 
 	{"key": "DRAGON_CLAWS", "name": "Dragon claws", "energy": 50, "attackStyle": "MELEE_SLASH", "accNum": 1, "accDen": 1,
 	 "dmgNum": 1, "dmgDen": 1, "shape": "CLAWS_CASCADE", "defenceStyleOverride": "MELEE_SLASH",
-	 "source": "Slice and Dice: the four-roll cascade (see DragonClawsSpecDistribution)."},
+	 "source": "Slice and Dice: the four-roll cascade (see DragonClawsSpec)."},
 
 	{"key": "VOIDWAKER", "name": "Voidwaker", "energy": 50, "attackStyle": "MELEE_STAB", "accNum": 1, "accDen": 1,
 	 "dmgNum": 1, "dmgDen": 1, "shape": "VOIDWAKER", "defenceStyleOverride": "MAGIC",
