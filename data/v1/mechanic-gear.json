@@ -390,7 +390,7 @@
  {
   "id": "ThrallBonus",
   "kind": "flatDps",
-  "source": "https://oldschool.runescape.wiki/w/Thrall \"Thralls notably always deal successful hits, with the damage roll ranging from 0-3 depending on the tier of spell used, as well as ignoring the flat armour stat.\" A summoned thrall attacks on its own fixed 4-tick timer (2.4s), so the bonus is flat DPS rather than part of the per-attack distribution. Thralls are re-cast from the Arceuus book, and every castable spell this calculator models lives on another book, so a manually-cast Magic setup cannot maintain one; powered staves attack without a spellbook, as do Melee and Ranged.",
+  "source": "https://oldschool.runescape.wiki/w/Thrall \"Thralls notably always deal successful hits, with the damage roll ranging from 0-3 depending on the tier of spell used, as well as ignoring the flat armour stat.\" A summoned thrall attacks on its own fixed 4-tick timer (2.4s), so the bonus is flat DPS rather than part of the per-attack distribution. Thralls are re-cast from the Arceuus book, so a manually-cast Magic setup keeps its thrall only while it casts from Arceuus itself (the demonbane spells); powered staves and salamanders need no spellbook at all, as is true of Melee and Ranged.",
   "when": {
    "exprFilter": "player.thrallMaxHit > 0 && !monster.thrallImmune",
    "anyOf": [
@@ -401,6 +401,12 @@
     },
     {
      "poweredStaff": true
+    },
+    {
+     "weaponFamily": "salamander"
+    },
+    {
+     "spellBook": "ARCEUUS"
     }
    ]
   },
