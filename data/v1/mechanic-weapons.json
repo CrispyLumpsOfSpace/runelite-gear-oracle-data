@@ -818,7 +818,7 @@
  {
   "id": "SplitHitWeaponMechanic",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Sulphur_blades \"it performs two independently rolled hits per attack\"; \"The maximum damage of each hit is determined by calculating the combined max hit as normal and dividing it by two.\" Five melee weapons (sulphur blades, glacial temotli, earthbound tecpatl, infernal tecpatl, Torag's hammers) and one Ranged weapon (King's barrage) share the arithmetic; the first hit floors and the second takes the remainder. No style gate: every weapon in the set is usable in exactly one style, so holding one IS the gate.",
+  "source": "https://oldschool.runescape.wiki/w/Sulphur_blades \"it performs two independently rolled hits per attack\"; \"The maximum damage of each hit is determined by calculating the combined max hit as normal and dividing it by two.\" The displayed ceiling is the two together; the largest real hitsplat, which is what overkill rolls against, is the rounded-up half. Five melee weapons (sulphur blades, glacial temotli, earthbound tecpatl, infernal tecpatl, Torag's hammers) and one Ranged weapon (King's barrage) share the arithmetic; the first hit floors and the second takes the remainder. No style gate: every weapon in the set is usable in exactly one style, so holding one IS the gate.",
   "when": {
    "wornAny": [
     "SULPHUR_BLADES",
@@ -845,6 +845,8 @@
     "remainder": true
    }
   ],
+  "displaySum": true,
+  "breakdown": true,
   "aggregateBoundSafe": true
  },
  {
