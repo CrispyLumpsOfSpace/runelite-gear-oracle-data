@@ -685,7 +685,7 @@
   "id": "SmokeStaffPool",
   "kind": "flatShare",
   "stage": "magicDamagePool",
-  "source": "https://twitter.com/JagexAsh/status/1791070064369647838 - the smoke staves grant \"a 10% increase in accuracy and damage when casting spells from the standard spellbook\"; Ancient Magicks get nothing. Percentage POINTS into the pool, not a multiplier over it (vector-pinned); the accuracy half is a floored stage of its own and stays in SmokeStaffBonus.",
+  "source": "https://oldschool.runescape.wiki/w/Smoke_battlestaff 8 October 2015: the smoke staves \"now provide a 10% increase in accuracy and damage when used to cast spells from the standard spellbook\"; Ancient Magicks get nothing. Percentage POINTS into the pool, not a multiplier over it: https://oldschool.runescape.wiki/w/Maximum_magic_hit sums the smoke battlestaff term with the other magic damage bonuses inside one floor. The accuracy half is a floored stage of its own and stays in SmokeStaffBonus.",
   "when": {
    "style": "MAGIC",
    "weaponFamily": "smokeStaff",

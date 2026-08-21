@@ -378,7 +378,7 @@
  },
  {
   "id": "SmokeStaffBonus",
-  "source": "https://twitter.com/JagexAsh/status/1791070064369647838 \u2014 the smoke battlestaff, mystic smoke staff and Twinflame staff grant \"a 10% increase in accuracy and damage when casting spells from the standard spellbook\"; Ancient Magicks get nothing. Only the accuracy half is a floored stage of its own: the damage half is a row of the additive gear-magic-damage pool. With a magic salve on an undead target the oracle can differ by a point of attack roll \u2014 it pools accuracy and floors once where this engine floors per stage, and no vector covers it.",
+  "source": "https://oldschool.runescape.wiki/w/Smoke_battlestaff 8 October 2015: the smoke battlestaff and mystic smoke staff \"now provide a 10% increase in accuracy and damage when used to cast spells from the standard spellbook\", examine \"It gives a 10% accuracy and damage bonus for spells on the standard spellbook\"; https://oldschool.runescape.wiki/w/Twinflame_staff quotes the same bonus. Ancient Magicks get nothing. Only the accuracy half is a floored stage of its own: the damage half is a row of the additive gear-magic-damage pool. With a magic salve on an undead target the oracle can differ by a point of attack roll: it pools accuracy and floors once where this engine floors per stage. No vector covers it, so it sits in the battery-pinned table of docs/ENGINE-GAPS.md rather than in ACCEPTED_DELTAS.",
   "when": {
    "style": "MAGIC",
    "weaponFamily": "smokeStaff",
