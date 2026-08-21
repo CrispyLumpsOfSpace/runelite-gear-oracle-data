@@ -429,7 +429,7 @@
  {
   "id": "ObsidianSetFlatShare",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Obsidian_armour full obsidian armour with an obsidian weapon gives +10% melee accuracy and strength: a flat share of the base roll and base max hit, added after the amulet-class stage and before the multiplicative stages.",
+  "source": "https://oldschool.runescape.wiki/w/Obsidian_armour full obsidian armour with an obsidian weapon gives +10% melee accuracy and strength: a flat share of the base roll and base max hit, added after the amulet-class stage and before the multiplicative stages. Toktz-mej-tal is out of scope: the article's Set bonus section says \"obsidian melee weapons\" and its weapon table names only the four, against a looser \"all obsidian weaponry\" in the intro; in-game bashing with the staff in full obsidian would settle it.",
   "when": {
    "category": "MELEE",
    "setActive": "OBSIDIAN"
