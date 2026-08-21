@@ -1125,7 +1125,7 @@
  {
   "id": "ConflictionGauntlets",
   "kind": "accuracyTransform",
-  "source": "https://oldschool.runescape.wiki/w/Confliction_gauntlets after a miss, \"the next magic attack of that weapon or spell against the same enemy [rolls] accuracy twice\"; \"disabled if using a two-handed weapon\" (the 2H gate blocks Tumeken's shadow). The mechanic has memory, solved by the wiki's own steady state h = P2/(1+P2-P1), P2 the fang double-roll number (both rolls face the same defence roll). Not modeled: multi-target rule, PvP ice-spell exclusion. Ahead of BrimstoneRing: the gauntlets recompute from the raw rolls, so a ring applied first would vanish.",
+  "source": "https://oldschool.runescape.wiki/w/Confliction_gauntlets after a miss, \"the next magic attack of that weapon or spell against the same enemy [rolls] accuracy twice\"; \"disabled if using a two-handed weapon\" (the 2H gate blocks Tumeken's shadow); \"the passive effect will only roll accuracy twice against the primary target of the spell; secondary targets will roll accuracy once as normal\", so a clumped cast is the target-count-weighted mean. The mechanic has memory, solved by the wiki's own steady state h = P2/(1+P2-P1), P2 the fang double-roll number (both rolls face the same defence roll). A worn Brimstone ring is folded into P1 and P2 here rather than composed after: its proc is rolled per attack, so it moves both rolls of the chain, and BrimstoneRing stands down whenever this row runs. Not modeled: PvP ice-spell exclusion.",
   "when": {
    "style": "MAGIC",
    "worn": "CONFLICTION_GAUNTLETS",
@@ -1134,10 +1134,15 @@
    }
   },
   "let": {
-   "doubled": "doubleRollShared(attackRoll, defenceRoll)",
-   "denominator": "1 + doubled - accuracy"
+   "brimstone": "worn('BRIMSTONE_RING')",
+   "reducedDefence": "idiv(defenceRoll * 9, 10)",
+   "single": "brimstone ? 0.75 * accuracy + 0.25 * hitChance(attackRoll, reducedDefence) : accuracy",
+   "doubled": "brimstone ? 0.75 * doubleRollShared(attackRoll, defenceRoll) + 0.25 * doubleRollShared(attackRoll, reducedDefence) : doubleRollShared(attackRoll, defenceRoll)",
+   "denominator": "1 + doubled - single",
+   "primary": "denominator <= 0 ? single : clamp(doubled / denominator, 0, 1)",
+   "targets": "cast.targets"
   },
-  "accuracy": "denominator <= 0 ? accuracy : clamp(doubled / denominator, 0, 1)",
+  "accuracy": "targets <= 1 ? primary : (primary + (targets - 1) * accuracy) / targets",
   "hidesItems": {
    "types": [
     "CONFLICTION_GAUNTLETS"
@@ -1146,23 +1151,25 @@
   },
   "interactingSlots": [
    "GLOVES",
-   "WEAPON"
+   "WEAPON",
+   "RING"
   ],
   "aggregateBoundSafe": true
  },
  {
   "id": "BrimstoneRing",
   "kind": "accuracyTransform",
-  "source": "https://oldschool.runescape.wiki/w/Brimstone_ring on any magic attack (\"powered staves included\"), 25% chance the target's magic defensive roll is reduced by 10% for that attack. Shape: mix the two outcomes, since averaging the defence roll instead understates accuracy on the convex a<d branch; integer division is the game's truncation of the reduced roll. The reduction \"doesn't affect multiple targets when barraging\", so under a clumped ancient cast this is the target-count-weighted mean, leaving the xN that follows to land the proc on one target and the plain chance on the rest.",
+  "source": "https://oldschool.runescape.wiki/w/Brimstone_ring on any magic attack (\"powered staves included\"), 25% chance the target's magic defensive roll is reduced by 10% for that attack. Shape: mix the two outcomes, since averaging the defence roll instead understates accuracy on the convex a<d branch; integer division is the game's truncation of the reduced roll. The reduction \"doesn't affect multiple targets when barraging\", so under a clumped ancient cast this is the target-count-weighted mean, leaving the xN that follows to land the proc on one target and the plain chance on the rest. Inert when live Confliction gauntlets precede it, which fold the same proc into the two rolls of their steady state; applying it again here would price the proc twice.",
   "when": {
    "style": "MAGIC",
    "worn": "BRIMSTONE_RING"
   },
   "let": {
+   "conflicted": "worn('CONFLICTION_GAUNTLETS') && !weapon.flag('effectivelyTwoHanded')",
    "mixed": "0.75 * accuracy + 0.25 * hitChance(attackRoll, idiv(defenceRoll * 9, 10))",
    "targets": "cast.targets"
   },
-  "accuracy": "targets <= 1 ? mixed : (mixed + (targets - 1) * accuracy) / targets",
+  "accuracy": "conflicted ? accuracy : (targets <= 1 ? mixed : (mixed + (targets - 1) * accuracy) / targets)",
   "aggregateBoundSafe": true
  },
  {
