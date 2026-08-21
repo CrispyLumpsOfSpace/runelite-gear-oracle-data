@@ -191,7 +191,18 @@
   "namesExact": [
    "comp ogre bow"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Zogre \"Brutal arrows are effective against them\" \u2014 full damage needs the composite bow specifically."
+  "source": "https://oldschool.runescape.wiki/w/Brutal_arrow \"Ogre bows can only fire up to mithril brutal arrows, while composite ogre bows can fire all types\" \u2014 the half of the ogre-bow pair that reaches every brutal."
+ },
+ {
+  "key": "plainOgreBowBrutalArrow",
+  "nameContains": [
+   "bronze brutal",
+   "iron brutal",
+   "steel brutal",
+   "black brutal",
+   "mithril brutal"
+  ],
+  "source": "https://oldschool.runescape.wiki/w/Brutal_arrow \"Ogre bows can only fire up to mithril brutal arrows\" \u2014 the brutals a plain Ogre bow reaches, the ladder being bronze, iron, steel, black, mithril, adamant, rune."
  },
  {
   "key": "ogreBow",

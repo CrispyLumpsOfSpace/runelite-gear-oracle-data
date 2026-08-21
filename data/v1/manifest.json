@@ -14,11 +14,11 @@
   "magic-base-hits.json": "01850d1fa683c36b3ad4d5f3e34d15870bee8a6f36f317e3c275ba8995d54aed",
   "mechanic-gear.json": "67468e40ee4f31e8bb83d856471f4e759bc0ab94b4b53dcf7c1a21abf6400c00",
   "mechanic-immunities.json": "80c48625483351545317152a12a4c666da58fdcd13d81152fa1f4a1b6f5e32de",
-  "mechanic-monsters.json": "49bf342e49ab043f773c40425da4945723774f84929cd6a494f9017bab61213d",
+  "mechanic-monsters.json": "01408284b1352b72c83e67792c4018bd3273019c2d95269e57e04fdc334ed9bd",
   "mechanic-rows.json": "0ad815508cf8de0f80db92ffb89bfd130d8c045c95e825b1606d08eb1de38265",
-  "mechanic-weapons.json": "d8d0a3896189b5d2f7acc227c666931655c945506881e14c4aabadbb818194f9",
+  "mechanic-weapons.json": "34c7a8affdc774d078e22218a5eee122832a8c5064e3459a613f3e89d5f11214",
   "meta.json": "b4ba7292aa9601cafa04b9d3a8a44b4ef456edc469cc3dbd77f109e29dba5543",
-  "monster-families.json": "79cfdd6629034e0125d562d23bbcccb08f9b072ee2db53f58c29b0afa9254362",
+  "monster-families.json": "52ad2f653826f9e52ac5565b1d9ef1b41e82d017f953bc6b00c8f8d8d6b7f3cc",
   "monsters.json": "389eabecf089d17b81052aef7e41b3ba7bf1d2d9782e3445c7b058adc53b389a",
   "potions.json": "71fb53351e4a606db5a0593ce4892e9a639bb425798057f6074bcc2019bb8434",
   "prayers.json": "4db14f2f0a0aff52dcff23ed148a0c1cdac23d9252c838cef4e5bbc645828f77",
@@ -32,6 +32,6 @@
   "special-attack-weapons.json": "5e71ab4d5278b8368dc765e26402b57ce4edb51a0853d126ec158f4fb1487626",
   "special-item-patterns.json": "bf5af7d1c98117bc8e78f923e37c72c47d8bedf3391291d28519059b3363f392",
   "status-immunities.json": "50874e34a7b1f6ebd13aa6ddb4054a777c0aff01e4fbb76e12d17b05d4ff0f86",
-  "weapon-families.json": "ab46112034e04cc0cd6ae9c55c5fc76a3c4d99db10d6fe7f6508ccbc70cc6312"
+  "weapon-families.json": "08e54149318cb9c02c9a42d5875408497365ece971c6bf5ca734c6e65312febc"
  }
 }
