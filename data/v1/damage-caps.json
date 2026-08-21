@@ -13,8 +13,8 @@
 	 "exemptWorn": "DAWNBRINGER",
 	 "source": "The Ranged and Magic half of the row above, same article and same exemption."},
 
-	{"monster": "corporealBeast", "style": "MELEE_STAB", "kind": "hard", "threshold": 100,
-	 "source": "https://oldschool.runescape.wiki/w/Corporeal_Beast \"The damage cap of 50 for halberds and spears has been increased to 100.\""},
+	{"monster": "corporealBeast", "style": "MELEE_STAB", "weaponFlag": "corpbane", "kind": "hard", "threshold": 100,
+	 "source": "https://oldschool.runescape.wiki/w/Corporeal_Beast \"The damage cap of 50 for halberds and spears has been increased to 100.\" https://oldschool.runescape.wiki/w/Maximum_damage_cap scopes it: \"Applies to Corpbane weapons set to Stab; ranged and non-Corpbane melee weapons have their damage reduced by 50%\" — the halved path is CorporealBeastReduction, and no source says it keeps the legacy 50, so it is left uncapped."},
 
 	{"monster": "leviathan", "optionIs": {"key": "leviathanSituation", "value": "Stunned", "fallback": "Normal"},
 	 "kind": "hard", "threshold": 10,
