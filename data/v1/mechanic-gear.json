@@ -286,7 +286,7 @@
  {
   "id": "KarilsDamnedProc",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment \"the wearer gains a 25% chance of hitting twice with one attack\" \u2014 the second hit is half the FIRST HITSPLAT, not half the max hit, so it rides the primary's accuracy and takes the per-roll truncation (trunc(H/2) is not E[H]/2). Not modelled: Karil's four-piece Defence drain, the amulet's effects on other Barrows sets.",
+  "source": "https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment \"the wearer gains a 25% chance of hitting twice with one attack\" \u2014 the second hit is half the FIRST HITSPLAT, not half the max hit, so it rides the primary's accuracy and takes the per-roll truncation (trunc(H/2) is not E[H]/2). Flat armour is subtracted once, from the first hitsplat, and the second is half of what survived it; the article's per-hitsplat wording is about flat damage bonuses and does not settle this, so it is an engine choice (docs/ENGINE-GAPS.md, battery-pinned list). Not modelled: Karil's four-piece Defence drain, the amulet's effects on other Barrows sets.",
   "when": {
    "style": "RANGED",
    "setActive": "KARIL_DAMNED"
