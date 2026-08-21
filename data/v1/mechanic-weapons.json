@@ -1231,7 +1231,7 @@
  {
   "id": "VoidwakerSpecDistribution",
   "kind": "rollWindow",
-  "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage between 50-150% of the wielder's maximum melee hit\", ignoring flat armour; the boss damage cap still applies. Accuracy is set to 1.0 by VoidwakerGuaranteedAccuracy; an always-max-hit target post-processes the spec distribution to one certain hitsplat at the ceiling.",
+  "source": "https://oldschool.runescape.wiki/w/Voidwaker \"deals guaranteed Magic damage between 50-150% of the wielder's maximum melee hit\"; the hitsplat is Magic, which is why it takes no flat armour, the same gate every magic hitsplat passes. The boss damage cap still applies. Accuracy is set to 1.0 by VoidwakerGuaranteedAccuracy; an always-max-hit target post-processes the spec distribution to one certain hitsplat at the ceiling.",
   "when": {
    "specShape": "VOIDWAKER",
    "category": "MELEE"
