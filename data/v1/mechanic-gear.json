@@ -504,10 +504,20 @@
  {
   "id": "SharpEyeGuaranteedLevel",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Sharp_Eye the prayer is guaranteed to grant a level: at a Ranged level of 20 or below its +5% truncates to nothing and the game adds 1 instead. It is the only Ranged prayer at 1.05, which is what identifies it; the value is the +1 exactly where the truncated 5% would give nothing.",
+  "source": "https://oldschool.runescape.wiki/w/Sharp_Eye \"or by 1 level if the player's Ranged level is lower than 20\", the 29 May 2024 change made because below 20 the +5% truncated to nothing. It is the only Ranged prayer at 1.05, which is what identifies it; the truncation guard is the real predicate and base <= 20 only a pre-filter, since at 20 the plain 5% already yields +1.",
   "when": {
    "category": "RANGED",
    "exprFilter": "player.rangedStrengthPrayer == 1.05"
+  },
+  "value": "base <= 20 && trunc(base * 1.05) == base ? 1 : 0"
+ },
+ {
+  "id": "BurstOfStrengthGuaranteedLevel",
+  "kind": "flatShare",
+  "source": "https://oldschool.runescape.wiki/w/Maximum_melee_hit prayer table, Burst of Strength 1.05 \"Always boost the player's Strength level by at least 1\"; https://oldschool.runescape.wiki/w/Update:Project_Rebalance:_Combat_Changes \"Sharp Eye and Burst of Strength now boost your Ranged and Strength by 1 level respectively, if those levels are lower than 20.\" It is the only melee strength prayer at 1.05, which is what identifies it; the melee twin of SharpEyeGuaranteedLevel.",
+  "when": {
+   "category": "MELEE",
+   "exprFilter": "player.meleeStrengthPrayer == 1.05"
   },
   "value": "base <= 20 && trunc(base * 1.05) == base ? 1 : 0"
  },
