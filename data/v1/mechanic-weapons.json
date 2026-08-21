@@ -953,7 +953,7 @@
  },
  {
   "id": "KerisMechanics",
-  "source": "Wiki: Keris \u2014 the Keris partisan of breaching adds +33% accuracy against kalphites. Scabarites aren't a tracked attribute, so this keys on KALPHITE only.",
+  "source": "Wiki: Keris \u2014 the Keris partisan of breaching adds +33% accuracy against kalphites. Scabarites aren't a tracked attribute, so this keys on KALPHITE only. Not modeled, by decision: the Keris partisan of the sun's second passive, https://oldschool.runescape.wiki/w/Keris_partisan_of_the_sun \"providing a 25% increase to accuracy for targets with less than 25% health\", one of \"two unique passive effects that only apply within the Tombs of Amascut raid\". It is doubly conditional on the raid and on the target's current health, and a sustained-DPS model has no target-current-HP state to condition on; adding one for a raid-only window is a scope decision, not a defect. The sun partisan's on-kill heal is out of scope for the same reason it is for every other weapon.",
   "when": {
    "category": "MELEE",
    "targetAttr": "KALPHITE"
@@ -1125,7 +1125,7 @@
  {
   "id": "ConflictionGauntlets",
   "kind": "accuracyTransform",
-  "source": "https://oldschool.runescape.wiki/w/Confliction_gauntlets after a miss, \"the next magic attack of that weapon or spell against the same enemy [rolls] accuracy twice\"; \"disabled if using a two-handed weapon\" (the 2H gate blocks Tumeken's shadow). The mechanic has memory, solved by the wiki's own steady state h = P2/(1+P2-P1), P2 the fang double-roll number (both rolls face the same defence roll). Not modeled: multi-target rule, PvP ice-spell exclusion. Ahead of BrimstoneRing: the gauntlets recompute from the raw rolls, so a ring applied first would vanish.",
+  "source": "https://oldschool.runescape.wiki/w/Confliction_gauntlets after a miss, \"the next magic attack of that weapon or spell against the same enemy [rolls] accuracy twice\"; \"disabled if using a two-handed weapon\" (the 2H gate blocks Tumeken's shadow); \"the passive effect will only roll accuracy twice against the primary target of the spell; secondary targets will roll accuracy once as normal\", so a clumped cast is the target-count-weighted mean. The mechanic has memory, solved by the wiki's own steady state h = P2/(1+P2-P1), P2 the fang double-roll number (both rolls face the same defence roll). A worn Brimstone ring is folded into P1 and P2 here rather than composed after: its proc is rolled per attack, so it moves both rolls of the chain, and BrimstoneRing stands down whenever this row runs. Not modeled: PvP ice-spell exclusion.",
   "when": {
    "style": "MAGIC",
    "worn": "CONFLICTION_GAUNTLETS",
@@ -1134,10 +1134,15 @@
    }
   },
   "let": {
-   "doubled": "doubleRollShared(attackRoll, defenceRoll)",
-   "denominator": "1 + doubled - accuracy"
+   "brimstone": "worn('BRIMSTONE_RING')",
+   "reducedDefence": "idiv(defenceRoll * 9, 10)",
+   "single": "brimstone ? 0.75 * accuracy + 0.25 * hitChance(attackRoll, reducedDefence) : accuracy",
+   "doubled": "brimstone ? 0.75 * doubleRollShared(attackRoll, defenceRoll) + 0.25 * doubleRollShared(attackRoll, reducedDefence) : doubleRollShared(attackRoll, defenceRoll)",
+   "denominator": "1 + doubled - single",
+   "primary": "denominator <= 0 ? single : clamp(doubled / denominator, 0, 1)",
+   "targets": "cast.targets"
   },
-  "accuracy": "denominator <= 0 ? accuracy : clamp(doubled / denominator, 0, 1)",
+  "accuracy": "targets <= 1 ? primary : (primary + (targets - 1) * accuracy) / targets",
   "hidesItems": {
    "types": [
     "CONFLICTION_GAUNTLETS"
@@ -1146,23 +1151,25 @@
   },
   "interactingSlots": [
    "GLOVES",
-   "WEAPON"
+   "WEAPON",
+   "RING"
   ],
   "aggregateBoundSafe": true
  },
  {
   "id": "BrimstoneRing",
   "kind": "accuracyTransform",
-  "source": "https://oldschool.runescape.wiki/w/Brimstone_ring on any magic attack (\"powered staves included\"), 25% chance the target's magic defensive roll is reduced by 10% for that attack. Shape: mix the two outcomes, since averaging the defence roll instead understates accuracy on the convex a<d branch; integer division is the game's truncation of the reduced roll. The reduction \"doesn't affect multiple targets when barraging\", so under a clumped ancient cast this is the target-count-weighted mean, leaving the xN that follows to land the proc on one target and the plain chance on the rest.",
+  "source": "https://oldschool.runescape.wiki/w/Brimstone_ring on any magic attack (\"powered staves included\"), 25% chance the target's magic defensive roll is reduced by 10% for that attack. Shape: mix the two outcomes, since averaging the defence roll instead understates accuracy on the convex a<d branch; integer division is the game's truncation of the reduced roll. The reduction \"doesn't affect multiple targets when barraging\", so under a clumped ancient cast this is the target-count-weighted mean, leaving the xN that follows to land the proc on one target and the plain chance on the rest. Inert when live Confliction gauntlets precede it, which fold the same proc into the two rolls of their steady state; applying it again here would price the proc twice.",
   "when": {
    "style": "MAGIC",
    "worn": "BRIMSTONE_RING"
   },
   "let": {
+   "conflicted": "worn('CONFLICTION_GAUNTLETS') && !weapon.flag('effectivelyTwoHanded')",
    "mixed": "0.75 * accuracy + 0.25 * hitChance(attackRoll, idiv(defenceRoll * 9, 10))",
    "targets": "cast.targets"
   },
-  "accuracy": "targets <= 1 ? mixed : (mixed + (targets - 1) * accuracy) / targets",
+  "accuracy": "conflicted ? accuracy : (targets <= 1 ? mixed : (mixed + (targets - 1) * accuracy) / targets)",
   "aggregateBoundSafe": true
  },
  {
@@ -1213,7 +1220,7 @@
  {
   "id": "TwistedBow",
   "kind": "modifier",
-  "source": "https://oldschool.runescape.wiki/w/Twisted_bow accuracy percent = 140 + (3M-10)/100 - ((3M/10 - 100)^2)/100 clamped to [0, 140]; damage percent = 250 + (3M-14)/100 - ((3M/10 - 140)^2)/100 clamped to [0, 250]; every division truncated. M = max(target Magic level, Magic attack bonus) capped at 250, or 350 in CoX, which raises only the M input cap (the damage clamp never binds under it). Accuracy is its own late, separately-floored stage; damage folds into the main product with the other Ranged bonuses.",
+  "source": "https://oldschool.runescape.wiki/w/Twisted_bow accuracy percent = 140 + (3M-10)/100 - ((3M/10 - 100)^2)/100 clamped to [0, 140]; damage percent = 250 + (3M-14)/100 - ((3M/10 - 140)^2)/100 clamped to [0, 250]; every division truncated. M = max(target Magic level, Magic attack bonus) capped at 250, or 350 in CoX, which raises only the M input cap (the damage clamp never binds under it). Accuracy is its own late, separately-floored stage; damage folds into the main product with the other Ranged bonuses. Unsourced: below Magic level 4 the additive term's numerator is negative, where truncation and flooring differ (40% accuracy and 54% damage at Magic 1, against 39% and 53%); the wiki's markup carries no floor brackets and no statement of the direction, so this follows the truncation the rest of the formula uses.",
   "when": {
    "category": "RANGED",
    "worn": "TWISTED_BOW"
@@ -1272,13 +1279,13 @@
  {
   "id": "OsmumtenFangWindow",
   "kind": "rollWindow",
-  "source": "https://oldschool.runescape.wiki/w/Osmumten%27s_fang the fang narrows the roll by taking a 15% slice off both ends: [shrink, maxHit - shrink], not [15% of max, 85% of max]; the two ends share one term, not rounded independently.",
+  "source": "https://oldschool.runescape.wiki/w/Osmumten%27s_fang the fang narrows the roll by taking a 15% slice off both ends: [shrink, maxHit - shrink], not [15% of max, 85% of max]; the two ends share one term, not rounded independently. It \"occurs with any attack type\", unlike the accuracy re-roll that \"only occurs when using the Stab attack styles\", so this row is scoped to the weapon and not to Stab; the fang's Slash option keeps the window and loses the double roll.",
   "when": {
-   "style": "MELEE_STAB",
+   "category": "MELEE",
    "worn": "OSMUMTEN_FANG"
   },
   "filterWhen": {
-   "style": "MELEE_STAB"
+   "category": "MELEE"
   },
   "lo": "floor(0.15 * maxHit)",
   "hi": "maxHit - floor(0.15 * maxHit)",
