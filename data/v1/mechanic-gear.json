@@ -514,7 +514,7 @@
  {
   "id": "SunfireRuneMinimum",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Sunfire_rune a fire cast's minimum hit is 10% of the max hit, excluding the tome's +10% (the basis is the pre-tome max). The engine replaces the running minimum with this share when the row applies.",
+  "source": "https://oldschool.runescape.wiki/w/Sunfire_rune \"any successful hit with offensive fire spells will deal a minimum of 10% of the player's max hit\"; the pre-tome basis is https://oldschool.runescape.wiki/w/Tome_of_fire \"The +10% damage bonus from the tome of fire is not included when calculating the minimum hit\". The engine raises the running minimum to this share, so a floor another row already set (the Wardens P2 window) is never lowered. Charging a tome of fire with https://oldschool.runescape.wiki/w/Searing_page grants the same 10% minimum without sunfire runes; item names do not carry charge state, so that route reuses the player's sunfire flag.",
   "when": {
    "castElement": "FIRE",
    "expr": "player.sunfireRunes"
