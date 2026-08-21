@@ -19,12 +19,18 @@ ROOT = Path(__file__).resolve().parent.parent
 SHRINK_TOLERANCE = 0.02
 
 
+def show_head(relative):
+    try:
+        return subprocess.run(
+            ["git", "show", f"HEAD:{relative}"],
+            capture_output=True, text=True, cwd=ROOT, check=True).stdout
+    except Exception:
+        return None
+
+
 def previous_counts():
     try:
-        blob = subprocess.run(
-            ["git", "show", "HEAD:data/v1/meta.json"],
-            capture_output=True, text=True, cwd=ROOT, check=True).stdout
-        return json.loads(blob).get("counts", {})
+        return json.loads(show_head("data/v1/meta.json")).get("counts", {})
     except Exception:
         return {}
 
@@ -32,6 +38,63 @@ def previous_counts():
 def check_shrink(errors, name, now, before):
     if before and now < before * (1 - SHRINK_TOLERANCE):
         errors.append(f"{name}: row count collapsed {before} -> {now}")
+
+
+# meta.json and manifest.json describe the publish itself rather than carrying rows.
+NON_TABLE_FILES = {"manifest.json", "meta.json"}
+# The wrapper keys a table uses when it also has to carry an _meta attribution block.
+ROW_CONTAINER_KEYS = ("rows", "categories")
+
+
+def row_container(doc):
+    """The rows of a published table, or None when the document is not shaped like one."""
+    if isinstance(doc, list):
+        return doc
+    if isinstance(doc, dict):
+        for key in ROW_CONTAINER_KEYS:
+            container = doc.get(key)
+            if isinstance(container, (list, dict)):
+                return container
+    return None
+
+
+def previous_rows(name):
+    """The last published rows of a table, or None when it is new or was unreadable."""
+    try:
+        return row_container(json.loads(show_head(f"data/v1/{name}")))
+    except Exception:
+        return None
+
+
+def check_tables(errors):
+    """Every published table parses, holds objects, and has not shrunk against the last publish.
+
+    meta.json counts only the fetched tables, so without this an emptied mechanic file publishes
+    cleanly and deletes that whole mechanic class from every installed client.
+    """
+    for path in sorted((ROOT / "data/v1").glob("*.json")):
+        if path.name in NON_TABLE_FILES:
+            continue
+        try:
+            doc = json.loads(path.read_text())
+        except ValueError as error:
+            errors.append(f"{path.name}: does not parse as JSON ({error})")
+            continue
+        rows = row_container(doc)
+        if rows is None:
+            errors.append(f"{path.name}: no row container, expected an array or one of "
+                          f"{ROW_CONTAINER_KEYS}")
+            continue
+        if isinstance(rows, list):
+            bad = [i for i, row in enumerate(rows) if not isinstance(row, dict)]
+            if bad:
+                errors.append(f"{path.name}: {len(bad)} rows are not objects "
+                              f"(first at index {bad[0]})")
+        if not rows:
+            errors.append(f"{path.name}: is empty, a published table always carries a row")
+            continue
+        before = previous_rows(path.name)
+        check_shrink(errors, path.name, len(rows), len(before) if before else None)
 
 
 SOURCE_CODE_MARKERS = ("@PackagePrivate", "@NonFinal", "transient ", "{@link", "public static",
@@ -45,7 +108,10 @@ def check_no_source_dumps(errors):
     note the author wrote. It reached every client, and nothing here noticed.
     """
     for path in sorted((ROOT / "data/v1").glob("*.json")):
-        rows = json.loads(path.read_text())
+        try:
+            rows = json.loads(path.read_text())
+        except ValueError:
+            continue  # check_tables reports the parse failure.
         if not isinstance(rows, list):
             continue
         for row in rows:
@@ -62,6 +128,7 @@ def check_no_source_dumps(errors):
 
 def main():
     errors = []
+    check_tables(errors)
     check_no_source_dumps(errors)
 
     monsters = json.loads((ROOT / "data/v1/monsters.json").read_text())

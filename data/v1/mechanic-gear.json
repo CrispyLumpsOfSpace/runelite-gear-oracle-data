@@ -214,7 +214,7 @@
  },
  {
   "id": "ObsidianSet",
-  "source": "https://oldschool.runescape.wiki/w/Berserker_necklace \"increases the amount of damage the wearer does when wielding an obsidian melee weapon\" \u2014 twenty percent, multiplicative, and independent of the obsidian armour set (whose own +10% accuracy and strength are flat shares of the base roll that the engine adds at its own stage, not a factor a row can carry). The necklace pays off with the weapon alone, which neither single-slot ascent nor set completion would assemble, hence the declared coupling.",
+  "source": "https://oldschool.runescape.wiki/w/Berserker_necklace \"increases the amount of damage the wearer does when wielding an obsidian melee weapon\" \u2014 twenty percent, multiplicative, and independent of the obsidian armour set (whose own +10% accuracy and strength are flat shares of the base roll that the engine adds at its own stage, not a factor a row can carry). The necklace pays off with the weapon alone, which neither single-slot ascent nor set completion would assemble, hence the declared coupling. Bound: the factor is a flat 6/5 on damage, so a loadout holding the necklace scores at most 1.20x what its stats suggest; the weapon half needs no claim because the chunk fixes the weapon before the bound walk begins.",
   "when": {
    "category": "MELEE",
    "weaponSpecial": "OBSIDIAN_WEAPON",
@@ -231,7 +231,12 @@
   "interactingSlots": [
    "AMULET",
    "WEAPON"
-  ]
+  ],
+  "bound": {
+   "item": "BERSERKER_NECKLACE",
+   "factor": 1.2
+  },
+  "aggregateBoundSafe": true
  },
  {
   "id": "TomeDamageBonus",
