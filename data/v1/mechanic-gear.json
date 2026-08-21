@@ -1,16 +1,26 @@
 [
  {
   "id": "EfaritaysAid",
-  "source": "https://oldschool.runescape.wiki/w/Efaritay's_aid \"increasing the damage dealt to them by 10% and accuracy by 15%\". The +15% accuracy half applies on the Melee chain only \u2014 the thrown Blisterwood stake gets the damage half alone (docs/ENGINE-GAPS.md open gap).",
+  "source": "https://oldschool.runescape.wiki/w/Efaritay's_aid Effects table: tier 1 \"All weapons gain a 10% damage bonus / +15% accuracy to silver weaponry\", tier 2 \"+15% accuracy and 10% damage to silver weaponry\", tier 3 \"+15% accuracy and 10% damage to applicable weaponry\". So the damage half is weapon-blind at tier 1 and silver-gated above it, while the accuracy half is silver-gated at every tier; silver weaponry is the same list the tier-2 immunity escape recognises, silver bolts included, which is why the ranged arm reads the ammo slot. The 8 May 2024 changes entry confirms the accuracy half: \"Efaritay's aid now provides a 15% accuracy bonus to silver weaponry\".",
   "when": {
    "monsterClass": "vampyre",
-   "worn": "EFARITAYS_AID",
-   "weaponFlag": "vampyreBane"
+   "worn": "EFARITAYS_AID"
   },
   "accuracy": [
    {
     "when": {
-     "category": "MELEE"
+     "anyOf": [
+      {
+       "weaponFlag": "vampyreBane"
+      },
+      {
+       "weaponFamily": "silverMelee"
+      },
+      {
+       "ammoFamily": "silverRanged",
+       "ammoCompatible": true
+      }
+     ]
     },
     "factor": [
      23,
@@ -20,6 +30,29 @@
   ],
   "damage": [
    {
+    "when": {
+     "vampyreTier": 1
+    },
+    "factor": [
+     11,
+     10
+    ]
+   },
+   {
+    "when": {
+     "anyOf": [
+      {
+       "weaponFlag": "vampyreBane"
+      },
+      {
+       "weaponFamily": "silverMelee"
+      },
+      {
+       "ammoFamily": "silverRanged",
+       "ammoCompatible": true
+      }
+     ]
+    },
     "factor": [
      11,
      10
