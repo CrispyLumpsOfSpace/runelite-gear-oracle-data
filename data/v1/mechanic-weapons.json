@@ -915,7 +915,7 @@
  {
   "id": "ScytheOfViturMechanic",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Scythe_of_vitur \"A 2x2 monster (such as Vardorvis) will be hit twice per attack, while a 3x3 or larger monster (such as dragons and Duke Sucellus) will be hit three times per attack.\" 100% / 50% / 25% of the max hit, with flat armour applying per hit against each hit's own ceiling rather than once against the combined one. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\".",
+  "source": "https://oldschool.runescape.wiki/w/Scythe_of_vitur \"A 2x2 monster (such as Vardorvis) will be hit twice per attack, while a 3x3 or larger monster (such as dragons and Duke Sucellus) will be hit three times per attack.\" 100% / 50% / 25% of the max hit, with flat armour applying per hit against each hit's own ceiling rather than once against the combined one. On a guaranteed-max-hit target the sequence yields one max hitsplat, https://oldschool.runescape.wiki/w/Yama/Strategies \"The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once\". Out of scope: the 1x3 arc, \"which can allow them to hit three 1x1 targets in front of them\", which is a targetCount effect rather than a size-gated one.",
   "when": {
    "category": "MELEE",
    "worn": "SCYTHE_OF_VITUR"
