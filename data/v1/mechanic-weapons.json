@@ -1576,33 +1576,24 @@
  {
   "id": "DragonstoneBoltProc",
   "kind": "additiveHit",
-  "source": "https://oldschool.runescape.wiki/w/Dragonstone_bolts_(e) 6% of landed hits deal an extra floor(visible Ranged level x 2 / 10) (\"22% instead of 20%\" with a Zaryte, a smaller divisor because the division is truncated); \"If the target is immune to dragonfire, the special effect will not activate\" - DRAGON and FIERY are the two dragonfire-immunity marks.",
+  "source": "https://oldschool.runescape.wiki/w/Dragonstone_bolts_(e) 6% of landed hits deal an extra floor(visible Ranged level x 2 / 10), \"22% instead of 20%\" with a Zaryte; https://oldschool.runescape.wiki/w/Zaryte_crossbow states the dragonstone enhancement as a percentage (\"visible ranged * 22%\") where it states opal's and pearl's as divisors, so 22/100 rather than 2/9. \"If the target is immune to dragonfire, the special effect will not activate\", and https://oldschool.runescape.wiki/w/Dragonfire scopes that immunity to a conjunction: \"These methods will not cause damage if the opponent is both a fiery and draconic creature\".",
   "when": {
    "style": "RANGED",
    "ammoCompatible": "true",
    "ammoSpecial": "DRAGONSTONE_BOLTS",
-   "not": {
-    "anyOf": [
-     {
-      "targetAttr": "DRAGON"
-     },
-     {
-      "targetAttr": "FIERY"
-     }
-    ]
-   }
+   "exprFilter": "!(monster.attr('DRAGON') && monster.attr('FIERY'))"
   },
   "filterWhen": {
    "style": "RANGED"
   },
-  "extra": "(player.kandarinHardDiary ? 1.1 : 1) * (accuracy * 0.06 * floor((player.rangedLevel + player.rangedBoost) * 2.0 / (worn('ZARYTE_CROSSBOW') ? 9 : 10)))",
+  "extra": "(player.kandarinHardDiary ? 1.1 : 1) * (accuracy * 0.06 * floor((player.rangedLevel + player.rangedBoost) * (worn('ZARYTE_CROSSBOW') ? 22.0 : 20.0) / 100))",
   "aggregateBoundSafe": true,
   "bound": {
    "items": [
     "DRAGONSTONE_BOLTS"
    ],
    "category": "RANGED",
-   "addendDps": "!chunk.canFire || monster.attr('DRAGON') || monster.attr('FIERY') ? 0 : 0.06 * (player.kandarinHardDiary ? 1.1 : 1) * floor((player.rangedLevel + player.rangedBoost) * 2.0 / (chunk.special('ZARYTE_CROSSBOW') ? 9 : 10)) / (max(1, chunk.aspeed - 1) * 0.6)"
+   "addendDps": "!chunk.canFire || (monster.attr('DRAGON') && monster.attr('FIERY')) ? 0 : 0.06 * (player.kandarinHardDiary ? 1.1 : 1) * floor((player.rangedLevel + player.rangedBoost) * (chunk.special('ZARYTE_CROSSBOW') ? 22.0 : 20.0) / 100) / (max(1, chunk.aspeed - 1) * 0.6)"
   }
  },
  {
