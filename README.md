@@ -68,6 +68,7 @@ values appear, though which fields carry an override is itself a product of it.
 | `data/v1/meta.json` | Generation date, source, row counts | — |
 | `fixtures/v1/` | Test fixtures for the plugin's suite, including the bestiary's full-override variant (tests run without a game client) | [CC BY-NC-SA 3.0](fixtures/LICENSE) |
 | `fixtures/v1/scenarios/`, `catalogs/` | Hand-maintained plugin test corpora — CLI smoke scenarios and item catalogs. Authored in the plugin project; stat values transcribed from wiki infoboxes, so they live here with the rest of the wiki-derived data | [CC BY-NC-SA 3.0](fixtures/LICENSE) |
+| `fixtures/v1/monster-stat-gaps.json` | Every monster stat the wiki states no single number for, so `tools/validate.py` can fail a publish that carries one anyway. Not a client file | [CC BY-NC-SA 3.0](fixtures/LICENSE) |
 | `fixtures/v1/adversarial-corpus.json` | The mechanic-adversarial corpus. Original test data — its item stats are constructed per scenario, not transcribed | [MIT](tools/LICENSE) |
 | `vectors/vectors.json` | Recorded runs of the OSRS Wiki DPS calculator, used to cross-validate the plugin's engine. Dual-provenance: outputs GPL-3.0, resolved stat rows wiki-derived CC BY-NC-SA 3.0 — see [vectors/README.md](vectors/README.md) | [GPL-3.0](vectors/LICENSE) + [CC BY-NC-SA 3.0](data/LICENSE) |
 
