@@ -125,6 +125,6 @@
   "specialType": "HARMONISED_NIGHTMARE_STAFF",
   "hit": "24",
   "speedTicks": 4,
-  "source": "https://oldschool.runescape.wiki/w/Harmonised_Nightmare_staff \u2014 modelled as always autocasting Fire Surge, its best option and the only kind of spell it can speed up, so the base hit is that spell's 24 and the cycle is 4 ticks. \"The 4-tick spell speed only applies when autocasting\"; manual casting forfeits it and is not modelled."
+  "source": "https://oldschool.runescape.wiki/w/Harmonised_Nightmare_staff \u2014 modelled as autocasting a standard-spellbook Surge, whose element the spell picker chooses, so the base hit is a Surge's 24 and the cycle is 4 ticks. \"The 4-tick spell speed only applies when autocasting\"; manual casting forfeits it and is not modelled, and the staff cannot autocast Ancients or Arceuus. Not modelled: the lower Surge base hits below Magic 95."
  }
 ]
