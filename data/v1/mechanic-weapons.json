@@ -769,7 +769,6 @@
   "alwaysMaxHitYields": "effective",
   "splats": [
    {
-    "unraised": true,
     "addend": 5,
     "accuracyPower": 0
    }
