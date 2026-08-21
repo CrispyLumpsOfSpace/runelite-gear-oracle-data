@@ -763,7 +763,7 @@
  {
   "id": "TormentedDemonUnshieldedBonus",
   "kind": "rollWindow",
-  "source": "https://oldschool.runescape.wiki/w/Tormented_Demon unshielded, magic spells, heavy Ranged and crush gain a flat speed^2 - 16 damage bonus, added before the raise so a 0 roll lands as the bonus rather than as 1. The bonus grows with the square of the weapon's speed, so the slowest crush weapon in the bank can beat the fastest, a ranking no raw stat carries (the hidesItems speed predicate).",
+  "source": "https://oldschool.runescape.wiki/w/Tormented_Demon unshielded, magic spells, heavy Ranged and crush gain a flat speed^2 - 16 damage bonus, added before the raise so a 0 roll lands as the bonus rather than as 1. The bonus grows with the square of the weapon's speed, so the slowest crush weapon in the bank can beat the fastest, a ranking no raw stat carries (the hidesItems speed predicate). Out of scope: the divide-by-3, rounded down, when the weapon matches the demon's protection prayer, which needs a monster prayer no input carries.",
   "when": {
    "monsterClass": "tormentedDemon",
    "optionIs": {
@@ -800,7 +800,7 @@
  {
   "id": "TormentedDemonQuickened",
   "kind": "attackSpeed",
-  "source": "https://oldschool.runescape.wiki/w/Tormented_Demon a qualifying attack on an unshielded demon lands a tick sooner.",
+  "source": "https://oldschool.runescape.wiki/w/Tormented_Demon/Strategies \"The attack speed for this one attack is also set to 4 ticks (2.4s)\"; the article's shield-down table reads 4 ticks vs one demon for standard speeds 7, 6, 5 and \"4 or faster\" alike, so the rule is an assignment and not a decrement. Out of scope: the table's multi-demon columns (\"the attack speed decreases by one tick per additional demon\"), which need a demon count no input carries, and the divide-by-3 when the weapon matches the demon's protection prayer.",
   "when": {
    "monsterClass": "tormentedDemon",
    "optionIs": {
@@ -826,7 +826,7 @@
   "filterWhen": {
    "monsterClass": "tormentedDemon"
   },
-  "expectedTicks": "ticks - 1",
+  "expectedTicks": "min(ticks, 4)",
   "aggregateBoundSafe": true
  },
  {
@@ -872,7 +872,7 @@
      "key": "leviathanSituation",
      "type": "choice",
      "label": "Fight situation",
-     "help": "<html>The Leviathan pays differently by moment.<br><b>In the pool:</b> ranged cannot miss and hits for at least 20% of its max; magic gets double damage instead.<br><b>Stunned:</b> damage is capped at 10 \u2014 unless you are at the <b>backside</b>, where ranged hits for at least 65% of its max.</html>",
+     "help": "<html>The Leviathan pays differently by moment.<br><b>In the pool:</b> ranged cannot miss and hits for at least 20% of its max; magic gets double damage instead.<br><b>Stunned:</b> damage is capped at 10 \u2014 unless you are at the <b>backside</b>, where ranged hits for at least 65% of its max and magic deals double damage.</html>",
      "choices": [
       "Normal",
       "In the pathfinder's pool",
@@ -894,6 +894,28 @@
    "optionIs": {
     "key": "leviathanSituation",
     "is": "In the pathfinder's pool",
+    "default": "Normal"
+   }
+  },
+  "filterWhen": {
+   "monsterClass": "leviathan"
+  },
+  "lo": "0",
+  "hi": "maxHit",
+  "factor": "2",
+  "effectiveMaxHit": "maxHit * 2",
+  "aggregateBoundSafe": true
+ },
+ {
+  "id": "LeviathanBacksideMagic",
+  "kind": "rollWindow",
+  "source": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies at the gaping wound \"attacking with magic is not guaranteed to hit and is subject to the usual accuracy rolls, but will deal double damage\" - the pathfinder pool's two-sided shape again, ranged paid in a floor and magic in damage.",
+  "when": {
+   "monsterClass": "leviathan",
+   "category": "MAGIC",
+   "optionIs": {
+    "key": "leviathanSituation",
+    "is": "Stunned, at the backside",
     "default": "Normal"
    }
   },
