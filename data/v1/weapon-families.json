@@ -1288,12 +1288,14 @@
   ],
   "nameContains": [
    "spear",
-   "halberd"
+   "halberd",
+   "thunder khopesh",
+   "king's barrage"
   ],
   "notNameContains": [
    "blue moon spear"
   ],
-  "source": "The unknown-id approximation for corpbane: the registry carries the exact per-item list, and this is only consulted for items released after it was built. The Blue moon spear exclusion is checked ahead of the registry itself (https://twitter.com/JagexAsh/status/1777673598099968104), so it appears here only as belt and braces."
+  "source": "The unknown-id approximation for corpbane: the registry carries the exact per-item list, and this is only consulted for items released after it was built. The two corpbaneBase members whose name is neither spear nor halberd are listed so the fallback answers for them too. The Blue moon spear exclusion is checked ahead of the registry itself (https://twitter.com/JagexAsh/status/1777673598099968104), so it appears here only as belt and braces."
  },
  {
   "key": "atlatlDart",
