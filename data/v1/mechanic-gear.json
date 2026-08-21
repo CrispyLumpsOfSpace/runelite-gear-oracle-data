@@ -30,7 +30,7 @@
  },
  {
   "id": "TomeAccuracyBonus",
-  "source": "https://oldschool.runescape.wiki/w/Update:Fishing_Skill_Boss_and_Easter_Event \"Standard Spellbook Water, Curse and Binding spell accuracy is increased by 20%\"; https://oldschool.runescape.wiki/w/Update:Project_Rebalance_-_NPC_Defence_Changes cut the tome DAMAGE halves only \u2014 the accuracy bonus is water's alone.",
+  "source": "https://oldschool.runescape.wiki/w/Update:Fishing_Skill_Boss_and_Easter_Event \"Standard Spellbook Water, Curse and Binding spell accuracy is increased by 20%\"; https://oldschool.runescape.wiki/w/Update:Project_Rebalance_-_NPC_Defence_Changes cut the tome DAMAGE halves only \u2014 the accuracy bonus is water's alone. Caveat: https://oldschool.runescape.wiki/w/Tome_of_water conflates the two in one sentence, \"increase the spell's accuracy and damage by 10% against NPCs and 20% against players\", contradicting 20% accuracy; its own 29 May 2024 changelog entry cuts the damage boost alone, and the Talk page question about the accuracy boost post-rework is unanswered.",
   "when": {
    "style": "MAGIC",
    "poweredStaff": "false",
