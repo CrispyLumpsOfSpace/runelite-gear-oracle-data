@@ -504,10 +504,20 @@
  {
   "id": "SharpEyeGuaranteedLevel",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Sharp_Eye the prayer is guaranteed to grant a level: at a Ranged level of 20 or below its +5% truncates to nothing and the game adds 1 instead. It is the only Ranged prayer at 1.05, which is what identifies it; the value is the +1 exactly where the truncated 5% would give nothing.",
+  "source": "https://oldschool.runescape.wiki/w/Sharp_Eye \"or by 1 level if the player's Ranged level is lower than 20\", the 29 May 2024 change made because below 20 the +5% truncated to nothing. It is the only Ranged prayer at 1.05, which is what identifies it; the truncation guard is the real predicate and base <= 20 only a pre-filter, since at 20 the plain 5% already yields +1.",
   "when": {
    "category": "RANGED",
    "exprFilter": "player.rangedStrengthPrayer == 1.05"
+  },
+  "value": "base <= 20 && trunc(base * 1.05) == base ? 1 : 0"
+ },
+ {
+  "id": "BurstOfStrengthGuaranteedLevel",
+  "kind": "flatShare",
+  "source": "https://oldschool.runescape.wiki/w/Maximum_melee_hit prayer table, Burst of Strength 1.05 \"Always boost the player's Strength level by at least 1\"; https://oldschool.runescape.wiki/w/Update:Project_Rebalance:_Combat_Changes \"Sharp Eye and Burst of Strength now boost your Ranged and Strength by 1 level respectively, if those levels are lower than 20.\" It is the only melee strength prayer at 1.05, which is what identifies it; the melee twin of SharpEyeGuaranteedLevel.",
+  "when": {
+   "category": "MELEE",
+   "exprFilter": "player.meleeStrengthPrayer == 1.05"
   },
   "value": "base <= 20 && trunc(base * 1.05) == base ? 1 : 0"
  },
@@ -590,11 +600,11 @@
  {
   "id": "EclipseMoonBurn",
   "kind": "additiveHit",
-  "source": "https://oldschool.runescape.wiki/w/Eclipse_moon_armour \"Successful attacks with the eclipse atlatl gives a 20% chance to inflict a burn on any non-immune target\"; \"Each burn has an individual duration and up to five burns can be applied to a target at a time\"; \"damage over the course of 40 ticks or 24 seconds\", 1 damage per 4-tick burn tick. Shape: a steady-state queueing approximation (arrival rate times stack duration, capped at five) rather than a simulation of individual stacks. This is a weak burn, so even weak-burn immunity stops it.",
+  "source": "https://oldschool.runescape.wiki/w/Eclipse_moon_armour \"Successful attacks with the eclipse atlatl gives a 20% chance to inflict a burn on any non-immune target\"; \"Each burn has an individual duration and up to five burns can be applied to a target at a time\"; \"damage over the course of 40 ticks or 24 seconds\", 1 damage per 4-tick burn tick. Shape: a steady-state queueing approximation (arrival rate times stack duration) rather than a simulation of individual stacks; attackSeconds cancels, so the row is accuracy * 0.20 * 10 and the five-stack cap is a shape guard no attack speed can reach (it would need an attack under 2 ticks). https://oldschool.runescape.wiki/w/Burn lists this set under \"Strong burns, sometimes called sunfire burns (inflicted by the eclipse moon armour set and the Arkan blade)\", so only strong-tier immunity stops it.",
   "when": {
    "style": "RANGED",
    "setActive": "ECLIPSE_MOON",
-   "exprFilter": "!monster.burnImmune"
+   "exprFilter": "!monster.burnImmuneStrong"
   },
   "let": {
    "attackSeconds": "attackTicks * 0.6",
@@ -630,7 +640,7 @@
  {
   "id": "SlayerSalveGroup",
   "kind": "exclusiveGroup",
-  "source": "https://oldschool.runescape.wiki/w/Salve_amulet \"The salve amulet's bonuses against the undead do not stack with the black mask and slayer helmet's 16.67% attack and strength bonuses; wearing both will only apply the bonuses of the salve amulet.\" The un-imbued tiers are \"a 16.67% increase in the wearer's Attack and Strength when fighting undead\", so the plain salve and the (i) give 7/6 rather than 1.15; the (i) carries that 16.67% on melee and Ranged alike and only Magic takes 15%. The higher single multiplier wins, covering accuracy and damage alike, applied as its own separately-floored stage. Magic differs: the salve (i)/(ei) joins the additive damage block (15/20 points; the un-imbued salve and salve (e) give no Magic bonus at all) while the black mask (i) stays its own floored stage and never stacks with it. The Dragon hunter wand's passive \"stacks with the Slayer helm (i) ... but not the salve amulet (i)\", so the salve contributes nothing while it runs. Bound: salve tops out at 1.20 x 1.20, slayer headgear at (7/6)^2, both firing only on undead or on task; a roll multiplier m raises hit chance by at most m, so acc x dmg is the DPS ceiling.",
+  "source": "https://oldschool.runescape.wiki/w/Salve_amulet \"The salve amulet's bonuses against the undead do not stack with the black mask and slayer helmet's 16.67% attack and strength bonuses; wearing both will only apply the bonuses of the salve amulet.\" The un-imbued tiers are \"a 16.67% increase in the wearer's Attack and Strength when fighting undead\", so the plain salve and the (i) give 7/6 rather than 1.15; the (i) carries that 16.67% on melee and Ranged alike and only Magic takes 15%. The higher single multiplier wins, covering accuracy and damage alike, applied as its own separately-floored stage. Magic differs: the salve (i)/(ei) joins the additive damage block (15/20 points; the un-imbued salve and salve (e) give no Magic bonus at all) while the black mask (i) stays its own floored stage and never stacks with it. The Dragon hunter wand's passive \"stacks with the Slayer helm (i) ... but not the salve amulet (i)\", so the salve contributes nothing while it runs. The eclipse atlatl is a Ranged weapon on the melee tier: https://oldschool.runescape.wiki/w/Eclipse_atlatl \"it uses the melee bonuses from the slayer helmet and salve amulets\", so it takes 7/6 and 1.20 and stays out of the Ranged black mask (i) additive fold. Bound: salve tops out at 1.20 x 1.20, slayer headgear at (7/6)^2, both firing only on undead or on task; a roll multiplier m raises hit chance by at most m, so acc x dmg is the DPS ceiling.",
   "filterWhen": {
    "anyOf": [
     {
@@ -644,8 +654,9 @@
   "let": {
    "wandOverride": "style.magic && monster.attr('DRAGON') && worn('DRAGON_HUNTER_WAND')",
    "salveActive": "monster.attr('UNDEAD') && !wandOverride",
-   "salve": "!salveActive ? 1 : worn('SALVE_AMULET_EI') ? 1.20 : worn('SALVE_AMULET_I') ? (style.magic ? 1.15 : 7/6) : worn('SALVE_AMULET_E') ? (style.melee ? 1.20 : 1) : worn('SALVE_AMULET') ? (style.melee ? 7/6 : 1) : 1",
-   "helm": "!player.onSlayerTask || !wornFamily('slayerHelm') ? 1 : style.melee ? 7/6 : wornFamily('imbuedSlayerHeadgear') ? 1.15 : 1",
+   "meleeTier": "style.melee || worn('ECLIPSE_ATLATL')",
+   "salve": "!salveActive ? 1 : worn('SALVE_AMULET_EI') ? 1.20 : worn('SALVE_AMULET_I') ? (style.magic ? 1.15 : 7/6) : worn('SALVE_AMULET_E') ? (meleeTier ? 1.20 : 1) : worn('SALVE_AMULET') ? (meleeTier ? 7/6 : 1) : 1",
+   "helm": "!player.onSlayerTask || !wornFamily('slayerHelm') ? 1 : meleeTier ? 7/6 : wornFamily('imbuedSlayerHeadgear') ? 1.15 : 1",
    "magicSalvePercent": "!salveActive ? 0 : worn('SALVE_AMULET_EI') ? 20.0 : worn('SALVE_AMULET_I') ? 15.0 : 0"
   },
   "queries": {
@@ -654,7 +665,7 @@
    "slayerHelmMultiplier": "helm",
    "magicSalveAdditivePercent": "magicSalvePercent",
    "magicSlayerMultiplier": "magicSalvePercent > 0 ? 1 : (player.onSlayerTask && wornFamily('imbuedSlayerHeadgear') ? 1.15 : 1)",
-   "imbuedBlackMaskWins": "player.onSlayerTask && wornFamily('imbuedSlayerHeadgear') && salve == 1 ? 1 : 0"
+   "imbuedBlackMaskWins": "player.onSlayerTask && wornFamily('imbuedSlayerHeadgear') && salve == 1 && !worn('ECLIPSE_ATLATL') ? 1 : 0"
   },
   "bound": {
    "items": [
