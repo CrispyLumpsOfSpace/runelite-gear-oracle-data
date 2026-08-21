@@ -966,7 +966,7 @@
  {
   "id": "AncientMultiTarget",
   "kind": "averageHit",
-  "source": "https://oldschool.runescape.wiki/w/Ice_Barrage \"up to nine targets in a 3x3 grid around its primary target\"; a clean xN, since the engine models one monster so every target carries the same hit chance, and no source strips a damage bonus from a secondary target here. The Brimstone ring is the one bonus the primary does not share; its row dilutes itself across the clump so this stays a clean xN. Last with the other target-count entries: everything above scales damage to one enemy, this multiplies by how many there are. Not modeled: Smoke's 1/8 poison, Blood's leech, Ice's freeze, whether the player is in a multi-way area at all.",
+  "source": "https://oldschool.runescape.wiki/w/Ice_Barrage \"up to nine targets in a 3x3 grid around its primary target\"; the engine models one monster so every target carries the same hit chance. Secondaries are not a clean xN: https://oldschool.runescape.wiki/w/Salve_amulet(ei) says the amulet's effects apply to all targets for multi-hitting melee \"but not for multi-hitting magic and ranged attacks (ex. chinchompas and burst spells)\", while https://oldschool.runescape.wiki/w/Ice_Barrage keeps the mask - \"any secondary targets hit will also be subject to the damage bonus from a worn black mask (i)/slayer helmet (i)\". cast.secondaryAmuletRatio is the engine's second Magic max hit with the neck additive dropped and the mask restored, over the primary's. The Brimstone ring is the one bonus the primary does not share; its row dilutes itself across the clump. Last with the other target-count entries: everything above scales damage to one enemy, this multiplies by how many there are. Not modeled: Smoke's 1/8 poison, Blood's leech, Ice's freeze, whether the player is in a multi-way area at all.",
   "when": {
    "category": "MAGIC"
   },
@@ -975,6 +975,9 @@
    "exprFilter": "player.targetCount > 1"
   },
   "aggregateBoundSafe": true,
-  "multiplierExpr": "cast.targets"
+  "let": {
+   "targets": "cast.targets"
+  },
+  "multiplierExpr": "targets <= 1 ? 1 : 1 + (targets - 1) * cast.secondaryAmuletRatio"
  }
 ]

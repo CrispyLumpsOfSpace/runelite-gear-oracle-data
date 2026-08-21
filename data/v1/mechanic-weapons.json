@@ -199,7 +199,7 @@
     "VAMPYRE_3"
    ]
   },
-  "source": "Battery-pinned per-weapon figures pending wiki or in-game confirmation (docs/ENGINE-GAPS.md open gap: Mod Ed's tweets of 6 and 8 Jun 2020 agree on damage but contradict each other on Blisterwood accuracy, 10% vs 5%). Deliberately not style-gated: the Blisterwood stake is thrown. Cascades are first-match alternatives, not stacking effects, and the accuracy table does not align with the damage one.",
+  "source": "Per-weapon figures from each weapon's own wiki article: Sunspear \"25% accuracy bonus and 50% damage bonus against them\"; Hallowed flail \"25% damage and accuracy bonus\"; Blisterwood flail \"25% damage and 5% accuracy bonus\"; Blisterwood sickle \"a 15% damage and 5% accuracy bonus\"; Blisterwood stake \"an accuracy and damage bonus of 25%\"; Ivandis flail \"a 20% damage bonus\"; Rod of ivandis \"increases damage against vampyres by 10%\". The two blisterwood articles settle Mod Ed's 10%-vs-5% accuracy contradiction at 5%, the sickle's citing the later tweet of 8 Jun 2020. Not style-gated: the Blisterwood stake is thrown. Cascades are first-match alternatives, not stacking effects, and the accuracy table does not align with the damage one.",
   "when": {
    "monsterClass": "vampyre"
   },
@@ -210,6 +210,15 @@
       "HALLOWED_FLAIL",
       "SUNSPEAR"
      ]
+    },
+    "factor": [
+     5,
+     4
+    ]
+   },
+   {
+    "when": {
+     "worn": "BLISTERWOOD_STAKE"
     },
     "factor": [
      5,

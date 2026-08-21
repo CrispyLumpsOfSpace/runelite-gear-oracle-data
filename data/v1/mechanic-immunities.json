@@ -62,7 +62,7 @@
  {
   "id": "VampyreBaneImmunity",
   "kind": "immunity",
-  "source": "The game data splits the castes across three attributes so a tier-1 quest boss like Count Draynor is told apart from the higher ones. Tier 1: https://oldschool.runescape.wiki/w/Vampyre \"All weapons deal full damage\". Tier 2: \"Regular weapons deal no damage unless using an Efaritay's aid\". Tier 3: \"Only specific silver weapons deal full damage\". The rod of ivandis reaches tier 2 only; the blisterwood stake is the Ranged way through and is checked before everything else, since a thrown stake is not a melee vampyrebane; and the rod is excluded from the melee vampyrebane escape because it is the tier-2 rule, not the general one.",
+  "source": "The game data splits the castes across three attributes so a tier-1 quest boss like Count Draynor is told apart from the higher ones. Tier 1: https://oldschool.runescape.wiki/w/Vampyre \"All weapons deal full damage\". Tier 2: \"Regular weapons deal no damage unless using an Efaritay's aid\". Tier 3: \"Only specific silver weapons deal full damage\". The rod of ivandis reaches tier 2 only; the blisterwood stake is the Ranged way through and is checked before everything else, since a thrown stake is not a melee vampyrebane; and the rod is excluded from the melee vampyrebane escape because it is the tier-2 rule, not the general one. Silver bolts are an ammo-slot item, so the tier-2 Ranged escape reads the ammo slot: https://oldschool.runescape.wiki/w/Silver_bolts \"one of the few ammo types able to be used to effectively kill Vampyre Juvinates\", fired \"from iron crossbows or better\".",
   "immuneAny": [
    {
     "vampyreTierAtLeast": 2
@@ -99,7 +99,8 @@
    {
     "vampyreTier": 2,
     "category": "RANGED",
-    "weaponFamily": "silverRanged"
+    "ammoFamily": "silverRanged",
+    "ammoCompatible": true
    }
   ]
  },
