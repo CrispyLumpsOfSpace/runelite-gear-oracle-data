@@ -1,7 +1,7 @@
 [
  {
   "id": "ZogreResistance",
-  "source": "https://oldschool.runescape.wiki/w/Zogre \"Zogres are almost immune to normal weapons (you will hit just as often, but damage is reduced by 75%).\"; \"Brutal arrows are effective against them, as is the Crumble Undead spell (however, damage is halved, for a maximum of 7).\" A resistance rather than a bonus, and the kind a recommendation tool cannot afford to miss: without it the calculator both overstates every Zogre loadout fourfold and ranks the one setup that actually works no differently from the ones that do not. First match wins, so Crumble Undead's half precedes the brutal-arrow exemption and the fourfold reduction everything else takes.",
+  "source": "https://oldschool.runescape.wiki/w/Zogre \"Zogres are almost immune to normal weapons (you will hit just as often, but damage is reduced by 75%).\"; \"Brutal arrows are effective against them, as is the Crumble Undead spell (however, damage is halved, for a maximum of 7).\" A resistance rather than a bonus, and the kind a recommendation tool cannot afford to miss: without it the calculator both overstates every Zogre loadout fourfold and ranks the one setup that actually works no differently from the ones that do not. First match wins, so Crumble Undead's half precedes the brutal-arrow exemption and the fourfold reduction everything else takes. The exemption is stated for the arrows, not for one bow, so both ogre bows earn it; https://oldschool.runescape.wiki/w/Brutal_arrow \"Ogre bows can only fire up to mithril brutal arrows, while composite ogre bows can fire all types\" is why the plain bow gets its own arm, capped at mithril.",
   "when": {
    "monsterClass": "zogre"
   },
@@ -20,6 +20,17 @@
      "category": "RANGED",
      "weaponFamily": "compOgreBow",
      "ammoFamily": "brutalArrow"
+    },
+    "factor": [
+     1,
+     1
+    ]
+   },
+   {
+    "when": {
+     "category": "RANGED",
+     "weaponFamily": "ogreBow",
+     "ammoFamily": "plainOgreBowBrutalArrow"
     },
     "factor": [
      1,
