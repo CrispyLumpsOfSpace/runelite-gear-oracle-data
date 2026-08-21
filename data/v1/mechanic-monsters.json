@@ -643,7 +643,8 @@
  {
   "id": "RespiratorySystem",
   "kind": "rollWindow",
-  "source": "https://oldschool.runescape.wiki/w/Abyssal_Sire/Strategies the four respiratory systems' damage rules replace the normal 0..max roll: a minimum hit of trunc(max / 2), so the roll is uniform over min..max. Not modeled: the fight's phases and vent stun timing (no timeline).",
+  "shapesHitsplats": true,
+  "source": "https://oldschool.runescape.wiki/w/Abyssal_Sire/Strategies the four respiratory systems' damage rules replace the normal 0..max roll: a minimum hit of trunc(max / 2), so the roll is uniform over min..max. Not modeled: the fight's phases and vent stun timing (no timeline). A hitsplat shaper rather than a distribution of its own: the wiki states the rule for the player's weapon with no carve-out, so a multi-hitsplat weapon keeps it, each splat rolling over half its own ceiling. How the floor divides across a scythe's three splats is unstated by the wiki (docs/ENGINE-GAPS.md).",
   "when": {
    "monsterClass": "respiratorySystem"
   },
@@ -908,7 +909,8 @@
  {
   "id": "LeviathanPoolRangedFloor",
   "kind": "rollWindow",
-  "source": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies the pool's increased minimum: Mod Ash, \"it's ensuring you hit for at least 20% of your max\".",
+  "shapesHitsplats": true,
+  "source": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies the pool's increased minimum: Mod Ash, \"it's ensuring you hit for at least 20% of your max\". A hitsplat shaper: the raised minimum layers onto every splat the bow fires rather than replacing the distribution.",
   "when": {
    "monsterClass": "leviathan",
    "category": "RANGED",
@@ -928,7 +930,8 @@
  {
   "id": "LeviathanBacksideFloor",
   "kind": "rollWindow",
-  "source": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies \"When attacking the backside with ranged, it deals at least a minimum of ~65% of your maximum hit as damage\"; stunned elsewhere is the 10 damage cap in damage-caps.json.",
+  "shapesHitsplats": true,
+  "source": "https://oldschool.runescape.wiki/w/The_Leviathan/Strategies \"When attacking the backside with ranged, it deals at least a minimum of ~65% of your maximum hit as damage\"; stunned elsewhere is the 10 damage cap in damage-caps.json. A hitsplat shaper: the raised minimum layers onto every splat the bow fires rather than replacing the distribution.",
   "when": {
    "monsterClass": "leviathan",
    "category": "RANGED",
