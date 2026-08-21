@@ -1168,7 +1168,7 @@
  {
   "id": "RoyalTitanElementalMagic",
   "kind": "accuracyTransform",
-  "source": "https://oldschool.runescape.wiki/w/Royal_Titans the elementals (ids 14150, 14151) replace normal accuracy: \"chance to hit ... is equal to their magic accuracy bonus plus 30, with a minimum of 30%\"; void mage multiplies that by 1.45. Registered after AlwaysMaxHitTargets, which this narrows. Family-keyed: the ordinary Fire elemental (id 1365) shares a name and has none of this. Not modeled: the wiki's \"Wind Strike always hits\" note.",
+  "source": "https://oldschool.runescape.wiki/w/Royal_Titans the elementals (ids 14150, 14151) replace normal accuracy: \"chance to hit ... is equal to their magic accuracy bonus plus 30, with a minimum of 30%\"; void mage multiplies that by 1.45. Registered after AlwaysMaxHitTargets, which this narrows. Family-keyed: the ordinary Fire elemental (id 1365) shares a name and has none of this. https://oldschool.runescape.wiki/w/Fire_elemental_(Royal_Titans) is where all three quoted facts live, and it adds \"Wind Strike will always hit, regardless of the player's magic accuracy bonus\", which is the first arm of the accuracy expression.",
   "when": {
    "category": "MAGIC",
    "monsterClass": "royalTitanElemental"
@@ -1176,7 +1176,7 @@
   "let": {
    "chance": "min(1, max(0, loadout.attackBonus) / 100 + 0.30)"
   },
-  "accuracy": "loadout.voidActive ? min(1, chance * 1.45) : chance",
+  "accuracy": "cast.is('WIND_STRIKE') ? 1 : (loadout.voidActive ? min(1, chance * 1.45) : chance)",
   "aggregateBoundSafe": true
  },
  {
