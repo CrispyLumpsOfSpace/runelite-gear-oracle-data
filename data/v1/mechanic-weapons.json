@@ -735,7 +735,7 @@
  {
   "id": "TwoHitSpecDistribution",
   "kind": "sequence",
-  "source": "Two-hit special attacks. https://oldschool.runescape.wiki/w/Abyssal_dagger \"A single attack roll is performed, meaning that either both hits are successful, or both hits miss\" \u2014 where the dragon dagger rolls each hit separately, which is the only thing separating the two shapes. Same expectation, different distributions: both are recorded so variance and percentile readouts keep the distinction. Each hitsplat takes flat armour and the boss cap independently.",
+  "source": "Two-hit special attacks. https://oldschool.runescape.wiki/w/Abyssal_dagger \"A single attack roll is performed, meaning that either both hits are successful, or both hits miss\" \u2014 where the dragon dagger rolls each hit separately, which is the only thing separating the two shapes. Both shapes have the same expectation, so this row prices them identically; which of the two a weapon has is recorded in special-attack-weapons.json and nothing downstream reads it. Each hitsplat takes flat armour and the boss cap independently.",
   "whenAny": [
    {
     "specShape": "TWO_INDEPENDENT_HITS"
