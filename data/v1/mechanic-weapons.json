@@ -953,7 +953,7 @@
  },
  {
   "id": "KerisMechanics",
-  "source": "Wiki: Keris \u2014 the Keris partisan of breaching adds +33% accuracy against kalphites. Scabarites aren't a tracked attribute, so this keys on KALPHITE only.",
+  "source": "Wiki: Keris \u2014 the Keris partisan of breaching adds +33% accuracy against kalphites. Scabarites aren't a tracked attribute, so this keys on KALPHITE only. Not modeled, by decision: the Keris partisan of the sun's second passive, https://oldschool.runescape.wiki/w/Keris_partisan_of_the_sun \"providing a 25% increase to accuracy for targets with less than 25% health\", one of \"two unique passive effects that only apply within the Tombs of Amascut raid\". It is doubly conditional on the raid and on the target's current health, and a sustained-DPS model has no target-current-HP state to condition on; adding one for a raid-only window is a scope decision, not a defect. The sun partisan's on-kill heal is out of scope for the same reason it is for every other weapon.",
   "when": {
    "category": "MELEE",
    "targetAttr": "KALPHITE"
