@@ -410,7 +410,7 @@
  {
   "id": "DharokSetBonus",
   "kind": "modifier",
-  "source": "https://oldschool.runescape.wiki/w/Dharok_the_Wretched%27s_equipment \"The lower a player's remaining hitpoints are, the higher maximum hit the player can inflict with the set equipped.\" Wretched Strength: factor 1 + (maxHP - currentHP)/100 * maxHP/100, its own floored stage before bane. Overhealing (anglerfish etc.) never pushes the multiplier below 1.",
+  "source": "https://oldschool.runescape.wiki/w/Dharok_the_Wretched%27s_equipment \"The lower a player's remaining hitpoints are, the higher maximum hit the player can inflict with the set equipped.\" Wretched Strength: factor 1 + (maxHP - currentHP)/100 * maxHP/100, its own floored stage before bane. Overhealing (anglerfish etc.) never pushes the multiplier below 1: neither cited article mentions a clamp, so that half is an engine choice awaiting an in-game test (docs/ENGINE-GAPS.md, battery-pinned list).",
   "when": {
    "setActive": "DHAROK"
   },
