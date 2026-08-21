@@ -154,7 +154,7 @@
   ],
   "minResult": 0,
   "capAware": true,
-  "source": "https://oldschool.runescape.wiki/w/The_Hueycoatl \u2014 lighting the braziers gives every player a 30% damage bonus for as long as they burn; the body takes no buff either way, which is why the family lists the buffable parts. The buff multiplies a hit the cap has already resolved, so the row owns the cap: the honest ceiling is 13/10 of what the cap allows through, not 13/10 of the raw roll.",
+  "source": "https://oldschool.runescape.wiki/w/The_Hueycoatl/Strategies \"While the braziers are lit, players are given a 30% damage buff\"; \"Teams with only one or two players can not meet the balanced active protection prayer requirement to charge all three pillars and therefore cannot earn the damage buff.\" The buff is the player's, not a property of the part: the body is excluded because it is only fought in phase one, before the seer begins charging the pillars, which is why the family lists head and tail. The buff multiplies a hit the cap has already resolved, so the row owns the cap: the honest ceiling is 13/10 of what the cap allows through, not 13/10 of the raw roll.",
   "resistAny": [
    {
     "monsterClass": "hueycoatlBuffable",
@@ -179,7 +179,7 @@
      "key": "hueycoatlBraziersLit",
      "label": "Braziers lit",
      "default": true,
-     "help": "<html>Lighting the braziers gives every player a <b>30% damage bonus</b> for as long as they burn.<br>On by default \u2014 any group that knows the fight keeps them lit.<br>The body takes no buff either way.</html>"
+     "help": "<html>Lighting the braziers gives every player a <b>30% damage bonus</b> for as long as they burn.<br><b>Needs three or more players:</b> \"Teams with only one or two players can not meet the balanced active protection prayer requirement to charge all three pillars and therefore cannot earn the damage buff.\"<br>On by default \u2014 turn it off for a solo or duo. The body is fought before the pillars can be charged, so it never carries the buff.</html>"
     }
    ]
   },
@@ -188,12 +188,12 @@
  {
   "id": "GuardianStatues",
   "kind": "resistance",
-  "minResult": 1,
+  "minResult": 0,
   "factor": {
    "num": "player.miningLevel + weapon.familyValue('pickaxeGuardianRequirement', 61) + 50",
    "den": 150
   },
-  "source": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric) \u2014 a Guardian takes damage only from a pickaxe, and each hitsplat is scaled by (50 + Mining level + the pickaxe tier's own Mining requirement) / 150. The requirement is the tier's, not the item's wield level, and is capped so the crystal pickaxe matches the dragon one (weapon-families.json, group pickaxeGuardianRequirement). Not modelled: the tunnel spawn timing, the melee-only reach, the party scaling.",
+  "source": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric) \u2014 a Guardian takes damage only from a pickaxe, and each hitsplat is scaled by (50 + Mining level + the pickaxe tier's own Mining requirement) / 150. The requirement is the tier's, not the item's wield level, and is capped so the crystal pickaxe matches the dragon one (weapon-families.json, group pickaxeGuardianRequirement). Mod Ash, 15 June 2018: the modifier is \"applied to whatever damage you rolled\", and no source states a minimum, so a scaled hitsplat can truncate to zero below Mining + tier requirement 100. Not modelled: the tunnel spawn timing, the melee-only reach, the party scaling.",
   "resistAny": [
    {
     "monsterClass": "guardianStatue",
@@ -349,7 +349,7 @@
    3
   ],
   "minResult": 0,
-  "source": "https://oldschool.runescape.wiki/w/Ice_demon \"all damage dealt to the demon is reduced by 67%, except for fire spells (which deal 250% damage) and demonbane weapons\"; https://twitter.com/JagexAsh/status/1133350436554121216 \"Increased to 150% for a fire spell, decreased to 33% otherwise.\" Only the reduction is here: the fire 250% is the demon's elemental weakness and the demonbane 15% its demonbane vulnerability, both already in the monster data. A FIRE cast means the spell actually being cast, so a powered staff (which casts no spell) is reduced like anything else.",
+  "source": "https://oldschool.runescape.wiki/w/Ice_demon \"all damage dealt to the demon is reduced by 67%, except for fire spells (which deal 250% damage) and demonbane weapons\"; https://twitter.com/JagexAsh/status/1133350436554121216 \"Increased to 150% for a fire spell, decreased to 33% otherwise.\" Only the reduction is here: the fire 250% is the demon's elemental weakness and the demonbane 15% its demonbane vulnerability, both already in the monster data. A FIRE cast means the spell actually being cast, so a powered staff (which casts no spell) is reduced like anything else. \"Demonbane weapons\" is read as https://oldschool.runescape.wiki/w/Demonbane_weapon defines it, so demonbane spells and the scorching bow escape the reduction as well as the melee demonbane weapons.",
   "resistAny": [
    {
     "monsterClass": "iceDemon",
@@ -369,7 +369,7 @@
    3
   ],
   "minResult": 0,
-  "source": "https://oldschool.runescape.wiki/w/Slagilith \"will reduce your damage by 67% if a pickaxe is not equipped\" \u2014 spells and arrows included (Jagex-confirmed). Post-roll, minimum 0: a small hitsplat really can be reduced to nothing. Not modelled: the ranged projectile-swap timing exploit, the five-minute despawn.",
+  "source": "https://oldschool.runescape.wiki/w/Slagilith \"will reduce your damage by 67% if a pickaxe is not equipped\" \u2014 spells and arrows included (Jagex-confirmed). Post-roll, minimum 0: a small hitsplat really can be reduced to nothing. Not modelled: the ranged projectile-swap timing exploit, the five-minute despawn, and the wiki's manual-cast magic setup \"as long as a pickaxe is equipped\" \u2014 a pickaxe is not a magic weapon, so the search cannot build that loadout and the magic row quotes a staff at a third.",
   "resistAny": [
    {
     "monsterClass": "slagilith",
@@ -395,7 +395,7 @@
    3
   ],
   "minResult": 0,
-  "source": "https://oldschool.runescape.wiki/w/Great_Olm \u2014 each part takes full damage from one style and 34% from the other two: head from Ranged, left claw from Melee, right claw from Magic. Post-roll, one-third of the rolled hitsplat, no floor. Accepted delta: the oracle omits melee mitigation on head and right claw (docs/ENGINE-GAPS.md). Not modelled: head self-heal, hand-disable phase gating, CoX party scaling.",
+  "source": "https://oldschool.runescape.wiki/w/Great_Olm \u2014 each part takes full damage from one style and \"66% damage mitigation\" from the other two: head from Ranged, left claw from Melee, right claw from Magic. The implemented reading of that 66% is one third of the rolled hitsplat, truncated, applied post-roll with no minimum. Accepted delta: the oracle omits melee mitigation on head and right claw (docs/ENGINE-GAPS.md). Not modelled: head self-heal, hand-disable phase gating, CoX party scaling.",
   "resistAny": [
    {
     "monsterClass": "olmHead",
@@ -497,7 +497,7 @@
  {
   "id": "SkotizoAltars",
   "kind": "averageHit",
-  "source": "https://oldschool.runescape.wiki/w/Skotizo \u2014 each Awakened Altar still up cuts damage by 15% with Arclight or Emberlight (capped at 60%) and by 25% with anything else (capped at 100%, so four altars and an ordinary weapon deal nothing at all). Stated as the surviving percent so the single division happens once: max(40, 100 - 15a) and max(0, 100 - 25a) are the capped reductions read from the other side.",
+  "source": "https://oldschool.runescape.wiki/w/Skotizo \u2014 each Awakened Altar still up cuts damage by 15% with Arclight or Emberlight (capped at 60%) and by 25% with anything else (capped at 100%, so four altars and an ordinary weapon deal nothing at all). Stated as the surviving percent so the single division happens once: max(40, 100 - 15a) and max(0, 100 - 25a) are the capped reductions read from the other side. Not modelled: whether the game scales each hitsplat or the roll, so the multiply lands on the expectation, which is not the same shape; and the wiki's \"all damage inflicted on Skotizo\" is narrowed to weapon damage, leaving thrall damage untouched, so the four-altar ordinary-weapon case is zero weapon damage rather than zero DPS.",
   "when": {
    "monsterClass": "skotizo"
   },
@@ -540,7 +540,7 @@
  {
   "id": "AlchemicalHydraResistance",
   "kind": "averageHit",
-  "source": "Wiki: Alchemical Hydra \u2014 reduces incoming damage by 75% until it is lured over and sprayed by the appropriate chemical vent. Uniform across styles, so it never changes gear ranking.",
+  "source": "Wiki: Alchemical Hydra \u2014 reduces incoming damage by 75% until it is lured over and sprayed by the appropriate chemical vent. Uniform across styles, so it never changes gear ranking. Not modelled: whether the game scales each hitsplat or the roll, so the multiply lands on the expectation, which is not the same shape; and thrall damage, which the wiki's \"incoming damage\" covers but which is added after this row.",
   "when": {
    "monsterClass": "alchemicalHydra",
    "optionFlag": {
@@ -606,7 +606,7 @@
  {
   "id": "MagicDefenceFromDefenceLevel",
   "kind": "defenceLevelSource",
-  "source": "Monsters whose magic defence roll is built from their Defence level, not their Magic level: the documented exception to Rd = (Mlvl + 9) * (Mdb + 64), confirmed at https://twitter.com/JagexAsh/status/1689566945635438592 and on each monster's own article (the magicDefenceFromDefence family). Not modeled: Defence draining.",
+  "source": "Monsters whose magic defence roll is built from their Defence level, not their Magic level: the documented exception to Rd = (Mlvl + 9) * (Mdb + 64), confirmed at https://twitter.com/JagexAsh/status/1689566945635438592 and on each monster's own article (the magicDefenceFromDefence family). A Defence drain moves this roll, since the substituted level is read after the drain stage; the undrainableDefence family is what stops it for Verzik.",
   "when": {
    "style": "MAGIC",
    "monsterClass": "magicDefenceFromDefence"
