@@ -529,7 +529,7 @@
  },
  {
   "id": "GodswordSpecBaseDamage",
-  "source": "https://oldschool.runescape.wiki/w/Godsword \"doubling effective accuracy and increase effective strength by 10%\". Floored separately from the per-weapon spec stage: the Bandos godsword applies x11/10 twice, which is the wiki's +21% \u2014 one combined factor could not produce it.",
+  "source": "https://oldschool.runescape.wiki/w/Godsword \"doubling effective accuracy and increase effective strength by 10%\". Floored separately from the per-weapon spec stage per https://oldschool.runescape.wiki/w/Armadyl_godsword \"the calculation uses integer values after the multiplication of 1.1 the value gets rounded down and then multiplied by 1.25\". The Maximum melee hit table's single 1.375 and 1.21 factors are a simplification of that intermediate rounding, which this row does not follow.",
   "when": {
    "specGodsword": "true"
   },
@@ -1142,7 +1142,7 @@
  },
  {
   "id": "SpecialAttackDamage",
-  "source": "Damage multiplier of the priced special attack, from special-attack-weapons.json's dmgNum/dmgDen. Applied after GodswordSpecBaseDamage and floored separately: the Bandos godsword's two x11/10 stages are the wiki's \"+21%\", which one combined factor could not produce.",
+  "source": "Damage multiplier of the priced special attack, from special-attack-weapons.json's dmgNum/dmgDen. Applied after GodswordSpecBaseDamage and floored separately, per the intermediate rounding quoted from https://oldschool.runescape.wiki/w/Armadyl_godsword on that row.",
   "when": {
    "specActive": "true"
   },
