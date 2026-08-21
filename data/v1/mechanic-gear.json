@@ -590,11 +590,11 @@
  {
   "id": "EclipseMoonBurn",
   "kind": "additiveHit",
-  "source": "https://oldschool.runescape.wiki/w/Eclipse_moon_armour \"Successful attacks with the eclipse atlatl gives a 20% chance to inflict a burn on any non-immune target\"; \"Each burn has an individual duration and up to five burns can be applied to a target at a time\"; \"damage over the course of 40 ticks or 24 seconds\", 1 damage per 4-tick burn tick. Shape: a steady-state queueing approximation (arrival rate times stack duration, capped at five) rather than a simulation of individual stacks. This is a weak burn, so even weak-burn immunity stops it.",
+  "source": "https://oldschool.runescape.wiki/w/Eclipse_moon_armour \"Successful attacks with the eclipse atlatl gives a 20% chance to inflict a burn on any non-immune target\"; \"Each burn has an individual duration and up to five burns can be applied to a target at a time\"; \"damage over the course of 40 ticks or 24 seconds\", 1 damage per 4-tick burn tick. Shape: a steady-state queueing approximation (arrival rate times stack duration) rather than a simulation of individual stacks; attackSeconds cancels, so the row is accuracy * 0.20 * 10 and the five-stack cap is a shape guard no attack speed can reach (it would need an attack under 2 ticks). https://oldschool.runescape.wiki/w/Burn lists this set under \"Strong burns, sometimes called sunfire burns (inflicted by the eclipse moon armour set and the Arkan blade)\", so only strong-tier immunity stops it.",
   "when": {
    "style": "RANGED",
    "setActive": "ECLIPSE_MOON",
-   "exprFilter": "!monster.burnImmune"
+   "exprFilter": "!monster.burnImmuneStrong"
   },
   "let": {
    "attackSeconds": "attackTicks * 0.6",
