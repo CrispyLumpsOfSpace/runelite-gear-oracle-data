@@ -6,6 +6,11 @@ with one row per line in a stable sort order, so every weekly refresh is a revie
 rather than an opaque archive. Clients receive them gzip-compressed on the wire regardless
 (raw.githubusercontent.com honours Accept-Encoding).
 
+This writer, not tools/format_data.py, is the canonical layout for the files it produces:
+one line per row keeps a 1.5MB bestiary reviewable where a fully expanded one would not be.
+format_data.py holds the hand-authored tables to their own expanded layout and leaves these
+alone.
+
   data/v1/monsters.json  -- the bestiary, minimised: only what the game client's own cache
       cannot supply. Stats the cache carries (levels, melee/magic defence bonuses, attack-side
       bonuses, size) appear per-row under "ov" ONLY where the wiki disagrees with

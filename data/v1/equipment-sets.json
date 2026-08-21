@@ -1,53 +1,363 @@
 [
-	{"key": "VOID_MELEE", "category": "MELEE",
-	 "pieces": {"HEAD": ["VOID_MELEE_HELM"], "BODY": ["VOID_BODY", "ELITE_VOID_BODY"], "LEGS": ["VOID_LEGS", "ELITE_VOID_LEGS"], "GLOVES": ["VOID_GLOVES"]},
-	 "source": "https://oldschool.runescape.wiki/w/Void_Knight_equipment — the melee helm with the shared body, legs and gloves; the elite body and legs substitute for the regular ones."},
-
-	{"key": "VOID_RANGED", "category": "RANGED",
-	 "pieces": {"HEAD": ["VOID_RANGED_HELM"], "BODY": ["VOID_BODY", "ELITE_VOID_BODY"], "LEGS": ["VOID_LEGS", "ELITE_VOID_LEGS"], "GLOVES": ["VOID_GLOVES"]},
-	 "source": "https://oldschool.runescape.wiki/w/Void_Knight_equipment — see VOID_MELEE; only the helm differs."},
-
-	{"key": "VOID_MAGIC", "category": "MAGIC",
-	 "pieces": {"HEAD": ["VOID_MAGIC_HELM"], "BODY": ["VOID_BODY", "ELITE_VOID_BODY"], "LEGS": ["VOID_LEGS", "ELITE_VOID_LEGS"], "GLOVES": ["VOID_GLOVES"]},
-	 "source": "https://oldschool.runescape.wiki/w/Void_Knight_equipment — see VOID_MELEE; only the helm differs."},
-
-	{"key": "INQUISITOR", "category": "MELEE",
-	 "pieces": {"HEAD": ["INQUISITOR_HELM"], "BODY": ["INQUISITOR_BODY"], "LEGS": ["INQUISITOR_LEGS"]},
-	 "source": "https://oldschool.runescape.wiki/w/Inquisitor%27s_armour — three pieces, no weapon requirement."},
-
-	{"key": "OBSIDIAN", "category": "MELEE",
-	 "pieces": {"HEAD": ["OBSIDIAN_HELM"], "BODY": ["OBSIDIAN_BODY"], "LEGS": ["OBSIDIAN_LEGS"], "WEAPON": ["OBSIDIAN_WEAPON"]},
-	 "source": "https://oldschool.runescape.wiki/w/Obsidian_armour — the full armour AND an obsidian melee weapon; the Berserker necklace's own bonus needs the weapon alone."},
-
-	{"key": "CRYSTAL", "category": "RANGED",
-	 "pieces": {"HEAD": ["CRYSTAL_HELM"], "BODY": ["CRYSTAL_BODY"], "LEGS": ["CRYSTAL_LEGS"], "WEAPON": ["BOWFA", "CRYSTAL_BOW"]},
-	 "source": "https://oldschool.runescape.wiki/w/Crystal_armour — the pieces pay only alongside a crystal bow or Bow of Faerdhinen."},
-
-	{"key": "DHAROK", "category": "MELEE",
-	 "pieces": {"HEAD": ["DHAROK_HELM"], "BODY": ["DHAROK_BODY"], "LEGS": ["DHAROK_LEGS"], "WEAPON": ["DHAROK_AXE"]},
-	 "source": "https://oldschool.runescape.wiki/w/Dharok_the_Wretched%27s_equipment — four pieces including the greataxe."},
-
-	{"key": "VERAC", "category": "MELEE",
-	 "pieces": {"HEAD": ["VERAC_HELM"], "BODY": ["VERAC_BODY"], "LEGS": ["VERAC_LEGS"], "WEAPON": ["VERAC_FLAIL"]},
-	 "source": "https://oldschool.runescape.wiki/w/Verac_the_Defiled%27s_equipment — four pieces including the flail."},
-
-	{"key": "BLOOD_MOON", "category": "MELEE",
-	 "pieces": {"HEAD": ["BLOOD_MOON_HELM"], "BODY": ["BLOOD_MOON_CHEST"], "LEGS": ["BLOOD_MOON_TASSETS"], "WEAPON": ["DUAL_MACUAHUITL"]},
-	 "source": "https://oldschool.runescape.wiki/w/Blood_moon_armour — the three pieces with the dual macuahuitl."},
-
-	{"key": "BLUE_MOON", "category": "MAGIC",
-	 "pieces": {"HEAD": ["BLUE_MOON_HELM"], "BODY": ["BLUE_MOON_CHEST"], "LEGS": ["BLUE_MOON_TASSETS"], "WEAPON": ["BLUE_MOON_SPEAR"]},
-	 "source": "https://oldschool.runescape.wiki/w/Blue_moon_armour — category MAGIC because the set effect fires while CASTING; the free hit it grants is melee, but the loadout being optimised is a magic one."},
-
-	{"key": "ECLIPSE_MOON", "category": "RANGED",
-	 "pieces": {"HEAD": ["ECLIPSE_MOON_HELM"], "BODY": ["ECLIPSE_MOON_CHEST"], "LEGS": ["ECLIPSE_MOON_TASSETS"], "WEAPON": ["ECLIPSE_ATLATL"]},
-	 "source": "https://oldschool.runescape.wiki/w/Eclipse_moon_armour — the three pieces with the eclipse atlatl."},
-
-	{"key": "KARIL_DAMNED", "category": "RANGED",
-	 "pieces": {"HEAD": ["KARIL_COIF"], "BODY": ["KARIL_BODY"], "LEGS": ["KARIL_LEGS"], "WEAPON": ["KARIL_CROSSBOW"], "AMULET": ["AMULET_OF_THE_DAMNED"]},
-	 "source": "https://oldschool.runescape.wiki/w/Amulet_of_the_damned — Karil's four pieces AND the amulet, the only set here requiring an AMULET, so the optimizer's set-completion search must try all five together."},
-
-	{"key": "AHRIM_DAMNED", "category": "MAGIC",
-	 "pieces": {"HEAD": ["AHRIM_HOOD"], "BODY": ["AHRIM_TOP"], "LEGS": ["AHRIM_SKIRT"], "WEAPON": ["AHRIM_STAFF"], "AMULET": ["AMULET_OF_THE_DAMNED"]},
-	 "source": "https://oldschool.runescape.wiki/w/Amulet_of_the_damned — Ahrim's four pieces and the amulet; see KARIL_DAMNED."}
+ {
+  "key": "VOID_MELEE",
+  "category": "MELEE",
+  "pieces": {
+   "HEAD": [
+    "VOID_MELEE_HELM"
+   ],
+   "BODY": [
+    "VOID_BODY",
+    "ELITE_VOID_BODY"
+   ],
+   "LEGS": [
+    "VOID_LEGS",
+    "ELITE_VOID_LEGS"
+   ],
+   "GLOVES": [
+    "VOID_GLOVES"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Void_Knight_equipment — the melee helm with the shared body, legs and gloves; the elite body and legs substitute for the regular ones.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Void_Knight_equipment",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "VOID_RANGED",
+  "category": "RANGED",
+  "pieces": {
+   "HEAD": [
+    "VOID_RANGED_HELM"
+   ],
+   "BODY": [
+    "VOID_BODY",
+    "ELITE_VOID_BODY"
+   ],
+   "LEGS": [
+    "VOID_LEGS",
+    "ELITE_VOID_LEGS"
+   ],
+   "GLOVES": [
+    "VOID_GLOVES"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Void_Knight_equipment — see VOID_MELEE; only the helm differs.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Void_Knight_equipment",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "VOID_MAGIC",
+  "category": "MAGIC",
+  "pieces": {
+   "HEAD": [
+    "VOID_MAGIC_HELM"
+   ],
+   "BODY": [
+    "VOID_BODY",
+    "ELITE_VOID_BODY"
+   ],
+   "LEGS": [
+    "VOID_LEGS",
+    "ELITE_VOID_LEGS"
+   ],
+   "GLOVES": [
+    "VOID_GLOVES"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Void_Knight_equipment — see VOID_MELEE; only the helm differs.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Void_Knight_equipment",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "INQUISITOR",
+  "category": "MELEE",
+  "pieces": {
+   "HEAD": [
+    "INQUISITOR_HELM"
+   ],
+   "BODY": [
+    "INQUISITOR_BODY"
+   ],
+   "LEGS": [
+    "INQUISITOR_LEGS"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Inquisitor%27s_armour — three pieces, no weapon requirement.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Inquisitor%27s_armour",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "OBSIDIAN",
+  "category": "MELEE",
+  "pieces": {
+   "HEAD": [
+    "OBSIDIAN_HELM"
+   ],
+   "BODY": [
+    "OBSIDIAN_BODY"
+   ],
+   "LEGS": [
+    "OBSIDIAN_LEGS"
+   ],
+   "WEAPON": [
+    "OBSIDIAN_WEAPON"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Obsidian_armour — the full armour AND an obsidian melee weapon; the Berserker necklace's own bonus needs the weapon alone.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Obsidian_armour",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "CRYSTAL",
+  "category": "RANGED",
+  "pieces": {
+   "HEAD": [
+    "CRYSTAL_HELM"
+   ],
+   "BODY": [
+    "CRYSTAL_BODY"
+   ],
+   "LEGS": [
+    "CRYSTAL_LEGS"
+   ],
+   "WEAPON": [
+    "BOWFA",
+    "CRYSTAL_BOW"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Crystal_armour — the pieces pay only alongside a crystal bow or Bow of Faerdhinen.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crystal_armour",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "DHAROK",
+  "category": "MELEE",
+  "pieces": {
+   "HEAD": [
+    "DHAROK_HELM"
+   ],
+   "BODY": [
+    "DHAROK_BODY"
+   ],
+   "LEGS": [
+    "DHAROK_LEGS"
+   ],
+   "WEAPON": [
+    "DHAROK_AXE"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Dharok_the_Wretched%27s_equipment — four pieces including the greataxe.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dharok_the_Wretched%27s_equipment",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "VERAC",
+  "category": "MELEE",
+  "pieces": {
+   "HEAD": [
+    "VERAC_HELM"
+   ],
+   "BODY": [
+    "VERAC_BODY"
+   ],
+   "LEGS": [
+    "VERAC_LEGS"
+   ],
+   "WEAPON": [
+    "VERAC_FLAIL"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Verac_the_Defiled%27s_equipment — four pieces including the flail.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Verac_the_Defiled%27s_equipment",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "BLOOD_MOON",
+  "category": "MELEE",
+  "pieces": {
+   "HEAD": [
+    "BLOOD_MOON_HELM"
+   ],
+   "BODY": [
+    "BLOOD_MOON_CHEST"
+   ],
+   "LEGS": [
+    "BLOOD_MOON_TASSETS"
+   ],
+   "WEAPON": [
+    "DUAL_MACUAHUITL"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Blood_moon_armour — the three pieces with the dual macuahuitl.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Blood_moon_armour",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "BLUE_MOON",
+  "category": "MAGIC",
+  "pieces": {
+   "HEAD": [
+    "BLUE_MOON_HELM"
+   ],
+   "BODY": [
+    "BLUE_MOON_CHEST"
+   ],
+   "LEGS": [
+    "BLUE_MOON_TASSETS"
+   ],
+   "WEAPON": [
+    "BLUE_MOON_SPEAR"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Blue_moon_armour — category MAGIC because the set effect fires while CASTING; the free hit it grants is melee, but the loadout being optimised is a magic one.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Blue_moon_armour",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "ECLIPSE_MOON",
+  "category": "RANGED",
+  "pieces": {
+   "HEAD": [
+    "ECLIPSE_MOON_HELM"
+   ],
+   "BODY": [
+    "ECLIPSE_MOON_CHEST"
+   ],
+   "LEGS": [
+    "ECLIPSE_MOON_TASSETS"
+   ],
+   "WEAPON": [
+    "ECLIPSE_ATLATL"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Eclipse_moon_armour — the three pieces with the eclipse atlatl.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Eclipse_moon_armour",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "KARIL_DAMNED",
+  "category": "RANGED",
+  "pieces": {
+   "HEAD": [
+    "KARIL_COIF"
+   ],
+   "BODY": [
+    "KARIL_BODY"
+   ],
+   "LEGS": [
+    "KARIL_LEGS"
+   ],
+   "WEAPON": [
+    "KARIL_CROSSBOW"
+   ],
+   "AMULET": [
+    "AMULET_OF_THE_DAMNED"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Amulet_of_the_damned — Karil's four pieces AND the amulet, the only set here requiring an AMULET, so the optimizer's set-completion search must try all five together.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Amulet_of_the_damned",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "AHRIM_DAMNED",
+  "category": "MAGIC",
+  "pieces": {
+   "HEAD": [
+    "AHRIM_HOOD"
+   ],
+   "BODY": [
+    "AHRIM_TOP"
+   ],
+   "LEGS": [
+    "AHRIM_SKIRT"
+   ],
+   "WEAPON": [
+    "AHRIM_STAFF"
+   ],
+   "AMULET": [
+    "AMULET_OF_THE_DAMNED"
+   ]
+  },
+  "description": "https://oldschool.runescape.wiki/w/Amulet_of_the_damned — Ahrim's four pieces and the amulet; see KARIL_DAMNED.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Amulet_of_the_damned",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
+ }
 ]

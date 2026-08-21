@@ -7,11 +7,14 @@ Checks each file's shape, its required fields, that row counts have not collapse
 previously published copy (a shrink beyond tolerance means the source query broke), and that
 the published manifest still matches the files it hashes.
 """
+import datetime
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
 
+import format_data
 import manifest
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -126,10 +129,91 @@ def check_no_source_dumps(errors):
                                   f"source ({found[0]!r}, {len(value)} bytes)")
 
 
+CITE_KINDS = {"wiki", "tweet", "sheet", "web", "unsourced", "none"}
+ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def check_citation(errors, where, cite):
+    if not isinstance(cite, dict):
+        errors.append(f"{where}: a _cite entry is not an object")
+        return
+    unknown = set(cite) - {"kind", "url", "quotes", "verified"}
+    if unknown:
+        errors.append(f"{where}: unknown _cite fields {sorted(unknown)}")
+    if cite.get("kind") not in CITE_KINDS:
+        errors.append(f"{where}: _cite kind {cite.get('kind')!r} is not one of {sorted(CITE_KINDS)}")
+    verified = cite.get("verified")
+    if not isinstance(verified, str) or not ISO_DATE.match(verified):
+        errors.append(f"{where}: _cite verified {verified!r} is not an ISO date")
+    else:
+        try:
+            datetime.date.fromisoformat(verified)
+        except ValueError:
+            errors.append(f"{where}: _cite verified {verified!r} is not a real date")
+    quotes = cite.get("quotes")
+    if not isinstance(quotes, list) or any(not isinstance(q, str) or not q.strip()
+                                           for q in quotes):
+        errors.append(f"{where}: _cite quotes must be a list of non-empty strings")
+    url = cite.get("url")
+    if cite.get("kind") in ("unsourced", "none"):
+        if url is not None:
+            errors.append(f"{where}: a {cite['kind']} _cite carries a url — it should be 'wiki'")
+    elif not isinstance(url, str) or not url.startswith("https://"):
+        errors.append(f"{where}: _cite url {url!r} is not an https URL")
+
+
+def check_citations(errors):
+    """Every `_cite` block is well-formed. Structure only — the quotes themselves are held
+    against the live wiki by tools/verify_sources.py, which reports rather than blocks."""
+    for path in sorted((ROOT / "data/v1").glob("*.json")):
+        try:
+            doc = json.loads(path.read_text())
+        except ValueError:
+            continue  # check_tables reports the parse failure.
+
+        def walk(node, key="?"):
+            if isinstance(node, dict):
+                key = next((node[f] for f in ("id", "key", "name") if isinstance(node.get(f), str)),
+                           key)
+                cites = node.get("_cite")
+                if cites is not None:
+                    where = f"{path.name}: {key}"
+                    if not isinstance(cites, list) or not cites:
+                        errors.append(f"{where}: _cite must be a non-empty list")
+                    else:
+                        for cite in cites:
+                            check_citation(errors, where, cite)
+                    if not isinstance(node.get("description"), str):
+                        errors.append(f"{where}: carries _cite without a description")
+                for value in node.values():
+                    walk(value, key)
+            elif isinstance(node, list):
+                for value in node:
+                    walk(value, key)
+
+        walk(doc)
+
+
+def check_format(errors):
+    """Every hand-authored table is byte-identical to its canonical layout.
+
+    Blocking rather than reporting: a table that reflows on the next tool run buries the row
+    that actually changed in a whole-file diff.
+    """
+    for path in format_data.tables():
+        try:
+            if format_data.formatted(path) != path.read_text(encoding="utf-8"):
+                errors.append(f"{path.name}: not in canonical layout — run tools/format_data.py")
+        except ValueError:
+            continue  # check_tables reports the parse failure.
+
+
 def main():
     errors = []
     check_tables(errors)
+    check_format(errors)
     check_no_source_dumps(errors)
+    check_citations(errors)
 
     monsters = json.loads((ROOT / "data/v1/monsters.json").read_text())
     rows = monsters.get("rows")

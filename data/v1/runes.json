@@ -1,19 +1,95 @@
 [
-	{"key": "air",     "id": 556,   "name": "Air rune",   "providerFamily": "providesAirRune"},
-	{"key": "water",   "id": 555,   "name": "Water rune", "providerFamily": "providesWaterRune"},
-	{"key": "earth",   "id": 557,   "name": "Earth rune", "providerFamily": "providesEarthRune"},
-	{"key": "fire",    "id": 554,   "name": "Fire rune",  "providerFamily": "providesFireRune"},
-	{"key": "mind",    "id": 558,   "name": "Mind rune"},
-	{"key": "chaos",   "id": 562,   "name": "Chaos rune"},
-	{"key": "death",   "id": 560,   "name": "Death rune"},
-	{"key": "blood",   "id": 565,   "name": "Blood rune"},
-	{"key": "soul",    "id": 566,   "name": "Soul rune"},
-	{"key": "cosmic",  "id": 564,   "name": "Cosmic rune"},
-	{"key": "wrath",   "id": 21880, "name": "Wrath rune"},
-	{"key": "sunfire", "id": 28929, "name": "Sunfire rune"},
-	{"key": "bookOfTheDead", "id": 25818, "name": "Book of the dead"},
-	{"key": "divinePouchLocked", "id": 27509, "name": "Divine rune pouch (l)", "pouch": true},
-	{"key": "divinePouch",       "id": 27281, "name": "Divine rune pouch",     "pouch": true},
-	{"key": "runePouchLocked",   "id": 24416, "name": "Rune pouch (l)",        "pouch": true},
-	{"key": "runePouch",         "id": 12791, "name": "Rune pouch",            "pouch": true}
+ {
+  "key": "air",
+  "id": 556,
+  "name": "Air rune",
+  "providerFamily": "providesAirRune"
+ },
+ {
+  "key": "water",
+  "id": 555,
+  "name": "Water rune",
+  "providerFamily": "providesWaterRune"
+ },
+ {
+  "key": "earth",
+  "id": 557,
+  "name": "Earth rune",
+  "providerFamily": "providesEarthRune"
+ },
+ {
+  "key": "fire",
+  "id": 554,
+  "name": "Fire rune",
+  "providerFamily": "providesFireRune"
+ },
+ {
+  "key": "mind",
+  "id": 558,
+  "name": "Mind rune"
+ },
+ {
+  "key": "chaos",
+  "id": 562,
+  "name": "Chaos rune"
+ },
+ {
+  "key": "death",
+  "id": 560,
+  "name": "Death rune"
+ },
+ {
+  "key": "blood",
+  "id": 565,
+  "name": "Blood rune"
+ },
+ {
+  "key": "soul",
+  "id": 566,
+  "name": "Soul rune"
+ },
+ {
+  "key": "cosmic",
+  "id": 564,
+  "name": "Cosmic rune"
+ },
+ {
+  "key": "wrath",
+  "id": 21880,
+  "name": "Wrath rune"
+ },
+ {
+  "key": "sunfire",
+  "id": 28929,
+  "name": "Sunfire rune"
+ },
+ {
+  "key": "bookOfTheDead",
+  "id": 25818,
+  "name": "Book of the dead"
+ },
+ {
+  "key": "divinePouchLocked",
+  "id": 27509,
+  "name": "Divine rune pouch (l)",
+  "pouch": true
+ },
+ {
+  "key": "divinePouch",
+  "id": 27281,
+  "name": "Divine rune pouch",
+  "pouch": true
+ },
+ {
+  "key": "runePouchLocked",
+  "id": 24416,
+  "name": "Rune pouch (l)",
+  "pouch": true
+ },
+ {
+  "key": "runePouch",
+  "id": 12791,
+  "name": "Rune pouch",
+  "pouch": true
+ }
 ]

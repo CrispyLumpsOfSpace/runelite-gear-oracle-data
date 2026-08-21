@@ -1,52 +1,457 @@
 [
-	{"key": "NONE", "style": "MELEE", "name": "None"},
-	{"key": "ATTACK_POTION", "style": "MELEE", "name": "Attack", "attackPct": 0.1, "attackFlat": 3, "itemId": 2428, "icon": 2428},
-	{"key": "STRENGTH_POTION", "style": "MELEE", "name": "Strength", "strengthPct": 0.1, "strengthFlat": 3, "itemId": 113, "icon": 113},
-	{"key": "COMBAT_POTION", "style": "MELEE", "name": "Combat", "attackPct": 0.1, "attackFlat": 3, "strengthPct": 0.1, "strengthFlat": 3, "itemId": 9739, "icon": 9739},
-	{"key": "RUBY_HARVEST", "style": "MELEE", "name": "Ruby harvest", "attackPct": 0.15, "attackFlat": 4, "itemId": 10020, "icon": 10020},
-	{"key": "BLACK_WARLOCK", "style": "MELEE", "name": "Black warlock", "strengthPct": 0.15, "strengthFlat": 4, "itemId": 10014, "icon": 10014},
-	{"key": "SUPER_ATTACK", "style": "MELEE", "name": "Super attack", "attackPct": 0.15, "attackFlat": 5, "itemId": 2436, "icon": 2436},
-	{"key": "SUPER_STRENGTH", "style": "MELEE", "name": "Super strength", "strengthPct": 0.15, "strengthFlat": 5, "itemId": 2440, "icon": 2440},
-	{"key": "SUPER_COMBAT", "style": "MELEE", "name": "Super combat", "attackPct": 0.15, "attackFlat": 5, "strengthPct": 0.15, "strengthFlat": 5, "itemId": 12695, "icon": 12695},
-	{"key": "ZAMORAK_BREW", "style": "MELEE", "name": "Zamorak brew", "attackPct": 0.2, "attackFlat": 2, "strengthPct": 0.12, "strengthFlat": 2, "itemId": 2450, "icon": 2450},
-	{"key": "BANDAGES_TOB", "style": "MELEE", "name": "Bandages (ToB)", "attackPct": 0.15, "attackFlat": 4, "strengthPct": 0.15, "strengthFlat": 4, "itemId": 25730, "icon": 25730},
-	{"key": "ELDER_MINUS", "style": "MELEE", "name": "Elder (-)", "attackPct": 0.1, "attackFlat": 4, "strengthPct": 0.1, "strengthFlat": 4, "icon": 20916},
-	{"key": "ELDER", "style": "MELEE", "name": "Elder", "attackPct": 0.13, "attackFlat": 5, "strengthPct": 0.13, "strengthFlat": 5, "icon": 20920},
-	{"key": "ELDER_PLUS", "style": "MELEE", "name": "Elder (+)", "attackPct": 0.16, "attackFlat": 6, "strengthPct": 0.16, "strengthFlat": 6, "icon": 20924},
-	{"key": "OVERLOAD_MINUS", "style": "MELEE", "name": "Overload (-)", "attackPct": 0.1, "attackFlat": 4, "strengthPct": 0.1, "strengthFlat": 4, "itemId": 20988, "icon": 20988},
-	{"key": "OVERLOAD_COX", "style": "MELEE", "name": "Overload (CoX)", "attackPct": 0.13, "attackFlat": 5, "strengthPct": 0.13, "strengthFlat": 5, "itemId": 20992, "icon": 20992},
-	{"key": "OVERLOAD_PLUS", "style": "MELEE", "name": "Overload (+)", "attackPct": 0.16, "attackFlat": 6, "strengthPct": 0.16, "strengthFlat": 6, "itemId": 20996, "icon": 20996},
-	{"key": "OVERLOAD_NMZ", "style": "MELEE", "name": "Overload (NMZ)", "attackPct": 0.15, "attackFlat": 5, "strengthPct": 0.15, "strengthFlat": 5, "itemId": 11730, "icon": 11730},
-	{"key": "SMELLING_SALTS", "style": "MELEE", "name": "Smelling salts", "attackPct": 0.16, "attackFlat": 11, "strengthPct": 0.16, "strengthFlat": 11, "icon": 27343},
-	{"key": "NONE", "style": "RANGED", "name": "None"},
-	{"key": "RANGING_POTION", "style": "RANGED", "name": "Ranging", "rangedPct": 0.1, "rangedFlat": 4, "itemId": 2444, "icon": 2444, "source": "https://oldschool.runescape.wiki/w/Ranging_potion \"4 + 10% of the player's current Ranged level, rounded down\""},
-	{"key": "BASTION_POTION", "style": "RANGED", "name": "Bastion", "rangedPct": 0.1, "rangedFlat": 4, "itemId": 22461, "icon": 22461},
-	{"key": "BANDAGES_TOB", "style": "RANGED", "name": "Bandages (ToB)", "rangedPct": 0.1, "rangedFlat": 4, "itemId": 25730, "icon": 25730},
-	{"key": "TWISTED_MINUS", "style": "RANGED", "name": "Twisted (-)", "rangedPct": 0.1, "rangedFlat": 4, "icon": 20928},
-	{"key": "TWISTED", "style": "RANGED", "name": "Twisted", "rangedPct": 0.13, "rangedFlat": 5, "icon": 20932},
-	{"key": "TWISTED_PLUS", "style": "RANGED", "name": "Twisted (+)", "rangedPct": 0.16, "rangedFlat": 6, "icon": 20936},
-	{"key": "OVERLOAD_MINUS", "style": "RANGED", "name": "Overload (-)", "rangedPct": 0.1, "rangedFlat": 4, "itemId": 20988, "icon": 20988},
-	{"key": "OVERLOAD_COX", "style": "RANGED", "name": "Overload (CoX)", "rangedPct": 0.13, "rangedFlat": 5, "itemId": 20992, "icon": 20992},
-	{"key": "OVERLOAD_PLUS", "style": "RANGED", "name": "Overload (+)", "rangedPct": 0.16, "rangedFlat": 6, "itemId": 20996, "icon": 20996},
-	{"key": "OVERLOAD_NMZ", "style": "RANGED", "name": "Overload (NMZ)", "rangedPct": 0.15, "rangedFlat": 5, "itemId": 11730, "icon": 11730},
-	{"key": "POTION_OF_POWER", "style": "RANGED", "name": "Potion of power", "rangedPct": 0.15, "rangedFlat": 5, "icon": 25203},
-	{"key": "SMELLING_SALTS", "style": "RANGED", "name": "Smelling salts", "rangedPct": 0.16, "rangedFlat": 11, "icon": 27343},
-	{"key": "NONE", "style": "MAGIC", "name": "None"},
-	{"key": "MAGIC_POTION", "style": "MAGIC", "name": "Magic", "magicFlat": 4, "itemId": 3040, "icon": 3040},
-	{"key": "BATTLEMAGE_POTION", "style": "MAGIC", "name": "Battlemage", "magicFlat": 4, "itemId": 22449, "icon": 22449},
-	{"key": "BANDAGES_TOB", "style": "MAGIC", "name": "Bandages (ToB)", "magicFlat": 4, "itemId": 25730, "icon": 25730},
-	{"key": "IMBUED_HEART", "style": "MAGIC", "name": "Imbued heart", "magicPct": 0.1, "magicFlat": 1, "itemId": 20724, "icon": 20724},
-	{"key": "SATURATED_HEART", "style": "MAGIC", "name": "Saturated heart", "magicPct": 0.1, "magicFlat": 4, "itemId": 27641, "icon": 27641},
-	{"key": "ANCIENT_BREW", "style": "MAGIC", "name": "Ancient brew", "magicPct": 0.05, "magicFlat": 2, "itemId": 26340, "icon": 26340},
-	{"key": "FORGOTTEN_BREW", "style": "MAGIC", "name": "Forgotten brew", "magicPct": 0.08, "magicFlat": 3, "itemId": 27629, "icon": 27629},
-	{"key": "KODAI_MINUS", "style": "MAGIC", "name": "Kodai (-)", "magicPct": 0.1, "magicFlat": 4, "icon": 20940},
-	{"key": "KODAI", "style": "MAGIC", "name": "Kodai", "magicPct": 0.13, "magicFlat": 5, "icon": 20944},
-	{"key": "KODAI_PLUS", "style": "MAGIC", "name": "Kodai (+)", "magicPct": 0.16, "magicFlat": 6, "icon": 20948},
-	{"key": "OVERLOAD_MINUS", "style": "MAGIC", "name": "Overload (-)", "magicPct": 0.1, "magicFlat": 4, "itemId": 20988, "icon": 20988},
-	{"key": "OVERLOAD_COX", "style": "MAGIC", "name": "Overload (CoX)", "magicPct": 0.13, "magicFlat": 5, "itemId": 20992, "icon": 20992},
-	{"key": "OVERLOAD_PLUS", "style": "MAGIC", "name": "Overload (+)", "magicPct": 0.16, "magicFlat": 6, "itemId": 20996, "icon": 20996},
-	{"key": "OVERLOAD_NMZ", "style": "MAGIC", "name": "Overload (NMZ)", "magicPct": 0.15, "magicFlat": 5, "itemId": 11730, "icon": 11730},
-	{"key": "POTION_OF_POWER", "style": "MAGIC", "name": "Potion of power", "magicPct": 0.15, "magicFlat": 5, "icon": 25203},
-	{"key": "SUPER_MAGIC_NMZ", "style": "MAGIC", "name": "Super magic", "magicPct": 0.15, "magicFlat": 5, "icon": 11726},
-	{"key": "SMELLING_SALTS", "style": "MAGIC", "name": "Smelling salts", "magicPct": 0.16, "magicFlat": 11, "icon": 27343}
+ {
+  "key": "NONE",
+  "style": "MELEE",
+  "name": "None"
+ },
+ {
+  "key": "ATTACK_POTION",
+  "style": "MELEE",
+  "name": "Attack",
+  "attackPct": 0.1,
+  "attackFlat": 3,
+  "itemId": 2428,
+  "icon": 2428
+ },
+ {
+  "key": "STRENGTH_POTION",
+  "style": "MELEE",
+  "name": "Strength",
+  "strengthPct": 0.1,
+  "strengthFlat": 3,
+  "itemId": 113,
+  "icon": 113
+ },
+ {
+  "key": "COMBAT_POTION",
+  "style": "MELEE",
+  "name": "Combat",
+  "attackPct": 0.1,
+  "attackFlat": 3,
+  "strengthPct": 0.1,
+  "strengthFlat": 3,
+  "itemId": 9739,
+  "icon": 9739
+ },
+ {
+  "key": "RUBY_HARVEST",
+  "style": "MELEE",
+  "name": "Ruby harvest",
+  "attackPct": 0.15,
+  "attackFlat": 4,
+  "itemId": 10020,
+  "icon": 10020
+ },
+ {
+  "key": "BLACK_WARLOCK",
+  "style": "MELEE",
+  "name": "Black warlock",
+  "strengthPct": 0.15,
+  "strengthFlat": 4,
+  "itemId": 10014,
+  "icon": 10014
+ },
+ {
+  "key": "SUPER_ATTACK",
+  "style": "MELEE",
+  "name": "Super attack",
+  "attackPct": 0.15,
+  "attackFlat": 5,
+  "itemId": 2436,
+  "icon": 2436
+ },
+ {
+  "key": "SUPER_STRENGTH",
+  "style": "MELEE",
+  "name": "Super strength",
+  "strengthPct": 0.15,
+  "strengthFlat": 5,
+  "itemId": 2440,
+  "icon": 2440
+ },
+ {
+  "key": "SUPER_COMBAT",
+  "style": "MELEE",
+  "name": "Super combat",
+  "attackPct": 0.15,
+  "attackFlat": 5,
+  "strengthPct": 0.15,
+  "strengthFlat": 5,
+  "itemId": 12695,
+  "icon": 12695
+ },
+ {
+  "key": "ZAMORAK_BREW",
+  "style": "MELEE",
+  "name": "Zamorak brew",
+  "attackPct": 0.2,
+  "attackFlat": 2,
+  "strengthPct": 0.12,
+  "strengthFlat": 2,
+  "itemId": 2450,
+  "icon": 2450
+ },
+ {
+  "key": "BANDAGES_TOB",
+  "style": "MELEE",
+  "name": "Bandages (ToB)",
+  "attackPct": 0.15,
+  "attackFlat": 4,
+  "strengthPct": 0.15,
+  "strengthFlat": 4,
+  "itemId": 25730,
+  "icon": 25730
+ },
+ {
+  "key": "ELDER_MINUS",
+  "style": "MELEE",
+  "name": "Elder (-)",
+  "attackPct": 0.1,
+  "attackFlat": 4,
+  "strengthPct": 0.1,
+  "strengthFlat": 4,
+  "icon": 20916
+ },
+ {
+  "key": "ELDER",
+  "style": "MELEE",
+  "name": "Elder",
+  "attackPct": 0.13,
+  "attackFlat": 5,
+  "strengthPct": 0.13,
+  "strengthFlat": 5,
+  "icon": 20920
+ },
+ {
+  "key": "ELDER_PLUS",
+  "style": "MELEE",
+  "name": "Elder (+)",
+  "attackPct": 0.16,
+  "attackFlat": 6,
+  "strengthPct": 0.16,
+  "strengthFlat": 6,
+  "icon": 20924
+ },
+ {
+  "key": "OVERLOAD_MINUS",
+  "style": "MELEE",
+  "name": "Overload (-)",
+  "attackPct": 0.1,
+  "attackFlat": 4,
+  "strengthPct": 0.1,
+  "strengthFlat": 4,
+  "itemId": 20988,
+  "icon": 20988
+ },
+ {
+  "key": "OVERLOAD_COX",
+  "style": "MELEE",
+  "name": "Overload (CoX)",
+  "attackPct": 0.13,
+  "attackFlat": 5,
+  "strengthPct": 0.13,
+  "strengthFlat": 5,
+  "itemId": 20992,
+  "icon": 20992
+ },
+ {
+  "key": "OVERLOAD_PLUS",
+  "style": "MELEE",
+  "name": "Overload (+)",
+  "attackPct": 0.16,
+  "attackFlat": 6,
+  "strengthPct": 0.16,
+  "strengthFlat": 6,
+  "itemId": 20996,
+  "icon": 20996
+ },
+ {
+  "key": "OVERLOAD_NMZ",
+  "style": "MELEE",
+  "name": "Overload (NMZ)",
+  "attackPct": 0.15,
+  "attackFlat": 5,
+  "strengthPct": 0.15,
+  "strengthFlat": 5,
+  "itemId": 11730,
+  "icon": 11730
+ },
+ {
+  "key": "SMELLING_SALTS",
+  "style": "MELEE",
+  "name": "Smelling salts",
+  "attackPct": 0.16,
+  "attackFlat": 11,
+  "strengthPct": 0.16,
+  "strengthFlat": 11,
+  "icon": 27343
+ },
+ {
+  "key": "NONE",
+  "style": "RANGED",
+  "name": "None"
+ },
+ {
+  "key": "RANGING_POTION",
+  "style": "RANGED",
+  "name": "Ranging",
+  "rangedPct": 0.1,
+  "rangedFlat": 4,
+  "itemId": 2444,
+  "icon": 2444,
+  "description": "https://oldschool.runescape.wiki/w/Ranging_potion \"4 + 10% of the player's current Ranged level, rounded down\"",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Ranging_potion",
+    "quotes": [
+     "4 + 10% of the player's current Ranged level, rounded down"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
+ },
+ {
+  "key": "BASTION_POTION",
+  "style": "RANGED",
+  "name": "Bastion",
+  "rangedPct": 0.1,
+  "rangedFlat": 4,
+  "itemId": 22461,
+  "icon": 22461
+ },
+ {
+  "key": "BANDAGES_TOB",
+  "style": "RANGED",
+  "name": "Bandages (ToB)",
+  "rangedPct": 0.1,
+  "rangedFlat": 4,
+  "itemId": 25730,
+  "icon": 25730
+ },
+ {
+  "key": "TWISTED_MINUS",
+  "style": "RANGED",
+  "name": "Twisted (-)",
+  "rangedPct": 0.1,
+  "rangedFlat": 4,
+  "icon": 20928
+ },
+ {
+  "key": "TWISTED",
+  "style": "RANGED",
+  "name": "Twisted",
+  "rangedPct": 0.13,
+  "rangedFlat": 5,
+  "icon": 20932
+ },
+ {
+  "key": "TWISTED_PLUS",
+  "style": "RANGED",
+  "name": "Twisted (+)",
+  "rangedPct": 0.16,
+  "rangedFlat": 6,
+  "icon": 20936
+ },
+ {
+  "key": "OVERLOAD_MINUS",
+  "style": "RANGED",
+  "name": "Overload (-)",
+  "rangedPct": 0.1,
+  "rangedFlat": 4,
+  "itemId": 20988,
+  "icon": 20988
+ },
+ {
+  "key": "OVERLOAD_COX",
+  "style": "RANGED",
+  "name": "Overload (CoX)",
+  "rangedPct": 0.13,
+  "rangedFlat": 5,
+  "itemId": 20992,
+  "icon": 20992
+ },
+ {
+  "key": "OVERLOAD_PLUS",
+  "style": "RANGED",
+  "name": "Overload (+)",
+  "rangedPct": 0.16,
+  "rangedFlat": 6,
+  "itemId": 20996,
+  "icon": 20996
+ },
+ {
+  "key": "OVERLOAD_NMZ",
+  "style": "RANGED",
+  "name": "Overload (NMZ)",
+  "rangedPct": 0.15,
+  "rangedFlat": 5,
+  "itemId": 11730,
+  "icon": 11730
+ },
+ {
+  "key": "POTION_OF_POWER",
+  "style": "RANGED",
+  "name": "Potion of power",
+  "rangedPct": 0.15,
+  "rangedFlat": 5,
+  "icon": 25203
+ },
+ {
+  "key": "SMELLING_SALTS",
+  "style": "RANGED",
+  "name": "Smelling salts",
+  "rangedPct": 0.16,
+  "rangedFlat": 11,
+  "icon": 27343
+ },
+ {
+  "key": "NONE",
+  "style": "MAGIC",
+  "name": "None"
+ },
+ {
+  "key": "MAGIC_POTION",
+  "style": "MAGIC",
+  "name": "Magic",
+  "magicFlat": 4,
+  "itemId": 3040,
+  "icon": 3040
+ },
+ {
+  "key": "BATTLEMAGE_POTION",
+  "style": "MAGIC",
+  "name": "Battlemage",
+  "magicFlat": 4,
+  "itemId": 22449,
+  "icon": 22449
+ },
+ {
+  "key": "BANDAGES_TOB",
+  "style": "MAGIC",
+  "name": "Bandages (ToB)",
+  "magicFlat": 4,
+  "itemId": 25730,
+  "icon": 25730
+ },
+ {
+  "key": "IMBUED_HEART",
+  "style": "MAGIC",
+  "name": "Imbued heart",
+  "magicPct": 0.1,
+  "magicFlat": 1,
+  "itemId": 20724,
+  "icon": 20724
+ },
+ {
+  "key": "SATURATED_HEART",
+  "style": "MAGIC",
+  "name": "Saturated heart",
+  "magicPct": 0.1,
+  "magicFlat": 4,
+  "itemId": 27641,
+  "icon": 27641
+ },
+ {
+  "key": "ANCIENT_BREW",
+  "style": "MAGIC",
+  "name": "Ancient brew",
+  "magicPct": 0.05,
+  "magicFlat": 2,
+  "itemId": 26340,
+  "icon": 26340
+ },
+ {
+  "key": "FORGOTTEN_BREW",
+  "style": "MAGIC",
+  "name": "Forgotten brew",
+  "magicPct": 0.08,
+  "magicFlat": 3,
+  "itemId": 27629,
+  "icon": 27629
+ },
+ {
+  "key": "KODAI_MINUS",
+  "style": "MAGIC",
+  "name": "Kodai (-)",
+  "magicPct": 0.1,
+  "magicFlat": 4,
+  "icon": 20940
+ },
+ {
+  "key": "KODAI",
+  "style": "MAGIC",
+  "name": "Kodai",
+  "magicPct": 0.13,
+  "magicFlat": 5,
+  "icon": 20944
+ },
+ {
+  "key": "KODAI_PLUS",
+  "style": "MAGIC",
+  "name": "Kodai (+)",
+  "magicPct": 0.16,
+  "magicFlat": 6,
+  "icon": 20948
+ },
+ {
+  "key": "OVERLOAD_MINUS",
+  "style": "MAGIC",
+  "name": "Overload (-)",
+  "magicPct": 0.1,
+  "magicFlat": 4,
+  "itemId": 20988,
+  "icon": 20988
+ },
+ {
+  "key": "OVERLOAD_COX",
+  "style": "MAGIC",
+  "name": "Overload (CoX)",
+  "magicPct": 0.13,
+  "magicFlat": 5,
+  "itemId": 20992,
+  "icon": 20992
+ },
+ {
+  "key": "OVERLOAD_PLUS",
+  "style": "MAGIC",
+  "name": "Overload (+)",
+  "magicPct": 0.16,
+  "magicFlat": 6,
+  "itemId": 20996,
+  "icon": 20996
+ },
+ {
+  "key": "OVERLOAD_NMZ",
+  "style": "MAGIC",
+  "name": "Overload (NMZ)",
+  "magicPct": 0.15,
+  "magicFlat": 5,
+  "itemId": 11730,
+  "icon": 11730
+ },
+ {
+  "key": "POTION_OF_POWER",
+  "style": "MAGIC",
+  "name": "Potion of power",
+  "magicPct": 0.15,
+  "magicFlat": 5,
+  "icon": 25203
+ },
+ {
+  "key": "SUPER_MAGIC_NMZ",
+  "style": "MAGIC",
+  "name": "Super magic",
+  "magicPct": 0.15,
+  "magicFlat": 5,
+  "icon": 11726
+ },
+ {
+  "key": "SMELLING_SALTS",
+  "style": "MAGIC",
+  "name": "Smelling salts",
+  "magicPct": 0.16,
+  "magicFlat": 11,
+  "icon": 27343
+ }
 ]

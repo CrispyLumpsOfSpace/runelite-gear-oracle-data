@@ -1,11 +1,47 @@
 [
-	{"key": "bronzeDart",   "id": 806,   "name": "Bronze dart"},
-	{"key": "ironDart",     "id": 807,   "name": "Iron dart"},
-	{"key": "steelDart",    "id": 808,   "name": "Steel dart"},
-	{"key": "blackDart",    "id": 3093,  "name": "Black dart"},
-	{"key": "mithrilDart",  "id": 809,   "name": "Mithril dart"},
-	{"key": "adamantDart",  "id": 810,   "name": "Adamant dart"},
-	{"key": "runeDart",     "id": 811,   "name": "Rune dart"},
-	{"key": "amethystDart", "id": 25849, "name": "Amethyst dart"},
-	{"key": "dragonDart",   "id": 11230, "name": "Dragon dart"}
+ {
+  "key": "bronzeDart",
+  "id": 806,
+  "name": "Bronze dart"
+ },
+ {
+  "key": "ironDart",
+  "id": 807,
+  "name": "Iron dart"
+ },
+ {
+  "key": "steelDart",
+  "id": 808,
+  "name": "Steel dart"
+ },
+ {
+  "key": "blackDart",
+  "id": 3093,
+  "name": "Black dart"
+ },
+ {
+  "key": "mithrilDart",
+  "id": 809,
+  "name": "Mithril dart"
+ },
+ {
+  "key": "adamantDart",
+  "id": 810,
+  "name": "Adamant dart"
+ },
+ {
+  "key": "runeDart",
+  "id": 811,
+  "name": "Rune dart"
+ },
+ {
+  "key": "amethystDart",
+  "id": 25849,
+  "name": "Amethyst dart"
+ },
+ {
+  "key": "dragonDart",
+  "id": 11230,
+  "name": "Dragon dart"
+ }
 ]

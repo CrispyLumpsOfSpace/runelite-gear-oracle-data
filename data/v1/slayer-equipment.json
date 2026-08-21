@@ -1,18 +1,114 @@
 [
-	{"slayerCategory": "Banshees", "slot": "HEAD", "itemLabel": "Earmuffs", "reason": "Banshees' scream drains your stats without ear protection", "required": "EARMUFFS"},
-	{"slayerCategory": "Dust Devils", "slot": "HEAD", "itemLabel": "Facemask", "reason": "Dust devils blind and damage you without a facemask", "required": "FACEMASK"},
-	{"slayerCategory": "Smoke Devils", "slot": "HEAD", "itemLabel": "Facemask", "reason": "The smoke dungeon's air damages you without a facemask", "required": "FACEMASK"},
-	{"slayerCategory": "Wall Beasts", "slot": "HEAD", "itemLabel": "Spiny helmet", "reason": "Wall beasts hit hard and often without a spiny helmet", "required": "SPINY_HELMET"},
-	{"slayerCategory": "Aberrant Spectres", "slot": "HEAD", "itemLabel": "Nose peg", "reason": "Aberrant spectres' stench drains your stats without a nose peg", "required": "NOSE_PEG"},
-	{"slayerCategory": "Sourhogs", "slot": "HEAD", "itemLabel": "Reinforced goggles", "reason": "Sourhogs' attacks need reinforced goggles", "required": "REINFORCED_GOGGLES"},
-	{"slayerCategory": "Cave Horrors", "slot": "AMULET", "itemLabel": "Witchwood icon", "reason": "Cave horrors' screech drains your stats without a witchwood icon", "required": "WITCHWOOD_ICON"},
-	{"slayerCategory": "Basilisks", "slot": "SHIELD", "itemLabel": "Mirror shield", "reason": "A basilisk's gaze drains your stats without a mirror shield", "required": "MIRROR_SHIELD"},
-	{"slayerCategory": "Cockatrice", "slot": "SHIELD", "itemLabel": "Mirror shield", "reason": "A cockatrice's gaze drains your stats without a mirror shield", "required": "MIRROR_SHIELD"},
-	{"slayerCategory": "Harpie Bug Swarms", "slot": "SHIELD", "itemLabel": "Lit bug lantern", "reason": "Harpie bug swarms take no damage at all without a LIT bug lantern", "required": "LIT_BUG_LANTERN"},
-	{"slayerCategory": "Gryphons", "slot": "CAPE", "itemLabel": "Tortugan shield", "reason": "Gryphons' devastating attacks need a tortugan shield", "required": "TORTUGAN_SHIELD"},
-	{"slayerCategory": "Killerwatts", "slot": "BOOTS", "itemLabel": "Insulated boots", "reason": "Killerwatts' shock needs insulated boots", "required": "INSULATED_BOOTS"},
-	{"slayerCategory": "Wyrms", "slot": "BOOTS", "itemLabel": "Boots of stone", "reason": "The Karuulm dungeon floor burns you without stone/brimstone/granite boots", "required": "KARUULM_BOOTS"},
-	{"slayerCategory": "Drakes", "slot": "BOOTS", "itemLabel": "Boots of stone", "reason": "The Karuulm dungeon floor burns you without stone/brimstone/granite boots", "required": "KARUULM_BOOTS"},
-	{"slayerCategory": "Hydras", "slot": "BOOTS", "itemLabel": "Boots of stone", "reason": "The Karuulm dungeon floor burns you without stone/brimstone/granite boots", "required": "KARUULM_BOOTS"},
-	{"slayerCategory": "Fever Spiders", "slot": "GLOVES", "itemLabel": "Slayer gloves", "reason": "Fever spiders poison you on contact without slayer gloves", "required": "SLAYER_GLOVES"}
+ {
+  "slayerCategory": "Banshees",
+  "slot": "HEAD",
+  "itemLabel": "Earmuffs",
+  "reason": "Banshees' scream drains your stats without ear protection",
+  "required": "EARMUFFS"
+ },
+ {
+  "slayerCategory": "Dust Devils",
+  "slot": "HEAD",
+  "itemLabel": "Facemask",
+  "reason": "Dust devils blind and damage you without a facemask",
+  "required": "FACEMASK"
+ },
+ {
+  "slayerCategory": "Smoke Devils",
+  "slot": "HEAD",
+  "itemLabel": "Facemask",
+  "reason": "The smoke dungeon's air damages you without a facemask",
+  "required": "FACEMASK"
+ },
+ {
+  "slayerCategory": "Wall Beasts",
+  "slot": "HEAD",
+  "itemLabel": "Spiny helmet",
+  "reason": "Wall beasts hit hard and often without a spiny helmet",
+  "required": "SPINY_HELMET"
+ },
+ {
+  "slayerCategory": "Aberrant Spectres",
+  "slot": "HEAD",
+  "itemLabel": "Nose peg",
+  "reason": "Aberrant spectres' stench drains your stats without a nose peg",
+  "required": "NOSE_PEG"
+ },
+ {
+  "slayerCategory": "Sourhogs",
+  "slot": "HEAD",
+  "itemLabel": "Reinforced goggles",
+  "reason": "Sourhogs' attacks need reinforced goggles",
+  "required": "REINFORCED_GOGGLES"
+ },
+ {
+  "slayerCategory": "Cave Horrors",
+  "slot": "AMULET",
+  "itemLabel": "Witchwood icon",
+  "reason": "Cave horrors' screech drains your stats without a witchwood icon",
+  "required": "WITCHWOOD_ICON"
+ },
+ {
+  "slayerCategory": "Basilisks",
+  "slot": "SHIELD",
+  "itemLabel": "Mirror shield",
+  "reason": "A basilisk's gaze drains your stats without a mirror shield",
+  "required": "MIRROR_SHIELD"
+ },
+ {
+  "slayerCategory": "Cockatrice",
+  "slot": "SHIELD",
+  "itemLabel": "Mirror shield",
+  "reason": "A cockatrice's gaze drains your stats without a mirror shield",
+  "required": "MIRROR_SHIELD"
+ },
+ {
+  "slayerCategory": "Harpie Bug Swarms",
+  "slot": "SHIELD",
+  "itemLabel": "Lit bug lantern",
+  "reason": "Harpie bug swarms take no damage at all without a LIT bug lantern",
+  "required": "LIT_BUG_LANTERN"
+ },
+ {
+  "slayerCategory": "Gryphons",
+  "slot": "CAPE",
+  "itemLabel": "Tortugan shield",
+  "reason": "Gryphons' devastating attacks need a tortugan shield",
+  "required": "TORTUGAN_SHIELD"
+ },
+ {
+  "slayerCategory": "Killerwatts",
+  "slot": "BOOTS",
+  "itemLabel": "Insulated boots",
+  "reason": "Killerwatts' shock needs insulated boots",
+  "required": "INSULATED_BOOTS"
+ },
+ {
+  "slayerCategory": "Wyrms",
+  "slot": "BOOTS",
+  "itemLabel": "Boots of stone",
+  "reason": "The Karuulm dungeon floor burns you without stone/brimstone/granite boots",
+  "required": "KARUULM_BOOTS"
+ },
+ {
+  "slayerCategory": "Drakes",
+  "slot": "BOOTS",
+  "itemLabel": "Boots of stone",
+  "reason": "The Karuulm dungeon floor burns you without stone/brimstone/granite boots",
+  "required": "KARUULM_BOOTS"
+ },
+ {
+  "slayerCategory": "Hydras",
+  "slot": "BOOTS",
+  "itemLabel": "Boots of stone",
+  "reason": "The Karuulm dungeon floor burns you without stone/brimstone/granite boots",
+  "required": "KARUULM_BOOTS"
+ },
+ {
+  "slayerCategory": "Fever Spiders",
+  "slot": "GLOVES",
+  "itemLabel": "Slayer gloves",
+  "reason": "Fever spiders poison you on contact without slayer gloves",
+  "required": "SLAYER_GLOVES"
+ }
 ]

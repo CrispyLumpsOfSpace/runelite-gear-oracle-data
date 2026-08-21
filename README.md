@@ -26,6 +26,11 @@ Clients read `master`; the weekly refresh lands on `staging`. CI force-pushes ea
 merging it is what serves the refresh to clients. To test staged data first, launch the plugin
 with `GEAR_ORACLE_DATA_BRANCH=staging` in its environment.
 
+Every push and pull request runs `.github/workflows/validate.yml`: `tools/validate.py` over the
+committed tree, then the plugin's own test suite against that tree rather than against the
+commit its `wikiDataPin` names (`./gradlew test -PwikiDataSource=<this checkout>`). Hand-edited
+tables merge to `master` unreviewed by the refresh pipeline, and clients read `master`.
+
 Everything is published as **plain JSON in a stable order**, so each refresh commit is a
 reviewable diff rather than an opaque archive: the pipeline-fetched files and the simpler hand
 tables put one row per line, and the hand-authored tables whose rows carry conditions and
@@ -68,6 +73,91 @@ values appear, though which fields carry an override is itself a product of it.
 
 The `v1` path segment is the schema version: a future format change publishes alongside as
 `v2`, so released plugin versions keep working.
+
+## Citations
+
+Every hand-authored row carries a `description`, and rows whose description names something
+checkable also carry a `_cite` block beside it. The two are one statement in two halves:
+
+- **`description`** is the field of record and is never rewritten by a tool. It is the prose
+  the author wrote: what the row models, the citation as a human reads it, and the row's
+  **scope exclusions** — what the row deliberately does *not* model and why. A row cannot
+  carry a comment, so that reasoning has nowhere else to live, and none of it is
+  machine-checkable.
+- **`_cite`** is the machine-checkable half, derived from that prose by
+  `tools/migrate_sources.py`: the URLs and the verbatim quotes, so a tool can hold them against
+  the live wiki. It adds nothing the `description` does not already say.
+
+The `_` prefix is the data repository's extension point: the plugin's row binder and its
+mechanic-row grammar both skip a `_`-prefixed key, so a block like this can be added to a row
+shape a released client already reads without that client dropping the row.
+
+```json
+{
+ "key": "pickaxe",
+ "nameContains": ["pickaxe"],
+ "description": "https://oldschool.runescape.wiki/w/Slagilith \"will reduce your damage by 67% if a pickaxe is not equipped\"",
+ "_cite": [
+  {"kind": "wiki", "url": "https://oldschool.runescape.wiki/w/Slagilith", "quotes": ["will reduce your damage by 67% if a pickaxe is not equipped"], "verified": "2026-08-21"}
+ ]
+}
+```
+
+`_cite` is a non-empty list of citations, each one source with everything this row quotes from
+it:
+
+| Field | Meaning |
+|---|---|
+| `kind` | `wiki` (an OSRS Wiki article — the only kind a tool can check), `tweet` (a JMod statement), `sheet` (Bitterkoekje's or another published community sheet), `web` (anything else linked), `unsourced` (the prose quotes a source it never linked), `none` (the row's `CITATION-NONE` marker: a value no source supports, standing until it is reconciled) |
+| `url` | The source, `https://` and canonical — for `kind: wiki`, an `https://oldschool.runescape.wiki/w/...` article URL. Absent, and only absent, on `unsourced` and `none` |
+| `quotes` | Minimal verbatim spans from that source, in the order the prose quotes them. Empty when the row cites an article without quoting it; never a paraphrase |
+| `verified` | ISO date the quotes were last held against the source. Written by `tools/verify_sources.py --update-dates`, and only for a citation whose every quote matched |
+
+### Checking them
+
+`tools/validate.py` checks the **shape** of every `_cite` — kinds, ISO dates, well-formed URLs,
+quotes present as strings — with no network, and **blocks**: a malformed block fails CI.
+
+`tools/verify_sources.py` checks the **content**, against the live wiki, and only **reports**.
+A wiki article can be reworded the day after it was cited without the fact it stated changing,
+so a quote that stops matching is a prompt to go and look, never a reason to block a publish.
+That makes it a manual step:
+
+```
+tools/verify_sources.py                 # report VERIFIED / PARTIAL / NOT-FOUND / MANUAL
+tools/verify_sources.py --limit 40 data/v1/weapon-families.json     # sample one table
+tools/verify_sources.py --update-dates  # after eyeballing, stamp today on what matched
+tools/verify_sources.py --derive-urls   # propose the article an `unsourced` quote came from
+```
+
+Quotes are matched after normalising whitespace, wiki markup and quote punctuation, against
+both the rendered article and the raw wikitext, since a citation may have been copied from
+either. Non-wiki sources are reported `MANUAL` rather than fetched. `--derive-urls` writes a
+URL in only when the candidate page actually contains the quote, so it can promote an
+`unsourced` citation but can never invent one. Pages are cached under `tools/.cache/`, so a
+rerun after an edit costs nothing.
+
+Re-run `tools/manifest.py` after any of these rewrite a table.
+
+## Formatting
+
+Every hand-authored `data/v1` table is stored in one canonical layout: `indent=1`, every object
+and array member on its own line, key order as authored, UTF-8, trailing newline. `_cite`
+blocks and deep option lists make a table's rows too long to share lines legibly, and one
+layout keeps a row's diff to that row.
+
+```
+tools/format_data.py            # rewrite every hand-authored table
+tools/format_data.py --check    # name what would change, write nothing
+```
+
+`tools/validate.py` runs the same check and **blocks**, so a table cannot be published in a
+layout the next tool run would reflow.
+
+The pipeline-written files own their own form instead — expanding the 1.5MB compact bestiary to
+one line per field would multiply it — so `tools/fetch_data.py` and `tools/manifest.py` are
+canonical for `monsters.json`, `equipment.json`, `meta.json` and `manifest.json`. `vectors/` is
+not formatted at all. Re-run `tools/manifest.py` after reformatting: the hashes move.
 
 ## Licensing
 

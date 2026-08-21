@@ -5,28 +5,56 @@
    "kraken",
    "cave kraken"
   ],
-  "source": "Exact names rather than a \"kraken\" substring: the 1/7 ranged rule and the melee-reach immunity belong to the Slayer boss and its cave krakens, while the game also has an Armoured kraken and a Pygmy kraken carrying neither."
+  "description": "Exact names rather than a \"kraken\" substring: the 1/7 ranged rule and the melee-reach immunity belong to the Slayer boss and its cave krakens, while the game also has an Armoured kraken and a Pygmy kraken carrying neither."
  },
  {
   "key": "salarin",
   "nameContains": [
    "salarin the twisted"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Salarin_the_twisted \"the spells will always deal 9, 10, 11, or 12 damage\""
+  "description": "https://oldschool.runescape.wiki/w/Salarin_the_twisted \"the spells will always deal 9, 10, 11, or 12 damage\"",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Salarin_the_twisted",
+    "quotes": [
+     "the spells will always deal 9, 10, 11, or 12 damage"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "revenant",
   "nameContains": [
    "revenant"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Amulet_of_avarice \u2014 the amulet's +20% applies to revenants, whose names all carry the word."
+  "description": "https://oldschool.runescape.wiki/w/Amulet_of_avarice — the amulet's +20% applies to revenants, whose names all carry the word.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Amulet_of_avarice",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "corporealBeast",
   "namesExact": [
    "corporeal beast"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Corporeal_Beast \"The Corporeal Beast has a 50% damage reduction against any weapon that is not a Corpbane weapon on stab attack style.\""
+  "description": "https://oldschool.runescape.wiki/w/Corporeal_Beast \"The Corporeal Beast has a 50% damage reduction against any weapon that is not a Corpbane weapon on stab attack style.\"",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Corporeal_Beast",
+    "quotes": [
+     "The Corporeal Beast has a 50% damage reduction against any weapon that is not a Corpbane weapon on stab attack style."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "zogre",
@@ -35,14 +63,34 @@
    "skogre",
    "slash bash"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Zogre \"Zogres are almost immune to normal weapons (you will hit just as often, but damage is reduced by 75%).\""
+  "description": "https://oldschool.runescape.wiki/w/Zogre \"Zogres are almost immune to normal weapons (you will hit just as often, but damage is reduced by 75%).\"",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Zogre",
+    "quotes": [
+     "Zogres are almost immune to normal weapons (you will hit just as often, but damage is reduced by 75%)."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "halberdReach",
   "nameContains": [
    "zulrah"
   ],
-  "source": "Zulrah is the only monster needing halberd reach for a non-flight reason: https://oldschool.runescape.wiki/w/Zulrah \"It cannot be reached with melee (with the exception of halberds).\" Other airborne creatures carry the FLYING attribute instead, so a comprehensive name list here would only risk missing them."
+  "description": "Zulrah is the only monster needing halberd reach for a non-flight reason: https://oldschool.runescape.wiki/w/Zulrah \"It cannot be reached with melee (with the exception of halberds).\" Other airborne creatures carry the FLYING attribute instead, so a comprehensive name list here would only risk missing them.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Zulrah",
+    "quotes": [
+     "It cannot be reached with melee (with the exception of halberds)."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "salamanderMeleeable",
@@ -53,35 +101,88 @@
    "flockleader geerin",
    "flight kilisa"
   ],
-  "source": "The airborne targets whose own articles still except salamanders, as opposed to the halberd-only rule the Flying attribute otherwise carries: https://oldschool.runescape.wiki/w/Aviansie \"As they are airborne, they are immune to being directly targeted by melee attacks except for salamanders and halberds\" and https://oldschool.runescape.wiki/w/Kree'arra \"he and his bodyguards cannot be attacked with Melee, except when using Halberds or Salamanders\". Excluded deliberately: Armadylean guard, whose 23 July 2025 update note leaves the elite-clue fight \"only vulnerable to halberd melee weapons\"; Reanimated aviansie, Dawn and Vespula, whose articles name halberds alone."
+  "description": "The airborne targets whose own articles still except salamanders, as opposed to the halberd-only rule the Flying attribute otherwise carries: https://oldschool.runescape.wiki/w/Aviansie \"As they are airborne, they are immune to being directly targeted by melee attacks except for salamanders and halberds\" and https://oldschool.runescape.wiki/w/Kree'arra \"he and his bodyguards cannot be attacked with Melee, except when using Halberds or Salamanders\". Excluded deliberately: Armadylean guard, whose 23 July 2025 update note leaves the elite-clue fight \"only vulnerable to halberd melee weapons\"; Reanimated aviansie, Dawn and Vespula, whose articles name halberds alone.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Aviansie",
+    "quotes": [
+     "As they are airborne, they are immune to being directly targeted by melee attacks except for salamanders and halberds"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Kree",
+    "quotes": [
+     "he and his bodyguards cannot be attacked with Melee, except when using Halberds or Salamanders",
+     "only vulnerable to halberd melee weapons"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "zulrah",
   "nameContains": [
    "zulrah"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Zulrah \"Damage at Zulrah is capped at 50, with any hits greater than this amount dealing 45-50 damage instead.\""
+  "description": "https://oldschool.runescape.wiki/w/Zulrah \"Damage at Zulrah is capped at 50, with any hits greater than this amount dealing 45-50 damage instead.\"",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Zulrah",
+    "quotes": [
+     "Damage at Zulrah is capped at 50, with any hits greater than this amount dealing 45-50 damage instead."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "nylocasIschyros",
   "nameContains": [
    "nylocas ischyros"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Nylocas_Ischyros \u2014 the melee form, immune to all but Melee."
+  "description": "https://oldschool.runescape.wiki/w/Nylocas_Ischyros — the melee form, immune to all but Melee.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Nylocas_Ischyros",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "nylocasToxobolos",
   "nameContains": [
    "nylocas toxobolos"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Nylocas_Toxobolos \u2014 the ranged form, immune to all but Ranged."
+  "description": "https://oldschool.runescape.wiki/w/Nylocas_Toxobolos — the ranged form, immune to all but Ranged.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Nylocas_Toxobolos",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "nylocasHagios",
   "nameContains": [
    "nylocas hagios"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Nylocas_Hagios \u2014 the magic form, immune to all but Magic."
+  "description": "https://oldschool.runescape.wiki/w/Nylocas_Hagios — the magic form, immune to all but Magic.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Nylocas_Hagios",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "nylocasPrinkipasMelee",
@@ -89,28 +190,62 @@
    10803,
    10804
   ],
-  "source": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas \u2014 the white form, immune to all but Melee. Keyed by id because all three forms share one name."
+  "description": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas — the white form, immune to all but Melee. Keyed by id because all three forms share one name.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "nylocasPrinkipasRanged",
   "ids": [
    10806
   ],
-  "source": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas \u2014 the green form, immune to all but Ranged."
+  "description": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas — the green form, immune to all but Ranged.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "nylocasPrinkipasMagic",
   "ids": [
    10805
   ],
-  "source": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas \u2014 the blue form, immune to all but Magic."
+  "description": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas — the blue form, immune to all but Magic.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Nylocas_Prinkipas",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "fragmentOfSeren",
   "nameContains": [
    "fragment of seren"
   ],
-  "source": "https://twitter.com/JagexAsh/status/1375037874559721474 \"ignoring whatever damage you rolled, and simply picking a number 22-24\""
+  "description": "https://twitter.com/JagexAsh/status/1375037874559721474 \"ignoring whatever damage you rolled, and simply picking a number 22-24\"",
+  "_cite": [
+   {
+    "kind": "tweet",
+    "url": "https://twitter.com/JagexAsh/status/1375037874559721474",
+    "quotes": [
+     "ignoring whatever damage you rolled, and simply picking a number 22-24"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "verzikPhaseOne",
@@ -129,7 +264,7 @@
    "verzik&p1",
    "verzik&phase 1"
   ],
-  "source": "Entry (10830-10832), normal (8369-8371) and hard mode (10847-10849) phase one, per the article's infobox. Id-keyed because all nine rows are called \"Verzik Vitur\" in the bundled bestiary \u2014 the wiki keeps the phase in a page VERSION the database does not carry \u2014 so the name half only fires for a source that does disambiguate."
+  "description": "Entry (10830-10832), normal (8369-8371) and hard mode (10847-10849) phase one, per the article's infobox. Id-keyed because all nine rows are called \"Verzik Vitur\" in the bundled bestiary — the wiki keeps the phase in a page VERSION the database does not carry — so the name half only fires for a source that does disambiguate."
  },
  {
   "key": "hueycoatlTail",
@@ -140,14 +275,14 @@
   "nameContains": [
    "hueycoatl&tail"
   ],
-  "source": "Tail (14014) and its broken form (14015). Name fallback kept because some sources (the wiki calculator) carry the part in a page version rather than the name; without it the tail's 4-or-9 cap would apply to the whole fight or none of it."
+  "description": "Tail (14014) and its broken form (14015). Name fallback kept because some sources (the wiki calculator) carry the part in a page version rather than the name; without it the tail's 4-or-9 cap would apply to the whole fight or none of it."
  },
  {
   "key": "nightmareTotem",
   "namesExact": [
    "totem"
   ],
-  "source": "Exact match: the wiki page is just \"Totem\", and the only other totem-named monster (\"Healing totem\") is a different exact name."
+  "description": "Exact match: the wiki page is just \"Totem\", and the only other totem-named monster (\"Healing totem\") is a different exact name."
  },
  {
   "key": "tekton",
@@ -162,7 +297,17 @@
   "namesExact": [
    "tekton"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Tekton \"Tekton is immune to Range and takes 80% reduced Magic damage\", stated with no enraged carve-out. Id-keyed as well as named because the enraged rows are named \"Tekton (enraged)\" and only share the page name, which the matcher never reads."
+  "description": "https://oldschool.runescape.wiki/w/Tekton \"Tekton is immune to Range and takes 80% reduced Magic damage\", stated with no enraged carve-out. Id-keyed as well as named because the enraged rows are named \"Tekton (enraged)\" and only share the page name, which the matcher never reads.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tekton",
+    "quotes": [
+     "Tekton is immune to Range and takes 80% reduced Magic damage"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "olmHead",
@@ -173,7 +318,7 @@
   "nameContains": [
    "olm&head"
   ],
-  "source": "Great Olm's head, normal and Challenge Mode. Id-keyed because every part shares the name \"Great Olm\" \u2014 the wiki keeps the part in a page version the monster database does not carry."
+  "description": "Great Olm's head, normal and Challenge Mode. Id-keyed because every part shares the name \"Great Olm\" — the wiki keeps the part in a page version the monster database does not carry."
  },
  {
   "key": "olmLeftClaw",
@@ -185,7 +330,7 @@
    "olm&left claw",
    "olm&melee hand"
   ],
-  "source": "Great Olm's left claw, normal and Challenge Mode; see olmHead for why the id leads."
+  "description": "Great Olm's left claw, normal and Challenge Mode; see olmHead for why the id leads."
  },
  {
   "key": "olmRightClaw",
@@ -197,7 +342,7 @@
    "olm&right claw",
    "olm&mage hand"
   ],
-  "source": "Great Olm's right claw, normal and Challenge Mode; see olmHead for why the id leads."
+  "description": "Great Olm's right claw, normal and Challenge Mode; see olmHead for why the id leads."
  },
  {
   "key": "toa",
@@ -255,14 +400,32 @@
    11729,
    11781
   ],
-  "source": "The Tombs of Amascut roster by NPC id (the wiki's ToA monster list; each monster's infobox lists its ids): Akkha and his shadows, Ba-Ba, Kephri shielded/unshielded and her overlords, Zebak, the obelisk, and the Wardens' P2, ejected cores and P3, plus the path and room monsters (crocodiles, baboons, scarabs, scarab swarms, eggs). https://oldschool.runescape.wiki/w/Osmumten's_fang scopes the independent re-roll to the raid, not its bosses: \"Within the raid, this check is performed using the standard mechanics, but is repeated\"."
+  "description": "The Tombs of Amascut roster by NPC id (the wiki's ToA monster list; each monster's infobox lists its ids): Akkha and his shadows, Ba-Ba, Kephri shielded/unshielded and her overlords, Zebak, the obelisk, and the Wardens' P2, ejected cores and P3, plus the path and room monsters (crocodiles, baboons, scarabs, scarab swarms, eggs). https://oldschool.runescape.wiki/w/Osmumten's_fang scopes the independent re-roll to the raid, not its bosses: \"Within the raid, this check is performed using the standard mechanics, but is repeated\".",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Osmumten",
+    "quotes": [
+     "Within the raid, this check is performed using the standard mechanics, but is repeated"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "gemstoneCrab",
   "namesExact": [
    "gemstone crab"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Gemstone_crab \u2014 ruby bolt (e) procs treat it as having a fixed 300 hitpoints, its own health bar depleting on a timer rather than from damage."
+  "description": "https://oldschool.runescape.wiki/w/Gemstone_crab — ruby bolt (e) procs treat it as having a fixed 300 hitpoints, its own health bar depleting on a timer rather than from damage.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Gemstone_crab",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "notDamagedByCombat",
@@ -271,7 +434,15 @@
    "wintertodt",
    "tempoross"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Zalcano \u2014 damaged only through a skilling system (imbued tephra, then mining her armour), so any DPS figure would be fiction. Wintertodt and Tempoross carry neither hitpoints nor a combat level on the wiki, so the ingest filter drops them already; they are listed so the omission reads as deliberate. Deliberately NOT here: the Gemstone crab (its health bar ignores damage, but the DPS ranking is still the right answer for its XP rate), Vespula (unkillable, yet genuinely attackable), and the Phantom Muspah's prayer shield and Duke Sucellus's charge bar, which are non-damage PHASES of monsters that are otherwise ordinary targets."
+  "description": "https://oldschool.runescape.wiki/w/Zalcano — damaged only through a skilling system (imbued tephra, then mining her armour), so any DPS figure would be fiction. Wintertodt and Tempoross carry neither hitpoints nor a combat level on the wiki, so the ingest filter drops them already; they are listed so the omission reads as deliberate. Deliberately NOT here: the Gemstone crab (its health bar ignores damage, but the DPS ranking is still the right answer for its XP rate), Vespula (unkillable, yet genuinely attackable), and the Phantom Muspah's prayer shield and Duke Sucellus's charge bar, which are non-damage PHASES of monsters that are otherwise ordinary targets.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Zalcano",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "royalTitan",
@@ -283,7 +454,15 @@
    "branda the fire queen",
    "eldric the ice king"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Royal_Titans \u2014 a duo boss with one shared mechanic, so both ids carry it."
+  "description": "https://oldschool.runescape.wiki/w/Royal_Titans — a duo boss with one shared mechanic, so both ids carry it.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Royal_Titans",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "glowingCrystal",
@@ -293,42 +472,84 @@
   "namesExact": [
    "glowing crystal"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Glowing_crystal \u2014 Vasa Nistirio's crystal: ranged-immune and a third of magic damage. Id from the infobox, name kept as a fallback."
+  "description": "https://oldschool.runescape.wiki/w/Glowing_crystal — Vasa Nistirio's crystal: ranged-immune and a third of magic damage. Id from the infobox, name kept as a fallback.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Glowing_crystal",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "alchemicalHydra",
   "namesExact": [
    "alchemical hydra"
   ],
-  "source": "Every phase shares the name (the wiki keeps \"Serpentine\"/\"Fire\"/\"Electric\"/\"Extinguished\" in a page version the database does not carry), which is fine here: the resistance is a player-stated option rather than something the engine infers per phase."
+  "description": "Every phase shares the name (the wiki keeps \"Serpentine\"/\"Fire\"/\"Electric\"/\"Extinguished\" in a page version the database does not carry), which is fine here: the resistance is a player-stated option rather than something the engine infers per phase."
  },
  {
   "key": "kamil",
   "namesExact": [
    "kamil"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Kamil \u2014 immune to every magic element except fire."
+  "description": "https://oldschool.runescape.wiki/w/Kamil — immune to every magic element except fire.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Kamil",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "fareed",
   "namesExact": [
    "fareed"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Fareed \u2014 only water spells, or ranged with arrows, can hurt him."
+  "description": "https://oldschool.runescape.wiki/w/Fareed — only water spells, or ranged with arrows, can hurt him.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Fareed",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "delrith",
   "namesExact": [
    "delrith"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Delrith \"All damage dealt to Delrith is doubled when Silverlight is equipped\""
+  "description": "https://oldschool.runescape.wiki/w/Delrith \"All damage dealt to Delrith is doubled when Silverlight is equipped\"",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Delrith",
+    "quotes": [
+     "All damage dealt to Delrith is doubled when Silverlight is equipped"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "surokMagis",
   "namesExact": [
    "surok magis"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Surok_Magis \u2014 harmed by spellbook magic only."
+  "description": "https://oldschool.runescape.wiki/w/Surok_Magis — harmed by spellbook magic only.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Surok_Magis",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "slagilith",
@@ -341,21 +562,53 @@
   "namesExact": [
    "slagilith"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Slagilith \"will reduce your damage by 67% if a pickaxe is not equipped\"; https://oldschool.runescape.wiki/w/Slagilith_(Nightmare_Zone) states the same for the encounter with no mode split, so the hard-mode copy (6324, named \"Slagilith (hard)\") needs the id arm to match."
+  "description": "https://oldschool.runescape.wiki/w/Slagilith \"will reduce your damage by 67% if a pickaxe is not equipped\"; https://oldschool.runescape.wiki/w/Slagilith_(Nightmare_Zone) states the same for the encounter with no mode split, so the hard-mode copy (6324, named \"Slagilith (hard)\") needs the id arm to match.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Slagilith",
+    "quotes": [
+     "will reduce your damage by 67% if a pickaxe is not equipped"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Slagilith_(Nightmare_Zone)",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "respiratorySystem",
   "namesExact": [
    "respiratory system"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Abyssal_Sire \u2014 the four systems share one name and differ only by id, so the name identifies all of them at once."
+  "description": "https://oldschool.runescape.wiki/w/Abyssal_Sire — the four systems share one name and differ only by id, so the name identifies all of them at once.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Abyssal_Sire",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "skotizo",
   "namesExact": [
    "skotizo"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Skotizo \u2014 his Awakened Altars cut damage while active."
+  "description": "https://oldschool.runescape.wiki/w/Skotizo — his Awakened Altars cut damage while active.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Skotizo",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "dusk",
@@ -373,7 +626,15 @@
   "namesExact": [
    "dusk"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Dusk \u2014 immune to Magic and Ranged, melee only; Dawn has no such rule. Both forms' ids (first form 7851-7886, second 7887-7889) per their page versions' infoboxes, with the unambiguous name as a fallback."
+  "description": "https://oldschool.runescape.wiki/w/Dusk — immune to Magic and Ranged, melee only; Dawn has no such rule. Both forms' ids (first form 7851-7886, second 7887-7889) per their page versions' infoboxes, with the unambiguous name as a fallback.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dusk",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "dukeSucellus",
@@ -382,7 +643,17 @@
   ],
   "group": "demonbaneVulnerability",
   "value": 70,
-  "source": "https://oldschool.runescape.wiki/w/Duke_Sucellus \"he has 30% demonbane resistance. This means an emberlight would only have 49% increased damage and accuracy against him rather than 70%.\""
+  "description": "https://oldschool.runescape.wiki/w/Duke_Sucellus \"he has 30% demonbane resistance. This means an emberlight would only have 49% increased damage and accuracy against him rather than 70%.\"",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Duke_Sucellus",
+    "quotes": [
+     "he has 30% demonbane resistance. This means an emberlight would only have 49% increased damage and accuracy against him rather than 70%."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "yama",
@@ -391,7 +662,17 @@
   ],
   "group": "demonbaneVulnerability",
   "value": 120,
-  "source": "https://oldschool.runescape.wiki/w/Yama \"all demonbane modifiers are increased by 20%\""
+  "description": "https://oldschool.runescape.wiki/w/Yama \"all demonbane modifiers are increased by 20%\"",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Yama",
+    "quotes": [
+     "all demonbane modifiers are increased by 20%"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "voidFlare",
@@ -400,7 +681,17 @@
   ],
   "group": "demonbaneVulnerability",
   "value": 200,
-  "source": "https://oldschool.runescape.wiki/w/Void_Flare \u2014 \"have 200% demonbane vulnerability\"."
+  "description": "https://oldschool.runescape.wiki/w/Void_Flare — \"have 200% demonbane vulnerability\".",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Void_Flare",
+    "quotes": [
+     "have 200% demonbane vulnerability"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "iceDemon",
@@ -413,7 +704,18 @@
   ],
   "group": "demonbaneVulnerability",
   "value": 115,
-  "source": "https://oldschool.runescape.wiki/w/Ice_demon \"all damage dealt to the demon is reduced by 67%, except for fire spells (which deal 250% damage) and demonbane weapons\"; its demonbane modifiers are \"increased by 15%\". Regular (7584) and Challenge Mode (7585)."
+  "description": "https://oldschool.runescape.wiki/w/Ice_demon \"all damage dealt to the demon is reduced by 67%, except for fire spells (which deal 250% damage) and demonbane weapons\"; its demonbane modifiers are \"increased by 15%\". Regular (7584) and Challenge Mode (7585).",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Ice_demon",
+    "quotes": [
+     "all damage dealt to the demon is reduced by 67%, except for fire spells (which deal 250% damage) and demonbane weapons",
+     "increased by 15%"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "araxyteMinion",
@@ -422,7 +724,25 @@
    13673,
    13675
   ],
-  "source": "https://oldschool.runescape.wiki/w/Araxxor \"Players will always max hit when attacking them with a crush or heavy Ranged weapon (such as a crossbow or ballista) if crush or ranged is their highest accuracy style respectively, or the noxious halberd\". Id-keyed: the three named minions carry different names from each other. The unhatched eggs 13670/13672/13674 are excluded, https://oldschool.runescape.wiki/w/Araxxor/Strategies \"attacking the unhatched eggs - does not guarantee a max hit, and rolls damage normally\"."
+  "description": "https://oldschool.runescape.wiki/w/Araxxor \"Players will always max hit when attacking them with a crush or heavy Ranged weapon (such as a crossbow or ballista) if crush or ranged is their highest accuracy style respectively, or the noxious halberd\". Id-keyed: the three named minions carry different names from each other. The unhatched eggs 13670/13672/13674 are excluded, https://oldschool.runescape.wiki/w/Araxxor/Strategies \"attacking the unhatched eggs - does not guarantee a max hit, and rolls damage normally\".",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Araxxor",
+    "quotes": [
+     "Players will always max hit when attacking them with a crush or heavy Ranged weapon (such as a crossbow or ballista) if crush or ranged is their highest accuracy style respectively, or the noxious halberd"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Araxxor/Strategies",
+    "quotes": [
+     "attacking the unhatched eggs - does not guarantee a max hit, and rolls damage normally"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "guardianStatue",
@@ -435,7 +755,17 @@
   "namesStartWith": [
    "guardian (chambers of xeric"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric) \"can only be harmed with pickaxes; all other sources of damage will not count.\" Normal (7569, 7571) and Challenge Mode (7570, 7572) per the infobox. The name fallback is deliberately the full disambiguated form: plain \"Guardian\" would also match the Ancient Guardian, Guardian drakes and the Guardians of Armadyl, none of which are statues."
+  "description": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric) \"can only be harmed with pickaxes; all other sources of damage will not count.\" Normal (7569, 7571) and Challenge Mode (7570, 7572) per the infobox. The name fallback is deliberately the full disambiguated form: plain \"Guardian\" would also match the Ancient Guardian, Guardian drakes and the Guardians of Armadyl, none of which are statues.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Guardian_(Chambers_of_Xeric)",
+    "quotes": [
+     "can only be harmed with pickaxes; all other sources of damage will not count."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "broodooVictim",
@@ -450,7 +780,17 @@
   "namesStartWith": [
    "broodoo victim"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Broodoo_victim \"They are highly resistant to conventional attack methods (the player's max hit is reduced to 3)\". Three colour variants, two ids each (infobox id1-id3)."
+  "description": "https://oldschool.runescape.wiki/w/Broodoo_victim \"They are highly resistant to conventional attack methods (the player's max hit is reduced to 3)\". Three colour variants, two ids each (infobox id1-id3).",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Broodoo_victim",
+    "quotes": [
+     "They are highly resistant to conventional attack methods (the player's max hit is reduced to 3)"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "abyssalSireTransitioning",
@@ -459,7 +799,17 @@
    5889,
    5891
   ],
-  "source": "https://oldschool.runescape.wiki/w/Abyssal_Sire \"Damage dealt to the Sire while it is transitioning between phases is reduced by 50%.\" The leading id of phases 1-3 per the article's infobox; the final stage (5908) has no transition to be caught in."
+  "description": "https://oldschool.runescape.wiki/w/Abyssal_Sire \"Damage dealt to the Sire while it is transitioning between phases is reduced by 50%.\" The leading id of phases 1-3 per the article's infobox; the final stage (5908) has no transition to be caught in.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Abyssal_Sire",
+    "quotes": [
+     "Damage dealt to the Sire while it is transitioning between phases is reduced by 50%."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "tormentedDemon",
@@ -476,7 +826,17 @@
   "namesExact": [
    "tormented demon"
   ],
-  "source": "https://oldschool.runescape.wiki/w/Tormented_Demon \"Tormented demons usually have a fire shield that reduces damage done by non-demonbane weapons/spells and non-abyssal weapons by 20%.\""
+  "description": "https://oldschool.runescape.wiki/w/Tormented_Demon \"Tormented demons usually have a fire shield that reduces damage done by non-demonbane weapons/spells and non-abyssal weapons by 20%.\"",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tormented_Demon",
+    "quotes": [
+     "Tormented demons usually have a fire shield that reduces damage done by non-demonbane weapons/spells and non-abyssal weapons by 20%."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "leviathan",
@@ -485,7 +845,17 @@
    12215,
    12219
   ],
-  "source": "https://oldschool.runescape.wiki/w/The_Leviathan \u2014 all three rows (normal, awakened, and the quest fight). \"Your melee attacks can't reach the lure!\""
+  "description": "https://oldschool.runescape.wiki/w/The_Leviathan — all three rows (normal, awakened, and the quest fight). \"Your melee attacks can't reach the lure!\"",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/The_Leviathan",
+    "quotes": [
+     "Your melee attacks can't reach the lure!"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "royalTitanElemental",
@@ -493,7 +863,17 @@
    14150,
    14151
   ],
-  "source": "https://oldschool.runescape.wiki/w/Fire_elemental_(Royal_Titans) \u2014 the Royal Titans' own Fire (14150) and Ice (14151) elementals, whose chance to hit \"is equal to their magic accuracy bonus plus 30, with a minimum of 30%\". Id-keyed: the ordinary Fire elemental (1365) shares a name and has none of this."
+  "description": "https://oldschool.runescape.wiki/w/Fire_elemental_(Royal_Titans) — the Royal Titans' own Fire (14150) and Ice (14151) elementals, whose chance to hit \"is equal to their magic accuracy bonus plus 30, with a minimum of 30%\". Id-keyed: the ordinary Fire elemental (1365) shares a name and has none of this.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Fire_elemental_(Royal_Titans)",
+    "quotes": [
+     "is equal to their magic accuracy bonus plus 30, with a minimum of 30%"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "hueycoatlBuffable",
@@ -506,7 +886,23 @@
    14014,
    14015
   ],
-  "source": "https://oldschool.runescape.wiki/w/The_Hueycoatl \"activating a 30% damage bonus for players. This bonus remains in effect as long as the braziers are lit.\" Head (14009-14013) and tail (14014, 14015). The body, 14017, is left out on phase order rather than on any stated immunity: https://oldschool.runescape.wiki/w/The_Hueycoatl/Strategies has the five body parts fought in phase one and the seer charging the pillars only from phase two."
+  "description": "https://oldschool.runescape.wiki/w/The_Hueycoatl \"activating a 30% damage bonus for players. This bonus remains in effect as long as the braziers are lit.\" Head (14009-14013) and tail (14014, 14015). The body, 14017, is left out on phase order rather than on any stated immunity: https://oldschool.runescape.wiki/w/The_Hueycoatl/Strategies has the five body parts fought in phase one and the seer charging the pillars only from phase two.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/The_Hueycoatl",
+    "quotes": [
+     "activating a 30% damage bonus for players. This bonus remains in effect as long as the braziers are lit."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/The_Hueycoatl/Strategies",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "wardenP2",
@@ -516,7 +912,17 @@
    11756,
    11757
   ],
-  "source": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies \"the player having 100% accuracy regardless of equipment; however, the damage dealt corresponds to the player's accuracy bonuses\". P2 ids only \u2014 each phase shares a name but has a different damage formula."
+  "description": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies \"the player having 100% accuracy regardless of equipment; however, the damage dealt corresponds to the player's accuracy bonuses\". P2 ids only — each phase shares a name but has a different damage formula.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies",
+    "quotes": [
+     "the player having 100% accuracy regardless of equipment; however, the damage dealt corresponds to the player's accuracy bonuses"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "magicDefenceFromDefence",
@@ -549,7 +955,15 @@
    11712,
    9118
   ],
-  "source": "https://twitter.com/JagexAsh/status/1689566945635438592 \u2014 monsters whose magic defence roll is built from their Defence level, not their Magic level, and each monster's own article: Verzik Vitur (all modes, all phases), the Ice demon (7584, 7585), Fragment of Seren (8917-8920), Baboon Brawler (11709, 11712) and the Prifddinas rabbit (9118)."
+  "description": "https://twitter.com/JagexAsh/status/1689566945635438592 — monsters whose magic defence roll is built from their Defence level, not their Magic level, and each monster's own article: Verzik Vitur (all modes, all phases), the Ice demon (7584, 7585), Fragment of Seren (8917-8920), Baboon Brawler (11709, 11712) and the Prifddinas rabbit (9118).",
+  "_cite": [
+   {
+    "kind": "tweet",
+    "url": "https://twitter.com/JagexAsh/status/1689566945635438592",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "lavaStrykewyrm",
@@ -561,7 +975,17 @@
   ],
   "group": "healingElement",
   "text": "FIRE",
-  "source": "https://oldschool.runescape.wiki/w/Lava_Strykewyrm \"Fire spells will heal them equal to the amount hit.\" Name fallback because the id has varied historically."
+  "description": "https://oldschool.runescape.wiki/w/Lava_Strykewyrm \"Fire spells will heal them equal to the amount hit.\" Name fallback because the id has varied historically.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Lava_Strykewyrm",
+    "quotes": [
+     "Fire spells will heal them equal to the amount hit."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "fireWizard",
@@ -570,7 +994,17 @@
   ],
   "group": "healingElement",
   "text": "FIRE",
-  "source": "https://oldschool.runescape.wiki/w/Water_wizard \"The elemental wizards south of Falador are now healed by their own element and damaged by all others.\" Id-only: the wizards' names are common enough to misdirect."
+  "description": "https://oldschool.runescape.wiki/w/Water_wizard \"The elemental wizards south of Falador are now healed by their own element and damaged by all others.\" Id-only: the wizards' names are common enough to misdirect.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Water_wizard",
+    "quotes": [
+     "The elemental wizards south of Falador are now healed by their own element and damaged by all others."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "waterWizard",
@@ -579,7 +1013,15 @@
   ],
   "group": "healingElement",
   "text": "WATER",
-  "source": "https://oldschool.runescape.wiki/w/Water_wizard \u2014 healed by its own element; see fireWizard."
+  "description": "https://oldschool.runescape.wiki/w/Water_wizard — healed by its own element; see fireWizard.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Water_wizard",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "earthWizard",
@@ -588,7 +1030,15 @@
   ],
   "group": "healingElement",
   "text": "EARTH",
-  "source": "https://oldschool.runescape.wiki/w/Earth_wizard \u2014 healed by its own element; see fireWizard."
+  "description": "https://oldschool.runescape.wiki/w/Earth_wizard — healed by its own element; see fireWizard.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Earth_wizard",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "airWizard",
@@ -597,7 +1047,15 @@
   ],
   "group": "healingElement",
   "text": "AIR",
-  "source": "https://oldschool.runescape.wiki/w/Air_wizard \u2014 healed by its own element; see fireWizard."
+  "description": "https://oldschool.runescape.wiki/w/Air_wizard — healed by its own element; see fireWizard.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Air_wizard",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "gryphon",
@@ -606,7 +1064,17 @@
   ],
   "group": "knockbackWeightKg",
   "value": 30,
-  "source": "https://oldschool.runescape.wiki/w/Gryphon \"knock back players with too low of an equipped weight with a threshold around 30kg\". Matched on NAME rather than the shared slayer category: the threshold differs between variants that share the \"Gryphons\" category, and one Shellbane gryphon row carries no category at all."
+  "description": "https://oldschool.runescape.wiki/w/Gryphon \"knock back players with too low of an equipped weight with a threshold around 30kg\". Matched on NAME rather than the shared slayer category: the threshold differs between variants that share the \"Gryphons\" category, and one Shellbane gryphon row carries no category at all.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Gryphon",
+    "quotes": [
+     "knock back players with too low of an equipped weight with a threshold around 30kg"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "direGryphon",
@@ -615,7 +1083,17 @@
   ],
   "group": "knockbackWeightKg",
   "value": 40,
-  "source": "https://oldschool.runescape.wiki/w/Dire_gryphon \"The knockback attack is countered by having the player's equipped weight be 40kg.\""
+  "description": "https://oldschool.runescape.wiki/w/Dire_gryphon \"The knockback attack is countered by having the player's equipped weight be 40kg.\"",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dire_gryphon",
+    "quotes": [
+     "The knockback attack is countered by having the player's equipped weight be 40kg."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "shellbaneGryphon",
@@ -624,7 +1102,17 @@
   ],
   "group": "knockbackWeightKg",
   "value": 40,
-  "source": "https://oldschool.runescape.wiki/w/Shellbane_gryphon \"countered by having the player's equipped weight be \u226540kg\""
+  "description": "https://oldschool.runescape.wiki/w/Shellbane_gryphon \"countered by having the player's equipped weight be ≥40kg\"",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Shellbane_gryphon",
+    "quotes": [
+     "countered by having the player's equipped weight be ≥40kg"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "magicDamageImmune",
@@ -651,7 +1139,23 @@
    2141,
    2142
   ],
-  "source": "The targets a magic hitsplat cannot reach, so the Saradomin sword's special lands its melee half alone: the Warriors' Guild cyclopes (https://oldschool.runescape.wiki/w/Saradomin_sword \"The Magic damage will always hit 0 on cyclopes in the Warriors' Guild, as with all non-melee damage there\") and Dusk's two forms (https://oldschool.runescape.wiki/w/Dusk \u2014 immune to Magic and Ranged). The Dusk arm is inferred from that immunity rather than stated for this weapon anywhere, and no vector exercises it. Id-keyed for the same reason those two families are: \"Cyclops\" is shared with monsters outside the guild that carry no immunity."
+  "description": "The targets a magic hitsplat cannot reach, so the Saradomin sword's special lands its melee half alone: the Warriors' Guild cyclopes (https://oldschool.runescape.wiki/w/Saradomin_sword \"The Magic damage will always hit 0 on cyclopes in the Warriors' Guild, as with all non-melee damage there\") and Dusk's two forms (https://oldschool.runescape.wiki/w/Dusk — immune to Magic and Ranged). The Dusk arm is inferred from that immunity rather than stated for this weapon anywhere, and no vector exercises it. Id-keyed for the same reason those two families are: \"Cyclops\" is shared with monsters outside the guild that carry no immunity.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Saradomin_sword",
+    "quotes": [
+     "The Magic damage will always hit 0 on cyclopes in the Warriors' Guild, as with all non-melee damage there"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dusk",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "undrainableDefence",
@@ -681,7 +1185,25 @@
    12426,
    13656
   ],
-  "source": "The targets a defence drain cannot move at all, so their floor is their own unreduced level. https://oldschool.runescape.wiki/w/Verzik_Vitur \u2014 \"immune to stat drains\", all three modes and both phases; https://oldschool.runescape.wiki/w/Vardorvis \u2014 \"defence-draining weapons are useless (zero Defence reduction)\", his Defence scaling with hitpoints instead."
+  "description": "The targets a defence drain cannot move at all, so their floor is their own unreduced level. https://oldschool.runescape.wiki/w/Verzik_Vitur — \"immune to stat drains\", all three modes and both phases; https://oldschool.runescape.wiki/w/Vardorvis — \"defence-draining weapons are useless (zero Defence reduction)\", his Defence scaling with hitpoints instead.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Verzik_Vitur",
+    "quotes": [
+     "immune to stat drains"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Vardorvis",
+    "quotes": [
+     "defence-draining weapons are useless (zero Defence reduction)"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "sotetsegDefenceFloor",
@@ -693,7 +1215,17 @@
    10867,
    10868
   ],
-  "source": "https://twitter.com/JagexAsh/status/1227161428852912128 \u2014 the Nightmare \"won't let her Defence stat go below 120 (similar to a restriction on Sotetseg)\", whose own floor is 100. Each boss's article states a maximum drain from the BASE level, which is a floor at base minus that drain; the literal here is the resulting floor."
+  "description": "https://twitter.com/JagexAsh/status/1227161428852912128 — the Nightmare \"won't let her Defence stat go below 120 (similar to a restriction on Sotetseg)\", whose own floor is 100. Each boss's article states a maximum drain from the BASE level, which is a floor at base minus that drain; the literal here is the resulting floor.",
+  "_cite": [
+   {
+    "kind": "tweet",
+    "url": "https://twitter.com/JagexAsh/status/1227161428852912128",
+    "quotes": [
+     "won't let her Defence stat go below 120 (similar to a restriction on Sotetseg)"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "nightmareDefenceFloor",
@@ -725,7 +1257,17 @@
    11154,
    11155
   ],
-  "source": "https://twitter.com/JagexAsh/status/1227161428852912128 \"won't let her Defence stat go below 120\" \u2014 every Nightmare and Phosani's row."
+  "description": "https://twitter.com/JagexAsh/status/1227161428852912128 \"won't let her Defence stat go below 120\" — every Nightmare and Phosani's row.",
+  "_cite": [
+   {
+    "kind": "tweet",
+    "url": "https://twitter.com/JagexAsh/status/1227161428852912128",
+    "quotes": [
+     "won't let her Defence stat go below 120"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "wardenP3DefenceFloor",
@@ -737,7 +1279,17 @@
    11763,
    11764
   ],
-  "source": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies \"different targets throughout the raid have various caps on Defence reduction\" \u2014 the P3 wardens'."
+  "description": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies \"different targets throughout the raid have various caps on Defence reduction\" — the P3 wardens'.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies",
+    "quotes": [
+     "different targets throughout the raid have various caps on Defence reduction"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "hueycoatlDefenceFloor",
@@ -750,7 +1302,14 @@
    14017,
    14014
   ],
-  "source": "The Hueycoatl's drain floor. CITATION-NONE: neither the JMod archive nor the article states a Defence-drain cap, so the 120 stands unsourced pending the reconciliation pass. Deliberately its own id set \u2014 it is not the same list as the brazier-buffable segments."
+  "description": "The Hueycoatl's drain floor. CITATION-NONE: neither the JMod archive nor the article states a Defence-drain cap, so the 120 stands unsourced pending the reconciliation pass. Deliberately its own id set — it is not the same list as the brazier-buffable segments.",
+  "_cite": [
+   {
+    "kind": "none",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "akkhaDefenceFloor",
@@ -766,7 +1325,15 @@
    11795,
    11796
   ],
-  "source": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies \u2014 Akkha's cap, per the raid's Defence-reduction table."
+  "description": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies — Akkha's cap, per the raid's Defence-reduction table.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "baBaDefenceFloor",
@@ -777,7 +1344,15 @@
    11779,
    11780
   ],
-  "source": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies \u2014 Ba-Ba's cap."
+  "description": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies — Ba-Ba's cap.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "kephriDefenceFloor",
@@ -787,7 +1362,15 @@
    11719,
    11721
   ],
-  "source": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies \u2014 Kephri's cap."
+  "description": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies — Kephri's cap.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "toaObeliskDefenceFloor",
@@ -798,7 +1381,15 @@
    11751,
    11752
   ],
-  "source": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies \u2014 the obelisk's cap."
+  "description": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies — the obelisk's cap.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "zebakDefenceFloor",
@@ -809,7 +1400,15 @@
    11732,
    11733
   ],
-  "source": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies \u2014 Zebak's cap."
+  "description": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies — Zebak's cap.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "nexDefenceFloor",
@@ -822,7 +1421,14 @@
    11281,
    11282
   ],
-  "source": "Nex's drain floor. CITATION-NONE: no JMod statement or wiki line gives a Defence-drain cap, so the 250 stands unsourced pending the reconciliation pass."
+  "description": "Nex's drain floor. CITATION-NONE: no JMod statement or wiki line gives a Defence-drain cap, so the 250 stands unsourced pending the reconciliation pass.",
+  "_cite": [
+   {
+    "kind": "none",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "araxxorDefenceFloor",
@@ -831,7 +1437,14 @@
   "ids": [
    13668
   ],
-  "source": "Araxxor's drain floor. CITATION-NONE: unsourced, as above."
+  "description": "Araxxor's drain floor. CITATION-NONE: unsourced, as above.",
+  "_cite": [
+   {
+    "kind": "none",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "yamaDefenceFloor",
@@ -840,14 +1453,24 @@
   "ids": [
    14176
   ],
-  "source": "https://oldschool.runescape.wiki/w/Yama \"his stats can be drained a maximum of 80 Defence levels (to 145)\". Keyed by id and separate from the name-keyed yama row, which carries the demonbane group \u2014 a row carries one value group."
+  "description": "https://oldschool.runescape.wiki/w/Yama \"his stats can be drained a maximum of 80 Defence levels (to 145)\". Keyed by id and separate from the name-keyed yama row, which carries the demonbane group — a row carries one value group.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Yama",
+    "quotes": [
+     "his stats can be drained a maximum of 80 Defence levels (to 145)"
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  },
  {
   "key": "verzik",
   "namesExact": [
    "verzik vitur"
   ],
-  "source": "Every phase and mode: all nine bestiary rows are called \"Verzik Vitur\", so the name covers what verzikPhaseOne narrows by id."
+  "description": "Every phase and mode: all nine bestiary rows are called \"Verzik Vitur\", so the name covers what verzikPhaseOne narrows by id."
  },
  {
   "key": "nezikchened",
@@ -856,6 +1479,16 @@
    6318,
    6379
   ],
-  "source": "https://oldschool.runescape.wiki/w/Holy_water \"it gains an additional +5 damage bonus if the demon is Nezikchened.\" Id-keyed: the three Nezikchened encounters (Legends' Quest and both replays) share the name with nothing else, but ids cannot drift."
+  "description": "https://oldschool.runescape.wiki/w/Holy_water \"it gains an additional +5 damage bonus if the demon is Nezikchened.\" Id-keyed: the three Nezikchened encounters (Legends' Quest and both replays) share the name with nothing else, but ids cannot drift.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Holy_water",
+    "quotes": [
+     "it gains an additional +5 damage bonus if the demon is Nezikchened."
+    ],
+    "verified": "2026-08-21"
+   }
+  ]
  }
 ]

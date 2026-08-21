@@ -1,7 +1,20 @@
 [
  {
   "id": "EfaritaysAid",
-  "source": "https://oldschool.runescape.wiki/w/Efaritay's_aid Effects table: tier 1 \"All weapons gain a 10% damage bonus / +15% accuracy to silver weaponry\", tier 2 \"+15% accuracy and 10% damage to silver weaponry\", tier 3 \"+15% accuracy and 10% damage to applicable weaponry\". So the damage half is weapon-blind at tier 1 and silver-gated above it, while the accuracy half is silver-gated at every tier; silver weaponry is the same list the tier-2 immunity escape recognises, silver bolts included, which is why the ranged arm reads the ammo slot. The 8 May 2024 changes entry confirms the accuracy half: \"Efaritay's aid now provides a 15% accuracy bonus to silver weaponry\".",
+  "description": "https://oldschool.runescape.wiki/w/Efaritay's_aid Effects table: tier 1 \"All weapons gain a 10% damage bonus / +15% accuracy to silver weaponry\", tier 2 \"+15% accuracy and 10% damage to silver weaponry\", tier 3 \"+15% accuracy and 10% damage to applicable weaponry\". So the damage half is weapon-blind at tier 1 and silver-gated above it, while the accuracy half is silver-gated at every tier; silver weaponry is the same list the tier-2 immunity escape recognises, silver bolts included, which is why the ranged arm reads the ammo slot. The 8 May 2024 changes entry confirms the accuracy half: \"Efaritay's aid now provides a 15% accuracy bonus to silver weaponry\".",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Efaritay",
+    "quotes": [
+     "All weapons gain a 10% damage bonus / +15% accuracy to silver weaponry",
+     "+15% accuracy and 10% damage to silver weaponry",
+     "+15% accuracy and 10% damage to applicable weaponry",
+     "Efaritay's aid now provides a 15% accuracy bonus to silver weaponry"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "monsterClass": "vampyre",
    "worn": "EFARITAYS_AID"
@@ -63,7 +76,31 @@
  },
  {
   "id": "TomeAccuracyBonus",
-  "source": "https://oldschool.runescape.wiki/w/Update:Fishing_Skill_Boss_and_Easter_Event \"Standard Spellbook Water, Curse and Binding spell accuracy is increased by 20%\"; https://oldschool.runescape.wiki/w/Update:Project_Rebalance_-_NPC_Defence_Changes cut the tome DAMAGE halves only \u2014 the accuracy bonus is water's alone. Caveat: https://oldschool.runescape.wiki/w/Tome_of_water conflates the two in one sentence, \"increase the spell's accuracy and damage by 10% against NPCs and 20% against players\", contradicting 20% accuracy; its own 29 May 2024 changelog entry cuts the damage boost alone, and the Talk page question about the accuracy boost post-rework is unanswered.",
+  "description": "https://oldschool.runescape.wiki/w/Update:Fishing_Skill_Boss_and_Easter_Event \"Standard Spellbook Water, Curse and Binding spell accuracy is increased by 20%\"; https://oldschool.runescape.wiki/w/Update:Project_Rebalance_-_NPC_Defence_Changes cut the tome DAMAGE halves only — the accuracy bonus is water's alone. Caveat: https://oldschool.runescape.wiki/w/Tome_of_water conflates the two in one sentence, \"increase the spell's accuracy and damage by 10% against NPCs and 20% against players\", contradicting 20% accuracy; its own 29 May 2024 changelog entry cuts the damage boost alone, and the Talk page question about the accuracy boost post-rework is unanswered.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Update:Fishing_Skill_Boss_and_Easter_Event",
+    "quotes": [
+     "Standard Spellbook Water, Curse and Binding spell accuracy is increased by 20%"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Update:Project_Rebalance_-_NPC_Defence_Changes",
+    "quotes": [],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tome_of_water",
+    "quotes": [
+     "increase the spell's accuracy and damage by 10% against NPCs and 20% against players"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "MAGIC",
    "poweredStaff": "false",
@@ -82,7 +119,17 @@
  },
  {
   "id": "InquisitorSet",
-  "source": "https://oldschool.runescape.wiki/w/Inquisitor%27s_armour \"inquisitor's great helm by 0.5%, inquisitor's hauberk by 1%, and inquisitor's plateskirt by 1%\" \u2014 per piece, not per count: the helm carries half a percent and the hauberk and plateskirt a full one each, summed and applied as one floored stage to accuracy and damage alike, Crush style only. The mace bonus was removed and baked into its combat stats (crush +95 to +102, strength +89 to +96), so modelling the old tripling would double-count that buff. The five reachable sums are exact fractions: 2.5% is 41/40, 2% is 51/50, 1.5% is 203/200, 1% is 101/100 and 0.5% is 201/200, so the cascade below is a first-match-wins statement of which pieces are worn.",
+  "description": "https://oldschool.runescape.wiki/w/Inquisitor%27s_armour \"inquisitor's great helm by 0.5%, inquisitor's hauberk by 1%, and inquisitor's plateskirt by 1%\" — per piece, not per count: the helm carries half a percent and the hauberk and plateskirt a full one each, summed and applied as one floored stage to accuracy and damage alike, Crush style only. The mace bonus was removed and baked into its combat stats (crush +95 to +102, strength +89 to +96), so modelling the old tripling would double-count that buff. The five reachable sums are exact fractions: 2.5% is 41/40, 2% is 51/50, 1.5% is 203/200, 1% is 101/100 and 0.5% is 201/200, so the cascade below is a first-match-wins statement of which pieces are worn.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Inquisitor%27s_armour",
+    "quotes": [
+     "inquisitor's great helm by 0.5%, inquisitor's hauberk by 1%, and inquisitor's plateskirt by 1%"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "MELEE_CRUSH"
   },
@@ -214,7 +261,17 @@
  },
  {
   "id": "ObsidianSet",
-  "source": "https://oldschool.runescape.wiki/w/Berserker_necklace \"increases the amount of damage the wearer does when wielding an obsidian melee weapon\" \u2014 twenty percent, multiplicative, and independent of the obsidian armour set (whose own +10% accuracy and strength are flat shares of the base roll that the engine adds at its own stage, not a factor a row can carry). The necklace pays off with the weapon alone, which neither single-slot ascent nor set completion would assemble, hence the declared coupling. Bound: the factor is a flat 6/5 on damage, so a loadout holding the necklace scores at most 1.20x what its stats suggest; the weapon half needs no claim because the chunk fixes the weapon before the bound walk begins.",
+  "description": "https://oldschool.runescape.wiki/w/Berserker_necklace \"increases the amount of damage the wearer does when wielding an obsidian melee weapon\" — twenty percent, multiplicative, and independent of the obsidian armour set (whose own +10% accuracy and strength are flat shares of the base roll that the engine adds at its own stage, not a factor a row can carry). The necklace pays off with the weapon alone, which neither single-slot ascent nor set completion would assemble, hence the declared coupling. Bound: the factor is a flat 6/5 on damage, so a loadout holding the necklace scores at most 1.20x what its stats suggest; the weapon half needs no claim because the chunk fixes the weapon before the bound walk begins.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Berserker_necklace",
+    "quotes": [
+     "increases the amount of damage the wearer does when wielding an obsidian melee weapon"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "category": "MELEE",
    "weaponSpecial": "OBSIDIAN_WEAPON",
@@ -240,7 +297,25 @@
  },
  {
   "id": "TomeDamageBonus",
-  "source": "https://oldschool.runescape.wiki/w/Update:Project_Rebalance_-_NPC_Defence_Changes \"we'll be looking to reduce the damage bonus from the Tome of Fire and Tome of Water down to 10% for their respective elements\" \u2014 PvP kept the old figures and is out of scope. Earth's tome shipped at 10%: https://oldschool.runescape.wiki/w/Update:Group_Boss_-_Varlamore:_Part_Two \"the Tome also increases the damage of Earth Spells by 10%\". Standard-spellbook elemental casts only: powered staves and non-standard spells get nothing, and the water tome alone also carries an accuracy bonus, which is its own row. Applied as the LAST magic stage, which is why the engine holds this row as a named field rather than in a list.",
+  "description": "https://oldschool.runescape.wiki/w/Update:Project_Rebalance_-_NPC_Defence_Changes \"we'll be looking to reduce the damage bonus from the Tome of Fire and Tome of Water down to 10% for their respective elements\" — PvP kept the old figures and is out of scope. Earth's tome shipped at 10%: https://oldschool.runescape.wiki/w/Update:Group_Boss_-_Varlamore:_Part_Two \"the Tome also increases the damage of Earth Spells by 10%\". Standard-spellbook elemental casts only: powered staves and non-standard spells get nothing, and the water tome alone also carries an accuracy bonus, which is its own row. Applied as the LAST magic stage, which is why the engine holds this row as a named field rather than in a list.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Update:Project_Rebalance_-_NPC_Defence_Changes",
+    "quotes": [
+     "we'll be looking to reduce the damage bonus from the Tome of Fire and Tome of Water down to 10% for their respective elements"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Update:Group_Boss_-_Varlamore:_Part_Two",
+    "quotes": [
+     "the Tome also increases the damage of Earth Spells by 10%"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "MAGIC",
    "poweredStaff": "false"
@@ -280,7 +355,23 @@
  },
  {
   "id": "AmuletOfAvarice",
-  "source": "https://oldschool.runescape.wiki/w/Amulet_of_avarice \"an additional 20% increase in accuracy and damage when fighting revenants\". Amulet-class stage: applied FIRST by the engine, before every weapon and set bonus, mutually exclusive with the salve. Melee and Ranged take the damage half here; Magic takes it as +20 additive points inside SlayerSalveGroup, where https://oldschool.runescape.wiki/w/Maximum_magic_hit places it.",
+  "description": "https://oldschool.runescape.wiki/w/Amulet_of_avarice \"an additional 20% increase in accuracy and damage when fighting revenants\". Amulet-class stage: applied FIRST by the engine, before every weapon and set bonus, mutually exclusive with the salve. Melee and Ranged take the damage half here; Magic takes it as +20 additive points inside SlayerSalveGroup, where https://oldschool.runescape.wiki/w/Maximum_magic_hit places it.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Amulet_of_avarice",
+    "quotes": [
+     "an additional 20% increase in accuracy and damage when fighting revenants"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Maximum_magic_hit",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "monsterClass": "revenant",
    "worn": "AMULET_OF_AVARICE"
@@ -309,7 +400,17 @@
  {
   "id": "ChaosGauntletsBonus",
   "kind": "flatDamage",
-  "source": "https://oldschool.runescape.wiki/w/Chaos_gauntlets \"increase the maximum damage done by all bolt spells by 3 (before the boosted damage is multiplied by Magic Damage stats)\" \u2014 applied before magic damage %, so the Tome of Fire scales the bonus. Bolt tier only; no effect on Surge.",
+  "description": "https://oldschool.runescape.wiki/w/Chaos_gauntlets \"increase the maximum damage done by all bolt spells by 3 (before the boosted damage is multiplied by Magic Damage stats)\" — applied before magic damage %, so the Tome of Fire scales the bonus. Bolt tier only; no effect on Surge.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Chaos_gauntlets",
+    "quotes": [
+     "increase the maximum damage done by all bolt spells by 3 (before the boosted damage is multiplied by Magic Damage stats)"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "MAGIC",
    "worn": "CHAOS_GAUNTLETS",
@@ -324,7 +425,17 @@
  {
   "id": "KarilsDamnedProc",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment \"the wearer gains a 25% chance of hitting twice with one attack\" \u2014 the second hit is half the FIRST HITSPLAT, not half the max hit, so it rides the primary's accuracy and takes the per-roll truncation (trunc(H/2) is not E[H]/2). Flat armour is subtracted once, from the first hitsplat, and the second is half of what survived it; the article's per-hitsplat wording is about flat damage bonuses and does not settle this, so it is an engine choice (docs/ENGINE-GAPS.md, battery-pinned list). Not modelled: Karil's four-piece Defence drain, the amulet's effects on other Barrows sets.",
+  "description": "https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment \"the wearer gains a 25% chance of hitting twice with one attack\" — the second hit is half the FIRST HITSPLAT, not half the max hit, so it rides the primary's accuracy and takes the per-roll truncation (trunc(H/2) is not E[H]/2). Flat armour is subtracted once, from the first hitsplat, and the second is half of what survived it; the article's per-hitsplat wording is about flat damage bonuses and does not settle this, so it is an engine choice (docs/ENGINE-GAPS.md, battery-pinned list). Not modelled: Karil's four-piece Defence drain, the amulet's effects on other Barrows sets.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment",
+    "quotes": [
+     "the wearer gains a 25% chance of hitting twice with one attack"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "RANGED",
    "setActive": "KARIL_DAMNED"
@@ -349,7 +460,25 @@
  },
  {
   "id": "CrystalArmorSet",
-  "source": "Per-piece Ranged bonuses crystal armour grants a crystal bow or Bow of Faerdhinen; since 2021 carried by the pieces, deliberately unequal so body and legs under an imbued slayer helmet beat the full set on task. https://oldschool.runescape.wiki/w/Update:Equipment_Rebalance:_Ranged_Meta_Proposal \"grant a total bonus of 40% Ranged accuracy and 27.5% Ranged damage while on any Slayer task.\" Damage shares: https://oldschool.runescape.wiki/w/Crystal_helm changelog \"The damage bonus has been decreased from 3% to 2.5%.\" \u2014 the article bodies' flat 5% per piece contradicts both the changelog and the 27.5% total, so the changelog and blog win. The three shares add in declared order onto 1, the exact float accumulation the per-piece list stated.",
+  "description": "Per-piece Ranged bonuses crystal armour grants a crystal bow or Bow of Faerdhinen; since 2021 carried by the pieces, deliberately unequal so body and legs under an imbued slayer helmet beat the full set on task. https://oldschool.runescape.wiki/w/Update:Equipment_Rebalance:_Ranged_Meta_Proposal \"grant a total bonus of 40% Ranged accuracy and 27.5% Ranged damage while on any Slayer task.\" Damage shares: https://oldschool.runescape.wiki/w/Crystal_helm changelog \"The damage bonus has been decreased from 3% to 2.5%.\" — the article bodies' flat 5% per piece contradicts both the changelog and the 27.5% total, so the changelog and blog win. The three shares add in declared order onto 1, the exact float accumulation the per-piece list stated.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Update:Equipment_Rebalance:_Ranged_Meta_Proposal",
+    "quotes": [
+     "grant a total bonus of 40% Ranged accuracy and 27.5% Ranged damage while on any Slayer task."
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Crystal_helm",
+    "quotes": [
+     "The damage bonus has been decreased from 3% to 2.5%."
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "category": "RANGED",
    "weaponSpecialAny": [
@@ -372,7 +501,17 @@
  {
   "id": "VeracsFlailMechanic",
   "kind": "branch",
-  "source": "https://oldschool.runescape.wiki/w/Verac_the_Defiled%27s_equipment \"it can hit straight through the target's defences\" \u2014 25% of attacks ignore armour, Defence and protection prayers, modelled as a guaranteed hit on that fraction blended with the accuracy-weighted formula for the other 75%. The effect hit deals ONE extra damage and cannot roll 0: uniform over 1..max+1, not 0..max (the authored Verac's vector pins the max+1 ceiling and shifted expectation). Protection prayers aren't otherwise simulated, so only the guaranteed-hit component is modelled. Ignores the DEFENCE roll, not flat armour \u2014 flat armour still applies to every hitsplat, per the Wiki.",
+  "description": "https://oldschool.runescape.wiki/w/Verac_the_Defiled%27s_equipment \"it can hit straight through the target's defences\" — 25% of attacks ignore armour, Defence and protection prayers, modelled as a guaranteed hit on that fraction blended with the accuracy-weighted formula for the other 75%. The effect hit deals ONE extra damage and cannot roll 0: uniform over 1..max+1, not 0..max (the authored Verac's vector pins the max+1 ceiling and shifted expectation). Protection prayers aren't otherwise simulated, so only the guaranteed-hit component is modelled. Ignores the DEFENCE roll, not flat armour — flat armour still applies to every hitsplat, per the Wiki.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Verac_the_Defiled%27s_equipment",
+    "quotes": [
+     "it can hit straight through the target's defences"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "category": "MELEE",
    "setActive": "VERAC"
@@ -399,7 +538,15 @@
  {
   "id": "AhrimsDamnedProc",
   "kind": "branch",
-  "source": "https://oldschool.runescape.wiki/w/Amulet_of_the_damned \u2014 Ahrim's set effect: 25% chance of 30% more damage on magic hits, the magic twin of KarilsDamnedProc. Post-roll: the boost scales the rolled hitsplat (trunc(13H/10)), not the max hit, and the boss damage cap applies to the boosted splat. Display shows trunc(13*max/10). Not modelled: Ahrim's own Strength drain, the amulet's effects on other Barrows sets.",
+  "description": "https://oldschool.runescape.wiki/w/Amulet_of_the_damned — Ahrim's set effect: 25% chance of 30% more damage on magic hits, the magic twin of KarilsDamnedProc. Post-roll: the boost scales the rolled hitsplat (trunc(13H/10)), not the max hit, and the boss damage cap applies to the boosted splat. Display shows trunc(13*max/10). Not modelled: Ahrim's own Strength drain, the amulet's effects on other Barrows sets.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Amulet_of_the_damned",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "MAGIC",
    "setActive": "AHRIM_DAMNED"
@@ -428,7 +575,17 @@
  {
   "id": "ThrallBonus",
   "kind": "flatDps",
-  "source": "https://oldschool.runescape.wiki/w/Thrall \"Thralls notably always deal successful hits, with the damage roll ranging from 0-3 depending on the tier of spell used, as well as ignoring the flat armour stat.\" A summoned thrall attacks on its own fixed 4-tick timer (2.4s), so the bonus is flat DPS rather than part of the per-attack distribution. Thralls are re-cast from the Arceuus book, so a manually-cast Magic setup keeps its thrall only while it casts from Arceuus itself (the demonbane spells); powered staves and salamanders need no spellbook at all, as is true of Melee and Ranged.",
+  "description": "https://oldschool.runescape.wiki/w/Thrall \"Thralls notably always deal successful hits, with the damage roll ranging from 0-3 depending on the tier of spell used, as well as ignoring the flat armour stat.\" A summoned thrall attacks on its own fixed 4-tick timer (2.4s), so the bonus is flat DPS rather than part of the per-attack distribution. Thralls are re-cast from the Arceuus book, so a manually-cast Magic setup keeps its thrall only while it casts from Arceuus itself (the demonbane spells); powered staves and salamanders need no spellbook at all, as is true of Melee and Ranged.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Thrall",
+    "quotes": [
+     "Thralls notably always deal successful hits, with the damage roll ranging from 0-3 depending on the tier of spell used, as well as ignoring the flat armour stat."
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "exprFilter": "player.thrallMaxHit > 0 && !monster.thrallImmune",
    "anyOf": [
@@ -454,7 +611,17 @@
  {
   "id": "DharokSetBonus",
   "kind": "modifier",
-  "source": "https://oldschool.runescape.wiki/w/Dharok_the_Wretched%27s_equipment \"The lower a player's remaining hitpoints are, the higher maximum hit the player can inflict with the set equipped.\" Wretched Strength: factor 1 + (maxHP - currentHP)/100 * maxHP/100, its own floored stage before bane. Overhealing (anglerfish etc.) never pushes the multiplier below 1: neither cited article mentions a clamp, so that half is an engine choice awaiting an in-game test (docs/ENGINE-GAPS.md, battery-pinned list).",
+  "description": "https://oldschool.runescape.wiki/w/Dharok_the_Wretched%27s_equipment \"The lower a player's remaining hitpoints are, the higher maximum hit the player can inflict with the set equipped.\" Wretched Strength: factor 1 + (maxHP - currentHP)/100 * maxHP/100, its own floored stage before bane. Overhealing (anglerfish etc.) never pushes the multiplier below 1: neither cited article mentions a clamp, so that half is an engine choice awaiting an in-game test (docs/ENGINE-GAPS.md, battery-pinned list).",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dharok_the_Wretched%27s_equipment",
+    "quotes": [
+     "The lower a player's remaining hitpoints are, the higher maximum hit the player can inflict with the set equipped."
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "setActive": "DHAROK"
   },
@@ -467,7 +634,18 @@
  {
   "id": "ObsidianSetFlatShare",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Obsidian_armour full obsidian armour with an obsidian weapon gives +10% melee accuracy and strength: a flat share of the base roll and base max hit, added after the amulet-class stage and before the multiplicative stages. Toktz-mej-tal is out of scope: the article's Set bonus section says \"obsidian melee weapons\" and its weapon table names only the four, against a looser \"all obsidian weaponry\" in the intro; in-game bashing with the staff in full obsidian would settle it.",
+  "description": "https://oldschool.runescape.wiki/w/Obsidian_armour full obsidian armour with an obsidian weapon gives +10% melee accuracy and strength: a flat share of the base roll and base max hit, added after the amulet-class stage and before the multiplicative stages. Toktz-mej-tal is out of scope: the article's Set bonus section says \"obsidian melee weapons\" and its weapon table names only the four, against a looser \"all obsidian weaponry\" in the intro; in-game bashing with the staff in full obsidian would settle it.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Obsidian_armour",
+    "quotes": [
+     "obsidian melee weapons",
+     "all obsidian weaponry"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "category": "MELEE",
    "setActive": "OBSIDIAN"
@@ -477,7 +655,18 @@
  {
   "id": "SoulreaperAxeStacks",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Soulreaper_axe \"Each Soul stack provides a 6% boost to a player's Strength level\", \"up to a maximum of +30% at five stacks\": a share of the base level (level + potion) added after the prayer, so it does not compound with it.",
+  "description": "https://oldschool.runescape.wiki/w/Soulreaper_axe \"Each Soul stack provides a 6% boost to a player's Strength level\", \"up to a maximum of +30% at five stacks\": a share of the base level (level + potion) added after the prayer, so it does not compound with it.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Soulreaper_axe",
+    "quotes": [
+     "Each Soul stack provides a 6% boost to a player's Strength level",
+     "up to a maximum of +30% at five stacks"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "category": "MELEE",
    "worn": "SOULREAPER_AXE"
@@ -487,7 +676,15 @@
  {
   "id": "KerisStrengthPenalty",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Keris_partisan_of_amascut outside the Tombs of Amascut the partisan loses 22 melee strength: a penalty on the gear total the max hit is built from, not a stage over it. The strength penalty applies to all melee styles.",
+  "description": "https://oldschool.runescape.wiki/w/Keris_partisan_of_amascut outside the Tombs of Amascut the partisan loses 22 melee strength: a penalty on the gear total the max hit is built from, not a stage over it. The strength penalty applies to all melee styles.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Keris_partisan_of_amascut",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "category": "MELEE",
    "worn": "KERIS_AMASCUT",
@@ -499,7 +696,15 @@
  {
   "id": "KerisStabAttackPenalty",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Keris_partisan_of_amascut outside the Tombs of Amascut the partisan loses 50 stab attack: a penalty on the gear total the roll is built from. The attack penalty applies to stab only.",
+  "description": "https://oldschool.runescape.wiki/w/Keris_partisan_of_amascut outside the Tombs of Amascut the partisan loses 50 stab attack: a penalty on the gear total the roll is built from. The attack penalty applies to stab only.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Keris_partisan_of_amascut",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "MELEE_STAB",
    "worn": "KERIS_AMASCUT",
@@ -511,7 +716,21 @@
  {
   "id": "VoidKnightBonus",
   "kind": "modifier",
-  "source": "https://oldschool.runescape.wiki/w/Void_Knight_equipment melee/ranged 10% accuracy, magic 45%; damage: melee 10%, ranged 10% (elite 12.5%), magic 5% with elite only. Accuracy is applied to the effective level after the stance bonus and constant, floored, per the wiki's Melee and Ranged DPS articles; for Magic the engine keeps the same post-constant position, which the recorded vectors agree with (see docs/ENGINE-GAPS.md). The magic damage arm is read as a percentage into the additive bracket instead: https://oldschool.runescape.wiki/w/Maximum_magic_hit PrimaryMagicDamage = floor(BaseDamageModifier x (1 + min(1, (VisibleBonuses - Void) x ShadowBonus) + Void + Salve + Avarice + SmokeBattlestaff + VirtusRobesAncientBonus + Prayer)).",
+  "description": "https://oldschool.runescape.wiki/w/Void_Knight_equipment melee/ranged 10% accuracy, magic 45%; damage: melee 10%, ranged 10% (elite 12.5%), magic 5% with elite only. Accuracy is applied to the effective level after the stance bonus and constant, floored, per the wiki's Melee and Ranged DPS articles; for Magic the engine keeps the same post-constant position, which the recorded vectors agree with (see docs/ENGINE-GAPS.md). The magic damage arm is read as a percentage into the additive bracket instead: https://oldschool.runescape.wiki/w/Maximum_magic_hit PrimaryMagicDamage = floor(BaseDamageModifier x (1 + min(1, (VisibleBonuses - Void) x ShadowBonus) + Void + Salve + Avarice + SmokeBattlestaff + VirtusRobesAncientBonus + Prayer)).",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Void_Knight_equipment",
+    "quotes": [],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Maximum_magic_hit",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {},
   "accuracy": [
    {
@@ -548,7 +767,17 @@
  {
   "id": "SharpEyeGuaranteedLevel",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Sharp_Eye \"or by 1 level if the player's Ranged level is lower than 20\", the 29 May 2024 change made because below 20 the +5% truncated to nothing. It is the only Ranged prayer at 1.05, which is what identifies it; the truncation guard is the real predicate and base <= 20 only a pre-filter, since at 20 the plain 5% already yields +1.",
+  "description": "https://oldschool.runescape.wiki/w/Sharp_Eye \"or by 1 level if the player's Ranged level is lower than 20\", the 29 May 2024 change made because below 20 the +5% truncated to nothing. It is the only Ranged prayer at 1.05, which is what identifies it; the truncation guard is the real predicate and base <= 20 only a pre-filter, since at 20 the plain 5% already yields +1.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Sharp_Eye",
+    "quotes": [
+     "or by 1 level if the player's Ranged level is lower than 20"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "category": "RANGED",
    "exprFilter": "player.rangedStrengthPrayer == 1.05"
@@ -558,7 +787,24 @@
  {
   "id": "BurstOfStrengthGuaranteedLevel",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Maximum_melee_hit prayer table, Burst of Strength 1.05 \"Always boost the player's Strength level by at least 1\"; https://oldschool.runescape.wiki/w/Update:Project_Rebalance:_Combat_Changes \"Sharp Eye and Burst of Strength now boost your Ranged and Strength by 1 level respectively, if those levels are lower than 20.\" It is the only melee strength prayer at 1.05, which is what identifies it; the melee twin of SharpEyeGuaranteedLevel.",
+  "description": "https://oldschool.runescape.wiki/w/Maximum_melee_hit prayer table, Burst of Strength 1.05 \"Always boost the player's Strength level by at least 1\"; https://oldschool.runescape.wiki/w/Update:Project_Rebalance:_Combat_Changes \"Sharp Eye and Burst of Strength now boost your Ranged and Strength by 1 level respectively, if those levels are lower than 20.\" It is the only melee strength prayer at 1.05, which is what identifies it; the melee twin of SharpEyeGuaranteedLevel.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Maximum_melee_hit",
+    "quotes": [],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Update:Project_Rebalance:_Combat_Changes",
+    "quotes": [
+     "Always boost the player's Strength level by at least 1",
+     "Sharp Eye and Burst of Strength now boost your Ranged and Strength by 1 level respectively, if those levels are lower than 20."
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "category": "MELEE",
    "exprFilter": "player.meleeStrengthPrayer == 1.05"
@@ -568,7 +814,31 @@
  {
   "id": "SunfireRuneMinimum",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Sunfire_rune \"any successful hit with offensive fire spells will deal a minimum of 10% of the player's max hit\"; the pre-tome basis is https://oldschool.runescape.wiki/w/Tome_of_fire \"The +10% damage bonus from the tome of fire is not included when calculating the minimum hit\". The engine raises the running minimum to this share, so a floor another row already set (the Wardens P2 window) is never lowered. Charging a tome of fire with https://oldschool.runescape.wiki/w/Searing_page grants the same 10% minimum without sunfire runes; item names do not carry charge state, so that route reuses the player's sunfire flag.",
+  "description": "https://oldschool.runescape.wiki/w/Sunfire_rune \"any successful hit with offensive fire spells will deal a minimum of 10% of the player's max hit\"; the pre-tome basis is https://oldschool.runescape.wiki/w/Tome_of_fire \"The +10% damage bonus from the tome of fire is not included when calculating the minimum hit\". The engine raises the running minimum to this share, so a floor another row already set (the Wardens P2 window) is never lowered. Charging a tome of fire with https://oldschool.runescape.wiki/w/Searing_page grants the same 10% minimum without sunfire runes; item names do not carry charge state, so that route reuses the player's sunfire flag.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Sunfire_rune",
+    "quotes": [
+     "any successful hit with offensive fire spells will deal a minimum of 10% of the player's max hit"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tome_of_fire",
+    "quotes": [
+     "The +10% damage bonus from the tome of fire is not included when calculating the minimum hit"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Searing_page",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "castElement": "FIRE",
    "expr": "player.sunfireRunes"
@@ -578,7 +848,26 @@
  {
   "id": "DemonbaneSpellAccuracyShare",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Demonbane_spells \"By default, demonbane spells have an accuracy bonus of 20%, but can be doubled to 40% when the Mark of Darkness spell is active\"; https://oldschool.runescape.wiki/w/Purging_staff \"doubles the base accuracy bonus of demonbane spells from 20% to 40%\", and with the Mark \"further doubles the accuracy and damage bonus, giving an 80% accuracy and 50% damage bonus\". A truncated share of the running roll, scaled by the monster's demonbaneVulnerability family value.",
+  "description": "https://oldschool.runescape.wiki/w/Demonbane_spells \"By default, demonbane spells have an accuracy bonus of 20%, but can be doubled to 40% when the Mark of Darkness spell is active\"; https://oldschool.runescape.wiki/w/Purging_staff \"doubles the base accuracy bonus of demonbane spells from 20% to 40%\", and with the Mark \"further doubles the accuracy and damage bonus, giving an 80% accuracy and 50% damage bonus\". A truncated share of the running roll, scaled by the monster's demonbaneVulnerability family value.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Demonbane_spells",
+    "quotes": [
+     "By default, demonbane spells have an accuracy bonus of 20%, but can be doubled to 40% when the Mark of Darkness spell is active"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Purging_staff",
+    "quotes": [
+     "doubles the base accuracy bonus of demonbane spells from 20% to 40%",
+     "further doubles the accuracy and damage bonus, giving an 80% accuracy and 50% damage bonus"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "MAGIC",
    "targetAttr": "DEMON",
@@ -589,7 +878,17 @@
  {
   "id": "DemonbaneSpellDamageShare",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Demonbane_spells damage is 0% until a Mark of Darkness grants 25%, or 50% alongside the purging staff; \"All of these bonuses are calculated after the player's own magic damage bonuses from their equipment.\" A truncated share of the running max hit, scaled by the demonbaneVulnerability family value.",
+  "description": "https://oldschool.runescape.wiki/w/Demonbane_spells damage is 0% until a Mark of Darkness grants 25%, or 50% alongside the purging staff; \"All of these bonuses are calculated after the player's own magic damage bonuses from their equipment.\" A truncated share of the running max hit, scaled by the demonbaneVulnerability family value.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Demonbane_spells",
+    "quotes": [
+     "All of these bonuses are calculated after the player's own magic damage bonuses from their equipment."
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "MAGIC",
    "targetAttr": "DEMON",
@@ -601,7 +900,17 @@
  {
   "id": "TumekenShadowScaling",
   "kind": "magicScaling",
-  "source": "https://oldschool.runescape.wiki/w/Tumeken's_shadow \"the player's magic attack bonus and magic damage are multiplied by three from the player's worn equipment (four within the Tombs of Amascut), capped at a total of 100% magic damage\". Both rescales land on the summed gear stat before the roll and max hit are built; the staff's own base hit and 5-tick cycle stay rows in magic-base-hits.json.",
+  "description": "https://oldschool.runescape.wiki/w/Tumeken's_shadow \"the player's magic attack bonus and magic damage are multiplied by three from the player's worn equipment (four within the Tombs of Amascut), capped at a total of 100% magic damage\". Both rescales land on the summed gear stat before the roll and max hit are built; the staff's own base hit and 5-tick cycle stay rows in magic-base-hits.json.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tumeken",
+    "quotes": [
+     "the player's magic attack bonus and magic damage are multiplied by three from the player's worn equipment (four within the Tombs of Amascut), capped at a total of 100% magic damage"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "MAGIC",
    "worn": "TUMEKEN_SHADOW"
@@ -619,7 +928,18 @@
  {
   "id": "BloodMoonSet",
   "kind": "attackSpeed",
-  "source": "https://oldschool.runescape.wiki/w/Blood_moon_armour \"The dual macuahuitl has a 33% chance upon a successful hit to attack one tick earlier than usual\"; \"both hits count towards this independently, meaning there is a 5/9 (56%) chance to trigger the effect if both hits are successful\". A third exactly, not 0.33. Upon a SUCCESSFUL hit, so the saving is worth less against a hard target; the macuahuitl's second hit rolls only if the first landed (see DualMacuahuitlMechanic), so the chances are not independent of accuracy even though they are of each other. The bound factor takes the best case, both hits landing, at the weapon's 2-tick minimum: 2/(2 - 5/9), stated one ulp high so it stays sound.",
+  "description": "https://oldschool.runescape.wiki/w/Blood_moon_armour \"The dual macuahuitl has a 33% chance upon a successful hit to attack one tick earlier than usual\"; \"both hits count towards this independently, meaning there is a 5/9 (56%) chance to trigger the effect if both hits are successful\". A third exactly, not 0.33. Upon a SUCCESSFUL hit, so the saving is worth less against a hard target; the macuahuitl's second hit rolls only if the first landed (see DualMacuahuitlMechanic), so the chances are not independent of accuracy even though they are of each other. The bound factor takes the best case, both hits landing, at the weapon's 2-tick minimum: 2/(2 - 5/9), stated one ulp high so it stays sound.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Blood_moon_armour",
+    "quotes": [
+     "The dual macuahuitl has a 33% chance upon a successful hit to attack one tick earlier than usual",
+     "both hits count towards this independently, meaning there is a 5/9 (56%) chance to trigger the effect if both hits are successful"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "category": "MELEE",
    "setActive": "BLOOD_MOON"
@@ -644,7 +964,27 @@
  {
   "id": "EclipseMoonBurn",
   "kind": "additiveHit",
-  "source": "https://oldschool.runescape.wiki/w/Eclipse_moon_armour \"Successful attacks with the eclipse atlatl gives a 20% chance to inflict a burn on any non-immune target\"; \"Each burn has an individual duration and up to five burns can be applied to a target at a time\"; \"damage over the course of 40 ticks or 24 seconds\", 1 damage per 4-tick burn tick. Shape: a steady-state queueing approximation (arrival rate times stack duration) rather than a simulation of individual stacks; attackSeconds cancels, so the row is accuracy * 0.20 * 10 and the five-stack cap is a shape guard no attack speed can reach (it would need an attack under 2 ticks). https://oldschool.runescape.wiki/w/Burn lists this set under \"Strong burns, sometimes called sunfire burns (inflicted by the eclipse moon armour set and the Arkan blade)\", so only strong-tier immunity stops it.",
+  "description": "https://oldschool.runescape.wiki/w/Eclipse_moon_armour \"Successful attacks with the eclipse atlatl gives a 20% chance to inflict a burn on any non-immune target\"; \"Each burn has an individual duration and up to five burns can be applied to a target at a time\"; \"damage over the course of 40 ticks or 24 seconds\", 1 damage per 4-tick burn tick. Shape: a steady-state queueing approximation (arrival rate times stack duration) rather than a simulation of individual stacks; attackSeconds cancels, so the row is accuracy * 0.20 * 10 and the five-stack cap is a shape guard no attack speed can reach (it would need an attack under 2 ticks). https://oldschool.runescape.wiki/w/Burn lists this set under \"Strong burns, sometimes called sunfire burns (inflicted by the eclipse moon armour set and the Arkan blade)\", so only strong-tier immunity stops it.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Eclipse_moon_armour",
+    "quotes": [
+     "Successful attacks with the eclipse atlatl gives a 20% chance to inflict a burn on any non-immune target",
+     "Each burn has an individual duration and up to five burns can be applied to a target at a time",
+     "damage over the course of 40 ticks or 24 seconds"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Burn",
+    "quotes": [
+     "Strong burns, sometimes called sunfire burns (inflicted by the eclipse moon armour set and the Arkan blade)"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "RANGED",
    "setActive": "ECLIPSE_MOON",
@@ -660,7 +1000,18 @@
  {
   "id": "FrostweaverSetCast",
   "kind": "subEvaluate",
-  "source": "https://oldschool.runescape.wiki/w/Blue_moon_armour Frostweaver: \"20% chance to occur after successfully casting a Bind spell from the Standard spellbook or an Ice spell from the Ancient spellbook\" (the trigger is the cast, not the freeze landing). Modelled for the four Ancient ice spells only: Bind, Snare and Entangle deal no damage and are not in the spell catalogue. The free hit is melee (stab), priced inside the MAGIC rotation by a sub-evaluation at MELEE_STAB as accuracy x E[hit | success] rather than averageHit, so timed effects don't re-trigger; the free hit does feel flat armour even though the cast that triggered it does not, so the expression reads the monster's armour directly. The bound claim: pieces are plain stats under any weapon but the blue moon spear, where the extra cast is additive and stays unpruned. Not modeled: the \"50% chance to occur after successfully casting a Grasp spell from the Arceuus spellbook\" (no Grasp spells in the catalogue, so the branch is unreachable; adding them needs a per-branch rate, since this row's 0.20 would under-price them), special-attack weave, the melee hit's Strength experience.",
+  "description": "https://oldschool.runescape.wiki/w/Blue_moon_armour Frostweaver: \"20% chance to occur after successfully casting a Bind spell from the Standard spellbook or an Ice spell from the Ancient spellbook\" (the trigger is the cast, not the freeze landing). Modelled for the four Ancient ice spells only: Bind, Snare and Entangle deal no damage and are not in the spell catalogue. The free hit is melee (stab), priced inside the MAGIC rotation by a sub-evaluation at MELEE_STAB as accuracy x E[hit | success] rather than averageHit, so timed effects don't re-trigger; the free hit does feel flat armour even though the cast that triggered it does not, so the expression reads the monster's armour directly. The bound claim: pieces are plain stats under any weapon but the blue moon spear, where the extra cast is additive and stays unpruned. Not modeled: the \"50% chance to occur after successfully casting a Grasp spell from the Arceuus spellbook\" (no Grasp spells in the catalogue, so the branch is unreachable; adding them needs a per-branch rate, since this row's 0.20 would under-price them), special-attack weave, the melee hit's Strength experience.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Blue_moon_armour",
+    "quotes": [
+     "20% chance to occur after successfully casting a Bind spell from the Standard spellbook or an Ice spell from the Ancient spellbook",
+     "50% chance to occur after successfully casting a Grasp spell from the Arceuus spellbook"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "MAGIC",
    "setActive": "BLUE_MOON",
@@ -684,7 +1035,43 @@
  {
   "id": "SlayerSalveGroup",
   "kind": "exclusiveGroup",
-  "source": "https://oldschool.runescape.wiki/w/Salve_amulet \"The salve amulet's bonuses against the undead do not stack with the black mask and slayer helmet's 16.67% attack and strength bonuses; wearing both will only apply the bonuses of the salve amulet.\" The un-imbued tiers are \"a 16.67% increase in the wearer's Attack and Strength when fighting undead\", so the plain salve and the (i) give 7/6 rather than 1.15; the (i) carries that 16.67% on melee and Ranged alike and only Magic takes 15%. The higher single multiplier wins, covering accuracy and damage alike, applied as its own separately-floored stage. Magic differs: the salve (i)/(ei) joins the additive damage block (15/20 points; the un-imbued salve and salve (e) give no Magic bonus at all) while the black mask (i) stays its own floored stage and never stacks with it. The Dragon hunter wand's passive \"stacks with the Slayer helm (i) ... but not the salve amulet (i)\", so the salve contributes nothing while it runs. The Amulet of avarice shares the neck slot and the same Magic block: https://oldschool.runescape.wiki/w/Maximum_magic_hit \"If wearing an Amulet of avarice and attacking a revenant, add +20%\", and https://oldschool.runescape.wiki/w/Amulet_of_avarice \"The effects of the amulet do not stack with the Slayer helmet (i)\", so it takes the same additive slot and suppresses the mask the same way. The eclipse atlatl is a Ranged weapon on the melee tier: https://oldschool.runescape.wiki/w/Eclipse_atlatl \"it uses the melee bonuses from the slayer helmet and salve amulets\", so it takes 7/6 and 1.20 and stays out of the Ranged black mask (i) additive fold. Bound: salve tops out at 1.20 x 1.20, slayer headgear at (7/6)^2, both firing only on undead or on task; a roll multiplier m raises hit chance by at most m, so acc x dmg is the DPS ceiling.",
+  "description": "https://oldschool.runescape.wiki/w/Salve_amulet \"The salve amulet's bonuses against the undead do not stack with the black mask and slayer helmet's 16.67% attack and strength bonuses; wearing both will only apply the bonuses of the salve amulet.\" The un-imbued tiers are \"a 16.67% increase in the wearer's Attack and Strength when fighting undead\", so the plain salve and the (i) give 7/6 rather than 1.15; the (i) carries that 16.67% on melee and Ranged alike and only Magic takes 15%. The higher single multiplier wins, covering accuracy and damage alike, applied as its own separately-floored stage. Magic differs: the salve (i)/(ei) joins the additive damage block (15/20 points; the un-imbued salve and salve (e) give no Magic bonus at all) while the black mask (i) stays its own floored stage and never stacks with it. The Dragon hunter wand's passive \"stacks with the Slayer helm (i) ... but not the salve amulet (i)\", so the salve contributes nothing while it runs. The Amulet of avarice shares the neck slot and the same Magic block: https://oldschool.runescape.wiki/w/Maximum_magic_hit \"If wearing an Amulet of avarice and attacking a revenant, add +20%\", and https://oldschool.runescape.wiki/w/Amulet_of_avarice \"The effects of the amulet do not stack with the Slayer helmet (i)\", so it takes the same additive slot and suppresses the mask the same way. The eclipse atlatl is a Ranged weapon on the melee tier: https://oldschool.runescape.wiki/w/Eclipse_atlatl \"it uses the melee bonuses from the slayer helmet and salve amulets\", so it takes 7/6 and 1.20 and stays out of the Ranged black mask (i) additive fold. Bound: salve tops out at 1.20 x 1.20, slayer headgear at (7/6)^2, both firing only on undead or on task; a roll multiplier m raises hit chance by at most m, so acc x dmg is the DPS ceiling.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Salve_amulet",
+    "quotes": [
+     "The salve amulet's bonuses against the undead do not stack with the black mask and slayer helmet's 16.67% attack and strength bonuses; wearing both will only apply the bonuses of the salve amulet.",
+     "a 16.67% increase in the wearer's Attack and Strength when fighting undead"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Maximum_magic_hit",
+    "quotes": [
+     "stacks with the Slayer helm (i) ... but not the salve amulet (i)",
+     "If wearing an Amulet of avarice and attacking a revenant, add +20%"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Amulet_of_avarice",
+    "quotes": [
+     "The effects of the amulet do not stack with the Slayer helmet (i)"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Eclipse_atlatl",
+    "quotes": [
+     "it uses the melee bonuses from the slayer helmet and salve amulets"
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "filterWhen": {
    "anyOf": [
     {
@@ -734,7 +1121,17 @@
   "id": "VirtusSetPool",
   "kind": "flatShare",
   "stage": "magicDamagePool",
-  "source": "https://oldschool.runescape.wiki/w/Virtus_mask \"When using combat spells from Ancient Magicks, the magic damage bonus is increased to 5% for each piece for a total of 15%.\" Three points per piece over and above the 2% each piece's stat line already carries; standard spells and powered staves get the stat and nothing more. Pooled into the additive gear percent rather than taken as its own floored multiplier, which would overstate the effect once the pool is large.",
+  "description": "https://oldschool.runescape.wiki/w/Virtus_mask \"When using combat spells from Ancient Magicks, the magic damage bonus is increased to 5% for each piece for a total of 15%.\" Three points per piece over and above the 2% each piece's stat line already carries; standard spells and powered staves get the stat and nothing more. Pooled into the additive gear percent rather than taken as its own floored multiplier, which would overstate the effect once the pool is large.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Virtus_mask",
+    "quotes": [
+     "When using combat spells from Ancient Magicks, the magic damage bonus is increased to 5% for each piece for a total of 15%."
+    ],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "category": "MAGIC",
    "spellBook": "ANCIENT"
@@ -745,7 +1142,23 @@
   "id": "SmokeStaffPool",
   "kind": "flatShare",
   "stage": "magicDamagePool",
-  "source": "https://oldschool.runescape.wiki/w/Smoke_battlestaff 8 October 2015: the smoke staves \"now provide a 10% increase in accuracy and damage when used to cast spells from the standard spellbook\"; Ancient Magicks get nothing. Percentage POINTS into the pool, not a multiplier over it: https://oldschool.runescape.wiki/w/Maximum_magic_hit sums the smoke battlestaff term with the other magic damage bonuses inside one floor. The accuracy half is a floored stage of its own and stays in SmokeStaffBonus.",
+  "description": "https://oldschool.runescape.wiki/w/Smoke_battlestaff 8 October 2015: the smoke staves \"now provide a 10% increase in accuracy and damage when used to cast spells from the standard spellbook\"; Ancient Magicks get nothing. Percentage POINTS into the pool, not a multiplier over it: https://oldschool.runescape.wiki/w/Maximum_magic_hit sums the smoke battlestaff term with the other magic damage bonuses inside one floor. The accuracy half is a floored stage of its own and stays in SmokeStaffBonus.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Smoke_battlestaff",
+    "quotes": [
+     "now provide a 10% increase in accuracy and damage when used to cast spells from the standard spellbook"
+    ],
+    "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Maximum_magic_hit",
+    "quotes": [],
+    "verified": "2026-08-21"
+   }
+  ],
   "when": {
    "style": "MAGIC",
    "weaponFamily": "smokeStaff",
