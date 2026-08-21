@@ -378,7 +378,7 @@
  },
  {
   "id": "SmokeStaffBonus",
-  "source": "https://twitter.com/JagexAsh/status/1791070064369647838 \u2014 the smoke battlestaff, mystic smoke staff and Twinflame staff grant \"a 10% increase in accuracy and damage when casting spells from the standard spellbook\"; Ancient Magicks get nothing. Only the accuracy half is a floored stage of its own: the damage half is a row of the additive gear-magic-damage pool. With a magic salve on an undead target the oracle can differ by a point of attack roll \u2014 it pools accuracy and floors once where this engine floors per stage, and no vector covers it.",
+  "source": "https://oldschool.runescape.wiki/w/Smoke_battlestaff 8 October 2015: the smoke battlestaff and mystic smoke staff \"now provide a 10% increase in accuracy and damage when used to cast spells from the standard spellbook\", examine \"It gives a 10% accuracy and damage bonus for spells on the standard spellbook\"; https://oldschool.runescape.wiki/w/Twinflame_staff quotes the same bonus. Ancient Magicks get nothing. Only the accuracy half is a floored stage of its own: the damage half is a row of the additive gear-magic-damage pool. With a magic salve on an undead target the oracle can differ by a point of attack roll: it pools accuracy and floors once where this engine floors per stage. No vector covers it, so it sits in the battery-pinned table of docs/ENGINE-GAPS.md rather than in ACCEPTED_DELTAS.",
   "when": {
    "style": "MAGIC",
    "weaponFamily": "smokeStaff",
@@ -743,7 +743,7 @@
  {
   "id": "SecondSpellCast",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Twinflame_staff \u2014 the staff fires a second spell \"dealing 40% of the damage dealt by the first, rounded down\", every cast rather than as a proc, both striking the SAME target. It doubles elemental spells \"excluding Strike and Surge spells\" and casts on 6 ticks where every other staff takes 5. The second hitsplat gets NO accurate-0-lands-as-1 raise, unlike Karil's: the wiki states no rule and only this reading matches the oracle (docs/ENGINE-GAPS.md). The Strike/Surge exclusion is stated so the auto-picker can weigh the second cast where it applies and not where it does not. Not modelled: the staff's separate +10% standard-spellbook accuracy and damage, auto spell swap, rune and experience costs.",
+  "source": "https://oldschool.runescape.wiki/w/Twinflame_staff \u2014 the staff fires a second spell \"dealing 40% of the damage dealt by the first, rounded down\", every cast rather than as a proc, both striking the SAME target. It doubles elemental spells \"excluding Strike and Surge spells\" and casts on 6 ticks where every other staff takes 5. The second hitsplat gets NO accurate-0-lands-as-1 raise, unlike Karil's: the wiki states no rule and only this reading matches the oracle (docs/ENGINE-GAPS.md). The Strike/Surge exclusion is stated so the auto-picker can weigh the second cast where it applies and not where it does not. The staff's separate +10% standard-spellbook accuracy and damage is not this row's: the Twinflame is in the smokeStaff weapon family, so SmokeStaffBonus and SmokeStaffPool carry it. Not modelled: auto spell swap, rune and experience costs.",
   "whenAny": [
    {
     "style": "MAGIC",

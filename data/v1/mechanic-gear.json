@@ -30,7 +30,7 @@
  },
  {
   "id": "TomeAccuracyBonus",
-  "source": "https://oldschool.runescape.wiki/w/Update:Fishing_Skill_Boss_and_Easter_Event \"Standard Spellbook Water, Curse and Binding spell accuracy is increased by 20%\"; https://oldschool.runescape.wiki/w/Update:Project_Rebalance_-_NPC_Defence_Changes cut the tome DAMAGE halves only \u2014 the accuracy bonus is water's alone.",
+  "source": "https://oldschool.runescape.wiki/w/Update:Fishing_Skill_Boss_and_Easter_Event \"Standard Spellbook Water, Curse and Binding spell accuracy is increased by 20%\"; https://oldschool.runescape.wiki/w/Update:Project_Rebalance_-_NPC_Defence_Changes cut the tome DAMAGE halves only \u2014 the accuracy bonus is water's alone. Caveat: https://oldschool.runescape.wiki/w/Tome_of_water conflates the two in one sentence, \"increase the spell's accuracy and damage by 10% against NPCs and 20% against players\", contradicting 20% accuracy; its own 29 May 2024 changelog entry cuts the damage boost alone, and the Talk page question about the accuracy boost post-rework is unanswered.",
   "when": {
    "style": "MAGIC",
    "poweredStaff": "false",
@@ -514,7 +514,7 @@
  {
   "id": "SunfireRuneMinimum",
   "kind": "flatShare",
-  "source": "https://oldschool.runescape.wiki/w/Sunfire_rune a fire cast's minimum hit is 10% of the max hit, excluding the tome's +10% (the basis is the pre-tome max). The engine replaces the running minimum with this share when the row applies.",
+  "source": "https://oldschool.runescape.wiki/w/Sunfire_rune \"any successful hit with offensive fire spells will deal a minimum of 10% of the player's max hit\"; the pre-tome basis is https://oldschool.runescape.wiki/w/Tome_of_fire \"The +10% damage bonus from the tome of fire is not included when calculating the minimum hit\". The engine raises the running minimum to this share, so a floor another row already set (the Wardens P2 window) is never lowered. Charging a tome of fire with https://oldschool.runescape.wiki/w/Searing_page grants the same 10% minimum without sunfire runes; item names do not carry charge state, so that route reuses the player's sunfire flag.",
   "when": {
    "castElement": "FIRE",
    "expr": "player.sunfireRunes"
@@ -606,7 +606,7 @@
  {
   "id": "FrostweaverSetCast",
   "kind": "subEvaluate",
-  "source": "https://oldschool.runescape.wiki/w/Blue_moon_armour Frostweaver: \"20% chance to occur after successfully casting\" a qualifying spell (Bind or Ancient Ice; the trigger is the cast, not the freeze landing). The free hit is melee (stab), priced inside the MAGIC rotation by a sub-evaluation at MELEE_STAB as accuracy x E[hit | success] rather than averageHit, so timed effects don't re-trigger; the free hit does feel flat armour even though the cast that triggered it does not, so the expression reads the monster's armour directly. The bound claim: pieces are plain stats under any weapon but the blue moon spear, where the extra cast is additive and stays unpruned. Not modeled: special-attack weave, the melee hit's Strength experience.",
+  "source": "https://oldschool.runescape.wiki/w/Blue_moon_armour Frostweaver: \"20% chance to occur after successfully casting a Bind spell from the Standard spellbook or an Ice spell from the Ancient spellbook\" (the trigger is the cast, not the freeze landing). Modelled for the four Ancient ice spells only: Bind, Snare and Entangle deal no damage and are not in the spell catalogue. The free hit is melee (stab), priced inside the MAGIC rotation by a sub-evaluation at MELEE_STAB as accuracy x E[hit | success] rather than averageHit, so timed effects don't re-trigger; the free hit does feel flat armour even though the cast that triggered it does not, so the expression reads the monster's armour directly. The bound claim: pieces are plain stats under any weapon but the blue moon spear, where the extra cast is additive and stays unpruned. Not modeled: the \"50% chance to occur after successfully casting a Grasp spell from the Arceuus spellbook\" (no Grasp spells in the catalogue, so the branch is unreachable; adding them needs a per-branch rate, since this row's 0.20 would under-price them), special-attack weave, the melee hit's Strength experience.",
   "when": {
    "style": "MAGIC",
    "setActive": "BLUE_MOON",
@@ -685,7 +685,7 @@
   "id": "SmokeStaffPool",
   "kind": "flatShare",
   "stage": "magicDamagePool",
-  "source": "https://twitter.com/JagexAsh/status/1791070064369647838 - the smoke staves grant \"a 10% increase in accuracy and damage when casting spells from the standard spellbook\"; Ancient Magicks get nothing. Percentage POINTS into the pool, not a multiplier over it (vector-pinned); the accuracy half is a floored stage of its own and stays in SmokeStaffBonus.",
+  "source": "https://oldschool.runescape.wiki/w/Smoke_battlestaff 8 October 2015: the smoke staves \"now provide a 10% increase in accuracy and damage when used to cast spells from the standard spellbook\"; Ancient Magicks get nothing. Percentage POINTS into the pool, not a multiplier over it: https://oldschool.runescape.wiki/w/Maximum_magic_hit sums the smoke battlestaff term with the other magic damage bonuses inside one floor. The accuracy half is a floored stage of its own and stays in SmokeStaffBonus.",
   "when": {
    "style": "MAGIC",
    "weaponFamily": "smokeStaff",
