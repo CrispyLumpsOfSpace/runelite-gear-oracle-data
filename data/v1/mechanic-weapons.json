@@ -949,7 +949,7 @@
  {
   "id": "HallowfellCleave",
   "kind": "sequence",
-  "source": "https://oldschool.runescape.wiki/w/Hallowfell \u2014 cleaves through nearby enemies for up to 50% max hit each, up to two additional unique enemies. \"Unique\" is load-bearing: large enemies are one target. The cleave rides the primary hit landing rather than rolling its own accuracy, which is what produces the wiki's 100/50/50. Out of scope: the five-tile cleave shape, and the removed multi-combat-mode attack styles.",
+  "source": "https://oldschool.runescape.wiki/w/Hallowfell \"damaging up to two additional unique enemies for up to 50% of your maximum hit each, rounded down\". \"Unique\" is load-bearing: large enemies are one target. Each cleave rolls its own 0..idiv(maxHit, 2) rather than a share of the primary hitsplat, which is what the max-hit wording states; ofRoll is reserved for the weapons the wiki words as a share of the damage dealt. The cleave rides the primary hit landing rather than rolling its own accuracy. Out of scope: the five-tile cleave shape, and the removed multi-combat-mode attack styles.",
   "when": {
    "category": "MELEE",
    "worn": "HALLOWFELL"
@@ -957,7 +957,6 @@
   "splats": [
    {},
    {
-    "ofRoll": true,
     "fraction": [
      1,
      2
