@@ -109,7 +109,7 @@
   "id": "AlwaysMaxHitTargets",
   "kind": "guaranteed",
   "guaranteedMaxHit": true,
-  "description": "Monsters a combat style cannot miss or under-hit: the attack simply lands for max, with no formula behind it. The ids and the styles they apply to live in always-max-hit-targets.json, each stated on its own article, and the row is keyed by id because the bestiary's quest NPC of the same name is not Yama's judge. Not modelled: Volatile Baboon and Baboon Thrall, which no source covers, and Yama's void flares, whose guarantee is restricted to a weapon class and so has its own row.",
+  "description": "Monsters a combat style cannot miss or under-hit: the attack simply lands for max, with no formula behind it. The ids and the styles they apply to live in always-max-hit-targets.json, each stated on its own article, and the row is keyed by id because the bestiary's quest NPC of the same name is not Yama's judge. A multi-hitsplat attack lands every splat at its ceiling unless the target's own article restricts it, which only the Judge of Yama's does, so that restriction is a per-target field rather than a property of the guarantee. Not modelled: Volatile Baboon and Baboon Thrall, which no source covers, and Yama's void flares, whose guarantee is restricted to a weapon class and so has its own row.",
   "_cite": [
    {
     "kind": "wiki",
@@ -142,6 +142,14 @@
      "This article is about the judge in the Yama fight."
     ],
     "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Yama/Strategies",
+    "quotes": [
+     "The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once."
+    ],
+    "verified": "2026-08-23"
    }
   ],
   "any": [

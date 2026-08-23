@@ -8,7 +8,18 @@
    "RANGED",
    "MAGIC"
   ],
-  "name": "Baboon"
+  "name": "Baboon",
+  "description": "The article states the guarantee and does not restrict a multi-hitsplat attack, so the row takes the default: every hitsplat lands at its ceiling.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Baboon",
+    "quotes": [
+     "Players are guaranteed to land a max hit on Ba-Ba's baboons."
+    ],
+    "verified": "2026-08-23"
+   }
+  ]
  },
  {
   "ids": [
@@ -28,7 +39,18 @@
   "styles": [
    "MELEE"
   ],
-  "name": "Baboon Thrower"
+  "name": "Baboon Thrower",
+  "description": "The article states the guarantee and does not restrict a multi-hitsplat attack, so the row takes the default: every hitsplat lands at its ceiling.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Baboon_Thrower",
+    "quotes": [
+     "When attacking them with melee, they will take damage equal to the player's maximum hit."
+    ],
+    "verified": "2026-08-23"
+   }
+  ]
  },
  {
   "ids": [
@@ -57,7 +79,18 @@
   "styles": [
    "MELEE"
   ],
-  "name": "Fremennik warband archer"
+  "name": "Fremennik warband archer",
+  "description": "The article states the guarantee and does not restrict a multi-hitsplat attack, so the row takes the default: every hitsplat lands at its ceiling.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Fremennik_warband_archer",
+    "quotes": [
+     "Attacking them with melee will always result in a max hit."
+    ],
+    "verified": "2026-08-23"
+   }
+  ]
  },
  {
   "ids": [
@@ -95,7 +128,28 @@
   "styles": [
    "MELEE"
   ],
-  "name": "Ejected Warden cores"
+  "name": "Ejected Warden cores",
+  "description": "The guarantee holds per hitsplat: 450+ from a dragon dagger special needs both splats at max, since one 50 splat is 250 after the core's five-times multiplier.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut/Strategies",
+    "quotes": [
+     "Damage dealt to the core deals five times the damage towards the Warden, so a hit of 55 would deal 275 damage.",
+     "Players will always deal their max hit when using melee against the Warden's core",
+     "the player can easily deal upwards of 450+ damage per special attack"
+    ],
+    "verified": "2026-08-23"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Dragon_dagger",
+    "quotes": [
+     "The special attack's highest possible hit under normal combat conditions is 50 damage for each of the two hits, or a total of 100 damage."
+    ],
+    "verified": "2026-08-23"
+   }
+  ]
  },
  {
   "ids": [
@@ -106,7 +160,18 @@
    "RANGED",
    "MAGIC"
   ],
-  "name": "Venenatis' Spiderling"
+  "name": "Venenatis' Spiderling",
+  "description": "The article states the guarantee and does not restrict a multi-hitsplat attack, so the row takes the default: every hitsplat lands at its ceiling.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Venenatis",
+    "quotes": [
+     "players will deal their max hit on them regardless of gear"
+    ],
+    "verified": "2026-08-23"
+   }
+  ]
  },
  {
   "ids": [
@@ -117,7 +182,8 @@
    "RANGED",
    "MAGIC"
   ],
-  "name": "Spindel's Spiderling"
+  "name": "Spindel's Spiderling",
+  "description": "No article of its own states the guarantee, so it follows the Venenatis row it was split from and takes the default."
  },
  {
   "ids": [
@@ -128,6 +194,18 @@
    "RANGED",
    "MAGIC"
   ],
-  "name": "Judge of Yama"
+  "name": "Judge of Yama",
+  "multiHitSplats": "one",
+  "description": "The one target whose article restricts a multi-hitsplat attack to a single splat.",
+  "_cite": [
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Yama/Strategies",
+    "quotes": [
+     "The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once."
+    ],
+    "verified": "2026-08-23"
+   }
+  ]
  }
 ]

@@ -1073,7 +1073,7 @@
  {
   "id": "TwoHitSpecDistribution",
   "kind": "sequence",
-  "description": "Prices the melee special attacks that land two hitsplats, whether both hits share one accuracy roll, as on the abyssal dagger, or roll separately, as on the dragon dagger. The two shapes have the same expectation, so the row prices them identically and the distinction recorded in special-attack-weapons.json is not read downstream. Each hitsplat takes flat armour and the target's damage cap independently.",
+  "description": "Prices the melee special attacks that land two hitsplats, whether both hits share one accuracy roll, as on the abyssal dagger, or roll separately, as on the dragon dagger. The two shapes have the same expectation, so the row prices them identically and the distinction recorded in special-attack-weapons.json is not read downstream. Each hitsplat takes flat armour and the target's damage cap independently. Both splats land on every always-max-hit target including the Judge of Yama: no source says whether a two-hitsplat special counts as one of the Judge's multi-hitting weapons, so the unrestricted reading stands.",
   "_cite": [
    {
     "kind": "wiki",
@@ -1229,7 +1229,7 @@
  {
   "id": "DarkBowMechanic",
   "kind": "sequence",
-  "description": "The dark bow fires two arrows per attack, each rolling its own accuracy, with neither arrow's damage halved, and the displayed ceiling is the two together. Against a target that always takes a maximum hit the sequence yields a single maximum hitsplat. The two special attacks are not modelled: each needs a per-arrow damage floor and, for Descent of Dragons, a per-splat cap, which no shipped special-attack shape carries.",
+  "description": "The dark bow fires two arrows per attack, each rolling its own accuracy, with neither arrow's damage halved, and the displayed ceiling is the two together. A target whose article restricts multi-hitting weapons to one splat, the Judge of Yama, collapses the sequence to that one hitsplat; every other always-max-hit target takes each splat at its own ceiling. The two special attacks are not modelled: each needs a per-arrow damage floor and, for Descent of Dragons, a per-splat cap, which no shipped special-attack shape carries.",
   "_cite": [
    {
     "kind": "wiki",
@@ -1266,7 +1266,7 @@
  {
   "id": "SplitHitWeaponMechanic",
   "kind": "sequence",
-  "description": "Weapons that split an attack into two independently rolled hits compute the combined maximum hit as normal and halve it, the first hitsplat taking the floor and the second the remainder. The displayed ceiling is the two together, while the larger single hitsplat, which is what an overkill cap rolls against, is the rounded-up half. Five melee weapons and one Ranged weapon share the arithmetic, and no style gate is needed because each of them is usable in exactly one style.",
+  "description": "Weapons that split an attack into two independently rolled hits compute the combined maximum hit as normal and halve it, the first hitsplat taking the floor and the second the remainder. The displayed ceiling is the two together, while the larger single hitsplat, which is what an overkill cap rolls against, is the rounded-up half. Five melee weapons and one Ranged weapon share the arithmetic, and no style gate is needed because each of them is usable in exactly one style. Against the Judge of Yama, the one target restricting multi-hitting weapons to one splat, the attack yields the larger half alone.",
   "_cite": [
    {
     "kind": "wiki",
@@ -1276,6 +1276,14 @@
      "The maximum damage of each hit is determined by calculating the combined max hit as normal and dividing it by two."
     ],
     "verified": "2026-08-21"
+   },
+   {
+    "kind": "wiki",
+    "url": "https://oldschool.runescape.wiki/w/Yama/Strategies",
+    "quotes": [
+     "The player will always land a maximum hit on the Judge, though multi-hitting weapons will only hit once."
+    ],
+    "verified": "2026-08-23"
    }
   ],
   "when": {
@@ -1312,7 +1320,7 @@
  {
   "id": "DualMacuahuitlMechanic",
   "kind": "sequence",
-  "description": "The dual macuahuitl lands two hitsplats one tick apart, each with its maximum hit halved, and the accuracy checks are sequential rather than independent: the second hit is rolled only if the first landed. Against a target that always takes a maximum hit the sequence yields a single maximum hitsplat.",
+  "description": "The dual macuahuitl lands two hitsplats one tick apart, each with its maximum hit halved, and the accuracy checks are sequential rather than independent: the second hit is rolled only if the first landed. A target whose article restricts multi-hitting weapons to one splat, the Judge of Yama, collapses the sequence to that one hitsplat; every other always-max-hit target takes each splat at its own ceiling.",
   "_cite": [
    {
     "kind": "wiki",
@@ -1353,7 +1361,7 @@
  {
   "id": "ScytheOfViturMechanic",
   "kind": "sequence",
-  "description": "The scythe of vitur hits a two-by-two target twice and a three-by-three or larger target three times, each hit dealing half of the one before it, so the splats take full, half and quarter of the maximum hit. Flat armour applies per hit against that hit's own ceiling rather than once against the combined one, and against a target that always takes a maximum hit the sequence yields a single maximum hitsplat. Out of scope: the one-by-three arc that can strike three separate small targets, which is a target-count effect rather than a size-gated one.",
+  "description": "The scythe of vitur hits a two-by-two target twice and a three-by-three or larger target three times, each hit dealing half of the one before it, so the splats take full, half and quarter of the maximum hit. Flat armour applies per hit against that hit's own ceiling rather than once against the combined one, and a target whose article restricts multi-hitting weapons to one splat, the Judge of Yama, collapses the sequence to that one hitsplat. Out of scope: the one-by-three arc that can strike three separate small targets, which is a target-count effect rather than a size-gated one.",
   "_cite": [
    {
     "kind": "wiki",
